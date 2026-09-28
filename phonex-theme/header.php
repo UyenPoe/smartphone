@@ -96,9 +96,9 @@
 
       <!-- Giỏ hàng (All platforms) -->
       <?php
-      $cart_url = function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/gio-hang/');
-      $cart_count = (function_exists('WC') && WC()->cart) ? WC()->cart->get_cart_contents_count() : 1;
-      $cart_total = (function_exists('WC') && WC()->cart) ? WC()->cart->get_cart_total() : '34.990.000₫';
+      $cart_url = function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/');
+      $cart_count = (function_exists('WC') && WC()->cart) ? WC()->cart->get_cart_contents_count() : 0;
+      $cart_total = (function_exists('WC') && WC()->cart) ? WC()->cart->get_cart_total() : '0₫';
       ?>
       <a href="<?php echo esc_url($cart_url); ?>" class="flex items-center gap-2.5 px-3.5 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl transition-colors">
         <div class="relative flex items-center justify-center">
@@ -107,7 +107,7 @@
         </div>
         <div class="hidden sm:flex flex-col text-left">
           <span class="text-xs text-gray-500 uppercase font-bold leading-tight">Giỏ hàng</span>
-          <span class="text-sm font-black text-red-600 leading-tight"><?php echo wp_kses_post($cart_total); ?></span>
+          <span class="text-sm font-black text-red-600 leading-tight" data-cart-total><?php echo wp_kses_post($cart_total); ?></span>
         </div>
       </a>
 

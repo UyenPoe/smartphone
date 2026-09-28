@@ -164,9 +164,11 @@ if ( ! function_exists( '_s_woocommerce_cart_link_fragment' ) ) {
 	 * @return array Fragments to refresh via AJAX.
 	 */
 	function _s_woocommerce_cart_link_fragment( $fragments ) {
-		ob_start();
-		_s_woocommerce_cart_link();
-		$fragments['a.cart-contents'] = ob_get_clean();
+		$cart_count = ( function_exists( 'WC' ) && WC()->cart ) ? WC()->cart->get_cart_contents_count() : 0;
+		$cart_total = ( function_exists( 'WC' ) && WC()->cart ) ? WC()->cart->get_cart_total() : '0₫';
+
+		$fragments['span[data-cart-count]'] = '<span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-xs font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center" data-cart-count>' . esc_html( $cart_count ) . '</span>';
+		$fragments['span[data-cart-total]'] = '<span class="text-sm font-black text-red-600 leading-tight" data-cart-total>' . wp_kses_post( $cart_total ) . '</span>';
 
 		return $fragments;
 	}
