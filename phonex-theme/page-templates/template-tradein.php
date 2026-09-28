@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<main class="w-full pt-6 md:pt-8 bg-surface"><div class="flex flex-col w-full">
 <!-- Top Notice Sub-bar -->
 <div class="w-full bg-primary text-on-primary py-2 px-4 text-center">
 <div class="max-w-[1320px] mx-auto flex items-center justify-center gap-3">

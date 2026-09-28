@@ -9,13 +9,15 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
   <?php wp_head(); ?>
 </head>
-<body <?php body_class('bg-surface font-sans text-on-surface antialiased'); ?>>
+<body <?php body_class('bg-background font-body-regular text-body-regular text-on-surface antialiased'); ?>>
 <?php wp_body_open(); ?>
 
 <!-- PhoneX Flagship Unified Header (Desktop, Tablet & Mobile with Popup Support) -->

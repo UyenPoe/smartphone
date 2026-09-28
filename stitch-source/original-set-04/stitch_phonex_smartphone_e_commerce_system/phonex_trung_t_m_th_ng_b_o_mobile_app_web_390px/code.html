@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "border-subtle": "#E5E7EB", "on-secondary-fixed": "#1c1b1b", "background": "#f8f9fb", "inverse-surface": "#2e3132", "on-surface-variant": "#5f3f3b", "surface-container-low": "#f2f4f6", "surface-tint": "#c0000d", "primary-container": "#e60012", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#474646", "on-primary-container": "#fff7f6", "tertiary": "#595a5a", "error": "#ba1a1a", "surface-variant": "#e1e2e4", "inverse-primary": "#ffb4aa", "outline-variant": "#e9bcb6", "on-primary-fixed-variant": "#930007", "tertiary-container": "#727272", "on-error-container": "#93000a", "primary-fixed-dim": "#ffb4aa", "on-tertiary-fixed": "#1b1c1c", "on-background": "#191c1e", "tertiary-fixed-dim": "#c7c6c6", "on-secondary-container": "#656464", "secondary-fixed": "#e5e2e1", "secondary-fixed-dim": "#c8c6c5", "surface-bright": "#f8f9fb", "surface-container-high": "#e7e8ea", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#e4e2e2", "on-tertiary-fixed-variant": "#464747", "on-surface": "#191c1e", "surface-container": "#edeef0", "primary": "#b7000c", "on-secondary": "#ffffff", "inverse-on-surface": "#f0f1f3", "text-main": "#222222", "on-error": "#ffffff", "outline": "#946e69", "primary-fixed": "#ffdad5", "on-tertiary-container": "#faf8f8", "surface-dim": "#d9dadc", "surface-pure": "#FFFFFF", "secondary": "#5f5e5e", "on-primary": "#ffffff", "surface-container-highest": "#e1e2e4", "surface": "#f8f9fb", "on-tertiary": "#ffffff", "secondary-container": "#e5e2e1", "primary-hover": "#C90010", "on-primary-fixed": "#410001" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xl": "4rem", "gutter-mobile": "0.75rem", "margin-desktop": "3.5rem", "space-md": "1rem", "space-xs": "0.25rem", "gutter": "1.25rem", "space-xl": "2.5rem", "margin": "1.5rem", "space-lg": "1.5rem", "space-sm": "0.5rem" }, fontFamily: { "body-regular": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "label-badge": ["Plus Jakarta Sans"], "price-strikethrough": ["Plus Jakarta Sans"], "label-button": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "price-lg": ["Plus Jakarta Sans"], "price-card": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "title-product": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"] }, fontSize: { "body-regular": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "700" }], "price-strikethrough": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-button": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "price-lg": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "price-card": ["18px", { "lineHeight": "24px", "fontWeight": "700" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-product": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl": ["40px", { "lineHeight": "48px", "fontWeight": "700" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-regular text-body-regular text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-pure/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Quay lại" class="min-w-[44px] min-h-[44px] flex items-center justify-center text-text-main hover:text-primary transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><img alt="Brand logo. - Primary color: #e60012 - Font: plusJakartaSans - Mode: light - Roundness: rounded-md" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WQ5685Ok6zLKj8_ryVMwecyqFm0wByjTX62HGFpg64-4NZNB0SeLtkNPERiGJk9fXB5ONeB6xXG8U2zwDl-vNm0BBO6OOe79gE4XZT0K7Nh6YkexN3pUEMeLiSM4KqNRjxbHW_VdezjETK6uN-RLQDdQeSKXzLxWGZCd7L_yShnWMsj0pw0xVcvZQI8MJmaxxlmE5qG-oyWaWPlVcPppgUUuUlzO5iFNWJVuC5Eyoga-bmOCG2_my571Y"/><h1 class="font-headline-sm text-headline-sm text-text-main truncate">Thông Báo</h1></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Đánh dấu đã đọc" class="min-h-[44px] px-space-xs flex items-center gap-1 text-primary hover:text-primary-hover font-label-button text-body-sm transition-colors"><span class="material-symbols-outlined text-[18px]">done_all</span><span class="hidden xs:inline">Đã đọc</span></button><div class="min-w-[44px] min-h-[44px] flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_3px_rgba(0,0,0,0.08)]" src="https://lh3.googleusercontent.com/aida/AEtjO1XUsJG3NZgsn6G146MQGFxxTyRGMyINRRjffqlEQBdRMaoCFXprzq-AKzGGQrmol65AKjAjDhhpExEDs67eUG6VLVFPPOeSNQ-tqyU-jYEYzAIwpaazX71DvbrMC3nIG--DpjcNVhUjVuaYCMyGgzMwg65r5kmoflW1tMJoHtM2MIZcGxWao9aYSqHeqVhc-65ruZ5Aq5kd7wMVZIIuNSrNQTK1bNCyhD2DtTg8D8Hu2-nI_ewMmJOSF6s"/></div></div></div></header><main class="flex-1 w-full bg-surface pt-14 pb-20"><div class="flex flex-col w-full">
+<!-- Interactive Zalo Sync & Delivery Status Push Card -->
+<section class="px-gutter-mobile pt-space-sm pb-space-xs">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<!-- Soft ambient aura -->
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-primary/5 rounded-full pointer-events-none blur-xl"></div>
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">mark_chat_unread</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs mb-0.5">
+<span class="font-headline-sm text-body-sm text-text-main font-semibold">Nhận tin qua Zalo ZNS &amp; SMS</span>
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-badge text-[10px]">Tức thì</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary leading-tight">
+            Đồng bộ Zalo để nhận mã OTP xác thực, lộ trình KTV và tiến độ bảo hành tức thì 24/7.
+          </p>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between gap-space-sm relative z-10">
+<div class="flex items-center gap-1.5 text-secondary font-body-sm text-[12px]">
+<span class="w-2 h-2 rounded-full bg-surface-container-highest animate-pulse"></span>
+<span>Chưa liên kết tài khoản</span>
+</div>
+<button class="h-9 px-space-md rounded-lg bg-primary-container text-on-primary font-label-button text-body-sm flex items-center gap-1.5 active:scale-95 transition-all shadow-sm" id="zalo-sync-btn" onclick="toggleZaloSync(this)">
+<span class="material-symbols-outlined text-[18px]">sync_saved_locally</span>
+<span>Đồng bộ ngay</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Horizontal Filter Pills (Touch scrollable) -->
+<section class="w-full py-space-xs sticky top-0 bg-surface/95 backdrop-blur-md z-30">
+<div class="flex items-center gap-space-xs px-gutter-mobile overflow-x-auto no-scrollbar scroll-smooth">
+<button class="filter-pill flex-shrink-0 h-8 px-space-md rounded-full bg-primary text-on-primary font-label-button text-body-sm flex items-center gap-1 shadow-sm transition-colors" onclick="filterCategory('all', this)">
+<span>Tất cả</span>
+<span class="text-[11px] opacity-90 font-bold bg-surface-pure/20 px-1.5 py-0.2 rounded-full">12</span>
+</button>
+<button class="filter-pill flex-shrink-0 h-8 px-space-md rounded-full bg-surface-container-low text-secondary hover:text-text-main font-label-button text-body-sm flex items-center gap-1 transition-colors" onclick="filterCategory('order', this)">
+<span>Đơn hàng</span>
+<span class="text-[11px] bg-surface-container px-1.5 py-0.2 rounded-full">3</span>
+</button>
+<button class="filter-pill flex-shrink-0 h-8 px-space-md rounded-full bg-surface-container-low text-secondary hover:text-text-main font-label-button text-body-sm flex items-center gap-1 transition-colors" onclick="filterCategory('tradein', this)">
+<span>Thu cũ Trade-in</span>
+<span class="text-[11px] bg-surface-container px-1.5 py-0.2 rounded-full">3</span>
+</button>
+<button class="filter-pill flex-shrink-0 h-8 px-space-md rounded-full bg-surface-container-low text-secondary hover:text-text-main font-label-button text-body-sm flex items-center gap-1 transition-colors" onclick="filterCategory('warranty', this)">
+<span>Bảo hành</span>
+<span class="text-[11px] bg-surface-container px-1.5 py-0.2 rounded-full">4</span>
+</button>
+<button class="filter-pill flex-shrink-0 h-8 px-space-md rounded-full bg-surface-container-low text-secondary hover:text-text-main font-label-button text-body-sm flex items-center gap-1 transition-colors" onclick="filterCategory('promo', this)">
+<span>Khuyến mãi</span>
+<span class="text-[11px] bg-surface-container px-1.5 py-0.2 rounded-full">2</span>
+</button>
+</div>
+</section>
+<!-- Notification Feed List -->
+<section class="px-gutter-mobile flex flex-col gap-space-sm pt-space-xs pb-space-lg" id="notification-list">
+<!-- CARD 1: CareLab Sửa Chữa (Unread) -->
+<article class="noti-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative transition-all active:bg-surface-container-low/60" data-cat="warranty">
+<div class="flex items-start gap-space-sm">
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-xl bg-error-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">home_repair_service</span>
+</div>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-pure unread-dot"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-badge text-label-badge">
+              CareLab VIP+
+            </span>
+<span class="font-body-sm text-[12px] text-secondary">15 phút trước</span>
+</div>
+<h2 class="font-title-product text-title-product text-text-main font-semibold line-clamp-2 leading-snug">
+            Kỹ thuật viên đang kiểm định màn hình iPhone 16 Pro Max
+          </h2>
+<div class="flex items-center gap-1 text-[12px] text-tertiary font-body-sm mt-0.5">
+<span class="font-semibold text-text-main">Mã #PX-WR-88291</span>
+<span>•</span>
+<span class="text-primary font-medium">Đang chạy GSX Test</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1.5 line-clamp-2">
+            Apple GSX đang quét kiểm tra cảm ứng đa điểm &amp; Face ID. Dự toán chi phí: <strong class="text-text-main font-semibold">0₫</strong> theo quyền lợi Care+ 1 đổi 1.
+          </p>
+<!-- Rich Mini Thumbnail -->
+<div class="mt-space-sm flex items-center gap-space-xs p-space-xs bg-surface-container-low rounded-lg">
+<img class="w-12 h-12 rounded object-cover flex-shrink-0" data-alt="Close up shot of modern high tech smartphone diagnostic lab with an engineer testing iPhone screen sensors with laser alignment equipment, crisp clean corporate lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADj9xEQ_V_F5AtoTXpUFOf8hwhxClmL8e1rbQz3bcuzLt-upbuLkZM6XRYz1WWPWUPy0qoxdKGqTSStJBzhyhzuXipqyn0FZnBfEfICJHhevyKG7U0_O3NAsSDjNoP6EuBRS5IbmX3bO1GpY8VsYCrSbBm90texnYuYRNxE_eRYyhBVp-3vbILBfaFDrjxJfiC9hh9iufr1GhkWowl92yqOlXQHcJeraro39MmXx_aYHBh5TAofS0B"/>
+<div class="min-w-0 flex-1">
+<p class="font-body-sm text-[12px] text-text-main font-medium truncate">Phòng Kỹ Thuật Tầng 2 - Chi nhánh Thái Hà</p>
+<p class="font-body-sm text-[11px] text-secondary truncate">Phụ trách: KTV Nguyễn Minh Đức (Level 4)</p>
+</div>
+</div>
+<!-- CTAs optimized for thumb click -->
+<div class="mt-space-sm flex items-center gap-space-xs">
+<button class="flex-1 h-9 rounded-lg bg-primary-container text-on-primary font-label-button text-body-sm flex items-center justify-center gap-1 active:bg-primary-hover shadow-sm">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Chi tiết phiếu</span>
+</button>
+<a class="h-9 px-space-md rounded-lg bg-surface-container text-text-main font-label-button text-body-sm flex items-center justify-center gap-1 active:bg-surface-container-high" href="tel:0981000888">
+<span class="material-symbols-outlined text-[16px] text-primary">call</span>
+<span>Gọi KTV Đức</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 2: Thu mua & Trade-in (Unread) -->
+<article class="noti-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative transition-all active:bg-surface-container-low/60" data-cat="tradein">
+<div class="flex items-start gap-space-sm">
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">published_with_changes</span>
+</div>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-pure unread-dot"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge">
+              Thu cũ Đổi mới
+            </span>
+<span class="font-body-sm text-[12px] text-secondary">1 giờ trước</span>
+</div>
+<h2 class="font-title-product text-title-product text-text-main font-semibold line-clamp-2 leading-snug">
+            Lịch hẹn KTV đến thẩm định máy cũ lúc 14:30 hôm nay
+          </h2>
+<div class="flex items-center gap-1 text-[12px] text-tertiary font-body-sm mt-0.5">
+<span class="font-semibold text-text-main">Mã #PX-APPT-88219</span>
+<span>•</span>
+<span class="text-primary font-medium">Tận nơi</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1.5">
+            KTV Hoàng Long sẽ tới Căn hộ 18.06 Royal City. Định giá sơ bộ máy iPhone 14 Pro Max 256GB: <strong class="text-primary font-price-card text-[15px]">15.800.000₫</strong> (Đã cộng trợ giá PhoneX 3.000.000₫).
+          </p>
+<!-- Map snippet for live route -->
+<div class="mt-space-sm w-full h-24 rounded-lg bg-surface-container-low overflow-hidden relative" data-location="Royal City Hanoi" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-space-xs">
+<span class="text-surface-pure font-body-sm text-[11px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">near_me</span>
+                KTV cách điểm hẹn 2.8 km
+              </span>
+</div>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs">
+<button class="flex-1 h-9 rounded-lg bg-primary-container text-on-primary font-label-button text-body-sm flex items-center justify-center gap-1 active:bg-primary-hover shadow-sm">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+<span>Xem lộ trình KTV</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-container text-secondary hover:text-text-main font-label-button text-body-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">event_repeat</span>
+<span>Đổi giờ</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 3: Đơn hàng giao hỏa tốc (Unread) -->
+<article class="noti-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative transition-all active:bg-surface-container-low/60" data-cat="order">
+<div class="flex items-start gap-space-sm">
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">rocket_launch</span>
+</div>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-pure unread-dot"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-badge text-label-badge">
+              Giao hỏa tốc 1h
+            </span>
+<span class="font-body-sm text-[12px] text-secondary">3 giờ trước</span>
+</div>
+<h2 class="font-title-product text-title-product text-text-main font-semibold line-clamp-2 leading-snug">
+            iPhone 16 Pro Max 256GB Titan Sa Mạc đang được giao hỏa tốc
+          </h2>
+<div class="flex items-center gap-1 text-[12px] text-tertiary font-body-sm mt-0.5">
+<span class="font-semibold text-text-main">Đơn #PX-8892147</span>
+<span>•</span>
+<span class="text-secondary">Dự kiến 11:15</span>
+</div>
+<!-- Product Card preview snippet -->
+<div class="mt-space-sm flex items-center gap-space-xs p-space-xs bg-surface-container-low rounded-lg">
+<img class="w-12 h-12 rounded object-cover flex-shrink-0" data-alt="Sleek studio product photography of iPhone 16 Pro Max in Desert Titanium resting on a minimal clean reflective surface with dramatic soft highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtrhtaIzlURaZPNDGFaKLey6sKaJ2VkQHdY6zJIll5MzwhGSUQh1FscsBx2OK9RXsOet2u026qtaAUgAdaDqCjAsWrPGKIRvE2lr5DLw0-JP4fnJHUtzrHEJUb_CvnQmDU1wIJhJICNdybHjdVIRSfqWJvNvkrMCtLoeSoWM-hGf_SUU7V-ZdFXhZcLmhV1RZDe6WX6D_gX5V1UNwdxlJvhrD6f0l5AvyYLwjwosAFLPE2U7sbyhKp"/>
+<div class="min-w-0 flex-1">
+<p class="font-body-sm text-[13px] text-text-main font-semibold truncate">iPhone 16 Pro Max 256GB</p>
+<div class="flex items-center gap-2">
+<span class="text-primary font-price-card text-[13px]">32.490.000₫</span>
+<span class="text-secondary text-[11px]">Đã thanh toán Online</span>
+</div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center gap-space-xs">
+<button class="flex-1 h-9 rounded-lg bg-primary-container text-on-primary font-label-button text-body-sm flex items-center justify-center gap-1 active:bg-primary-hover shadow-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Theo dõi Live GPS</span>
+</button>
+<a class="h-9 px-space-md rounded-lg bg-surface-container text-text-main font-label-button text-body-sm flex items-center justify-center gap-1" href="tel:0909123456">
+<span class="material-symbols-outlined text-[16px] text-primary">call</span>
+<span>Gọi Shipper</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 4: Khuyến mãi Voucher VIP (Unread) -->
+<article class="noti-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative transition-all active:bg-surface-container-low/60" data-cat="promo">
+<div class="flex items-start gap-space-sm">
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-xl bg-error-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">featured_seasonal_and_gifts</span>
+</div>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-pure unread-dot"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container text-text-main font-label-badge text-label-badge">
+              Voucher Thành Viên VIP
+            </span>
+<span class="font-body-sm text-[12px] text-secondary">Hôm qua</span>
+</div>
+<h2 class="font-title-product text-title-product text-text-main font-semibold line-clamp-2 leading-snug">
+            Tặng Voucher 500.000₫ mua củ sạc nhanh Anker &amp; Phụ kiện MagSafe
+          </h2>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+            Dành riêng cho khách hàng vừa nâng cấp smartphone. Áp dụng toàn bộ phụ kiện chính hãng tại showroom hoặc online.
+          </p>
+<!-- Ticket Voucher UI -->
+<div class="mt-space-sm p-space-xs rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2 pl-1">
+<span class="material-symbols-outlined text-[20px] text-primary">confirmation_number</span>
+<span class="font-headline-sm text-body-sm font-bold tracking-wider text-text-main">VIPAPR500K</span>
+</div>
+<button class="h-8 px-space-sm rounded bg-surface-pure text-primary font-label-button text-[12px] shadow-sm flex items-center gap-1 active:scale-95 transition-all" onclick="copyVoucher(this, 'VIPAPR500K')">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Lưu mã</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 5: Đã đọc - Kích hoạt bảo hành điện tử e-Warranty -->
+<article class="noti-item bg-surface-container-lowest/80 rounded-xl p-space-md opacity-90 transition-all" data-cat="warranty">
+<div class="flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-surface-container text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-badge text-label-badge">
+              Bảo hành điện tử
+            </span>
+<span class="font-body-sm text-[12px] text-secondary">2 ngày trước</span>
+</div>
+<h2 class="font-title-product text-title-product text-text-main font-semibold leading-snug">
+            Đã kích hoạt bảo hành PhoneX Care+ 365 ngày
+          </h2>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+            Thiết bị IMEI: <span class="font-mono text-text-main text-[13px]">354891102948210</span> đã liên kết hệ thống Apple Authorised Service Provider toàn quốc.
+          </p>
+<div class="mt-space-sm flex items-center justify-between pt-1">
+<span class="text-[12px] text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">check_circle</span>
+              Hiệu lực đến 24/04/2026
+            </span>
+<button class="text-primary font-label-button text-[13px] hover:underline flex items-center">
+              Tra cứu e-Card
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- CARD 6: Đã đọc - Xác nhận thanh toán đơn hàng -->
+<article class="noti-item bg-surface-container-lowest/80 rounded-xl p-space-md opacity-90 transition-all" data-cat="order">
+<div class="flex items-start gap-space-sm">
+<div class="w-11 h-11 rounded-xl bg-surface-container text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">paid</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-badge text-label-badge">
+              Thanh toán thành công
+            </span>
+<span class="font-body-sm text-[12px] text-secondary">3 ngày trước</span>
+</div>
+<h2 class="font-title-product text-title-product text-text-main font-semibold leading-snug">
+            Xác nhận thanh toán trả góp 0% qua Thẻ tín dụng
+          </h2>
+<p class="font-body-sm text-body-sm text-secondary mt-1">
+            Đơn hàng #PX-8892147 đã hoàn tất thủ tục chuyển đổi trả góp 12 kỳ với ngân hàng Techcombank. Kỳ đầu tiên: 2.707.500₫.
+          </p>
+</div>
+</div>
+</article>
+</section>
+<!-- Empty State / End of Feed Delight Note -->
+<section class="px-gutter-mobile pb-space-2xl text-center flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary mb-space-xs">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary font-medium">
+      Bạn đã xem hết thông báo trong 30 ngày qua
+    </p>
+<p class="text-[12px] text-secondary/70 mt-0.5">
+      Mọi thay đổi tình trạng máy &amp; đơn hàng sẽ được gửi thông báo ngay lập tức.
+    </p>
+</section>
+</div>
+<!-- Inline JavaScript for micro-interactions: Filter categories, mark read & Zalo toggle -->
+<script>
+  function filterCategory(category, button) {
+    const pills = document.querySelectorAll('.filter-pill');
+    pills.forEach(p => {
+      p.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+      p.classList.add('bg-surface-container-low', 'text-secondary');
+    });
+    
+    button.classList.remove('bg-surface-container-low', 'text-secondary');
+    button.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+
+    const items = document.querySelectorAll('.noti-item');
+    items.forEach(item => {
+      if (category === 'all' || item.dataset.cat === category) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  function toggleZaloSync(button) {
+    button.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Đang kết nối...</span>';
+    button.disabled = true;
+    
+    setTimeout(() => {
+      button.className = 'h-9 px-space-md rounded-lg bg-surface-container-high text-text-main font-label-button text-body-sm flex items-center gap-1.5 cursor-default';
+      button.innerHTML = '<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span><span>Đã đồng bộ Zalo</span>';
+      
+      const statusLabel = button.parentElement.querySelector('div span:last-child');
+      if (statusLabel) {
+        statusLabel.textContent = 'Đang nhận tin qua +84 98***882';
+        statusLabel.previousElementSibling.className = 'w-2 h-2 rounded-full bg-primary';
+      }
+    }, 900);
+  }
+
+  function copyVoucher(btn, code) {
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">done</span><span>Đã lưu!</span>';
+    btn.classList.add('bg-primary-fixed', 'text-on-primary-fixed');
+    
+    setTimeout(() => {
+      btn.innerHTML = originalText;
+      btn.classList.remove('bg-primary-fixed', 'text-on-primary-fixed');
+    }, 2000);
+  }
+
+  // Bind mark all read top-shell action if triggered
+  document.addEventListener('DOMContentLoaded', () => {
+    const readBtn = document.querySelector('header button[aria-label="Đánh dấu đã đọc"]');
+    if (readBtn) {
+      readBtn.addEventListener('click', () => {
+        document.querySelectorAll('.unread-dot').forEach(dot => dot.remove());
+        document.querySelectorAll('.noti-item').forEach(card => {
+          card.classList.add('opacity-90');
+        });
+      });
+    }
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-pure/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-label-button"><div class="h-16 px-gutter-mobile flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 text-secondary transition-colors hover:text-text-main" data-path="trang-chu" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-badge text-label-badge tracking-tight mt-0.5">Trang chủ</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 text-secondary transition-colors hover:text-text-main" data-path="danh-muc" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-badge text-label-badge tracking-tight mt-0.5">Danh mục</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 text-secondary transition-colors hover:text-text-main" data-path="thu-cu-doi-moi" href="#"><span class="material-symbols-outlined text-[22px]">published_with_changes</span><span class="font-label-badge text-label-badge tracking-tight mt-0.5">Thu cũ</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 text-secondary transition-colors hover:text-text-main" data-path="khuyen-mai" href="#"><span class="material-symbols-outlined text-[22px]">local_offer</span><span class="font-label-badge text-label-badge tracking-tight mt-0.5">Khuyến mãi</span></a><a class="relative flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-1 text-secondary transition-colors hover:text-text-main" data-path="thong-bao" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute -top-1 -right-2 min-w-[15px] h-[15px] px-1 rounded-full bg-primary-container text-on-primary font-label-badge text-[10px] leading-[15px] text-center flex items-center justify-center ring-2 ring-surface-pure">3</span></div><span class="font-label-badge text-label-badge tracking-tight mt-0.5">Thông báo</span></a></div></nav></body></html>

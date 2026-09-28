@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<main class="w-full pt-4 md:pt-6 bg-background"><div class="flex flex-col w-full">
 <!-- SECTION 1: HERO SHOWCASE -->
 <section class="w-full max-w-7xl mx-auto px-margin py-space-md">
 <div class="relative w-full rounded-2xl overflow-hidden bg-surface-pure shadow-md">

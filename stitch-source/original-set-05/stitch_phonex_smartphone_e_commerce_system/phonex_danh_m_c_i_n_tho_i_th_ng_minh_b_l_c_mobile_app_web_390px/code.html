@@ -1,0 +1,553 @@
+<!DOCTYPE html><html lang="vi" style="width: 390px; height: 1488px; overflow: hidden; position: relative;"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;font-family:'Plus Jakarta Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-error-container":"#93000a","surface-container-high":"#e7e8ea","outline-variant":"#e9bcb6","surface-pure":"#FFFFFF","border-subtle":"#E5E7EB","inverse-surface":"#2e3132","surface":"#f8f9fb","primary-hover":"#C90010","surface-variant":"#e1e2e4","secondary-fixed":"#e5e2e1","error":"#ba1a1a","on-error":"#ffffff","tertiary-fixed":"#e4e2e2","on-tertiary-fixed-variant":"#464747","on-secondary":"#ffffff","on-tertiary-container":"#faf8f8","on-tertiary-fixed":"#1b1c1c","on-primary":"#ffffff","on-primary-fixed":"#410001","on-surface-variant":"#5f3f3b","secondary-container":"#e5e2e1","on-primary-container":"#fff7f6","secondary":"#5f5e5e","on-secondary-fixed":"#1c1b1b","on-secondary-fixed-variant":"#474646","surface-bright":"#f8f9fb","on-primary-fixed-variant":"#930007","outline":"#946e69","on-surface":"#191c1e","surface-dim":"#d9dadc","surface-container-lowest":"#ffffff","surface-container-low":"#f2f4f6","on-tertiary":"#ffffff","surface-container":"#edeef0","on-secondary-container":"#656464","inverse-on-surface":"#f0f1f3","surface-container-highest":"#e1e2e4","inverse-primary":"#ffb4aa","primary":"#b7000c","primary-fixed-dim":"#ffb4aa","primary-fixed":"#ffdad5","tertiary-container":"#727272","tertiary":"#595a5a","on-background":"#191c1e","primary-container":"#e60012","error-container":"#ffdad6","surface-tint":"#c0000d","text-main":"#222222","secondary-fixed-dim":"#c8c6c5","tertiary-fixed-dim":"#c7c6c6","background":"#f8f9fb"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-desktop":"3.5rem","space-xs":"0.25rem","space-xl":"2.5rem","space-lg":"1.5rem","space-sm":"0.5rem","margin":"1.5rem","gutter":"1.25rem","gutter-mobile":"0.75rem","space-2xl":"4rem","space-md":"1rem"},"fontFamily":{"label-badge":["Plus Jakarta Sans"],"title-product":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"price-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-regular":["Plus Jakarta Sans"],"price-card":["Plus Jakarta Sans"],"price-strikethrough":["Plus Jakarta Sans"],"label-button":["Plus Jakarta Sans"]},"fontSize":{"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"title-product":["16px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-xl":["40px",{"lineHeight":"48px","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"price-lg":["22px",{"lineHeight":"28px","fontWeight":"700"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"body-regular":["15px",{"lineHeight":"22px","fontWeight":"400"}],"price-card":["18px",{"lineHeight":"24px","fontWeight":"700"}],"price-strikethrough":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-button":["14px",{"lineHeight":"20px","fontWeight":"600"}]}}}};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface font-body-regular min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-pure/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-4 flex items-center justify-between"><div class="flex items-center gap-2"><button aria-label="Menu" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface active:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="flex items-center gap-2"><img alt="Brand logo. - Primary color: #e60012
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQ5685Ok6zLKj8_ryVMwecyqFm0wByjTX62HGFpg64-4NZNB0SeLtkNPERiGJk9fXB5ONeB6xXG8U2zwDl-vNm0BBO6OOe79gE4XZT0K7Nh6YkexN3pUEMeLiSM4KqNRjxbHW_VdezjETK6uN-RLQDdQeSKXzLxWGZCd7L_yShnWMsj0pw0xVcvZQI8MJmaxxlmE5qG-oyWaWPlVcPppgUUuUlzO5iFNWJVuC5Eyoga-bmOCG2_my571Y"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">PhoneX</span></div></div><div class="flex items-center gap-1"><a aria-label="Tìm kiếm" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface active:bg-surface-container transition-colors" data-path="tim-kiem" href="#"><span class="material-symbols-outlined text-[22px]">search</span></a><a aria-label="Giỏ hàng" class="relative w-11 h-11 flex items-center justify-center rounded-lg text-on-surface active:bg-surface-container transition-colors" data-path="gio-hang" href="#"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-2 right-1.5 min-w-[18px] h-[18px] px-1 bg-primary-container text-on-primary rounded-full font-label-badge text-[10px] flex items-center justify-center leading-none ring-2 ring-surface-pure font-bold">2</span></a><div class="ml-1 flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-subtle" src="https://lh3.googleusercontent.com/aida/AEtjO1XUsJG3NZgsn6G146MQGFxxTyRGMyINRRjffqlEQBdRMaoCFXprzq-AKzGGQrmol65AKjAjDhhpExEDs67eUG6VLVFPPOeSNQ-tqyU-jYEYzAIwpaazX71DvbrMC3nIG--DpjcNVhUjVuaYCMyGgzMwg65r5kmoflW1tMJoHtM2MIZcGxWao9aYSqHeqVhc-65ruZ5Aq5kd7wMVZIIuNSrNQTK1bNCyhD2DtTg8D8Hu2-nI_ewMmJOSF6s"></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-24 bg-surface"><div class="flex flex-col w-full">
+<!-- Sub-Header: Context & Trust Banner -->
+<section class="px-4 py-2.5 bg-surface-pure flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-sm text-headline-sm text-text-main flex items-center gap-1.5">
+        Điện Thoại
+        <span class="font-label-badge text-label-badge text-primary-container bg-error-container/60 px-2 py-0.5 rounded-full">48 máy</span>
+</h1>
+</div>
+<div class="flex items-center gap-1 text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span class="text-[12px] font-semibold text-text-main">Chính hãng 100%</span>
+</div>
+</section>
+<!-- Horizontal Brand Carousel (Scannable, swipeable) -->
+<nav aria-label="Brand categories" class="py-2.5 bg-surface-pure border-none shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+<div class="flex items-center gap-2 overflow-x-auto px-4 no-scrollbar scroll-smooth">
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-button text-label-button shadow-sm flex-shrink-0 active:scale-95 transition-transform">
+<span>Tất cả</span>
+<span class="text-[11px] opacity-85 font-normal">(48)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-main font-label-button text-label-button flex-shrink-0 active:scale-95 transition-transform hover:bg-surface-variant">
+<span>Apple</span>
+<span class="text-[11px] text-secondary">18</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-main font-label-button text-label-button flex-shrink-0 active:scale-95 transition-transform hover:bg-surface-variant">
+<span>Samsung</span>
+<span class="text-[11px] text-secondary">24</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-main font-label-button text-label-button flex-shrink-0 active:scale-95 transition-transform hover:bg-surface-variant">
+<span>Xiaomi</span>
+<span class="text-[11px] text-secondary">15</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-main font-label-button text-label-button flex-shrink-0 active:scale-95 transition-transform hover:bg-surface-variant">
+<span>Google Pixel</span>
+<span class="text-[11px] text-secondary">6</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-main font-label-button text-label-button flex-shrink-0 active:scale-95 transition-transform hover:bg-surface-variant">
+<span>OPPO</span>
+<span class="text-[11px] text-secondary">12</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-main font-label-button text-label-button flex-shrink-0 active:scale-95 transition-transform hover:bg-surface-variant">
+<span>vivo</span>
+<span class="text-[11px] text-secondary">9</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-text-main font-label-button text-label-button flex-shrink-0 active:scale-95 transition-transform hover:bg-surface-variant">
+<span>Nothing</span>
+<span class="text-[11px] text-secondary">3</span>
+</button>
+</div>
+</nav>
+<!-- Sticky Mobile Control Bar: Filter, Quick Sort & State Segment -->
+<div class="sticky top-14 z-40 bg-surface-pure/95 backdrop-blur-md px-4 py-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.04)] flex items-center justify-between gap-2">
+<!-- Filter sheet toggle button -->
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container text-text-main font-label-button text-label-button active:scale-95 transition-all" id="open-filter-btn">
+<span class="material-symbols-outlined text-[18px] text-primary">tune</span>
+<span>Bộ lọc</span>
+<span class="w-4 h-4 rounded-full bg-primary-container text-on-primary text-[10px] flex items-center justify-center font-bold">3</span>
+</button>
+<!-- Sort selector button -->
+<button class="flex items-center gap-1 px-3 py-2 rounded-lg bg-surface-container text-text-main font-label-button text-label-button active:scale-95 transition-all" id="open-sort-btn">
+<span class="material-symbols-outlined text-[18px] text-secondary">swap_vert</span>
+<span class="text-[13px]">Bán chạy</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">expand_more</span>
+</button>
+<!-- Condition Pill Switcher -->
+<div class="flex items-center bg-surface-container-high p-0.5 rounded-lg text-[12px] font-label-button">
+<button class="px-2.5 py-1.5 rounded-md bg-surface-pure text-text-main font-bold shadow-sm">Mới</button>
+<button class="px-2.5 py-1.5 rounded-md text-secondary hover:text-text-main transition-colors">Cũ 99%</button>
+</div>
+</div>
+<!-- Active Filter Chips Row -->
+<div class="px-4 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar bg-surface">
+<div class="flex items-center gap-1.5 pl-2.5 pr-2 py-1 rounded-full bg-surface-container-high text-text-main font-body-sm text-[12px] flex-shrink-0">
+<span>Apple</span>
+<button aria-label="Xoá lọc Apple" class="w-4 h-4 rounded-full flex items-center justify-center hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-secondary">close</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 pl-2.5 pr-2 py-1 rounded-full bg-surface-container-high text-text-main font-body-sm text-[12px] flex-shrink-0">
+<span>15 - 25 triệu</span>
+<button aria-label="Xoá lọc mức giá" class="w-4 h-4 rounded-full flex items-center justify-center hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-secondary">close</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 pl-2.5 pr-2 py-1 rounded-full bg-surface-container-high text-text-main font-body-sm text-[12px] flex-shrink-0">
+<span class="text-primary-hover font-semibold">Trả góp 0%</span>
+<button aria-label="Xoá lọc trả góp" class="w-4 h-4 rounded-full flex items-center justify-center hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-secondary">close</span>
+</button>
+</div>
+<button class="text-primary font-label-button text-[12px] flex-shrink-0 px-1 py-1 hover:underline">
+      Xoá tất cả
+    </button>
+</div>
+<!-- Promotional Micro Bar -->
+<div class="mx-4 my-2.5 p-2.5 rounded-xl bg-gradient-to-r from-primary-fixed to-surface-container-low flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<p class="font-body-sm text-body-sm text-on-primary-fixed font-semibold">
+        Trợ giá thu cũ đổi mới lên đến <span class="text-primary font-bold">3.000.000đ</span>
+</p>
+</div>
+<span class="material-symbols-outlined text-on-primary-fixed text-[18px]">chevron_right</span>
+</div>
+<!-- Product Catalog: Mobile 2-Column Grid -->
+<section class="px-3.5 py-1">
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Card 1: iPhone 16 Pro Max -->
+<article class="bg-surface-pure rounded-xl p-2.5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<!-- Badges -->
+<div class="flex items-center justify-between w-full mb-1">
+<span class="bg-primary-container text-on-primary font-label-badge text-[10px] px-1.5 py-0.5 rounded font-bold">-12%</span>
+<button aria-label="Yêu thích iPhone 16 Pro Max" class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary active:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<!-- Phone Image Arena -->
+<div class="w-full h-36 flex items-center justify-center py-1">
+<img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" data-alt="Titanium Desert iPhone 16 Pro Max flagship smartphone studio product shot on ultra clean white reflective background, minimal premium commercial photography, sleek red warm accent lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQecOULzNiV6wG4VCMFBx_4i7oanglH_Cug0z3aIxoiGawpAPLf9XSkWsoNSZizVO7nEBkK9utUsANS6lkSLzaUys_Gxk8SF8vb2B6W5E2_55UEuTT34NuyRVnli4W6FWNOujtAqrgoPRDe7RxNXanMnZxOek2ZBXSEaavqDSIMqhOMAF82ti0pcNoUgbcaGbQ55I2SMYtC9qUu_yD53cq1NljZoD0Z1qWOjXiBK0mw4XQtsfVDen">
+</div>
+<!-- Specs row -->
+<div class="flex items-center gap-1 my-1.5">
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">256GB</span>
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">A18 Pro</span>
+<div class="flex items-center gap-1 ml-auto">
+<span class="w-2.5 h-2.5 rounded-full bg-[#BBA58F]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#2E3132]"></span>
+</div>
+</div>
+<!-- Title -->
+<h2 class="font-title-product text-[14px] leading-tight text-text-main line-clamp-2 h-9 mb-1">
+          iPhone 16 Pro Max 256GB Titan Sa Mạc VNA
+        </h2>
+<!-- Pricing Stack -->
+<div class="mt-auto">
+<div class="flex items-baseline gap-1.5 flex-wrap">
+<span class="font-price-card text-[16px] text-primary-container">33.490.000₫</span>
+</div>
+<span class="font-price-strikethrough text-[11px] text-secondary line-through">37.990.000₫</span>
+<!-- Gift snippet -->
+<div class="my-1.5 flex items-center gap-1 text-[11px] text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">redeem</span>
+<span class="truncate font-medium">Thu cũ trợ giá 3 triệu</span>
+</div>
+<!-- Rating & Action -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-0.5 text-secondary">
+<span class="material-symbols-outlined text-[13px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-badge text-[11px] font-bold text-text-main">4.9</span>
+<span class="text-[10px] text-secondary">(512)</span>
+</div>
+<button class="bg-primary-container text-on-primary px-3 py-1.5 rounded-lg font-label-button text-[12px] font-bold active:bg-primary-hover shadow-sm transition-colors">
+              Mua ngay
+            </button>
+</div>
+</div>
+</article>
+<!-- Card 2: Samsung Galaxy S25 Ultra -->
+<article class="bg-surface-pure rounded-xl p-2.5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<!-- Badges -->
+<div class="flex items-center justify-between w-full mb-1">
+<span class="bg-primary-container text-on-primary font-label-badge text-[10px] px-1.5 py-0.5 rounded font-bold">-10%</span>
+<button aria-label="Yêu thích Samsung S25 Ultra" class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary active:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<!-- Phone Image Arena -->
+<div class="w-full h-36 flex items-center justify-center py-1">
+<img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" data-alt="Samsung Galaxy S25 Ultra flagship smartphone with S Pen in Titanium Silver finish centered studio shot on pristine studio white background, realistic tech retail catalog view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmSs_kHaKK3Ue6MwtffYf_LlPz44noVi23PFt_iwiP5wqZS72Pc7CUtNxKdlbJ6Ln0490H28QP091htl4Dtrj8YcMKIbpSxwTbCn8EatB2nQ-NNxu_Agxa3ffiz35aLgXlZ7NKttXYVlDc8upO1PKIqVLlCBfdH-EKUUNjakIOkwzI2L-RAg6vBBZMc3C7b80AClaTB7mzGQ6yb8SgrW9W85qVTexwsKUWNaWVs0GkGjaEsybzhpV6">
+</div>
+<!-- Specs row -->
+<div class="flex items-center gap-1 my-1.5">
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">512GB</span>
+<span class="text-[10px] font-semibold bg-error-container text-on-error-container px-1 py-0.5 rounded">Galaxy AI</span>
+<div class="flex items-center gap-1 ml-auto">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1A334E]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#E5E5E5]"></span>
+</div>
+</div>
+<!-- Title -->
+<h2 class="font-title-product text-[14px] leading-tight text-text-main line-clamp-2 h-9 mb-1">
+          Samsung Galaxy S25 Ultra 512GB AI Phone
+        </h2>
+<!-- Pricing Stack -->
+<div class="mt-auto">
+<div class="flex items-baseline gap-1.5 flex-wrap">
+<span class="font-price-card text-[16px] text-primary-container">34.990.000₫</span>
+</div>
+<span class="font-price-strikethrough text-[11px] text-secondary line-through">38.990.000₫</span>
+<!-- Gift snippet -->
+<div class="my-1.5 flex items-center gap-1 text-[11px] text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">redeem</span>
+<span class="truncate font-medium">Tặng ốp lưng + Củ sạc 45W</span>
+</div>
+<!-- Rating & Action -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-0.5 text-secondary">
+<span class="material-symbols-outlined text-[13px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-badge text-[11px] font-bold text-text-main">5.0</span>
+<span class="text-[10px] text-secondary">(184)</span>
+</div>
+<button class="bg-primary-container text-on-primary px-3 py-1.5 rounded-lg font-label-button text-[12px] font-bold active:bg-primary-hover shadow-sm transition-colors">
+              Mua ngay
+            </button>
+</div>
+</div>
+</article>
+<!-- Card 3: Xiaomi 14T Pro -->
+<article class="bg-surface-pure rounded-xl p-2.5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<!-- Badges -->
+<div class="flex items-center justify-between w-full mb-1">
+<span class="bg-primary-container text-on-primary font-label-badge text-[10px] px-1.5 py-0.5 rounded font-bold">-14%</span>
+<button aria-label="Yêu thích Xiaomi 14T Pro" class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary active:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<!-- Phone Image Arena -->
+<div class="w-full h-36 flex items-center justify-center py-1">
+<img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" data-alt="Xiaomi 14T Pro smartphone with Leica professional camera lens array back angle shot, elegant titan grey finish on clean neutral white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiXSaLuHF_1i0unCY3Duspu01WotAr8Z1HorUfCOiP4CAP5fWlcp_VZqappbX5evgtNkczPDv5S4FWxy9u3wd5SE-6EMY3iKorLbagDgSh8XLJMcjoNXZ1YBemR-RC8mPAo-iD3Gmt5Ait6nbkVEzAyHZLdt8a_Bc6SfZ47YFQuQ3bTJ4M8tJszFqB5IDNbBHWlvb_kFPlHN9u84QcGFwyM36CS3Yp4EIALjIdfqAUH40DD5skGwPa">
+</div>
+<!-- Specs row -->
+<div class="flex items-center gap-1 my-1.5">
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">512GB</span>
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">Leica Lens</span>
+<div class="flex items-center gap-1 ml-auto">
+<span class="w-2.5 h-2.5 rounded-full bg-[#3B4148]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#1877F2]"></span>
+</div>
+</div>
+<!-- Title -->
+<h2 class="font-title-product text-[14px] leading-tight text-text-main line-clamp-2 h-9 mb-1">
+          Xiaomi 14T Pro 5G 512GB Ống Kính Leica
+        </h2>
+<!-- Pricing Stack -->
+<div class="mt-auto">
+<div class="flex items-baseline gap-1.5 flex-wrap">
+<span class="font-price-card text-[16px] text-primary-container">15.490.000₫</span>
+</div>
+<span class="font-price-strikethrough text-[11px] text-secondary line-through">17.990.000₫</span>
+<!-- Gift snippet -->
+<div class="my-1.5 flex items-center gap-1 text-[11px] text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="truncate font-medium">Sạc siêu tốc 120W kèm máy</span>
+</div>
+<!-- Rating & Action -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-0.5 text-secondary">
+<span class="material-symbols-outlined text-[13px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-badge text-[11px] font-bold text-text-main">4.8</span>
+<span class="text-[10px] text-secondary">(295)</span>
+</div>
+<button class="bg-primary-container text-on-primary px-3 py-1.5 rounded-lg font-label-button text-[12px] font-bold active:bg-primary-hover shadow-sm transition-colors">
+              Mua ngay
+            </button>
+</div>
+</div>
+</article>
+<!-- Card 4: Google Pixel 9 Pro XL -->
+<article class="bg-surface-pure rounded-xl p-2.5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<!-- Badges -->
+<div class="flex items-center justify-between w-full mb-1">
+<span class="bg-primary-container text-on-primary font-label-badge text-[10px] px-1.5 py-0.5 rounded font-bold">-7%</span>
+<button aria-label="Yêu thích Google Pixel 9 Pro XL" class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary active:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<!-- Phone Image Arena -->
+<div class="w-full h-36 flex items-center justify-center py-1">
+<img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" data-alt="Google Pixel 9 Pro XL in Porcelain white porcelain with iconic camera bar, crisp studio product showcase, minimalist luxury tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMcPNcvVcD8jwclROKjA-4gYiM6u4FfYwp7UL_IpOeoUadM_jwz3SnhuvXjaLZv5_P3Id8f27TzGHdDrI4EgfXAor77KgD6RMSkNuT5w22_NWTzaeR9RLI3kL6afAnTbd0jIoYH79l0-PqnzpCuVUbevdXZTBqaiLS_S4WuObCM6CPoRyIySEDC9QYqoB98RCS0g5UanhTmSpIic90zsypwRv04NJ1iGbmMdHZLNoj_hKQNy8IZOE-">
+</div>
+<!-- Specs row -->
+<div class="flex items-center gap-1 my-1.5">
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">128GB</span>
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">Gemini AI</span>
+<div class="flex items-center gap-1 ml-auto">
+<span class="w-2.5 h-2.5 rounded-full bg-[#EAE6DF]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#36383B]"></span>
+</div>
+</div>
+<!-- Title -->
+<h2 class="font-title-product text-[14px] leading-tight text-text-main line-clamp-2 h-9 mb-1">
+          Google Pixel 9 Pro XL 128GB Quốc Tế
+        </h2>
+<!-- Pricing Stack -->
+<div class="mt-auto">
+<div class="flex items-baseline gap-1.5 flex-wrap">
+<span class="font-price-card text-[16px] text-primary-container">26.990.000₫</span>
+</div>
+<span class="font-price-strikethrough text-[11px] text-secondary line-through">29.000.000₫</span>
+<!-- Gift snippet -->
+<div class="my-1.5 flex items-center gap-1 text-[11px] text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="truncate font-medium">1 năm Google AI Pro</span>
+</div>
+<!-- Rating & Action -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-0.5 text-secondary">
+<span class="material-symbols-outlined text-[13px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-badge text-[11px] font-bold text-text-main">4.9</span>
+<span class="text-[10px] text-secondary">(120)</span>
+</div>
+<button class="bg-primary-container text-on-primary px-3 py-1.5 rounded-lg font-label-button text-[12px] font-bold active:bg-primary-hover shadow-sm transition-colors">
+              Mua ngay
+            </button>
+</div>
+</div>
+</article>
+<!-- Card 5: vivo X200 Pro 5G -->
+<article class="bg-surface-pure rounded-xl p-2.5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<!-- Badges -->
+<div class="flex items-center justify-between w-full mb-1">
+<span class="bg-primary-container text-on-primary font-label-badge text-[10px] px-1.5 py-0.5 rounded font-bold">-8%</span>
+<button aria-label="Yêu thích vivo X200 Pro" class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary active:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="w-full h-36 flex items-center justify-center py-1">
+<img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" data-alt="vivo X200 Pro 5G smartphone camera phone with giant circular ZEISS camera module on clean studio light backdrop, modern tech aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3oB-B-v7INmhVOSFmnml8dTSawe1YHaKuokmutyBNpU197lxb2VRF-0viygF7DNurVjEDcsaY6R8kJUgI4XFG6887Gq9u-TCHmY0MGOldM0_4_kZMieqE3QLq354IPihWwkOGUe-EOXWUGSBgXZV4PAq35fCcI6zrQo4avSth3WUOu4m0OlvPXmO7XwcSYH0TEJi3wJyD-nfWWSicMjxiTZJo1bfwL0bKClO96li4Q6_RlRWdiqLS">
+</div>
+<div class="flex items-center gap-1 my-1.5">
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">256GB</span>
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">ZEISS 200MP</span>
+<div class="flex items-center gap-1 ml-auto">
+<span class="w-2.5 h-2.5 rounded-full bg-[#355C7D]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#1C1C1E]"></span>
+</div>
+</div>
+<h2 class="font-title-product text-[14px] leading-tight text-text-main line-clamp-2 h-9 mb-1">
+          vivo X200 Pro 5G ZEISS Camera Phone
+        </h2>
+<div class="mt-auto">
+<div class="flex items-baseline gap-1.5 flex-wrap">
+<span class="font-price-card text-[16px] text-primary-container">22.890.000₫</span>
+</div>
+<span class="font-price-strikethrough text-[11px] text-secondary line-through">24.500.000₫</span>
+<div class="my-1.5 flex items-center gap-1 text-[11px] text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="truncate font-medium">Bảo hành VIP 2 năm 1 đổi 1</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-0.5 text-secondary">
+<span class="material-symbols-outlined text-[13px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-badge text-[11px] font-bold text-text-main">4.9</span>
+<span class="text-[10px] text-secondary">(98)</span>
+</div>
+<button class="bg-primary-container text-on-primary px-3 py-1.5 rounded-lg font-label-button text-[12px] font-bold active:bg-primary-hover shadow-sm transition-colors">
+              Mua ngay
+            </button>
+</div>
+</div>
+</article>
+<!-- Card 6: Samsung Galaxy Z Fold6 -->
+<article class="bg-surface-pure rounded-xl p-2.5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<!-- Badges -->
+<div class="flex items-center justify-between w-full mb-1">
+<span class="bg-primary-container text-on-primary font-label-badge text-[10px] px-1.5 py-0.5 rounded font-bold">-16%</span>
+<button aria-label="Yêu thích Samsung Z Fold6" class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-secondary active:text-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+</div>
+<div class="w-full h-36 flex items-center justify-center py-1">
+<img class="h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105" data-alt="Samsung Galaxy Z Fold6 folding smartphone half open showing vibrant internal dual screen, crisp white background commercial studio view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXdHMANCL_izPKiY8hYVf3PoTkvRS6CCxTXmBfWjwvG4w5GvxMw7EivISUcyuphX_29L1bRc1G4fK6x3XQNckNuK-ptQLUzKPYcqCeodg1WK6dCyN64J1AoqRocBsXlzRSZsh_gVOOniTw53eG6OXugwzPOEEGInVMGRNuS-GBp2R9VIBVU8O_J2gaocuowQyy4fujH2tF2ay2C4BXCxZk6CbdVWEUKoxM3ufu8Y1Tgg-MEUlaFFcW">
+</div>
+<div class="flex items-center gap-1 my-1.5">
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">256GB</span>
+<span class="text-[10px] font-semibold bg-surface-container text-secondary px-1.5 py-0.5 rounded">Màn gập 7.6"</span>
+<div class="flex items-center gap-1 ml-auto">
+<span class="w-2.5 h-2.5 rounded-full bg-[#B0C4DE]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#202020]"></span>
+</div>
+</div>
+<h2 class="font-title-product text-[14px] leading-tight text-text-main line-clamp-2 h-9 mb-1">
+          Samsung Galaxy Z Fold6 5G Đa Nhiệm AI
+        </h2>
+<div class="mt-auto">
+<div class="flex items-baseline gap-1.5 flex-wrap">
+<span class="font-price-card text-[16px] text-primary-container">41.990.000₫</span>
+</div>
+<span class="font-price-strikethrough text-[11px] text-secondary line-through">49.990.000₫</span>
+<div class="my-1.5 flex items-center gap-1 text-[11px] text-primary bg-primary-fixed/40 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="truncate font-medium">Tặng Samsung Care+ 1 năm</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-0.5 text-secondary">
+<span class="material-symbols-outlined text-[13px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-badge text-[11px] font-bold text-text-main">4.8</span>
+<span class="text-[10px] text-secondary">(156)</span>
+</div>
+<button class="bg-primary-container text-on-primary px-3 py-1.5 rounded-lg font-label-button text-[12px] font-bold active:bg-primary-hover shadow-sm transition-colors">
+              Mua ngay
+            </button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Load More Large Touch Target CTA -->
+<div class="px-4 py-6 flex flex-col items-center gap-2">
+<button class="w-full py-3.5 px-4 bg-surface-pure hover:bg-surface-container text-text-main font-label-button text-[14px] font-bold rounded-xl shadow-sm active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">expand_circle_down</span>
+<span>Xem thêm 42 điện thoại khác</span>
+</button>
+<p class="font-body-sm text-[12px] text-secondary">
+      Hiển thị 6 trong tổng số 48 smartphone chính hãng
+    </p>
+</div>
+<!-- Quick Trend Chips for In-Catalog Discovery -->
+<section class="mx-4 mb-4 p-4 rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-1.5 mb-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary">trending_up</span>
+<h3 class="font-title-product text-[14px] text-text-main font-bold">Xu hướng tìm kiếm hôm nay</h3>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<a class="px-2.5 py-1 rounded-full bg-surface-pure text-[12px] font-body-sm text-text-main hover:text-primary transition-colors shadow-sm" href="#">
+        iPhone Titan Sa Mạc
+      </a>
+<a class="px-2.5 py-1 rounded-full bg-surface-pure text-[12px] font-body-sm text-text-main hover:text-primary transition-colors shadow-sm" href="#">
+        Pin trâu 6000mAh
+      </a>
+<a class="px-2.5 py-1 rounded-full bg-surface-pure text-[12px] font-body-sm text-text-main hover:text-primary transition-colors shadow-sm" href="#">
+        Camera Zoom 100x
+      </a>
+<a class="px-2.5 py-1 rounded-full bg-surface-pure text-[12px] font-body-sm text-text-main hover:text-primary transition-colors shadow-sm" href="#">
+        Snapdragon 8 Elite
+      </a>
+</div>
+</section>
+<!-- Full Depth Filter Bottom Sheet Modal (Interactive Micro-Experience) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex-col justify-end transition-opacity duration-200" id="filter-sheet">
+<div class="w-full bg-surface-pure rounded-t-2xl max-h-[751px] flex flex-col shadow-2xl overflow-hidden animate-in slide-in-from-bottom duration-300">
+<!-- Sheet Header -->
+<div class="px-4 py-3.5 bg-surface-pure flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">tune</span>
+<span class="font-headline-sm text-headline-sm text-text-main">Bộ lọc chuyên sâu</span>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-text-main" id="close-filter-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Sheet Scrollable Content -->
+<div class="p-4 overflow-y-auto space-y-5 flex-1">
+<!-- Filter Block: Mức giá -->
+<div>
+<h4 class="font-title-product text-[14px] text-text-main font-bold mb-2.5">Khoảng giá (VNĐ)</h4>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container text-left text-[13px] font-medium text-text-main">Dưới 5 triệu</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container text-left text-[13px] font-medium text-text-main">5 - 10 triệu</button>
+<button class="py-2 px-3 rounded-lg bg-primary text-on-primary text-left text-[13px] font-bold shadow-sm">10 - 20 triệu ✓</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container text-left text-[13px] font-medium text-text-main">Trên 20 triệu</button>
+</div>
+</div>
+<!-- Filter Block: Dung lượng RAM -->
+<div>
+<h4 class="font-title-product text-[14px] text-text-main font-bold mb-2.5">Dung lượng RAM</h4>
+<div class="flex flex-wrap gap-2">
+<button class="py-1.5 px-3.5 rounded-lg bg-surface-container text-[13px] font-medium text-text-main">8GB</button>
+<button class="py-1.5 px-3.5 rounded-lg bg-primary text-on-primary text-[13px] font-bold shadow-sm">12GB ✓</button>
+<button class="py-1.5 px-3.5 rounded-lg bg-surface-container text-[13px] font-medium text-text-main">16GB</button>
+<button class="py-1.5 px-3.5 rounded-lg bg-surface-container text-[13px] font-medium text-text-main">24GB</button>
+</div>
+</div>
+<!-- Filter Block: Nhu cầu sử dụng -->
+<div>
+<h4 class="font-title-product text-[14px] text-text-main font-bold mb-2.5">Tính năng &amp; Nhu cầu</h4>
+<div class="space-y-2 text-[14px]">
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-low">
+<input checked="" class="w-4 h-4 accent-primary rounded" type="checkbox">
+<span class="text-text-main font-medium">Trả góp 0% lãi suất</span>
+</label>
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-low">
+<input class="w-4 h-4 accent-primary rounded" type="checkbox">
+<span class="text-text-main">Chụp ảnh đẹp &amp; Ống kính chuyên sâu</span>
+</label>
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-low">
+<input class="w-4 h-4 accent-primary rounded" type="checkbox">
+<span class="text-text-main">Chiến game cấu hình nặng</span>
+</label>
+<label class="flex items-center gap-2.5 p-2 rounded-lg bg-surface-container-low">
+<input class="w-4 h-4 accent-primary rounded" type="checkbox">
+<span class="text-text-main">Màn hình gập thế hệ mới</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Sheet Footer Actions -->
+<div class="p-4 bg-surface-pure shadow-[0_-4px_16px_rgba(0,0,0,0.06)] flex items-center gap-3">
+<button class="w-1/3 py-3 rounded-lg bg-surface-container text-text-main font-label-button text-[14px] font-bold active:scale-95 transition-all" id="reset-filter-btn">
+          Thiết lập lại
+        </button>
+<button class="w-2/3 py-3 rounded-lg bg-primary-container text-on-primary font-label-button text-[14px] font-bold shadow-md active:bg-primary-hover active:scale-95 transition-all" id="apply-filter-btn">
+          Xem 48 sản phẩm
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript for Filter Modal toggling -->
+<script>
+    (function() {
+      const openBtn = document.getElementById('open-filter-btn');
+      const closeBtn = document.getElementById('close-filter-btn');
+      const applyBtn = document.getElementById('apply-filter-btn');
+      const resetBtn = document.getElementById('reset-filter-btn');
+      const filterSheet = document.getElementById('filter-sheet');
+
+      function openModal() {
+        if (!filterSheet) return;
+        filterSheet.classList.remove('hidden');
+        filterSheet.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        if (!filterSheet) return;
+        filterSheet.classList.add('hidden');
+        filterSheet.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+
+      if (openBtn) openBtn.addEventListener('click', openModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (applyBtn) applyBtn.addEventListener('click', closeModal);
+      if (resetBtn) resetBtn.addEventListener('click', closeModal);
+
+      if (filterSheet) {
+        filterSheet.addEventListener('click', (e) => {
+          if (e.target === filterSheet) {
+            closeModal();
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-pure/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="h-16 px-2 grid grid-cols-5 items-center"><a class="flex flex-col items-center justify-center h-full gap-0.5 text-secondary transition-colors" data-path="trang-chu" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-badge text-[11px] leading-tight">Trang chủ</span></a><a class="flex flex-col items-center justify-center h-full gap-0.5 text-secondary transition-colors" data-path="danh-muc" href="#"><span class="material-symbols-outlined text-[22px]">category</span><span class="font-label-badge text-[11px] leading-tight">Danh mục</span></a><a class="flex flex-col items-center justify-center h-full gap-0.5 text-secondary transition-colors" data-path="thu-cu-doi-moi" href="#"><span class="material-symbols-outlined text-[22px]">sync_alt</span><span class="font-label-badge text-[11px] leading-tight">Thu cũ</span></a><a class="flex flex-col items-center justify-center h-full gap-0.5 text-secondary transition-colors" data-path="khuyen-mai" href="#"><span class="material-symbols-outlined text-[22px]">local_offer</span><span class="font-label-badge text-[11px] leading-tight">Khuyến mãi</span></a><a class="flex flex-col items-center justify-center h-full gap-0.5 text-secondary transition-colors" data-path="tai-khoan" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="font-label-badge text-[11px] leading-tight">Tài khoản</span></a></div></nav></body></html>

@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<main class="w-full pt-6 md:pt-8 bg-surface"><div class="flex flex-col w-full">
 <!-- Top Ambient Glow -->
 <div class="relative w-full overflow-hidden">
 <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[980px] h-[360px] bg-gradient-to-b from-primary/10 via-primary/5 to-transparent blur-3xl pointer-events-none"></div>

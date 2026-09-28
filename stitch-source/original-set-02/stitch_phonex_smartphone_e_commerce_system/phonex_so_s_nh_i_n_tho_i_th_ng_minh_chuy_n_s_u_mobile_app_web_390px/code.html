@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;font-family:'Plus Jakarta Sans',sans-serif;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#595a5a", "surface-pure": "#FFFFFF", "primary": "#b7000c", "inverse-on-surface": "#f0f1f3", "error-container": "#ffdad6", "secondary": "#5f5e5e", "surface-container": "#edeef0", "tertiary-fixed-dim": "#c7c6c6", "primary-container": "#e60012", "on-secondary-fixed-variant": "#474646", "on-secondary-container": "#656464", "surface-variant": "#e1e2e4", "on-surface-variant": "#5f3f3b", "error": "#ba1a1a", "surface-bright": "#f8f9fb", "primary-fixed-dim": "#ffb4aa", "on-secondary": "#ffffff", "on-error": "#ffffff", "secondary-fixed": "#e5e2e1", "on-tertiary": "#ffffff", "inverse-surface": "#2e3132", "on-tertiary-fixed": "#1b1c1c", "on-primary": "#ffffff", "tertiary-container": "#727272", "surface-container-highest": "#e1e2e4", "secondary-container": "#e5e2e1", "on-surface": "#191c1e", "primary-fixed": "#ffdad5", "tertiary-fixed": "#e4e2e2", "surface-tint": "#c0000d", "inverse-primary": "#ffb4aa", "surface": "#f8f9fb", "outline-variant": "#e9bcb6", "text-main": "#222222", "border-subtle": "#E5E7EB", "on-primary-fixed": "#410001", "on-tertiary-fixed-variant": "#464747", "surface-container-lowest": "#ffffff", "surface-container-high": "#e7e8ea", "background": "#f8f9fb", "outline": "#946e69", "on-primary-fixed-variant": "#930007", "secondary-fixed-dim": "#c8c6c5", "on-secondary-fixed": "#1c1b1b", "surface-container-low": "#f2f4f6", "on-tertiary-container": "#faf8f8", "on-error-container": "#93000a", "primary-hover": "#C90010", "on-background": "#191c1e", "on-primary-container": "#fff7f6", "surface-dim": "#d9dadc" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "space-2xl": "4rem", "gutter-mobile": "0.75rem", "margin-desktop": "3.5rem", "gutter": "1.25rem", "space-lg": "1.5rem", "margin": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "space-xs": "0.25rem" }, fontFamily: { "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "price-card": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-regular": ["Plus Jakarta Sans"], "label-badge": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "price-lg": ["Plus Jakarta Sans"], "price-strikethrough": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "title-product": ["Plus Jakarta Sans"], "label-button": ["Plus Jakarta Sans"] }, fontSize: { "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "price-card": ["18px", { "lineHeight": "24px", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "fontWeight": "700" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-regular": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "price-lg": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "price-strikethrough": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "title-product": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-button": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-pure/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><button aria-label="Quay lại" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary rounded-full transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span></button><img alt="Brand logo. - Primary color: #e60012 - Font: plusJakartaSans - Mode: light - Roundness: rounded-md" class="h-7 w-auto object-contain hidden xs:block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB_rts3VqrPThhQOAnwfIP_4bo7lA9sMtiRp-beTX8zJVlL_-BvcNeEDBLvdh83EdRHpo9jHO-74GnXXLgV0Dvghe6s4Yxo2KXqsaDT2zDMmOc_4pkeIRkltp3efznFDiHI5QEtvT6MM4Duxc8gyXb-TwOrqS9OeC0vRIPLa8yVffQhuJdh6YHHKETfnPoHiRBUtor9_euPezmyCwCx4MYwK8Pr1UHmh-0Zov58vrlfqCrs7Q0_2VK"/><h1 class="font-title-product text-title-product text-on-surface font-semibold truncate max-w-[180px]">So Sánh</h1></div><div class="flex items-center gap-1"><a aria-label="So sánh" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary rounded-full transition-colors" data-path="so-sanh" href="#"><span class="material-symbols-outlined text-2xl">compare_arrows</span></a><div class="w-11 h-11 flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB93C1G8uGbD-kv-wnQQicDkrmxXeDcUsxhqNlrYtzkhxmTKjRIEpjaM7WZioVR6RLoVOHfehDXQst8-ARlr4nv5nOm8Xf3iPFWQR5d-J2bmV3dhqIStJutb1SMnqjtmFCrHV0V2Kg8gsOibgke2EIRUr7MjMosTggMo_sqbQK2D7gxKuomFtbS43hvD87bLJeSFGr5WRqbTgJBuV6I0_ZgwwopmOdFavzbwZjQkCW6fb3c6ry5EuwR"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface pb-safe"><div class="flex flex-col w-full pb-32">
+<!-- Top Device Selector & VS Stage -->
+<section class="w-full px-gutter-mobile pt-space-xs pb-space-sm">
+<div class="bg-surface-pure rounded-xl p-space-sm shadow-sm relative overflow-hidden">
+<!-- Ambient Backdrops -->
+<div class="absolute -top-12 -left-12 w-36 h-36 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -bottom-12 -right-12 w-36 h-36 bg-primary-container/5 rounded-full blur-2xl pointer-events-none"></div>
+<!-- Quick Swap Carousel Pills -->
+<div class="flex items-center justify-between gap-space-xs mb-space-sm overflow-x-auto pb-1">
+<span class="font-label-badge text-label-badge text-tertiary uppercase tracking-wider whitespace-nowrap">Đang đấu đầu:</span>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="bg-primary/10 text-primary px-2.5 py-1 rounded-full font-label-badge text-label-badge flex items-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[13px]">swap_horiz</span>
+<span>Đổi máy khác</span>
+</button>
+<div class="bg-surface-container text-on-surface-variant px-2.5 py-1 rounded-full font-label-badge text-label-badge flex items-center gap-1 opacity-90">
+<span>Dự bị: Xiaomi 14T Pro</span>
+</div>
+</div>
+</div>
+<!-- Duel Comparison Grid -->
+<div class="grid grid-cols-2 gap-space-xs relative items-stretch">
+<!-- Floating VS Badge Center -->
+<div class="absolute left-1/2 top-16 -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm shadow-md ring-4 ring-surface-pure">
+<span class="italic font-black text-xs tracking-tighter">VS</span>
+</div>
+<span class="mt-1 bg-surface-container-high text-on-surface text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase tracking-widest shadow-xs">Trực diện</span>
+</div>
+<!-- Device A: iPhone 18 Pro Max -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col justify-between relative group">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="bg-primary-container text-on-primary font-label-badge text-label-badge px-1.5 py-0.5 rounded">-12%</span>
+<span class="bg-surface-pure text-on-surface font-label-badge text-label-badge px-1.5 py-0.5 rounded shadow-xs">0% Lãi</span>
+</div>
+<div class="w-full aspect-[4/5] max-h-36 flex items-center justify-center my-1 overflow-hidden">
+<img class="h-full object-contain drop-shadow-md" data-alt="Front and back studio photograph of premium titanium smartphone iPhone 18 Pro Max in Natural Titanium finish with edge to edge OLED screen and triple camera system on white background high detail professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0EdP2xLRbmmnjSfEGAzkE5N-PXTJTGjTM5Yg8WC9n9TLOIGDQacVnMvRdxn6OVCZ_ugi5ifGeZK-Cw14t96PpTdD1LSimgPwpyCvi12eY1aim-o6NofI9bcrpUWaiRsZN857NtTM4jpb8pom12eHmzkXBli0A8ZOnrloz2OrMr9rkaEjZ4OLHnCeCQ772iXhZ2J7HD1Wnytc4OsXHG0ct_OIoLYvLMZuttEoudTvkpNhSCMfHtn2R"/>
+</div>
+<div class="flex flex-col text-left">
+<h3 class="font-title-product text-[14px] leading-snug text-text-main line-clamp-2 min-h-[38px]">iPhone 18 Pro Max 256GB</h3>
+<div class="mt-1">
+<span class="font-price-card text-[15px] leading-tight text-primary font-bold">33.490.000₫</span>
+<div class="flex items-center gap-1">
+<span class="font-price-strikethrough text-[11px] text-tertiary line-through">37.990.000₫</span>
+</div>
+</div>
+<div class="mt-2 pt-1.5 border-t border-dashed border-border-subtle flex items-center gap-1 text-[11px] text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[13px] text-primary">videocam</span>
+<span class="truncate">Video 8K &amp; Giữ giá</span>
+</div>
+</div>
+</div>
+<!-- Device B: Galaxy S25 Ultra -->
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col justify-between relative group">
+<div class="flex items-center justify-between w-full mb-1">
+<span class="bg-primary-container text-on-primary font-label-badge text-label-badge px-1.5 py-0.5 rounded">-10%</span>
+<span class="bg-surface-pure text-on-surface font-label-badge text-label-badge px-1.5 py-0.5 rounded shadow-xs">Quà 2.5Tr</span>
+</div>
+<div class="w-full aspect-[4/5] max-h-36 flex items-center justify-center my-1 overflow-hidden">
+<img class="h-full object-contain drop-shadow-md" data-alt="Front and back studio shot of Samsung Galaxy S25 Ultra smartphone in Titanium Gray with integrated S-Pen stylus, quad camera matrix, high dynamic range reflections on pure minimal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbRfweU6hDPzTJW7ROjSASnRk-lq7eFmXM4QAtCRa5zz5TkNWj2THgiXQCmAXL_NQjHjujdoQrSFrd5QxJEca7xMCQGmMD0c-Robu6R6HzmrlolyuTcn0HD6gnnYRmVmieh08-h9FG8x16A0WIYcVIDSpYbQ7NjGSKYdAMiR7gjkfwjitKnfbTnZ6fY6JQ2wkHO0SYXQaZoakR_5Xay8Y-cHsuIvUYOiomXnyMriQ8f9aL_C1rnGGf"/>
+</div>
+<div class="flex flex-col text-left">
+<h3 class="font-title-product text-[14px] leading-snug text-text-main line-clamp-2 min-h-[38px]">Galaxy S25 Ultra 512GB</h3>
+<div class="mt-1">
+<span class="font-price-card text-[15px] leading-tight text-primary font-bold">34.990.000₫</span>
+<div class="flex items-center gap-1">
+<span class="font-price-strikethrough text-[11px] text-tertiary line-through">38.990.000₫</span>
+</div>
+</div>
+<div class="mt-2 pt-1.5 border-t border-border-subtle flex items-center gap-1 text-[11px] text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[13px] text-primary">edit</span>
+<span class="truncate">S-Pen &amp; Galaxy AI</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Controls & Quick Highlights -->
+<section class="w-full px-gutter-mobile pb-space-sm">
+<div class="bg-surface-pure rounded-xl p-space-sm shadow-sm flex flex-col gap-space-sm">
+<!-- Toggle Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">tune</span>
+<label class="font-title-product text-body-regular font-semibold text-on-surface cursor-pointer select-none" for="diff-toggle">Chỉ xem điểm khác biệt</label>
+</div>
+<button class="w-12 h-6 bg-surface-variant rounded-full p-0.5 flex items-center transition-colors duration-200 ease-in-out cursor-pointer" id="diff-toggle-btn" onclick="toggleDifferences()">
+<div class="w-5 h-5 bg-surface-pure rounded-full shadow-md transform transition-transform duration-200" id="diff-knob"></div>
+</button>
+</div>
+<!-- Strengths Badges Grid -->
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container p-2.5 rounded-lg">
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-sm font-bold">award_star</span>
+<span class="font-label-badge text-label-badge uppercase">Ưu thế Apple</span>
+</div>
+<p class="font-body-sm text-[12px] leading-tight text-on-surface font-medium">Video ProRes sắc nét, hiệu năng GPU đỉnh, tỷ lệ giữ giá cao nhất thị trường.</p>
+</div>
+<div class="bg-surface-container p-2.5 rounded-lg">
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-sm font-bold">award_star</span>
+<span class="font-label-badge text-label-badge uppercase">Ưu thế Samsung</span>
+</div>
+<p class="font-body-sm text-[12px] leading-tight text-on-surface font-medium">Bút S-Pen quyền năng, RAM 16GB đa nhiệm, Camera 200MP siêu chi tiết.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- In-depth Spec By Spec Matrix -->
+<section class="w-full px-gutter-mobile space-y-2">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-title-product text-title-product text-on-surface font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-lg">view_stream</span>
+        Bảng đối chiếu kỹ thuật
+      </h2>
+<span class="font-body-sm text-[12px] text-tertiary">Chấm xanh: Thông số vượt trội</span>
+</div>
+<!-- Specs Container -->
+<div class="bg-surface-pure rounded-xl overflow-hidden shadow-sm">
+<!-- Row 1: Màn hình (Diff) -->
+<div class="spec-row p-3 bg-surface-pure" data-diff="true">
+<div class="text-center font-label-badge text-[11px] text-tertiary uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">smartphone</span>
+          Màn hình &amp; Độ sáng
+        </div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<div class="absolute top-2 right-2 flex items-center justify-center w-4 h-4 rounded-full bg-emerald-600 text-surface-pure" title="Vượt trội">
+<span class="material-symbols-outlined text-[11px] font-bold">check</span>
+</div>
+<span class="font-title-product text-body-regular font-bold text-on-surface block pr-4">6.9" OLED Super Retina</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">3.000 nits đỉnh cao</span>
+<span class="font-body-sm text-[11px] text-tertiary block mt-0.5">ProMotion 120Hz mượt mà</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">6.8" AMOLED 2X</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">2.600 nits chống loá</span>
+<span class="font-body-sm text-[11px] text-tertiary block mt-0.5">Viền kính Gorilla Armor 2</span>
+</div>
+</div>
+</div>
+<!-- Row 2: Chipset (Diff) -->
+<div class="spec-row p-3 bg-surface-container-lowest" data-diff="true">
+<div class="text-center font-label-badge text-[11px] text-tertiary uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">memory</span>
+          Bộ vi xử lý (CPU / GPU)
+        </div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<div class="absolute top-2 right-2 flex items-center justify-center w-4 h-4 rounded-full bg-emerald-600 text-surface-pure">
+<span class="material-symbols-outlined text-[11px] font-bold">check</span>
+</div>
+<span class="font-title-product text-body-regular font-bold text-on-surface block pr-4">Apple A19 Pro</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">Tiến trình 2nm siêu mạnh</span>
+<span class="font-body-sm text-[11px] text-tertiary block mt-0.5">Neural Engine 20 lõi AI</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">Snapdragon 8 Elite</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">Tiến trình 3nm tối ưu</span>
+<span class="font-body-sm text-[11px] text-tertiary block mt-0.5">GPU Adreno 830 đồ họa cao</span>
+</div>
+</div>
+</div>
+<!-- Row 3: RAM & Bộ nhớ (Diff) -->
+<div class="spec-row p-3 bg-surface-pure" data-diff="true">
+<div class="text-center font-label-badge text-[11px] text-tertiary uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">storage</span>
+          Bộ nhớ RAM &amp; Lưu trữ
+        </div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">12GB RAM LPDDR5X</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">256GB NVMe siêu tốc</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<div class="absolute top-2 right-2 flex items-center justify-center w-4 h-4 rounded-full bg-emerald-600 text-surface-pure">
+<span class="material-symbols-outlined text-[11px] font-bold">check</span>
+</div>
+<span class="font-title-product text-body-regular font-bold text-on-surface block pr-4">16GB RAM LPDDR5X</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">512GB UFS 4.1 dung lượng lớn</span>
+</div>
+</div>
+</div>
+<!-- Row 4: Camera chính (Diff) -->
+<div class="spec-row p-3 bg-surface-container-lowest" data-diff="true">
+<div class="text-center font-label-badge text-[11px] text-tertiary uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">photo_camera</span>
+          Camera chính cảm biến
+        </div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">48 MP Fusion</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">Khẩu độ f/1.6, Sensor-shift</span>
+<span class="font-body-sm text-[11px] text-tertiary block mt-0.5">Chống rung quang thế hệ 2</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<div class="absolute top-2 right-2 flex items-center justify-center w-4 h-4 rounded-full bg-emerald-600 text-surface-pure">
+<span class="material-symbols-outlined text-[11px] font-bold">check</span>
+</div>
+<span class="font-title-product text-body-regular font-bold text-on-surface block pr-4">200 MP Siêu Cảm Biến</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">Khẩu độ f/1.7, OIS Laser AF</span>
+<span class="font-body-sm text-[11px] text-tertiary block mt-0.5">Gộp 16 điểm ảnh cực nét</span>
+</div>
+</div>
+</div>
+<!-- Row 5: Camera Tele (Diff) -->
+<div class="spec-row p-3 bg-surface-pure" data-diff="true">
+<div class="text-center font-label-badge text-[11px] text-tertiary uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">zoom_in</span>
+          Ống kính Tele &amp; Thu phóng
+        </div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<div class="absolute top-2 right-2 flex items-center justify-center w-4 h-4 rounded-full bg-emerald-600 text-surface-pure">
+<span class="material-symbols-outlined text-[11px] font-bold">check</span>
+</div>
+<span class="font-title-product text-body-regular font-bold text-on-surface block pr-4">Zoom quang 10x</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">Ống kính tiềm vọng Tetraprism</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">Zoom kép 3x + 5x</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">Kép 50MP + 10MP hỗ trợ 100x Space Zoom</span>
+</div>
+</div>
+</div>
+<!-- Row 6: Pin & Thời lượng (Diff) -->
+<div class="spec-row p-3 bg-surface-container-lowest" data-diff="true">
+<div class="text-center font-label-badge text-[11px] text-tertiary uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">battery_charging_full</span>
+          Dung lượng Pin &amp; Thời lượng
+        </div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<div class="absolute top-2 right-2 flex items-center justify-center w-4 h-4 rounded-full bg-emerald-600 text-surface-pure">
+<span class="material-symbols-outlined text-[11px] font-bold">check</span>
+</div>
+<span class="font-title-product text-body-regular font-bold text-on-surface block pr-4">4.850 mAh</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">34h phát video liên tục</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">5.000 mAh</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">30h phát video liên tục</span>
+</div>
+</div>
+</div>
+<!-- Row 7: Công nghệ Sạc (Identical / Similar) -->
+<div class="spec-row p-3 bg-surface-pure" data-diff="false">
+<div class="text-center font-label-badge text-[11px] text-tertiary uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">bolt</span>
+          Công suất sạc nhanh
+        </div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">Sạc nhanh 45W</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">MagSafe &amp; Qi2 không dây</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">Sạc nhanh 45W</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">Fast Wireless 2.0</span>
+</div>
+</div>
+</div>
+<!-- Row 8: Trọng lượng & Khung Vỏ (Identical / Similar) -->
+<div class="spec-row p-3 bg-surface-container-lowest" data-diff="false">
+<div class="text-center font-label-badge text-[11px] text-tertiary uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">fitness_center</span>
+          Vật liệu &amp; Trọng lượng
+        </div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">Titanium Grade 5</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">221 gram | IP68 (6m)</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg relative">
+<div class="absolute top-2 right-2 flex items-center justify-center w-4 h-4 rounded-full bg-emerald-600 text-surface-pure">
+<span class="material-symbols-outlined text-[11px] font-bold">check</span>
+</div>
+<span class="font-title-product text-body-regular font-bold text-on-surface block pr-4">Titanium Grade 5</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">218 gram (nhẹ hơn) | IP68</span>
+</div>
+</div>
+</div>
+<!-- Row 9: Hệ điều hành & AI (Diff) -->
+<div class="spec-row p-3 bg-surface-pure" data-diff="true">
+<div class="text-center font-label-badge text-[11px] text-tertiary uppercase tracking-wider mb-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-xs">psychology</span>
+          Hệ điều hành &amp; Trí tuệ AI
+        </div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">iOS 19</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">Apple Intelligence mượt, riêng tư cao</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-title-product text-body-regular font-bold text-on-surface block">One UI 7 (Android 15)</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant block mt-0.5">Galaxy AI dịch trực tiếp, khoanh tròn tìm kiếm</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trade-in Program Banner -->
+<section class="w-full px-gutter-mobile pt-space-sm">
+<div class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-xl p-space-sm shadow-md flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-pure/20 backdrop-blur-md flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl text-on-primary">sync_alt</span>
+</div>
+<div>
+<span class="font-label-badge text-label-badge uppercase tracking-wider opacity-90 block">Đặc quyền PhoneX</span>
+<h4 class="font-headline-sm text-headline-sm font-bold leading-tight">Thu Cũ Đổi Mới</h4>
+<p class="font-body-sm text-[12px] text-on-primary/90 mt-0.5">Trợ giá lên đến <strong class="text-surface-pure font-bold">3.000.000₫</strong> khi lên đời cả 2 mẫu</p>
+</div>
+</div>
+<button class="bg-surface-pure text-primary font-label-button text-[12px] px-3 py-2 rounded-lg font-bold shadow-xs whitespace-nowrap active:scale-95 transition-transform">
+        Định giá
+      </button>
+</div>
+</section>
+<!-- Decision Advisor Card (Nên chọn máy nào?) -->
+<section class="w-full px-gutter-mobile pt-space-sm pb-space-xs">
+<div class="bg-surface-pure rounded-xl p-space-sm shadow-sm">
+<div class="flex items-center gap-2 mb-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">recommend</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Nên chọn máy nào cho bạn?</h3>
+</div>
+<div class="space-y-space-sm">
+<!-- Choose iPhone -->
+<div class="bg-surface-container-low rounded-lg p-space-sm text-left">
+<div class="flex items-center gap-1.5 font-title-product text-title-product font-bold text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+            Chọn iPhone 18 Pro Max nếu:
+          </div>
+<ul class="mt-2 space-y-1 text-on-surface-variant font-body-sm text-[13px]">
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary mt-0.5 shrink-0">arrow_right</span>
+<span>Bạn đã dùng hệ sinh thái Apple (MacBook, iPad, Apple Watch) cần đồng bộ liền mạch.</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary mt-0.5 shrink-0">arrow_right</span>
+<span>Bạn ưu tiên quay phim di động chuyên nghiệp, độ sáng ngoài trời kỷ lục và giá trị bán lại sau 2-3 năm.</span>
+</li>
+</ul>
+</div>
+<!-- Choose Samsung -->
+<div class="bg-surface-container-low rounded-lg p-space-sm text-left">
+<div class="flex items-center gap-1.5 font-title-product text-title-product font-bold text-on-surface">
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+            Chọn Galaxy S25 Ultra nếu:
+          </div>
+<ul class="mt-2 space-y-1 text-on-surface-variant font-body-sm text-[13px]">
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary mt-0.5 shrink-0">arrow_right</span>
+<span>Bạn cần bút S-Pen ghi chú tức thì, ký hợp đồng điện tử và làm việc đa cửa sổ.</span>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary mt-0.5 shrink-0">arrow_right</span>
+<span>Cần dung lượng lớn ngay từ đầu (512GB / 16GB RAM) với camera 200MP chụp đêm siêu sắc nét.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Bottom Commerce Action Bar (Fixed On Mobile) -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-pure/95 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.08)] pb-safe">
+<div class="max-w-[420px] mx-auto px-gutter-mobile py-2.5">
+<div class="grid grid-cols-2 gap-2">
+<!-- Buy iPhone Button -->
+<button class="bg-primary text-on-primary py-2 px-2.5 rounded-lg flex flex-col items-center justify-center hover:bg-primary-hover active:scale-[0.98] transition-all shadow-sm">
+<span class="font-label-button text-[12px] font-bold truncate max-w-full">Mua iPhone 18 Pro Max</span>
+<span class="font-price-card text-[13px] leading-tight opacity-95">33.490.000₫</span>
+</button>
+<!-- Buy Galaxy Button -->
+<button class="bg-text-main text-on-primary py-2 px-2.5 rounded-lg flex flex-col items-center justify-center active:scale-[0.98] transition-all shadow-sm">
+<span class="font-label-button text-[12px] font-bold truncate max-w-full">Mua Galaxy S25 Ultra</span>
+<span class="font-price-card text-[13px] leading-tight text-primary-fixed-dim">34.990.000₫</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let showOnlyDiff = false;
+  function toggleDifferences() {
+    showOnlyDiff = !showOnlyDiff;
+    const btn = document.getElementById('diff-toggle-btn');
+    const knob = document.getElementById('diff-knob');
+    const rows = document.querySelectorAll('.spec-row');
+
+    if (showOnlyDiff) {
+      btn.classList.remove('bg-surface-variant');
+      btn.classList.add('bg-primary-container');
+      knob.classList.add('translate-x-6');
+      rows.forEach(row => {
+        if (row.getAttribute('data-diff') === 'false') {
+          row.style.display = 'none';
+        }
+      });
+    } else {
+      btn.classList.remove('bg-primary-container');
+      btn.classList.add('bg-surface-variant');
+      knob.classList.remove('translate-x-6');
+      rows.forEach(row => {
+        row.style.display = '';
+      });
+    }
+  }
+</script></main></body></html>

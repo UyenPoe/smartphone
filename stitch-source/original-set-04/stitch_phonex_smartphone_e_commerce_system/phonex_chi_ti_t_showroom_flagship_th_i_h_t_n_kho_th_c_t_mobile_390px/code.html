@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-background": "#191c1e", "tertiary-fixed-dim": "#c7c6c6", "on-secondary-fixed-variant": "#474646", "on-primary-container": "#fff7f6", "secondary-container": "#e5e2e1", "secondary-fixed": "#e5e2e1", "on-surface": "#191c1e", "surface-dim": "#d9dadc", "surface-container-low": "#f2f4f6", "inverse-primary": "#ffb4aa", "surface-tint": "#c0000d", "on-primary-fixed-variant": "#930007", "surface-pure": "#FFFFFF", "error": "#ba1a1a", "secondary-fixed-dim": "#c8c6c5", "surface": "#f8f9fb", "inverse-on-surface": "#f0f1f3", "inverse-surface": "#2e3132", "primary-fixed-dim": "#ffb4aa", "on-tertiary": "#ffffff", "primary-hover": "#C90010", "primary-fixed": "#ffdad5", "on-error": "#ffffff", "error-container": "#ffdad6", "on-secondary-container": "#656464", "surface-variant": "#e1e2e4", "outline": "#946e69", "primary": "#b7000c", "on-error-container": "#93000a", "outline-variant": "#e9bcb6", "surface-container": "#edeef0", "background": "#f8f9fb", "on-primary-fixed": "#410001", "surface-container-highest": "#e1e2e4", "on-secondary-fixed": "#1c1b1b", "surface-container-high": "#e7e8ea", "on-primary": "#ffffff", "on-tertiary-fixed": "#1b1c1c", "surface-container-lowest": "#ffffff", "on-secondary": "#ffffff", "primary-container": "#e60012", "tertiary": "#595a5a", "tertiary-fixed": "#e4e2e2", "surface-bright": "#f8f9fb", "border-subtle": "#E5E7EB", "on-tertiary-fixed-variant": "#464747", "on-tertiary-container": "#faf8f8", "text-main": "#222222", "on-surface-variant": "#5f3f3b", "secondary": "#5f5e5e", "tertiary-container": "#727272" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "2.5rem", "space-sm": "0.5rem", "space-2xl": "4rem", "gutter-mobile": "0.75rem", "space-md": "1rem", "margin": "1.5rem", "space-xs": "0.25rem", "gutter": "1.25rem", "margin-desktop": "3.5rem", "space-lg": "1.5rem" }, fontFamily: { "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "price-strikethrough": ["Plus Jakarta Sans"], "label-badge": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "title-product": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "price-card": ["Plus Jakarta Sans"], "body-regular": ["Plus Jakarta Sans"], "price-lg": ["Plus Jakarta Sans"], "label-button": ["Plus Jakarta Sans"] }, fontSize: { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "price-strikethrough": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "title-product": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "headline-xl": ["40px", { "lineHeight": "48px", "fontWeight": "700" }], "price-card": ["18px", { "lineHeight": "24px", "fontWeight": "700" }], "body-regular": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "price-lg": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-button": ["14px", { "lineHeight": "20px", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-regular flex flex-col min-h-screen antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-pure/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Quay lại" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:text-primary-container transition-colors shrink-0" onclick="history.back()" type="button"><span class="material-symbols-outlined text-2xl">arrow_back</span></button><div class="flex items-center gap-space-xs min-w-0"><img alt="Brand logo. - Primary color: #e60012 - Font: plusJakartaSans - Mode: light - Roundness: rounded-md" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WQ5685Ok6zLKj8_ryVMwecyqFm0wByjTX62HGFpg64-4NZNB0SeLtkNPERiGJk9fXB5ONeB6xXG8U2zwDl-vNm0BBO6OOe79gE4XZT0K7Nh6YkexN3pUEMeLiSM4KqNRjxbHW_VdezjETK6uN-RLQDdQeSKXzLxWGZCd7L_yShnWMsj0pw0xVcvZQI8MJmaxxlmE5qG-oyWaWPlVcPppgUUuUlzO5iFNWJVuC5Eyoga-bmOCG2_my571Y"/><span class="font-title-product text-title-product text-text-main truncate">Chi Tiết Cửa Hàng</span></div></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="Tìm kiếm" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:text-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-2xl">search</span></button><div class="w-11 h-11 flex items-center justify-center shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XUsJG3NZgsn6G146MQGFxxTyRGMyINRRjffqlEQBdRMaoCFXprzq-AKzGGQrmol65AKjAjDhhpExEDs67eUG6VLVFPPOeSNQ-tqyU-jYEYzAIwpaazX71DvbrMC3nIG--DpjcNVhUjVuaYCMyGgzMwg65r5kmoflW1tMJoHtM2MIZcGxWao9aYSqHeqVhc-65ruZ5Aq5kd7wMVZIIuNSrNQTK1bNCyhD2DtTg8D8Hu2-nI_ewMmJOSF6s"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-20 bg-surface min-h-screen"><div class="flex flex-col w-full pb-24">
+<!-- Top Hero & Visual Framing -->
+<div class="relative w-full overflow-hidden bg-surface-container-lowest shadow-sm">
+<div class="relative w-full h-56">
+<div class="w-full h-full bg-cover bg-center" data-alt="Interior view of a high-end luxury smartphone flagship retail store with clean minimalist architecture, glowing wooden display islands showcasing latest smartphones, soft warm recessed spotlights, professional staff in tidy uniforms greeting happy tech customers, shot on Sony A7R IV 35mm f1.8 lens in cinematic 8k resolution" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-DUFORUoyunCCeWCdBhqiaklH5noo1KVhaEcxjFyFM5BOtwLUfzSwzhOCL8QxD3JD8hws8Rob5XpltbqEOm5ybIUKZDuaE9VugkkfD7wAbGJlNSzmqHgCI4oggPDBxbCv_xeJWFP4Qun9J0uKiamCFC3hWjfwkVw8aSMSCKhJ2muiRTEQ1dy9-8-7KmjkuCqFLRd1oXfJSmgKW61Jp-C3sRCm0M3yDnklFtlRep5kn-yxyH0fJGbH')">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/85 via-on-background/25 to-transparent"></div>
+<!-- Top badges -->
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-badge text-label-badge shadow-md">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+            FLAGSHIP 5 SAO
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-pure/90 backdrop-blur text-on-surface font-label-badge text-label-badge shadow-sm">
+<span class="material-symbols-outlined text-xs text-primary-container">build_circle</span>
+            CARE LAB
+          </span>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-600/90 text-white font-label-badge text-label-badge backdrop-blur shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+          ĐANG MỞ CỬA
+        </div>
+</div>
+<!-- Distance and title overlay -->
+<div class="absolute bottom-3 left-3 right-3 flex flex-col gap-1 text-on-primary">
+<div class="flex items-center gap-1 text-white/90 font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-primary-fixed">near_me</span>
+<span>Cách bạn <strong class="text-white font-semibold">1.2 km</strong></span>
+<span class="text-white/40">•</span>
+<span>Đỗ ô tô miễn phí</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile leading-tight text-white drop-shadow-sm">
+          PhoneX Flagship Store Thái Hà
+        </h1>
+<div class="flex items-center gap-2 mt-0.5">
+<div class="flex items-center gap-0.5 text-amber-400">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-title-product text-body-sm text-white font-semibold">4.9/5</span>
+<span class="font-body-sm text-body-sm text-white/80">(1,480 đánh giá xác thực)</span>
+</div>
+</div>
+</div>
+<!-- Quick Action Bar -->
+<div class="grid grid-cols-3 gap-2 p-3 bg-surface-container-lowest shadow-sm">
+<a class="flex flex-col items-center justify-center py-2.5 px-1 rounded-lg bg-primary-container text-on-primary hover:bg-primary-hover active:scale-[0.98] transition-all shadow-sm" href="#store-map">
+<span class="material-symbols-outlined text-xl mb-0.5">directions</span>
+<span class="font-label-button text-xs font-bold truncate">Chỉ đường</span>
+</a>
+<a class="flex flex-col items-center justify-center py-2.5 px-1 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container active:scale-[0.98] transition-all" href="tel:02473006868">
+<span class="material-symbols-outlined text-xl text-primary-container mb-0.5">call</span>
+<span class="font-label-button text-xs font-semibold truncate">Gọi Hotline</span>
+</a>
+<button class="flex flex-col items-center justify-center py-2.5 px-1 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container active:scale-[0.98] transition-all" onclick="showBookingAlert()" type="button">
+<span class="material-symbols-outlined text-xl text-primary-container mb-0.5">calendar_month</span>
+<span class="font-label-button text-xs font-semibold truncate">Đặt hẹn trải nghiệm</span>
+</button>
+</div>
+</div>
+<div class="px-3 flex flex-col gap-3.5 mt-3">
+<!-- Essential Store Details Card -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3">
+<div class="flex items-start gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed/50 flex items-center justify-center text-primary-container shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-lg">location_on</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-badge text-label-badge text-secondary uppercase tracking-wider block">Địa chỉ Showroom</span>
+<p class="font-body-regular text-body-regular text-on-surface font-semibold mt-0.5">
+            124 - 126 Phố Thái Hà, P. Trung Liệt, Q. Đống Đa, Hà Nội
+          </p>
+<span class="font-body-sm text-body-sm text-secondary block mt-0.5">Đối diện toà nhà Parkson cũ, vỉa hè rộng 8 mét</span>
+</div>
+</div>
+<div class="h-px bg-surface-container"></div>
+<div class="grid grid-cols-2 gap-2 text-xs">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-primary-container mt-0.5">schedule</span>
+<div>
+<span class="font-label-badge text-label-badge text-secondary block">Giờ mở cửa</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">08:00 - 21:30</span>
+<p class="font-body-sm text-xs text-secondary mt-0.5">Mở xuyên Thứ 7, CN &amp; Lễ</p>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-emerald-600 mt-0.5">local_parking</span>
+<div>
+<span class="font-label-badge text-label-badge text-secondary block">Bãi đỗ xe VIP</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Đỗ Ô tô &amp; Xe máy</span>
+<p class="font-body-sm text-xs text-secondary mt-0.5">Miễn phí, bảo vệ đón tận nơi</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Map View -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col" id="store-map">
+<div class="relative w-full h-40">
+<div class="w-full h-full bg-cover bg-center" data-location="124 Thái Hà, Đống Đa, Hà Nội, Vietnam" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBPHL9uBL2f9f0hTUNqgETvtg1G1NxwaiRIUxTcT5HTRMnznEW-63jw2rourUBxB4rof_n57zMRhEY3Vy_6q3z7xNY7UcnladPZI-xbRUDZe7k2VYzJJ3AibVTOG-mNq4FTqDBFSRhcDwiCJqyVrj0sVhBcD5tYg4UiEwgSN4wxYufI1jXEy_EKwoGkfpAakmouZm8kAlkr7GQSMil7GIGnGqPC0B8WCtqB1N965dlv8J0aocck26Vp')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/70 via-transparent to-transparent flex items-end justify-between p-3">
+<div class="flex items-center gap-1.5 text-white">
+<span class="material-symbols-outlined text-primary-container text-2xl drop-shadow" style="font-variation-settings: 'FILL' 1;">pin_drop</span>
+<span class="font-title-product text-sm font-bold drop-shadow">Showroom Thái Hà</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-pure/90 text-on-surface font-label-badge text-xs font-semibold backdrop-blur">
+            Bản đồ vệ tinh
+          </span>
+</div>
+</div>
+<div class="p-2.5 bg-surface-container-lowest flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-lg shrink-0">navigation</span>
+<span class="font-body-sm text-body-sm text-secondary truncate">Trực tiếp qua phố Tây Sơn hoặc Láng Hạ</span>
+</div>
+<a class="shrink-0 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:text-primary-container font-label-button text-xs font-semibold flex items-center gap-1 transition-colors" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span>Mở Google Maps</span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- CareLab VIP Service Banner -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-on-background to-inverse-surface text-on-primary p-3.5 shadow-md">
+<div class="absolute right-0 top-0 translate-x-4 -translate-y-4 w-32 h-32 rounded-full bg-primary-container/20 blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed text-lg">verified_user</span>
+<span class="font-title-product text-title-product font-bold text-white tracking-wide">PhoneX CareLab VIP</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-badge text-xs font-bold">
+          ĐẶC QUYỀN 0₫
+        </span>
+</div>
+<div class="flex items-center gap-3 mt-2 pt-2 border-t border-white/10">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-full bg-cover bg-center ring-2 ring-primary-container" data-alt="Close up professional portrait of a smiling certified Vietnamese Apple ACMT technician named Tran Minh Duc in clean black tech lab uniform wearing anti-static gloves in a pristine repair lab with microscopes and precision tools" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeMbYmfBGoKaJjeFHh077yx63J835XffhpZqVDtrpTcS89jvmtkB5tFbu3k-4w6KKIQ4Qf9mxKF-mRwyYEsv2ASlBnqtKRYYzKHfQkbq04ZHvct8KwcyuCVoQpJjFg0LSt3rgBC3b61I-rnvs6GT5QvP90kASCVg8th2COGlA8nGFfX9dlWA7Sej3xMC0F0V7ktUSpd2S1zohXYnv2njqGK9lkRrq4Uifi1IqoaIJjRtIXxpldSLei')">
+</div>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-on-background flex items-center justify-center text-[10px] text-white">✓</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-body-regular text-sm font-bold text-white truncate">KTV Trưởng: Trần Minh Đức</span>
+<span class="px-1.5 py-0.2 rounded bg-white/20 text-white font-label-badge text-[10px]">Apple ACMT</span>
+</div>
+<p class="font-body-sm text-xs text-white/80 mt-0.5">
+            Miễn phí 100%: Dán cường lực Nano &amp; Vệ sinh máy bằng sóng siêu âm cho khách ghé thăm!
+          </p>
+</div>
+</div>
+</div>
+<!-- CORE SECTION: In-Store Live Inventory -->
+<div class="flex flex-col gap-2.5 pt-1">
+<div class="flex items-center justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+<h2 class="font-headline-md text-title-product text-text-main font-bold">
+              Sản phẩm có sẵn tại Thái Hà
+            </h2>
+<span class="px-1.5 py-0.5 rounded-full bg-primary-fixed text-primary font-label-badge text-xs font-bold">142 máy</span>
+</div>
+<p class="font-body-sm text-xs text-secondary mt-0.5">
+            Cập nhật kho thực tế mỗi 60 giây • Giữ máy online lấy ngay trong 15 phút
+          </p>
+</div>
+</div>
+<!-- Horizontal Filter Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 -mx-3 px-3 no-scrollbar" id="inventory-filters">
+<button class="filter-pill whitespace-nowrap px-3.5 py-1.5 rounded-full bg-on-background text-on-primary font-label-badge text-xs font-bold shadow-sm transition-all" onclick="filterCategory('all', this)" type="button">
+          Tất cả (142)
+        </button>
+<button class="filter-pill whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container text-secondary hover:text-on-surface font-label-badge text-xs font-semibold transition-all" onclick="filterCategory('new', this)" type="button">
+          Máy Mới Seal (96)
+        </button>
+<button class="filter-pill whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container text-secondary hover:text-on-surface font-label-badge text-xs font-semibold transition-all" onclick="filterCategory('used', this)" type="button">
+          Máy Cũ Độc Bản (46)
+        </button>
+<button class="filter-pill whitespace-nowrap px-3.5 py-1.5 rounded-full bg-surface-container text-secondary hover:text-on-surface font-label-badge text-xs font-semibold transition-all" onclick="filterCategory('accessory', this)" type="button">
+          Phụ kiện chính hãng (200+)
+        </button>
+</div>
+<!-- Product List Mobile Cards -->
+<div class="flex flex-col gap-2.5 mt-1" id="product-list">
+<!-- Product 1: iPhone 18 Pro Max -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col gap-2.5 transition-all" data-cat="new">
+<div class="flex gap-3">
+<div class="relative w-24 h-24 shrink-0 bg-surface-container-low rounded-lg p-1.5 flex items-center justify-center">
+<div class="w-full h-full bg-contain bg-no-repeat bg-center" data-alt="Studio product photograph of pristine new iPhone flagship in Desert Titanium finish on pure white studio background, showcasing aerospace grade titanium frame and advanced triple camera lenses, 4k ultra realistic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAuneE1dnUAez2zrsZLGOJEIE_TddS7bILq9VH2jXjU-TQp1JaXgTdiwDuldXAfGHCQBryiMl0-YQgPS9Icr5SMWRhcDBwzojDYs6IBZrushbsl5BilglM-HoGe6cwbGZizr9IfFUuOy_CPUMT2oPLVBtwgXu2q-tfISINdBySkuM7m_Qog7SxJgsQup1099qPMEM9gv4SVAedJgeTLO-XtoUG9kV4kzMMs4xjuw2sFw5JcH-EtbVpE')">
+</div>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-emerald-600 text-white font-label-badge text-[10px] font-bold">
+                Mới Seal
+              </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-badge text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                    Có sẵn 8 máy tại quầy
+                  </span>
+<span class="text-xs text-secondary font-body-sm">VN/A</span>
+</div>
+<h3 class="font-title-product text-sm font-bold text-text-main line-clamp-1 mt-0.5">
+                  iPhone 18 Pro Max 256GB
+                </h3>
+<p class="font-body-sm text-xs text-secondary">Màu: Titan Sa Mạc • Bảo hành 12th 1 ĐỔI 1</p>
+</div>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="font-price-card text-base font-bold text-primary-container">33.490.000₫</span>
+<span class="font-price-strikethrough text-xs text-secondary line-through">35.990.000₫</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-2 border-t border-surface-container">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined text-sm text-primary-container">bolt</span>
+<span>Trợ giá thu cũ thêm 2.000.000₫</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary-hover font-label-button text-xs font-bold shrink-0 active:scale-95 transition-all shadow-sm" onclick="reserveDevice('iPhone 18 Pro Max 256GB Titan Sa Mạc')" type="button">
+              Giữ máy tại quầy
+            </button>
+</div>
+</div>
+<!-- Product 2: Samsung S25 Ultra -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col gap-2.5 transition-all" data-cat="new">
+<div class="flex gap-3">
+<div class="relative w-24 h-24 shrink-0 bg-surface-container-low rounded-lg p-1.5 flex items-center justify-center">
+<div class="w-full h-full bg-contain bg-no-repeat bg-center" data-alt="High precision studio product shot of Samsung Galaxy S25 Ultra in Titanium Black with embedded S-Pen, sleek flat screen edges and quadruple camera array, commercial photography on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZutlJYGMfZpxOgxbyPMwLcu2J3y-EsB3MC1iGWgRcFFDdPkOnY44NLj1_vZSBTOhUA3MsYpPkJC6BbwctN4PQoyAVYAHNGlKqAAuSW_IeBqm0MHPAlvQzsgiyyEsIQRDuhQw2NDrPn1il3gZrawZMF0mQMNvv8CU-ITf3SN6_ZGDqMT_88N3ijOMxeijATUjJ21aCbb_FyjO-nc7TMKWfbvTdn56FNgnq0ebavWowByEPcDnR6Gad')">
+</div>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-emerald-600 text-white font-label-badge text-[10px] font-bold">
+                Mới Seal
+              </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-badge text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                    Có sẵn 5 máy tại quầy
+                  </span>
+<span class="text-xs text-secondary font-body-sm">SSVN</span>
+</div>
+<h3 class="font-title-product text-sm font-bold text-text-main line-clamp-1 mt-0.5">
+                  Samsung Galaxy S25 Ultra 512GB
+                </h3>
+<p class="font-body-sm text-xs text-secondary">Màu: Titan Xám • Kèm củ sạc 45W chính hãng</p>
+</div>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="font-price-card text-base font-bold text-primary-container">34.990.000₫</span>
+<span class="font-price-strikethrough text-xs text-secondary line-through">37.490.000₫</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-2 border-t border-surface-container">
+<div class="flex items-center gap-1.5 text-xs text-on-surface-variant font-body-sm">
+<span class="material-symbols-outlined text-sm text-primary-container">credit_card</span>
+<span>Trả góp 0% qua 28 ngân hàng</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary-hover font-label-button text-xs font-bold shrink-0 active:scale-95 transition-all shadow-sm" onclick="reserveDevice('Samsung Galaxy S25 Ultra 512GB')" type="button">
+              Giữ máy tại quầy
+            </button>
+</div>
+</div>
+<!-- Product 3: Unique Used iPhone 15 Pro Max -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col gap-2.5 relative overflow-hidden transition-all" data-cat="used">
+<div class="absolute -right-12 top-4 rotate-45 bg-amber-500 text-white font-label-badge text-[9px] font-bold py-0.5 px-10 shadow-sm text-center">
+            ĐỘC BẢN 1 CÂY
+          </div>
+<div class="flex gap-3">
+<div class="relative w-24 h-24 shrink-0 bg-amber-50/60 rounded-lg p-1.5 flex items-center justify-center">
+<div class="w-full h-full bg-contain bg-no-repeat bg-center" data-alt="Detailed macro shot of an immaculate second-hand Apple iPhone 15 Pro Max Natural Titanium displayed on an acrylic luxury holder, showing spotless screen and flawless titanium frame, soft diffused studio light" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6g3AvRxSwwHuqRJ8_ZV84iY5Q0qm_J7yK2tfO2Q-OkHR-CFZssYxWwrwVSJoKgPFmzxq9F2DxhpdjhRkcDH_NV8STrggyoCInqvGaFvlnZ8pqzIOU3Fz2Ml-gA3crkZIye6aaw8Yr-_rhdiHGPx-aCWyXBQT3tj5MmZHAlc4gXeOtm9zcTm2agfCTCeH8g_d1K2XIwuKIaYjRcAjcJAxgmCAEp5Fg8tnD7JmIt4BBigAB440HtUf-')">
+</div>
+<span class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-amber-600 text-white font-label-badge text-[10px] font-bold">
+                Pin 98%
+              </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between pr-4">
+<div>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-1.5 py-0.2 rounded bg-amber-100 text-amber-900 font-label-badge text-[10px] font-bold">Grade A 99%</span>
+<span class="font-body-sm text-[11px] text-secondary">#USED-882</span>
+</div>
+<h3 class="font-title-product text-sm font-bold text-text-main line-clamp-1 mt-0.5">
+                  iPhone 15 Pro Max 256GB Titan Tự Nhiên
+                </h3>
+<p class="font-body-sm text-xs text-rose-700 font-semibold mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">priority_high</span>
+                  Chỉ còn 1 máy duy nhất tại tủ số 03
+                </p>
+</div>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="font-price-card text-base font-bold text-primary-container">24.890.000₫</span>
+<span class="font-price-strikethrough text-xs text-secondary line-through">29.500.000₫</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-2 border-t border-surface-container">
+<span class="text-xs text-secondary font-body-sm">Đã test 32 bước kĩ thuật</span>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary-hover font-label-button text-xs font-bold shrink-0 active:scale-95 transition-all shadow-sm" onclick="reserveDevice('iPhone 15 Pro Max 256GB (#USED-882)')" type="button">
+              Giữ máy ngay
+            </button>
+</div>
+</div>
+<!-- Product 4: Google Pixel 9 Pro XL -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col gap-2.5 transition-all" data-cat="new">
+<div class="flex gap-3">
+<div class="relative w-24 h-24 shrink-0 bg-surface-container-low rounded-lg p-1.5 flex items-center justify-center">
+<div class="w-full h-full bg-contain bg-no-repeat bg-center" data-alt="Google Pixel 9 Pro XL smartphone in porcelain colorway with horizontal camera visor, pristine condition, soft studio product illumination, isolated on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAiOS0Em0UDwAPUn7_XnWXk6e_tDy4AI1xQbsktAdCabmYpcoVyrf-XYl2unJ4LIvh5BxCFDOGRwjMB0i_WF10L-WbJtv-WPoeR0HO5iAvnkXzc1Gd_XKYUEmBBYFlNHIthpeLB4aqUZNWBaiwQ1AdQzuc5bhDuYY2Ty2fhuUVA6iCiNSN0mcJW3L7xH4mx6OaCR66rQ1RcdRiE6tToSEizo7Kv8cDOUFscDmq88q1OYZqkDBYmYHBZ')">
+</div>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-emerald-600 text-white font-label-badge text-[10px] font-bold">
+                Mới Seal
+              </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-badge text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                    Có sẵn 3 máy tại quầy
+                  </span>
+<span class="text-xs text-secondary font-body-sm">Quốc tế</span>
+</div>
+<h3 class="font-title-product text-sm font-bold text-text-main line-clamp-1 mt-0.5">
+                  Google Pixel 9 Pro XL 256GB
+                </h3>
+<p class="font-body-sm text-xs text-secondary">Màu: Porcelain Trắng • AI Gemini Live</p>
+</div>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="font-price-card text-base font-bold text-primary-container">26.990.000₫</span>
+<span class="font-price-strikethrough text-xs text-secondary line-through">28.990.000₫</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-2 border-t border-surface-container">
+<div class="flex items-center gap-1 text-xs text-secondary font-body-sm">
+<span class="material-symbols-outlined text-sm text-emerald-600">check_circle</span>
+<span>Bảo hành nguồn &amp; màn hình 12 tháng</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary-hover font-label-button text-xs font-bold shrink-0 active:scale-95 transition-all shadow-sm" onclick="reserveDevice('Google Pixel 9 Pro XL 256GB')" type="button">
+              Giữ máy tại quầy
+            </button>
+</div>
+</div>
+<!-- Product 5: Xiaomi 14T Pro -->
+<div class="product-item bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col gap-2.5 transition-all" data-cat="new">
+<div class="flex gap-3">
+<div class="relative w-24 h-24 shrink-0 bg-surface-container-low rounded-lg p-1.5 flex items-center justify-center">
+<div class="w-full h-full bg-contain bg-no-repeat bg-center" data-alt="Xiaomi 14T Pro smartphone with Leica co-engineered camera module, titan blue color back glass, clean luxury smartphone product photography on white background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHiJ47ttM9WPT3ct34JqyOBR09Ty-Hb5H_N7UVutCSZz6rHv9uBE8YcigZ8Rf-IZFjWZC_tfBo6xqDm7exhTckACt3nkMuQj-ys38PlQfQ_t6_DdagEgJcxv64GNx1PWiGMH_YA_2m0j32hZ2TEMBhQTEGRW6gmrcZ0ahRVBF16t8L0GdBB0hu3bpRB-aoMeUxpuztN_osFsr80cSuiPQeLKtPwV6JikdxLTtNworNDzPIABVI_rcn')">
+</div>
+<span class="absolute top-1 left-1 px-1.5 py-0.5 rounded bg-emerald-600 text-white font-label-badge text-[10px] font-bold">
+                Mới Seal
+              </span>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-1">
+<span class="font-label-badge text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                    Có sẵn 6 máy tại quầy
+                  </span>
+<span class="text-xs text-secondary font-body-sm">DGW</span>
+</div>
+<h3 class="font-title-product text-sm font-bold text-text-main line-clamp-1 mt-0.5">
+                  Xiaomi 14T Pro 5G 512GB
+                </h3>
+<p class="font-body-sm text-xs text-secondary">Ống kính Leica Summilux • Sạc siêu tốc 120W</p>
+</div>
+<div class="mt-1 flex items-baseline gap-2">
+<span class="font-price-card text-base font-bold text-primary-container">15.490.000₫</span>
+<span class="font-price-strikethrough text-xs text-secondary line-through">17.990.000₫</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-2 border-t border-surface-container">
+<div class="flex items-center gap-1 text-xs text-secondary font-body-sm">
+<span class="material-symbols-outlined text-sm text-primary-container">redeem</span>
+<span>Tặng gói bảo hiểm rơi vỡ 1 năm</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary-hover font-label-button text-xs font-bold shrink-0 active:scale-95 transition-all shadow-sm" onclick="reserveDevice('Xiaomi 14T Pro 5G')" type="button">
+              Giữ máy tại quầy
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Trade-In Fast Service Card -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed/60 text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">autorenew</span>
+</div>
+<div>
+<h3 class="font-title-product text-sm font-bold text-text-main">
+              Thu Cũ Đổi Mới Tại Chỗ 10 Phút
+            </h3>
+<p class="font-body-sm text-xs text-secondary">Định giá bằng máy đo chuyên dụng • Không ép giá</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-badge text-xs font-bold shrink-0">
+          Trợ giá 30%
+        </span>
+</div>
+<div class="grid grid-cols-3 gap-2 py-1 text-center">
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center">
+<span class="material-symbols-outlined text-primary-container text-lg">check_circle</span>
+<span class="font-body-sm text-xs font-semibold text-on-surface mt-0.5">3 Không</span>
+<span class="text-[10px] text-secondary">Không hộp, không phụ kiện vẫn thu</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center">
+<span class="material-symbols-outlined text-primary-container text-lg">speed</span>
+<span class="font-body-sm text-xs font-semibold text-on-surface mt-0.5">10 Phút</span>
+<span class="text-[10px] text-secondary">Thẩm định minh bạch trước mặt khách</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low flex flex-col items-center">
+<span class="material-symbols-outlined text-primary-container text-lg">payments</span>
+<span class="font-body-sm text-xs font-semibold text-on-surface mt-0.5">Linh hoạt</span>
+<span class="text-[10px] text-secondary">Bù tiền mặt hoặc trả góp phần chênh</span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-surface-container text-on-surface hover:text-primary-container hover:bg-surface-container-high font-label-button text-xs font-bold flex items-center justify-center gap-1.5 transition-colors" onclick="alert('Đội ngũ chuyên viên thẩm định tại 124 Thái Hà đã sẵn sàng đón tiếp quý khách!')" type="button">
+<span class="material-symbols-outlined text-base">calculate</span>
+<span>Tính nhanh giá trị máy cũ của bạn</span>
+</button>
+</div>
+<!-- Store Gallery Carousel Thumbnails -->
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-title-product text-xs font-bold text-text-main uppercase tracking-wider">Không gian trải nghiệm Thái Hà</span>
+<span class="text-xs text-secondary font-body-sm">Khu vực Lounge &amp; Cafe Free</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="h-20 rounded-lg bg-cover bg-center" data-alt="Interior showroom shot showing luxury sofa lounge area with espresso bar for smartphone customers waiting for tech service in PhoneX Thái Hà" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZ9YhjUkEnH8EP6B3pPGzUlbUNP1lynhJ87RvG8cSjsZB_9vuOpOx16eNmo9VrYBnllvrtvA0qyoYkpSUC1hoJGTNFeeGaZHZBkb22giQ6ccR-4MDpAYFxC0eHp1ZzkY3v4mZSckdW9cG8QyZvjqpcUbg8T0V_RYJ_xZSUvy3c7fOt6EW9Rx98Sq1wDzhCtLoin2p3HwRy0enz9MGXEcPx8rxWDs5jcoiSWtmC5o6mvY4GjAV_Um50')">
+</div>
+<div class="h-20 rounded-lg bg-cover bg-center" data-alt="Clean wooden experience table with bright displays of latest Android and iOS smartphones tethered for customer hands-on testing" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfTKoioB46Lx8jAYiOokT2Njuy_AksPUO_fMH26CkYW8i-sUgjKkbe60zBp6Zw4acJnfxGmSzvJ8Xq5UhdS-PdNpNmel7ttj-mBqL3CZx_DLHTM70g5vS3bL2SC1pdhbIlGL9uD7Ck9puBtvz4mN42Ws4XiiRzXV3-lL87aFqOPPPXWkFFXrPqKR45z_DVD6reJ8Bt_i8bx2jn1sq-3Qe_pWdqYuFYsJbIF5i0zylHvU0E7K2LcOSa')">
+</div>
+<div class="h-20 rounded-lg bg-cover bg-center" data-alt="Official PhoneX CareLab service counter with professional technician working on clean anti-static mat with precision tools" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSqdmx7U_NvpMhFpdGrR6ALqimlY2FxcbGUTSat7a7F4LmXcmljQIvRWRvc3AhD5TEHuTc4uoW__Y-P3Dzvw5UKK1zH3oQP62AOdUdgxRaTwyePX4Kp2nl_O5N4cD3AUIic2yEvQdD4qhXwzKA2Ch695kAr0yj6vCfzuS0Nl0gReEEpPPoiJ4ZA_G1TYEpbxXZ457aAPQ2TE4LI75yoq0dTPlJ-NI8EWRNaaPV08oM7kUbAmkGuEN9')">
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Floating Bar -->
+<div class="fixed bottom-16 left-0 right-0 z-40 px-3 py-2 bg-surface-pure/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(0,0,0,0.08)] flex items-center justify-between gap-3">
+<div class="min-w-0 flex-1">
+<p class="font-title-product text-xs font-bold text-text-main truncate">
+        Cần giữ máy kiểm tra tại Thái Hà?
+      </p>
+<p class="font-body-sm text-[11px] text-secondary truncate">
+        Nhân viên sẽ mang máy ra bàn trải nghiệm trước khi bạn tới
+      </p>
+</div>
+<a class="shrink-0 px-3.5 py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary-hover active:scale-95 font-label-button text-xs font-bold flex items-center gap-1.5 shadow-sm transition-all" href="tel:18006868">
+<span class="material-symbols-outlined text-base">support_agent</span>
+<span>1800.6868 (Miễn cước)</span>
+</a>
+</div>
+</div>
+<script>
+  function filterCategory(category, buttonEl) {
+    const pills = document.querySelectorAll('.filter-pill');
+    pills.forEach(p => {
+      p.classList.remove('bg-on-background', 'text-on-primary');
+      p.classList.add('bg-surface-container', 'text-secondary');
+    });
+    buttonEl.classList.remove('bg-surface-container', 'text-secondary');
+    buttonEl.classList.add('bg-on-background', 'text-on-primary');
+
+    const items = document.querySelectorAll('.product-item');
+    items.forEach(item => {
+      if (category === 'all' || item.dataset.cat === category) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  function reserveDevice(productName) {
+    const time = new Date().toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+    alert(`Đã nhận yêu cầu giữ máy: "${productName}" tại Showroom 124 Thái Hà lúc ${time}. Quầy tiếp đón sẽ giữ máy riêng cho bạn trong 60 phút!`);
+  }
+
+  function showBookingAlert() {
+    alert('Đặt lịch hẹn trải nghiệm & dán cường lực VIP miễn phí tại PhoneX 124 Thái Hà thành công! KTV sẽ chuẩn bị máy sẵn đón bạn.');
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-pure/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary-container font-semibold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-secondary hover:text-primary-container transition-colors" data-path="trang-chu" href="#"><span class="material-symbols-outlined text-2xl">home</span><span class="font-label-badge text-label-badge text-center">Trang chủ</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-secondary hover:text-primary-container transition-colors" data-path="danh-muc" href="#"><span class="material-symbols-outlined text-2xl">category</span><span class="font-label-badge text-label-badge text-center">Danh mục</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-secondary hover:text-primary-container transition-colors" data-path="thu-cu" href="#"><span class="material-symbols-outlined text-2xl">autorenew</span><span class="font-label-badge text-label-badge text-center">Thu cũ</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-secondary hover:text-primary-container transition-colors" data-path="khuyen-mai" href="#"><span class="material-symbols-outlined text-2xl">local_offer</span><span class="font-label-badge text-label-badge text-center">Khuyến mãi</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 gap-0.5 text-secondary hover:text-primary-container transition-colors" data-path="chi-tiet-cua-hang" href="#"><span class="material-symbols-outlined text-2xl">store</span><span class="font-label-badge text-label-badge text-center">Cửa hàng</span></a></div></nav></body></html>

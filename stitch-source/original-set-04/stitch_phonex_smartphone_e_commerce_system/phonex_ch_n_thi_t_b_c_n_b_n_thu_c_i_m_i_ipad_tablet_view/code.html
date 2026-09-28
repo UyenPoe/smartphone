@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-container": "#fff7f6", "primary-hover": "#C90010", "tertiary-fixed-dim": "#c7c6c6", "surface-container-high": "#e7e8ea", "surface-container-lowest": "#ffffff", "outline-variant": "#e9bcb6", "error-container": "#ffdad6", "surface-bright": "#f8f9fb", "on-tertiary": "#ffffff", "primary-fixed-dim": "#ffb4aa", "on-secondary": "#ffffff", "on-secondary-fixed": "#1c1b1b", "border-subtle": "#E5E7EB", "surface-container-highest": "#e1e2e4", "on-surface-variant": "#5f3f3b", "surface-container": "#edeef0", "error": "#ba1a1a", "on-error": "#ffffff", "text-main": "#222222", "secondary-fixed": "#e5e2e1", "on-secondary-fixed-variant": "#474646", "tertiary": "#595a5a", "on-tertiary-fixed-variant": "#464747", "secondary-fixed-dim": "#c8c6c5", "surface": "#f8f9fb", "on-background": "#191c1e", "on-tertiary-fixed": "#1b1c1c", "background": "#f8f9fb", "tertiary-fixed": "#e4e2e2", "inverse-surface": "#2e3132", "surface-dim": "#d9dadc", "on-surface": "#191c1e", "inverse-primary": "#ffb4aa", "on-secondary-container": "#656464", "surface-tint": "#c0000d", "on-tertiary-container": "#faf8f8", "primary-container": "#e60012", "surface-container-low": "#f2f4f6", "outline": "#946e69", "on-primary": "#ffffff", "secondary": "#5f5e5e", "primary": "#b7000c", "inverse-on-surface": "#f0f1f3", "secondary-container": "#e5e2e1", "on-primary-fixed": "#410001", "tertiary-container": "#727272", "surface-variant": "#e1e2e4", "on-error-container": "#93000a", "on-primary-fixed-variant": "#930007", "primary-fixed": "#ffdad5", "surface-pure": "#FFFFFF" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-2xl": "4rem", "space-md": "1rem", "space-sm": "0.5rem", "margin": "1.5rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "gutter-mobile": "0.75rem", "gutter": "1.25rem", "margin-desktop": "3.5rem" }, "fontFamily": { "body-regular": [ "Plus Jakarta Sans" ], "headline-md": [ "Plus Jakarta Sans" ], "headline-xl": [ "Plus Jakarta Sans" ], "headline-xl-mobile": [ "Plus Jakarta Sans" ], "label-button": [ "Plus Jakarta Sans" ], "price-lg": [ "Plus Jakarta Sans" ], "price-card": [ "Plus Jakarta Sans" ], "headline-sm": [ "Plus Jakarta Sans" ], "body-sm": [ "Plus Jakarta Sans" ], "label-badge": [ "Plus Jakarta Sans" ], "title-product": [ "Plus Jakarta Sans" ], "headline-lg-mobile": [ "Plus Jakarta Sans" ], "headline-lg": [ "Plus Jakarta Sans" ], "price-strikethrough": [ "Plus Jakarta Sans" ] }, "fontSize": { "body-regular": [ "15px", { "lineHeight": "22px", "fontWeight": "400" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "headline-xl": [ "40px", { "lineHeight": "48px", "fontWeight": "700" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "36px", "fontWeight": "700" } ], "label-button": [ "14px", { "lineHeight": "20px", "fontWeight": "600" } ], "price-lg": [ "22px", { "lineHeight": "28px", "fontWeight": "700" } ], "price-card": [ "18px", { "lineHeight": "24px", "fontWeight": "700" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "600" } ], "body-sm": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ], "label-badge": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "700" } ], "title-product": [ "16px", { "lineHeight": "24px", "fontWeight": "600" } ], "headline-lg-mobile": [ "24px", { "lineHeight": "32px", "fontWeight": "700" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "fontWeight": "700" } ], "price-strikethrough": [ "13px", { "lineHeight": "18px", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-regular text-body-regular text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-pure/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 max-w-[1320px] mx-auto px-gutter flex flex-col justify-between py-2"><div class="h-14 flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><img alt="Brand logo. - Primary color: #e60012 - Font: plusJakartaSans - Mode: light - Roundness: rounded-md" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQ5685Ok6zLKj8_ryVMwecyqFm0wByjTX62HGFpg64-4NZNB0SeLtkNPERiGJk9fXB5ONeB6xXG8U2zwDl-vNm0BBO6OOe79gE4XZT0K7Nh6YkexN3pUEMeLiSM4KqNRjxbHW_VdezjETK6uN-RLQDdQeSKXzLxWGZCd7L_yShnWMsj0pw0xVcvZQI8MJmaxxlmE5qG-oyWaWPlVcPppgUUuUlzO5iFNWJVuC5Eyoga-bmOCG2_my571Y"/><span class="font-headline-md text-headline-md tracking-tight text-primary-container font-bold">PhoneX</span></div><div class="flex-1 max-w-xl mx-space-md"><div class="relative flex items-center"><input class="w-full h-11 pl-4 pr-11 bg-surface-container-low rounded-lg text-body-sm font-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:bg-surface-pure transition-colors" placeholder="Bạn tìm điện thoại gì hôm nay? (Ví dụ: iPhone 16 Pro Max, S24 Ultra...)" type="text"/><button aria-label="Tìm kiếm" class="absolute right-2 w-8 h-8 flex items-center justify-center text-secondary hover:text-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button></div></div><div class="flex items-center gap-space-lg shrink-0"><div class="hidden xl:flex items-center gap-2"><div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary-container"><span class="material-symbols-outlined text-[20px]">headset_mic</span></div><div class="flex flex-col"><span class="font-body-sm text-body-sm text-secondary leading-none">Tư vấn 24/7</span><span class="font-label-button text-label-button text-primary-container font-bold leading-tight">1800.6868</span></div></div><div class="flex items-center gap-space-md"><a class="hidden lg:flex items-center gap-1.5 px-3 py-2 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" data-path="tra-cuu-don-hang" href="#"><span class="material-symbols-outlined text-[20px]">local_shipping</span><span class="font-label-button text-label-button">Đơn hàng</span></a><a aria-label="Giỏ hàng" class="relative flex items-center justify-center w-10 h-10 rounded-lg text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" data-path="gio-hang" href="#"><span class="material-symbols-outlined text-[22px]">shopping_bag</span><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-primary-container text-on-primary font-label-badge text-label-badge flex items-center justify-center">3</span></a><div class="flex items-center gap-2 pl-2"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XUsJG3NZgsn6G146MQGFxxTyRGMyINRRjffqlEQBdRMaoCFXprzq-AKzGGQrmol65AKjAjDhhpExEDs67eUG6VLVFPPOeSNQ-tqyU-jYEYzAIwpaazX71DvbrMC3nIG--DpjcNVhUjVuaYCMyGgzMwg65r5kmoflW1tMJoHtM2MIZcGxWao9aYSqHeqVhc-65ruZ5Aq5kd7wMVZIIuNSrNQTK1bNCyhD2DtTg8D8Hu2-nI_ewMmJOSF6s"/><div class="hidden 2xl:flex flex-col"><span class="font-label-button text-label-button leading-none text-on-surface">Thành viên</span><span class="font-body-sm text-body-sm text-secondary leading-tight">Smember</span></div></div></div></div></div><div class="h-10 flex items-center justify-between"><nav class="flex items-center gap-1 overflow-x-auto" data-active-classes="bg-primary-container text-on-primary rounded-lg font-bold"><a class="px-3 py-1.5 font-label-button text-label-button text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="trang-chu" href="#">Trang chủ</a><a class="px-3 py-1.5 font-label-button text-label-button text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="iphone" href="#">iPhone</a><a class="px-3 py-1.5 font-label-button text-label-button text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="samsung" href="#">Samsung</a><a class="px-3 py-1.5 font-label-button text-label-button text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="xiaomi" href="#">Xiaomi</a><a class="px-3 py-1.5 font-label-button text-label-button text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="dien-thoai-cu" href="#">Điện thoại cũ</a><a class="px-3 py-1.5 font-label-button text-label-button text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="thu-cu-doi-moi" href="#">Thu Cũ Đổi Mới</a><a class="px-3 py-1.5 font-label-button text-label-button text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="ban-may-cu" href="#">Bán Máy Cũ</a></nav><div class="hidden md:flex items-center gap-space-md text-secondary"><div class="flex items-center gap-1 font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px] text-primary-container">storefront</span><span>Hệ thống 128 Showroom toàn quốc</span></div><span class="text-tertiary-fixed">|</span><div class="flex items-center gap-1 font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px] text-primary-container">verified_user</span><span>Bảo hành chính hãng 12-24 tháng</span></div></div></div></div></header><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive Top Banner & Trust Highlights -->
+<div class="w-full bg-gradient-to-r from-primary-container via-primary to-primary-hover text-on-primary py-3 px-gutter shadow-sm">
+<div class="max-w-[1320px] mx-auto flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-pure/20 text-on-primary">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+</span>
+<span class="font-bold">PhoneX Thu Mua Thần Tốc:</span>
+<span class="hidden sm:inline opacity-95">Định giá online chuẩn 99% — Không ép giá — Chuyển khoản trong 15 phút</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="hidden md:flex items-center gap-1 opacity-90"><span class="material-symbols-outlined text-[16px]">local_police</span>Trợ giá đến 3.000.000đ khi lên đời</span>
+<a class="bg-surface-pure text-primary-container px-2.5 py-0.5 rounded-full font-label-badge text-label-badge font-bold uppercase tracking-wider hover:bg-surface-container-low transition-colors" href="tel:18006868">Hotline 1800.6868</a>
+</div>
+</div>
+</div>
+<!-- Breadcrumbs & Headline Arena -->
+<div class="w-full bg-surface-pure py-6 shadow-sm">
+<div class="max-w-[1320px] mx-auto px-gutter flex flex-col gap-3">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-1.5 font-body-sm text-body-sm text-secondary">
+<a class="hover:text-primary-container transition-colors" href="#">Trang chủ</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary-container transition-colors" href="#">Thu Cũ Đổi Mới</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Chọn Thiết Bị Bán Lại</span>
+</nav>
+<!-- Main Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed mb-2.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">verified</span>
+<span class="font-label-badge text-label-badge uppercase tracking-wider font-bold">Quy Trình Bán Máy Chuẩn ISO PhoneX</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-main tracking-tight leading-tight">
+            Chọn Thiết Bị Cần Bán &amp; Thu Mua Giá Cao Nhất — <span class="text-primary-container">Tiền Về Trong 15 Phút</span>
+</h1>
+<p class="font-body-regular text-body-regular text-secondary mt-1.5">
+            PhoneX cam kết minh bạch bảng giá thu cũ, kiểm định kỹ thuật 1:1 tận nơi hoặc tại showroom. Nhận ngay trợ giá 3 Triệu đồng khi đổi máy mới.
+          </p>
+</div>
+<!-- Live Metrics Counter Card -->
+<div class="hidden lg:flex items-center gap-3 bg-surface-container-low p-3 rounded-lg shadow-sm shrink-0">
+<div class="w-12 h-12 rounded-lg bg-surface-pure flex items-center justify-center text-primary-container shadow-sm">
+<span class="material-symbols-outlined text-[28px]">currency_exchange</span>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-text-main font-bold">182.490+</span>
+<span class="font-label-badge text-label-badge text-primary-container font-bold">+14% MoM</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Thiết bị thu đổi thành công năm 2025</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Catalog Selector Content Container -->
+<div class="max-w-[1320px] mx-auto px-gutter w-full py-8 flex flex-col gap-6">
+<!-- Search & Quick Match Module -->
+<div class="bg-surface-pure rounded-xl p-5 shadow-sm flex flex-col gap-4">
+<div class="flex flex-col md:flex-row items-center gap-3">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[22px] text-secondary">search</span>
+<input class="w-full h-12 pl-12 pr-28 rounded-lg bg-surface-container-low text-text-main font-body-regular text-body-regular placeholder:text-secondary focus:outline-none focus:bg-surface-pure focus:shadow-md transition-all" id="device-search-input" placeholder="Nhập tên thiết bị bạn muốn bán (Ví dụ: iPhone 15 Pro Max 256GB, S24 Ultra, Xiaomi 14...)" type="text" value="iPhone 15"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1.5">
+<button class="w-7 h-7 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-secondary transition-colors" id="clear-search-btn" title="Xóa tìm kiếm" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+<div class="w-[1px] h-4 bg-tertiary-fixed-dim mx-0.5"></div>
+<button class="w-8 h-8 rounded-lg text-secondary hover:text-primary-container transition-colors flex items-center justify-center" title="Quét camera nhận diện máy" type="button">
+<span class="material-symbols-outlined text-[20px]">photo_camera</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-secondary hover:text-primary-container transition-colors flex items-center justify-center" title="Tìm bằng giọng nói" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+</div>
+<button class="w-full md:w-auto h-12 px-6 rounded-lg bg-primary-container text-on-primary font-label-button text-label-button hover:bg-primary-hover shadow-sm transition-all flex items-center justify-center gap-2 shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+<span>Tìm &amp; Định Giá</span>
+</button>
+</div>
+<!-- Search Trends Quick Chips -->
+<div class="flex items-center gap-2 overflow-x-auto text-body-sm font-body-sm text-secondary pt-1">
+<span class="flex items-center gap-1 text-on-surface font-semibold shrink-0">
+<span class="material-symbols-outlined text-[16px] text-primary-container">trending_up</span>
+          Tìm nhiều nhất:
+        </span>
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container hover:text-primary-container transition-colors whitespace-nowrap" type="button">iPhone 15 Pro Max</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container hover:text-primary-container transition-colors whitespace-nowrap" type="button">iPhone 14 Pro 128GB</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container hover:text-primary-container transition-colors whitespace-nowrap" type="button">iPhone 13 128GB</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container hover:text-primary-container transition-colors whitespace-nowrap" type="button">Samsung Galaxy S23 Ultra</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container hover:text-primary-container transition-colors whitespace-nowrap" type="button">Galaxy Z Fold5</button>
+</div>
+</div>
+<!-- Tier 1: Horizontal Brand Selector Chips -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-title-product text-title-product text-text-main font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[20px]">category</span>
+          1. Chọn Hãng Điện Thoại Của Bạn
+        </span>
+<span class="font-body-sm text-body-sm text-secondary">Hỗ trợ hơn 18 thương hiệu toàn cầu</span>
+</div>
+<div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
+<!-- Apple - Active -->
+<button class="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-primary-container text-on-primary shadow-sm font-label-button text-label-button shrink-0 transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">phone_iphone</span>
+<span class="font-bold">Apple (iPhone)</span>
+<span class="ml-1 w-2 h-2 rounded-full bg-surface-pure"></span>
+</button>
+<!-- Samsung -->
+<button class="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-surface-pure text-text-main hover:bg-surface-container-low shadow-sm font-label-button text-label-button shrink-0 transition-all hover:shadow-md" type="button">
+<span class="material-symbols-outlined text-[22px] text-secondary">smartphone</span>
+<span>Samsung Galaxy</span>
+</button>
+<!-- Xiaomi -->
+<button class="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-surface-pure text-text-main hover:bg-surface-container-low shadow-sm font-label-button text-label-button shrink-0 transition-all hover:shadow-md" type="button">
+<span class="material-symbols-outlined text-[22px] text-secondary">devices</span>
+<span>Xiaomi / Redmi</span>
+</button>
+<!-- OPPO -->
+<button class="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-surface-pure text-text-main hover:bg-surface-container-low shadow-sm font-label-button text-label-button shrink-0 transition-all hover:shadow-md" type="button">
+<span class="material-symbols-outlined text-[22px] text-secondary">stay_current_portrait</span>
+<span>OPPO</span>
+</button>
+<!-- Google Pixel -->
+<button class="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-surface-pure text-text-main hover:bg-surface-container-low shadow-sm font-label-button text-label-button shrink-0 transition-all hover:shadow-md" type="button">
+<span class="material-symbols-outlined text-[22px] text-secondary">android</span>
+<span>Google Pixel</span>
+</button>
+<!-- vivo -->
+<button class="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-surface-pure text-text-main hover:bg-surface-container-low shadow-sm font-label-button text-label-button shrink-0 transition-all hover:shadow-md" type="button">
+<span class="material-symbols-outlined text-[22px] text-secondary">mobile_friendly</span>
+<span>vivo</span>
+</button>
+<!-- Other Brands -->
+<button class="flex items-center gap-1.5 px-4 py-3 rounded-xl bg-surface-pure text-secondary hover:text-text-main shadow-sm font-label-button text-label-button shrink-0 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+<span>Hãng khác</span>
+</button>
+</div>
+</div>
+<!-- Tier 2: Horizontal Generation Pills (Series Filter) -->
+<div class="bg-surface-pure rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-button text-label-button text-text-main font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">view_timeline</span>
+          2. Chọn Đời Máy (Dòng iPhone Series)
+        </span>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-secondary">
+<span>Sắp xếp theo:</span>
+<select class="bg-surface-container-low text-text-main font-label-button text-body-sm px-2.5 py-1 rounded border-none focus:outline-none">
+<option>Giá thu cao nhất</option>
+<option>Mới ra mắt</option>
+<option>Lên đời phổ biến</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+<!-- iPhone 16 Series -->
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-secondary hover:text-text-main hover:bg-surface-container font-label-button text-label-button shrink-0 transition-colors" type="button">
+          iPhone 16 Series <span class="ml-1 text-label-badge bg-primary-fixed text-primary-container px-1.5 py-0.5 rounded-full font-bold">Mới</span>
+</button>
+<!-- iPhone 15 Series - Active -->
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-button text-label-button shrink-0 shadow-sm flex items-center gap-1.5 font-bold" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+          iPhone 15 Series (4 Model)
+        </button>
+<!-- iPhone 14 Series -->
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-secondary hover:text-text-main hover:bg-surface-container font-label-button text-label-button shrink-0 transition-colors" type="button">
+          iPhone 14 Series
+        </button>
+<!-- iPhone 13 Series -->
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-secondary hover:text-text-main hover:bg-surface-container font-label-button text-label-button shrink-0 transition-colors" type="button">
+          iPhone 13 Series
+        </button>
+<!-- iPhone 12 Series -->
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-secondary hover:text-text-main hover:bg-surface-container font-label-button text-label-button shrink-0 transition-colors" type="button">
+          iPhone 12 Series
+        </button>
+<!-- iPhone 11 Series -->
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-secondary hover:text-text-main hover:bg-surface-container font-label-button text-label-button shrink-0 transition-colors" type="button">
+          iPhone 11 Series
+        </button>
+<!-- Older Series -->
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-secondary hover:text-text-main hover:bg-surface-container font-label-button text-label-button shrink-0 transition-colors" type="button">
+          iPhone X / XS / XR &amp; cũ hơn
+        </button>
+</div>
+</div>
+<!-- Active Filter Summary & Result Status -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-main font-bold">Danh sách iPhone 15 Series</span>
+<span class="bg-surface-container text-secondary px-2.5 py-0.5 rounded-full font-label-badge text-label-badge font-bold">6 Phiên bản cấu hình</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-secondary">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>Cập nhật biểu giá thu mua: Hôm nay</span>
+</div>
+</div>
+<!-- 3-Column Device Showcase Grid (Optimized for iPad / Tablet 1024px) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- Product Card 1: iPhone 15 Pro Max -->
+<div class="group bg-surface-pure rounded-xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary-fixed/40 rounded-bl-full pointer-events-none -mr-6 -mt-6"></div>
+<div>
+<!-- Top Utility & Badges -->
+<div class="flex items-center justify-between mb-3 relative z-10">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-primary-fixed text-primary-container font-label-badge text-label-badge font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[13px]">local_fire_department</span> Thu mua nhiều nhất
+            </span>
+<button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary transition-colors" title="So sánh dòng máy" type="button">
+<span class="material-symbols-outlined text-[18px]">compare_arrows</span>
+</button>
+</div>
+<!-- Product Image Container -->
+<div class="w-full h-52 flex items-center justify-center p-2 mb-4 bg-surface-container-lowest rounded-lg group-hover:scale-105 transition-transform duration-300">
+<img class="max-h-full max-w-full object-contain" data-alt="Studio hero photograph of titanium natural Apple iPhone 15 Pro Max smartphone on a clean pristine white backdrop, subtle clean drop shadow, premium tech retail commerce catalogue, ultra-detailed glass and metal reflection, warm ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7kpsVHpMEIidQwxF_54Y6F8nZq51-TlKbFV9hOJwFNNjoh2upP0fywOpdOEJMHrQj1s4pX5pSMhBWvh7vHKSxjIScJfp4RDsiDOA33lh180Fx8EWRl9snMqhi9L8t2PPzeOCbYUtewWwvw_JxX--LNv8ORtwH1kztUm4zLcddH813I3Bv2tusyry-Oo5JsCBDm8F9MIvHwlJueDeknPb11h28ZS0b6CJmuDiPkJVqhATSFKiT4Aea"/>
+</div>
+<!-- Title -->
+<h3 class="font-title-product text-title-product text-text-main font-bold line-clamp-1 group-hover:text-primary-container transition-colors">
+            iPhone 15 Pro Max
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 mb-3">Titan Tự Nhiên, Titan Xanh, Đen, Trắng</p>
+<!-- Storage Capacity Chips -->
+<div class="flex items-center gap-1.5 mb-4">
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-primary-container text-on-primary font-bold" type="button">256GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">512GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">1TB</button>
+</div>
+<!-- Valuation Price Stack -->
+<div class="p-3.5 rounded-lg bg-surface-container-low mb-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Giá thu máy đẹp (Loại 1):</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">21.800.000đ</span>
+</div>
+<div class="flex items-center justify-between pt-1.5">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/10 text-primary-container font-label-badge text-label-badge font-bold">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+                + Trợ giá lên đời 3.000.000đ
+              </div>
+<span class="font-body-sm text-body-sm text-text-main font-semibold">= 24.800.000đ</span>
+</div>
+</div>
+</div>
+<!-- Action CTA -->
+<a class="w-full h-11 rounded-lg bg-primary-container text-on-primary font-label-button text-label-button flex items-center justify-center gap-2 hover:bg-primary-hover shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span>Định Giá Ngay &amp; Nhận Tiền</span>
+</a>
+</div>
+<!-- Product Card 2: iPhone 15 Pro -->
+<div class="group bg-surface-pure rounded-xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Top Utility & Badges -->
+<div class="flex items-center justify-between mb-3 relative z-10">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-secondary font-label-badge text-label-badge font-bold uppercase tracking-wider">
+              Khảo giá 2 phút
+            </span>
+<button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary transition-colors" title="So sánh dòng máy" type="button">
+<span class="material-symbols-outlined text-[18px]">compare_arrows</span>
+</button>
+</div>
+<!-- Product Image Container -->
+<div class="w-full h-52 flex items-center justify-center p-2 mb-4 bg-surface-container-lowest rounded-lg group-hover:scale-105 transition-transform duration-300">
+<img class="max-h-full max-w-full object-contain" data-alt="Editorial commercial product photography of an Apple iPhone 15 Pro in Dark Titanium casing, upright angle, crystal clear studio illumination, high dynamic range reflections on titanium frame, pure minimal background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk2hE6KDCuLW-QSWtXVblU-PT4iH1Lco62bJriGXTnFB_PXvRsVzeQ1fWIbc60z5TyI_H1Xq1Sqpq_2z1GQ5bkJDmqDSJZpOH58ja2eeLnjmaGNmT5oaz30PAt0iq-7QZS4D8wakgGr3kMYzETGc-F51CgYbHWCs7pDdwC6ygzR4fGTOoxgml5oPsUA87ZWFohTtoOEWMzXSZwlyVmjGA20Myawfh1grMROh7sFGWuJcvr1OFRnIrZ"/>
+</div>
+<!-- Title -->
+<h3 class="font-title-product text-title-product text-text-main font-bold line-clamp-1 group-hover:text-primary-container transition-colors">
+            iPhone 15 Pro
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 mb-3">Titan Đen, Titan Trắng, Titan Xanh</p>
+<!-- Storage Capacity Chips -->
+<div class="flex items-center gap-1.5 mb-4">
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-primary-container text-on-primary font-bold" type="button">128GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">256GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">512GB</button>
+</div>
+<!-- Valuation Price Stack -->
+<div class="p-3.5 rounded-lg bg-surface-container-low mb-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Giá thu máy đẹp (Loại 1):</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">18.600.000đ</span>
+</div>
+<div class="flex items-center justify-between pt-1.5">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/10 text-primary-container font-label-badge text-label-badge font-bold">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+                + Trợ giá lên đời 3.000.000đ
+              </div>
+<span class="font-body-sm text-body-sm text-text-main font-semibold">= 21.600.000đ</span>
+</div>
+</div>
+</div>
+<!-- Action CTA -->
+<a class="w-full h-11 rounded-lg bg-primary-container text-on-primary font-label-button text-label-button flex items-center justify-center gap-2 hover:bg-primary-hover shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span>Định Giá Ngay &amp; Nhận Tiền</span>
+</a>
+</div>
+<!-- Product Card 3: iPhone 15 Plus -->
+<div class="group bg-surface-pure rounded-xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Top Utility & Badges -->
+<div class="flex items-center justify-between mb-3 relative z-10">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-badge text-label-badge font-bold uppercase tracking-wider">
+              Pin khỏe 100%
+            </span>
+<button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary transition-colors" title="So sánh dòng máy" type="button">
+<span class="material-symbols-outlined text-[18px]">compare_arrows</span>
+</button>
+</div>
+<!-- Product Image Container -->
+<div class="w-full h-52 flex items-center justify-center p-2 mb-4 bg-surface-container-lowest rounded-lg group-hover:scale-105 transition-transform duration-300">
+<img class="max-h-full max-w-full object-contain" data-alt="High resolution e-commerce product photograph of pastel pink Apple iPhone 15 Plus, glossy frosted glass back, dynamic island front screen edge, soft commercial lighting, clean studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRsFFmr6DfEjlwRlamlPJyEbR6ymImbZTuPKuIxX2UaVZrObKkE4x6-7Q-a17tQRRYoTKUB3RD3z7FoFNvCyEyLectdt0RFnkxVOfwNr8l0_ud8o_PW2GM79fZdCaNxOBQLy6KCSHhFDLn4k2dGMzuOQVJFYduERSdzKoUMPTh_57bt63uuX6ZcJaUvI1lwxwkVXVqpvfneK71l6d_QVSKEEPSeNK1e0eDIu3DXP3jXLpwT_AOBAQV"/>
+</div>
+<!-- Title -->
+<h3 class="font-title-product text-title-product text-text-main font-bold line-clamp-1 group-hover:text-primary-container transition-colors">
+            iPhone 15 Plus
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 mb-3">Hồng, Vàng, Xanh lá, Xanh dương, Đen</p>
+<!-- Storage Capacity Chips -->
+<div class="flex items-center gap-1.5 mb-4">
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-primary-container text-on-primary font-bold" type="button">128GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">256GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">512GB</button>
+</div>
+<!-- Valuation Price Stack -->
+<div class="p-3.5 rounded-lg bg-surface-container-low mb-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Giá thu máy đẹp (Loại 1):</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">15.400.000đ</span>
+</div>
+<div class="flex items-center justify-between pt-1.5">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/10 text-primary-container font-label-badge text-label-badge font-bold">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+                + Trợ giá lên đời 2.500.000đ
+              </div>
+<span class="font-body-sm text-body-sm text-text-main font-semibold">= 17.900.000đ</span>
+</div>
+</div>
+</div>
+<!-- Action CTA -->
+<a class="w-full h-11 rounded-lg bg-primary-container text-on-primary font-label-button text-label-button flex items-center justify-center gap-2 hover:bg-primary-hover shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span>Định Giá Ngay &amp; Nhận Tiền</span>
+</a>
+</div>
+<!-- Product Card 4: iPhone 15 Standard -->
+<div class="group bg-surface-pure rounded-xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Top Utility & Badges -->
+<div class="flex items-center justify-between mb-3 relative z-10">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container text-secondary font-label-badge text-label-badge font-bold uppercase tracking-wider">
+              Bán lại phổ thông
+            </span>
+<button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary transition-colors" title="So sánh dòng máy" type="button">
+<span class="material-symbols-outlined text-[18px]">compare_arrows</span>
+</button>
+</div>
+<!-- Product Image Container -->
+<div class="w-full h-52 flex items-center justify-center p-2 mb-4 bg-surface-container-lowest rounded-lg group-hover:scale-105 transition-transform duration-300">
+<img class="max-h-full max-w-full object-contain" data-alt="Product photograph of pastel blue Apple iPhone 15 basic edition smartphone, dual diagonal camera layout, clean perspective shot, bright studio lighting, realistic reflections on sleek aluminum edge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX8pgNe5Xr-8Ks3i2qn6cpTE-QWsoj85k90l2AUl4P4nys4SoJ9XglXtgzc1bC5NOw3l3QaZD1u0sHXAZa44rI-NnHSdm2w8sRSqnHzhfv9ZLw3uA3m_wZaM-dx2KuqLP3hb7j-rZsXijAIMJGQWzKFZZ3o7Dkcexz28VJmpgCpwuT8LgpCa4yD3-K7WmXimfiGVvBKAhu9aFmBYyF6tYLoknjvTRa7GOJrajO75cL-AKDTnVKp8ZT"/>
+</div>
+<!-- Title -->
+<h3 class="font-title-product text-title-product text-text-main font-bold line-clamp-1 group-hover:text-primary-container transition-colors">
+            iPhone 15 Standard
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 mb-3">Xanh lá, Xanh dương, Vàng, Hồng, Đen</p>
+<!-- Storage Capacity Chips -->
+<div class="flex items-center gap-1.5 mb-4">
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-primary-container text-on-primary font-bold" type="button">128GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">256GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">512GB</button>
+</div>
+<!-- Valuation Price Stack -->
+<div class="p-3.5 rounded-lg bg-surface-container-low mb-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Giá thu máy đẹp (Loại 1):</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">13.800.000đ</span>
+</div>
+<div class="flex items-center justify-between pt-1.5">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/10 text-primary-container font-label-badge text-label-badge font-bold">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+                + Trợ giá lên đời 2.500.000đ
+              </div>
+<span class="font-body-sm text-body-sm text-text-main font-semibold">= 16.300.000đ</span>
+</div>
+</div>
+</div>
+<!-- Action CTA -->
+<a class="w-full h-11 rounded-lg bg-primary-container text-on-primary font-label-button text-label-button flex items-center justify-center gap-2 hover:bg-primary-hover shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span>Định Giá Ngay &amp; Nhận Tiền</span>
+</a>
+</div>
+<!-- Product Card 5: iPhone 14 Pro Max (Cross-Series Comparison Anchor) -->
+<div class="group bg-surface-pure rounded-xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Top Utility & Badges -->
+<div class="flex items-center justify-between mb-3 relative z-10">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge font-bold uppercase tracking-wider">
+              Khuyên Đổi Lên Đời 16
+            </span>
+<button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary transition-colors" title="So sánh dòng máy" type="button">
+<span class="material-symbols-outlined text-[18px]">compare_arrows</span>
+</button>
+</div>
+<!-- Product Image Container -->
+<div class="w-full h-52 flex items-center justify-center p-2 mb-4 bg-surface-container-lowest rounded-lg group-hover:scale-105 transition-transform duration-300">
+<img class="max-h-full max-w-full object-contain" data-alt="Front and angled perspective product photograph of Deep Purple Apple iPhone 14 Pro Max, stainless steel reflective frame, dynamic island display visible, high-end commerce catalog styling on clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwyayVwudYeVFzAdHl8WpGrw4Q6euZbjS4mF9qFQ9bL0kv1tTsP1SfjiXy2FuZ2AdOMxh6YuyENoz_FuTW-bK7hrpsT4o6a5mA7VEMmeFgx1j3-bI_YXFoiFg33zOt9PyjjdEOtqqJSjyRm2Ax25iDkWSaj0b7Z0mzHhYNDlm6qrBYAvkLSOTluClAH6r38Oyr51V6Mb6Oy5WT-46tDkBjOeqEHMT3MIV68TRwAm5UsARdB-jzOJCh"/>
+</div>
+<!-- Title -->
+<h3 class="font-title-product text-title-product text-text-main font-bold line-clamp-1 group-hover:text-primary-container transition-colors">
+            iPhone 14 Pro Max
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 mb-3">Tím Deep Purple, Vàng Gold, Đen Space, Bạc</p>
+<!-- Storage Capacity Chips -->
+<div class="flex items-center gap-1.5 mb-4">
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-primary-container text-on-primary font-bold" type="button">128GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">256GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">512GB</button>
+</div>
+<!-- Valuation Price Stack -->
+<div class="p-3.5 rounded-lg bg-surface-container-low mb-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Giá thu máy đẹp (Loại 1):</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">16.900.000đ</span>
+</div>
+<div class="flex items-center justify-between pt-1.5">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/10 text-primary-container font-label-badge text-label-badge font-bold">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+                + Trợ giá lên đời 3.000.000đ
+              </div>
+<span class="font-body-sm text-body-sm text-text-main font-semibold">= 19.900.000đ</span>
+</div>
+</div>
+</div>
+<!-- Action CTA -->
+<a class="w-full h-11 rounded-lg bg-primary-container text-on-primary font-label-button text-label-button flex items-center justify-center gap-2 hover:bg-primary-hover shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span>Định Giá Ngay &amp; Nhận Tiền</span>
+</a>
+</div>
+<!-- Product Card 6: Samsung Galaxy S24 Ultra (Alternative High Intent Card) -->
+<div class="group bg-surface-pure rounded-xl p-5 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Top Utility & Badges -->
+<div class="flex items-center justify-between mb-3 relative z-10">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-secondary text-on-primary font-label-badge text-label-badge font-bold uppercase tracking-wider">
+              Khách Android chuyển sang
+            </span>
+<button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-secondary transition-colors" title="So sánh dòng máy" type="button">
+<span class="material-symbols-outlined text-[18px]">compare_arrows</span>
+</button>
+</div>
+<!-- Product Image Container -->
+<div class="w-full h-52 flex items-center justify-center p-2 mb-4 bg-surface-container-lowest rounded-lg group-hover:scale-105 transition-transform duration-300">
+<img class="max-h-full max-w-full object-contain" data-alt="Commercial photograph of Samsung Galaxy S24 Ultra smartphone in Titanium Gray with built-in S-Pen laid beside it, high precision sharp optics, pure white commercial studio background with soft ambient bounce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFl6_5W8h7EdJQx0ImnabScurzxbyiiDv0HPZjy5UVrEimLBD05-RKGzz7Mq-bHo5RBkXjx7PQzEX7pCjTLppg-HBYt7wdIbYEu95ipqKcmdl4T-oerevogff3V420YAOyqGiC7pyKT28QJhKYjtdGAg3_pVLH_eV3pkFdcQmDdDE7fie_0DZqgfrCBpkMjc4T6AjYLKyBwVCfdiVLuffXDVH6HPPNhVOP0eap_hruKJv2apwbj2fY"/>
+</div>
+<!-- Title -->
+<h3 class="font-title-product text-title-product text-text-main font-bold line-clamp-1 group-hover:text-primary-container transition-colors">
+            Samsung Galaxy S24 Ultra
+          </h3>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5 mb-3">Xám Titan, Đen Titan, Tím Titan, Vàng Titan</p>
+<!-- Storage Capacity Chips -->
+<div class="flex items-center gap-1.5 mb-4">
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-primary-container text-on-primary font-bold" type="button">256GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">512GB</button>
+<button class="px-2.5 py-1 rounded text-body-sm font-label-button bg-surface-container-low text-secondary hover:bg-surface-container" type="button">1TB</button>
+</div>
+<!-- Valuation Price Stack -->
+<div class="p-3.5 rounded-lg bg-surface-container-low mb-4 flex flex-col gap-1.5">
+<div class="flex items-baseline justify-between">
+<span class="font-body-sm text-body-sm text-secondary">Giá thu máy đẹp (Loại 1):</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">19.500.000đ</span>
+</div>
+<div class="flex items-center justify-between pt-1.5">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/10 text-primary-container font-label-badge text-label-badge font-bold">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+                + Trợ giá lên đời 3.000.000đ
+              </div>
+<span class="font-body-sm text-body-sm text-text-main font-semibold">= 22.500.000đ</span>
+</div>
+</div>
+</div>
+<!-- Action CTA -->
+<a class="w-full h-11 rounded-lg bg-primary-container text-on-primary font-label-button text-label-button flex items-center justify-center gap-2 hover:bg-primary-hover shadow-sm transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span>Định Giá Ngay &amp; Nhận Tiền</span>
+</a>
+</div>
+</div>
+<!-- Help & Support Callout Module -->
+<div class="bg-surface-pure rounded-xl p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[32px]">contact_support</span>
+</div>
+<div>
+<h4 class="font-title-product text-title-product text-text-main font-bold">
+            Không tìm thấy dòng máy hoặc phiên bản của bạn?
+          </h4>
+<p class="font-body-regular text-body-regular text-secondary mt-1">
+            PhoneX thu mua tất cả các đời máy từ iPhone 6, máy xách tay quốc tế, máy trầy xước, khóa mạng hoặc mất hộp.
+          </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3 shrink-0 w-full md:w-auto">
+<a class="flex-1 md:flex-initial h-11 px-5 rounded-lg bg-surface-container-low text-primary-container hover:bg-surface-container font-label-button text-label-button flex items-center justify-center gap-2 transition-colors" href="tel:18006868">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Hotline 1800.6868 (Miễn phí)</span>
+</a>
+<a class="flex-1 md:flex-initial h-11 px-5 rounded-lg bg-primary-container text-on-primary hover:bg-primary-hover font-label-button text-label-button flex items-center justify-center gap-2 transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Chat Zalo Báo Giá Tức Thì</span>
+</a>
+</div>
+</div>
+<!-- 4 Quick Steps: Quy Trình Thu Cũ Đổi Mới -->
+<div class="bg-surface-pure rounded-xl p-6 shadow-sm flex flex-col gap-6">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+<div>
+<span class="font-label-badge text-label-badge text-primary-container uppercase font-bold tracking-wider">Đơn Giản &amp; Tốc Độ</span>
+<h3 class="font-headline-sm text-headline-sm text-text-main font-bold mt-0.5">4 Bước Thu Cũ Tiền Về Liền Tay</h3>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Thời gian trung bình hoàn tất: 15 phút tại 128 Showroom</span>
+</div>
+<!-- Steps Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Step 1 -->
+<div class="p-4 rounded-lg bg-surface-container-low flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-bold text-body-sm flex items-center justify-center">1</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">phonelink_setup</span>
+</div>
+<span class="font-title-product text-title-product text-text-main font-bold mt-1">Chọn Máy &amp; Báo Tình Trạng</span>
+<p class="font-body-sm text-body-sm text-secondary">Điền thông tin dòng máy, dung lượng và tình trạng ngoại quan trực tuyến chỉ với 3 cú nhấp.</p>
+</div>
+<!-- Step 2 -->
+<div class="p-4 rounded-lg bg-surface-container-low flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-bold text-body-sm flex items-center justify-center">2</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">price_check</span>
+</div>
+<span class="font-title-product text-title-product text-text-main font-bold mt-1">Nhận Báo Giá Tự Động</span>
+<p class="font-body-sm text-body-sm text-secondary">Hệ thống thuật toán AI của PhoneX cung cấp mức giá thu mua chính xác đến 99% theo thời gian thực.</p>
+</div>
+<!-- Step 3 -->
+<div class="p-4 rounded-lg bg-surface-container-low flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-bold text-body-sm flex items-center justify-center">3</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">store</span>
+</div>
+<span class="font-title-product text-title-product text-text-main font-bold mt-1">Kiểm Tra Máy 1:1</span>
+<p class="font-body-sm text-body-sm text-secondary">Ghé showroom gần nhất hoặc chuyên viên PhoneX đến tận nhà kiểm tra công khai trước mắt khách.</p>
+</div>
+<!-- Step 4 -->
+<div class="p-4 rounded-lg bg-surface-container-low flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-bold text-body-sm flex items-center justify-center">4</span>
+<span class="material-symbols-outlined text-secondary text-[24px]">payments</span>
+</div>
+<span class="font-title-product text-title-product text-text-main font-bold mt-1">Nhận Tiền Hoặc Lên Đời</span>
+<p class="font-body-sm text-body-sm text-secondary">Ting ting chuyển khoản 100% trong 15 phút, hoặc trừ trực tiếp tiền máy kèm trợ giá 3 Triệu khi nâng cấp.</p>
+</div>
+</div>
+</div>
+<!-- Golden Guarantees: 4 Cam Kết Vàng Của PhoneX -->
+<div class="bg-surface-pure rounded-xl p-6 shadow-sm mb-6 flex flex-col gap-6">
+<div class="text-center max-w-xl mx-auto">
+<span class="font-label-badge text-label-badge text-primary-container uppercase font-bold tracking-wider">Tiêu Chuẩn PhoneX Platinum</span>
+<h3 class="font-headline-sm text-headline-sm text-text-main font-bold mt-1">Cam Kết Vàng Khi Bán Máy Tại PhoneX</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Guarantee 1 -->
+<div class="p-4 rounded-lg bg-surface-bright flex items-start gap-3 shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">trending_up</span>
+</div>
+<div>
+<h5 class="font-label-button text-label-button text-text-main font-bold">Cam Kết Giá Thu Cao Nhất</h5>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Bồi hoàn chênh lệch nếu tìm thấy đơn vị bán lẻ chính hãng nào có giá thu cao hơn.</p>
+</div>
+</div>
+<!-- Guarantee 2 -->
+<div class="p-4 rounded-lg bg-surface-bright flex items-start gap-3 shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">timer</span>
+</div>
+<div>
+<h5 class="font-label-button text-label-button text-text-main font-bold">Chuyển Khoản 15 Phút</h5>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Tiền vào tài khoản ngay lập tức khi bạn đồng ý mức giá, không giữ máy, không chờ đợi.</p>
+</div>
+</div>
+<!-- Guarantee 3 -->
+<div class="p-4 rounded-lg bg-surface-bright flex items-start gap-3 shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">phonelink_erase</span>
+</div>
+<div>
+<h5 class="font-label-button text-label-button text-text-main font-bold">Xóa Sạch Dữ Liệu An Toàn</h5>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Hỗ trợ sao lưu dữ liệu sang máy mới và kích hoạt chuẩn xóa NIST 800-88 bảo mật tuyệt đối.</p>
+</div>
+</div>
+<!-- Guarantee 4 -->
+<div class="p-4 rounded-lg bg-surface-bright flex items-start gap-3 shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">home_repair_service</span>
+</div>
+<div>
+<h5 class="font-label-button text-label-button text-text-main font-bold">Thu Tận Nhà Miễn Phí</h5>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Nhân viên kỹ thuật đến tận cơ quan hoặc nhà riêng tại 32 tỉnh thành, phục vụ chu đáo.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Micro-interactions Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Clear Search Button Logic
+      const clearBtn = document.getElementById('clear-search-btn');
+      const searchInput = document.getElementById('device-search-input');
+      if (clearBtn && searchInput) {
+        clearBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          searchInput.focus();
+        });
+      }
+
+      // Storage Chips Active Toggle Micro-interaction
+      const cardStorageGroups = document.querySelectorAll('.group .flex.items-center.gap-1\\.5');
+      cardStorageGroups.forEach(group => {
+        const buttons = group.querySelectorAll('button');
+        buttons.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            buttons.forEach(b => {
+              b.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold');
+              b.classList.add('bg-surface-container-low', 'text-secondary');
+            });
+            btn.classList.remove('bg-surface-container-low', 'text-secondary');
+            btn.classList.add('bg-primary-container', 'text-on-primary', 'font-bold');
+          });
+        });
+      });
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-pure pt-space-2xl pb-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1320px] mx-auto px-gutter"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl"><div class="flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm mb-1"><img alt="PhoneX" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WQ5685Ok6zLKj8_ryVMwecyqFm0wByjTX62HGFpg64-4NZNB0SeLtkNPERiGJk9fXB5ONeB6xXG8U2zwDl-vNm0BBO6OOe79gE4XZT0K7Nh6YkexN3pUEMeLiSM4KqNRjxbHW_VdezjETK6uN-RLQDdQeSKXzLxWGZCd7L_yShnWMsj0pw0xVcvZQI8MJmaxxlmE5qG-oyWaWPlVcPppgUUuUlzO5iFNWJVuC5Eyoga-bmOCG2_my571Y"/><span class="font-headline-sm text-headline-sm tracking-tight text-primary-container font-bold">PhoneX</span></div><p class="font-body-sm text-body-sm text-secondary leading-relaxed">Hệ thống bán lẻ điện thoại di động chính hãng hàng đầu Việt Nam. Tận tâm phục vụ, minh bạch giá cả và dẫn đầu dịch vụ hậu mãi.</p><div class="mt-space-sm flex flex-col gap-1.5"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary-container">phone_in_talk</span><span class="font-label-button text-label-button text-on-surface">Tư vấn miễn phí: <strong class="text-primary-container">1800.6868</strong></span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary-container">support_agent</span><span class="font-label-button text-label-button text-on-surface">Khiếu nại, bảo hành: <strong class="text-primary-container">1800.6869</strong></span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary-container">location_on</span><span class="font-body-sm text-body-sm text-secondary">128 Cửa hàng tại 32 tỉnh thành</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-product text-title-product text-on-surface font-bold mb-1">Hệ Thống 128 Showroom</span><p class="font-body-sm text-body-sm text-secondary mb-2">Trải nghiệm trực tiếp các mẫu smartphone mới nhất tại hệ thống showroom hiện đại chuẩn quốc tế.</p><div class="flex flex-col gap-2 font-body-sm text-body-sm text-secondary"><div class="p-3 bg-surface-container-low rounded-lg"><span class="font-label-button text-label-button text-on-surface block">Khu vực Miền Bắc (52 Showroom)</span><span class="text-body-sm text-secondary">Hà Nội, Hải Phòng, Quảng Ninh, Bắc Ninh...</span></div><div class="p-3 bg-surface-container-low rounded-lg"><span class="font-label-button text-label-button text-on-surface block">Khu vực Miền Nam (60 Showroom)</span><span class="text-body-sm text-secondary">TP. Hồ Chí Minh, Bình Dương, Cần Thơ, Đồng Nai...</span></div><div class="p-3 bg-surface-container-low rounded-lg"><span class="font-label-button text-label-button text-on-surface block">Khu vực Miền Trung (16 Showroom)</span><span class="text-body-sm text-secondary">Đà Nẵng, Huế, Nghệ An, Khánh Hòa...</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-product text-title-product text-on-surface font-bold mb-1">Chính Sách &amp; Hỗ Trợ</span><ul class="flex flex-col gap-2 font-body-sm text-body-sm text-secondary"><li><a class="hover:text-primary-container transition-colors" href="#">Chính sách bảo hành 1 đổi 1 30 ngày</a></li><li><a class="hover:text-primary-container transition-colors" href="#">Chính sách thu cũ đổi mới trợ giá 2.500.000đ</a></li><li><a class="hover:text-primary-container transition-colors" href="#">Chính sách trả góp 0% lãi suất qua thẻ &amp; công ty tài chính</a></li><li><a class="hover:text-primary-container transition-colors" href="#">Chính sách vận chuyển &amp; giao hàng hỏa tốc 1h</a></li><li><a class="hover:text-primary-container transition-colors" href="#">Bảo hành mở rộng rơi vỡ - vào nước VIP</a></li><li><a class="hover:text-primary-container transition-colors" href="#">Bảo mật thông tin khách hàng</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-product text-title-product text-on-surface font-bold mb-1">Chứng Nhận &amp; Kết Nối</span><div class="p-4 bg-surface-container-low rounded-lg flex flex-col gap-2"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[24px] text-primary-container">verified</span><div class="flex flex-col"><span class="font-label-button text-label-button text-on-surface uppercase">Đã Thông Báo Bộ Công Thương</span><span class="font-label-badge text-label-badge text-secondary">Chứng nhận website TMĐT chính thống</span></div></div><p class="font-body-sm text-body-sm text-secondary mt-1">Tuân thủ nghiêm ngặt quy định bảo vệ quyền lợi người tiêu dùng theo Nghị định 52/2013/NĐ-CP.</p></div><div class="mt-2 flex flex-col gap-1.5"><span class="font-label-button text-label-button text-on-surface">Phương thức thanh toán tiện lợi:</span><div class="flex flex-wrap gap-2 text-secondary"><span class="px-2.5 py-1 rounded bg-surface-container text-body-sm font-label-button">Visa</span><span class="px-2.5 py-1 rounded bg-surface-container text-body-sm font-label-button">Mastercard</span><span class="px-2.5 py-1 rounded bg-surface-container text-body-sm font-label-button">VNPAY</span><span class="px-2.5 py-1 rounded bg-surface-container text-body-sm font-label-button">MoMo</span><span class="px-2.5 py-1 rounded bg-surface-container text-body-sm font-label-button">Trả góp 0%</span></div></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-secondary"><p>© 2025 PhoneX Retail Corporation. Mã số doanh nghiệp: 0108899888 do Sở Kế hoạch và Đầu tư TP. Hà Nội cấp. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary-container">lock</span>Thanh toán bảo mật SSL 256-bit</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary-container">published_with_changes</span>Đổi trả linh hoạt</span></div></div></div></footer></body></html>

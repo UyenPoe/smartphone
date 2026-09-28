@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full">
+<main class="w-full pt-6 md:pt-8 bg-surface"><div class="flex flex-col w-full">
 <!-- Top Breadcrumb -->
 <section class="w-full bg-surface-pure border-b border-border-subtle py-3">
 <div class="max-w-7xl mx-auto px-6">

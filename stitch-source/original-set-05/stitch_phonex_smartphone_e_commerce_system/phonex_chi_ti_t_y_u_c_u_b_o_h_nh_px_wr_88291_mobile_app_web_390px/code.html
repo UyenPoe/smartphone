@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-on-surface":"#f0f1f3","error":"#ba1a1a","tertiary-fixed":"#e4e2e2","error-container":"#ffdad6","on-primary-container":"#fff7f6","primary-hover":"#C90010","on-secondary-container":"#656464","surface-variant":"#e1e2e4","surface":"#f8f9fb","on-tertiary":"#ffffff","outline":"#946e69","tertiary":"#595a5a","on-primary-fixed":"#410001","primary-fixed":"#ffdad5","surface-container-highest":"#e1e2e4","surface-container-lowest":"#ffffff","border-subtle":"#E5E7EB","on-surface":"#191c1e","inverse-primary":"#ffb4aa","on-error":"#ffffff","on-primary-fixed-variant":"#930007","on-secondary-fixed":"#1c1b1b","surface-container-low":"#f2f4f6","inverse-surface":"#2e3132","on-primary":"#ffffff","surface-container-high":"#e7e8ea","text-main":"#222222","on-tertiary-container":"#faf8f8","on-secondary":"#ffffff","secondary-fixed":"#e5e2e1","on-secondary-fixed-variant":"#474646","surface-container":"#edeef0","surface-tint":"#c0000d","surface-pure":"#FFFFFF","on-error-container":"#93000a","on-tertiary-fixed-variant":"#464747","tertiary-fixed-dim":"#c7c6c6","secondary-container":"#e5e2e1","primary-fixed-dim":"#ffb4aa","primary-container":"#e60012","secondary-fixed-dim":"#c8c6c5","surface-bright":"#f8f9fb","primary":"#b7000c","on-background":"#191c1e","on-tertiary-fixed":"#1b1c1c","on-surface-variant":"#5f3f3b","background":"#f8f9fb","surface-dim":"#d9dadc","tertiary-container":"#727272","secondary":"#5f5e5e","outline-variant":"#e9bcb6"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{margin:"1.5rem","space-sm":"0.5rem","space-lg":"1.5rem",gutter:"1.25rem","margin-desktop":"3.5rem","gutter-mobile":"0.75rem","space-md":"1rem","space-xl":"2.5rem","space-2xl":"4rem","space-xs":"0.25rem"},fontFamily:{"label-button":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"price-strikethrough":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-regular":["Plus Jakarta Sans"],"price-lg":["Plus Jakarta Sans"],"price-card":["Plus Jakarta Sans"],"label-badge":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"title-product":["Plus Jakarta Sans"]},fontSize:{"label-button":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"700"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"price-strikethrough":["13px",{lineHeight:"18px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"body-regular":["15px",{lineHeight:"22px",fontWeight:"400"}],"price-lg":["22px",{lineHeight:"28px",fontWeight:"700"}],"price-card":["18px",{lineHeight:"24px",fontWeight:"700"}],"label-badge":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",fontWeight:"700"}],"headline-xl-mobile":["28px",{lineHeight:"36px",fontWeight:"700"}],"headline-xl":["40px",{lineHeight:"48px",fontWeight:"700"}],"title-product":["16px",{lineHeight:"24px",fontWeight:"600"}]}}}}</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-regular text-body-regular text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Quay lại" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container-high transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><img alt="Brand logo. - Primary color: #e60012 - Font: plusJakartaSans - Mode: light - Roundness: rounded-md " class="h-7 w-auto object-contain shrink-0 hidden sm:block" src="https://lh3.googleusercontent.com/aida/AEtjO1WQ5685Ok6zLKj8_ryVMwecyqFm0wByjTX62HGFpg64-4NZNB0SeLtkNPERiGJk9fXB5ONeB6xXG8U2zwDl-vNm0BBO6OOe79gE4XZT0K7Nh6YkexN3pUEMeLiSM4KqNRjxbHW_VdezjETK6uN-RLQDdQeSKXzLxWGZCd7L_yShnWMsj0pw0xVcvZQI8MJmaxxlmE5qG-oyWaWPlVcPppgUUuUlzO5iFNWJVuC5Eyoga-bmOCG2_my571Y"/><h1 class="font-title-product text-title-product font-bold text-on-surface truncate">Chi Tiết Bảo Hành</h1></div><div class="flex items-center gap-space-xs shrink-0"><a aria-label="Tổng đài khẩn cấp" class="w-11 h-11 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container-high transition-colors" href="tel:18006060"><span class="material-symbols-outlined text-[22px]">phone_in_talk</span></a><button aria-label="Thông báo bảo hành" class="w-11 h-11 flex items-center justify-center rounded-lg text-secondary hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-11 h-11 flex items-center justify-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XUsJG3NZgsn6G146MQGFxxTyRGMyINRRjffqlEQBdRMaoCFXprzq-AKzGGQrmol65AKjAjDhhpExEDs67eUG6VLVFPPOeSNQ-tqyU-jYEYzAIwpaazX71DvbrMC3nIG--DpjcNVhUjVuaYCMyGgzMwg65r5kmoflW1tMJoHtM2MIZcGxWao9aYSqHeqVhc-65ruZ5Aq5kd7wMVZIIuNSrNQTK1bNCyhD2DtTg8D8Hu2-nI_ewMmJOSF6s"/></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-28">
+<!-- Top Status Indicator Strip -->
+<div class="px-gutter-mobile pt-space-sm pb-space-xs">
+<div class="flex items-center justify-between bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm text-body-sm text-secondary leading-none">Mã phiếu tiếp nhận</span>
+<span class="font-label-button text-label-button text-on-surface font-bold tracking-tight">#PX-WR-88291</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-[#fff4e5] text-[#b45309] px-2.5 py-1 rounded-full shrink-0">
+<span class="w-2 h-2 rounded-full bg-[#f59e0b] animate-pulse"></span>
+<span class="font-label-badge text-label-badge uppercase font-bold tracking-wide">Đang kiểm tra CareLab</span>
+</div>
+</div>
+</div>
+<!-- Live Lab Diagnostic Banner -->
+<div class="px-gutter-mobile py-space-xs">
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-on-surface via-[#25282a] to-on-surface text-surface-pure p-space-md shadow-md">
+<div class="absolute -right-4 -top-6 w-28 h-28 bg-primary/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-start gap-space-sm relative z-10">
+<div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center shrink-0 text-inverse-primary">
+<span class="material-symbols-outlined text-[24px] animate-spin" style="animation-duration: 4s;">sync</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs mb-1">
+<span class="font-label-badge text-label-badge text-primary-fixed uppercase tracking-wider">Trực tiếp phòng Cleanroom</span>
+<span class="font-body-sm text-body-sm text-inverse-primary bg-primary/30 px-2 py-0.5 rounded-full font-semibold">45 phút tới</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-surface-pure font-bold leading-tight line-clamp-2 mb-1.5">
+            Kỹ thuật viên đang kiểm định màn hình iPhone 16 Pro Max
+          </h2>
+<p class="font-body-sm text-body-sm text-surface-container leading-relaxed">
+            Hệ thống Apple GSX Diagnostic đang chạy kiểm tra sensor cảm ứng, hiển thị OLED và kiểm tra ẩm vi mạch.
+          </p>
+<div class="mt-3 flex items-center gap-2">
+<div class="flex-1 h-1.5 bg-surface-container/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-2/5"></div>
+</div>
+<span class="font-body-sm text-body-sm text-surface-pure font-semibold">40%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 5-Step Compact Timeline -->
+<div class="px-gutter-mobile py-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-title-product text-title-product text-on-surface font-bold">Tiến trình xử lý</h3>
+<span class="font-label-badge text-label-badge text-primary font-bold bg-primary-fixed/40 px-2 py-0.5 rounded-full">Bước 2 / 5</span>
+</div>
+<div class="space-y-space-sm relative">
+<!-- Connecting Vertical Background Line -->
+<div class="absolute left-[15px] top-3 bottom-3 w-0.5 bg-surface-container"></div>
+<!-- Step 1: Hoàn tất -->
+<div class="flex items-start gap-space-sm relative">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-sm z-10">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 min-w-0 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-title-product text-title-product font-semibold text-on-surface">Đã tiếp nhận</span>
+<span class="font-body-sm text-body-sm text-secondary">09:30</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Tiếp nhận máy tại PhoneX CareLab Landmark 81</p>
+</div>
+</div>
+<!-- Step 2: Đang thực hiện -->
+<div class="flex items-start gap-space-sm relative">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary shrink-0 ring-4 ring-primary-fixed/60 shadow-md z-10">
+<span class="material-symbols-outlined text-[18px] animate-pulse">biotech</span>
+</div>
+<div class="flex-1 min-w-0 pt-0.5 bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-title-product text-title-product font-bold text-primary">Đang kiểm tra</span>
+<span class="font-label-badge text-label-badge text-on-primary-container bg-primary-container px-2 py-0.5 rounded-full uppercase">Đang chạy</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">Chẩn đoán phần cứng qua cổng chuyên dụng GSX Apple</p>
+</div>
+</div>
+<!-- Step 3: Sắp tới -->
+<div class="flex items-start gap-space-sm relative opacity-70">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0 z-10">
+<span class="material-symbols-outlined text-[18px]">request_quote</span>
+</div>
+<div class="flex-1 min-w-0 pt-0.5">
+<div class="flex items-center justify-between">
+<span class="font-title-product text-title-product font-semibold text-on-surface">Báo tình trạng / Chi phí</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">Dự toán 0₫</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">Khách hàng xác nhận linh kiện thay thế trực tuyến</p>
+</div>
+</div>
+<!-- Step 4: Sắp tới -->
+<div class="flex items-start gap-space-sm relative opacity-70">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0 z-10">
+<span class="material-symbols-outlined text-[18px]">build</span>
+</div>
+<div class="flex-1 min-w-0 pt-0.5">
+<span class="font-title-product text-title-product font-semibold text-on-surface">Đang xử lý</span>
+<p class="font-body-sm text-body-sm text-secondary">Thay linh kiện chính hãng Apple hoặc đổi máy mới nguyên seal</p>
+</div>
+</div>
+<!-- Step 5: Hoàn tất -->
+<div class="flex items-start gap-space-sm relative opacity-70">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary shrink-0 z-10">
+<span class="material-symbols-outlined text-[18px]">package_2</span>
+</div>
+<div class="flex-1 min-w-0 pt-0.5">
+<span class="font-title-product text-title-product font-semibold text-on-surface">Hoàn tất &amp; Bàn giao</span>
+<p class="font-body-sm text-body-sm text-secondary">Giao tận nơi hoặc nhận tại cửa hàng kèm phiếu bảo hành gia hạn</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Thẻ Thiết bị bảo hành -->
+<div class="px-gutter-mobile py-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<span class="font-title-product text-title-product font-bold text-on-surface">Thiết bị bảo hành</span>
+<span class="font-label-badge text-label-badge text-primary bg-primary-fixed/40 px-2 py-0.5 rounded-full font-semibold">Chính hãng VN/A</span>
+</div>
+<div class="flex gap-space-sm items-start">
+<div class="w-20 h-24 rounded-lg bg-surface-container-low p-1.5 flex items-center justify-center shrink-0">
+<img class="h-full w-auto object-contain" data-alt="Studio photograph of a premium Desert Titanium iPhone 16 Pro Max smartphone on a clean minimalist backdrop with high-end specular reflections, soft shadow, tech aesthetics, PhoneX branding palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUp1130ecoItX5puMxO5jKQ2RRbo310nndCZpI5d6AF1gLWlIt9fYAxJxHNgTZWHe31hSIe0kdSBBV9Aice68MsuvohSvmPXlDO5-dsjjvKneawqcG2PSIi8iWT_TMf9uIllNi5nogafyVgh8pXUubjOTMbDLc1c2AgLU6X04oW3Xm8Jdvz5Mm8XQ_Gz443wvmv1cUXAu9PMKmcCajkss_37zq7xYAmVPARcLGTTCIEIDKlRg1Em5g"/>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-title-product text-title-product font-bold text-text-main leading-snug truncate">
+            iPhone 16 Pro Max 256GB
+          </h4>
+<p class="font-body-sm text-body-sm text-secondary mb-1">Màu sắc: Desert Titanium (Titan Sa Mạc)</p>
+<!-- IMEI with Copy Action -->
+<div class="inline-flex items-center gap-1.5 bg-surface-container-low px-2 py-1 rounded-md max-w-full">
+<span class="font-body-sm text-body-sm text-secondary font-mono truncate">IMEI: 35689210984112</span>
+<button aria-label="Sao chép IMEI" class="text-primary hover:text-primary-hover flex items-center shrink-0" id="copyBtn" onclick="copyImei()">
+<span class="material-symbols-outlined text-[16px]" id="copyIcon">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Warranty Package Pill -->
+<div class="mt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div class="truncate">
+<span class="font-label-button text-label-button text-on-surface block truncate">AppleCare 12T + VIP 1 Đổi 1</span>
+<span class="font-body-sm text-body-sm text-secondary">Hiệu lực gói: Còn 364 ngày</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">chevron_right</span>
+</div>
+<!-- Problem description & Intake thumbnails -->
+<div class="mt-space-sm pt-space-xs">
+<span class="font-body-sm text-body-sm font-semibold text-secondary uppercase tracking-wider block mb-1">Tình trạng lỗi tiếp nhận:</span>
+<div class="p-space-sm rounded-lg bg-surface-container-high/40 text-on-surface font-body-regular text-body-regular">
+<div class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">report_problem</span>
+<span>Màn hình có vệt sọc sáng dọc màu xanh lá phía mép phải, cảm ứng phản hồi chậm sau va chạm nhẹ.</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<span class="font-body-sm text-body-sm text-secondary block mb-1.5">Ảnh chụp biên bản tiếp nhận máy (2 ảnh):</span>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="relative rounded-lg overflow-hidden h-24 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Macro close up photo of an iPhone 16 Pro Max screen displaying a thin neon green vertical line glitch on the OLED display panel under inspection light in an electronics repair center." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl8GtZtbbPVWk7r8cVFSOWa3fy03PvH2pN9v0zBOUbOTAy5oqjt1YSTPmnODuUYShHdDoB46PAZwFiv_Stjd5PCK7kJzxP2rmcseeFOCO6HvZSeSyv_wxCIneyYbRa7sG0GzPcRtjQxtsnsrP0h3EPDuMYFe3QFFodJZcbmzQ2HGo5aA4105d9CScNJE-qpq4WihAvwHVuwUro5Kp0fbBLtiANgvaLpEjNmzi1sbyLAFODQdilviQH"/>
+<span class="absolute bottom-1 left-1 bg-on-surface/80 text-surface-pure font-label-badge text-label-badge px-1.5 py-0.5 rounded">Ảnh tiếp nhận #1</span>
+</div>
+<div class="relative rounded-lg overflow-hidden h-24 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Inspection photo showing front bezel and pristine frame edge of a modern flagship smartphone at a tech diagnostic station with serialized calibration tag visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgQvQdAyavEJfaD5-8ez_7TvGuHEfpEBfV48-6Wr6fZjMklbsMdzYZksTbn0LklR0km5sgliqviyfBYPZDge03wsUaBeFqYHxxJhvwA9213c4j6k0aOJp5MXW-tYCZHjEu4U6HjdrkdfiYfhFXFGZ5vUgrTPwFeOU_JH00YZ7S2IDHvQO0arvv7enaGZ76vFa18qT3ovfqNrUvUu5cbOgh5XP9-0rG9_LLqNWWnKk4CP0FSPMNGjha"/>
+<span class="absolute bottom-1 left-1 bg-on-surface/80 text-surface-pure font-label-badge text-label-badge px-1.5 py-0.5 rounded">Ảnh tiếp nhận #2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Thẻ Máy Dùng Tạm (Courtesy Phone) -->
+<div class="px-gutter-mobile py-space-xs">
+<div class="bg-gradient-to-r from-surface-container-lowest to-surface-container-low p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">phone_iphone</span>
+<h4 class="font-title-product text-title-product font-bold text-on-surface">Máy Flagship dùng tạm</h4>
+</div>
+<span class="font-label-badge text-label-badge bg-[#ecfdf5] text-[#047857] px-2 py-0.5 rounded-full font-bold">Đang mượn</span>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<div class="w-14 h-16 rounded-lg bg-surface-pure p-1 flex items-center justify-center shrink-0">
+<img class="h-full w-auto object-contain" data-alt="Product shot of a sleek Natural Titanium iPhone 15 Pro on a clean neutral studio background, compact size, high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbDxUIza3Ex_pB22XjEv3WWlo7hoNM82qvl8AResZvbvKhDlw-eyUIguiH_65MOZLYsZIyjhHsOtqg-k5aIyM566OsUNYm0f78ixG7Wu3t_svZEi7MOGm0dSKoEpV_6C0Su5yXcbe1Eo82VJzxZGbu6Ck2fDo7Dv-6S4e_77NfaT10DWZJ-5IadjqiSb1LmzNo0ULcLm-DgOUrfP_D0VAnoYi5GsQN4HN4qxfhj5xqsp5dmJpoVzBN"/>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-button text-label-button text-text-main font-bold block truncate">iPhone 15 Pro 128GB (Natural Ti)</span>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+            KTV đã hỗ trợ đồng bộ dữ liệu eSIM &amp; iCloud
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Thẻ Chi phí & Quyền lợi VIP -->
+<div class="px-gutter-mobile py-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-xs">
+<span class="font-title-product text-title-product font-bold text-on-surface">Chi phí sửa chữa &amp; Quyền lợi VIP</span>
+<span class="material-symbols-outlined text-primary text-[20px]">shield</span>
+</div>
+<div class="space-y-space-xs font-body-regular text-body-regular">
+<div class="flex items-center justify-between text-secondary">
+<span>Tổng chi phí sửa chữa dự kiến</span>
+<span class="font-semibold text-on-surface">10.450.000₫</span>
+</div>
+<div class="flex items-center justify-between text-primary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            Quyền lợi PhoneX Care VIP tài trợ
+          </span>
+<span class="font-semibold font-mono">-10.450.000₫</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-badge text-label-badge uppercase text-secondary font-bold block">Khách cần thanh toán</span>
+<span class="font-body-sm text-body-sm text-[#047857] font-semibold">Miễn phí 100% theo chính sách VIP</span>
+</div>
+<span class="font-price-card text-price-card text-primary font-bold">0₫</span>
+</div>
+</div>
+</div>
+<!-- KTV phụ trách & Hỗ trợ -->
+<div class="px-gutter-mobile py-space-xs mb-space-sm">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Professional portrait of a friendly Vietnamese senior Apple Certified technician named Tran Minh Duc in PhoneX branded technical polo shirt smiling in a high tech workshop lab." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJJpke-NvfeubKR7wZY4pMjRLfyqB1ZNDdCEZJSq2wNb-2TfmLM6k8B-L--gbMwAfACUQhrlArHd34ow94isa-zdChno1Ok_wikPMDVFWGcLLxFV11KXcXOGHISfHqemjXPNb7e9QTj1wWJ06AGOPDArJYEcfTdlvxxrMrqI0MMxA3lcsD4Tybs-7VIIhR8fClKFK9KgeQevBgzifB4E0YRdRPCTMC5N6P6RTGaRVcAtj4wCZVx2If"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#10b981] rounded-full ring-2 ring-surface-pure"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-title-product text-title-product font-bold text-on-surface truncate">Trần Minh Đức</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary truncate">KTV Chuyên trách • PhoneX CareLab Q.1</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm mt-space-md">
+<a class="h-11 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-button text-label-button flex items-center justify-center gap-1.5 transition-colors" href="tel:18006060">
+<span class="material-symbols-outlined text-primary text-[18px]">call</span>
+          Gọi KTV
+        </a>
+<a class="h-11 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-button text-label-button flex items-center justify-center gap-1.5 transition-colors" href="https://zalo.me" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[#0068ff] text-[18px]">chat</span>
+          Chat Zalo
+        </a>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-pure/95 backdrop-blur-md pb-safe shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
+<div class="px-gutter-mobile py-2.5 flex items-center gap-space-sm max-w-[480px] mx-auto">
+<div class="flex flex-col min-w-0 pr-space-xs">
+<span class="font-body-sm text-body-sm text-secondary truncate leading-tight">Chi phí dự kiến</span>
+<div class="flex items-baseline gap-1">
+<span class="font-price-card text-price-card text-primary font-bold">0₫</span>
+<span class="font-label-badge text-label-badge text-[#047857] font-semibold">Care VIP</span>
+</div>
+</div>
+<button class="flex-1 h-12 bg-primary-container hover:bg-primary-hover active:scale-[0.98] text-on-primary rounded-lg font-label-button text-label-button flex items-center justify-center gap-1.5 shadow-md shadow-primary-container/20 transition-all" id="confirmBtn" onclick="confirmPlan()">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+<span class="truncate uppercase">Xác nhận phương án</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  function copyImei() {
+    const imei = '35689210984112';
+    navigator.clipboard.writeText(imei).then(() => {
+      const copyIcon = document.getElementById('copyIcon');
+      if (copyIcon) {
+        copyIcon.textContent = 'check';
+        setTimeout(() => {
+          copyIcon.textContent = 'content_copy';
+        }, 2000);
+      }
+    }).catch(() => {
+      // Fallback
+      alert('Đã sao chép IMEI: ' + imei);
+    });
+  }
+
+  function confirmPlan() {
+    const btn = document.getElementById('confirmBtn');
+    if (!btn) return;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">progress_activity</span><span>Đang ghi nhận...</span>';
+    btn.classList.add('opacity-90');
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">task_alt</span><span>Đã xác nhận phương án</span>';
+      btn.classList.remove('bg-primary-container', 'hover:bg-primary-hover');
+      btn.classList.add('bg-[#10b981]', 'text-surface-pure');
+    }, 900);
+  }
+</script></main></body></html>

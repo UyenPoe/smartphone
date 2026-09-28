@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;font-family:'Plus Jakarta Sans',sans-serif;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-container-high":"#e7e8ea","on-primary":"#ffffff","error":"#ba1a1a","secondary":"#5f5e5e","on-tertiary":"#ffffff","surface-container-low":"#f2f4f6","primary-fixed-dim":"#ffb4aa","on-error-container":"#93000a","inverse-surface":"#2e3132","inverse-on-surface":"#f0f1f3","tertiary-fixed-dim":"#c7c6c6","on-secondary-container":"#656464","primary-container":"#e60012","tertiary":"#595a5a","tertiary-fixed":"#e4e2e2","on-secondary":"#ffffff","tertiary-container":"#727272","on-primary-container":"#fff7f6","primary-hover":"#C90010","on-primary-fixed-variant":"#930007","border-subtle":"#E5E7EB","on-secondary-fixed":"#1c1b1b","surface-tint":"#c0000d","error-container":"#ffdad6","surface-container-lowest":"#ffffff","surface-container-highest":"#e1e2e4","primary":"#b7000c","on-background":"#191c1e","on-secondary-fixed-variant":"#474646","secondary-container":"#e5e2e1","inverse-primary":"#ffb4aa","on-primary-fixed":"#410001","text-main":"#222222","surface":"#f8f9fb","surface-dim":"#d9dadc","on-error":"#ffffff","background":"#f8f9fb","surface-bright":"#f8f9fb","primary-fixed":"#ffdad5","outline-variant":"#e9bcb6","surface-variant":"#e1e2e4","on-surface-variant":"#5f3f3b","outline":"#946e69","on-surface":"#191c1e","on-tertiary-container":"#faf8f8","surface-container":"#edeef0","on-tertiary-fixed-variant":"#464747","on-tertiary-fixed":"#1b1c1c","secondary-fixed-dim":"#c8c6c5","surface-pure":"#FFFFFF","secondary-fixed":"#e5e2e1"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-2xl":"4rem","gutter":"1.25rem","space-sm":"0.5rem","space-xl":"2.5rem","margin-desktop":"3.5rem","space-xs":"0.25rem","space-lg":"1.5rem","margin":"1.5rem","space-md":"1rem","gutter-mobile":"0.75rem"},"fontFamily":{"body-sm":["Plus Jakarta Sans"],"price-card":["Plus Jakarta Sans"],"body-regular":["Plus Jakarta Sans"],"title-product":["Plus Jakarta Sans"],"price-lg":["Plus Jakarta Sans"],"label-badge":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-button":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"price-strikethrough":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"]},"fontSize":{"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"price-card":["18px",{"lineHeight":"24px","fontWeight":"700"}],"body-regular":["15px",{"lineHeight":"22px","fontWeight":"400"}],"title-product":["16px",{"lineHeight":"24px","fontWeight":"600"}],"price-lg":["22px",{"lineHeight":"28px","fontWeight":"700"}],"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","fontWeight":"700"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"label-button":["14px",{"lineHeight":"20px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"price-strikethrough":["13px",{"lineHeight":"18px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}]}}}</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-regular text-body-regular text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface-pure/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><button aria-label="Quay lại" class="w-11 h-11 flex items-center justify-center text-on-surface rounded-lg hover:bg-surface-container transition-colors shrink-0" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><img alt="Brand logo. - Primary color: #e60012
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-7 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1WQ5685Ok6zLKj8_ryVMwecyqFm0wByjTX62HGFpg64-4NZNB0SeLtkNPERiGJk9fXB5ONeB6xXG8U2zwDl-vNm0BBO6OOe79gE4XZT0K7Nh6YkexN3pUEMeLiSM4KqNRjxbHW_VdezjETK6uN-RLQDdQeSKXzLxWGZCd7L_yShnWMsj0pw0xVcvZQI8MJmaxxlmE5qG-oyWaWPlVcPppgUUuUlzO5iFNWJVuC5Eyoga-bmOCG2_my571Y"/><h1 class="font-headline-sm text-headline-sm font-bold text-text-main truncate max-w-[140px]">Chi Tiết Sản Phẩm</h1></div><div class="flex items-center gap-space-xs shrink-0"><a aria-label="Hotline miễn phí 1800 6868" class="hidden xs:flex items-center gap-1 px-space-xs py-1 rounded-lg bg-surface-container-low text-primary-container hover:bg-primary-fixed/40 transition-colors" href="tel:18006868"><span class="material-symbols-outlined text-[16px]">call</span><span class="font-label-badge text-label-badge font-bold">1800.6868</span></a><a aria-label="Giỏ hàng" class="relative w-11 h-11 flex items-center justify-center text-on-surface hover:bg-surface-container rounded-lg transition-colors" data-path="gio-hang" href="#"><span class="material-symbols-outlined text-[24px]">shopping_bag</span><span class="absolute top-1.5 right-1.5 min-w-[18px] h-[18px] px-1 bg-primary-container text-on-primary font-label-badge text-label-badge flex items-center justify-center rounded-full leading-none shadow-sm">3</span></a><div class="w-11 h-11 flex items-center justify-center shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20" src="https://lh3.googleusercontent.com/aida/AEtjO1XUsJG3NZgsn6G146MQGFxxTyRGMyINRRjffqlEQBdRMaoCFXprzq-AKzGGQrmol65AKjAjDhhpExEDs67eUG6VLVFPPOeSNQ-tqyU-jYEYzAIwpaazX71DvbrMC3nIG--DpjcNVhUjVuaYCMyGgzMwg65r5kmoflW1tMJoHtM2MIZcGxWao9aYSqHeqVhc-65ruZ5Aq5kd7wMVZIIuNSrNQTK1bNCyhD2DtTg8D8Hu2-nI_ewMmJOSF6s"/></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface flex-grow"><div class="flex flex-col w-full pb-28">
+<!-- Top Identity & Quick Actions Bar -->
+<div class="px-gutter-mobile pt-space-xs pb-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-on-primary font-label-badge text-label-badge shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-pure animate-pulse"></span>
+        ĐỘC BẢN #USED-IP18PM-882
+      </span>
+<span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-surface-container-high text-on-surface font-label-badge text-label-badge">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+        Grade A 99%
+      </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Chia sẻ sản phẩm" class="w-9 h-9 rounded-full bg-surface-pure flex items-center justify-center text-secondary shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button aria-label="Lưu vào danh sách mong muốn" class="w-9 h-9 rounded-full bg-surface-pure flex items-center justify-center text-primary shadow-sm active:scale-95 transition-transform" id="btn-favorite" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<!-- Product Title & Single Inventory Alert -->
+<div class="px-gutter-mobile mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-text-main leading-tight mb-space-xs">
+      [Độc Bản] iPhone 18 Pro Max 256GB Titan Sa Mạc (Grade A 99%)
+    </h2>
+<div class="flex flex-wrap items-center gap-1.5 text-secondary font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+        Duy nhất 1 chiếc
+      </span>
+<span>•</span>
+<span>Pin zin 98%</span>
+<span>•</span>
+<span>AppleCare+ 2026</span>
+</div>
+</div>
+<!-- Real-life Photo Studio Carousel (Live Store Inspection Table) -->
+<div class="relative w-full px-gutter-mobile mb-space-md">
+<div class="relative w-full aspect-square rounded-xl overflow-hidden bg-surface-container-low shadow-sm">
+<div class="flex w-full h-full overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar" id="carousel-track">
+<!-- Slide 1: Front & Overall -->
+<div class="min-w-full h-full snap-center relative flex items-center justify-center bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Close up product photography of genuine iPhone 18 Pro Max Desert Titanium resting on a matte neutral grey inspection mat at PhoneX store, studio lighting reflecting premium micro-brushed titanium contours, flawless screen state, 4k ultra detailed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0co4u7xQ8pzaQRoGjlkgPfp-vZaaN6ANbDeF922VlBQhCRQdgazkw4NtWY6GM5vuilPYWZSnRIr8h7lzYklOhFVsDP84qEGzfEM_LPPbDI0CEB44E-LTMsKhPaHgP--lARKWD3nV2eA3F3kmGnKztUJ9kC9Bc92Z-iUiRlnUtPQgLsUGtLbSBlnpDCL_HK7ZTO3CH7zz6oPUgZHSY-i7XxtStiF1P1DLp4cS_WRexzRVAH7ax7-4A"/>
+<div class="absolute top-3 left-3 bg-inverse-surface/85 backdrop-blur-md px-2.5 py-1 rounded-full text-inverse-on-surface font-label-badge text-label-badge flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary-fixed">photo_camera</span>
+            Mặt trước &amp; Màn hình
+          </div>
+</div>
+<!-- Slide 2: Camera Bump & Grade -->
+<div class="min-w-full h-full snap-center relative flex items-center justify-center bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Macro photo showing iPhone 18 Pro Max desert titanium triple camera module on studio grey workbench, macro lens optics in pristine scratch-free condition, realistic reflection, PhoneX tech lab setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs-suen8s5IklFCLPrtjjudTG2o_tXikFRzT-4XYPEQphIBeUluqAB_6LiCs49ygt4Q--T4L5GICTpV4A0HsMgdgWsEA0gheS3_DGsOU_q69c4yxzRjbW1pOA4RPCQB7eoSGq9C1NN1qRul410emwDnbNMgm_wGacIThTZLFvuAHLmRTBfWMtg3-SjxbBd-08MvK4JTUexpNznYMs05lRhObu8iYrGxiUQDDYmkKF0n1cDGdoxabMv"/>
+<div class="absolute top-3 left-3 bg-inverse-surface/85 backdrop-blur-md px-2.5 py-1 rounded-full text-inverse-on-surface font-label-badge text-label-badge flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary-fixed">lens</span>
+            Cụm camera zoom 10x
+          </div>
+</div>
+<!-- Slide 3: Edges & Charging Port -->
+<div class="min-w-full h-full snap-center relative flex items-center justify-center bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Macro shot of bottom edge USB-C port and titanium frame of iPhone 18 Pro Max without any dings or scratches, ultra crisp details under bright neutral lab light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7LG2Vibkw2b4wJ2-nUiDDDUkdSrWJxCbJoIhaX9CNbLySThVC45DVJgZozEkkGANlvo2UOODHcEO5RdJ0BDzu8KJ30fg9y_-v2ne48jNngmI2Jdc4uYHqjSsbL-nCDDIJP-q2hm7LfC5CIJjsPLXmoY5KiaWk_1vMiqcbCJlAafd9ZQfJoJ79pdKoFEVDPS8hxbf0-NIgnH3NB149EJdCSHO4lvP70LG9Ki2oz1vXcvGO4oN3aZwi"/>
+<div class="absolute top-3 left-3 bg-inverse-surface/85 backdrop-blur-md px-2.5 py-1 rounded-full text-inverse-on-surface font-label-badge text-label-badge flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary-fixed">usb</span>
+            Cổng sạc &amp; Viền máy
+          </div>
+</div>
+<!-- Slide 4: Real Settings Screen Battery 98% -->
+<div class="min-w-full h-full snap-center relative flex items-center justify-center bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Direct view of iPhone screen displaying iOS Settings Battery Health and Charging screen showing Maximum Capacity 98 percent and Cycle Count 42, authentic high resolution photo taken in showroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCenL18fITG4-H19bccFiO8bZ9Z7wdiQTjj9HeV2gzx9kl9x7hgJuLluAcEDHeDAO02afDD972VDvZ88IosHL9bYBU_9CrTX8SXgBFSyyL9fwdTI5AONBSAr688CjXkR2ueAgz8lYuvKqNpkXe3W85NEQmnpgbRhbPrrwfIMyaGCJKt13V40qYvuW0knt5WYAbQVFMVyJdKzr0Df0SHsayuIi7A90GbpmFVuUrT14e20grwWP_j649D"/>
+<div class="absolute top-3 left-3 bg-inverse-surface/85 backdrop-blur-md px-2.5 py-1 rounded-full text-inverse-on-surface font-label-badge text-label-badge flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary-fixed">battery_charging_full</span>
+            Pin 98% thực tế trong Cài đặt
+          </div>
+</div>
+</div>
+<!-- Watermark Stamp -->
+<div class="absolute bottom-3 left-3 pointer-events-none">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-inverse-surface/80 backdrop-blur-sm text-inverse-on-surface font-label-badge text-label-badge">
+<span class="material-symbols-outlined text-[13px] text-primary-fixed">verified_user</span>
+          Ảnh chụp thật 100% tại PhoneX Thái Hà
+        </div>
+</div>
+<!-- Counter Badge -->
+<div class="absolute bottom-3 right-3">
+<span class="px-2.5 py-1 rounded-full bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-badge text-label-badge shadow-sm" id="carousel-indicator">
+          1/4
+        </span>
+</div>
+</div>
+<!-- Quick Preview Thumbnails -->
+<div class="flex items-center gap-2 mt-2 px-1">
+<div class="flex-1 py-1 text-center rounded bg-surface-pure text-text-main font-label-badge text-label-badge shadow-sm">
+        Toàn cảnh
+      </div>
+<div class="flex-1 py-1 text-center rounded bg-surface-container text-secondary font-label-badge text-label-badge">
+        Cụm Cam
+      </div>
+<div class="flex-1 py-1 text-center rounded bg-surface-container text-secondary font-label-badge text-label-badge">
+        Cạnh &amp; Cổng sạc
+      </div>
+<div class="flex-1 py-1 text-center rounded bg-surface-container text-secondary font-label-badge text-label-badge">
+        Pin 98% Cài đặt
+      </div>
+</div>
+</div>
+<!-- Price Stack & Financial Incentives -->
+<div class="px-gutter-mobile mb-space-md">
+<div class="bg-surface-pure rounded-xl p-space-md shadow-sm">
+<div class="flex items-baseline justify-between gap-2 mb-1">
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-primary-container font-bold leading-none">
+            28.490.000₫
+          </span>
+<span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">
+            33.490.000₫
+          </span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-badge text-label-badge font-bold">
+          -15% Tiết kiệm 5.000.000₫
+        </span>
+</div>
+<!-- Installment Micro-Card -->
+<div class="mt-3 pt-3 flex items-center justify-between bg-surface-container-low rounded-lg p-2.5">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">credit_card</span>
+</span>
+<div>
+<p class="font-label-button text-label-button text-text-main font-bold">Trả góp 0% chỉ từ 2.370.000₫/tháng</p>
+<p class="font-body-sm text-body-sm text-secondary">Xét duyệt online 5 phút qua CCCD</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Unique Item Hardware Identity Card (Single Unit Transparency) -->
+<div class="px-gutter-mobile mb-space-md">
+<div class="bg-surface-pure rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-3 pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">fingerprint</span>
+<h3 class="font-title-product text-title-product text-text-main font-bold">Hồ Sơ Minh Bạch Chiếc Máy</h3>
+</div>
+<span class="font-label-badge text-label-badge text-primary-container font-bold px-2 py-0.5 rounded bg-primary-fixed/40">
+          Chỉ 1 máy duy nhất
+        </span>
+</div>
+<div class="space-y-2.5">
+<div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-secondary">Mã định danh PhoneX</span>
+<span class="font-title-product text-title-product text-text-main font-bold font-mono">#USED-IP18PM-882</span>
+</div>
+<div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-secondary">Tình trạng ngoại quan</span>
+<div class="text-right">
+<span class="font-label-button text-label-button text-text-main font-bold">Grade A (99% Đẹp keng)</span>
+<p class="font-body-sm text-body-sm text-secondary">Không cấn móp, viền siêu nét</p>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-secondary">Tình trạng Pin thực tế</span>
+<div class="text-right">
+<span class="font-label-button text-label-button text-primary font-bold">98% Dung lượng đỉnh</span>
+<p class="font-body-sm text-body-sm text-secondary">42 chu kỳ sạc • Pin zin gốc</p>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-secondary">Bảo hành chính hãng</span>
+<div class="text-right">
+<span class="font-label-button text-label-button text-text-main font-bold">AppleCare+ 28/08/2026</span>
+<p class="font-body-sm text-body-sm text-secondary">Bảo hành rơi vỡ Apple toàn cầu</p>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-secondary">Bảo hành tại PhoneX</span>
+<div class="text-right">
+<span class="font-label-button text-label-button text-primary-container font-bold">VIP 12 Tháng 1 Đổi 1</span>
+<p class="font-body-sm text-body-sm text-secondary">Bao gồm Nguồn &amp; Màn hình cảm ứng</p>
+</div>
+</div>
+<div class="flex items-center justify-between py-1.5 bg-surface-container-low px-3 rounded-lg">
+<span class="font-body-sm text-body-sm text-secondary">Vị trí hiện tại</span>
+<div class="text-right flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span>
+<span class="font-label-button text-label-button text-text-main font-bold">Showroom 58 Thái Hà, HN</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 45-Step Inspection Summary Box -->
+<div class="px-gutter-mobile mb-space-md">
+<div class="bg-surface-pure rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">fact_check</span>
+<h3 class="font-title-product text-title-product text-text-main font-bold">Biên Bản Thẩm Định 45 Bước</h3>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-badge text-label-badge font-bold">
+          45/45 PASSED
+        </span>
+</div>
+<!-- Quick 4 Key Health Indicators -->
+<div class="grid grid-cols-2 gap-2 mb-3">
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">screenshot</span>
+<div>
+<p class="font-label-badge text-label-badge text-secondary">Màn hình 120Hz</p>
+<p class="font-label-button text-label-button text-text-main font-bold">Zin không ám ố</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">face</span>
+<div>
+<p class="font-label-badge text-label-badge text-secondary">Bảo mật Face ID</p>
+<p class="font-label-button text-label-button text-text-main font-bold">Nhận diện 0.1s</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">memory</span>
+<div>
+<p class="font-label-badge text-label-badge text-secondary">Mainboard zin</p>
+<p class="font-label-button text-label-button text-text-main font-bold">Quỳ tím trắng tinh</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">photo_camera</span>
+<div>
+<p class="font-label-badge text-label-badge text-secondary">Camera 48MP</p>
+<p class="font-label-button text-label-button text-text-main font-bold">Zoom 10x sắc nét</p>
+</div>
+</div>
+</div>
+<!-- Lead Inspector Badge -->
+<div class="flex items-center justify-between pt-2 bg-surface-container-low/70 px-3 py-2 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">engineering</span>
+</span>
+<div>
+<p class="font-label-badge text-label-badge text-text-main font-bold">KTV: Hoàng Minh Quân (Level 4)</p>
+<p class="font-body-sm text-body-sm text-secondary">Đã niêm phong &amp; ký tem kiểm tra</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 text-primary font-label-badge text-label-badge font-bold">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+          Đạt chuẩn A+
+        </span>
+</div>
+</div>
+</div>
+<!-- Exclusive Included Bundles & Trade-In Bonus -->
+<div class="px-gutter-mobile mb-space-md">
+<div class="bg-surface-pure rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-[20px] text-primary-container">featured_seasonal_and_gifts</span>
+<h3 class="font-title-product text-title-product text-text-main font-bold">Đặc Quyền Kèm Máy Độc Bản</h3>
+</div>
+<div class="space-y-2.5">
+<div class="flex items-center gap-3 p-2 rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-button text-label-button text-text-main font-bold truncate">Tặng củ sạc GaN 30W siêu tốc</p>
+<p class="font-body-sm text-body-sm text-secondary">Chuẩn Power Delivery tương thích Apple</p>
+</div>
+<span class="font-label-badge text-label-badge text-primary font-bold">Trị giá 450k</span>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-button text-label-button text-text-main font-bold truncate">Combo Ốp Chống Sốc + Cường Lực</p>
+<p class="font-body-sm text-body-sm text-secondary">Đã hỗ trợ dán hoàn hảo không bọt khí</p>
+</div>
+<span class="font-label-badge text-label-badge text-primary font-bold">Trị giá 350k</span>
+</div>
+<div class="flex items-center gap-3 p-2 rounded-lg bg-surface-container-low">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-button text-label-button text-text-main font-bold truncate">Trợ giá Thu cũ lên đời cực cao</p>
+<p class="font-body-sm text-body-sm text-secondary">Cộng thêm 1.500.000₫ vào giá máy cũ</p>
+</div>
+<span class="font-label-badge text-label-badge text-primary font-bold">+1.500.000₫</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Store Live Inspection Guarantee -->
+<div class="px-gutter-mobile mb-space-sm">
+<div class="bg-surface-container-high rounded-xl p-space-md flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-[28px] shrink-0">support_agent</span>
+<div class="flex-1 min-w-0">
+<p class="font-title-product text-title-product text-text-main font-bold">Xem máy qua Video Call 1-1</p>
+<p class="font-body-sm text-body-sm text-secondary">Kỹ thuật viên tại 58 Thái Hà mở máy soi từng góc theo yêu cầu của bạn trước khi cọc.</p>
+</div>
+</div>
+</div>
+<!-- STICKY BOTTOM ACTION BAR (Strict Thumb Ergonomics) -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface-pure shadow-[0_-4px_20px_rgba(0,0,0,0.08)] pb-safe">
+<div class="px-gutter-mobile py-2.5 flex items-center gap-2">
+<!-- Video Call Trigger Button -->
+<button aria-label="Xem video trực tiếp máy này" class="h-12 px-3 rounded-lg bg-surface-container text-text-main flex flex-col items-center justify-center active:scale-95 transition-transform shrink-0" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">videocam</span>
+<span class="font-label-badge text-label-badge leading-tight">Xem Live</span>
+</button>
+<!-- Installment CTA -->
+<button class="h-12 px-3 rounded-lg bg-surface-pure text-primary-container flex flex-col items-center justify-center active:scale-95 transition-transform shrink-0" type="button">
+<span class="font-label-button text-label-button font-bold leading-tight">Trả góp 0%</span>
+<span class="font-label-badge text-label-badge text-secondary leading-tight">2.370k/tháng</span>
+</button>
+<!-- Main Hold Deposit CTA -->
+<button class="h-12 flex-1 rounded-lg bg-primary text-on-primary flex flex-col items-center justify-center shadow-md active:scale-98 transition-transform min-w-0" id="btn-deposit" type="button">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-label-button text-label-button font-bold text-on-primary truncate">ĐẶT CỌC GIỮ MÁY</span>
+</div>
+<span class="font-label-badge text-label-badge text-on-primary-container opacity-90 truncate">Cọc 500k giữ độc bản 48h</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+  // Simple Carousel Slide Counter Tracker
+  const track = document.getElementById('carousel-track');
+  const indicator = document.getElementById('carousel-indicator');
+  
+  if (track && indicator) {
+    track.addEventListener('scroll', () => {
+      const scrollPosition = track.scrollLeft;
+      const width = track.clientWidth;
+      const pageIndex = Math.round(scrollPosition / width) + 1;
+      indicator.textContent = `${pageIndex}/4`;
+    }, { passive: true });
+  }
+
+  // Micro-interaction Favorite Heart
+  const favBtn = document.getElementById('btn-favorite');
+  if (favBtn) {
+    favBtn.addEventListener('click', () => {
+      favBtn.classList.toggle('text-error');
+      const icon = favBtn.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.style.fontVariationSettings = icon.style.fontVariationSettings.includes("'FILL' 1") 
+          ? "'FILL' 0" 
+          : "'FILL' 1";
+      }
+    });
+  }
+
+  // Micro-interaction for Deposit Hold Button feedback
+  const depositBtn = document.getElementById('btn-deposit');
+  if (depositBtn) {
+    depositBtn.addEventListener('click', () => {
+      depositBtn.classList.add('bg-primary-hover');
+      setTimeout(() => {
+        depositBtn.classList.remove('bg-primary-hover');
+      }, 300);
+    });
+  }
+</script></main></body></html>

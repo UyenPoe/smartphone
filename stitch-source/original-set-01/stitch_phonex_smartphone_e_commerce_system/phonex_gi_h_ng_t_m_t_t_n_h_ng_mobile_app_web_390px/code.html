@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;font-family:'Plus Jakarta Sans',sans-serif;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#595a5a", "surface-container-low": "#f2f4f6", "outline-variant": "#e9bcb6", "on-error": "#ffffff", "inverse-primary": "#ffb4aa", "surface-container-lowest": "#ffffff", "text-main": "#222222", "on-error-container": "#93000a", "primary-hover": "#C90010", "surface-pure": "#FFFFFF", "surface-variant": "#e1e2e4", "tertiary-container": "#727272", "tertiary-fixed": "#e4e2e2", "surface": "#f8f9fb", "background": "#f8f9fb", "on-primary-container": "#fff7f6", "secondary-fixed": "#e5e2e1", "outline": "#946e69", "on-primary": "#ffffff", "on-primary-fixed": "#410001", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#464747", "secondary-container": "#e5e2e1", "on-background": "#191c1e", "on-primary-fixed-variant": "#930007", "secondary": "#5f5e5e", "on-tertiary-fixed": "#1b1c1c", "surface-container-highest": "#e1e2e4", "on-secondary-container": "#656464", "inverse-on-surface": "#f0f1f3", "surface-container-high": "#e7e8ea", "inverse-surface": "#2e3132", "surface-dim": "#d9dadc", "on-secondary": "#ffffff", "primary-fixed": "#ffdad5", "primary-fixed-dim": "#ffb4aa", "surface-container": "#edeef0", "border-subtle": "#E5E7EB", "on-secondary-fixed-variant": "#474646", "tertiary-fixed-dim": "#c7c6c6", "on-surface-variant": "#5f3f3b", "primary": "#b7000c", "on-tertiary": "#ffffff", "surface-tint": "#c0000d", "secondary-fixed-dim": "#c8c6c5", "error": "#ba1a1a", "on-tertiary-container": "#faf8f8", "on-surface": "#191c1e", "surface-bright": "#f8f9fb", "primary-container": "#e60012", "on-secondary-fixed": "#1c1b1b" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-2xl": "4rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "margin": "1.5rem", "space-md": "1rem", "margin-desktop": "3.5rem", "gutter": "1.25rem" }, fontFamily: { "price-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "title-product": ["Plus Jakarta Sans"], "body-regular": ["Plus Jakarta Sans"], "price-strikethrough": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "price-card": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-button": ["Plus Jakarta Sans"], "label-badge": ["Plus Jakarta Sans"] }, fontSize: { "price-lg": ["22px", { lineHeight: "28px", fontWeight: "700" }], "headline-xl-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }], "title-product": ["16px", { lineHeight: "24px", fontWeight: "600" }], "body-regular": ["15px", { lineHeight: "22px", fontWeight: "400" }], "price-strikethrough": ["13px", { lineHeight: "18px", fontWeight: "400" }], "headline-md": ["24px", { lineHeight: "32px", fontWeight: "700" }], "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }], "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }], "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }], "headline-xl": ["40px", { lineHeight: "48px", fontWeight: "700" }], "price-card": ["18px", { lineHeight: "24px", fontWeight: "700" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }], "label-button": ["14px", { lineHeight: "20px", fontWeight: "600" }], "label-badge": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "700" }] } } } };</script></head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Quay lại" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:text-primary-container transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><img alt="Brand logo. - Primary color: #e60012
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-7 w-auto object-contain hidden xs:block" src="https://lh3.googleusercontent.com/aida/AEtjO1WQ5685Ok6zLKj8_ryVMwecyqFm0wByjTX62HGFpg64-4NZNB0SeLtkNPERiGJk9fXB5ONeB6xXG8U2zwDl-vNm0BBO6OOe79gE4XZT0K7Nh6YkexN3pUEMeLiSM4KqNRjxbHW_VdezjETK6uN-RLQDdQeSKXzLxWGZCd7L_yShnWMsj0pw0xVcvZQI8MJmaxxlmE5qG-oyWaWPlVcPppgUUuUlzO5iFNWJVuC5Eyoga-bmOCG2_my571Y"/><h1 class="font-headline-sm text-headline-sm text-text-main truncate">Giỏ Hàng (2)</h1></div><div class="flex items-center gap-space-xs"><a aria-label="Hotline hỗ trợ" class="w-11 h-11 flex items-center justify-center rounded-full text-secondary hover:text-primary-container transition-colors" href="tel:18006868"><span class="material-symbols-outlined text-[22px]">call</span></a><button aria-label="Xóa tất cả" class="w-11 h-11 flex items-center justify-center rounded-full text-secondary hover:text-primary-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">delete_sweep</span></button><div class="relative flex items-center justify-center pl-1"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-container/20" src="https://lh3.googleusercontent.com/aida/AEtjO1XUsJG3NZgsn6G146MQGFxxTyRGMyINRRjffqlEQBdRMaoCFXprzq-AKzGGQrmol65AKjAjDhhpExEDs67eUG6VLVFPPOeSNQ-tqyU-jYEYzAIwpaazX71DvbrMC3nIG--DpjcNVhUjVuaYCMyGgzMwg65r5kmoflW1tMJoHtM2MIZcGxWao9aYSqHeqVhc-65ruZ5Aq5kd7wMVZIIuNSrNQTK1bNCyhD2DtTg8D8Hu2-nI_ewMmJOSF6s"/><span class="absolute -bottom-1 -right-1 bg-primary-container text-on-primary text-[9px] font-bold px-1 rounded-full">VIP</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 bg-surface"><div class="flex flex-col w-full pb-36">
+<!-- FREESHIP PROGRESS TICKER -->
+<div class="bg-surface-container-low px-gutter-mobile py-2.5 flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<div class="flex items-center gap-1.5 text-text-main">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-bold">Giao hỏa tốc 1h miễn phí:</span>
+<span class="text-primary font-semibold">Đã đạt điều kiện!</span>
+</div>
+<span class="text-[11px] font-bold text-primary bg-primary-fixed px-1.5 py-0.5 rounded-full">100%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-full transition-all duration-500"></div>
+</div>
+<p class="text-[11px] text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+      PhoneX cam kết giao tận tay nội thành trong 60 phút hoặc hoàn 100k
+    </p>
+</div>
+<div class="px-gutter-mobile pt-3 flex flex-col gap-3">
+<!-- SELECT ALL BAR -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex items-center justify-between shadow-sm">
+<label class="flex items-center gap-2.5 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" id="selectAllCheckbox" onchange="toggleSelectAll(this)" type="checkbox"/>
+<span class="font-title-product text-title-product text-text-main font-semibold">Chọn tất cả (2 sản phẩm)</span>
+</label>
+<button class="text-body-sm font-body-sm text-secondary hover:text-primary flex items-center gap-1" onclick="clearCart()" type="button">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+<span>Xóa chọn</span>
+</button>
+</div>
+<!-- CART ITEM 1: NEW SEAL -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex flex-col gap-3 shadow-sm relative" id="item-new">
+<div class="flex gap-3">
+<div class="pt-1">
+<input checked="" class="item-checkbox w-4 h-4 accent-primary rounded cursor-pointer" onchange="updateSummary()" type="checkbox"/>
+</div>
+<div class="relative w-24 h-28 bg-surface-container-low rounded-lg p-1.5 flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="Official high resolution studio product render of iPhone 18 Pro Max Desert Titanium finish resting upright against an ultra clean minimalistic studio backdrop with soft diffused lighting, highlighting the micro-sandblasted titanium rails, pristine glass finish, and sleek triple-lens camera module." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDorQmWaKDfjwaY9F-ak5njr1OG-H_7fAfo2iiWmD_uoRIaRdtAmBwj9nLnvttvhtVOE3WDVT2BZmiYPzMQ0H40ECqGI0lGkQQpzHxgjRLsX-qqgOv5wbaPcw2DL3hU9Xf6xb5I9Fb9C8VijmG-WDDKTva0q8VgUsHDP53WV7bT8dBKZXRJvLLX6LoUy7M_in-qhlOEmh5lRqmQVwtGEgK9BHT9ii7ah4WzKa5h-eDepjzO7r1_WiJ4"/>
+<span class="absolute top-1 left-1 bg-primary text-on-primary font-label-badge text-label-badge px-1.5 py-0.5 rounded">-12%</span>
+</div>
+<div class="flex-1 flex flex-col min-w-0 justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-title-product text-[14px] leading-tight text-text-main line-clamp-2">iPhone 18 Pro Max 256GB Chính Hãng VN/A (Mới Seal 100%)</h2>
+<button aria-label="Xóa sản phẩm" class="text-tertiary hover:text-primary p-0.5" onclick="removeItem('item-new')" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-1 mt-1.5">
+<span class="bg-surface-container-low text-secondary font-label-badge text-[10px] px-1.5 py-0.5 rounded">VN/A</span>
+<span class="bg-surface-container-low text-secondary font-label-badge text-[10px] px-1.5 py-0.5 rounded">Titan Sa Mạc</span>
+<span class="bg-primary-fixed text-primary font-label-badge text-[10px] px-1.5 py-0.5 rounded font-bold">Trả góp 0%</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div>
+<div class="font-price-card text-price-card text-primary leading-none">33.490.000₫</div>
+<div class="font-price-strikethrough text-price-strikethrough text-tertiary line-through mt-0.5">37.990.000₫</div>
+</div>
+<!-- STEPPER -->
+<div class="flex items-center bg-surface-container-low rounded-lg p-0.5">
+<button aria-label="Giảm" class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-lowest text-text-main shadow-xs font-bold" onclick="updateQty('qty-1', -1)" type="button">−</button>
+<span class="w-8 text-center text-body-sm font-body-sm font-bold text-text-main" id="qty-1">1</span>
+<button aria-label="Tăng" class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-lowest text-text-main shadow-xs font-bold" onclick="updateQty('qty-1', 1)" type="button">+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- FREE GIFT ATTACHED -->
+<div class="bg-surface-container-low rounded-lg p-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">redeem</span>
+<div class="flex-1 min-w-0">
+<div class="text-[12px] font-bold text-text-main truncate">Quà tặng: Củ sạc nhanh 35W Apple + Ốp lưng MagSafe</div>
+<div class="text-[11px] text-tertiary">Đã tích hợp tự động vào gói bảo vệ</div>
+</div>
+<span class="text-primary font-bold text-[12px] flex-shrink-0">0₫</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<button class="flex items-center gap-1 text-[12px] text-secondary hover:text-primary" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite_border</span>
+<span>Lưu vào yêu thích</span>
+</button>
+<span class="text-[11px] text-primary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">shield</span>
+          Bảo hành 1 đổi 1 trong 30 ngày
+        </span>
+</div>
+</div>
+<!-- CART ITEM 2: USED UNIQUE -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex flex-col gap-3 shadow-sm relative" id="item-used">
+<div class="flex gap-3">
+<div class="pt-1">
+<input checked="" class="item-checkbox w-4 h-4 accent-primary rounded cursor-pointer" onchange="updateSummary()" type="checkbox"/>
+</div>
+<div class="relative w-24 h-28 bg-surface-container-low rounded-lg p-1.5 flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="High resolution authentic crisp macro photography of a pre-owned iPhone 18 Pro Max Desert Titanium model showing Grade A 99 percent mint condition with certified inspection seal tag numbered USED-IP18PM-882, shot under bright softbox daylight in an authorized tech workshop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3tF-X7UlNPZu6eWAmzc3SnOXIqh5Pbb8Uv1ZBjVSu58EnhmXon3S0f7zLk5UnerQkq0KD9acOPEa6ndTejdE18yDV_-F8m8FThdiR_qhxCSAlGTTw6uq5cdbgLWA10l1xtu91p6A0ditudtT6jYxbOJgywo_zRnkmZcROLRDzrtkq4Qy26RywKSnfTeXLeWvt1mvDnha8xviiklg23q3QKvSHj_oTCl2uakIlmWoK0837PvARR57n"/>
+<span class="absolute top-1 left-1 bg-surface-container-highest text-text-main font-label-badge text-[9px] px-1 py-0.5 rounded font-bold">GRADE A</span>
+</div>
+<div class="flex-1 flex flex-col min-w-0 justify-between">
+<div>
+<div class="flex items-start justify-between gap-1">
+<h2 class="font-title-product text-[14px] leading-tight text-text-main line-clamp-2">[Độc Bản] iPhone 18 Pro Max 256GB Titan Sa Mạc (99%)</h2>
+<button aria-label="Xóa sản phẩm" class="text-tertiary hover:text-primary p-0.5" onclick="removeItem('item-used')" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-wrap gap-1 mt-1.5">
+<span class="bg-surface-container-low text-text-main font-label-badge text-[10px] px-1.5 py-0.5 rounded">#USED-882</span>
+<span class="bg-secondary-fixed text-text-main font-label-badge text-[10px] px-1.5 py-0.5 rounded flex items-center gap-0.5 font-bold">
+<span class="material-symbols-outlined text-[11px] text-primary" style="font-variation-settings: 'FILL' 1;">battery_charging_full</span>
+                Pin 98%
+              </span>
+<span class="bg-error-container text-on-error-container font-label-badge text-[10px] px-1.5 py-0.5 rounded">Duy nhất tại 58 Thái Hà</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-2">
+<div>
+<div class="font-price-card text-price-card text-primary leading-none">28.490.000₫</div>
+<div class="text-[11px] text-tertiary mt-0.5">Tiết kiệm 5.000.000₫ so với mới</div>
+</div>
+<div class="text-right">
+<span class="inline-block bg-surface-container-low text-secondary text-[11px] font-bold px-2 py-1 rounded">SL: 1 chiếc</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 flex items-center justify-between text-[11px]">
+<span class="text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">verified_user</span>
+          PhoneX Certified 68 bước kiểm tra
+        </span>
+<button class="text-primary font-bold hover:underline" type="button">Xem biên bản test</button>
+</div>
+</div>
+<!-- TRADE-IN PROMO WIDGET -->
+<div class="bg-gradient-to-r from-surface-container-highest via-surface-container-low to-surface-container-lowest rounded-lg p-3 shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[24px]">published_with_changes</span>
+</div>
+<div class="min-w-0">
+<div class="font-title-product text-[13px] font-bold text-text-main truncate">Thu Cũ Đổi Mới Lên Đời</div>
+<div class="text-body-sm text-[12px] text-primary font-semibold truncate">Trợ giá lên đến 3.000.000₫</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-button text-[12px] px-3 py-2 rounded-lg flex-shrink-0 hover:bg-primary-hover transition-colors font-bold" type="button">
+        Định giá ngay
+      </button>
+</div>
+<!-- FREQUENTLY BOUGHT TOGETHER HORIZONTAL CAROUSEL -->
+<div class="bg-surface-container-lowest rounded-lg p-3 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">add_circle</span>
+<h3 class="font-title-product text-title-product text-text-main font-bold">Gợi ý phụ kiện giá sốc</h3>
+</div>
+<span class="text-[11px] text-secondary">Ưu đãi mua kèm máy</span>
+</div>
+<div class="flex gap-2.5 overflow-x-auto pb-1 -mx-1 px-1">
+<!-- ITEM 1 -->
+<div class="w-36 flex-shrink-0 bg-surface-container-low rounded-lg p-2 flex flex-col justify-between">
+<div class="relative w-full h-20 bg-surface-container-lowest rounded-md p-1 mb-1.5 flex items-center justify-center">
+<img class="w-full h-full object-contain" data-alt="AirPods Pro 2 USB-C in modern white charging case glowing under crisp studio lighting on high quality product photography showcase with sharp highlights and soft grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC56SRNAz7UGaVBLTzDsOGNcwxDMl275X2jBjWGLvHZKmM1USw9HV7Cii_pst_BHyY5kRYMx2-fHPkJ8ZbNKz30U6w8YeGF4UVhYdYK5LiDN8P5eI7gT-cJsSJ1M-uj8wELF6pgSsGZwvSJGcl6KixZQX9tCgIS8yHF9Pr9O_5Ndpe-z5nYcZXqZz-cmcWTZG_1Ik5T_e62zxw4UX0aSUw3G2X2rentkm4w2VgFoWYXeYJ0X73-D97z"/>
+<span class="absolute top-1 left-1 bg-primary text-on-primary font-label-badge text-[9px] px-1 rounded">-15%</span>
+</div>
+<div class="text-[12px] font-bold text-text-main line-clamp-2 leading-tight">AirPods Pro 2 MagSafe USB-C</div>
+<div class="mt-1 flex items-center justify-between">
+<div>
+<div class="text-[12px] font-bold text-primary">5.190.000₫</div>
+<div class="text-[10px] text-tertiary line-through">6.190.000₫</div>
+</div>
+<button aria-label="Thêm nhanh AirPods Pro 2" class="w-7 h-7 bg-primary text-on-primary rounded flex items-center justify-center hover:bg-primary-hover shadow-xs" onclick="addAccessory(this, 'AirPods Pro 2')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- ITEM 2 -->
+<div class="w-36 flex-shrink-0 bg-surface-container-low rounded-lg p-2 flex flex-col justify-between">
+<div class="relative w-full h-20 bg-surface-container-lowest rounded-md p-1 mb-1.5 flex items-center justify-center">
+<img class="w-full h-full object-contain" data-alt="Apple original 35W Dual USB-C Port compact power adapter white brick glossy finish with matte pins on clear tech pedestal studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtpcM3edn-ATNf4owIqK7U01OVkN8BrUZqB6u3P0ax7Dp1Pl-XIDCSicjOV6Tg160ljbNOoma57jXkmKANFwjysbdBazVorDyTdxBnsFBtxd9cWdabTrlzKc2_A1l1k0URx3yH5ZdrwIOK3BNk56qUt8Ik81PTTAMZgGrIPg5AxlQvCktgGunucoJqbUEGHw4zr8ZluL43nIsqP7mFHfkoeUCs3VbmtkFgQ3KaeQNRZikeqPpPUwjr"/>
+<span class="absolute top-1 left-1 bg-primary text-on-primary font-label-badge text-[9px] px-1 rounded">-25%</span>
+</div>
+<div class="text-[12px] font-bold text-text-main line-clamp-2 leading-tight">Củ sạc đôi Apple 35W USB-C</div>
+<div class="mt-1 flex items-center justify-between">
+<div>
+<div class="text-[12px] font-bold text-primary">1.090.000₫</div>
+<div class="text-[10px] text-tertiary line-through">1.490.000₫</div>
+</div>
+<button aria-label="Thêm nhanh Củ sạc 35W" class="w-7 h-7 bg-primary text-on-primary rounded flex items-center justify-center hover:bg-primary-hover shadow-xs" onclick="addAccessory(this, 'Củ sạc đôi 35W')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+<!-- ITEM 3 -->
+<div class="w-36 flex-shrink-0 bg-surface-container-low rounded-lg p-2 flex flex-col justify-between">
+<div class="relative w-full h-20 bg-surface-container-lowest rounded-md p-1 mb-1.5 flex items-center justify-center">
+<img class="w-full h-full object-contain" data-alt="Rugged ultra slim protective MagSafe clear armored smartphone case with reinforced air-cushion bumpers displayed in angled studio perspective." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJBS5o0KLaZvWYSd6lTcvQs-yafqSkDr0q1MrL7Te-dbFyKUYwoOzRoJwD5H_3zXt55ZQSnIfJpydDEXwlzE4srRMXaLKldpWB-4HkQXa3JvcU3yJhrcvPVpe5EuxorD7sSIRJz1-rsqF87IPzYNNk9q2ZgItluvQnUPffGkcyC0nTTfkejKg0eFQ3tBXY_aLCzl0e0OLbYeCew0Xa6di7UmCcvMtRpvbvKvXAMKNK6Rk6otV-BY74"/>
+<span class="absolute top-1 left-1 bg-primary text-on-primary font-label-badge text-[9px] px-1 rounded">-40%</span>
+</div>
+<div class="text-[12px] font-bold text-text-main line-clamp-2 leading-tight">Ốp lưng PhoneX Armor MagSafe</div>
+<div class="mt-1 flex items-center justify-between">
+<div>
+<div class="text-[12px] font-bold text-primary">290.000₫</div>
+<div class="text-[10px] text-tertiary line-through">490.000₫</div>
+</div>
+<button aria-label="Thêm nhanh Ốp lưng PhoneX" class="w-7 h-7 bg-primary text-on-primary rounded flex items-center justify-center hover:bg-primary-hover shadow-xs" onclick="addAccessory(this, 'Ốp lưng PhoneX Armor')" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- COUPON & VOUCHER BLOCK -->
+<div class="bg-surface-container-lowest rounded-lg p-3 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">sell</span>
+<h3 class="font-title-product text-title-product text-text-main font-bold">Mã khuyến mãi PhoneX</h3>
+</div>
+<div class="flex gap-2">
+<div class="relative flex-1">
+<input class="w-full h-11 px-3 bg-surface-container-low rounded-lg text-body-regular font-body-regular text-text-main uppercase font-bold focus:outline-none focus:bg-surface-container-lowest" id="couponInput" placeholder="Nhập mã ưu đãi..." type="text" value="PHONEX18"/>
+</div>
+<button class="bg-primary text-on-primary font-label-button text-[13px] px-4 h-11 rounded-lg font-bold flex-shrink-0 hover:bg-primary-hover transition-colors" onclick="applyCoupon()" type="button">
+          Áp dụng
+        </button>
+</div>
+<!-- VOUCHER CHIPS -->
+<div class="flex flex-wrap gap-2 pt-1">
+<button class="bg-primary-fixed text-primary px-2.5 py-1 rounded text-[11px] font-bold flex items-center gap-1 hover:opacity-90" onclick="selectVoucher('PHONEX18')" type="button">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+          PHONEX18 (-500K)
+        </button>
+<button class="bg-surface-container-low text-secondary px-2.5 py-1 rounded text-[11px] font-semibold hover:bg-surface-container-highest" onclick="selectVoucher('VNPAY500K')" type="button">
+          VNPAY500K (Giảm 5%)
+        </button>
+<button class="bg-surface-container-low text-secondary px-2.5 py-1 rounded text-[11px] font-semibold hover:bg-surface-container-highest" onclick="selectVoucher('VIPTRADE')" type="button">
+          VIPTRADE (+1TR Thu Cũ)
+        </button>
+</div>
+</div>
+<!-- COST BREAKDOWN TABLE -->
+<div class="bg-surface-container-lowest rounded-lg p-3.5 shadow-sm flex flex-col gap-2">
+<h3 class="font-title-product text-title-product text-text-main font-bold pb-1">Chi tiết đơn hàng</h3>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-secondary">
+<span>Tạm tính (2 máy):</span>
+<span class="font-semibold text-text-main" id="subtotalDisplay">61.980.000₫</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-secondary">
+<span class="flex items-center gap-1">
+          Giảm giá voucher:
+          <span class="text-[10px] bg-primary-fixed text-primary px-1 rounded font-bold">PHONEX18</span>
+</span>
+<span class="font-semibold text-primary" id="discountDisplay">-500.000₫</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-secondary">
+<span class="flex items-center gap-1">
+          Vận chuyển:
+          <span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+          Hỏa tốc 1h
+        </span>
+<span class="font-bold text-primary">Miễn phí</span>
+</div>
+<div class="mt-2 pt-2 bg-surface-container-low rounded-lg p-2.5 flex justify-between items-center">
+<div>
+<span class="font-title-product text-title-product font-bold text-text-main block">Tổng thanh toán:</span>
+<span class="text-[11px] text-secondary">(Đã bao gồm thuế VAT 10%)</span>
+</div>
+<span class="font-price-lg text-price-lg text-primary" id="totalDisplay">61.480.000₫</span>
+</div>
+</div>
+<!-- SECURITY PLEDGE CHIPS -->
+<div class="grid grid-cols-3 gap-2 text-center pt-1 pb-2">
+<div class="bg-surface-container-lowest rounded-lg p-2 shadow-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">local_shipping</span>
+<div class="text-[10px] font-bold text-text-main mt-0.5">Hỏa tốc 1h</div>
+<div class="text-[9px] text-tertiary">Nội thành Hà Nội &amp; HCM</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-2 shadow-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<div class="text-[10px] font-bold text-text-main mt-0.5">100% Chính Hãng</div>
+<div class="text-[9px] text-tertiary">Đền x10 nếu phát hiện giả</div>
+</div>
+<div class="bg-surface-container-lowest rounded-lg p-2 shadow-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">sync_alt</span>
+<div class="text-[10px] font-bold text-text-main mt-0.5">Đổi mới 30 ngày</div>
+<div class="text-[9px] text-tertiary">Lỗi là đổi ngay máy mới</div>
+</div>
+</div>
+</div>
+<!-- TOAST FEEDBACK NOTIFICATION -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full text-body-sm font-semibold shadow-xl opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2" id="toastNotification">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">check_circle</span>
+<span id="toastMessage">Đã cập nhật giỏ hàng</span>
+</div>
+<!-- STICKY BOTTOM CHECKOUT ACTION BAR -->
+<div class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md px-gutter-mobile py-2.5 pb-safe shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+<div class="max-w-md mx-auto flex items-center justify-between gap-3">
+<!-- LEFT TOTAL STACK -->
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<label class="flex items-center gap-1.5 cursor-pointer">
+<input checked="" class="w-4 h-4 accent-primary rounded cursor-pointer" id="stickySelectAll" onchange="toggleSelectAll(this)" type="checkbox"/>
+<span class="text-[12px] font-bold text-text-main">Tất cả</span>
+</label>
+<span class="text-[11px] text-primary bg-primary-fixed px-1.5 py-0.2 rounded font-bold truncate">-500k</span>
+</div>
+<div class="mt-0.5">
+<span class="text-[11px] text-tertiary block leading-none">Tổng cộng:</span>
+<span class="font-price-card text-price-card text-primary leading-tight" id="stickyTotalAmount">61.480.000₫</span>
+</div>
+</div>
+<!-- RIGHT BIG CTA BUTTON -->
+<div class="flex-1 max-w-[210px] flex flex-col items-center">
+<button class="w-full h-12 bg-primary hover:bg-primary-hover active:scale-[0.98] transition-transform text-on-primary rounded-lg font-label-button text-[15px] font-bold flex items-center justify-center gap-1.5 shadow-md" onclick="handleCheckout()" type="button">
+<span>ĐẶT HÀNG</span>
+<span class="bg-on-primary text-primary px-1.5 py-0.5 rounded text-[11px] font-extrabold leading-none" id="checkoutCountBadge">(2)</span>
+</button>
+<span class="text-[10px] text-secondary mt-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px] text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+          Trả góp 0% duyệt 5 phút
+        </span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let cartState = {
+    newQty: 1,
+    newPrice: 33490000,
+    usedPrice: 28490000,
+    voucherDiscount: 500000,
+    hasNew: true,
+    hasUsed: true
+  };
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const label = document.getElementById('toastMessage');
+    if (!toast || !label) return;
+    label.textContent = msg;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2200);
+  }
+
+  function formatVND(num) {
+    return num.toLocaleString('vi-VN') + '₫';
+  }
+
+  function updateSummary() {
+    const checkboxes = document.querySelectorAll('.item-checkbox');
+    let subtotal = 0;
+    let selectedCount = 0;
+
+    const itemNewCheck = document.querySelector('#item-new .item-checkbox');
+    const itemUsedCheck = document.querySelector('#item-used .item-checkbox');
+
+    if (itemNewCheck && itemNewCheck.checked && cartState.hasNew) {
+      subtotal += cartState.newPrice * cartState.newQty;
+      selectedCount += 1;
+    }
+    if (itemUsedCheck && itemUsedCheck.checked && cartState.hasUsed) {
+      subtotal += cartState.usedPrice;
+      selectedCount += 1;
+    }
+
+    const discount = (subtotal > 0) ? cartState.voucherDiscount : 0;
+    const finalTotal = Math.max(0, subtotal - discount);
+
+    document.getElementById('subtotalDisplay').textContent = formatVND(subtotal);
+    document.getElementById('discountDisplay').textContent = '-' + formatVND(discount);
+    document.getElementById('totalDisplay').textContent = formatVND(finalTotal);
+    document.getElementById('stickyTotalAmount').textContent = formatVND(finalTotal);
+    document.getElementById('checkoutCountBadge').textContent = `(${selectedCount})`;
+
+    const allChecked = selectedCount === ( (cartState.hasNew ? 1 : 0) + (cartState.hasUsed ? 1 : 0) ) && selectedCount > 0;
+    const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+    const stickySelectAll = document.getElementById('stickySelectAll');
+    if (selectAllCheckbox) selectAllCheckbox.checked = allChecked;
+    if (stickySelectAll) stickySelectAll.checked = allChecked;
+  }
+
+  function updateQty(id, delta) {
+    const qtyElem = document.getElementById(id);
+    let val = parseInt(qtyElem.textContent, 10) + delta;
+    if (val < 1) val = 1;
+    if (val > 5) {
+      showToast('Số lượng vượt quá giới hạn đặt mua (tối đa 5 máy)');
+      return;
+    }
+    qtyElem.textContent = val;
+    cartState.newQty = val;
+    updateSummary();
+    showToast('Đã cập nhật số lượng');
+  }
+
+  function toggleSelectAll(master) {
+    const checkboxes = document.querySelectorAll('.item-checkbox');
+    checkboxes.forEach(cb => cb.checked = master.checked);
+    const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+    const stickySelectAll = document.getElementById('stickySelectAll');
+    if (selectAllCheckbox) selectAllCheckbox.checked = master.checked;
+    if (stickySelectAll) stickySelectAll.checked = master.checked;
+    updateSummary();
+  }
+
+  function removeItem(elementId) {
+    const elem = document.getElementById(elementId);
+    if (!elem) return;
+    if (confirm('Xác nhận bỏ sản phẩm này khỏi giỏ hàng?')) {
+      elem.remove();
+      if (elementId === 'item-new') cartState.hasNew = false;
+      if (elementId === 'item-used') cartState.hasUsed = false;
+      updateSummary();
+      showToast('Đã xóa sản phẩm');
+    }
+  }
+
+  function clearCart() {
+    if (confirm('Bạn có chắc muốn xóa tất cả sản phẩm đang chọn?')) {
+      const itemNew = document.getElementById('item-new');
+      const itemUsed = document.getElementById('item-used');
+      if (itemNew) itemNew.remove();
+      if (itemUsed) itemUsed.remove();
+      cartState.hasNew = false;
+      cartState.hasUsed = false;
+      updateSummary();
+      showToast('Đã dọn sạch giỏ hàng');
+    }
+  }
+
+  function selectVoucher(code) {
+    const input = document.getElementById('couponInput');
+    if (input) {
+      input.value = code;
+      showToast(`Đã chọn mã ${code}`);
+    }
+  }
+
+  function applyCoupon() {
+    const input = document.getElementById('couponInput');
+    if (!input || !input.value.trim()) {
+      showToast('Vui lòng nhập mã giảm giá');
+      return;
+    }
+    showToast(`Áp dụng thành công voucher ${input.value.trim()}`);
+    updateSummary();
+  }
+
+  function addAccessory(btn, name) {
+    btn.disabled = true;
+    btn.classList.remove('bg-primary');
+    btn.classList.add('bg-surface-container-highest', 'text-tertiary');
+    btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span>';
+    showToast(`Đã thêm ${name} vào đơn hàng`);
+  }
+
+  function handleCheckout() {
+    const total = document.getElementById('stickyTotalAmount').textContent;
+    showToast(`Chuyển sang trang thanh toán: ${total}`);
+  }
+</script></main></body></html>
