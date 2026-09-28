@@ -1,0 +1,22 @@
+{
+  "name": "phonex-smartphone-project",
+  "version": "1.0.0",
+  "description": "PhoneX - Chuyên trang mua sắm và thu cũ đổi mới smartphone chính hãng",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8080",
+    "serve": "npx serve -l 8080 .",
+    "check": "node scripts/check-pages.js",
+    "clean": "node scripts/clean-code.js"
+  },
+  "keywords": [
+    "phonex",
+    "smartphone",
+    "e-commerce",
+    "trade-in",
+    "warranty",
+    "vietnam"
+  ],
+  "author": "PhoneX Engineering Team",
+  "license": "MIT"
+}

@@ -1,0 +1,51 @@
+{
+  "shop": [
+    "brand",
+    "cart",
+    "checkout",
+    "compare",
+    "home",
+    "order-detail",
+    "order-success",
+    "products",
+    "search",
+    "search-filter",
+    "series",
+    "used-detail"
+  ],
+  "trade-in": [
+    "device-selection",
+    "sell-phone",
+    "sell-registration",
+    "sell-success",
+    "tradein-detail",
+    "tradein-tracking",
+    "valuation",
+    "valuation-result"
+  ],
+  "account": [
+    "account",
+    "addresses",
+    "favorites",
+    "login-phone-otp",
+    "my-orders",
+    "my-tradein",
+    "notifications",
+    "profile"
+  ],
+  "warranty": [
+    "warranty-detail",
+    "warranty-devices",
+    "warranty-lookup",
+    "warranty-request"
+  ],
+  "stores": [
+    "find-store-stock",
+    "reserve-store",
+    "reserve-success",
+    "reserve-tracking",
+    "stock-check",
+    "store-detail",
+    "stores"
+  ]
+}

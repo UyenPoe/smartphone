@@ -1,0 +1,18 @@
+[
+  {
+    "id": "phu-nhuan",
+    "name": "PhoneX Phú Nhuận",
+    "city": "TP. Hồ Chí Minh",
+    "district": "Phú Nhuận",
+    "address": "155 Trần Huy Liệu, Phú Nhuận, TP.HCM",
+    "phone": "0900000001"
+  },
+  {
+    "id": "quan-1",
+    "name": "PhoneX Quận 1",
+    "city": "TP. Hồ Chí Minh",
+    "district": "Quận 1",
+    "address": "Quận 1, TP.HCM",
+    "phone": "0900000002"
+  }
+]

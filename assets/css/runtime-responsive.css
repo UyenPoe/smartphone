@@ -1,0 +1,58 @@
+
+/* PhoneX production responsive overrides */
+html{width:100%!important;height:auto!important;min-height:100%;overflow-x:hidden!important;overflow-y:auto!important;position:static!important}
+body{width:100%!important;min-width:0!important;overflow-x:hidden!important;overflow-y:auto!important}
+img,video,svg{max-width:100%;height:auto}
+main{min-width:0!important}
+[data-phonex-runtime]{display:none!important}
+@media(max-width:1024px){
+  header.fixed>div,.max-w-7xl{max-width:100%!important}
+  header .hidden\:xl\:inline{display:none!important}
+  table{min-width:720px}
+}
+@media(max-width:767px){
+  .px-desktop-only{display:none!important}
+  body{font-size:14px}
+  header.fixed{position:sticky!important}
+  main{padding-top:0!important}
+  .px-margin, [class*="px-margin"]{padding-left:12px!important;padding-right:12px!important}
+  .grid{min-width:0}
+  table{min-width:640px}
+}
+
+/* === PhoneX vertical scrolling fix === */
+html,body{
+  height:auto!important;
+  min-height:100%!important;
+  max-height:none!important;
+  overflow-x:hidden!important;
+  overflow-y:scroll!important;
+  overscroll-behavior-y:auto!important;
+  position:relative;
+}
+body{min-height:100vh!important;}
+body>main,body>div,main,.page-wrapper,.page-content{
+  max-height:none!important;
+}
+main,.page-wrapper,.page-content{
+  height:auto!important;
+  min-height:0;
+  overflow-y:visible!important;
+}
+/* Stitch sometimes uses h-screen on the outer application wrapper. Let page content grow. */
+body>.h-screen,body>.min-h-screen,body>div.h-screen{
+  height:auto!important;
+  min-height:100vh!important;
+  max-height:none!important;
+  overflow-y:visible!important;
+}
+/* Restore a visible native vertical scrollbar hidden by Stitch exports. */
+::-webkit-scrollbar{display:block!important;width:10px;height:10px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:#c7c7c7;border-radius:9999px;border:2px solid transparent;background-clip:content-box;}
+::-webkit-scrollbar-thumb:hover{background:#9f9f9f;background-clip:content-box;}
+*{scrollbar-width:thin;scrollbar-color:#b8b8b8 transparent;}
+@media(max-width:767px){
+  html,body{overflow-y:auto!important;}
+  ::-webkit-scrollbar{width:6px;height:6px;}
+}

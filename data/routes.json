@@ -1,0 +1,222 @@
+{
+  "navigation": [
+    {
+      "label": "Trang chủ",
+      "route": "shop/home"
+    },
+    {
+      "label": "Điện thoại",
+      "route": "shop/products"
+    },
+    {
+      "label": "Thu cũ đổi mới",
+      "route": "trade-in/sell-phone"
+    },
+    {
+      "label": "Tra cứu",
+      "route": "shop/order-tracking"
+    },
+    {
+      "label": "Bảo hành",
+      "route": "warranty/warranty-lookup"
+    },
+    {
+      "label": "Cửa hàng",
+      "route": "stores/stores"
+    },
+    {
+      "label": "Khuyến mãi",
+      "route": "promotions/promotions"
+    },
+    {
+      "label": "Tài khoản",
+      "route": "account/account"
+    }
+  ],
+  "routes": {
+    "shop/home": {
+      "label": "Trang chủ",
+      "next": "shop/products"
+    },
+    "shop/products": {
+      "label": "Điện thoại",
+      "next": "shop/product-detail"
+    },
+    "shop/product-detail": {
+      "label": "Chi tiết sản phẩm",
+      "next": "shop/cart"
+    },
+    "shop/used-detail": {
+      "label": "Chi tiết máy cũ",
+      "next": "trade-in/tradein-result"
+    },
+    "shop/brand": {
+      "label": "Thương hiệu",
+      "next": "shop/products"
+    },
+    "shop/series": {
+      "label": "Dòng máy",
+      "next": "shop/products"
+    },
+    "shop/search": {
+      "label": "Tìm kiếm",
+      "next": "shop/search-filter"
+    },
+    "shop/search-filter": {
+      "label": "Bộ lọc",
+      "next": "shop/product-detail"
+    },
+    "shop/compare": {
+      "label": "So sánh",
+      "next": "shop/product-detail"
+    },
+    "shop/cart": {
+      "label": "Giỏ hàng",
+      "next": "shop/checkout"
+    },
+    "shop/checkout": {
+      "label": "Thanh toán",
+      "next": "shop/order-success"
+    },
+    "shop/click-collect": {
+      "label": "Nhận tại cửa hàng",
+      "next": "shop/order-success"
+    },
+    "shop/order-success": {
+      "label": "Đặt hàng thành công",
+      "next": "shop/order-tracking"
+    },
+    "shop/order-tracking": {
+      "label": "Tra cứu đơn hàng",
+      "next": "shop/order-detail"
+    },
+    "shop/order-detail": {
+      "label": "Chi tiết đơn hàng",
+      "next": "shop/home"
+    },
+    "trade-in/sell-phone": {
+      "label": "Bán máy cũ",
+      "next": "trade-in/device-selection"
+    },
+    "trade-in/device-selection": {
+      "label": "Chọn thiết bị",
+      "next": "trade-in/valuation"
+    },
+    "trade-in/valuation": {
+      "label": "Định giá",
+      "next": "trade-in/valuation-result"
+    },
+    "trade-in/valuation-result": {
+      "label": "Kết quả định giá",
+      "next": "trade-in/sell-registration"
+    },
+    "trade-in/sell-registration": {
+      "label": "Đăng ký bán máy",
+      "next": "trade-in/sell-success"
+    },
+    "trade-in/sell-success": {
+      "label": "Gửi yêu cầu thành công",
+      "next": "trade-in/tradein-tracking"
+    },
+    "trade-in/tradein-result": {
+      "label": "Kết quả Trade-in",
+      "next": "trade-in/sell-registration"
+    },
+    "trade-in/tradein-tracking": {
+      "label": "Tra cứu Thu mua / Trade-in",
+      "next": "trade-in/tradein-detail"
+    },
+    "trade-in/tradein-detail": {
+      "label": "Chi tiết Thu mua / Trade-in",
+      "next": "shop/home"
+    },
+    "account/login-phone-otp": {
+      "label": "Đăng nhập SĐT",
+      "next": "account/account"
+    },
+    "account/account": {
+      "label": "Tài khoản",
+      "next": "account/my-orders"
+    },
+    "account/profile": {
+      "label": "Hồ sơ",
+      "next": "account/account"
+    },
+    "account/addresses": {
+      "label": "Sổ địa chỉ",
+      "next": "account/account"
+    },
+    "account/my-orders": {
+      "label": "Đơn hàng của tôi",
+      "next": "shop/order-detail"
+    },
+    "account/my-tradein": {
+      "label": "Thu mua / Trade-in của tôi",
+      "next": "trade-in/tradein-detail"
+    },
+    "account/favorites": {
+      "label": "Yêu thích",
+      "next": "shop/product-detail"
+    },
+    "account/notifications": {
+      "label": "Thông báo",
+      "next": "account/account"
+    },
+    "warranty/warranty-lookup": {
+      "label": "Tra cứu bảo hành",
+      "next": "warranty/warranty-devices"
+    },
+    "warranty/warranty-devices": {
+      "label": "Thiết bị bảo hành",
+      "next": "warranty/warranty-request"
+    },
+    "warranty/warranty-request": {
+      "label": "Yêu cầu bảo hành",
+      "next": "warranty/warranty-detail"
+    },
+    "warranty/warranty-detail": {
+      "label": "Chi tiết bảo hành",
+      "next": "shop/home"
+    },
+    "stores/stores": {
+      "label": "Hệ thống cửa hàng",
+      "next": "stores/store-detail"
+    },
+    "stores/store-detail": {
+      "label": "Chi tiết cửa hàng",
+      "next": "stores/used-phones"
+    },
+    "stores/find-store-stock": {
+      "label": "Tìm cửa hàng có máy",
+      "next": "stores/stock-check"
+    },
+    "stores/stock-check": {
+      "label": "Kiểm tra tồn kho",
+      "next": "stores/reserve-store"
+    },
+    "stores/reserve-store": {
+      "label": "Giữ máy",
+      "next": "stores/reserve-success"
+    },
+    "stores/reserve-success": {
+      "label": "Giữ máy thành công",
+      "next": "stores/reserve-tracking"
+    },
+    "stores/reserve-tracking": {
+      "label": "Tra cứu giữ máy",
+      "next": "stores/store-detail"
+    },
+    "stores/used-phones": {
+      "label": "Máy cũ tại cửa hàng",
+      "next": "shop/used-detail"
+    },
+    "promotions/promotions": {
+      "label": "Khuyến mãi",
+      "next": "promotions/promotion-detail"
+    },
+    "promotions/promotion-detail": {
+      "label": "Chi tiết khuyến mãi",
+      "next": "shop/products"
+    }
+  }
+}

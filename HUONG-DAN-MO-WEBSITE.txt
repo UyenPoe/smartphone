@@ -1,0 +1,16 @@
+PHONEX - CÁCH MỞ ĐÚNG
+
+MAC:
+1. Giải nén ZIP.
+2. Mở Terminal tại thư mục project.
+3. Chạy: python3 -m http.server 8080
+4. Mở: http://localhost:8080
+
+Hoặc thử double-click START-MAC.command.
+
+WINDOWS:
+1. Giải nén ZIP.
+2. Double-click START-WINDOWS.bat.
+3. Trình duyệt sẽ mở http://localhost:8080
+
+Không nên mở project bằng file:// vì source Stitch có script frontend runtime.

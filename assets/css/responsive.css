@@ -1,0 +1,1 @@
+@media(max-width:1024px){.container{width:min(calc(100% - 24px),100%)}}@media(max-width:600px){.container{width:min(calc(100% - 20px),100%)}}
