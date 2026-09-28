@@ -10,6 +10,9 @@
 if ( ! defined( 'PHONEX_VERSION' ) ) {
 	define( 'PHONEX_VERSION', '1.0.0' );
 }
+if ( ! defined( '_S_VERSION' ) ) {
+	define( '_S_VERSION', PHONEX_VERSION );
+}
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

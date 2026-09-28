@@ -28,6 +28,8 @@ package-lock.json
 # Build outputs
 dist/
 build/
+*.zip
 
-# Design raw files and AI export archives (retained locally for reference)
-stitch-source/
+# Local WordPress environment
+wordpress/
+wp-cli.phar
