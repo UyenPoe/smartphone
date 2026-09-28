@@ -1,30 +1,187 @@
-<!-- PhoneX Shared Header Component -->
-<header class="pxH" data-component="header">
-  <div class="pxHT">
-    <button class="pxMenu" type="button" aria-label="Mở danh mục menu" onclick="this.closest('.pxH').classList.toggle('open')">☰</button>
-    <a class="pxLogo" href="{{ROOT}}pages/shop/home/index.html">PhoneX</a>
-    <div class="pxSearch">
-      <input placeholder="Bạn cần tìm điện thoại gì?">
-      <a href="{{ROOT}}pages/shop/search/index.html">Tìm</a>
-    </div>
-    <div class="pxAct">
-      <a href="{{ROOT}}pages/shop/order-tracking/index.html">Tra cứu</a>
-      <a href="{{ROOT}}pages/account/account/index.html">Tài khoản</a>
-      <a href="{{ROOT}}pages/shop/cart/index.html">Giỏ hàng</a>
-    </div>
-    <div class="pxMob">
-      <a href="{{ROOT}}pages/account/account/index.html" aria-label="Tài khoản">♙</a>
-      <a href="{{ROOT}}pages/shop/cart/index.html" aria-label="Giỏ hàng">🛒</a>
+<!-- PhoneX Flagship Unified Header (Desktop, Tablet & Mobile - Stitch Visual Parity) -->
+<header class="sticky top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100" data-component="header">
+  <!-- 1. Top Announcement Bar (Desktop & Tablet) -->
+  <div class="hidden md:block w-full bg-gray-100 border-b border-gray-200 text-xs text-gray-600 py-1.5 px-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="font-semibold text-red-600">Hotline miễn phí: 1800.6868</span> (8h00 - 21h30)
+        <span class="text-gray-300">|</span>
+        <span>Hệ thống 128 cửa hàng toàn quốc</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="{{ROOT}}pages/warranty/warranty-lookup/index.html" class="hover:text-red-600 transition-colors">Tra cứu bảo hành điện tử</a>
+        <span class="text-gray-300">|</span>
+        <a href="{{ROOT}}pages/trade-in/sell-phone/index.html" class="hover:text-red-600 transition-colors text-red-600 font-medium">Thu cũ đổi mới trợ giá đến 3.000.000₫</a>
+        <span class="text-gray-300">|</span>
+        <a href="{{ROOT}}pages/shop/order-tracking/index.html" class="hover:text-red-600 transition-colors">Tra cứu đơn hàng</a>
+      </div>
     </div>
   </div>
-  <nav class="pxNav" aria-label="Điều hướng chính">
-    <div class="pxNavI">
-      <a href="{{ROOT}}pages/shop/products/index.html">Điện thoại</a>
-      <a href="{{ROOT}}pages/trade-in/sell-phone/index.html">Thu cũ đổi mới</a>
-      <a href="{{ROOT}}pages/promotions/promotions/index.html">Khuyến mãi</a>
-      <a href="{{ROOT}}pages/stores/stores/index.html">Cửa hàng</a>
-      <a href="{{ROOT}}pages/warranty/warranty-lookup/index.html">Bảo hành</a>
-      <a href="{{ROOT}}pages/shop/order-tracking/index.html">Tra cứu đơn hàng</a>
+
+  <!-- 2. Main Navigation Bar -->
+  <div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4">
+    <!-- Left: Mobile Hamburger + Logo -->
+    <div class="flex items-center gap-2 md:gap-4 shrink-0">
+      <!-- Hamburger Button (Mobile only) -->
+      <button type="button" aria-label="Mở danh mục menu" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 active:bg-gray-200 transition-colors" onclick="document.getElementById('pxMobileDrawer').classList.remove('hidden')">
+        <span class="material-symbols-outlined text-[26px]">menu</span>
+      </button>
+
+      <!-- PhoneX Logo -->
+      <a href="{{ROOT}}pages/shop/home/index.html" data-path="home" class="flex items-center gap-2">
+        <div class="flex flex-col">
+          <span class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight leading-none">Phone<span class="text-red-600">X</span></span>
+          <span class="text-[9px] md:text-[10px] text-gray-500 font-bold uppercase tracking-wider leading-none mt-0.5 hidden sm:inline">Smartphone Specialist</span>
+        </div>
+      </a>
     </div>
-  </nav>
+
+    <!-- Center: Search Bar (Desktop & Tablet) -->
+    <div class="hidden sm:flex flex-1 max-w-xl mx-2">
+      <form action="{{ROOT}}pages/shop/search/index.html" method="get" class="relative w-full flex items-center" onsubmit="const q=this.querySelector('input').value.trim(); if(!q){event.preventDefault();}">
+        <input name="q" class="w-full h-10 md:h-11 pl-4 pr-12 bg-gray-100 rounded-lg text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-red-600 transition-all border border-transparent focus:border-red-600" placeholder="Tìm kiếm smartphone, iPhone 16 Pro Max, Galaxy S25 Ultra, Xiaomi 15..." type="text">
+        <button type="submit" aria-label="Tìm kiếm" class="absolute right-1 w-8 h-8 md:w-9 md:h-9 flex items-center justify-center bg-red-600 hover:bg-red-700 text-white rounded-md transition-colors">
+          <span class="material-symbols-outlined text-[20px]">search</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Right: Action Icons & User Info -->
+    <div class="flex items-center gap-1 sm:gap-3 shrink-0">
+      <!-- Search Icon (Mobile only) -->
+      <a href="{{ROOT}}pages/shop/search/index.html" data-path="search" aria-label="Tìm kiếm" class="sm:hidden w-10 h-10 flex items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 transition-colors">
+        <span class="material-symbols-outlined text-[24px]">search</span>
+      </a>
+
+      <!-- So sánh (Tablet & Desktop) -->
+      <a href="{{ROOT}}pages/shop/compare/index.html" data-path="compare" class="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 text-gray-700 hover:text-red-600 transition-colors">
+        <div class="relative flex items-center justify-center">
+          <span class="material-symbols-outlined text-[22px] text-gray-500">compare_arrows</span>
+          <span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+        </div>
+        <span class="text-xs font-semibold">So sánh</span>
+      </a>
+
+      <!-- Yêu thích (Tablet & Desktop) -->
+      <a href="{{ROOT}}pages/account/favorites/index.html" data-path="wishlist" class="hidden lg:flex items-center gap-1.5 px-2.5 py-1.5 text-gray-700 hover:text-red-600 transition-colors">
+        <div class="relative flex items-center justify-center">
+          <span class="material-symbols-outlined text-[22px] text-gray-500">favorite_border</span>
+          <span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">3</span>
+        </div>
+        <span class="text-xs font-semibold">Yêu thích</span>
+      </a>
+
+      <!-- Giỏ hàng (All platforms) -->
+      <a href="{{ROOT}}pages/shop/cart/index.html" data-path="cart" class="flex items-center gap-2 px-3 py-1.5 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+        <div class="relative flex items-center justify-center">
+          <span class="material-symbols-outlined text-[24px] text-red-600">shopping_cart</span>
+          <span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center" data-cart-count>1</span>
+        </div>
+        <div class="hidden sm:flex flex-col text-left">
+          <span class="text-[10px] text-gray-500 uppercase font-semibold leading-tight">Giỏ hàng</span>
+          <span class="text-xs font-bold text-red-600 leading-tight">34.990.000₫</span>
+        </div>
+      </a>
+
+      <!-- Tài khoản (Desktop) -->
+      <div class="hidden sm:flex items-center pl-2">
+        <a href="{{ROOT}}pages/account/account/index.html" data-path="account-settings" class="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-xs ring-1 ring-gray-200">
+            MQ
+          </div>
+          <div class="hidden xl:flex flex-col text-left">
+            <span class="text-xs font-bold text-gray-900 leading-tight">Minh Quân</span>
+            <span class="text-[10px] text-red-600 font-semibold leading-none">VIP Member</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Subnav: Brand Category Bar (Scrollable on Tablet & Mobile) -->
+  <div class="w-full bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="flex items-center gap-1 sm:gap-2 py-2 overflow-x-auto whitespace-nowrap text-xs font-semibold scrollbar-none" aria-label="Danh mục thương hiệu">
+        <a href="{{ROOT}}pages/shop/home/index.html" data-path="home" class="px-2.5 py-1 rounded text-red-600 font-bold hover:bg-red-50 transition-colors">Trang chủ</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-apple" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">iPhone</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-samsung" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Samsung</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-xiaomi" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Xiaomi</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-oppo" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">OPPO</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-vivo" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">vivo</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-realme" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">realme</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-google-pixel" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Google Pixel</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-nothing" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Nothing Phone</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="deals" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Điện thoại giá tốt</a>
+        <a href="{{ROOT}}pages/promotions/promotions/index.html" data-path="promotions" class="px-2.5 py-1 rounded text-red-600 hover:bg-red-50 transition-colors">Khuyến mãi Hot</a>
+        <a href="{{ROOT}}pages/trade-in/sell-phone/index.html" data-path="trade-in" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Thu cũ đổi mới</a>
+        <a href="{{ROOT}}pages/shop/products/index.html" data-path="installment" class="px-2.5 py-1 rounded text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Trả góp 0%</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- 4. Mobile Offcanvas Slide-in Drawer Menu -->
+  <div id="pxMobileDrawer" class="hidden fixed inset-0 z-[99999] flex" role="dialog" aria-modal="true" aria-label="Menu điều hướng di động">
+    <!-- Backdrop overlay -->
+    <div class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="document.getElementById('pxMobileDrawer').classList.add('hidden')"></div>
+    <!-- Drawer content -->
+    <div class="relative w-4/5 max-w-xs bg-white h-full shadow-2xl flex flex-col justify-between z-10 overflow-y-auto">
+      <div>
+        <!-- Drawer Header -->
+        <div class="p-4 border-b border-gray-100 flex items-center justify-between bg-gray-50">
+          <div class="flex items-center gap-2">
+            <span class="text-xl font-extrabold text-gray-900">Phone<span class="text-red-600">X</span></span>
+            <span class="text-[10px] bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full">Flagship</span>
+          </div>
+          <button type="button" aria-label="Đóng menu" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 text-gray-500" onclick="document.getElementById('pxMobileDrawer').classList.add('hidden')">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+
+        <!-- User VIP Card in Mobile Menu -->
+        <div class="p-4 border-b border-gray-100 bg-red-50/50 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-red-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">
+            MQ
+          </div>
+          <div>
+            <div class="font-bold text-sm text-gray-900">Minh Quân</div>
+            <div class="text-xs text-red-600 font-medium">Thành viên VIP (14.850 PX)</div>
+          </div>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="p-2 flex flex-col divide-y divide-gray-50 text-sm font-medium text-gray-700">
+          <a href="{{ROOT}}pages/shop/home/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-red-600 font-semibold">
+            <span class="material-symbols-outlined text-[20px]">home</span> Trang chủ
+          </a>
+          <a href="{{ROOT}}pages/shop/products/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50">
+            <span class="material-symbols-outlined text-[20px]">smartphone</span> Tất cả điện thoại
+          </a>
+          <a href="{{ROOT}}pages/trade-in/sell-phone/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50 text-red-600">
+            <span class="material-symbols-outlined text-[20px]">sync_alt</span> Thu cũ đổi mới trợ giá 3tr
+          </a>
+          <a href="{{ROOT}}pages/promotions/promotions/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50">
+            <span class="material-symbols-outlined text-[20px]">local_offer</span> Khuyến mãi & Flash Sale
+          </a>
+          <a href="{{ROOT}}pages/stores/stores/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50">
+            <span class="material-symbols-outlined text-[20px]">store</span> 128 Showroom toàn quốc
+          </a>
+          <a href="{{ROOT}}pages/warranty/warranty-lookup/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50">
+            <span class="material-symbols-outlined text-[20px]">verified_user</span> Tra cứu bảo hành điện tử
+          </a>
+          <a href="{{ROOT}}pages/shop/order-tracking/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50">
+            <span class="material-symbols-outlined text-[20px]">local_shipping</span> Tra cứu đơn hàng
+          </a>
+          <a href="{{ROOT}}pages/account/account/index.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-gray-50">
+            <span class="material-symbols-outlined text-[20px]">person</span> Tài khoản cá nhân
+          </a>
+        </div>
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="p-4 border-t border-gray-100 bg-gray-50 text-xs text-gray-500">
+        <div>Tổng đài miễn phí: <strong class="text-red-600">1800.6868</strong></div>
+        <div class="mt-1">Giờ mở cửa: 8h00 - 21h30 hàng ngày</div>
+      </div>
+    </div>
+  </div>
 </header>
