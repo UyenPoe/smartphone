@@ -230,15 +230,38 @@
         }
       },
     },
-  }</script><link href="../../../assets/css/runtime-responsive.css" rel="stylesheet"/><script defer="" src="../../../assets/js/route-resolver.js"></script><script defer="" src="../../../assets/js/main.js"></script><style id="px-responsive-hf">
-.pxH,.pxF{font-family:Arial,sans-serif;color:#172033;background:#fff}.pxH{position:sticky;top:0;z-index:99999;border-bottom:1px solid #e5e7eb}
-.pxHT{max-width:1280px;margin:auto;padding:10px 20px;display:grid;grid-template-columns:auto minmax(220px,1fr) auto;gap:20px;align-items:center}
-.pxLogo{font-size:25px;font-weight:900;color:#0b5bb5;text-decoration:none}.pxSearch{display:flex;border:1px solid #d0d5dd;border-radius:12px;overflow:hidden}.pxSearch input{width:100%;padding:11px;border:0;outline:0}.pxSearch a{padding:11px;text-decoration:none;color:#0b5bb5;font-weight:700}
-.pxAct,.pxNavI{display:flex;align-items:center;gap:20px}.pxAct a,.pxNav a{color:#172033;text-decoration:none;font-size:14px;font-weight:700;white-space:nowrap}.pxNav{border-top:1px solid #f2f4f7}.pxNavI{max-width:1280px;margin:auto;padding:0 20px;min-height:44px}
-.pxMenu,.pxMob{display:none}.pxF{border-top:1px solid #e5e7eb;margin-top:40px}.pxFI{max-width:1280px;margin:auto;padding:36px 20px 0}.pxFG{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:32px}.pxF h3{margin:0 0 12px}.pxF p,.pxF a{display:block;color:#667085;text-decoration:none;font-size:14px;line-height:1.55;margin:7px 0}.pxCopy{border-top:1px solid #eee;margin-top:28px;padding:16px 0;font-size:13px;color:#667085}
-@media(max-width:1024px){.pxHT{padding:9px 16px;gap:12px}.pxNavI{overflow-x:auto;padding:0 16px;gap:16px}.pxAct a:first-child{display:none}.pxFG{grid-template-columns:1.4fr 1fr 1fr}.pxFC:last-child{grid-column:2/4}}
-@media(max-width:700px){.pxHT{grid-template-columns:40px 1fr auto;padding:8px 12px;gap:8px}.pxMenu{display:block;border:0;background:none;font-size:25px}.pxLogo{text-align:center;font-size:22px}.pxSearch{grid-column:1/-1;grid-row:2}.pxAct{display:none}.pxMob{display:flex;gap:10px}.pxMob a{text-decoration:none;font-size:20px}.pxNav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;box-shadow:0 10px 20px #0002}.pxH.open .pxNav{display:block}.pxNavI{display:block;max-height:70vh;overflow-y:auto;padding:8px 14px}.pxNav a{display:block;padding:13px 8px;border-bottom:1px solid #eee}.pxFI{padding:26px 16px 0}.pxFG{grid-template-columns:1fr;gap:0}.pxFC,.pxFC:last-child{grid-column:auto;padding:14px 0;border-bottom:1px solid #eee}.pxCopy{text-align:center}}
-</style></head><body class="bg-surface font-body-regular text-body-regular text-on-surface antialiased" data-phonex-page="promotions/promotion-detail"><header class="pxH"><div class="pxHT"><button class="pxMenu" type="button" aria-label="Mở danh mục menu" type="button" aria-label="Mở danh mục menu" onclick="this.closest('.pxH').classList.toggle('open')">☰</button><a class="pxLogo" href="../../../pages/shop/home/index.html">PhoneX</a><div class="pxSearch"><input placeholder="Bạn cần tìm điện thoại gì?"><a href="../../../pages/shop/search/index.html">Tìm</a></div><div class="pxAct"><a href="../../../pages/shop/order-tracking/index.html">Tra cứu</a><a href="../../../pages/account/account/index.html">Tài khoản</a><a href="../../../pages/shop/cart/index.html">Giỏ hàng</a></div><div class="pxMob"><a href="../../../pages/account/account/index.html">♙</a><a href="../../../pages/shop/cart/index.html">🛒</a></div></div><nav class="pxNav"><div class="pxNavI"><a href="../../../pages/shop/products/index.html">Điện thoại</a><a href="../../../pages/trade-in/sell-phone/index.html">Thu cũ đổi mới</a><a href="../../../pages/promotions/promotions/index.html">Khuyến mãi</a><a href="../../../pages/stores/stores/index.html">Cửa hàng</a><a href="../../../pages/warranty/warranty-lookup/index.html">Bảo hành</a><a href="../../../pages/shop/order-tracking/index.html">Tra cứu đơn hàng</a></div></nav></header><main class="w-full pt-28 bg-surface min-h-[calc(100vh-28rem)]"><div class="flex flex-col w-full">
+  }</script><link href="../../../assets/css/runtime-responsive.css" rel="stylesheet"/><script defer="" src="../../../assets/js/route-resolver.js"></script><script defer="" src="../../../assets/js/main.js"></script><link href="../../../assets/css/header-footer.css" rel="stylesheet"/></head><body class="bg-surface font-body-regular text-body-regular text-on-surface antialiased" data-phonex-page="promotions/promotion-detail"><!-- START: COMPONENT HEADER (Source: components/header.html) -->
+<!-- PhoneX Shared Header Component -->
+<header class="pxH" data-component="header">
+  <div class="pxHT">
+    <button class="pxMenu" type="button" aria-label="Mở danh mục menu" onclick="this.closest('.pxH').classList.toggle('open')">☰</button>
+    <a class="pxLogo" href="../../../pages/shop/home/index.html">PhoneX</a>
+    <div class="pxSearch">
+      <input placeholder="Bạn cần tìm điện thoại gì?">
+      <a href="../../../pages/shop/search/index.html">Tìm</a>
+    </div>
+    <div class="pxAct">
+      <a href="../../../pages/shop/order-tracking/index.html">Tra cứu</a>
+      <a href="../../../pages/account/account/index.html">Tài khoản</a>
+      <a href="../../../pages/shop/cart/index.html">Giỏ hàng</a>
+    </div>
+    <div class="pxMob">
+      <a href="../../../pages/account/account/index.html" aria-label="Tài khoản">♙</a>
+      <a href="../../../pages/shop/cart/index.html" aria-label="Giỏ hàng">🛒</a>
+    </div>
+  </div>
+  <nav class="pxNav" aria-label="Điều hướng chính">
+    <div class="pxNavI">
+      <a href="../../../pages/shop/products/index.html">Điện thoại</a>
+      <a href="../../../pages/trade-in/sell-phone/index.html">Thu cũ đổi mới</a>
+      <a href="../../../pages/promotions/promotions/index.html">Khuyến mãi</a>
+      <a href="../../../pages/stores/stores/index.html">Cửa hàng</a>
+      <a href="../../../pages/warranty/warranty-lookup/index.html">Bảo hành</a>
+      <a href="../../../pages/shop/order-tracking/index.html">Tra cứu đơn hàng</a>
+    </div>
+  </nav>
+</header>
+<!-- END: COMPONENT HEADER --><main class="w-full pt-28 bg-surface min-h-[calc(100vh-28rem)]"><div class="flex flex-col w-full">
 <!-- Top Breadcrumb Bar -->
 <div class="w-full bg-surface-container-low py-space-sm">
 <div class="max-w-[1320px] mx-auto px-gutter flex items-center gap-2 font-body-sm text-body-sm text-secondary">
@@ -950,4 +973,34 @@
     });
   });
 </script></main><script src="../../../assets/js/site-navigation.js"></script>
-<footer class="pxF"><div class="pxFI"><div class="pxFG"><div class="pxFC"><h3>PhoneX</h3><p>Điện thoại mới, máy cũ và thu cũ đổi mới.</p></div><div class="pxFC"><h3>Mua hàng</h3><a href="../../../pages/shop/products/index.html">Điện thoại</a><a href="../../../pages/promotions/promotions/index.html">Khuyến mãi</a><a href="../../../pages/shop/order-tracking/index.html">Tra cứu đơn hàng</a></div><div class="pxFC"><h3>Dịch vụ</h3><a href="../../../pages/trade-in/valuation/index.html">Định giá máy</a><a href="../../../pages/trade-in/sell-phone/index.html">Thu cũ đổi mới</a><a href="../../../pages/warranty/warranty-lookup/index.html">Bảo hành</a></div><div class="pxFC"><h3>Hỗ trợ</h3><a href="../../../pages/stores/stores/index.html">Cửa hàng</a><a href="../../../pages/account/account/index.html">Tài khoản</a></div></div><div class="pxCopy">© PhoneX. Website bán điện thoại, máy cũ và thu cũ đổi mới.</div></div></footer></body></html>
+<!-- START: COMPONENT FOOTER (Source: components/footer.html) -->
+<!-- PhoneX Shared Footer Component -->
+<footer class="pxF" data-component="footer">
+  <div class="pxFI">
+    <div class="pxFG">
+      <div class="pxFC">
+        <h3>PhoneX</h3>
+        <p>Điện thoại mới, máy cũ và thu cũ đổi mới chính hãng.</p>
+      </div>
+      <div class="pxFC">
+        <h3>Mua hàng</h3>
+        <a href="../../../pages/shop/products/index.html">Điện thoại</a>
+        <a href="../../../pages/promotions/promotions/index.html">Khuyến mãi</a>
+        <a href="../../../pages/shop/order-tracking/index.html">Tra cứu đơn hàng</a>
+      </div>
+      <div class="pxFC">
+        <h3>Dịch vụ</h3>
+        <a href="../../../pages/trade-in/valuation/index.html">Định giá máy</a>
+        <a href="../../../pages/trade-in/sell-phone/index.html">Thu cũ đổi mới</a>
+        <a href="../../../pages/warranty/warranty-lookup/index.html">Bảo hành</a>
+      </div>
+      <div class="pxFC">
+        <h3>Hỗ trợ</h3>
+        <a href="../../../pages/stores/stores/index.html">Cửa hàng</a>
+        <a href="../../../pages/account/account/index.html">Tài khoản</a>
+      </div>
+    </div>
+    <div class="pxCopy">© PhoneX. Website bán điện thoại, máy cũ và thu cũ đổi mới.</div>
+  </div>
+</footer>
+<!-- END: COMPONENT FOOTER --></body></html>

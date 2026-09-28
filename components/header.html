@@ -1,7 +1,30 @@
-<header class="px-shell" data-component="header">
-  <a class="px-logo" href="/pages/shop/home/">PhoneX</a>
-  <nav class="px-nav" aria-label="Điều hướng chính">
-    <a href="/pages/shop/products/">Điện thoại</a><a href="/pages/trade-in/sell-phone/">Thu cũ đổi mới</a><a href="/pages/shop/order-tracking/">Tra cứu</a><a href="/pages/warranty/warranty-lookup/">Bảo hành</a><a href="/pages/stores/stores/">Cửa hàng</a><a href="/pages/promotions/promotions/">Khuyến mãi</a>
+<!-- PhoneX Shared Header Component -->
+<header class="pxH" data-component="header">
+  <div class="pxHT">
+    <button class="pxMenu" type="button" aria-label="Mở danh mục menu" onclick="this.closest('.pxH').classList.toggle('open')">☰</button>
+    <a class="pxLogo" href="{{ROOT}}pages/shop/home/index.html">PhoneX</a>
+    <div class="pxSearch">
+      <input placeholder="Bạn cần tìm điện thoại gì?">
+      <a href="{{ROOT}}pages/shop/search/index.html">Tìm</a>
+    </div>
+    <div class="pxAct">
+      <a href="{{ROOT}}pages/shop/order-tracking/index.html">Tra cứu</a>
+      <a href="{{ROOT}}pages/account/account/index.html">Tài khoản</a>
+      <a href="{{ROOT}}pages/shop/cart/index.html">Giỏ hàng</a>
+    </div>
+    <div class="pxMob">
+      <a href="{{ROOT}}pages/account/account/index.html" aria-label="Tài khoản">♙</a>
+      <a href="{{ROOT}}pages/shop/cart/index.html" aria-label="Giỏ hàng">🛒</a>
+    </div>
+  </div>
+  <nav class="pxNav" aria-label="Điều hướng chính">
+    <div class="pxNavI">
+      <a href="{{ROOT}}pages/shop/products/index.html">Điện thoại</a>
+      <a href="{{ROOT}}pages/trade-in/sell-phone/index.html">Thu cũ đổi mới</a>
+      <a href="{{ROOT}}pages/promotions/promotions/index.html">Khuyến mãi</a>
+      <a href="{{ROOT}}pages/stores/stores/index.html">Cửa hàng</a>
+      <a href="{{ROOT}}pages/warranty/warranty-lookup/index.html">Bảo hành</a>
+      <a href="{{ROOT}}pages/shop/order-tracking/index.html">Tra cứu đơn hàng</a>
+    </div>
   </nav>
-  <div class="px-actions"><a href="/pages/shop/search/">Tìm kiếm</a><a href="/pages/shop/cart/">Giỏ hàng <span class="px-cart-count" data-cart-count>0</span></a></div>
 </header>

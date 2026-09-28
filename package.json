@@ -7,7 +7,9 @@
     "dev": "python3 -m http.server 8080",
     "serve": "npx serve -l 8080 .",
     "check": "node scripts/check-pages.js",
-    "clean": "node scripts/clean-code.js"
+    "build": "node scripts/sync-components.js",
+    "sync:components": "node scripts/sync-components.js",
+    "clean": "python3 scripts/standardize.py"
   },
   "keywords": [
     "phonex",
