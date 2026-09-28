@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+<html data-phonex-root="../../../" lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/>
+<title>Kiểm tra tồn kho | PhoneX - Hệ Thống Smartphone Chính Hãng</title>
+<meta name="description" content="PhoneX - Chuyên trang mua sắm kiểm tra tồn kho, định giá thu cũ đổi mới, trả góp 0% và bảo hành điện tử chính hãng toàn quốc."/>
+<meta property="og:title" content="Kiểm tra tồn kho | PhoneX - Hệ Thống Smartphone Chính Hãng"/>
+<meta property="og:description" content="Hệ sinh thái smartphone chính hãng, thu cũ đổi mới trợ giá cao nhất và giao hàng hỏa tốc tại PhoneX."/>
+<meta property="og:type" content="website"/>
+<meta name="robots" content="index, follow"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"tertiary":"#595a5a","inverse-primary":"#ffb4aa","tertiary-fixed":"#e4e2e2","text-main":"#222222","tertiary-fixed-dim":"#c7c6c6","inverse-surface":"#2e3132","error":"#ba1a1a","on-tertiary-fixed":"#1b1c1c","on-error":"#ffffff","primary-fixed-dim":"#ffb4aa","on-secondary-fixed":"#1c1b1b","secondary-container":"#e5e2e1","outline-variant":"#e9bcb6","on-tertiary-container":"#faf8f8","surface-container-high":"#e7e8ea","surface-variant":"#e1e2e4","surface-container":"#edeef0","surface":"#f8f9fb","on-primary":"#ffffff","on-surface":"#191c1e","surface-container-highest":"#e1e2e4","on-surface-variant":"#5f3f3b","secondary-fixed":"#e5e2e1","on-background":"#191c1e","secondary-fixed-dim":"#c8c6c5","on-secondary-fixed-variant":"#474646","secondary":"#5f5e5e","on-tertiary-fixed-variant":"#464747","border-subtle":"#E5E7EB","on-error-container":"#93000a","background":"#f8f9fb","on-primary-container":"#fff7f6","outline":"#946e69","surface-pure":"#FFFFFF","error-container":"#ffdad6","on-secondary-container":"#656464","primary":"#b7000c","on-tertiary":"#ffffff","surface-tint":"#c0000d","on-primary-fixed":"#410001","on-primary-fixed-variant":"#930007","primary-container":"#e60012","surface-bright":"#f8f9fb","inverse-on-surface":"#f0f1f3","primary-fixed":"#ffdad5","surface-dim":"#d9dadc","surface-container-low":"#f2f4f6","on-secondary":"#ffffff","tertiary-container":"#727272","primary-hover":"#C90010","surface-container-lowest":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","space-2xl":"4rem","gutter":"1.25rem","space-md":"1rem","space-lg":"1.5rem","margin-desktop":"3.5rem","gutter-mobile":"0.75rem","margin":"1.5rem","space-xs":"0.25rem","space-xl":"2.5rem"},"fontFamily":{"label-badge":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-button":["Plus Jakarta Sans"],"price-card":["Plus Jakarta Sans"],"price-strikethrough":["Plus Jakarta Sans"],"body-regular":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"price-lg":["Plus Jakarta Sans"],"title-product":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"]},"fontSize":{"label-badge":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"label-button":["14px",{"lineHeight":"20px","fontWeight":"600"}],"price-card":["18px",{"lineHeight":"24px","fontWeight":"700"}],"price-strikethrough":["13px",{"lineHeight":"18px","fontWeight":"400"}],"body-regular":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-xl":["40px",{"lineHeight":"48px","fontWeight":"700"}],"price-lg":["22px",{"lineHeight":"28px","fontWeight":"700"}],"title-product":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}]}}}};</script><link href="../../../assets/css/runtime-responsive.css" rel="stylesheet"/><script defer="" src="../../../assets/js/route-resolver.js"></script><script defer="" src="../../../assets/js/main.js"></script><link href="../../../assets/css/header-footer.css" rel="stylesheet"/></head><body class="bg-surface font-body-regular text-body-regular text-on-surface antialiased" data-phonex-page="stores/stock-check"><!-- START: COMPONENT HEADER (Source: components/header.html) -->
+<!-- PhoneX Flagship Unified Header (Desktop, Tablet & Mobile with Popup Support) -->
+<header class="sticky top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 font-sans" data-component="header">
+  <!-- 1. Top Announcement Bar (Desktop & Tablet) -->
+  <div class="hidden md:block w-full bg-gray-100 border-b border-gray-200 text-sm text-gray-700 py-2 px-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="font-bold text-red-600">Hotline miễn phí: 1800.6868</span> (8h00 - 21h30)
+        <span class="text-gray-300">|</span>
+        <span class="font-medium text-gray-600">Hệ thống 128 cửa hàng toàn quốc</span>
+      </div>
+      <div class="flex items-center gap-5 text-sm">
+        <a href="../../../pages/warranty/warranty-lookup/index.html" class="hover:text-red-600 font-medium transition-colors">Tra cứu bảo hành điện tử</a>
+        <span class="text-gray-300">|</span>
+        <a href="../../../pages/trade-in/sell-phone/index.html" class="hover:text-red-600 transition-colors text-red-600 font-bold">Thu cũ đổi mới trợ giá đến 3.000.000₫</a>
+        <span class="text-gray-300">|</span>
+        <a href="../../../pages/shop/order-tracking/index.html" class="hover:text-red-600 font-medium transition-colors">Tra cứu đơn hàng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Main Navigation Bar -->
+  <div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4">
+    <!-- Left: Mobile Hamburger + Logo -->
+    <div class="flex items-center gap-2 md:gap-4 shrink-0">
+      <!-- Hamburger Button -> Triggers Mobile Popup Menu -->
+      <button type="button" aria-label="Mở danh mục menu" class="md:hidden w-11 h-11 flex items-center justify-center rounded-xl text-gray-800 hover:bg-gray-100 active:bg-gray-200 transition-colors" onclick="PhoneXPopups.openMenu()">
+        <span class="material-symbols-outlined text-[30px]">menu</span>
+      </button>
+
+      <!-- PhoneX Logo -->
+      <a href="../../../pages/shop/home/index.html" data-path="home" class="flex items-center gap-2">
+        <div class="flex flex-col">
+          <span class="text-2xl md:text-3xl font-black text-gray-900 tracking-tight leading-none">Phone<span class="text-red-600">X</span></span>
+          <span class="text-[11px] md:text-xs text-gray-500 font-bold uppercase tracking-wider leading-none mt-1 hidden sm:inline">Smartphone Specialist</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Center: Search Bar (Desktop & Tablet) -->
+    <div class="hidden sm:flex flex-1 max-w-xl mx-2">
+      <form action="../../../pages/shop/search/index.html" method="get" class="relative w-full flex items-center" onsubmit="const q=this.querySelector('input').value.trim(); if(!q){event.preventDefault();}">
+        <input name="q" class="w-full h-11 md:h-12 pl-4 pr-12 bg-gray-100 rounded-xl text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-red-600 transition-all border border-transparent focus:border-red-600" placeholder="Tìm kiếm smartphone, iPhone 16 Pro Max, Galaxy S25 Ultra, Xiaomi 15..." type="text">
+        <button type="submit" aria-label="Tìm kiếm" class="absolute right-1.5 w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors">
+          <span class="material-symbols-outlined text-[22px]">search</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- Right: Action Icons & User Info -->
+    <div class="flex items-center gap-1.5 sm:gap-3.5 shrink-0">
+      <!-- Search Icon (Mobile only -> Triggers Search Popup) -->
+      <button type="button" aria-label="Tìm kiếm" onclick="PhoneXPopups.openSearch()" class="sm:hidden w-11 h-11 flex items-center justify-center rounded-xl text-gray-800 hover:bg-gray-100 active:bg-gray-200 transition-colors">
+        <span class="material-symbols-outlined text-[26px]">search</span>
+      </button>
+
+      <!-- So sánh (Tablet & Desktop) -->
+      <a href="../../../pages/shop/compare/index.html" data-path="compare" class="hidden lg:flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-red-600 transition-colors">
+        <div class="relative flex items-center justify-center">
+          <span class="material-symbols-outlined text-[24px] text-gray-600">compare_arrows</span>
+          <span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-xs font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center">2</span>
+        </div>
+        <span class="text-sm font-semibold">So sánh</span>
+      </a>
+
+      <!-- Yêu thích (Tablet & Desktop) -->
+      <a href="../../../pages/account/favorites/index.html" data-path="wishlist" class="hidden lg:flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-red-600 transition-colors">
+        <div class="relative flex items-center justify-center">
+          <span class="material-symbols-outlined text-[24px] text-gray-600">favorite_border</span>
+          <span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-xs font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center">3</span>
+        </div>
+        <span class="text-sm font-semibold">Yêu thích</span>
+      </a>
+
+      <!-- Giỏ hàng (All platforms) -->
+      <a href="../../../pages/shop/cart/index.html" data-path="cart" class="flex items-center gap-2.5 px-3.5 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl transition-colors">
+        <div class="relative flex items-center justify-center">
+          <span class="material-symbols-outlined text-[26px] text-red-600">shopping_cart</span>
+          <span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-xs font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center" data-cart-count>1</span>
+        </div>
+        <div class="hidden sm:flex flex-col text-left">
+          <span class="text-xs text-gray-500 uppercase font-bold leading-tight">Giỏ hàng</span>
+          <span class="text-sm font-black text-red-600 leading-tight">34.990.000₫</span>
+        </div>
+      </a>
+
+      <!-- Tài khoản (Desktop) -->
+      <div class="hidden sm:flex items-center pl-2">
+        <a href="../../../pages/account/account/index.html" data-path="account-settings" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
+          <div class="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-sm ring-2 ring-gray-200">
+            MQ
+          </div>
+          <div class="hidden xl:flex flex-col text-left">
+            <span class="text-sm font-bold text-gray-900 leading-tight">Minh Quân</span>
+            <span class="text-xs text-red-600 font-bold leading-none mt-0.5">VIP Member</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Subnav: Brand Category Bar (Scrollable on Tablet & Mobile) -->
+  <div class="w-full bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="flex items-center gap-1.5 sm:gap-2.5 py-2.5 overflow-x-auto whitespace-nowrap text-sm font-semibold scrollbar-none" aria-label="Danh mục thương hiệu">
+        <a href="../../../pages/shop/home/index.html" data-path="home" class="px-3.5 py-1.5 rounded-lg text-red-600 font-bold hover:bg-red-50 transition-colors">Trang chủ</a>
+        <a href="../../../pages/shop/products/index.html" data-path="brand-apple" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">iPhone</a>
+        <a href="../../../pages/shop/products/index.html" data-path="brand-samsung" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Samsung</a>
+        <a href="../../../pages/shop/products/index.html" data-path="brand-xiaomi" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Xiaomi</a>
+        <a href="../../../pages/shop/products/index.html" data-path="brand-oppo" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">OPPO</a>
+        <a href="../../../pages/shop/products/index.html" data-path="brand-vivo" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">vivo</a>
+        <a href="../../../pages/shop/products/index.html" data-path="brand-realme" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">realme</a>
+        <a href="../../../pages/shop/products/index.html" data-path="brand-google-pixel" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Google Pixel</a>
+        <a href="../../../pages/shop/products/index.html" data-path="brand-nothing" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Nothing Phone</a>
+        <a href="../../../pages/shop/products/index.html" data-path="deals" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Điện thoại giá tốt</a>
+        <a href="../../../pages/promotions/promotions/index.html" data-path="promotions" class="px-3.5 py-1.5 rounded-lg text-red-600 font-bold hover:bg-red-50 transition-colors">Khuyến mãi Hot</a>
+        <a href="../../../pages/trade-in/sell-phone/index.html" data-path="trade-in" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Thu cũ đổi mới</a>
+        <a href="../../../pages/shop/products/index.html" data-path="installment" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Trả góp 0%</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       4. MOBILE POPUP: BOTTOM SHEET NAVIGATION MENU
+       ========================================================= -->
+  <div id="pxMenuPopup" class="px-popup px-popup-menu" role="dialog" aria-modal="true" aria-label="Menu điều hướng di động">
+    <!-- Backdrop Overlay (Tap to close) -->
+    <div class="px-popup-backdrop" onclick="PhoneXPopups.closeMenu()"></div>
+
+    <!-- Popup Dialog Sheet -->
+    <div class="px-popup-dialog">
+      <!-- Drag handle bar for mobile sheet -->
+      <div class="w-14 h-1.5 bg-gray-300 rounded-full mx-auto mt-3 mb-1 md:hidden"></div>
+
+      <!-- Popup Header -->
+      <div class="p-4 border-b border-gray-100 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl font-black text-gray-900 tracking-tight">Phone<span class="text-red-600">X</span></span>
+          <span class="text-xs bg-red-100 text-red-700 font-bold px-2.5 py-0.5 rounded-full uppercase">Menu Nhanh</span>
+        </div>
+        <button type="button" aria-label="Đóng popup" class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 active:scale-95 transition-all" onclick="PhoneXPopups.closeMenu()">
+          <span class="material-symbols-outlined text-[22px]">close</span>
+        </button>
+      </div>
+
+      <!-- Scrollable Popup Content -->
+      <div class="overflow-y-auto p-4 space-y-5 max-h-[75vh]">
+        <!-- VIP User Card -->
+        <div class="p-4 rounded-2xl bg-gradient-to-r from-red-600 to-red-700 text-white flex items-center justify-between shadow-md">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-base ring-2 ring-white/40">
+              MQ
+            </div>
+            <div>
+              <div class="font-extrabold text-base leading-tight">Minh Quân</div>
+              <div class="text-sm text-red-100 mt-0.5">Thành viên VIP (14.850 PX)</div>
+            </div>
+          </div>
+          <a href="../../../pages/account/account/index.html" class="px-3.5 py-2 bg-white text-red-600 rounded-xl text-xs font-bold shadow-sm hover:bg-gray-50 transition-colors">
+            Hồ sơ &rarr;
+          </a>
+        </div>
+
+        <!-- Quick 4-Grid Action Buttons -->
+        <div>
+          <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2.5">Tiện ích nhanh</div>
+          <div class="grid grid-cols-2 gap-2.5">
+            <a href="../../../pages/shop/order-tracking/index.html" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
+              <span class="material-symbols-outlined text-red-600 text-[26px]">local_shipping</span>
+              <div class="text-left">
+                <div class="text-sm font-bold text-gray-900">Tra cứu đơn</div>
+                <div class="text-xs text-gray-500">Tiến độ giao hàng</div>
+              </div>
+            </a>
+            <a href="../../../pages/warranty/warranty-lookup/index.html" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
+              <span class="material-symbols-outlined text-green-600 text-[26px]">verified_user</span>
+              <div class="text-left">
+                <div class="text-sm font-bold text-gray-900">Bảo hành</div>
+                <div class="text-xs text-gray-500">Tra cứu IMEI/SĐT</div>
+              </div>
+            </a>
+            <a href="../../../pages/trade-in/sell-phone/index.html" class="p-3.5 rounded-xl bg-red-50 hover:bg-red-100 border border-red-100 flex items-center gap-3 transition-colors">
+              <span class="material-symbols-outlined text-red-600 text-[26px]">sync_alt</span>
+              <div class="text-left">
+                <div class="text-sm font-bold text-red-700">Thu cũ đổi mới</div>
+                <div class="text-xs text-red-500">Trợ giá đến 3tr</div>
+              </div>
+            </a>
+            <a href="../../../pages/stores/stores/index.html" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
+              <span class="material-symbols-outlined text-blue-600 text-[26px]">store</span>
+              <div class="text-left">
+                <div class="text-sm font-bold text-gray-900">Cửa hàng</div>
+                <div class="text-xs text-gray-500">128 Showroom</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Brand Categories List -->
+        <div>
+          <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2.5">Thương hiệu Smartphone</div>
+          <div class="grid grid-cols-3 gap-2.5 text-center text-sm font-bold text-gray-800">
+            <a href="../../../pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">iPhone</a>
+            <a href="../../../pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">Samsung</a>
+            <a href="../../../pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">Xiaomi</a>
+            <a href="../../../pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">OPPO</a>
+            <a href="../../../pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">vivo</a>
+            <a href="../../../pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">realme</a>
+            <a href="../../../pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">Pixel</a>
+            <a href="../../../pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">Nothing</a>
+            <a href="../../../pages/shop/products/index.html" class="p-3 rounded-xl bg-red-100 text-red-700 font-extrabold hover:bg-red-200 transition-colors">Trả góp 0%</a>
+          </div>
+        </div>
+
+        <!-- Hotline call box -->
+        <div class="pt-2">
+          <a href="tel:18006868" class="w-full py-3.5 px-4 bg-gray-900 text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-black transition-colors shadow-sm">
+            <span class="material-symbols-outlined text-[20px] text-red-500">call</span>
+            Gọi tư vấn miễn phí: 1800.6868
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       5. MOBILE POPUP: TOP SEARCH DIALOG MODAL
+       ========================================================= -->
+  <div id="pxSearchPopup" class="px-popup px-popup-search" role="dialog" aria-modal="true" aria-label="Tìm kiếm di động">
+    <!-- Backdrop Overlay (Tap to close) -->
+    <div class="px-popup-backdrop" onclick="PhoneXPopups.closeSearch()"></div>
+
+    <!-- Popup Dialog Box -->
+    <div class="px-popup-dialog overflow-hidden">
+      <!-- Search Input Box -->
+      <form action="../../../pages/shop/search/index.html" method="get" class="p-3.5 border-b border-gray-100 flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-gray-400 pl-1 text-[24px]">search</span>
+        <input id="pxMobileSearchInput" name="q" class="w-full h-11 text-base text-gray-900 placeholder-gray-400 focus:outline-none bg-transparent" placeholder="Tìm iPhone, Samsung, Xiaomi..." type="text">
+        <button type="button" aria-label="Đóng tìm kiếm" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500" onclick="PhoneXPopups.closeSearch()">
+          <span class="material-symbols-outlined text-[22px]">close</span>
+        </button>
+      </form>
+
+      <!-- Hot Search Keywords -->
+      <div class="p-4 bg-gray-50">
+        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-red-600 text-[16px]">local_fire_department</span>
+          Tìm kiếm phổ biến
+        </div>
+        <div class="flex flex-wrap gap-2 text-sm">
+          <a href="../../../pages/shop/search/index.html?q=iPhone+16+Pro+Max" class="px-3.5 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">iPhone 16 Pro Max</a>
+          <a href="../../../pages/shop/search/index.html?q=Galaxy+S25+Ultra" class="px-3.5 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Galaxy S25 Ultra</a>
+          <a href="../../../pages/trade-in/sell-phone/index.html" class="px-3.5 py-1.5 bg-red-50 border border-red-200 rounded-full text-red-600 font-bold hover:bg-red-100 transition-colors">Thu cũ trợ giá 3tr</a>
+          <a href="../../../pages/shop/search/index.html?q=Xiaomi+15" class="px-3.5 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Xiaomi 15 Pro</a>
+          <a href="../../../pages/shop/products/index.html" class="px-3.5 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Máy cũ 99%</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Controller Script -->
+  <script>
+    window.PhoneXPopups = {
+      openMenu: function() {
+        const p = document.getElementById('pxMenuPopup');
+        if (p) {
+          p.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      },
+      closeMenu: function() {
+        const p = document.getElementById('pxMenuPopup');
+        if (p) {
+          p.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      },
+      openSearch: function() {
+        const p = document.getElementById('pxSearchPopup');
+        if (p) {
+          p.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          setTimeout(() => {
+            const input = document.getElementById('pxMobileSearchInput');
+            if (input) input.focus();
+          }, 150);
+        }
+      },
+      closeSearch: function() {
+        const p = document.getElementById('pxSearchPopup');
+        if (p) {
+          p.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    };
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        PhoneXPopups.closeMenu();
+        PhoneXPopups.closeSearch();
+      }
+    });
+  </script>
+</header>
+<!-- END: COMPONENT HEADER --><main class="w-full pt-28 bg-surface"><div class="flex flex-col w-full relative">
+<!-- Subtle decorative ambient glows for flagship depth -->
+<div class="absolute -top-12 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-96 right-10 w-[500px] h-[500px] bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- BREADCRUMB STRIP -->
+<div class="max-w-[1320px] w-full mx-auto px-gutter py-space-md">
+<nav class="flex items-center gap-space-xs text-secondary font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span> Trang chủ
+      </a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="../../../pages/shop/products/index.html">Apple iPhone</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="../../../pages/shop/products/index.html">iPhone 17 Pro Max</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Kiểm tra tồn kho &amp; Giữ máy Showroom</span>
+</nav>
+</div>
+<!-- BACKGROUND PRODUCT HERO SECTION (Anchoring Page Content) -->
+<div class="max-w-[1320px] w-full mx-auto px-gutter pb-space-2xl">
+<div class="grid grid-cols-12 gap-space-xl items-start">
+<!-- Left Column: Gallery Media Stage -->
+<div class="col-span-6 flex flex-col gap-space-md sticky top-36">
+<div class="relative w-full aspect-[4/3] rounded-xl bg-surface-pure shadow-sm flex items-center justify-center p-space-xl overflow-hidden group">
+<div class="absolute top-4 left-4 flex flex-col gap-2 z-10">
+<span class="px-space-md py-1 rounded bg-primary-container text-on-primary font-label-badge text-label-badge shadow-sm tracking-wide">GIẢM 3.500.000₫</span>
+<span class="px-space-md py-1 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge">TRẢ GÓP 0%</span>
+</div>
+<div class="absolute top-4 right-4 z-10 flex flex-col gap-2">
+<button class="w-10 h-10 rounded-full bg-surface shadow-sm hover:text-primary flex items-center justify-center transition-colors" onclick="window.location.href='../../../pages/account/favorites/index.html'">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface shadow-sm hover:text-primary flex items-center justify-center transition-colors" onclick="window.location.href='../../../pages/shop/compare/index.html'">
+<span class="material-symbols-outlined text-[20px]">compare_arrows</span>
+</button>
+</div>
+<img class="max-h-[380px] w-auto object-contain transition-transform duration-500 group-hover:scale-105" alt="Editorial product shot of iPhone 17 Pro Max in Space Black Titanium against a minimal clean off-white studio background. Sleek metallic edge lighting, ultra-sharp camera triple-lens detail, reflective dark titanium ceramic shield glass, pristine luxury consumer electronics presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4K1BqvNNP7hd2ic0iU47B6K8XF_XgViiLb5UJHfvzaaKgIwEbQ5VLeXcsCg4KKuNe9-zcsDM_36AKCWK4JcmzTaVMY8jbOlQz8Jhw3ex8_Tclw0n1ZhKFRgDvHq8X_JjvtYsDGVFWANEjDP0rpvKg6n2gi4PuwcQIuIfSlTL7Phk-fWbf04sHe9uQ8hdFK2hqWjsJccWxLa6ptRTWvqo6JOw67vW_aPw69b-qQy79OiQEkYh-z21x"/>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 px-space-md py-1 rounded-full bg-surface-container-highest/80 backdrop-blur-sm text-on-surface font-label-badge text-label-badge flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            38 showroom đang có máy giao ngay
+          </div>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-4 gap-space-md">
+<div class="h-20 rounded-lg bg-surface-pure shadow-sm p-1.5 flex items-center justify-center">
+<img class="h-full object-contain" alt="Close up front display of iPhone 17 Pro Max with dynamic island and thin bezels on clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsOs0-7O4IhzvaCsG3rtrfK-iJx85eve16VibtRBBXgS9M7gGi12vtM_i9pKai1VJ9nrTTQ2KEvGc2XmpYIxgR2gq2QZI92VU1z6z999rTyuRDsFaKUCOUumvf0DmF8fJZHOh21tMCIA-sJAXd7Pt_H2GqGmiPtXhuqFePHpC7zrSL3F0vACr39nCR_vmzAI4md05wAKkWWTY8R988RMMtJHkr7wl0V9GTw79aCC9_dhr7kLkEClAW"/>
+</div>
+<div class="h-20 rounded-lg bg-surface-pure shadow-sm p-1.5 flex items-center justify-center">
+<img class="h-full object-contain" alt="Triple camera module close-up detail of iPhone 17 Pro Max showing titanium ring optics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCapTbK9OMaxkmLiXdM5umc8G8CJnIfVN3QRSPTXeQfGWCJVynqw8b1e7Z-o_OFbIkR2aRLjEdxMxjeXIVEL4icRI2fS75sNYRDjki2mBr-1qB2B19OyVPwztGjfOuFVPXoVnSVSx5vygdsaYoHVrIOtDtngc-OZlLWDaZRcQ2eF_VvgE0GY_6o6FIrUT5EaG1tOFhztdsL6mLnWfAFt9NLnSHrxQFUBsIlQ76VMptcxdgMYzafQGz"/>
+</div>
+<div class="h-20 rounded-lg bg-surface-pure shadow-sm p-1.5 flex items-center justify-center">
+<img class="h-full object-contain" alt="Side profile view of iPhone 17 Pro Max displaying action button and titanium polished edge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMuze1a-omhGrdL_JftbyAdRDU2ZNGLmsZL_t-5L7vH27NZuky7XP1CyB5943BYhBvpacueo0JQBlmqVsBCuVd97m5WN52Wo8jAIbw_09sjJU2_9Kb7upEc6mwpeKlFTqFvkBW7L2Ch8k1VwJmFLzgIxKdO9IcLazbmcd-z5ktlneu5Q9R9J8m36FhbGvZ2zYo7DNCegQcn6Gc9I4EF-oZ2OWv0KadU9iF34uVn5VQ6v1xY0XKmimf"/>
+</div>
+<div class="h-20 rounded-lg bg-surface-pure shadow-sm p-1.5 flex items-center justify-center">
+<img class="h-full object-contain" alt="iPhone 17 Pro Max retail box sealed packaging with Apple authentic certification" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5WxgNjDLPnHV2Sdm0ZCoTlYDQkuOvcoS97FYdouYdckCaO3DiyNKgO6jwp2grpCk0Y4pwSOxlzV0lwXxg9HaUbxmLE8tNx4nceh3ASLNzmIvAl8a37KNA1RX4YY3NQsRpLrAYGpEBjQmWSWJRn_YbUrLNk70dofwvpRkyHsrvGk7Fnizf_MoP_tSj2L9gj5vsf6_KxqNwkw3sx39tjnUlxiOpHfT0wQrgEHikOxL_aejHHryAv-5O"/>
+</div>
+</div>
+</div>
+<!-- Right Column: Specs & Purchasing Trigger -->
+<div class="col-span-6 flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-badge text-label-badge">CHÍNH HÃNG APPLE VN/A</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-badge text-label-badge">BẢO HÀNH 1 ĐỔI 1 30 NGÀY</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+            iPhone 17 Pro Max 256GB - Titan Đen (Black Titanium)
+          </h1>
+<div class="flex items-center gap-space-md text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-amber-500">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-semibold text-on-surface ml-1">5.0</span>
+</div>
+<span>•</span>
+<span>428 đánh giá thực tế</span>
+<span>•</span>
+<span class="text-primary font-semibold">Đã bán 1.820 máy</span>
+</div>
+</div>
+<!-- Pricing Banner -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-baseline gap-space-md">
+<span class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">30.990.000₫</span>
+<span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">34.490.000₫</span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-badge text-label-badge">-10% Tiết kiệm 3.5M</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+            Giá đã bao gồm VAT và ưu đãi trợ giá 2.000.000₫ qua thẻ tín dụng liên kết.
+          </p>
+</div>
+<!-- Primary Actions Strip with Store Locator CTA -->
+<div class="flex flex-col gap-space-md">
+<button class="w-full h-14 rounded-xl bg-primary hover:bg-primary-hover text-on-primary font-label-button text-label-button shadow-md hover:shadow-lg flex items-center justify-center gap-space-sm transition-all group" onclick="window.location.href='../../../pages/stores/stores/index.html'" type="button">
+<span class="material-symbols-outlined text-[22px] group-hover:scale-110 transition-transform">location_on</span>
+<span class="text-[16px] font-bold">📍 XEM CỬA HÀNG CÓ MÁY (38 ĐIỂM) &amp; GIỮ ONLINE</span>
+</button>
+<div class="grid grid-cols-2 gap-space-md">
+<button class="h-12 rounded-lg bg-surface-pure hover:bg-surface-container text-primary font-label-button text-label-button shadow-sm flex items-center justify-center gap-2 transition-colors" onclick="window.location.href='../../../pages/shop/product-detail/index.html'">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+<span>MUA NGAY (Giao Siêu Tốc 1H)</span>
+</button>
+<button class="h-12 rounded-lg bg-surface-pure hover:bg-surface-container text-on-surface font-label-button text-label-button shadow-sm flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[20px]">credit_card</span>
+<span>TRẢ GÓP 0% QUA THẺ</span>
+</button>
+</div>
+</div>
+<!-- Trust Badges Bento -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-md rounded-lg bg-surface-pure shadow-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-button text-label-button text-on-surface">100% Nguyên Seal</span>
+<span class="font-body-sm text-body-sm text-secondary">Chưa kích hoạt</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-pure shadow-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">sync</span>
+<div class="flex flex-col">
+<span class="font-label-button text-label-button text-on-surface">1 Đổi 1 30 Ngày</span>
+<span class="font-body-sm text-body-sm text-secondary">Lỗi NSX đổi mới ngay</span>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-pure shadow-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">price_change</span>
+<div class="flex flex-col">
+<span class="font-label-button text-label-button text-on-surface">Trợ Giá Thu Cũ</span>
+<span class="font-body-sm text-body-sm text-secondary">Lên đến 4.000.000₫</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- HIGH-CONVERTING INTERACTIVE MODAL OVERLAY (840px Focused Display)       -->
+<!-- ========================================================================= -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/60 backdrop-blur-md transition-all overflow-y-auto" id="inventory-modal-overlay">
+<div class="relative w-full max-w-[860px] my-auto bg-surface-pure rounded-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] overflow-hidden flex flex-col" onclick="event.stopPropagation()">
+<!-- MODAL HEADER -->
+<div class="px-space-xl pt-space-lg pb-space-md bg-surface-pure flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">storefront</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+              Kiểm Tra Tồn Kho Trực Tiếp - iPhone 17 Pro Max
+            </h2>
+</div>
+<p class="font-body-sm text-body-sm text-secondary pl-10 flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Cập nhật kho thực tế mỗi 60 giây • Giữ máy online miễn phí 60 phút không cần đặt cọc
+          </p>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-secondary hover:text-on-surface transition-colors" onclick="document.getElementById('inventory-modal-overlay').classList.add('hidden')" title="Đóng cửa sổ" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- ACTIVE CONFIGURATION SNAPSHOT STRIP -->
+<div class="mx-space-xl mb-space-md p-space-md rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-lg bg-surface-pure shadow-sm p-1 flex items-center justify-center flex-shrink-0">
+<img class="max-h-full object-contain" alt="Micro thumbnail of iPhone 17 Pro Max Titan Đen space black sleek smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9cjlL9JVlwkd0mGY-6b3dsOr2CtdyPmJ2Li4NHbY1qyQP3Ha20AF9Es3hjXzU9zl9XnLYQpGBNVxmVD3GQOI9_k3c_dtCmdiWj33QNhTfJJAEBwnZQtgddEKnhhG2HI3pAAMEongqhtx37gV4rDeX__pt4cu6HSiCJxvvqtHjOEkg6m8oEG5napYWD7RNJaSpAWg-2r22iLtL--xPI98ULZCzxGl3tsXbygULs-v4OBg7gC6OMxEV"/>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-pure text-on-surface font-label-badge text-label-badge shadow-sm">iPhone 17 Pro Max</span>
+<span class="px-2 py-0.5 rounded bg-surface-pure text-on-surface font-label-badge text-label-badge shadow-sm">256GB</span>
+<span class="px-2 py-0.5 rounded bg-surface-pure text-on-surface font-label-badge text-label-badge shadow-sm">Titan Đen (Space Black)</span>
+<span class="px-2 py-0.5 rounded bg-surface-pure text-on-surface font-label-badge text-label-badge shadow-sm">VN/A Seal</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm font-body-sm">
+<span class="font-bold text-primary">30.990.000₫</span>
+<span class="text-secondary line-through text-[12px]">34.490.000₫</span>
+<span class="text-emerald-700 font-semibold">• Sẵn máy tại 38 showroom</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1 flex-shrink-0">
+<span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 font-label-badge text-label-badge flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+            CÒN HÀNG SẴN
+          </span>
+<span class="font-body-sm text-body-sm text-secondary">Đổi phiên bản →</span>
+</div>
+</div>
+<!-- GEO-FILTER TOOLBAR -->
+<div class="px-space-xl pb-space-sm flex flex-col gap-space-sm">
+<div class="grid grid-cols-12 gap-space-sm items-center">
+<!-- City Dropdown -->
+<div class="col-span-4">
+<select class="w-full h-11 px-space-md rounded-lg bg-surface-container font-label-button text-label-button text-on-surface focus:outline-none focus:bg-surface-container-high transition-colors">
+<option selected="" value="hn">Hà Nội (14 showroom có máy)</option>
+<option value="hcm">TP. Hồ Chí Minh (18 showroom)</option>
+<option value="dn">Đà Nẵng (4 showroom)</option>
+<option value="ct">Cần Thơ (2 showroom)</option>
+</select>
+</div>
+<!-- District Dropdown -->
+<div class="col-span-4">
+<select class="w-full h-11 px-space-md rounded-lg bg-surface-container font-label-button text-label-button text-on-surface focus:outline-none focus:bg-surface-container-high transition-colors">
+<option selected="" value="all">Tất cả quận / huyện (14 điểm)</option>
+<option value="dd">Đống Đa (4 điểm có máy)</option>
+<option value="cg">Cầu Giấy (3 điểm có máy)</option>
+<option value="tx">Thanh Xuân (2 điểm có máy)</option>
+<option value="hbt">Hai Bà Trưng (2 điểm có máy)</option>
+<option value="hk">Hoàn Kiếm (3 điểm có máy)</option>
+</select>
+</div>
+<!-- GPS Trigger Button -->
+<div class="col-span-4">
+<button class="w-full h-11 px-space-md rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-button text-label-button flex items-center justify-center gap-1.5 transition-colors shadow-sm" onclick="this.innerHTML='&lt;span class=\'material-symbols-outlined text-[18px] animate-spin\'&gt;refresh&lt;/span&gt; Đang định vị...'; setTimeout(() =&gt; { this.innerHTML='&lt;span class=\'material-symbols-outlined text-[18px] text-primary\'&gt;my_location&lt;/span&gt; Gần nhất: 124 Thái Hà (1.2 km)'; }, 600);" type="button">
+<span class="material-symbols-outlined text-primary text-[18px]">my_location</span>
+<span>Gần tôi nhất (GPS)</span>
+</button>
+</div>
+</div>
+<!-- Keyword search bar inside modal -->
+<div class="relative w-full">
+<input class="w-full h-10 pl-10 pr-space-md rounded-lg bg-surface-container font-body-sm text-body-sm text-on-surface placeholder:text-secondary focus:outline-none focus:bg-surface-container-high transition-colors" placeholder="Tìm theo tên phố, tòa nhà (ví dụ: Thái Hà, Royal City, Cầu Giấy...)" type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-secondary text-[18px]">search</span>
+</div>
+</div>
+<!-- STORE AVAILABILITY LIST (Scrollable, tactile, authoritative) -->
+<div class="px-space-xl py-space-sm flex flex-col gap-space-md max-h-[300px] overflow-y-auto">
+<!-- CARD 1: Thái Hà Flagship -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all hover:shadow-md">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-label-badge text-label-badge tracking-wider">FLAGSHIP 5 SAO</span>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-badge text-label-badge flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> CÒN 8 MÁY TẠI QUẦY
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-pure text-secondary font-label-badge text-label-badge shadow-sm">Cách bạn 1.2 km</span>
+</div>
+<h4 class="font-title-product text-title-product text-on-surface font-bold pt-0.5">
+                Showroom Flagship 124 - 126 Thái Hà, Q. Đống Đa, Hà Nội
+              </h4>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-3">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Đang mở cửa (08:00 - 21:30)
+                </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">call</span> Hotline: 024.7300.6868 (Ext 101)
+                </span>
+</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 rounded bg-surface-pure text-on-surface font-body-sm text-[12px] shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">smartphone</span> Máy trải nghiệm thực tế không dây
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-pure text-on-surface font-body-sm text-[12px] shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">swap_horiz</span> Bàn thẩm định Thu Cũ Đổi Mới Tầng 1
+                </span>
+</div>
+</div>
+<!-- Action column -->
+<div class="flex flex-col items-end gap-2 flex-shrink-0">
+<button class="px-space-lg py-2.5 rounded-lg bg-primary hover:bg-primary-hover text-on-primary font-label-button text-label-button shadow-sm transition-all hover:scale-[1.02] flex items-center gap-1.5" onclick="window.location.href='../../../pages/shop/product-detail/index.html'" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Giữ máy tại đây (Free 60p)</span>
+</button>
+<div class="flex items-center gap-space-sm text-secondary font-label-button text-label-button">
+<a class="hover:text-primary flex items-center gap-0.5 text-[12px]" href="#">
+<span class="material-symbols-outlined text-[14px]">directions</span> Chỉ đường
+                </a>
+<span>•</span>
+<a class="hover:text-primary flex items-center gap-0.5 text-[12px]" href="tel:02473006868">
+<span class="material-symbols-outlined text-[14px]">call</span> Gọi quầy
+                </a>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: Cầu Giấy -->
+<div class="p-space-lg rounded-xl bg-surface-pure shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge">PREMIUM STORE</span>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-badge text-label-badge flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> CÒN 5 MÁY TẠI QUẦY
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-badge text-label-badge">Cách bạn 3.4 km</span>
+</div>
+<h4 class="font-title-product text-title-product text-on-surface font-bold pt-0.5">
+                Showroom PhoneX 240 Cầu Giấy, Q. Cầu Giấy, Hà Nội
+              </h4>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-3">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Mở cửa đến 21:30
+                </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_parking</span> Có bãi đỗ xe ô tô miễn phí
+                </span>
+</p>
+</div>
+<div class="flex flex-col items-end gap-2 flex-shrink-0">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-button text-label-button shadow-sm transition-all" onclick="window.location.href='../../../pages/shop/product-detail/index.html'" type="button">
+                Giữ máy tại đây
+              </button>
+<div class="flex items-center gap-space-sm text-secondary font-label-button text-label-button">
+<a class="hover:text-primary flex items-center gap-0.5 text-[12px]" href="#">
+<span class="material-symbols-outlined text-[14px]">directions</span> Chỉ đường
+                </a>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 3: Royal City -->
+<div class="p-space-lg rounded-xl bg-surface-pure shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-badge text-label-badge">MALL CONCEPT</span>
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-badge text-label-badge flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> CÒN 4 MÁY TẠI QUẦY
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-badge text-label-badge">Cách bạn 4.1 km</span>
+</div>
+<h4 class="font-title-product text-title-product text-on-surface font-bold pt-0.5">
+                Showroom PhoneX Vincom Mega Mall Royal City (Tầng B2), Q. Thanh Xuân
+              </h4>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-3">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Mở cửa đến 22:00
+                </span>
+<span>•</span>
+<span>Gian B2-R3-12 (Cạnh sân trượt băng)</span>
+</p>
+</div>
+<div class="flex flex-col items-end gap-2 flex-shrink-0">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface font-label-button text-label-button shadow-sm transition-all" onclick="window.location.href='../../../pages/shop/product-detail/index.html'" type="button">
+                Giữ máy tại đây
+              </button>
+<div class="flex items-center gap-space-sm text-secondary font-label-button text-label-button">
+<a class="hover:text-primary flex items-center gap-0.5 text-[12px]" href="#">
+<span class="material-symbols-outlined text-[14px]">directions</span> Chỉ đường
+                </a>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 4: Xã Đàn (Warning stock) -->
+<div class="p-space-lg rounded-xl bg-surface-pure shadow-sm flex flex-col gap-space-md transition-all hover:shadow-md">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-label-badge text-label-badge flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> CÒN 2 MÁY (SẮP HẾT)
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-label-badge text-label-badge">Cách bạn 2.1 km</span>
+</div>
+<h4 class="font-title-product text-title-product text-on-surface font-bold pt-0.5">
+                Showroom PhoneX 392 Xã Đàn, Q. Đống Đa, Hà Nội
+              </h4>
+<p class="font-body-sm text-body-sm text-secondary flex items-center gap-3">
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> Mở cửa đến 21:30
+                </span>
+<span>•</span>
+<span>Hotline: 024.7300.6870</span>
+</p>
+</div>
+<div class="flex flex-col items-end gap-2 flex-shrink-0">
+<button class="px-space-md py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-on-primary font-label-button text-label-button shadow-sm transition-all" onclick="window.location.href='../../../pages/shop/product-detail/index.html'" type="button">
+                Giữ máy ngay
+              </button>
+<div class="flex items-center gap-space-sm text-secondary font-label-button text-label-button">
+<a class="hover:text-primary flex items-center gap-0.5 text-[12px]" href="#">
+<span class="material-symbols-outlined text-[14px]">directions</span> Chỉ đường
+                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- QUICK 60-MINUTE RESERVATION FORM FOOTER -->
+<div class="p-space-xl bg-surface-container flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">timer</span>
+<span class="font-label-button text-label-button text-on-surface">
+              Giữ máy nhanh trong 60 phút
+            </span>
+<span class="font-body-sm text-body-sm text-secondary">
+              (Không cọc trước • Đến xem ưng ý mới thanh toán • Nhận mã SMS lập tức)
+            </span>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-pure text-primary font-label-badge text-label-badge shadow-sm" id="selected-store-label">
+            Showroom đã chọn: 124 Thái Hà (Còn 8 máy)
+          </span>
+</div>
+<form class="grid grid-cols-12 gap-space-md items-center" onsubmit="handleReservationSubmit(event)">
+<div class="col-span-4">
+<input class="w-full h-12 px-space-md rounded-lg bg-surface-pure text-on-surface font-body-regular text-body-regular shadow-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-secondary" id="res-phone" placeholder="Số điện thoại nhận mã SMS *" required="" type="tel"/>
+</div>
+<div class="col-span-3">
+<input class="w-full h-12 px-space-md rounded-lg bg-surface-pure text-on-surface font-body-regular text-body-regular shadow-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-secondary" id="res-name" placeholder="Họ và tên của bạn *" required="" type="text"/>
+</div>
+<div class="col-span-5">
+<button class="w-full h-12 rounded-lg bg-primary hover:bg-primary-hover text-on-primary font-label-button text-label-button shadow-md flex items-center justify-center gap-2 transition-all hover:scale-[1.01]" id="res-submit-btn" onclick="window.location.href='../../../pages/shop/product-detail/index.html'" type="submit">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-bold tracking-tight">XÁC NHẬN GIỮ MÁY 60 PHÚT</span>
+</button>
+</div>
+</form>
+<div class="hidden p-space-md rounded-lg bg-emerald-100 text-emerald-900 font-body-sm text-body-sm flex items-center justify-between" id="reservation-alert">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-700">task_alt</span>
+<span>Mã giữ hàng <strong class="font-bold text-emerald-950">PX-89421</strong> đã được gửi qua SMS đến số của bạn! Quầy 124 Thái Hà đã chuẩn bị sẵn máy.</span>
+</div>
+<span class="font-label-badge text-label-badge text-emerald-800">Hiệu lực: 60:00</span>
+</div>
+<!-- Four Value Props Footer Under Form -->
+<div class="grid grid-cols-4 gap-space-sm pt-space-xs text-secondary font-body-sm text-[12px]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span>Khui seal tận mắt tại quầy</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span>Hỗ trợ chuyển dữ liệu 1:1 miễn phí</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span>Tặng gói bảo hành vàng rơi vỡ</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">check_circle</span>
+<span>Dán cường lực KingKong miễn phí</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Micro-Interactions Script -->
+<script>
+    function selectStoreReservation(storeName) {
+      const label = document.getElementById('selected-store-label');
+      const submitBtn = document.getElementById('res-submit-btn');
+      if (label) {
+        label.innerText = 'Showroom đã chọn: ' + storeName;
+        label.classList.add('bg-primary-fixed', 'text-on-primary-fixed');
+        setTimeout(() => {
+          label.classList.remove('bg-primary-fixed', 'text-on-primary-fixed');
+        }, 800);
+      }
+      const phoneInput = document.getElementById('res-phone');
+      if (phoneInput) {
+        phoneInput.focus();
+      }
+    }
+
+    function handleReservationSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('res-submit-btn');
+      const alertBox = document.getElementById('reservation-alert');
+      
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Đang khóa giữ tồn kho...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done_all</span> ĐÃ GIỮ MÁY THÀNH CÔNG';
+        btn.classList.remove('bg-primary', 'hover:bg-primary-hover');
+        btn.classList.add('bg-emerald-700');
+        if (alertBox) {
+          alertBox.classList.remove('hidden');
+        }
+      }, 700);
+    }
+  </script>
+</div></main><div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/50 backdrop-blur-sm p-gutter" id="stock-modal"><div class="bg-surface-pure rounded-xl max-w-2xl w-full p-space-xl shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] border border-border-subtle flex flex-col gap-space-lg"><div class="flex items-center justify-between pb-space-sm border-b border-border-subtle"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary-container text-[24px]">storefront</span><h3 class="font-headline-sm text-headline-sm text-on-surface">Tra Cứu Tồn Kho Tại Showroom</h3></div><button class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary hover:text-on-surface transition-colors" onclick="document.getElementById('stock-modal').classList.add('hidden')" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="flex gap-space-md"><select class="flex-1 h-11 px-space-md rounded-lg bg-surface-pure border border-border-subtle font-body-regular text-body-regular text-on-surface focus:outline-none focus:border-primary-container"><option value="all">Tất cả thành phố</option><option selected="" value="hn">Hà Nội</option><option value="hcm">TP. Hồ Chí Minh</option><option value="dn">Đà Nẵng</option></select><select class="flex-1 h-11 px-space-md rounded-lg bg-surface-pure border border-border-subtle font-body-regular text-body-regular text-on-surface focus:outline-none focus:border-primary-container"><option value="all">Tất cả quận / huyện</option><option selected="" value="dd">Đống Đa</option><option value="cg">Cầu Giấy</option><option value="hbt">Hai Bà Trưng</option></select></div><div class="flex flex-col gap-space-sm max-h-72 overflow-y-auto pr-space-xs"><div class="p-space-md rounded-lg border border-border-subtle bg-surface flex items-center justify-between"><div class="flex flex-col gap-1"><span class="font-title-product text-title-product text-on-surface">Showroom 123 Thái Hà, Đống Đa, Hà Nội</span><span class="font-body-sm text-body-sm text-secondary">Mở cửa: 08:30 - 21:30 | Hotline: 024.7308.6868</span></div><div class="flex flex-col items-end gap-1"><span class="px-space-sm py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-badge text-label-badge">Còn 4 máy sẵn sàng</span><button class="font-label-button text-label-button text-primary hover:underline" type="button">Đặt giữ hàng ngay</button></div></div><div class="p-space-md rounded-lg border border-border-subtle bg-surface flex items-center justify-between"><div class="flex flex-col gap-1"><span class="font-title-product text-title-product text-on-surface">Showroom 54 Cầu Giấy, Cầu Giấy, Hà Nội</span><span class="font-body-sm text-body-sm text-secondary">Mở cửa: 08:30 - 21:30 | Hotline: 024.7308.6869</span></div><div class="flex flex-col items-end gap-1"><span class="px-space-sm py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-badge text-label-badge">Còn 2 máy sẵn sàng</span><button class="font-label-button text-label-button text-primary hover:underline" type="button">Đặt giữ hàng ngay</button></div></div><div class="p-space-md rounded-lg border border-border-subtle bg-surface-container-low flex items-center justify-between opacity-80"><div class="flex flex-col gap-1"><span class="font-title-product text-title-product text-on-surface">Showroom 298 Xã Đàn, Nam Đồng, Đống Đa</span><span class="font-body-sm text-body-sm text-secondary">Mở cửa: 08:30 - 21:30 | Hotline: 024.7308.6870</span></div><div class="flex flex-col items-end gap-1"><span class="px-space-sm py-0.5 rounded bg-surface-container-high text-secondary font-label-badge text-label-badge">Tạm hết hàng</span><button class="font-label-button text-label-button text-secondary hover:underline" type="button">Nhận tin khi có hàng</button></div></div></div><div class="pt-space-sm border-t border-border-subtle flex items-center justify-between"><span class="font-body-sm text-body-sm text-secondary">Miễn phí chuyển hàng giữa các Showroom trong 24h</span><button class="px-space-lg py-2 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors" onclick="document.getElementById('stock-modal').classList.add('hidden')" type="button">Đóng Cửa Sổ</button></div></div></div><script src="../../../assets/js/site-navigation.js"></script>
+<!-- START: COMPONENT FOOTER (Source: components/footer.html) -->
+<!-- PhoneX Flagship Unified Footer (Desktop, Tablet & Mobile - Stitch Visual Parity) -->
+<footer class="w-full bg-white border-t border-gray-200 mt-16 pt-12 pb-24 md:pb-12 text-gray-700 font-sans" data-component="footer">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Top 5-Column Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-gray-200">
+      <!-- Col 1 & 2: Brand Information & Hotline -->
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-2.5">
+          <span class="text-3xl font-black text-gray-900 tracking-tight leading-none">Phone<span class="text-red-600">X</span></span>
+          <span class="text-xs font-bold uppercase tracking-wider bg-gray-100 text-gray-700 px-2.5 py-1 rounded-md">128 Showroom Toàn Quốc</span>
+        </div>
+        <p class="text-sm text-gray-600 leading-relaxed max-w-md">
+          PhoneX là hệ thống bán lẻ smartphone uỷ quyền chính hãng chuẩn quốc tế hàng đầu Việt Nam. Cam kết 100% thiết bị nguyên seal hộp, chính sách bảo hành 1 đổi 1 trong 30 ngày và dịch vụ thu cũ đổi mới giá cao nhất thị trường.
+        </p>
+        <div class="space-y-2 text-sm">
+          <div class="text-gray-700">Tổng đài tư vấn bán hàng: <strong class="text-red-600 font-black text-base">1800.6868</strong> (Miễn phí 8:00 - 21:30)</div>
+          <div class="text-gray-700">Hỗ trợ kỹ thuật &amp; Bảo hành: <strong class="text-gray-900 font-bold text-sm">1800.6869</strong></div>
+          <div class="text-gray-700">Khiếu nại &amp; Hợp tác: <strong class="text-gray-900 font-bold text-sm">1800.6870</strong> (contact@phonex.vn)</div>
+        </div>
+      </div>
+
+      <!-- Col 3: Chính sách & Dịch vụ -->
+      <div class="space-y-3.5">
+        <h4 class="text-base font-extrabold text-gray-900 uppercase tracking-wider">Chính Sách &amp; Hỗ Trợ</h4>
+        <ul class="space-y-2.5 text-sm text-gray-600 font-medium">
+          <li><a href="../../../pages/warranty/warranty-lookup/index.html" class="hover:text-red-600 transition-colors">Bảo hành 12 tháng 1 đổi 1</a></li>
+          <li><a href="../../../pages/warranty/warranty-lookup/index.html" class="hover:text-red-600 transition-colors">Chính sách đổi trả trong 30 ngày</a></li>
+          <li><a href="../../../pages/shop/order-tracking/index.html" class="hover:text-red-600 transition-colors">Chính sách giao hàng siêu tốc 1h</a></li>
+          <li><a href="../../../pages/shop/products/index.html" class="hover:text-red-600 transition-colors">Phương thức thanh toán &amp; trả góp 0%</a></li>
+          <li><a href="../../../pages/trade-in/sell-phone/index.html" class="hover:text-red-600 transition-colors text-red-600 font-bold">Quy định thu cũ đổi mới (Trade-in)</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Hệ thống cửa hàng -->
+      <div class="space-y-3.5">
+        <h4 class="text-base font-extrabold text-gray-900 uppercase tracking-wider">Hệ Thống Showroom</h4>
+        <ul class="space-y-2.5 text-sm text-gray-600">
+          <li><strong class="text-gray-900 font-semibold">Hà Nội:</strong> 48 Showroom (58 Thái Hà, 102 Cầu Giấy...)</li>
+          <li><strong class="text-gray-900 font-semibold">TP. Hồ Chí Minh:</strong> 56 Showroom (136 Nguyễn Thái Học, Q.1...)</li>
+          <li><strong class="text-gray-900 font-semibold">Đà Nẵng &amp; Miền Trung:</strong> 14 Showroom (88 Nguyễn Văn Linh...)</li>
+          <li><strong class="text-gray-900 font-semibold">Cần Thơ &amp; Miền Tây:</strong> 10 Showroom</li>
+          <li><a href="../../../pages/stores/stores/index.html" class="text-red-600 font-bold hover:underline inline-flex items-center gap-1 mt-1 text-sm">Tìm showroom gần nhất &rarr;</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Chứng nhận uy tín & Bản tin -->
+      <div class="space-y-3.5">
+        <h4 class="text-base font-extrabold text-gray-900 uppercase tracking-wider">Chứng Nhận &amp; Uy Tín</h4>
+        <div class="space-y-2.5">
+          <div class="p-3 rounded-xl bg-gray-50 border border-gray-200/80 flex items-center gap-3">
+            <span class="material-symbols-outlined text-red-600 text-[28px]">verified</span>
+            <div>
+              <div class="text-xs font-black text-gray-900 tracking-wide">ĐÃ ĐĂNG KÝ BỘ CÔNG THƯƠNG</div>
+              <div class="text-xs text-gray-500 mt-0.5">Giấy phép số: 0108963282</div>
+            </div>
+          </div>
+          <div class="p-3 rounded-xl bg-gray-50 border border-gray-200/80 flex items-center gap-3">
+            <span class="material-symbols-outlined text-green-600 text-[28px]">security</span>
+            <div>
+              <div class="text-xs font-black text-gray-900 tracking-wide">BẢO MẬT SSL 256-BIT</div>
+              <div class="text-xs text-gray-500 mt-0.5">Thanh toán mã hóa tuyệt đối</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright & Payment Methods -->
+    <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600">
+      <div>
+        © 2025 PhoneX Retail Corporation. Bản quyền thuộc về Công ty Cổ phần Bán lẻ PhoneX Việt Nam.
+      </div>
+      <div class="flex items-center gap-3 text-xs">
+        <span class="font-bold text-gray-700">Thanh toán:</span>
+        <span class="px-2.5 py-1 bg-gray-100 rounded-md font-bold text-gray-800">Visa / Mastercard</span>
+        <span class="px-2.5 py-1 bg-gray-100 rounded-md font-bold text-gray-800">VNPay</span>
+        <span class="px-2.5 py-1 bg-gray-100 rounded-md font-bold text-gray-800">MoMo</span>
+        <span class="px-2.5 py-1 bg-gray-100 rounded-md font-bold text-gray-800">Apple Pay</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (Stitch 390px App-like Bar with Bigger Fonts) -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] pb-safe" aria-label="Thanh điều hướng di động">
+    <div class="h-16 px-2 grid grid-cols-5 items-center">
+      <a href="../../../pages/shop/home/index.html" class="flex flex-col items-center justify-center h-full gap-1 text-gray-600 hover:text-red-600 transition-colors">
+        <span class="material-symbols-outlined text-[24px]">home</span>
+        <span class="text-xs font-bold leading-tight">Trang chủ</span>
+      </a>
+      <a href="../../../pages/shop/products/index.html" class="flex flex-col items-center justify-center h-full gap-1 text-gray-600 hover:text-red-600 transition-colors">
+        <span class="material-symbols-outlined text-[24px]">category</span>
+        <span class="text-xs font-bold leading-tight">Danh mục</span>
+      </a>
+      <a href="../../../pages/trade-in/sell-phone/index.html" class="flex flex-col items-center justify-center h-full gap-1 text-red-600 hover:text-red-700 transition-colors">
+        <span class="material-symbols-outlined text-[24px]">sync_alt</span>
+        <span class="text-xs font-black leading-tight">Thu cũ</span>
+      </a>
+      <a href="../../../pages/promotions/promotions/index.html" class="flex flex-col items-center justify-center h-full gap-1 text-gray-600 hover:text-red-600 transition-colors">
+        <span class="material-symbols-outlined text-[24px]">local_offer</span>
+        <span class="text-xs font-bold leading-tight">Ưu đãi</span>
+      </a>
+      <a href="../../../pages/account/account/index.html" class="flex flex-col items-center justify-center h-full gap-1 text-gray-600 hover:text-red-600 transition-colors">
+        <span class="material-symbols-outlined text-[24px]">person</span>
+        <span class="text-xs font-bold leading-tight">Tài khoản</span>
+      </a>
+    </div>
+  </nav>
+</footer>
+<!-- END: COMPONENT FOOTER --></body></html>

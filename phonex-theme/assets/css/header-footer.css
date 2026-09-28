@@ -1,0 +1,146 @@
+/**
+ * PhoneX - Shared Responsive Header, Footer & Mobile Popup Styles
+ * Enhanced Typography with enlarged readable fonts across Desktop, Tablet and Mobile
+ */
+
+[data-component="header"],
+[data-component="footer"] {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Enlarge input and links in header */
+[data-component="header"] input {
+  font-size: 15px !important;
+}
+
+[data-component="header"] nav a {
+  font-size: 14px !important;
+  letter-spacing: -0.01em;
+}
+
+/* Enlarge headings and text in footer */
+[data-component="footer"] h4 {
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+
+[data-component="footer"] p,
+[data-component="footer"] ul a,
+[data-component="footer"] ul li,
+[data-component="footer"] .text-xs {
+  font-size: 13.5px !important;
+  line-height: 1.6;
+}
+
+/* Hide scrollbar for horizontal category navigations */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area padding for modern notch/pill mobile screens */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Active touch state for mobile icons */
+nav a:active, header button:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}
+
+/* ===================================================
+   MOBILE POPUP MODAL & BOTTOM SHEET ANIMATIONS
+   =================================================== */
+
+.px-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+}
+
+.px-popup.active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.px-popup-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.px-popup-dialog {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+/* 1. Mobile Menu Popup (Pop-up Bottom Sheet on Mobile) */
+@media (max-width: 767px) {
+  .px-popup-menu {
+    align-items: flex-end;
+  }
+  .px-popup-menu .px-popup-dialog {
+    max-height: 88vh;
+    border-radius: 24px 24px 0 0;
+    transform: translateY(100%);
+    overflow: hidden;
+  }
+  .px-popup-menu.active .px-popup-dialog {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .px-popup-menu {
+    align-items: center;
+    justify-content: center;
+  }
+  .px-popup-menu .px-popup-dialog {
+    max-width: 480px;
+    max-height: 85vh;
+    border-radius: 20px;
+    transform: scale(0.94) translateY(10px);
+  }
+  .px-popup-menu.active .px-popup-dialog {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 2. Mobile Search Popup Modal */
+.px-popup-search {
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+.px-popup-search .px-popup-dialog {
+  max-width: 94%;
+  border-radius: 20px;
+  transform: translateY(-20px) scale(0.95);
+}
+
+.px-popup-search.active .px-popup-dialog {
+  transform: translateY(0) scale(1);
+}

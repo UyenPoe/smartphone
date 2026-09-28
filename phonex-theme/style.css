@@ -1,0 +1,45 @@
+/*
+Theme Name: PhoneX - Smartphone Specialist & Trade-in
+Theme URI: https://phonex.vn
+Author: PhoneX Engineering Team
+Author URI: https://phonex.vn
+Description: Official WordPress & WooCommerce Flagship Theme for PhoneX. Features full responsive layout, Trade-in engine, 128 Showrooms inventory, Electronic Warranty (Serial/IMEI), Phone OTP authentication, and WooCommerce HPOS integration.
+Version: 1.0.0
+Tested up to: 6.7
+Requires at least: 6.0
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: phonex
+Tags: e-commerce, custom-menu, featured-images, flexible-header, full-width-template, theme-options, translation-ready, woocommerce
+*/
+
+/* Reset & Base Integration */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: #191c1e;
+  background-color: #f8f9fb;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hide scrollbar for category bars */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

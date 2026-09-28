@@ -1,0 +1,93 @@
+[
+  {
+    "id": "iphone-17-pro-max",
+    "name": "iPhone 17 Pro Max",
+    "brand": "Apple",
+    "condition": "new",
+    "price": 34990000,
+    "old_price": 36990000,
+    "storage": [
+      "256GB",
+      "512GB",
+      "1TB"
+    ],
+    "colors": [
+      "Titan Đen",
+      "Titan Tự nhiên",
+      "Titan Xanh"
+    ],
+    "stock": 18,
+    "featured": true
+  },
+  {
+    "id": "iphone-17-pro",
+    "name": "iPhone 17 Pro",
+    "brand": "Apple",
+    "condition": "new",
+    "price": 30990000,
+    "old_price": 32990000,
+    "storage": [
+      "256GB",
+      "512GB"
+    ],
+    "colors": [
+      "Titan Đen",
+      "Titan Tự nhiên"
+    ],
+    "stock": 12,
+    "featured": true
+  },
+  {
+    "id": "galaxy-s26-ultra",
+    "name": "Samsung Galaxy S26 Ultra",
+    "brand": "Samsung",
+    "condition": "new",
+    "price": 28990000,
+    "old_price": 31990000,
+    "storage": [
+      "256GB",
+      "512GB"
+    ],
+    "colors": [
+      "Đen",
+      "Bạc",
+      "Xanh"
+    ],
+    "stock": 9,
+    "featured": true
+  },
+  {
+    "id": "iphone-15-pro-max-used",
+    "name": "iPhone 15 Pro Max Used",
+    "brand": "Apple",
+    "condition": "used",
+    "price": 21990000,
+    "storage": [
+      "256GB"
+    ],
+    "colors": [
+      "Titan Tự nhiên"
+    ],
+    "battery": 91,
+    "grade": "98%",
+    "stock": 1,
+    "featured": true
+  },
+  {
+    "id": "galaxy-s25-ultra-used",
+    "name": "Samsung Galaxy S25 Ultra Used",
+    "brand": "Samsung",
+    "condition": "used",
+    "price": 19990000,
+    "storage": [
+      "256GB"
+    ],
+    "colors": [
+      "Đen"
+    ],
+    "battery": 94,
+    "grade": "97%",
+    "stock": 2,
+    "featured": false
+  }
+]
