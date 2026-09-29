@@ -555,6 +555,73 @@
     </div>
   </div>
 
+  <!-- 4. TOP CAMPAIGN SLIDER (Sau Menu: 2400x480px, 2 slides with auto-play, navigation arrows, pagination dots & close X button) -->
+  <div id="pxTopCampaignSlider" class="relative w-full bg-[#f8bd08] overflow-hidden transition-all duration-300 shadow-xs border-b border-amber-300/80 z-20" style="transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;">
+    <div class="relative w-full max-w-[2400px] mx-auto overflow-hidden">
+      <!-- Close "X" Button -->
+      <button 
+        type="button" 
+        id="pxTopCampaignSliderClose"
+        onclick="PhoneXCampaignSlider.close(event)" 
+        class="absolute top-2 right-2 sm:top-3 sm:right-4 z-30 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center backdrop-blur-xs transition-all duration-200 shadow-md group cursor-pointer" 
+        title="Đóng slide khuyến mãi"
+        aria-label="Đóng slide khuyến mãi"
+      >
+        <span class="material-symbols-outlined text-[18px] sm:text-[20px] group-hover:rotate-90 transition-transform duration-200">close</span>
+      </button>
+
+      <!-- Slides Track -->
+      <div id="pxCampaignSliderTrack" class="relative w-full flex transition-transform duration-500 ease-out" style="transform: translateX(0%);">
+        <!-- Slide 1 -->
+        <a href="../../../pages/shop/search-filter/index.html" class="w-full shrink-0 block relative group" style="aspect-ratio: 2400 / 480;">
+          <img 
+            src="../../../assets/images/banners/slider-banner-1-2400x480.png" 
+            alt="Tựu Trường Deal Thơm - Giảm đến 3 Triệu - Trả góp 0% - Smartphone Chính Hãng VN/A" 
+            class="w-full h-full object-cover select-none"
+            width="2400" 
+            height="480"
+            loading="eager"
+          />
+        </a>
+        <!-- Slide 2 -->
+        <a href="../../../pages/shop/search-filter/index.html" class="w-full shrink-0 block relative group" style="aspect-ratio: 2400 / 480;">
+          <img 
+            src="../../../assets/images/banners/slider-banner-2-2400x480.png" 
+            alt="Phá Cỗ Tung Deal - Điện thoại Tablet Flagship giảm thêm 150K - 1.5 Triệu - Phụ kiện giảm 15%" 
+            class="w-full h-full object-cover select-none"
+            width="2400" 
+            height="480"
+            loading="lazy"
+          />
+        </a>
+      </div>
+
+      <!-- Prev & Next Arrows -->
+      <button 
+        type="button"
+        onclick="PhoneXCampaignSlider.prev(event)" 
+        class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/75 text-white flex items-center justify-center backdrop-blur-xs transition-all duration-200 shadow-md cursor-pointer hover:scale-105"
+        aria-label="Slide trước"
+      >
+        <span class="material-symbols-outlined text-[18px] sm:text-[24px]">chevron_left</span>
+      </button>
+      <button 
+        type="button" 
+        onclick="PhoneXCampaignSlider.next(event)" 
+        class="absolute right-10 sm:right-14 top-1/2 -translate-y-1/2 z-20 w-7 h-7 sm:w-10 sm:h-10 rounded-full bg-black/40 hover:bg-black/75 text-white flex items-center justify-center backdrop-blur-xs transition-all duration-200 shadow-md cursor-pointer hover:scale-105"
+        aria-label="Slide tiếp theo"
+      >
+        <span class="material-symbols-outlined text-[18px] sm:text-[24px]">chevron_right</span>
+      </button>
+
+      <!-- Indicators / Dots -->
+      <div class="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-black/30 backdrop-blur-xs">
+        <button type="button" onclick="PhoneXCampaignSlider.goTo(0)" class="px-slider-dot w-5 sm:w-6 h-1.5 sm:h-2 rounded-full bg-white shadow-xs transition-all duration-300" aria-label="Slide 1"></button>
+        <button type="button" onclick="PhoneXCampaignSlider.goTo(1)" class="px-slider-dot w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300" aria-label="Slide 2"></button>
+      </div>
+    </div>
+  </div>
+
   <!-- ===================================================
        LOCATION PICKER MODAL (Strictly Hidden by Default)
        =================================================== -->
@@ -965,6 +1032,119 @@
       }
     };
 
+    // Campaign Slider Controller (2400x480)
+    const PhoneXCampaignSlider = {
+      currentIndex: 0,
+      totalSlides: 2,
+      autoPlayTimer: null,
+      isPaused: false,
+
+      init: function() {
+        const slider = document.getElementById('pxTopCampaignSlider');
+        if (!slider) return;
+        
+        try {
+          if (sessionStorage.getItem('phonex_top_slider_dismissed') === '1') {
+            slider.style.display = 'none';
+            return;
+          }
+        } catch (e) {}
+
+        this.updateUI();
+        this.startAutoPlay();
+
+        const self = this;
+        slider.addEventListener('mouseenter', function() { self.isPaused = true; });
+        slider.addEventListener('mouseleave', function() { self.isPaused = false; });
+
+        let touchStartX = 0;
+        slider.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        slider.addEventListener('touchend', function(e) {
+          const touchEndX = e.changedTouches[0].screenX;
+          if (touchStartX - touchEndX > 45) {
+            self.next();
+          } else if (touchEndX - touchStartX > 45) {
+            self.prev();
+          }
+        }, { passive: true });
+      },
+
+      goTo: function(index) {
+        this.currentIndex = (index + this.totalSlides) % this.totalSlides;
+        this.updateUI();
+        this.resetAutoPlay();
+      },
+
+      next: function(e) {
+        if (e) { e.preventDefault(); e.stopPropagation(); }
+        this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+        this.updateUI();
+        this.resetAutoPlay();
+      },
+
+      prev: function(e) {
+        if (e) { e.preventDefault(); e.stopPropagation(); }
+        this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+        this.updateUI();
+        this.resetAutoPlay();
+      },
+
+      updateUI: function() {
+        const track = document.getElementById('pxCampaignSliderTrack');
+        if (track) {
+          track.style.transform = 'translateX(-' + (this.currentIndex * 100) + '%)';
+        }
+        const dots = document.querySelectorAll('.px-slider-dot');
+        dots.forEach((dot, idx) => {
+          if (idx === this.currentIndex) {
+            dot.className = 'px-slider-dot w-5 sm:w-6 h-1.5 sm:h-2 rounded-full bg-white shadow-xs transition-all duration-300';
+          } else {
+            dot.className = 'px-slider-dot w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300';
+          }
+        });
+      },
+
+      startAutoPlay: function() {
+        if (this.autoPlayTimer) clearInterval(this.autoPlayTimer);
+        const self = this;
+        this.autoPlayTimer = setInterval(function() {
+          if (!self.isPaused) {
+            self.currentIndex = (self.currentIndex + 1) % self.totalSlides;
+            self.updateUI();
+          }
+        }, 4500);
+      },
+
+      resetAutoPlay: function() {
+        this.startAutoPlay();
+      },
+
+      close: function(e) {
+        if (e) { e.preventDefault(); e.stopPropagation(); }
+        const slider = document.getElementById('pxTopCampaignSlider');
+        if (!slider) return;
+        if (this.autoPlayTimer) clearInterval(this.autoPlayTimer);
+
+        slider.style.maxHeight = slider.offsetHeight + 'px';
+        slider.offsetHeight; // trigger reflow
+        slider.style.maxHeight = '0px';
+        slider.style.opacity = '0';
+        slider.style.padding = '0';
+        slider.style.borderWidth = '0';
+        slider.style.pointerEvents = 'none';
+
+        setTimeout(function() {
+          slider.style.display = 'none';
+        }, 400);
+
+        try {
+          sessionStorage.setItem('phonex_top_slider_dismissed', '1');
+        } catch (err) {}
+      }
+    };
+
     // Close accessories mega menu on outside click
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('pxAccessoriesMegaMenu');
@@ -980,6 +1160,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       PhoneXLocation.init();
       PhoneXTopBanner.init();
+      PhoneXCampaignSlider.init();
     });
 
     // Escape key listener for closing modals & mega menu
