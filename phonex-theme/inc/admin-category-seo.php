@@ -154,6 +154,110 @@ HTML;
 }
 
 /**
+ * Default SEO content for "Điện Thoại Cũ Giá Tốt / Máy Cũ 99%" (Category: used, term 21)
+ *
+ * @return array
+ */
+function phonex_get_default_used_phone_seo_data() {
+	$badge_title = 'THÔNG TIN NGÀNH HÀNG ĐIỆN THOẠI CŨ';
+	$sapo        = 'Điện thoại cũ giá tốt (Pre-Owned / Like New 99%) tại PhoneX là giải pháp thông minh giúp bạn sở hữu các dòng flagship cao cấp (iPhone, Samsung Galaxy, Xiaomi...) với mức giá tiết kiệm từ 30% đến 50% so với máy mới xuất xưởng. Toàn bộ thiết bị đều trải qua quy trình thẩm định 45 bước chuyên sâu của Apple Certified Hardware Specialist, cam kết nguyên bản 100% (Zin All), ngoại hình đẹp như mới và hưởng chế độ bảo hành VIP 1 đổi 1 trong 30 ngày độc quyền.';
+
+	$content = <<<HTML
+<h2 id="used-section-1">1. Điện thoại cũ là gì? Tại sao nên mua điện thoại cũ tại PhoneX?</h2>
+<p><strong>Điện thoại cũ</strong> (hay còn gọi là điện thoại đã qua sử dụng, Like New, Pre-Owned) là những chiếc smartphone chính hãng đã qua một thời gian sử dụng ngắn từ người dùng trước, hoặc là các sản phẩm trưng bày, đổi trả trong thời hạn bảo hành. Thay vì phải chi trả toàn bộ số tiền lớn cho một chiếc máy mới vừa bóc seal, việc chọn mua điện thoại cũ mang lại hàng loạt lợi thế vượt trội:</p>
+<ul>
+  <li><strong>Tiết kiệm từ 30% - 50% chi phí:</strong> Bạn có thể dễ dàng tiếp cận các mẫu flagship đình đám nhất (như iPhone 15 Pro Max, Galaxy S24 Ultra, Xiaomi 14 Ultra) với mức giá chỉ bằng một chiếc máy tầm trung.</li>
+  <li><strong>Khấu hao thấp, giữ giá tốt:</strong> Smartphone mới thường mất giá từ 15% - 25% ngay sau khi bóc hộp. Với điện thoại cũ, biên độ khấu hao cực kỳ thấp, giúp bạn thuận lợi hơn khi muốn lên đời hoặc bán lại sau này.</li>
+  <li><strong>Chất lượng và độ bền nguyên bản:</strong> Tại hệ thống 128 Showroom của PhoneX, 100% điện thoại cũ đều cam kết "Zin All" nguyên bản, chưa từng qua sửa chữa ép kính hay thay thế linh kiện trôi nổi.</li>
+</ul>
+
+<div class="my-4 text-center">
+  <img src="https://cdn.tgdd.vn/Products/Images/42/370982/iphone-18-pro-max-den-thumb-600x600.jpg" alt="Điện thoại cũ đẹp như mới tại PhoneX" class="mx-auto rounded-xl max-h-[360px] object-contain shadow-xs border border-gray-100" />
+  <p class="text-xs text-gray-500 italic mt-1.5">Mỗi chiếc điện thoại cũ tại PhoneX đều được chụp ảnh thật và kiểm tra độc bản theo từng số IMEI</p>
+</div>
+
+<h2 id="used-section-2">2. Bảng phân loại chất lượng điện thoại cũ tại PhoneX</h2>
+<p>Để đảm bảo tính minh bạch tuyệt đối, PhoneX phân loại chi tiết tình trạng ngoại hình và pin theo tiêu chuẩn quốc tế:</p>
+
+<h3 id="used-section-2-1">Grade A (Đẹp 99% - Like New Tuyển Chọn)</h3>
+<p>Đây là nhóm sản phẩm cao cấp nhất. Thân máy và viền gần như mới tinh, không cấn móp, không trầy xước. Màn hình sáng bóng, phủ nano chống bám vân tay zin. Dung lượng pin thực tế dao động từ <strong>90% đến 100%</strong>, số chu kỳ sạc rất ít. Thích hợp cho người dùng khó tính yêu cầu ngoại hình hoàn hảo.</p>
+
+<h3 id="used-section-2-2">Grade B (Đẹp 97% - 98% Zin Nguyên Bản)</h3>
+<p>Máy có xuất hiện một vài vết xước dăm siêu mảnh ở khung viền hoặc mặt lưng qua quá trình sử dụng thông thường, nhưng tuyệt đối không cấn móp nặng hay nứt vỡ. Mọi linh kiện bên trong cam kết zin 100%, chức năng hoạt động hoàn hảo. Nhóm này có mức giá rẻ hơn Grade A từ 1.000.000₫ đến 2.500.000₫, cực kỳ kinh tế.</p>
+
+<h3 id="used-section-2-3">Hàng Fullbox Trùng IMEI &amp; Còn Bảo Hành Hãng</h3>
+<p>Nhiều mẫu máy cũ tại PhoneX vẫn còn đầy đủ hộp nguyên bản trùng IMEI máy, kèm cáp sạc zin bóc hộp và còn thời hạn bảo hành chính hãng AppleCare hoặc Samsung Care+ dài hạn.</p>
+
+<h2 id="used-section-3">3. Quy chuẩn kiểm định độc bản 45 bước kỹ thuật tại PhoneX Lab</h2>
+<p>Khác biệt hoàn toàn với thị trường trôi nổi, mỗi chiếc điện thoại cũ tại PhoneX đều phải trải qua và vượt qua 45 bài test khắt khe trước khi được niêm yết lên kệ:</p>
+<ul>
+  <li><strong>12 Bài test màn hình &amp; cảm ứng:</strong> Kiểm tra cảm ứng đa điểm 10 ngón, độ sáng đỉnh nits, tính năng TrueTone, tần số quét 120Hz ProMotion và đảm bảo không có điểm chết (Dead Pixel) hay ám ố.</li>
+  <li><strong>11 Bài test Camera &amp; Cảm biến:</strong> Thử nghiệm chống rung quang học OIS, zoom tiềm vọng, cảm biến LiDAR, Face ID nhận diện 3D siêu nhạy dưới mọi điều kiện ánh sáng.</li>
+  <li><strong>12 Bài test Bo mạch &amp; Chống nước:</strong> Đo áp suất viền đảm bảo chuẩn chống nước IP68, kiểm tra giấy quỳ chỉ thị ẩm trắng tinh, test modem 5G, Wi-Fi 7 và sạc nhanh Type-C/MagSafe.</li>
+  <li><strong>10 Bài test Hiệu năng &amp; Pin:</strong> Đo dung lượng pin chuẩn qua phần mềm Apple Diagnostics, test tải nặng liên tục trong 30 phút để kiểm tra nhiệt độ tản nhiệt và mức tiêu hao nguồn khi ở chế độ chờ.</li>
+</ul>
+
+<div class="my-4 text-center">
+  <img src="https://cdn.tgdd.vn/Products/Images/42/367339/samsung-galaxy-s26-ultra-den-thumb-600x600.jpg" alt="Thẩm định chất lượng điện thoại cũ tại PhoneX Lab" class="mx-auto rounded-xl max-h-[360px] object-contain shadow-xs border border-gray-100" />
+  <p class="text-xs text-gray-500 italic mt-1.5">Quy trình thẩm định 45 bước nghiêm ngặt được thực hiện bởi kỹ thuật viên Apple Certified Hardware</p>
+</div>
+
+<h2 id="used-section-4">4. Các thương hiệu điện thoại cũ được săn đón nhiều nhất</h2>
+
+<h3 id="used-section-4-1">iPhone Cũ: Hệ sinh thái mượt mà, giữ giá vô địch</h3>
+<p><strong>iPhone cũ</strong> luôn là sự lựa chọn số 1 trên thị trường nhờ sự hỗ trợ cập nhật phần mềm lâu dài từ 5 - 7 năm của Apple. Các model bán chạy nhất gồm có: <strong>iPhone 16 Pro Max, iPhone 15 Pro Max, iPhone 14 Pro Max và iPhone 13 Pro Max</strong>. Máy chạy mượt mà, camera quay video chuẩn điện ảnh và đồng bộ tuyệt vời cùng MacBook, Apple Watch.</p>
+
+<h3 id="used-section-4-2">Samsung Galaxy Cũ: Màn hình Dynamic AMOLED đỉnh cao và Galaxy AI</h3>
+<p>Với dòng Android, <strong>Samsung Galaxy cũ</strong> (đặc biệt là Galaxy S24 Ultra, S23 Ultra hay dòng màn hình gập Galaxy Z Fold5) mang lại trải nghiệm hiển thị mãn nhãn, camera zoom xa 100x và tính năng trí tuệ nhân tạo Galaxy AI thời thượng với mức giá vô cùng dễ chịu.</p>
+
+<h3 id="used-section-4-3">Xiaomi, OPPO &amp; Google Pixel Cũ: Hiệu năng khủng và chụp ảnh nghệ thuật</h3>
+<p>Nếu bạn tìm kiếm smartphone cấu hình cao để chiến game hoặc chụp ảnh với ống kính Leica / Hasselblad thì các dòng flagship cũ của Xiaomi, OPPO và Google Pixel là những món hời công nghệ không thể bỏ lỡ.</p>
+
+<h2 id="used-section-5">5. Tiêu chí vàng khi chọn mua điện thoại cũ bạn cần biết</h2>
+<ul>
+  <li><strong>Kiểm tra số IMEI và Serial:</strong> Đối chiếu số IMEI trong Cài đặt máy với khay SIM và vỏ hộp để đảm bảo tính đồng nhất.</li>
+  <li><strong>Kiểm tra tài khoản ẩn:</strong> Kiểm tra kỹ máy đã thoát sạch tài khoản iCloud (với iPhone) hoặc Knox / Mi Account (với Samsung, Xiaomi), yêu cầu khôi phục cài đặt gốc tại chỗ.</li>
+  <li><strong>Kiểm tra pin và tình trạng sạc:</strong> Ưu tiên chọn máy có dung lượng pin thực tế trên 88% để đảm bảo thời lượng sử dụng thoải mái trong ngày.</li>
+  <li><strong>Lựa chọn nơi bán có chính sách bảo hành rõ ràng:</strong> Ưu tiên hệ thống có chính sách bảo hành bao gồm cả <em>nguồn và màn hình</em> – 2 linh kiện đắt tiền nhất của smartphone.</li>
+</ul>
+
+<h2 id="used-section-6">6. Quyền lợi độc quyền khi mua điện thoại cũ tại PhoneX</h2>
+<ul>
+  <li><strong>Bảo hành VIP 12 tháng:</strong> Bảo hành toàn diện cả Nguồn và Màn hình cảm ứng trong suốt 1 năm.</li>
+  <li><strong>Chính sách 1 Đổi 1 trong 30 ngày:</strong> Bất kỳ lỗi phần cứng nào từ nhà sản xuất đều được đổi ngay máy tương đương hoặc hoàn tiền 100%.</li>
+  <li><strong>Cam kết hoàn tiền &amp; Đền bù 1.000.000₫:</strong> Nếu phát hiện máy nhận được không đúng số serial độc bản đã chọn hoặc bị can thiệp linh kiện, PhoneX hoàn tiền 100% và tặng thêm 1 triệu đồng tiền mặt.</li>
+  <li><strong>Thu cũ đổi mới trợ giá 3.000.000₫:</strong> Định giá máy cũ của bạn trong 60 giây và hỗ trợ trả góp 0% khoản chênh lệch.</li>
+</ul>
+
+<h2 id="used-section-7">7. Câu hỏi thường gặp khi mua điện thoại cũ (FAQ)</h2>
+<div class="space-y-3 mt-3">
+  <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
+    <strong class="text-gray-900 block mb-1">Điện thoại cũ tại PhoneX có bị thay linh kiện không?</strong>
+    <p class="text-gray-600 text-sm">Cam kết 100% nguyên bản (Zin All). PhoneX kiểm tra trực tiếp qua máy đo áp suất và phần mềm chuyên dụng, quỳ tím còn nguyên vẹn chưa từng dính nước hay qua sửa chữa.</p>
+  </div>
+  <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
+    <strong class="text-gray-900 block mb-1">Mua máy cũ có được tặng kèm phụ kiện sạc cáp không?</strong>
+    <p class="text-gray-600 text-sm">Tất cả điện thoại cũ bán ra tại PhoneX đều được tặng kèm củ sạc nhanh cao cấp, dán cường lực và ốp lưng bảo vệ miễn phí trọn đời máy.</p>
+  </div>
+  <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
+    <strong class="text-gray-900 block mb-1">Ở xa mua online có được kiểm tra máy trước khi thanh toán không?</strong>
+    <p class="text-gray-600 text-sm">PhoneX hỗ trợ giao hàng hỏa tốc toàn quốc. Bạn được quyền mở hộp đồng kiểm đúng số serial, ngoại hình và bật nguồn test máy đầy đủ trước khi thanh toán cho nhân viên giao hàng.</p>
+  </div>
+</div>
+HTML;
+
+	return array(
+		'badge_title' => $badge_title,
+		'sapo'        => $sapo,
+		'content'     => $content,
+		'enable_toc'  => true,
+		'img_1'       => 'https://cdn.tgdd.vn/Products/Images/42/370982/iphone-18-pro-max-den-thumb-600x600.jpg',
+		'img_2'       => 'https://cdn.tgdd.vn/Products/Images/42/367339/samsung-galaxy-s26-ultra-den-thumb-600x600.jpg',
+		'img_3'       => 'https://cdn.tgdd.vn/Products/Images/42/368236/motorola-razr-fold-trang-thumb-600x600.jpg',
+	);
+}
+
+/**
  * Resolve Category Term ID for "Điện Thoại"
  */
 function phonex_get_phone_cat_term_id() {
@@ -178,7 +282,18 @@ function phonex_get_category_seo_data( $term_id = 0 ) {
 		$term_id = phonex_get_phone_cat_term_id();
 	}
 
-	$defaults = phonex_get_default_category_seo_data();
+	// Detect if this is used phone category
+	$is_used = false;
+	if ( 21 === (int) $term_id ) {
+		$is_used = true;
+	} else {
+		$term_obj = get_term( $term_id, 'product_cat' );
+		if ( $term_obj && ! is_wp_error( $term_obj ) && in_array( $term_obj->slug, array( 'used', 'may-cu-99', 'dien-thoai-cu' ), true ) ) {
+			$is_used = true;
+		}
+	}
+
+	$defaults = $is_used ? phonex_get_default_used_phone_seo_data() : phonex_get_default_category_seo_data();
 
 	// 1. Check if term meta exists in the Category Edit screen
 	if ( $term_id > 0 ) {

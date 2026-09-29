@@ -184,7 +184,7 @@
         </div>
 
         <!-- 3. Điện thoại cũ giá tốt -->
-        <a href="<?php echo esc_url( home_url( '/product-category/used/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-[#e60012] hover:bg-[#ffdad5]/60 transition-colors flex items-center gap-1.5 shrink-0">
+        <a href="<?php echo esc_url( home_url( '/dien-thoai-cu/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-[#e60012] hover:bg-[#ffdad5]/60 transition-colors flex items-center gap-1.5 shrink-0">
           <span class="material-symbols-outlined text-[18px] text-[#e60012]">sync_alt</span>
           <span>Điện thoại cũ giá tốt</span>
           <span class="text-[10px] bg-[#ffdad5] text-[#b7000c] px-1.5 py-0.2 rounded-full font-bold">99%</span>
@@ -679,7 +679,7 @@
               <span class="material-symbols-outlined text-[#e60012] text-[18px]">smartphone</span>
               <span>Điện thoại</span>
             </a>
-            <a href="<?php echo esc_url( home_url( '/product-category/used/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
+            <a href="<?php echo esc_url( home_url( '/dien-thoai-cu/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
               <span class="material-symbols-outlined text-[#e60012] text-[18px]">sync_alt</span>
               <span>Máy cũ giá tốt</span>
             </a>
@@ -784,7 +784,7 @@
           <a href="<?php echo esc_url(home_url('/?s=Galaxy+S25+Ultra&post_type=product')); ?>" class="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-[#e60012] hover:text-[#e60012] transition-colors font-medium">Galaxy S25 Ultra</a>
           <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="px-2.5 py-1 bg-[#ffdad5] border border-[#ffdad5] rounded-full text-[#e60012] font-bold hover:bg-[#ffdad5] transition-colors">Thu cũ trợ giá 3Tr</a>
           <a href="<?php echo esc_url(home_url('/?s=Xiaomi+15&post_type=product')); ?>" class="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-[#e60012] hover:text-[#e60012] transition-colors font-medium">Xiaomi 15 Pro</a>
-          <a href="<?php echo esc_url(home_url('/shop/?condition=used')); ?>" class="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-[#e60012] hover:text-[#e60012] transition-colors font-medium">Máy cũ 99%</a>
+          <a href="<?php echo esc_url(home_url('/dien-thoai-cu/')); ?>" class="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-[#e60012] hover:text-[#e60012] transition-colors font-medium">Máy cũ 99%</a>
         </div>
       </div>
     </div>
