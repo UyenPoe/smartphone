@@ -393,7 +393,7 @@
         </a>
 
         <!-- 4. Phụ Kiện (Click để mở Mega Menu) -->
-        <div class="relative" id="pxAccessoriesWrapper">
+        <div class="relative" id="pxAccessoriesWrapper" onmouseenter="PhoneXAccessoriesMegaMenu.onEnter()" onmouseleave="PhoneXAccessoriesMegaMenu.onLeave()">
           <button type="button" id="pxAccessoriesBtn" onclick="PhoneXAccessoriesMegaMenu.toggle(event)" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1 shrink-0 cursor-pointer">
             <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">headphones</span>
             <span>Phụ Kiện</span>
@@ -460,7 +460,7 @@
       <!-- ===================================================
            THẾ GIỚI DI ĐỘNG STYLE ACCESSORIES MEGA MENU
            =================================================== -->
-      <div id="pxAccessoriesMegaMenu" class="hidden absolute top-full left-0 right-0 z-50 mt-1 bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 md:p-6 text-gray-800 transition-all duration-200" style="display: none;">
+      <div id="pxAccessoriesMegaMenu" onmouseenter="PhoneXAccessoriesMegaMenu.onEnter()" onmouseleave="PhoneXAccessoriesMegaMenu.onLeave()" class="hidden absolute top-full left-0 right-0 z-50 mt-1 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 md:p-7 text-gray-800 transition-all duration-200" style="display: none;">
         <div class="flex items-center justify-between pb-3 mb-5 border-b border-gray-100">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-red-600 text-[22px]">headphones</span>
@@ -472,298 +472,298 @@
           </button>
         </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
           <!-- LEFT COLUMN -->
-          <div class="space-y-6">
+          <div class="space-y-7">
             <!-- 1. Phụ kiện di động -->
             <div>
-              <h4 class="font-extrabold text-gray-900 text-sm md:text-[15px] mb-3 flex items-center gap-1.5">
-                <span class="w-1.5 h-3.5 bg-red-600 rounded-full"></span>
+              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
+                <span class="w-2 h-4 bg-red-600 rounded-full"></span>
                 <span>Phụ kiện di động</span>
               </h4>
               <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/sac-du-phong.png" alt="Sạc dự phòng" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/sac-du-phong.png" alt="Sạc dự phòng" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Sạc dự phòng</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Sạc dự phòng</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/sac-cap.png" alt="Sạc, cáp" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/sac-cap.png" alt="Sạc, cáp" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Sạc, cáp</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Sạc, cáp</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/op-lung-dien-thoai.png" alt="Ốp lưng điện thoại" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/op-lung-dien-thoai.png" alt="Ốp lưng điện thoại" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Ốp lưng điện thoại</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Ốp lưng điện thoại</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/op-lung-may-tinh-bang.png" alt="Ốp lưng máy tính bảng" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/op-lung-may-tinh-bang.png" alt="Ốp lưng máy tính bảng" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Ốp lưng máy tính bảng</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Ốp lưng máy tính bảng</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/mieng-dan.png" alt="Miếng dán" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/mieng-dan.png" alt="Miếng dán" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Miếng dán</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Miếng dán</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/mieng-dan-camera.png" alt="Miếng dán Camera" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/mieng-dan-camera.png" alt="Miếng dán Camera" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Miếng dán Camera</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Miếng dán Camera</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/tui-dung-airpods.png" alt="Túi đựng AirPods" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/tui-dung-airpods.png" alt="Túi đựng AirPods" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Túi đựng AirPods</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Túi đựng AirPods</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/quat-mini.png" alt="Quạt mini" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
-                    <span class="absolute -top-1.5 -right-1.5 text-[9px] font-extrabold bg-red-500 text-white px-1.5 py-0.2 rounded-full leading-none shadow-xs">Hot</span>
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/quat-mini.png" alt="Quạt mini" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                    <span class="absolute -top-1.5 -right-1.5 text-[10px] font-extrabold bg-red-500 text-white px-2 py-0.5 rounded-full leading-none shadow-sm">Hot</span>
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Quạt mini</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Quạt mini</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/but-tablet.png" alt="Bút tablet" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/but-tablet.png" alt="Bút tablet" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Bút tablet</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Bút tablet</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/gia-do-dien-thoai-laptop.png" alt="Giá đỡ điện thoại/laptop" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/gia-do-dien-thoai-laptop.png" alt="Giá đỡ điện thoại/laptop" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Giá đỡ điện thoại/laptop</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Giá đỡ điện thoại/laptop</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/day-deo-dien-thoai.png" alt="Dây đeo điện thoại" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/day-deo-dien-thoai.png" alt="Dây đeo điện thoại" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Dây đeo điện thoại</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Dây đeo điện thoại</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/ong-kinh-dien-thoai.png" alt="Ống kính điện thoại" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
-                    <span class="absolute -top-1.5 -right-1.5 text-[9px] font-extrabold bg-rose-500 text-white px-1.5 py-0.2 rounded-full leading-none shadow-xs">Mới</span>
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/ong-kinh-dien-thoai.png" alt="Ống kính điện thoại" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                    <span class="absolute -top-1.5 -right-1.5 text-[10px] font-extrabold bg-rose-500 text-white px-2 py-0.5 rounded-full leading-none shadow-sm">Mới</span>
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Ống kính điện thoại</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Ống kính điện thoại</span>
                 </a>
               </div>
             </div>
 
             <!-- 2. Thiết bị nghe nhìn, lưu trữ, thu âm -->
-            <div class="pt-4 border-t border-gray-100">
-              <h4 class="font-extrabold text-gray-900 text-sm md:text-[15px] mb-3 flex items-center gap-1.5">
-                <span class="w-1.5 h-3.5 bg-red-600 rounded-full"></span>
+            <div class="pt-5 border-t border-gray-100">
+              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
+                <span class="w-2 h-4 bg-red-600 rounded-full"></span>
                 <span>Thiết bị nghe nhìn, lưu trữ, thu âm</span>
               </h4>
               <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/tai-nghe-bluetooth.png" alt="Tai nghe Bluetooth" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/tai-nghe-bluetooth.png" alt="Tai nghe Bluetooth" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Tai nghe Bluetooth</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Tai nghe Bluetooth</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/tai-nghe-day.png" alt="Tai nghe dây" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/tai-nghe-day.png" alt="Tai nghe dây" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Tai nghe dây</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Tai nghe dây</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/tai-nghe-chup-tai.png" alt="Tai nghe chụp tai" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/tai-nghe-chup-tai.png" alt="Tai nghe chụp tai" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Tai nghe chụp tai</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Tai nghe chụp tai</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/tai-nghe-the-thao.png" alt="Tai nghe thể thao" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/tai-nghe-the-thao.png" alt="Tai nghe thể thao" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Tai nghe thể thao</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Tai nghe thể thao</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/loa.png" alt="Loa" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
-                    <span class="absolute -top-1.5 -right-1.5 text-[9px] font-extrabold bg-red-500 text-white px-1.5 py-0.2 rounded-full leading-none shadow-xs">Hot</span>
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/loa.png" alt="Loa" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                    <span class="absolute -top-1.5 -right-1.5 text-[10px] font-extrabold bg-red-500 text-white px-2 py-0.5 rounded-full leading-none shadow-sm">Hot</span>
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Loa</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Loa</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/micro.png" alt="Micro" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/micro.png" alt="Micro" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Micro</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Micro</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/may-chieu.png" alt="Máy chiếu" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/may-chieu.png" alt="Máy chiếu" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Máy chiếu</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Máy chiếu</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/kinh-thong-minh.png" alt="Kính thông minh" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/kinh-thong-minh.png" alt="Kính thông minh" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Kính thông minh</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Kính thông minh</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/o-cung.png" alt="Ổ cứng" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/o-cung.png" alt="Ổ cứng" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Ổ cứng</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Ổ cứng</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/the-nho.png" alt="Thẻ nhớ" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/the-nho.png" alt="Thẻ nhớ" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Thẻ nhớ</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Thẻ nhớ</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/usb.png" alt="USB" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/usb.png" alt="USB" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">USB</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">USB</span>
                 </a>
               </div>
             </div>
           </div>
 
           <!-- RIGHT COLUMN -->
-          <div class="space-y-6 lg:pl-8 pt-6 lg:pt-0">
+          <div class="space-y-7 lg:pl-8 pt-6 lg:pt-0">
             <!-- 3. Phụ kiện laptop, PC -->
             <div>
-              <h4 class="font-extrabold text-gray-900 text-sm md:text-[15px] mb-3 flex items-center gap-1.5">
-                <span class="w-1.5 h-3.5 bg-red-600 rounded-full"></span>
+              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
+                <span class="w-2 h-4 bg-red-600 rounded-full"></span>
                 <span>Phụ kiện laptop, PC</span>
               </h4>
               <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/hub-cap-chuyen-doi.png" alt="Hub, cáp chuyển đổi" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/hub-cap-chuyen-doi.png" alt="Hub, cáp chuyển đổi" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Hub, cáp chuyển đổi</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Hub, cáp chuyển đổi</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/chuot-may-tinh.png" alt="Chuột máy tính" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/chuot-may-tinh.png" alt="Chuột máy tính" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Chuột máy tính</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Chuột máy tính</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/ban-phim.png" alt="Bàn phím" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/ban-phim.png" alt="Bàn phím" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Bàn phím</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Bàn phím</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/router-thiet-bi-mang.png" alt="Router - Thiết bị mạng" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/router-thiet-bi-mang.png" alt="Router - Thiết bị mạng" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Router - Thiết bị mạng</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Router - Thiết bị mạng</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/balo-tui-chong-soc.png" alt="Balo, túi chống sốc" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/balo-tui-chong-soc.png" alt="Balo, túi chống sốc" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Balo, túi chống sốc</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Balo, túi chống sốc</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/tui-dung-phu-kien.png" alt="Túi đựng phụ kiện" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/tui-dung-phu-kien.png" alt="Túi đựng phụ kiện" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Túi đựng phụ kiện</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Túi đựng phụ kiện</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/phu-phim-laptop.png" alt="Phủ phím laptop" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/phu-phim-laptop.png" alt="Phủ phím laptop" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Phủ phím laptop</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Phủ phím laptop</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/phan-mem.png" alt="Phần mềm" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/phan-mem.png" alt="Phần mềm" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Phần mềm</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Phần mềm</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/gia-treo-man-hinh.png" alt="Giá treo màn hình" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/gia-treo-man-hinh.png" alt="Giá treo màn hình" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Giá treo màn hình</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Giá treo màn hình</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/mieng-lot-chuot.png" alt="Miếng lót chuột" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/mieng-lot-chuot.png" alt="Miếng lót chuột" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Miếng lót chuột</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Miếng lót chuột</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/bang-ve-dien-tu.png" alt="Bảng vẽ điện tử" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/bang-ve-dien-tu.png" alt="Bảng vẽ điện tử" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Bảng vẽ điện tử</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Bảng vẽ điện tử</span>
                 </a>
               </div>
             </div>
 
             <!-- 4. Camera -->
-            <div class="pt-4 border-t border-gray-100">
-              <h4 class="font-extrabold text-gray-900 text-sm md:text-[15px] mb-3 flex items-center gap-1.5">
-                <span class="w-1.5 h-3.5 bg-red-600 rounded-full"></span>
+            <div class="pt-5 border-t border-gray-100">
+              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
+                <span class="w-2 h-4 bg-red-600 rounded-full"></span>
                 <span>Camera</span>
               </h4>
               <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/camera-giam-sat.png" alt="Camera Giám Sát" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
-                    <span class="absolute -top-1.5 -right-1.5 text-[9px] font-extrabold bg-red-500 text-white px-1.5 py-0.2 rounded-full leading-none shadow-xs">Hot</span>
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/camera-giam-sat.png" alt="Camera Giám Sát" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                    <span class="absolute -top-1.5 -right-1.5 text-[10px] font-extrabold bg-red-500 text-white px-2 py-0.5 rounded-full leading-none shadow-sm">Hot</span>
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Camera Giám Sát</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Camera Giám Sát</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/camera-trong-nha.png" alt="Camera trong nhà" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/camera-trong-nha.png" alt="Camera trong nhà" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Camera trong nhà</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Camera trong nhà</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/camera-ngoai-troi.png" alt="Camera ngoài trời" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/camera-ngoai-troi.png" alt="Camera ngoài trời" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Camera ngoài trời</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Camera ngoài trời</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/camera-nang-luong-mat-troi.png" alt="Camera Năng Lượng" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/camera-nang-luong-mat-troi.png" alt="Camera Năng Lượng" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Camera Năng Lượng</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Camera Năng Lượng</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/camera-4g.png" alt="Camera 4G" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/camera-4g.png" alt="Camera 4G" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Camera 4G</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Camera 4G</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/chuong-cua-camera.png" alt="Chuông cửa Camera" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/chuong-cua-camera.png" alt="Chuông cửa Camera" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Chuông cửa Camera</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Chuông cửa Camera</span>
                 </a>
-                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                  <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                    <img src="../../../assets/images/categories/accessories/webcam.png" alt="Webcam" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+                <a href="../../../pages/shop/search-filter/index.html" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                  <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                    <img src="../../../assets/images/categories/accessories/webcam.png" alt="Webcam" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   </div>
-                  <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">Webcam</span>
+                  <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">Webcam</span>
                 </a>
               </div>
             </div>
@@ -1147,23 +1147,20 @@
 
     // 4. Accessories Mega Menu Controller
     window.PhoneXAccessoriesMegaMenu = {
-      toggle: function(e) {
-        if (e) { e.preventDefault(); e.stopPropagation(); }
+      timer: null,
+      open: function() {
+        if (this.timer) clearTimeout(this.timer);
         const menu = document.getElementById('pxAccessoriesMegaMenu');
         const arrow = document.getElementById('pxAccessoriesArrow');
         const btn = document.getElementById('pxAccessoriesBtn');
         if (!menu) return;
-        const isHidden = menu.classList.contains('hidden') || menu.style.display === 'none';
-        if (isHidden) {
-          menu.classList.remove('hidden');
-          menu.style.display = 'block';
-          if (arrow) arrow.style.transform = 'rotate(180deg)';
-          if (btn) btn.classList.add('bg-red-50', 'text-red-600');
-        } else {
-          this.close();
-        }
+        menu.classList.remove('hidden');
+        menu.style.display = 'block';
+        if (arrow) arrow.style.transform = 'rotate(180deg)';
+        if (btn) btn.classList.add('bg-red-50', 'text-red-600');
       },
       close: function() {
+        if (this.timer) clearTimeout(this.timer);
         const menu = document.getElementById('pxAccessoriesMegaMenu');
         const arrow = document.getElementById('pxAccessoriesArrow');
         const btn = document.getElementById('pxAccessoriesBtn');
@@ -1173,6 +1170,28 @@
         }
         if (arrow) arrow.style.transform = 'rotate(0deg)';
         if (btn) btn.classList.remove('bg-red-50', 'text-red-600');
+      },
+      toggle: function(e) {
+        if (e) { e.preventDefault(); e.stopPropagation(); }
+        const menu = document.getElementById('pxAccessoriesMegaMenu');
+        if (!menu) return;
+        const isHidden = menu.classList.contains('hidden') || menu.style.display === 'none';
+        if (isHidden) {
+          this.open();
+        } else {
+          this.close();
+        }
+      },
+      onEnter: function() {
+        if (this.timer) clearTimeout(this.timer);
+        this.open();
+      },
+      onLeave: function() {
+        if (this.timer) clearTimeout(this.timer);
+        const self = this;
+        this.timer = setTimeout(function() {
+          self.close();
+        }, 180);
       }
     };
 

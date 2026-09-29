@@ -196,13 +196,13 @@
           <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full font-bold">99%</span>
         </a>
 
-        <!-- 4. Phụ Kiện (Click để mở Mega Menu) -->
-        <div class="relative" id="pxAccessoriesWrapper">
-          <button type="button" id="pxAccessoriesBtn" onclick="PhoneXAccessoriesMegaMenu.toggle(event)" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1 shrink-0 cursor-pointer">
+        <!-- 4. Phụ Kiện (Hover & Click để mở Mega Menu) -->
+        <div class="relative" id="pxAccessoriesWrapper" onmouseenter="PhoneXAccessoriesMegaMenu.onEnter()" onmouseleave="PhoneXAccessoriesMegaMenu.onLeave()">
+          <a href="<?php echo esc_url( home_url( '/product-category/phu-kien/' ) ); ?>" id="pxAccessoriesBtn" onclick="PhoneXAccessoriesMegaMenu.toggle(event)" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1 shrink-0 cursor-pointer">
             <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">headphones</span>
             <span>Phụ Kiện</span>
             <span id="pxAccessoriesArrow" class="material-symbols-outlined text-[16px] text-gray-400 group-hover:text-red-600 transition-transform duration-200">keyboard_arrow_down</span>
-          </button>
+          </a>
         </div>
 
         <!-- 5. Khuyến mãi Hot -->
@@ -327,16 +327,16 @@
               $badge_bg = ($badge === 'Hot') ? 'bg-red-500 text-white' : 'bg-rose-500 text-white';
               $img_url = get_template_directory_uri() . '/assets/images/categories/accessories/' . $item['slug'] . '.png';
               ?>
-              <a href="<?php echo esc_url($url); ?>" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
-                  <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($item['name']); ?>" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
+              <a href="<?php echo esc_url($url); ?>" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-red-50/50 transition-all relative">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
+                  <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($item['name']); ?>" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   <?php if ($badge) : ?>
-                    <span class="absolute -top-1.5 -right-1.5 text-[9px] font-extrabold <?php echo esc_attr($badge_bg); ?> px-1.5 py-0.2 rounded-full leading-none shadow-xs">
+                    <span class="absolute -top-1.5 -right-1.5 text-[10px] font-extrabold <?php echo esc_attr($badge_bg); ?> px-2 py-0.5 rounded-full leading-none shadow-sm">
                       <?php echo esc_html($badge); ?>
                     </span>
                   <?php endif; ?>
                 </div>
-                <span class="mt-1.5 text-[11px] font-medium text-gray-700 group-hover:text-red-600 leading-tight max-w-[76px] line-clamp-2 transition-colors">
+                <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-red-600 leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">
                   <?php echo esc_html($item['name']); ?>
                 </span>
               </a>
@@ -345,13 +345,15 @@
       }
       ?>
 
-      <div id="pxAccessoriesMegaMenu" class="hidden absolute top-full left-0 right-0 z-50 mt-1 bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 md:p-6 text-gray-800 transition-all duration-200" style="display: none;">
+      <div id="pxAccessoriesMegaMenu" onmouseenter="PhoneXAccessoriesMegaMenu.onEnter()" onmouseleave="PhoneXAccessoriesMegaMenu.onLeave()" class="hidden absolute top-full left-0 right-0 z-50 mt-1 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 md:p-7 text-gray-800 transition-all duration-200" style="display: none;">
         <!-- Mega Menu Header -->
-        <div class="flex items-center justify-between pb-3 mb-5 border-b border-gray-100">
-          <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-red-600 text-[22px]">headphones</span>
-            <h3 class="font-extrabold text-gray-900 text-base md:text-lg">Danh Mục Phụ Kiện Chính Hãng</h3>
-            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full">TGDD Standard</span>
+        <div class="flex items-center justify-between pb-3.5 mb-6 border-b border-gray-100">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]">headphones</span>
+            </div>
+            <h3 class="font-black text-gray-900 text-lg md:text-xl tracking-tight">Danh Mục Phụ Kiện Chính Hãng</h3>
+            <span class="text-xs bg-red-100 text-red-700 font-extrabold px-2.5 py-0.5 rounded-full">TGDD Standard</span>
           </div>
           <button type="button" aria-label="<?php esc_attr_e('Đóng menu phụ kiện', 'phonex'); ?>" onclick="PhoneXAccessoriesMegaMenu.close()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 flex items-center justify-center transition-colors">
             <span class="material-symbols-outlined text-[18px]">close</span>
@@ -362,11 +364,11 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
           
           <!-- LEFT COLUMN -->
-          <div class="space-y-6">
+          <div class="space-y-7">
             <!-- 1. Phụ kiện di động -->
             <div>
-              <h4 class="font-extrabold text-gray-900 text-sm md:text-[15px] mb-3 flex items-center gap-1.5">
-                <span class="w-1.5 h-3.5 bg-red-600 rounded-full"></span>
+              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
+                <span class="w-2 h-4 bg-red-600 rounded-full"></span>
                 <span>Phụ kiện di động</span>
               </h4>
               <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
@@ -375,9 +377,9 @@
             </div>
 
             <!-- 2. Thiết bị nghe nhìn, lưu trữ, thu âm -->
-            <div class="pt-4 border-t border-gray-100">
-              <h4 class="font-extrabold text-gray-900 text-sm md:text-[15px] mb-3 flex items-center gap-1.5">
-                <span class="w-1.5 h-3.5 bg-red-600 rounded-full"></span>
+            <div class="pt-5 border-t border-gray-100">
+              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
+                <span class="w-2 h-4 bg-red-600 rounded-full"></span>
                 <span>Thiết bị nghe nhìn, lưu trữ, thu âm</span>
               </h4>
               <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
@@ -387,11 +389,11 @@
           </div>
 
           <!-- RIGHT COLUMN -->
-          <div class="space-y-6 lg:pl-8 pt-6 lg:pt-0">
+          <div class="space-y-7 lg:pl-8 pt-6 lg:pt-0">
             <!-- 3. Phụ kiện laptop, PC -->
             <div>
-              <h4 class="font-extrabold text-gray-900 text-sm md:text-[15px] mb-3 flex items-center gap-1.5">
-                <span class="w-1.5 h-3.5 bg-red-600 rounded-full"></span>
+              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
+                <span class="w-2 h-4 bg-red-600 rounded-full"></span>
                 <span>Phụ kiện laptop, PC</span>
               </h4>
               <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
@@ -400,9 +402,9 @@
             </div>
 
             <!-- 4. Camera -->
-            <div class="pt-4 border-t border-gray-100">
-              <h4 class="font-extrabold text-gray-900 text-sm md:text-[15px] mb-3 flex items-center gap-1.5">
-                <span class="w-1.5 h-3.5 bg-red-600 rounded-full"></span>
+            <div class="pt-5 border-t border-gray-100">
+              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
+                <span class="w-2 h-4 bg-red-600 rounded-full"></span>
                 <span>Camera</span>
               </h4>
               <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
@@ -831,23 +833,20 @@
 
     // 4. Accessories Mega Menu Controller
     window.PhoneXAccessoriesMegaMenu = {
-      toggle: function(e) {
-        if (e) { e.preventDefault(); e.stopPropagation(); }
+      timer: null,
+      open: function() {
+        if (this.timer) clearTimeout(this.timer);
         const menu = document.getElementById('pxAccessoriesMegaMenu');
         const arrow = document.getElementById('pxAccessoriesArrow');
         const btn = document.getElementById('pxAccessoriesBtn');
         if (!menu) return;
-        const isHidden = menu.classList.contains('hidden') || menu.style.display === 'none';
-        if (isHidden) {
-          menu.classList.remove('hidden');
-          menu.style.display = 'block';
-          if (arrow) arrow.style.transform = 'rotate(180deg)';
-          if (btn) btn.classList.add('bg-red-50', 'text-red-600');
-        } else {
-          this.close();
-        }
+        menu.classList.remove('hidden');
+        menu.style.display = 'block';
+        if (arrow) arrow.style.transform = 'rotate(180deg)';
+        if (btn) btn.classList.add('bg-red-50', 'text-red-600');
       },
       close: function() {
+        if (this.timer) clearTimeout(this.timer);
         const menu = document.getElementById('pxAccessoriesMegaMenu');
         const arrow = document.getElementById('pxAccessoriesArrow');
         const btn = document.getElementById('pxAccessoriesBtn');
@@ -857,6 +856,28 @@
         }
         if (arrow) arrow.style.transform = 'rotate(0deg)';
         if (btn) btn.classList.remove('bg-red-50', 'text-red-600');
+      },
+      toggle: function(e) {
+        if (e) { e.preventDefault(); e.stopPropagation(); }
+        const menu = document.getElementById('pxAccessoriesMegaMenu');
+        if (!menu) return;
+        const isHidden = menu.classList.contains('hidden') || menu.style.display === 'none';
+        if (isHidden) {
+          this.open();
+        } else {
+          this.close();
+        }
+      },
+      onEnter: function() {
+        if (this.timer) clearTimeout(this.timer);
+        this.open();
+      },
+      onLeave: function() {
+        if (this.timer) clearTimeout(this.timer);
+        const self = this;
+        this.timer = setTimeout(function() {
+          self.close();
+        }, 180);
       }
     };
 
