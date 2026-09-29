@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Generate 2 Campaign Banners (2400 x 480 px) with PhoneX Red brand theme.
-All small text enlarged for crystal-clear readability across all screens.
-Exact dimensions: 2400x480 (5:1 aspect ratio).
+Generate 2 Campaign Banners (2400 x 600 px - 4:1 ratio) with PhoneX Red brand theme.
+Height increased to 600px to allow massive, bold, crystal-clear typography.
 Outputs:
-- assets/images/banners/slider-banner-1-2400x480.png
-- assets/images/banners/slider-banner-2-2400x480.png
+- assets/images/banners/slider-banner-1-2400x600.png
+- assets/images/banners/slider-banner-2-2400x600.png
+- assets/images/banners/slider-banner-1-2400x480.png (backward-compat copy)
+- assets/images/banners/slider-banner-2-2400x480.png (backward-compat copy)
 """
 
 import os
@@ -15,7 +16,7 @@ import tempfile
 CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 # ==========================================
-# BANNER 1: TỰU TRƯỜNG DEAL THƠMMM (PhoneX Red)
+# BANNER 1: TỰU TRƯỜNG DEAL THƠMMM (2400 x 600 px)
 # ==========================================
 html_banner1 = """<!DOCTYPE html>
 <html lang="vi">
@@ -28,7 +29,7 @@ html_banner1 = """<!DOCTYPE html>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body, html {
       width: 2400px;
-      height: 480px;
+      height: 600px;
       overflow: hidden;
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       background: #580005;
@@ -37,9 +38,9 @@ html_banner1 = """<!DOCTYPE html>
 
     .banner {
       width: 2400px;
-      height: 480px;
+      height: 600px;
       position: relative;
-      background: linear-gradient(90deg, #4d0004 0%, #7d000a 16%, #ba0d1a 45%, #cf1322 55%, #ba0d1a 68%, #7d000a 85%, #4d0004 100%);
+      background: linear-gradient(90deg, #440003 0%, #76000a 16%, #b50c18 45%, #cf1322 55%, #b50c18 68%, #76000a 85%, #440003 100%);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -49,27 +50,27 @@ html_banner1 = """<!DOCTYPE html>
     /* Ambient lighting & glowing accents */
     .bg-light-ambient-1 {
       position: absolute;
-      top: -100px;
-      left: 450px;
-      width: 700px;
-      height: 700px;
+      top: -120px;
+      left: 500px;
+      width: 850px;
+      height: 850px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 60, 60, 0.3) 0%, rgba(255, 0, 0, 0) 70%);
+      background: radial-gradient(circle, rgba(255, 60, 60, 0.32) 0%, rgba(255, 0, 0, 0) 70%);
       z-index: 1;
     }
     .bg-light-ambient-2 {
       position: absolute;
-      top: -120px;
-      right: 220px;
-      width: 850px;
-      height: 720px;
-      background: radial-gradient(circle, rgba(255, 215, 0, 0.22) 0%, rgba(255, 215, 0, 0) 65%);
+      top: -150px;
+      right: 250px;
+      width: 1000px;
+      height: 900px;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0) 65%);
       z-index: 1;
     }
     .bg-shine {
       position: absolute;
       inset: 0;
-      background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.06) 48%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.06) 52%, transparent 60%);
+      background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.07) 48%, rgba(255, 255, 255, 0.14) 50%, rgba(255, 255, 255, 0.07) 52%, transparent 60%);
       z-index: 2;
       pointer-events: none;
     }
@@ -78,29 +79,29 @@ html_banner1 = """<!DOCTYPE html>
     .left-panel {
       position: relative;
       z-index: 4;
-      width: 560px;
-      height: 480px;
+      width: 680px;
+      height: 600px;
       background: #ffffff;
-      border-top-right-radius: 240px;
-      border-bottom-right-radius: 240px;
-      box-shadow: 20px 0 45px rgba(0, 0, 0, 0.28);
+      border-top-right-radius: 340px;
+      border-bottom-right-radius: 340px;
+      box-shadow: 25px 0 55px rgba(0, 0, 0, 0.3);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 24px 50px 24px 36px;
+      padding: 25px 50px 25px 35px;
       text-align: center;
     }
     .panel-line-1 {
-      font-size: 32px;
-      font-weight: 900;
+      font-size: 38px;
+      font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       letter-spacing: -0.3px;
       margin-bottom: 2px;
     }
     .panel-line-2 {
-      font-size: 36px;
+      font-size: 44px;
       font-weight: 950;
       color: #111827;
       text-transform: uppercase;
@@ -108,52 +109,53 @@ html_banner1 = """<!DOCTYPE html>
       margin-bottom: 12px;
     }
     .panel-line-3 {
-      font-size: 28px;
-      font-weight: 900;
+      font-size: 34px;
+      font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       margin-bottom: 2px;
     }
     .panel-line-4 {
-      font-size: 30px;
+      font-size: 38px;
       font-weight: 850;
       color: #1f2937;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .panel-divider {
-      width: 220px;
-      height: 4px;
+      width: 260px;
+      height: 5px;
       background: #ffd000;
-      border-radius: 2px;
-      margin-bottom: 12px;
+      border-radius: 3px;
+      margin-bottom: 14px;
     }
     .panel-line-5 {
-      font-size: 34px;
+      font-size: 42px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       letter-spacing: -0.3px;
     }
     .panel-line-6 {
-      font-size: 30px;
+      font-size: 38px;
       font-weight: 850;
       color: #1f2937;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .panel-line-7 {
-      font-size: 32px;
+      font-size: 40px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       line-height: 1.2;
     }
     .panel-line-8 {
-      font-size: 27px;
+      font-size: 30px;
       font-weight: 950;
       color: #374151;
       text-transform: uppercase;
       margin-top: 4px;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     /* 2. CENTER SECTION (BRAND + 3D TITLE + CHARACTER) */
@@ -162,7 +164,7 @@ html_banner1 = """<!DOCTYPE html>
       z-index: 4;
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 30px;
       margin-left: 10px;
     }
     .title-col {
@@ -173,30 +175,30 @@ html_banner1 = """<!DOCTYPE html>
     .brand-pill {
       background: #ffffff;
       color: #111827;
-      padding: 10px 32px;
+      padding: 12px 38px;
       border-radius: 9999px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-      margin-bottom: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      gap: 14px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      margin-bottom: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.6);
     }
     .brand-logo-icon {
-      width: 36px;
-      height: 36px;
+      width: 42px;
+      height: 42px;
       background: #ba0d1a;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
-      font-weight: 900;
+      font-size: 26px;
+      font-weight: 950;
       color: #fff;
     }
     .brand-name {
-      font-size: 30px;
-      font-weight: 900;
+      font-size: 36px;
+      font-weight: 950;
       letter-spacing: -0.5px;
       color: #111827;
     }
@@ -205,44 +207,44 @@ html_banner1 = """<!DOCTYPE html>
     }
 
     .title-tuu-truong {
-      font-size: 68px;
+      font-size: 84px;
       font-weight: 950;
       color: #ffffff;
       text-transform: uppercase;
-      letter-spacing: -1.2px;
+      letter-spacing: -1.5px;
       line-height: 1;
-      -webkit-text-stroke: 1.5px #ffd700;
-      text-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
-      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+      -webkit-text-stroke: 2px #ffd700;
+      text-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+      filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.45));
     }
     .title-deal-thom {
-      font-size: 96px;
+      font-size: 118px;
       font-weight: 950;
       text-transform: uppercase;
-      letter-spacing: -2px;
+      letter-spacing: -2.5px;
       line-height: 1;
       background: linear-gradient(180deg, #fffdf0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 3.5px #4d0004;
-      filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.7));
+      -webkit-text-stroke: 4px #440003;
+      filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.7));
       position: relative;
       margin-top: -6px;
     }
     .crown-icon {
       position: absolute;
-      top: -32px;
+      top: -40px;
       left: 10px;
-      width: 48px;
-      height: 48px;
+      width: 58px;
+      height: 58px;
       fill: #ffd700;
-      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
     }
 
     /* Student Illustration */
     .student-img-box {
-      width: 250px;
-      height: 440px;
+      width: 300px;
+      height: 540px;
       display: flex;
       align-items: flex-end;
       position: relative;
@@ -251,7 +253,7 @@ html_banner1 = """<!DOCTYPE html>
       width: 100%;
       height: 100%;
       object-fit: contain;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.35));
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.4));
     }
 
     /* 3. RIGHT SECTION (DISCOUNT + DEVICES SHOWCASE + BUY BUTTON) */
@@ -266,39 +268,39 @@ html_banner1 = """<!DOCTYPE html>
     .top-promo-header {
       display: flex;
       align-items: baseline;
-      gap: 16px;
-      margin-bottom: 8px;
+      gap: 18px;
+      margin-bottom: 10px;
     }
     .promo-subtext {
-      font-size: 38px;
+      font-size: 44px;
       font-weight: 950;
       color: #ffffff;
       line-height: 1.15;
       text-align: right;
-      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
     .promo-subtext span {
       display: block;
-      font-size: 32px;
+      font-size: 38px;
       font-weight: 900;
       color: #ffeb3b;
     }
     .promo-giant-num {
-      font-size: 106px;
+      font-size: 130px;
       font-weight: 950;
       color: #ffd700;
       line-height: 0.9;
-      letter-spacing: -3px;
-      text-shadow: 3px 4px 0 #4d0004, 0 8px 25px rgba(255, 215, 0, 0.45);
+      letter-spacing: -4px;
+      text-shadow: 4px 5px 0 #440003, 0 10px 30px rgba(255, 215, 0, 0.5);
       display: flex;
       align-items: baseline;
     }
     .grad-cap {
-      width: 48px;
-      height: 48px;
+      width: 58px;
+      height: 58px;
       fill: #ffd700;
-      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));
-      margin-left: 10px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+      margin-left: 12px;
     }
 
     /* Showcase phones */
@@ -306,47 +308,47 @@ html_banner1 = """<!DOCTYPE html>
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      gap: 20px;
-      margin-top: 6px;
-      margin-bottom: 16px;
+      gap: 24px;
+      margin-top: 8px;
+      margin-bottom: 20px;
     }
     .device-item {
       position: relative;
-      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.45));
+      filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.5));
       transition: transform 0.2s ease;
     }
     .device-phone-1 {
-      width: 150px;
-      height: 195px;
+      width: 175px;
+      height: 230px;
       transform: rotate(-6deg);
     }
     .device-phone-2 {
-      width: 170px;
-      height: 220px;
+      width: 200px;
+      height: 260px;
       z-index: 2;
     }
     .device-phone-3 {
-      width: 150px;
-      height: 195px;
+      width: 175px;
+      height: 230px;
       transform: rotate(6deg);
     }
 
     /* Mua Ngay Button */
     .btn-action-buy {
       background: linear-gradient(180deg, #fff7a0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
-      color: #4d0004;
-      font-size: 32px;
+      color: #440003;
+      font-size: 38px;
       font-weight: 950;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      padding: 16px 64px;
+      letter-spacing: 1px;
+      padding: 18px 75px;
       border-radius: 9999px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.85);
       display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       cursor: pointer;
-      border: 2px solid #fff59d;
+      border: 3px solid #fff59d;
     }
   </style>
 </head>
@@ -481,7 +483,7 @@ html_banner1 = """<!DOCTYPE html>
       <!-- Action Button -->
       <div class="btn-action-buy">
         <span>MUA NGAY</span>
-        <svg style="width:26px;height:26px;fill:#4d0004;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <svg style="width:30px;height:30px;fill:#440003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
       </div>
     </div>
   </div>
@@ -490,7 +492,7 @@ html_banner1 = """<!DOCTYPE html>
 """
 
 # ==========================================
-# BANNER 2: PHÁ CỖ TUNG DEAL (PhoneX Red)
+# BANNER 2: PHÁ CỖ TUNG DEAL (2400 x 600 px)
 # ==========================================
 html_banner2 = """<!DOCTYPE html>
 <html lang="vi">
@@ -503,7 +505,7 @@ html_banner2 = """<!DOCTYPE html>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body, html {
       width: 2400px;
-      height: 480px;
+      height: 600px;
       overflow: hidden;
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       background: #580005;
@@ -512,41 +514,41 @@ html_banner2 = """<!DOCTYPE html>
 
     .banner {
       width: 2400px;
-      height: 480px;
+      height: 600px;
       position: relative;
-      background: linear-gradient(90deg, #4d0004 0%, #7d000a 16%, #ba0d1a 45%, #cf1322 55%, #ba0d1a 68%, #7d000a 85%, #4d0004 100%);
+      background: linear-gradient(90deg, #440003 0%, #76000a 16%, #b50c18 45%, #cf1322 55%, #b50c18 68%, #76000a 85%, #440003 100%);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 50px;
+      padding: 0 60px;
       overflow: hidden;
     }
 
     /* Ambient lighting & glowing accents */
     .moon-glow {
       position: absolute;
-      top: -100px;
-      right: 180px;
-      width: 650px;
-      height: 650px;
+      top: -120px;
+      right: 200px;
+      width: 800px;
+      height: 800px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 215, 0, 0.22) 0%, rgba(255, 215, 0, 0) 70%);
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0) 70%);
       z-index: 1;
     }
     .festive-glow-left {
       position: absolute;
-      top: -100px;
-      left: 100px;
-      width: 650px;
-      height: 650px;
+      top: -120px;
+      left: 120px;
+      width: 800px;
+      height: 800px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 60, 60, 0.25) 0%, rgba(255, 0, 0, 0) 70%);
+      background: radial-gradient(circle, rgba(255, 60, 60, 0.28) 0%, rgba(255, 0, 0, 0) 70%);
       z-index: 1;
     }
     .bg-shine {
       position: absolute;
       inset: 0;
-      background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.06) 48%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0.06) 52%, transparent 60%);
+      background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.07) 48%, rgba(255, 255, 255, 0.14) 50%, rgba(255, 255, 255, 0.07) 52%, transparent 60%);
       z-index: 2;
       pointer-events: none;
     }
@@ -558,106 +560,106 @@ html_banner2 = """<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-left: 15px;
+      margin-left: 20px;
     }
     .title-pha-co {
-      font-size: 82px;
+      font-size: 104px;
       font-weight: 950;
       color: #ffffff;
       text-transform: uppercase;
       letter-spacing: -2px;
       line-height: 0.95;
-      -webkit-text-stroke: 1.5px #ffd700;
-      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
+      -webkit-text-stroke: 2px #ffd700;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.65));
     }
     .title-tung-deal {
-      font-size: 116px;
+      font-size: 146px;
       font-weight: 950;
       text-transform: uppercase;
-      letter-spacing: -3px;
+      letter-spacing: -3.5px;
       line-height: 0.95;
       background: linear-gradient(180deg, #fffdf0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 4px #4d0004;
-      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.7));
-      margin-top: 5px;
-      margin-bottom: 14px;
+      -webkit-text-stroke: 4.5px #440003;
+      filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.75));
+      margin-top: 6px;
+      margin-bottom: 18px;
     }
     .ribbon-dates {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       background: #ffffff;
-      border: 3px solid #ffd700;
+      border: 3.5px solid #ffd700;
       border-radius: 9999px;
-      padding: 10px 28px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+      padding: 12px 36px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
     .ribbon-icon {
-      font-size: 30px;
+      font-size: 36px;
     }
     .ribbon-text-1 {
-      font-size: 28px;
+      font-size: 34px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
     }
     .ribbon-text-2 {
-      font-size: 26px;
+      font-size: 32px;
       font-weight: 850;
       color: #1f2937;
     }
 
-    /* 2. CENTER WHITE PROMO CARD (Enlarged for maximum readability) */
+    /* 2. CENTER WHITE PROMO CARD (Enlarged) */
     .center-card {
       position: relative;
       z-index: 4;
-      width: 850px;
+      width: 960px;
       background: #ffffff;
-      border-radius: 34px;
-      padding: 24px 38px;
-      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.38);
+      border-radius: 40px;
+      padding: 30px 48px;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.42);
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 2px solid rgba(255, 255, 255, 0.95);
+      border: 3px solid rgba(255, 255, 255, 0.95);
     }
     .card-top-title {
-      font-size: 30px;
+      font-size: 36px;
       font-weight: 950;
       color: #ba0d1a;
       text-align: center;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
       letter-spacing: -0.3px;
     }
     .card-sub-head {
-      font-size: 34px;
+      font-size: 42px;
       font-weight: 950;
       color: #111827;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
     .card-big-price {
-      font-size: 68px;
+      font-size: 82px;
       font-weight: 950;
       color: #ba0d1a;
       line-height: 1;
-      letter-spacing: -1.5px;
-      margin: 4px 0 6px 0;
+      letter-spacing: -2px;
+      margin: 6px 0 8px 0;
     }
     .card-note {
-      font-size: 20px;
+      font-size: 26px;
       font-weight: 800;
       color: #4b5563;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
     .card-bottom-divider {
       width: 100%;
       height: 1px;
-      border-top: 2px dashed #cbd5e1;
-      margin-bottom: 12px;
+      border-top: 2.5px dashed #cbd5e1;
+      margin-bottom: 16px;
     }
     .card-bottom-grid {
       display: grid;
@@ -666,29 +668,29 @@ html_banner2 = """<!DOCTYPE html>
       text-align: center;
     }
     .col-left {
-      padding-right: 20px;
-      border-right: 2px dashed #cbd5e1;
+      padding-right: 28px;
+      border-right: 2.5px dashed #cbd5e1;
     }
     .col-right {
-      padding-left: 20px;
+      padding-left: 28px;
     }
     .col-title {
-      font-size: 20px;
+      font-size: 26px;
       font-weight: 850;
       color: #111827;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
     .col-highlight {
-      font-size: 28px;
+      font-size: 36px;
       font-weight: 950;
       color: #ba0d1a;
       line-height: 1.2;
     }
     .col-note {
-      font-size: 18px;
+      font-size: 23px;
       font-weight: 800;
       color: #4b5563;
-      margin-top: 3px;
+      margin-top: 4px;
     }
 
     /* 3. RIGHT SECTION (DEVICE ECOSYSTEM & BUY BUTTON) */
@@ -698,39 +700,39 @@ html_banner2 = """<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-right: 15px;
+      margin-right: 20px;
     }
     .ecosystem-group {
       position: relative;
-      width: 380px;
-      height: 240px;
+      width: 440px;
+      height: 290px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .eco-tablet {
       position: absolute;
-      left: 30px;
-      top: 10px;
-      width: 250px;
-      height: 190px;
-      border-radius: 18px;
+      left: 35px;
+      top: 15px;
+      width: 300px;
+      height: 230px;
+      border-radius: 22px;
       background: #0f172a;
-      border: 3px solid #475569;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      border: 3.5px solid #475569;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
       overflow: hidden;
     }
     .eco-phone {
       position: absolute;
-      left: 130px;
-      top: 30px;
-      width: 110px;
-      height: 185px;
-      border-radius: 20px;
+      left: 155px;
+      top: 35px;
+      width: 130px;
+      height: 225px;
+      border-radius: 24px;
       background: #09090b;
-      border: 3px solid #ffd700;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      border: 3.5px solid #ffd700;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
       z-index: 2;
       overflow: hidden;
     }
@@ -741,61 +743,61 @@ html_banner2 = """<!DOCTYPE html>
     }
     .eco-watch {
       position: absolute;
-      right: 50px;
-      bottom: 20px;
-      width: 60px;
-      height: 75px;
-      border-radius: 18px;
+      right: 55px;
+      bottom: 25px;
+      width: 72px;
+      height: 90px;
+      border-radius: 22px;
       background: #18181b;
-      border: 2.5px solid #71717a;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      border: 3px solid #71717a;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
       z-index: 3;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .eco-watch-screen {
-      width: 44px;
-      height: 58px;
-      border-radius: 12px;
+      width: 52px;
+      height: 70px;
+      border-radius: 14px;
       background: #ef4444;
       opacity: 0.85;
     }
     .eco-speaker {
       position: absolute;
-      right: 0px;
-      bottom: 55px;
-      width: 86px;
-      height: 52px;
-      border-radius: 14px;
+      right: -5px;
+      bottom: 65px;
+      width: 104px;
+      height: 62px;
+      border-radius: 16px;
       background: #ba0d1a;
-      border: 2px solid #ffffff;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      border: 2.5px solid #ffffff;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
       z-index: 4;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 16px;
+      font-size: 19px;
       font-weight: 950;
       letter-spacing: 0.5px;
     }
 
     .btn-action-buy {
       background: linear-gradient(180deg, #fff7a0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
-      color: #4d0004;
-      font-size: 32px;
+      color: #440003;
+      font-size: 38px;
       font-weight: 950;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      padding: 16px 64px;
+      letter-spacing: 1px;
+      padding: 18px 75px;
       border-radius: 9999px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 2px 3px rgba(255, 255, 255, 0.8);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.85);
       display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       cursor: pointer;
-      border: 2px solid #fff59d;
+      border: 3px solid #fff59d;
     }
   </style>
 </head>
@@ -856,7 +858,7 @@ html_banner2 = """<!DOCTYPE html>
 
       <div class="btn-action-buy">
         <span>MUA NGAY</span>
-        <svg style="width:26px;height:26px;fill:#4d0004;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <svg style="width:30px;height:30px;fill:#440003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
       </div>
     </div>
   </div>
@@ -875,7 +877,7 @@ def render_html_to_png(html_content, output_png):
             "--headless=new",
             "--disable-gpu",
             "--hide-scrollbars",
-            "--window-size=2400,480",
+            "--window-size=2400,600",
             f"--screenshot={output_png}",
             f"file://{temp_html}"
         ]
@@ -885,21 +887,29 @@ def render_html_to_png(html_content, output_png):
             os.remove(temp_html)
 
 if __name__ == "__main__":
-    banner1_path = "assets/images/banners/slider-banner-1-2400x480.png"
-    banner2_path = "assets/images/banners/slider-banner-2-2400x480.png"
-    wp_banner1 = "phonex-theme/assets/images/banners/slider-banner-1-2400x480.png"
-    wp_banner2 = "phonex-theme/assets/images/banners/slider-banner-2-2400x480.png"
+    banner1_path = "assets/images/banners/slider-banner-1-2400x600.png"
+    banner2_path = "assets/images/banners/slider-banner-2-2400x600.png"
+    wp_banner1 = "phonex-theme/assets/images/banners/slider-banner-1-2400x600.png"
+    wp_banner2 = "phonex-theme/assets/images/banners/slider-banner-2-2400x600.png"
 
     os.makedirs(os.path.dirname(banner1_path), exist_ok=True)
     os.makedirs(os.path.dirname(wp_banner1), exist_ok=True)
 
-    print("Render Banner 1 with enlarged fonts...")
+    print("Render Banner 1 (2400 x 600 px with giant fonts)...")
     render_html_to_png(html_banner1, banner1_path)
     subprocess.run(["cp", banner1_path, wp_banner1], check=True)
 
-    print("Render Banner 2 with enlarged fonts...")
+    # Also update the 480 compat path
+    subprocess.run(["cp", banner1_path, "assets/images/banners/slider-banner-1-2400x480.png"], check=True)
+    subprocess.run(["cp", banner1_path, "phonex-theme/assets/images/banners/slider-banner-1-2400x480.png"], check=True)
+
+    print("Render Banner 2 (2400 x 600 px with giant fonts)...")
     render_html_to_png(html_banner2, banner2_path)
     subprocess.run(["cp", banner2_path, wp_banner2], check=True)
+
+    # Also update the 480 compat path
+    subprocess.run(["cp", banner2_path, "assets/images/banners/slider-banner-2-2400x480.png"], check=True)
+    subprocess.run(["cp", banner2_path, "phonex-theme/assets/images/banners/slider-banner-2-2400x480.png"], check=True)
 
     print(f"Đã lưu Banner 1: {banner1_path} ({os.path.getsize(banner1_path)} bytes)")
     print(f"Đã lưu Banner 2: {banner2_path} ({os.path.getsize(banner2_path)} bytes)")
