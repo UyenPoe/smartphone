@@ -154,164 +154,256 @@ get_header();
 </a>
 </div>
 </section>
-<!-- SECTION 3: FLASH SALE GIỜ VÀNG -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg">
-<div class="rounded-2xl bg-surface-pure p-space-md lg:p-space-lg shadow-sm">
-<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-md border-b-0">
-<div class="flex items-center gap-space-md">
-<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-headline-sm text-headline-sm tracking-tight">
-<span class="material-symbols-outlined text-[24px] animate-pulse">local_fire_department</span>
-<span>FLASH SALE GIỜ VÀNG</span>
-</div>
-<span class="font-body-sm text-body-sm text-secondary hidden sm:inline">Khung giờ vàng 18:00 - 22:00</span>
-</div>
-<div class="flex items-center gap-space-xs font-label-button text-label-button">
-<span class="text-secondary text-sm">Kết thúc sau:</span>
-<div class="flex items-center gap-1 font-mono text-on-primary font-bold">
-<span class="bg-inverse-surface px-2 py-1 rounded text-sm">02</span>
-<span class="text-text-main">:</span>
-<span class="bg-inverse-surface px-2 py-1 rounded text-sm">45</span>
-<span class="text-text-main">:</span>
-<span class="bg-primary-container px-2 py-1 rounded text-sm">18</span>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-space-md">
-<!-- Item 1 -->
-<div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-<div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
-<span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold">-15%</span>
-<span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer">
-<span class="material-symbols-outlined text-[20px]">favorite_border</span>
-</span>
-<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Apple iPhone 18 Pro Max natural titanium sleek front and angled back presentation on studio neutral surface high clarity product render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H"/>
-</div>
-<div>
-<div class="flex gap-1 mb-1">
-<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary">256GB</span>
-<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary">A19 Pro</span>
-</div>
-<h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors">iPhone 18 Pro Max 256GB VN/A</h4>
-<div class="mt-2 flex items-baseline gap-2">
-<span class="font-price-card text-price-card text-primary font-bold">33.490.000₫</span>
-<span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">39.400.000₫</span>
-</div>
-<div class="mt-3 space-y-1">
-<div class="flex justify-between font-label-badge text-label-badge text-secondary">
-<span>Đã bán 45/50</span>
-<span class="text-primary font-bold">Gần cháy hàng</span>
-</div>
-<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-<div class="h-full bg-primary-container rounded-full" style="width: 90%;"></div>
-</div>
-</div>
-</div>
-<button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors" onclick="window.location.href='<?php echo esc_url(get_template_directory_uri()); ?>/pages/shop/product-detail/index.html'">
-            Mua Ngay
+<!-- SECTION 3: FLASH SALE GIỜ VÀNG (2 HÀNG - 8 SẢN PHẨM & TIMELINE TABS & LIVE COUNTDOWN) -->
+<?php
+$flashsale_settings = function_exists( 'phonex_get_flashsale_settings' ) ? phonex_get_flashsale_settings() : array();
+$fs_enabled         = $flashsale_settings['enabled'] ?? '1';
+
+if ( $fs_enabled === '1' ) :
+	$fs_title        = $flashsale_settings['title'] ?? 'FLASH SALE GIỜ VÀNG';
+	$fs_subtitle     = $flashsale_settings['subtitle'] ?? 'Khung giờ vàng giảm sốc - Số lượng có hạn';
+	$fs_slots        = $flashsale_settings['slots'] ?? array();
+	$fs_active_index = intval( $flashsale_settings['active_slot_index'] ?? 1 );
+	$fs_products     = $flashsale_settings['products'] ?? array();
+	$cd_hours        = intval( $flashsale_settings['countdown_hours'] ?? 2 );
+	$cd_minutes      = intval( $flashsale_settings['countdown_minutes'] ?? 45 );
+	$cd_seconds      = intval( $flashsale_settings['countdown_seconds'] ?? 0 );
+?>
+<section class="w-full max-w-7xl mx-auto px-margin py-space-lg" id="section-flash-sale">
+  <div class="rounded-2xl bg-surface-pure p-space-md lg:p-space-lg shadow-sm border border-border-subtle/60">
+    <!-- Top Header Bar -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
+      <div class="flex items-center gap-space-md flex-wrap">
+        <div class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-primary-container text-on-primary font-headline-sm text-headline-sm tracking-tight shadow-sm">
+          <span class="material-symbols-outlined text-[26px] text-amber-300 animate-pulse">local_fire_department</span>
+          <span class="font-extrabold uppercase"><?php echo esc_html( $fs_title ); ?></span>
+        </div>
+        <span class="font-body-sm text-body-sm text-secondary hidden sm:inline" id="fs-header-subtitle">
+          <?php echo esc_html( $fs_subtitle ); ?>
+        </span>
+      </div>
+
+      <!-- Real-Time Countdown Box -->
+      <div class="flex items-center gap-space-xs font-label-button text-label-button bg-surface-container-low px-4 py-2 rounded-xl border border-border-subtle/80">
+        <span class="text-secondary text-sm font-medium" id="fs-countdown-label">Kết thúc sau:</span>
+        <div class="flex items-center gap-1 font-mono text-on-primary font-bold" id="phonex-fs-countdown" data-hours="<?php echo esc_attr( $cd_hours ); ?>" data-minutes="<?php echo esc_attr( $cd_minutes ); ?>" data-seconds="<?php echo esc_attr( $cd_seconds ); ?>">
+          <span class="bg-inverse-surface px-2.5 py-1 rounded text-sm shadow-inner min-w-[28px] text-center" id="fs-cd-h"><?php echo esc_html( sprintf( '%02d', $cd_hours ) ); ?></span>
+          <span class="text-text-main font-bold">:</span>
+          <span class="bg-inverse-surface px-2.5 py-1 rounded text-sm shadow-inner min-w-[28px] text-center" id="fs-cd-m"><?php echo esc_html( sprintf( '%02d', $cd_minutes ) ); ?></span>
+          <span class="text-text-main font-bold">:</span>
+          <span class="bg-primary-container px-2.5 py-1 rounded text-sm shadow-inner min-w-[28px] text-center text-amber-300 font-extrabold" id="fs-cd-s"><?php echo esc_html( sprintf( '%02d', $cd_seconds ) ); ?></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline Slots Navigation (Shopee/TGDĐ Style with PhoneX Brand Red & Gold) -->
+    <div class="mt-4 mb-6 border-b border-border-subtle overflow-x-auto no-scrollbar">
+      <div class="flex items-center gap-2 sm:gap-3 min-w-[620px] pb-3" id="phonex-flashsale-tabs">
+        <?php foreach ( $fs_slots as $idx => $slot ) : 
+          $is_active = ( $idx === $fs_active_index );
+          $is_ended = ( ( $slot['status'] ?? '' ) === 'ended' );
+        ?>
+          <button 
+            type="button" 
+            class="flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border <?php echo $is_active ? 'bg-primary-container text-on-primary shadow-md border-primary-container transform scale-[1.02]' : ( $is_ended ? 'bg-surface-container text-secondary/70 border-transparent hover:bg-surface-container-high' : 'bg-surface-container-low text-text-main border-border-subtle hover:bg-surface-container hover:text-primary hover:border-primary/40' ); ?>"
+            data-slot-index="<?php echo esc_attr( $idx ); ?>"
+            data-slot-time="<?php echo esc_attr( $slot['time'] ); ?>"
+            data-slot-endtime="<?php echo esc_attr( $slot['end_time'] ?? '' ); ?>"
+            data-slot-status="<?php echo esc_attr( $slot['status'] ?? 'upcoming' ); ?>"
+            data-slot-label="<?php echo esc_attr( $slot['label'] ); ?>"
+          >
+            <span class="font-headline-sm text-[20px] sm:text-[22px] font-extrabold tracking-tight leading-none mb-1 slot-time-text">
+              <?php echo esc_html( $slot['time'] ); ?>
+            </span>
+            <span class="text-xs font-bold uppercase tracking-wider flex items-center gap-1 slot-label-text <?php echo $is_active ? 'text-amber-300' : ''; ?>">
+              <?php if ( $is_active ) : ?>
+                <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+              <?php endif; ?>
+              <?php echo esc_html( $slot['label'] ); ?>
+            </span>
+            <?php if ( $is_active ) : ?>
+              <div class="active-indicator-triangle absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary-container rotate-45 border-r border-b border-primary-container"></div>
+            <?php endif; ?>
           </button>
-</div>
-<!-- Item 2 -->
-<div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-<div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
-<span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold">-18%</span>
-<span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer">
-<span class="material-symbols-outlined text-[20px]">favorite_border</span>
-</span>
-<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Samsung Galaxy S25 Ultra titanium black front and rear display with active S-Pen detached on studio white clean minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ8cuMHSs16BGSbqL3osP6m_454IdcEnFrET6PX-zB9G7FJ3N9j6g5f-O5mlEKAnKNCGzpjZHaPqDHk5eQ7aAUYTQSpL2T2BXsRZVBRIsmzpkd39YqtnzfYdn1xj2QRF58FGv3hauWnmQwJYu9fthOr04mXeo6X_TDY6z2u2dYJyX4gKVk_GIImuiFHFOgKWKAzCYuFW7dx2G-84U7j4r5HUvh1xOZ714bcFju9liesR5DmsXco6mn"/>
-</div>
-<div>
-<div class="flex gap-1 mb-1">
-<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary">512GB</span>
-<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary">Snapdragon 8 Elite</span>
-</div>
-<h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors">Galaxy S25 Ultra 512GB SSVN</h4>
-<div class="mt-2 flex items-baseline gap-2">
-<span class="font-price-card text-price-card text-primary font-bold">34.990.000₫</span>
-<span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">42.600.000₫</span>
-</div>
-<div class="mt-3 space-y-1">
-<div class="flex justify-between font-label-badge text-label-badge text-secondary">
-<span>Đã bán 38/50</span>
-<span>Còn 12 suất</span>
-</div>
-<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-<div class="h-full bg-primary-container rounded-full" style="width: 76%;"></div>
-</div>
-</div>
-</div>
-<button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors" onclick="window.location.href='<?php echo esc_url(get_template_directory_uri()); ?>/pages/shop/product-detail/index.html'">
-            Mua Ngay
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    <!-- 8 Products Grid (2 Rows x 4 Columns) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-space-md" id="phonex-fs-product-grid">
+      <?php foreach ( $fs_products as $idx => $prod ) : 
+        $sold = intval( $prod['sold'] ?? 0 );
+        $total = max( 1, intval( $prod['total_stock'] ?? 50 ) );
+        $percent = min( 100, max( 5, round( ( $sold / $total ) * 100 ) ) );
+        $prod_link = ! empty( $prod['link'] ) ? esc_url( get_template_directory_uri() . $prod['link'] ) : esc_url( get_template_directory_uri() . '/pages/shop/product-detail/index.html' );
+      ?>
+        <!-- Item <?php echo esc_html( $idx + 1 ); ?> -->
+        <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
+          <!-- Thumbnail & Badges -->
+          <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
+            <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">
+              <?php echo esc_html( $prod['badge'] ?? '-15%' ); ?>
+            </span>
+            <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
+              <span class="material-symbols-outlined text-[20px]">favorite_border</span>
+            </span>
+            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="<?php echo esc_attr( $prod['name'] ); ?>" src="<?php echo esc_url( $prod['image'] ); ?>" loading="lazy"/>
+          </div>
+
+          <!-- Content Details -->
+          <div>
+            <div class="flex gap-1 mb-1">
+              <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">
+                <?php echo esc_html( $prod['specs'] ?? 'Chính hãng VN/A' ); ?>
+              </span>
+            </div>
+            <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">
+              <?php echo esc_html( $prod['name'] ); ?>
+            </h4>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span class="font-price-card text-price-card text-primary font-bold">
+                <?php echo esc_html( $prod['price_sale'] ); ?>
+              </span>
+              <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">
+                <?php echo esc_html( $prod['price_orig'] ); ?>
+              </span>
+            </div>
+
+            <!-- Sold Progress Bar -->
+            <div class="mt-3 space-y-1">
+              <div class="flex justify-between font-label-badge text-label-badge text-secondary">
+                <span>Đã bán <?php echo esc_html( $sold ); ?>/<?php echo esc_html( $total ); ?></span>
+                <span class="text-primary font-bold"><?php echo esc_html( $prod['stock_text'] ?? 'Đang bán chạy' ); ?></span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                <div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: <?php echo esc_attr( $percent ); ?>%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Button -->
+          <button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='<?php echo $prod_link; ?>'">
+            <span>Mua Ngay</span>
           </button>
-</div>
-<!-- Item 3 -->
-<div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-<div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
-<span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold">-22%</span>
-<span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer">
-<span class="material-symbols-outlined text-[20px]">favorite_border</span>
-</span>
-<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Xiaomi 14T Pro 5G with Leica triple camera module shown closely in titanium gray reflective studio lighting high resolution tech render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp"/>
-</div>
-<div>
-<div class="flex gap-1 mb-1">
-<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary">512GB</span>
-<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary">Dimensity 9300+</span>
-</div>
-<h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors">Xiaomi 14T Pro 5G Leica 512GB</h4>
-<div class="mt-2 flex items-baseline gap-2">
-<span class="font-price-card text-price-card text-primary font-bold">15.490.000₫</span>
-<span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">19.990.000₫</span>
-</div>
-<div class="mt-3 space-y-1">
-<div class="flex justify-between font-label-badge text-label-badge text-secondary">
-<span>Đã bán 45/50</span>
-<span class="text-primary font-bold">Gần cháy hàng</span>
-</div>
-<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-<div class="h-full bg-primary-container rounded-full" style="width: 90%;"></div>
-</div>
-</div>
-</div>
-<button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors" onclick="window.location.href='<?php echo esc_url(get_template_directory_uri()); ?>/pages/shop/product-detail/index.html'">
-            Mua Ngay
-          </button>
-</div>
-<!-- Item 4 (Pre-owned in Flash Sale) -->
-<div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-<div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
-<span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-surface-container-highest text-text-main font-mono font-label-badge text-label-badge font-bold">#USED-8821</span>
-<span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer">
-<span class="material-symbols-outlined text-[20px]">favorite_border</span>
-</span>
-<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Pre-owned iPhone 16 Pro Max titanium desert grade A 99 percent pristine clean macro studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPT8j9gPDdQw803_EjHE9CrxcBd9ByYWch8rA3iK2EBwUlD-AYBurDY51Zuw1-Qsp9Vt7q1Pd3TVFYZSrTi9fCyrBWkDC5RcYBn8JZgRzAewL2GfxpWRIqXsBv_xwE0rndJ5hkpIutccJGL_JBkwS1NztjDieoZb_RoQt57EclFFLXTYI0bltlq5jZN_GOmx2UWCj1fqYtciRolzYGtW8p2r7rv-v-M7usKZhT8cNXKavd4vLaz8TF"/>
-</div>
-<div>
-<div class="flex gap-1 mb-1">
-<span class="px-1.5 py-0.5 bg-primary-fixed text-primary font-label-badge text-label-badge font-bold">Pin 98%</span>
-<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary">Grade A 99%</span>
-</div>
-<h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors">iPhone 16 Pro Max 256GB Like New</h4>
-<div class="mt-2 flex items-baseline gap-2">
-<span class="font-price-card text-price-card text-primary font-bold">24.890.000₫</span>
-<span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">27.500.000₫</span>
-</div>
-<div class="mt-3 space-y-1">
-<div class="flex justify-between font-label-badge text-label-badge text-secondary">
-<span>Duy nhất 1 chiếc</span>
-<span class="text-primary font-bold">Đang có 4 người xem</span>
-</div>
-<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-<div class="h-full bg-primary-container rounded-full" style="width: 100%;"></div>
-</div>
-</div>
-</div>
-<button class="mt-space-md w-full h-10 rounded-lg bg-text-main hover:bg-primary-hover text-surface-pure font-label-button text-label-button transition-colors" onclick="window.location.href='<?php echo esc_url(get_template_directory_uri()); ?>/pages/shop/product-detail/index.html'">
-            Giữ Máy Ngay
-          </button>
-</div>
-</div>
-</div>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
 </section>
+
+<!-- LIVE FLASHSALE COUNTDOWN & TIMELINE INTERACTION SCRIPT -->
+<script>
+(function() {
+  const cdContainer = document.getElementById('phonex-fs-countdown');
+  if (!cdContainer) return;
+
+  const hEl = document.getElementById('fs-cd-h');
+  const mEl = document.getElementById('fs-cd-m');
+  const sEl = document.getElementById('fs-cd-s');
+  const labelEl = document.getElementById('fs-countdown-label');
+  const tabs = document.querySelectorAll('.flashsale-slot-tab');
+  const buyBtns = document.querySelectorAll('.fs-product-buy-btn');
+
+  // Initial seconds from data attributes
+  let hours = parseInt(cdContainer.dataset.hours, 10) || 2;
+  let minutes = parseInt(cdContainer.dataset.minutes, 10) || 45;
+  let seconds = parseInt(cdContainer.dataset.seconds, 10) || 18;
+  let totalRemaining = (hours * 3600) + (minutes * 60) + seconds;
+
+  let currentSlotStatus = 'active';
+
+  function updateTimerDisplay() {
+    if (currentSlotStatus === 'ended') {
+      if (hEl) hEl.textContent = '00';
+      if (mEl) mEl.textContent = '00';
+      if (sEl) sEl.textContent = '00';
+      if (labelEl) labelEl.textContent = 'Đã kết thúc:';
+      return;
+    }
+
+    if (totalRemaining <= 0) {
+      totalRemaining = 7200; // Reset 2 hours loop
+    }
+
+    const curH = Math.floor(totalRemaining / 3600);
+    const curM = Math.floor((totalRemaining % 3600) / 60);
+    const curS = totalRemaining % 60;
+
+    if (hEl) hEl.textContent = String(curH).padStart(2, '0');
+    if (mEl) mEl.textContent = String(curM).padStart(2, '0');
+    if (sEl) sEl.textContent = String(curS).padStart(2, '0');
+
+    totalRemaining--;
+  }
+
+  // Run timer every second
+  updateTimerDisplay();
+  const timerInterval = setInterval(updateTimerDisplay, 1000);
+
+  // Tab switching handler
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Remove active classes from all tabs
+      tabs.forEach(t => {
+        t.className = 'flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-surface-container-low text-text-main border-border-subtle hover:bg-surface-container hover:text-primary hover:border-primary/40';
+        const labelText = t.querySelector('.slot-label-text');
+        if (labelText) {
+          labelText.classList.remove('text-amber-300');
+          const pingDot = labelText.querySelector('.animate-ping');
+          if (pingDot) pingDot.remove();
+        }
+        const triangle = t.querySelector('.active-indicator-triangle');
+        if (triangle) triangle.remove();
+      });
+
+      // Activate clicked tab
+      this.className = 'flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-primary-container text-on-primary shadow-md border-primary-container transform scale-[1.02]';
+      const activeLabel = this.querySelector('.slot-label-text');
+      if (activeLabel) {
+        activeLabel.classList.add('text-amber-300');
+        if (!activeLabel.querySelector('.animate-ping')) {
+          const dot = document.createElement('span');
+          dot.className = 'inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping';
+          activeLabel.prepend(dot);
+        }
+      }
+      const triangle = document.createElement('div');
+      triangle.className = 'active-indicator-triangle absolute -bottom-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary-container rotate-45 border-r border-b border-primary-container';
+      this.appendChild(triangle);
+
+      const status = this.dataset.slotStatus || 'upcoming';
+      const time = this.dataset.slotTime || '';
+      currentSlotStatus = status;
+
+      if (status === 'active') {
+        if (labelEl) labelEl.textContent = 'Kết thúc sau:';
+        totalRemaining = 2 * 3600 + 45 * 60 + 18;
+        buyBtns.forEach(btn => {
+          btn.innerHTML = '<span>Mua Ngay</span>';
+          btn.className = 'mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn';
+        });
+      } else if (status === 'upcoming') {
+        if (labelEl) labelEl.textContent = 'Mở bán lúc ' + time + ':';
+        totalRemaining = 1 * 3600 + 15 * 60 + 40;
+        buyBtns.forEach(btn => {
+          btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">notifications_active</span><span>Nhắc Tôi Khi Mở Bán</span>';
+          btn.className = 'mt-space-md w-full h-10 rounded-lg bg-surface-container-highest hover:bg-primary-container hover:text-on-primary text-text-main font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn';
+        });
+      } else if (status === 'ended') {
+        if (labelEl) labelEl.textContent = 'Đã kết thúc lúc ' + time + ':';
+        totalRemaining = 0;
+        buyBtns.forEach(btn => {
+          btn.innerHTML = '<span>Xem Lại Sản Phẩm</span>';
+          btn.className = 'mt-space-md w-full h-10 rounded-lg bg-surface-container text-secondary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 fs-product-buy-btn';
+        });
+      }
+      updateTimerDisplay();
+    });
+  });
+})();
+</script>
+<?php endif; ?>
+
 <!-- SECTION 4: BỘ SƯU TẬP MŨI NHỌN (TABS) -->
 <section class="w-full max-w-7xl mx-auto px-margin py-space-lg">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-md">

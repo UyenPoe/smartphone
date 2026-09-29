@@ -266,3 +266,8 @@ require get_template_directory() . '/inc/rest-api.php';
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * PhoneX Flash Sale Giờ Vàng Management & Options
+ */
+require get_template_directory() . '/inc/admin-flashsale.php';
