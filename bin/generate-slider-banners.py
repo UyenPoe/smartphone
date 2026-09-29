@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """
-Generate 2 Campaign Banners (2400 x 600 px - 4:1 ratio) with PhoneX Red brand theme.
-Height increased to 600px to allow massive, bold, crystal-clear typography.
+Generate 2 Campaign Banners (2400 x 600 px) with PhoneX Red brand theme.
+SUPER-SIZED, ULTRA-PROMINENT TYPOGRAPHY & ARTIFACT-FREE 3D RENDERING:
+- Massive titles (115px - 175px) with clean paint-order: stroke fill
+- Rich 3D golden bevel & shadows (no inner text-stroke lines)
+- Crystal-clear giant pricing (98px - 140px)
+- Ultra-legible secondary text (30px - 54px)
+- Well-proportioned right-side ecosystem & showcase to eliminate top clipping
 Outputs:
 - assets/images/banners/slider-banner-1-2400x600.png
 - assets/images/banners/slider-banner-2-2400x600.png
-- assets/images/banners/slider-banner-1-2400x480.png (backward-compat copy)
-- assets/images/banners/slider-banner-2-2400x480.png (backward-compat copy)
+- assets/images/banners/slider-banner-1-2400x480.png (compat copy)
+- assets/images/banners/slider-banner-2-2400x480.png (compat copy)
 """
 
 import os
@@ -24,7 +29,7 @@ html_banner1 = """<!DOCTYPE html>
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900;950&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body, html {
@@ -32,7 +37,7 @@ html_banner1 = """<!DOCTYPE html>
       height: 600px;
       overflow: hidden;
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      background: #580005;
+      background: #380003;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -40,7 +45,7 @@ html_banner1 = """<!DOCTYPE html>
       width: 2400px;
       height: 600px;
       position: relative;
-      background: linear-gradient(90deg, #440003 0%, #76000a 16%, #b50c18 45%, #cf1322 55%, #b50c18 68%, #76000a 85%, #440003 100%);
+      background: linear-gradient(90deg, #380002 0%, #6e0009 16%, #ba0d1a 45%, #d91424 55%, #ba0d1a 68%, #6e0009 85%, #380002 100%);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -51,11 +56,11 @@ html_banner1 = """<!DOCTYPE html>
     .bg-light-ambient-1 {
       position: absolute;
       top: -120px;
-      left: 500px;
+      left: 520px;
       width: 850px;
       height: 850px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 60, 60, 0.32) 0%, rgba(255, 0, 0, 0) 70%);
+      background: radial-gradient(circle, rgba(255, 60, 60, 0.38) 0%, rgba(255, 0, 0, 0) 70%);
       z-index: 1;
     }
     .bg-light-ambient-2 {
@@ -64,13 +69,13 @@ html_banner1 = """<!DOCTYPE html>
       right: 250px;
       width: 1000px;
       height: 900px;
-      background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0) 65%);
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.28) 0%, rgba(255, 215, 0, 0) 65%);
       z-index: 1;
     }
     .bg-shine {
       position: absolute;
       inset: 0;
-      background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.07) 48%, rgba(255, 255, 255, 0.14) 50%, rgba(255, 255, 255, 0.07) 52%, transparent 60%);
+      background: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, 0.08) 48%, rgba(255, 255, 255, 0.16) 50%, rgba(255, 255, 255, 0.08) 52%, transparent 62%);
       z-index: 2;
       pointer-events: none;
     }
@@ -84,12 +89,12 @@ html_banner1 = """<!DOCTYPE html>
       background: #ffffff;
       border-top-right-radius: 340px;
       border-bottom-right-radius: 340px;
-      box-shadow: 25px 0 55px rgba(0, 0, 0, 0.3);
+      box-shadow: 25px 0 60px rgba(0, 0, 0, 0.35);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 25px 50px 25px 35px;
+      padding: 25px 65px 25px 45px;
       text-align: center;
     }
     .panel-line-1 {
@@ -97,64 +102,53 @@ html_banner1 = """<!DOCTYPE html>
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
-      letter-spacing: -0.3px;
+      letter-spacing: 0px;
       margin-bottom: 2px;
     }
     .panel-line-2 {
-      font-size: 44px;
+      font-size: 54px;
       font-weight: 950;
-      color: #111827;
+      color: #0f172a;
       text-transform: uppercase;
       letter-spacing: -0.5px;
       margin-bottom: 12px;
     }
     .panel-line-3 {
       font-size: 34px;
-      font-weight: 950;
-      color: #ba0d1a;
+      font-weight: 900;
+      color: #334155;
       text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-    .panel-line-4 {
-      font-size: 38px;
-      font-weight: 850;
-      color: #1f2937;
       margin-bottom: 14px;
     }
     .panel-divider {
-      width: 260px;
+      width: 280px;
       height: 5px;
       background: #ffd000;
       border-radius: 3px;
       margin-bottom: 14px;
     }
-    .panel-line-5 {
+    .panel-line-4 {
       font-size: 42px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       letter-spacing: -0.3px;
+      margin-bottom: 8px;
     }
-    .panel-line-6 {
-      font-size: 38px;
-      font-weight: 850;
-      color: #1f2937;
-      margin-bottom: 14px;
-    }
-    .panel-line-7 {
-      font-size: 40px;
+    .panel-line-5 {
+      font-size: 44px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       line-height: 1.2;
     }
-    .panel-line-8 {
-      font-size: 30px;
+    .panel-line-6 {
+      font-size: 34px;
       font-weight: 950;
-      color: #374151;
+      color: #1e293b;
       text-transform: uppercase;
       margin-top: 4px;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
       white-space: nowrap;
     }
 
@@ -164,8 +158,8 @@ html_banner1 = """<!DOCTYPE html>
       z-index: 4;
       display: flex;
       align-items: center;
-      gap: 30px;
-      margin-left: 10px;
+      gap: 25px;
+      margin-left: 20px;
     }
     .title-col {
       display: flex;
@@ -175,14 +169,14 @@ html_banner1 = """<!DOCTYPE html>
     .brand-pill {
       background: #ffffff;
       color: #111827;
-      padding: 12px 38px;
+      padding: 10px 38px;
       border-radius: 9999px;
       display: flex;
       align-items: center;
       gap: 14px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-      margin-bottom: 18px;
-      border: 2px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      margin-bottom: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.85);
     }
     .brand-logo-icon {
       width: 42px;
@@ -192,7 +186,7 @@ html_banner1 = """<!DOCTYPE html>
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 950;
       color: #fff;
     }
@@ -207,44 +201,43 @@ html_banner1 = """<!DOCTYPE html>
     }
 
     .title-tuu-truong {
-      font-size: 84px;
+      font-size: 115px;
       font-weight: 950;
       color: #ffffff;
       text-transform: uppercase;
-      letter-spacing: -1.5px;
+      letter-spacing: -2px;
       line-height: 1;
-      -webkit-text-stroke: 2px #ffd700;
-      text-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
-      filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.45));
+      paint-order: stroke fill;
+      -webkit-text-stroke: 8px #ffb700;
+      text-shadow: 0 4px 0 #b37400, 0 8px 0 #2a0003, 0 14px 28px rgba(0, 0, 0, 0.85);
     }
     .title-deal-thom {
-      font-size: 118px;
+      font-size: 155px;
       font-weight: 950;
+      color: #ffde17;
       text-transform: uppercase;
-      letter-spacing: -2.5px;
+      letter-spacing: -3px;
       line-height: 1;
-      background: linear-gradient(180deg, #fffdf0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 4px #440003;
-      filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.7));
+      paint-order: stroke fill;
+      -webkit-text-stroke: 10px #2a0003;
+      text-shadow: 0 5px 0 #d97706, 0 9px 0 #78350f, 0 16px 30px rgba(0, 0, 0, 0.9);
       position: relative;
       margin-top: -6px;
     }
     .crown-icon {
       position: absolute;
-      top: -40px;
-      left: 10px;
-      width: 58px;
-      height: 58px;
+      top: -46px;
+      left: 15px;
+      width: 68px;
+      height: 68px;
       fill: #ffd700;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
     }
 
     /* Student Illustration */
     .student-img-box {
-      width: 300px;
-      height: 540px;
+      width: 280px;
+      height: 520px;
       display: flex;
       align-items: flex-end;
       position: relative;
@@ -253,54 +246,62 @@ html_banner1 = """<!DOCTYPE html>
       width: 100%;
       height: 100%;
       object-fit: contain;
-      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.4));
+      filter: drop-shadow(0 14px 28px rgba(0,0,0,0.45));
     }
 
     /* 3. RIGHT SECTION (DISCOUNT + DEVICES SHOWCASE + BUY BUTTON) */
     .right-section {
       position: relative;
       z-index: 4;
+      width: 740px;
+      flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-right: 90px;
+      justify-content: center;
+      margin-right: 50px;
     }
     .top-promo-header {
       display: flex;
-      align-items: baseline;
-      gap: 18px;
-      margin-bottom: 10px;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      white-space: nowrap;
+      margin-bottom: 8px;
     }
     .promo-subtext {
-      font-size: 44px;
+      font-size: 38px;
       font-weight: 950;
       color: #ffffff;
       line-height: 1.15;
       text-align: right;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     }
     .promo-subtext span {
       display: block;
-      font-size: 38px;
-      font-weight: 900;
+      font-size: 36px;
+      font-weight: 950;
       color: #ffeb3b;
     }
     .promo-giant-num {
-      font-size: 130px;
+      font-size: 132px;
       font-weight: 950;
       color: #ffd700;
-      line-height: 0.9;
-      letter-spacing: -4px;
-      text-shadow: 4px 5px 0 #440003, 0 10px 30px rgba(255, 215, 0, 0.5);
-      display: flex;
-      align-items: baseline;
+      line-height: 1;
+      letter-spacing: -2px;
+      white-space: nowrap;
+      paint-order: stroke fill;
+      -webkit-text-stroke: 9px #2a0003;
+      text-shadow: 0 5px 0 #b45309, 0 14px 28px rgba(0, 0, 0, 0.85);
+      display: inline-flex;
+      align-items: center;
     }
     .grad-cap {
-      width: 58px;
-      height: 58px;
+      width: 54px;
+      height: 54px;
       fill: #ffd700;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
-      margin-left: 12px;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+      margin-left: 10px;
     }
 
     /* Showcase phones */
@@ -308,45 +309,44 @@ html_banner1 = """<!DOCTYPE html>
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      gap: 24px;
-      margin-top: 8px;
-      margin-bottom: 20px;
+      gap: 20px;
+      margin-top: 2px;
+      margin-bottom: 16px;
     }
     .device-item {
       position: relative;
-      filter: drop-shadow(0 18px 35px rgba(0, 0, 0, 0.5));
-      transition: transform 0.2s ease;
+      filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55));
     }
     .device-phone-1 {
-      width: 175px;
-      height: 230px;
+      width: 135px;
+      height: 175px;
       transform: rotate(-6deg);
     }
     .device-phone-2 {
-      width: 200px;
-      height: 260px;
+      width: 155px;
+      height: 200px;
       z-index: 2;
     }
     .device-phone-3 {
-      width: 175px;
-      height: 230px;
+      width: 135px;
+      height: 175px;
       transform: rotate(6deg);
     }
 
     /* Mua Ngay Button */
     .btn-action-buy {
       background: linear-gradient(180deg, #fff7a0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
-      color: #440003;
+      color: #380003;
       font-size: 38px;
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 18px 75px;
+      padding: 14px 76px;
       border-radius: 9999px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.85);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.9);
       display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       cursor: pointer;
       border: 3px solid #fff59d;
     }
@@ -362,13 +362,11 @@ html_banner1 = """<!DOCTYPE html>
     <div class="left-panel">
       <div class="panel-line-1">100% SMARTPHONE</div>
       <div class="panel-line-2">CHÍNH HÃNG VN/A</div>
-      <div class="panel-line-3">TẶNG GÓI</div>
-      <div class="panel-line-4">Bảo Hành VIP 1 Đổi 1</div>
+      <div class="panel-line-3">TẶNG GÓI BẢO HÀNH VIP 1 ĐỔI 1</div>
       <div class="panel-divider"></div>
-      <div class="panel-line-5">TRẢ CHẬM 0%</div>
-      <div class="panel-line-6">Đến 12 Tháng</div>
-      <div class="panel-line-7">GIẢM THÊM ĐẾN 1 TRIỆU</div>
-      <div class="panel-line-8">CHO HỌC SINH - SINH VIÊN</div>
+      <div class="panel-line-4">TRẢ GÓP 0% ĐẾN 12 THÁNG</div>
+      <div class="panel-line-5">GIẢM THÊM ĐẾN 1 TRIỆU</div>
+      <div class="panel-line-6">CHO HỌC SINH - SINH VIÊN</div>
     </div>
 
     <!-- 2. CENTER SECTION -->
@@ -419,7 +417,7 @@ html_banner1 = """<!DOCTYPE html>
       <div class="top-promo-header">
         <div class="promo-subtext">
           Tân Sinh Viên &amp; HSSV
-          <span>Giảm Thêm Đến</span>
+          <span>GIẢM THÊM ĐẾN</span>
         </div>
         <div class="promo-giant-num">
           3 TRIỆU
@@ -483,7 +481,7 @@ html_banner1 = """<!DOCTYPE html>
       <!-- Action Button -->
       <div class="btn-action-buy">
         <span>MUA NGAY</span>
-        <svg style="width:30px;height:30px;fill:#440003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <svg style="width:32px;height:32px;fill:#380003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
       </div>
     </div>
   </div>
@@ -500,7 +498,7 @@ html_banner2 = """<!DOCTYPE html>
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900;950&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body, html {
@@ -508,7 +506,7 @@ html_banner2 = """<!DOCTYPE html>
       height: 600px;
       overflow: hidden;
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      background: #580005;
+      background: #380003;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -516,11 +514,11 @@ html_banner2 = """<!DOCTYPE html>
       width: 2400px;
       height: 600px;
       position: relative;
-      background: linear-gradient(90deg, #440003 0%, #76000a 16%, #b50c18 45%, #cf1322 55%, #b50c18 68%, #76000a 85%, #440003 100%);
+      background: linear-gradient(90deg, #380002 0%, #6e0009 16%, #ba0d1a 45%, #d91424 55%, #ba0d1a 68%, #6e0009 85%, #380002 100%);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 60px;
+      padding: 0 45px;
       overflow: hidden;
     }
 
@@ -532,7 +530,7 @@ html_banner2 = """<!DOCTYPE html>
       width: 800px;
       height: 800px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 215, 0, 0.25) 0%, rgba(255, 215, 0, 0) 70%);
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.28) 0%, rgba(255, 215, 0, 0) 70%);
       z-index: 1;
     }
     .festive-glow-left {
@@ -542,13 +540,13 @@ html_banner2 = """<!DOCTYPE html>
       width: 800px;
       height: 800px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 60, 60, 0.28) 0%, rgba(255, 0, 0, 0) 70%);
+      background: radial-gradient(circle, rgba(255, 60, 60, 0.35) 0%, rgba(255, 0, 0, 0) 70%);
       z-index: 1;
     }
     .bg-shine {
       position: absolute;
       inset: 0;
-      background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.07) 48%, rgba(255, 255, 255, 0.14) 50%, rgba(255, 255, 255, 0.07) 52%, transparent 60%);
+      background: linear-gradient(115deg, transparent 38%, rgba(255, 255, 255, 0.08) 48%, rgba(255, 255, 255, 0.16) 50%, rgba(255, 255, 255, 0.08) 52%, transparent 62%);
       z-index: 2;
       pointer-events: none;
     }
@@ -563,103 +561,104 @@ html_banner2 = """<!DOCTYPE html>
       margin-left: 20px;
     }
     .title-pha-co {
-      font-size: 104px;
+      font-size: 125px;
       font-weight: 950;
       color: #ffffff;
       text-transform: uppercase;
       letter-spacing: -2px;
       line-height: 0.95;
-      -webkit-text-stroke: 2px #ffd700;
-      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.65));
+      paint-order: stroke fill;
+      -webkit-text-stroke: 8px #ffd700;
+      text-shadow: 0 5px 0 #b38600, 0 8px 0 #2b0003, 0 14px 26px rgba(0, 0, 0, 0.85);
     }
     .title-tung-deal {
-      font-size: 146px;
+      font-size: 175px;
       font-weight: 950;
+      color: #ffde17;
       text-transform: uppercase;
-      letter-spacing: -3.5px;
+      letter-spacing: -4px;
       line-height: 0.95;
-      background: linear-gradient(180deg, #fffdf0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 4.5px #440003;
-      filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.75));
-      margin-top: 6px;
-      margin-bottom: 18px;
+      paint-order: stroke fill;
+      -webkit-text-stroke: 10px #2a0003;
+      text-shadow: 0 5px 0 #d97706, 0 9px 0 #78350f, 0 16px 32px rgba(0, 0, 0, 0.9);
+      margin-top: 4px;
+      margin-bottom: 22px;
     }
     .ribbon-dates {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       background: #ffffff;
-      border: 3.5px solid #ffd700;
+      border: 4px solid #ffd700;
       border-radius: 9999px;
-      padding: 12px 36px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      padding: 12px 38px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
     }
     .ribbon-icon {
-      font-size: 36px;
+      font-size: 38px;
     }
     .ribbon-text-1 {
-      font-size: 34px;
+      font-size: 38px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
     .ribbon-text-2 {
-      font-size: 32px;
-      font-weight: 850;
-      color: #1f2937;
+      font-size: 36px;
+      font-weight: 900;
+      color: #1e293b;
     }
 
-    /* 2. CENTER WHITE PROMO CARD (Enlarged) */
+    /* 2. CENTER WHITE PROMO CARD (Super Sized) */
     .center-card {
       position: relative;
       z-index: 4;
-      width: 960px;
+      width: 1040px;
       background: #ffffff;
       border-radius: 40px;
-      padding: 30px 48px;
-      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.42);
+      padding: 26px 45px;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 3px solid rgba(255, 255, 255, 0.95);
+      border: 3.5px solid rgba(255, 255, 255, 0.95);
     }
     .card-top-title {
-      font-size: 36px;
+      font-size: 40px;
       font-weight: 950;
       color: #ba0d1a;
       text-align: center;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       letter-spacing: -0.3px;
     }
     .card-sub-head {
-      font-size: 42px;
+      font-size: 46px;
       font-weight: 950;
-      color: #111827;
+      color: #0f172a;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
     .card-big-price {
-      font-size: 82px;
+      font-size: 98px;
       font-weight: 950;
       color: #ba0d1a;
       line-height: 1;
       letter-spacing: -2px;
-      margin: 6px 0 8px 0;
+      margin: 4px 0 6px 0;
+      text-shadow: 0 4px 12px rgba(186, 13, 26, 0.15);
     }
     .card-note {
-      font-size: 26px;
+      font-size: 30px;
       font-weight: 800;
-      color: #4b5563;
-      margin-bottom: 16px;
+      color: #475569;
+      margin-bottom: 14px;
     }
     .card-bottom-divider {
       width: 100%;
       height: 1px;
-      border-top: 2.5px dashed #cbd5e1;
-      margin-bottom: 16px;
+      border-top: 3px dashed #cbd5e1;
+      margin-bottom: 14px;
     }
     .card-bottom-grid {
       display: grid;
@@ -668,28 +667,28 @@ html_banner2 = """<!DOCTYPE html>
       text-align: center;
     }
     .col-left {
-      padding-right: 28px;
-      border-right: 2.5px dashed #cbd5e1;
+      padding-right: 32px;
+      border-right: 3px dashed #cbd5e1;
     }
     .col-right {
-      padding-left: 28px;
+      padding-left: 32px;
     }
     .col-title {
-      font-size: 26px;
-      font-weight: 850;
-      color: #111827;
+      font-size: 30px;
+      font-weight: 900;
+      color: #0f172a;
       margin-bottom: 4px;
     }
     .col-highlight {
-      font-size: 36px;
+      font-size: 44px;
       font-weight: 950;
       color: #ba0d1a;
       line-height: 1.2;
     }
     .col-note {
-      font-size: 23px;
+      font-size: 26px;
       font-weight: 800;
-      color: #4b5563;
+      color: #475569;
       margin-top: 4px;
     }
 
@@ -704,20 +703,20 @@ html_banner2 = """<!DOCTYPE html>
     }
     .ecosystem-group {
       position: relative;
-      width: 440px;
-      height: 290px;
+      width: 420px;
+      height: 270px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .eco-tablet {
       position: absolute;
-      left: 35px;
-      top: 15px;
-      width: 300px;
-      height: 230px;
-      border-radius: 22px;
+      left: 30px;
+      top: 10px;
+      width: 280px;
+      height: 210px;
+      border-radius: 20px;
       background: #0f172a;
       border: 3.5px solid #475569;
       box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
@@ -725,11 +724,11 @@ html_banner2 = """<!DOCTYPE html>
     }
     .eco-phone {
       position: absolute;
-      left: 155px;
-      top: 35px;
-      width: 130px;
-      height: 225px;
-      border-radius: 24px;
+      left: 145px;
+      top: 25px;
+      width: 125px;
+      height: 215px;
+      border-radius: 22px;
       background: #09090b;
       border: 3.5px solid #ffd700;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
@@ -743,11 +742,11 @@ html_banner2 = """<!DOCTYPE html>
     }
     .eco-watch {
       position: absolute;
-      right: 55px;
-      bottom: 25px;
-      width: 72px;
-      height: 90px;
-      border-radius: 22px;
+      right: 50px;
+      bottom: 20px;
+      width: 68px;
+      height: 86px;
+      border-radius: 20px;
       background: #18181b;
       border: 3px solid #71717a;
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
@@ -757,19 +756,19 @@ html_banner2 = """<!DOCTYPE html>
       justify-content: center;
     }
     .eco-watch-screen {
-      width: 52px;
-      height: 70px;
-      border-radius: 14px;
+      width: 48px;
+      height: 66px;
+      border-radius: 12px;
       background: #ef4444;
       opacity: 0.85;
     }
     .eco-speaker {
       position: absolute;
-      right: -5px;
-      bottom: 65px;
-      width: 104px;
-      height: 62px;
-      border-radius: 16px;
+      right: -10px;
+      bottom: 55px;
+      width: 95px;
+      height: 58px;
+      border-radius: 14px;
       background: #ba0d1a;
       border: 2.5px solid #ffffff;
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
@@ -778,21 +777,21 @@ html_banner2 = """<!DOCTYPE html>
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 950;
       letter-spacing: 0.5px;
     }
 
     .btn-action-buy {
       background: linear-gradient(180deg, #fff7a0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
-      color: #440003;
-      font-size: 38px;
+      color: #380003;
+      font-size: 42px;
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 18px 75px;
+      padding: 16px 82px;
       border-radius: 9999px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.85);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.9);
       display: inline-flex;
       align-items: center;
       gap: 16px;
@@ -812,7 +811,7 @@ html_banner2 = """<!DOCTYPE html>
       <div class="title-pha-co">PHÁ CỖ</div>
       <div class="title-tung-deal">TUNG DEAL</div>
       <div class="ribbon-dates">
-        <span class="ribbon-icon">🥮</span>
+        <span class="ribbon-icon">&#x1F96E;</span>
         <span class="ribbon-text-1">GIẢM LINH ĐÌNH</span>
         <span class="ribbon-text-2">Từ 25/09 - 30/09</span>
       </div>
@@ -820,9 +819,9 @@ html_banner2 = """<!DOCTYPE html>
 
     <!-- 2. CENTER WHITE PROMO CARD -->
     <div class="center-card">
-      <div class="card-top-title">Điện thoại | Tablet Flagship</div>
+      <div class="card-top-title">ĐIỆN THOẠI &amp; TABLET FLAGSHIP</div>
       <div class="card-sub-head">GIẢM THÊM</div>
-      <div class="card-big-price">150.000 - 1.5 Triệu</div>
+      <div class="card-big-price">150.000 - 1.5 TRIỆU</div>
       <div class="card-note">Áp dụng trên giá sau khuyến mãi</div>
 
       <div class="card-bottom-divider"></div>
@@ -834,7 +833,7 @@ html_banner2 = """<!DOCTYPE html>
           <div class="col-note">Áp dụng kèm khuyến mãi khác</div>
         </div>
         <div class="col-right">
-          <div class="col-title">Phụ kiện | Đồng hồ</div>
+          <div class="col-title">Phụ kiện &amp; Smartwatch</div>
           <div class="col-highlight">GIẢM thêm đến 15%</div>
           <div class="col-note">Chính hãng 100% (Trừ Apple)</div>
         </div>
@@ -858,7 +857,7 @@ html_banner2 = """<!DOCTYPE html>
 
       <div class="btn-action-buy">
         <span>MUA NGAY</span>
-        <svg style="width:30px;height:30px;fill:#440003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <svg style="width:32px;height:32px;fill:#380003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
       </div>
     </div>
   </div>
@@ -895,19 +894,17 @@ if __name__ == "__main__":
     os.makedirs(os.path.dirname(banner1_path), exist_ok=True)
     os.makedirs(os.path.dirname(wp_banner1), exist_ok=True)
 
-    print("Render Banner 1 (2400 x 600 px with giant fonts)...")
+    print("Render Banner 1 (Super-sized)...")
     render_html_to_png(html_banner1, banner1_path)
     subprocess.run(["cp", banner1_path, wp_banner1], check=True)
 
-    # Also update the 480 compat path
     subprocess.run(["cp", banner1_path, "assets/images/banners/slider-banner-1-2400x480.png"], check=True)
     subprocess.run(["cp", banner1_path, "phonex-theme/assets/images/banners/slider-banner-1-2400x480.png"], check=True)
 
-    print("Render Banner 2 (2400 x 600 px with giant fonts)...")
+    print("Render Banner 2 (Super-sized)...")
     render_html_to_png(html_banner2, banner2_path)
     subprocess.run(["cp", banner2_path, wp_banner2], check=True)
 
-    # Also update the 480 compat path
     subprocess.run(["cp", banner2_path, "assets/images/banners/slider-banner-2-2400x480.png"], check=True)
     subprocess.run(["cp", banner2_path, "phonex-theme/assets/images/banners/slider-banner-2-2400x480.png"], check=True)
 
