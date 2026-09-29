@@ -149,171 +149,155 @@
     </div>
   </div>
 
-  <!-- 3. CATEGORY NAVIGATION BAR (Row 2: Horizontal Menu with TGDD Structure & Icons) -->
+  <!-- 3. CATEGORY NAVIGATION BAR (Row 2: Dynamic from Database with TGDD-style Accessories Dropdown) -->
   <div class="w-full bg-white border-b border-gray-200/80 shadow-2xs relative z-20">
     <div class="max-w-7xl mx-auto px-4">
-      <nav class="flex items-center gap-1 md:gap-1.5 py-1.5 overflow-x-auto whitespace-nowrap text-xs md:text-sm font-semibold scrollbar-none" aria-label="<?php esc_attr_e('Danh mục ngành hàng', 'phonex'); ?>">
+      <nav class="flex items-center gap-1 md:gap-1.5 py-1.5 overflow-x-auto whitespace-nowrap text-[13px] md:text-sm font-bold text-gray-800 scrollbar-none" aria-label="<?php esc_attr_e('Danh mục ngành hàng', 'phonex'); ?>">
         
-        <!-- 1. Điện thoại -->
-        <div class="relative group">
-          <a href="<?php echo esc_url(home_url('/shop/?category=smartphone')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">smartphone</span>
-            <span>Điện thoại</span>
-          </a>
-          <!-- Dropdown Mega Menu: Strictly hidden by default with Tailwind -->
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <div class="font-bold text-gray-400 text-[11px] uppercase px-3 py-1">Thương hiệu điện thoại</div>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=apple')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
-              <span>iPhone (Apple VN/A)</span>
-              <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full font-bold">Mới</span>
-            </a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=samsung')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Samsung Galaxy</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=xiaomi')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Xiaomi &amp; POCO</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=oppo')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>OPPO</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=vivo')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>vivo</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=realme')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>realme</span></a>
-            <div class="border-t border-gray-100 my-1"></div>
-            <a href="<?php echo esc_url(home_url('/shop/')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors"><span>Xem tất cả điện thoại</span><span>&rarr;</span></a>
-          </div>
-        </div>
+        <?php
+        // Fetch top-level categories from database
+        $parent_cats = get_terms( array(
+            'taxonomy'   => 'product_cat',
+            'parent'     => 0,
+            'hide_empty' => false,
+            'exclude'    => array( (int) get_option( 'default_product_cat' ) ),
+        ) );
 
-        <!-- 2. Laptop -->
-        <div class="relative group">
-          <a href="<?php echo esc_url(home_url('/shop/?category=laptop')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">laptop_mac</span>
-            <span>Laptop</span>
-          </a>
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <a href="<?php echo esc_url(home_url('/shop/?category=macbook')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>MacBook Pro &amp; Air</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full font-bold">M4</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=gaming')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Laptop Gaming</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=office')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Laptop Văn phòng</span></a>
-          </div>
-        </div>
+        $cat_order = array( 'apple', 'samsung', 'xiaomi', 'oppo', 'vivo', 'realme', 'google-pixel', 'nothing', 'used', 'phu-kien' );
 
-        <!-- 3. Phụ kiện ⌵ -->
-        <div class="relative group">
-          <a href="<?php echo esc_url(home_url('/shop/?category=accessories')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">headphones</span>
-            <span>Phụ kiện</span>
-            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
-          </a>
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <a href="<?php echo esc_url(home_url('/shop/?category=earphones')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Tai nghe AirPods &amp; Buds</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=charger')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Củ sạc nhanh GaN</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=cable')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Cáp sạc Type-C, Lightning</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=powerbank')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Pin sạc dự phòng</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=cases')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Ốp lưng &amp; Kính cường lực</span></a>
-          </div>
-        </div>
+        if ( ! is_wp_error( $parent_cats ) && ! empty( $parent_cats ) ) {
+            usort( $parent_cats, function( $a, $b ) use ( $cat_order ) {
+                $pos_a = array_search( $a->slug, $cat_order );
+                $pos_b = array_search( $b->slug, $cat_order );
+                if ( $pos_a === false ) $pos_a = 999;
+                if ( $pos_b === false ) $pos_b = 999;
+                return $pos_a <=> $pos_b;
+            } );
+        }
 
-        <!-- 4. Smartwatch -->
-        <div class="relative group">
-          <a href="<?php echo esc_url(home_url('/shop/?category=smartwatch')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">watch</span>
-            <span>Smartwatch</span>
-          </a>
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <a href="<?php echo esc_url(home_url('/shop/?brand=apple-watch')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Apple Watch Series 10 / Ultra</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=galaxy-watch')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Samsung Galaxy Watch</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=garmin')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Garmin thể thao</span></a>
-          </div>
-        </div>
+        $cat_icons = array(
+            'apple'                => 'phone_iphone',
+            'samsung'              => 'smartphone',
+            'xiaomi'               => 'smartphone',
+            'oppo'                 => 'smartphone',
+            'vivo'                 => 'smartphone',
+            'realme'               => 'smartphone',
+            'google-pixel'         => 'smartphone',
+            'nothing'              => 'smartphone',
+            'used'                 => 'sync_alt',
+            'phu-kien'             => 'headphones',
+            'sac-cap'              => 'bolt',
+            'pin-du-phong'         => 'battery_charging_full',
+            'tai-nghe-loa'         => 'headphones',
+            'op-lung-bao-da'       => 'phone_android',
+            'kinh-cuong-luc'       => 'screen_lock_portrait',
+            'phu-kien-apple'       => 'verified',
+            'gia-do-gay-chup-anh'  => 'photo_camera',
+        );
 
-        <!-- 5. Đồng hồ -->
-        <div class="relative group">
-          <a href="<?php echo esc_url(home_url('/shop/?category=watch')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">schedule</span>
-            <span>Đồng hồ</span>
-          </a>
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-60 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <a href="<?php echo esc_url(home_url('/shop/?category=mens-watch')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Đồng hồ nam</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=womens-watch')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Đồng hồ nữ</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=smart-bands')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Vòng đeo tay thông minh</span></a>
-          </div>
-        </div>
+        if ( ! is_wp_error( $parent_cats ) && ! empty( $parent_cats ) ) :
+            foreach ( $parent_cats as $pcat ) :
+                $pcat_link = ! is_wp_error( get_term_link( $pcat ) ) ? get_term_link( $pcat ) : home_url( '/shop/?category=' . $pcat->slug );
+                $pcat_icon = $cat_icons[ $pcat->slug ] ?? 'smartphone';
 
-        <!-- 6. Tablet ⌵ -->
-        <div class="relative group">
-          <a href="<?php echo esc_url(home_url('/shop/?category=tablet')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">tablet_mac</span>
-            <span>Tablet</span>
-            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
-          </a>
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <a href="<?php echo esc_url(home_url('/shop/?brand=ipad')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>iPad Pro M4 &amp; Air M2</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=ipad-gen10')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>iPad 10.9 &amp; iPad mini</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=samsung-tab')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Samsung Galaxy Tab</span></a>
-          </div>
-        </div>
+                // Check child terms
+                $sub_cats = get_terms( array(
+                    'taxonomy'   => 'product_cat',
+                    'parent'     => $pcat->term_id,
+                    'hide_empty' => false,
+                ) );
 
-        <!-- 7. Máy cũ, Thu cũ ⌵ -->
-        <div class="relative group">
-          <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
-            <span class="material-symbols-outlined text-[18px] text-red-600">sync_alt</span>
-            <span>Máy cũ, Thu cũ</span>
-            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
-          </a>
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors">
-              <span>Thu cũ đổi mới - Trợ giá 3Tr</span>
-              <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full">Hot</span>
-            </a>
-            <a href="<?php echo esc_url(home_url('/shop/?condition=used&brand=apple')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>iPhone cũ 99% Like New</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?condition=used')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Máy cũ chính hãng BH 12T</span></a>
-            <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/#valuation')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Định giá máy online 30s</span></a>
-          </div>
-        </div>
+                if ( ! is_wp_error( $sub_cats ) && ! empty( $sub_cats ) ) {
+                    $sub_order = array( 'sac-cap', 'pin-du-phong', 'tai-nghe-loa', 'op-lung-bao-da', 'kinh-cuong-luc', 'phu-kien-apple', 'gia-do-gay-chup-anh' );
+                    usort( $sub_cats, function( $a, $b ) use ( $sub_order ) {
+                        $pos_a = array_search( $a->slug, $sub_order );
+                        $pos_b = array_search( $b->slug, $sub_order );
+                        if ( $pos_a === false ) $pos_a = 999;
+                        if ( $pos_b === false ) $pos_b = 999;
+                        return $pos_a <=> $pos_b;
+                    } );
+                }
 
-        <!-- 8. Màn hình, Máy in ⌵ -->
-        <div class="relative group">
-          <a href="<?php echo esc_url(home_url('/shop/?category=monitor-printer')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">desktop_windows</span>
-            <span>Màn hình, Máy in</span>
-            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
-          </a>
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <a href="<?php echo esc_url(home_url('/shop/?category=monitor')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Màn hình 4K &amp; Đồ hoạ</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=gaming-monitor')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Màn hình Gaming 144Hz</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=printer')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Máy in văn phòng</span></a>
-          </div>
-        </div>
+                if ( ! is_wp_error( $sub_cats ) && ! empty( $sub_cats ) ) :
+                    // Category WITH subcategories (e.g. Phụ kiện from TGDD)
+                    ?>
+                    <div class="relative group">
+                      <a href="<?php echo esc_url( $pcat_link ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600"><?php echo esc_html( $pcat_icon ); ?></span>
+                        <span><?php echo esc_html( $pcat->name ); ?></span>
+                        <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover:text-red-600 transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+                      </a>
+                      <!-- Dropdown Menu -->
+                      <div class="hidden group-hover:block absolute top-full left-0 z-50 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+                        <div class="font-bold text-gray-400 text-[11px] uppercase px-3 py-1.5 flex items-center justify-between">
+                          <span><?php echo esc_html( $pcat->name ); ?></span>
+                          <span class="text-[10px] font-bold bg-red-100 text-red-600 px-1.5 py-0.5 rounded">TGDD Info</span>
+                        </div>
+                        <?php foreach ( $sub_cats as $scat ) : 
+                            $scat_link = ! is_wp_error( get_term_link( $scat ) ) ? get_term_link( $scat ) : home_url( '/shop/?category=' . $scat->slug );
+                            $scat_icon = $cat_icons[ $scat->slug ] ?? 'check_circle';
+                        ?>
+                          <a href="<?php echo esc_url( $scat_link ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+                            <div class="flex items-center gap-2">
+                              <span class="material-symbols-outlined text-[18px] text-gray-500"><?php echo esc_html( $scat_icon ); ?></span>
+                              <span><?php echo esc_html( $scat->name ); ?></span>
+                            </div>
+                            <?php if ( $scat->slug === 'phu-kien-apple' ) : ?>
+                              <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full font-bold">Chính hãng</span>
+                            <?php elseif ( $scat->slug === 'sac-cap' || $scat->slug === 'pin-du-phong' ) : ?>
+                              <span class="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.2 rounded-full font-semibold">Bán chạy</span>
+                            <?php endif; ?>
+                          </a>
+                        <?php endforeach; ?>
+                        <div class="border-t border-gray-100 my-1"></div>
+                        <a href="<?php echo esc_url( $pcat_link ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors">
+                          <span>Xem tất cả <?php echo esc_html( $pcat->name ); ?></span>
+                          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                        </a>
+                      </div>
+                    </div>
+                <?php else : 
+                    // Direct category link
+                    $is_used = ($pcat->slug === 'used');
+                    ?>
+                    <a href="<?php echo esc_url( $pcat_link ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5 shrink-0">
+                      <span class="material-symbols-outlined text-[18px] <?php echo $is_used ? 'text-red-600' : 'text-gray-600 group-hover:text-red-600'; ?>"><?php echo esc_html( $pcat_icon ); ?></span>
+                      <span><?php echo esc_html( $pcat->name ); ?></span>
+                    </a>
+                <?php endif;
+            endforeach;
+        endif;
+        ?>
 
-        <!-- 9. Sim, Thẻ cào ⌵ -->
-        <div class="relative group">
-          <a href="<?php echo esc_url(home_url('/shop/?category=sim')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">sim_card</span>
-            <span>Sim, Thẻ cào</span>
-            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
-          </a>
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <a href="<?php echo esc_url(home_url('/shop/?category=sim-4g')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>SIM 4G/5G Data Không Giới Hạn</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=phone-cards')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Thẻ cào nạp điện thoại</span></a>
-            <a href="<?php echo esc_url(home_url('/tra-gop/')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors"><span>Trả góp 0% duyệt 3 phút</span></a>
-          </div>
-        </div>
+        <!-- PhoneX Custom Action: Thu cũ đổi mới -->
+        <a href="<?php echo esc_url( home_url( '/thu-cu-doi-moi/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5 shrink-0">
+          <span class="material-symbols-outlined text-[18px] text-red-600">sync_alt</span>
+          <span>Thu cũ đổi mới</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full font-bold">Trợ giá 3Tr</span>
+        </a>
 
-        <!-- 10. Dịch vụ tiện ích ⌃ (Distinctive Pill Button with Dropdown matching TGDD) -->
+        <!-- Dịch vụ tiện ích ⌃ (Distinctive Pill Button with Dropdown matching TGDD structure) -->
         <div class="relative group ml-auto">
           <button type="button" class="border border-gray-200 bg-gray-50/90 hover:bg-red-50 hover:border-red-300 hover:text-red-600 text-gray-800 rounded-lg px-2.5 py-1 text-xs md:text-sm font-bold flex items-center gap-1.5 transition-all shadow-2xs">
             <span class="material-symbols-outlined text-[18px] text-red-600">receipt_long</span>
             <span>Dịch vụ tiện ích</span>
-            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
+            <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover:text-red-600 transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
           </button>
           <div class="hidden group-hover:block absolute top-full right-0 z-50 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
             <div class="font-bold text-gray-400 text-[11px] uppercase px-3 py-1">Dịch vụ PhoneX</div>
-            <a href="<?php echo esc_url(home_url('/bao-hanh/')); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+            <a href="<?php echo esc_url( home_url( '/bao-hanh/' ) ); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
               <span class="material-symbols-outlined text-[18px] text-green-600">verified_user</span>
               <span>Tra cứu bảo hành điện tử</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/tra-cuu-don-hang/')); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+            <a href="<?php echo esc_url( home_url( '/tra-cuu-don-hang/' ) ); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
               <span class="material-symbols-outlined text-[18px] text-blue-600">local_shipping</span>
               <span>Tra cứu tiến độ đơn hàng</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/showroom/')); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+            <a href="<?php echo esc_url( home_url( '/showroom/' ) ); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
               <span class="material-symbols-outlined text-[18px] text-red-600">store</span>
               <span>Hệ thống 128 Showroom</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/tra-gop/')); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+            <a href="<?php echo esc_url( home_url( '/tra-gop/' ) ); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
               <span class="material-symbols-outlined text-[18px] text-amber-600">credit_card</span>
               <span>Trả góp 0% duyệt siêu tốc</span>
             </a>
@@ -503,35 +487,53 @@
           </div>
         </div>
 
-        <!-- Category Links -->
+        <!-- Category Links (Dynamic from Database) -->
         <div>
-          <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Danh mục sản phẩm</div>
+          <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Danh mục thương hiệu &amp; Phụ kiện</div>
           <div class="grid grid-cols-2 gap-2 text-xs font-bold text-gray-800">
-            <a href="<?php echo esc_url(home_url('/shop/?category=smartphone')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-red-600 text-[18px]">smartphone</span>
-              <span>Điện thoại</span>
-            </a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=laptop')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-blue-600 text-[18px]">laptop_mac</span>
-              <span>Laptop &amp; Mac</span>
-            </a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=accessories')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-amber-600 text-[18px]">headphones</span>
-              <span>Phụ kiện</span>
-            </a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=smartwatch')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-green-600 text-[18px]">watch</span>
-              <span>Smartwatch</span>
-            </a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=tablet')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-indigo-600 text-[18px]">tablet_mac</span>
-              <span>Tablet / iPad</span>
-            </a>
-            <a href="<?php echo esc_url(home_url('/shop/?condition=used')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-rose-600 text-[18px]">devices_other</span>
-              <span>Máy cũ 99%</span>
-            </a>
+            <?php
+            if ( ! empty( $parent_cats ) && ! is_wp_error( $parent_cats ) ) {
+                foreach ( $parent_cats as $mcat ) {
+                    $mcat_link = ! is_wp_error( get_term_link( $mcat ) ) ? get_term_link( $mcat ) : home_url( '/shop/?category=' . $mcat->slug );
+                    $mcat_icon = $cat_icons[ $mcat->slug ] ?? 'smartphone';
+                    ?>
+                    <a href="<?php echo esc_url( $mcat_link ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+                      <span class="material-symbols-outlined text-red-600 text-[18px]"><?php echo esc_html( $mcat_icon ); ?></span>
+                      <span class="truncate"><?php echo esc_html( $mcat->name ); ?></span>
+                    </a>
+                    <?php
+                }
+            }
+            ?>
           </div>
+
+          <?php 
+          // Subcategories of Accessories from TGDD
+          $pk_term = get_term_by( 'slug', 'phu-kien', 'product_cat' );
+          if ( $pk_term ) {
+              $pk_subterms = get_terms( array(
+                  'taxonomy'   => 'product_cat',
+                  'parent'     => $pk_term->term_id,
+                  'hide_empty' => false,
+              ) );
+              if ( ! empty( $pk_subterms ) && ! is_wp_error( $pk_subterms ) ) {
+                  ?>
+                  <div class="mt-3">
+                    <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Phụ kiện Thế Giới Di Động</div>
+                    <div class="flex flex-wrap gap-1.5">
+                      <?php foreach ( $pk_subterms as $ps ) : 
+                          $ps_link = ! is_wp_error( get_term_link( $ps ) ) ? get_term_link( $ps ) : home_url( '/shop/?category=' . $ps->slug );
+                      ?>
+                        <a href="<?php echo esc_url( $ps_link ); ?>" class="text-[11px] font-semibold bg-gray-100 hover:bg-red-50 hover:text-red-600 px-2.5 py-1.5 rounded-lg text-gray-700 transition-colors">
+                          <?php echo esc_html( $ps->name ); ?>
+                        </a>
+                      <?php endforeach; ?>
+                    </div>
+                  </div>
+                  <?php
+              }
+          }
+          ?>
         </div>
 
         <!-- Hotline Call Support -->
