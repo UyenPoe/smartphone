@@ -936,12 +936,12 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 	$content_html = $processed['content_html'];
 	?>
 	<!-- ================= 8. THÔNG TIN NGÀNH HÀNG (SEO TGDD Standard with PhoneX Brand Palette) ================= -->
-	<div class="w-full flex justify-center mt-10">
-		<div id="thong-tin-nganh-hang" class="w-full max-w-[940px] bg-white rounded-3xl p-6 sm:p-10 shadow-2xs border border-[#E5E7EB] space-y-6">
+	<div class="w-full flex justify-center mt-6">
+		<div id="thong-tin-nganh-hang" class="w-full max-w-[820px] bg-white rounded-2xl p-5 sm:p-8 shadow-2xs border border-[#E5E7EB] space-y-6">
 			
 			<!-- Badge Header: THÔNG TIN NGÀNH HÀNG (Centered as in TGDD) -->
 			<div class="flex flex-col items-center justify-center relative mb-2">
-				<span class="inline-flex items-center justify-center px-8 py-2.5 rounded-xl border border-[#0B5ED7] text-[#0B5ED7] bg-white text-base sm:text-lg font-black uppercase tracking-wider shadow-2xs">
+				<span class="inline-flex items-center justify-center px-6 py-2 rounded-lg border border-[#0B5ED7] text-[#0B5ED7] bg-white text-[15px] sm:text-[16px] font-bold uppercase tracking-wider shadow-2xs">
 					<?php echo esc_html( $badge_title ); ?>
 				</span>
 
@@ -960,7 +960,7 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 
 			<!-- Sapo Paragraph (Enlarged readable font) -->
 			<?php if ( ! empty( $sapo ) ) : ?>
-				<div class="text-[16px] sm:text-[17.5px] md:text-[18px] leading-[1.8] text-[#172033] text-left font-normal">
+				<div class="text-[17px] sm:text-[18.5px] md:text-[19px] leading-[1.85] text-[#172033] text-left font-normal [&_a]:text-[#0B5ED7] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#084298]">
 					<?php echo wp_kses_post( $sapo ); ?>
 				</div>
 			<?php endif; ?>
@@ -972,17 +972,17 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 
 			<!-- Expandable Article Content Wrapper (Enlarged typography) -->
 			<div class="relative mt-2">
-				<div id="seo-content-body" class="max-h-[380px] sm:max-h-[420px] overflow-hidden transition-all duration-500 space-y-5 text-[16px] sm:text-[17.5px] md:text-[18px] leading-[1.8] text-[#172033] [&>h2]:text-[20px] sm:[&>h2]:text-[24px] [&>h2]:font-black [&>h2]:text-[#172033] [&>h2]:pt-6 [&>h2]:pb-2 [&>h2]:border-b [&>h2]:border-[#E5E7EB] [&>h3]:text-[17px] sm:[&>h3]:text-[19px] [&>h3]:font-extrabold [&>h3]:text-[#084298] [&>h3]:pt-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2.5 [&>p]:leading-[1.8] [&>p]:mb-3">
+				<div id="seo-content-body" class="max-h-[360px] sm:max-h-[400px] overflow-hidden transition-all duration-500 space-y-5 text-[17px] sm:text-[18.5px] md:text-[19px] leading-[1.85] text-[#172033] [&>h2]:text-[22px] sm:[&>h2]:text-[26px] [&>h2]:font-black [&>h2]:text-[#172033] [&>h2]:pt-6 [&>h2]:pb-2 [&>h2]:border-b [&>h2]:border-[#E5E7EB] [&>h3]:text-[18px] sm:[&>h3]:text-[21px] [&>h3]:font-extrabold [&>h3]:text-[#084298] [&>h3]:pt-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-3 [&>p]:leading-[1.85] [&>p]:mb-4 [&_a]:text-[#0B5ED7] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#084298]">
 					<?php echo $content_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 
 				<!-- Bottom Gradient Fade Overlay -->
-				<div id="seo-fade-overlay" class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none transition-opacity duration-300"></div>
+				<div id="seo-fade-overlay" class="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-white via-white/85 to-transparent pointer-events-none transition-opacity duration-300"></div>
 			</div>
 
 			<!-- Expand / Collapse Button (Clean Blue Link as in Screenshot) -->
 			<div class="text-center pt-2 relative z-10">
-				<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-1 text-[#0B5ED7] hover:text-[#084298] text-[15px] sm:text-[17px] font-bold hover:underline transition-all cursor-pointer">
+				<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-1 text-[#0B5ED7] hover:text-[#084298] text-[15px] sm:text-[16px] font-bold hover:underline transition-all cursor-pointer">
 					<span id="btn-toggle-seo-text">Xem thêm</span>
 					<span id="btn-toggle-seo-icon" class="material-symbols-outlined text-[20px] transition-transform duration-300">keyboard_arrow_down</span>
 				</button>

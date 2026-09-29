@@ -491,18 +491,18 @@ $brand_meta = array(
     </div>
 
     <!-- Centered Satisfaction Feedback Box (TGDD Yellow Border Box as in Screenshot) -->
-    <div class="max-w-[560px] mx-auto mt-4 p-4 sm:p-5 rounded-2xl bg-white border border-[#fcd34d] shadow-2xs flex items-center justify-between gap-4">
+    <div class="max-w-[540px] mx-auto my-5 p-3.5 sm:p-4 rounded-xl bg-white border border-[#fcd34d] shadow-2xs flex items-center justify-between gap-4">
       <span class="text-xs sm:text-sm font-semibold text-[#172033] leading-snug">
         Bạn có hài lòng với trải nghiệm tìm kiếm thông tin, sản phẩm trên website không?
       </span>
       <div class="flex items-center gap-5 shrink-0 text-xs sm:text-sm">
-        <button type="button" onclick="this.classList.toggle('scale-125'); alert('Cảm ơn bạn đã phản hồi hài lòng!')" class="flex flex-col items-center gap-1 hover:scale-110 transition-transform cursor-pointer group" title="Hài lòng">
+        <button type="button" onclick="this.classList.toggle('scale-125'); alert('Cảm ơn bạn đã phản hồi hài lòng!')" class="flex flex-col items-center gap-0.5 hover:scale-110 transition-transform cursor-pointer group" title="Hài lòng">
           <span class="text-2xl leading-none">🥰</span>
-          <span class="text-amber-600 font-bold text-[12px] group-hover:underline">Hài lòng</span>
+          <span class="text-[#f59e0b] font-bold text-[11px] group-hover:underline">Hài lòng</span>
         </button>
-        <button type="button" onclick="this.classList.toggle('scale-125'); alert('PhoneX đã ghi nhận ý kiến đóng góp của bạn để hoàn thiện hơn!')" class="flex flex-col items-center gap-1 hover:scale-110 transition-transform cursor-pointer group" title="Không hài lòng">
+        <button type="button" onclick="this.classList.toggle('scale-125'); alert('PhoneX đã ghi nhận ý kiến đóng góp của bạn để hoàn thiện hơn!')" class="flex flex-col items-center gap-0.5 hover:scale-110 transition-transform cursor-pointer group" title="Không hài lòng">
           <span class="text-2xl leading-none">😞</span>
-          <span class="text-[#667085] font-bold text-[12px] group-hover:underline">Không hài lòng</span>
+          <span class="text-[#f59e0b] font-bold text-[11px] group-hover:underline">Không hài lòng</span>
         </button>
       </div>
     </div>
@@ -519,10 +519,24 @@ $brand_meta = array(
       </button>
     </div>
 
+    <!-- ================= 8. THÔNG TIN NGÀNH HÀNG (LẤY TỪ QUẢN TRỊ DANH MỤC SẢN PHẨM - Directly below survey box as in TGDD) ================= -->
+    <?php
+    $cat_seo_term_id = 0;
+    if ( is_tax( 'product_cat' ) ) {
+      $cat_seo_term_id = get_queried_object_id();
+    } else {
+      $cat_seo_obj = get_term_by( 'slug', 'dien-thoai', 'product_cat' );
+      $cat_seo_term_id = ( $cat_seo_obj && ! is_wp_error( $cat_seo_obj ) ) ? $cat_seo_obj->term_id : 77;
+    }
+    if ( function_exists( 'phonex_render_category_seo_frontend' ) ) {
+      phonex_render_category_seo_frontend( $cat_seo_term_id );
+    }
+    ?>
+
     <!-- ================= 7. BUYING GUIDE & ACCORDION (TGDD Style SEO Content - Centered Reading Column) ================= -->
-    <div class="max-w-[940px] mx-auto bg-white rounded-3xl p-6 sm:p-8 shadow-2xs border border-[#E5E7EB] space-y-4 mt-8">
-      <h2 class="text-base sm:text-xl font-black text-[#172033] border-b border-[#E5E7EB] pb-3 flex items-center gap-2">
-        <span class="material-symbols-outlined text-[#0B5ED7] text-[24px]">menu_book</span>
+    <div class="max-w-[820px] mx-auto bg-white rounded-2xl p-6 sm:p-8 shadow-2xs border border-[#E5E7EB] space-y-4 mt-8">
+      <h2 class="text-base sm:text-lg font-black text-[#172033] border-b border-[#E5E7EB] pb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-[#0B5ED7] text-[22px]">menu_book</span>
         Cẩm Nang &amp; Tiêu Chí Chọn Mua Điện Thoại Thông Minh Tại PhoneX
       </h2>
 
@@ -557,20 +571,6 @@ $brand_meta = array(
         </div>
       </div>
     </div>
-
-    <!-- ================= 8. THÔNG TIN NGÀNH HÀNG (LẤY TỪ QUẢN TRỊ DANH MỤC SẢN PHẨM) ================= -->
-    <?php
-    $cat_seo_term_id = 0;
-    if ( is_tax( 'product_cat' ) ) {
-      $cat_seo_term_id = get_queried_object_id();
-    } else {
-      $cat_seo_obj = get_term_by( 'slug', 'dien-thoai', 'product_cat' );
-      $cat_seo_term_id = ( $cat_seo_obj && ! is_wp_error( $cat_seo_obj ) ) ? $cat_seo_obj->term_id : 77;
-    }
-    if ( function_exists( 'phonex_render_category_seo_frontend' ) ) {
-      phonex_render_category_seo_frontend( $cat_seo_term_id );
-    }
-    ?>
 
   </div>
 </div>
