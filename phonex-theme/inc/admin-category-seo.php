@@ -935,59 +935,60 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 	$toc_html     = $data['enable_toc'] ? $processed['toc_html'] : '';
 	$content_html = $processed['content_html'];
 	?>
-	<!-- ================= 8. THÔNG TIN NGÀNH HÀNG (SEO TGDD Standard) ================= -->
-	<div id="thong-tin-nganh-hang" class="bg-white rounded-2xl p-6 sm:p-8 shadow-2xs border border-[#E5E7EB] space-y-5 mt-8">
-		
-		<!-- Badge Header: THÔNG TIN NGÀNH HÀNG -->
-		<div class="flex items-center justify-between flex-wrap gap-3">
-			<div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-2 border-[#0B5ED7] text-[#0B5ED7] bg-[#E7F1FF] text-xs sm:text-sm font-extrabold uppercase tracking-wide shadow-2xs">
-				<span class="material-symbols-outlined text-[18px]">verified</span>
-				<span><?php echo esc_html( $badge_title ); ?></span>
+	<!-- ================= 8. THÔNG TIN NGÀNH HÀNG (SEO TGDD Standard with PhoneX Brand Palette) ================= -->
+	<div class="w-full flex justify-center mt-10">
+		<div id="thong-tin-nganh-hang" class="w-full max-w-[940px] bg-white rounded-3xl p-6 sm:p-10 shadow-2xs border border-[#E5E7EB] space-y-6">
+			
+			<!-- Badge Header: THÔNG TIN NGÀNH HÀNG (Centered as in TGDD) -->
+			<div class="flex flex-col items-center justify-center relative mb-2">
+				<span class="inline-flex items-center justify-center px-8 py-2.5 rounded-xl border border-[#0B5ED7] text-[#0B5ED7] bg-white text-base sm:text-lg font-black uppercase tracking-wider shadow-2xs">
+					<?php echo esc_html( $badge_title ); ?>
+				</span>
+
+				<?php if ( current_user_can( 'manage_options' ) ) : ?>
+					<div class="mt-2 flex items-center gap-3">
+						<a href="<?php echo esc_url( admin_url( 'term.php?taxonomy=product_cat&tag_ID=' . $term_id . '&post_type=product' ) ); ?>" class="text-[12px] font-bold text-[#667085] hover:text-[#0B5ED7] transition-colors flex items-center gap-1" title="Sửa bài viết trong Danh Mục">
+							<span class="material-symbols-outlined text-[15px]">category</span> Sửa trong Danh Mục
+						</a>
+						<span class="text-[#E5E7EB]">|</span>
+						<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" class="text-[12px] font-bold text-[#667085] hover:text-[#0B5ED7] transition-colors flex items-center gap-1" title="Trang soạn thảo SEO">
+							<span class="material-symbols-outlined text-[15px]">edit_note</span> Soạn thảo SEO
+						</a>
+					</div>
+				<?php endif; ?>
 			</div>
 
-			<?php if ( current_user_can( 'manage_options' ) ) : ?>
-				<div class="flex items-center gap-3">
-					<a href="<?php echo esc_url( admin_url( 'term.php?taxonomy=product_cat&tag_ID=' . $term_id . '&post_type=product' ) ); ?>" class="text-[12px] font-bold text-[#667085] hover:text-[#0B5ED7] transition-colors flex items-center gap-1" title="Sửa bài viết trong Danh Mục">
-						<span class="material-symbols-outlined text-[16px]">category</span> Sửa trong Danh Mục
-					</a>
-					<span class="text-[#E5E7EB]">|</span>
-					<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" class="text-[12px] font-bold text-[#667085] hover:text-[#0B5ED7] transition-colors flex items-center gap-1" title="Trang soạn thảo SEO">
-						<span class="material-symbols-outlined text-[16px]">edit_note</span> Soạn thảo SEO
-					</a>
+			<!-- Sapo Paragraph (Enlarged readable font) -->
+			<?php if ( ! empty( $sapo ) ) : ?>
+				<div class="text-[16px] sm:text-[17.5px] md:text-[18px] leading-[1.8] text-[#172033] text-left font-normal">
+					<?php echo wp_kses_post( $sapo ); ?>
 				</div>
 			<?php endif; ?>
-		</div>
 
-		<!-- Sapo Paragraph -->
-		<?php if ( ! empty( $sapo ) ) : ?>
-			<div class="text-xs sm:text-sm leading-relaxed text-[#172033] bg-[#F5F7FA] p-4 rounded-xl border border-[#E5E7EB]">
-				<?php echo wp_kses_post( $sapo ); ?>
-			</div>
-		<?php endif; ?>
+			<!-- Table of Contents (Mục lục nội dung chính) -->
+			<?php if ( ! empty( $toc_html ) ) : ?>
+				<?php echo $toc_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php endif; ?>
 
-		<!-- Table of Contents (Mục lục nội dung chính) -->
-		<?php if ( ! empty( $toc_html ) ) : ?>
-			<?php echo $toc_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		<?php endif; ?>
+			<!-- Expandable Article Content Wrapper (Enlarged typography) -->
+			<div class="relative mt-2">
+				<div id="seo-content-body" class="max-h-[380px] sm:max-h-[420px] overflow-hidden transition-all duration-500 space-y-5 text-[16px] sm:text-[17.5px] md:text-[18px] leading-[1.8] text-[#172033] [&>h2]:text-[20px] sm:[&>h2]:text-[24px] [&>h2]:font-black [&>h2]:text-[#172033] [&>h2]:pt-6 [&>h2]:pb-2 [&>h2]:border-b [&>h2]:border-[#E5E7EB] [&>h3]:text-[17px] sm:[&>h3]:text-[19px] [&>h3]:font-extrabold [&>h3]:text-[#084298] [&>h3]:pt-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2.5 [&>p]:leading-[1.8] [&>p]:mb-3">
+					<?php echo $content_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</div>
 
-		<!-- Expandable Article Content Wrapper -->
-		<div class="relative mt-4">
-			<div id="seo-content-body" class="max-h-[620px] overflow-hidden transition-all duration-500 space-y-4 text-xs sm:text-sm leading-relaxed text-[#172033] [&>h2]:text-base sm:[&>h2]:text-lg [&>h2]:font-black [&>h2]:text-[#172033] [&>h2]:pt-4 [&>h2]:pb-1 [&>h2]:border-b [&>h2]:border-[#E5E7EB] [&>h3]:text-sm sm:[&>h3]:text-base [&>h3]:font-extrabold [&>h3]:text-[#084298] [&>h3]:pt-2 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-1.5 [&>p]:leading-relaxed">
-				<?php echo $content_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<!-- Bottom Gradient Fade Overlay -->
+				<div id="seo-fade-overlay" class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none transition-opacity duration-300"></div>
 			</div>
 
-			<!-- Bottom Gradient Fade Overlay -->
-			<div id="seo-fade-overlay" class="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-white via-white/85 to-transparent pointer-events-none transition-opacity duration-300"></div>
-		</div>
+			<!-- Expand / Collapse Button (Clean Blue Link as in Screenshot) -->
+			<div class="text-center pt-2 relative z-10">
+				<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-1 text-[#0B5ED7] hover:text-[#084298] text-[15px] sm:text-[17px] font-bold hover:underline transition-all cursor-pointer">
+					<span id="btn-toggle-seo-text">Xem thêm</span>
+					<span id="btn-toggle-seo-icon" class="material-symbols-outlined text-[20px] transition-transform duration-300">keyboard_arrow_down</span>
+				</button>
+			</div>
 
-		<!-- Expand / Collapse Button -->
-		<div class="text-center pt-2 relative z-10">
-			<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#E5E7EB] bg-white hover:bg-[#E7F1FF] text-[#0B5ED7] hover:text-[#084298] text-xs sm:text-sm font-extrabold shadow-2xs hover:shadow-xs transition-all cursor-pointer">
-				<span id="btn-toggle-seo-text">Xem thêm nội dung</span>
-				<span id="btn-toggle-seo-icon" class="material-symbols-outlined text-[18px] transition-transform duration-300">keyboard_arrow_down</span>
-			</button>
 		</div>
-
 	</div>
 
 	<!-- JavaScript for SEO Article UX -->
@@ -1023,13 +1024,13 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 					contentBody.classList.remove('max-h-[620px]');
 					contentBody.classList.add('max-h-none');
 					if (fadeOverlay) fadeOverlay.classList.add('opacity-0', 'pointer-events-none');
-					if (btnText) btnText.textContent = 'Thu gọn nội dung';
+					if (btnText) btnText.textContent = 'Thu gọn';
 					if (btnIcon) btnIcon.classList.add('rotate-180');
 				} else {
-					contentBody.classList.add('max-h-[620px]');
+					contentBody.classList.add('max-h-[380px]', 'sm:max-h-[420px]');
 					contentBody.classList.remove('max-h-none');
 					if (fadeOverlay) fadeOverlay.classList.remove('opacity-0');
-					if (btnText) btnText.textContent = 'Xem thêm nội dung';
+					if (btnText) btnText.textContent = 'Xem thêm';
 					if (btnIcon) btnIcon.classList.remove('rotate-180');
 
 					// Smooth scroll back to top of SEO section

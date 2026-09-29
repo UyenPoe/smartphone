@@ -482,6 +482,31 @@ $brand_meta = array(
       <?php endforeach; ?>
     </div>
 
+    <!-- Centered "Xem thêm X Điện thoại" Button (As in Screenshot) -->
+    <div class="flex justify-center pt-3 pb-2">
+      <button type="button" id="btn-load-more-phones" onclick="window.scrollTo({top: document.getElementById('phones-grid').offsetTop - 80, behavior: 'smooth'})" class="inline-flex items-center justify-center gap-1.5 px-8 py-3 rounded-xl border border-[#0B5ED7] bg-white hover:bg-[#E7F1FF] text-[#0B5ED7] font-bold text-sm sm:text-base shadow-2xs transition-all cursor-pointer">
+        <span>Xem thêm <span id="load-more-counter"><?php echo count( $phones_list ); ?></span> Điện thoại</span>
+        <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+      </button>
+    </div>
+
+    <!-- Centered Satisfaction Feedback Box (TGDD Yellow Border Box as in Screenshot) -->
+    <div class="max-w-[560px] mx-auto mt-4 p-4 sm:p-5 rounded-2xl bg-white border border-[#fcd34d] shadow-2xs flex items-center justify-between gap-4">
+      <span class="text-xs sm:text-sm font-semibold text-[#172033] leading-snug">
+        Bạn có hài lòng với trải nghiệm tìm kiếm thông tin, sản phẩm trên website không?
+      </span>
+      <div class="flex items-center gap-5 shrink-0 text-xs sm:text-sm">
+        <button type="button" onclick="this.classList.toggle('scale-125'); alert('Cảm ơn bạn đã phản hồi hài lòng!')" class="flex flex-col items-center gap-1 hover:scale-110 transition-transform cursor-pointer group" title="Hài lòng">
+          <span class="text-2xl leading-none">🥰</span>
+          <span class="text-amber-600 font-bold text-[12px] group-hover:underline">Hài lòng</span>
+        </button>
+        <button type="button" onclick="this.classList.toggle('scale-125'); alert('PhoneX đã ghi nhận ý kiến đóng góp của bạn để hoàn thiện hơn!')" class="flex flex-col items-center gap-1 hover:scale-110 transition-transform cursor-pointer group" title="Không hài lòng">
+          <span class="text-2xl leading-none">😞</span>
+          <span class="text-[#667085] font-bold text-[12px] group-hover:underline">Không hài lòng</span>
+        </button>
+      </div>
+    </div>
+
     <!-- Empty State -->
     <div id="no-products-msg" class="hidden bg-white rounded-2xl p-12 text-center border border-[#E5E7EB] space-y-3">
       <span class="material-symbols-outlined text-[48px] text-[#667085]">search_off</span>
@@ -494,8 +519,8 @@ $brand_meta = array(
       </button>
     </div>
 
-    <!-- ================= 7. BUYING GUIDE & ACCORDION (TGDD Style SEO Content) ================= -->
-    <div class="bg-white rounded-2xl p-6 shadow-2xs border border-[#E5E7EB] space-y-4 mt-8">
+    <!-- ================= 7. BUYING GUIDE & ACCORDION (TGDD Style SEO Content - Centered Reading Column) ================= -->
+    <div class="max-w-[940px] mx-auto bg-white rounded-3xl p-6 sm:p-8 shadow-2xs border border-[#E5E7EB] space-y-4 mt-8">
       <h2 class="text-base sm:text-xl font-black text-[#172033] border-b border-[#E5E7EB] pb-3 flex items-center gap-2">
         <span class="material-symbols-outlined text-[#0B5ED7] text-[24px]">menu_book</span>
         Cẩm Nang &amp; Tiêu Chí Chọn Mua Điện Thoại Thông Minh Tại PhoneX
