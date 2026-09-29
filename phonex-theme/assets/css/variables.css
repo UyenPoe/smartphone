@@ -1,1 +1,14 @@
-:root{--primary:#0b5bb5;--accent:#f59e0b;--text:#172033;--bg:#fff;--muted:#f4f8fd;--container:1440px;}
+:root {
+  --primary: #FF001F;
+  --primary-dark: #D9001B;
+  --primary-light: #FFF0F2;
+  --border-light: #FFD5DA;
+  --accent: #FF001F;
+  --text: #1F1F1F;
+  --text-sub: #6B7280;
+  --bg: #FFFFFF;
+  --bg-section: #F6F7F9;
+  --bg-card-sub: #F9FAFB;
+  --border: #E5E7EB;
+  --container: 1440px;
+}
