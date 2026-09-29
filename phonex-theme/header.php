@@ -156,7 +156,7 @@
 
         <!-- 2. Điện thoại (với dropdown thương hiệu) -->
         <div class="relative group">
-          <a href="<?php echo esc_url( home_url( '/shop/?category=smartphone' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1 shrink-0">
+          <a href="<?php echo esc_url( home_url( '/dien-thoai/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1 shrink-0">
             <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">smartphone</span>
             <span>Điện thoại</span>
             <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover:text-red-600 transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
@@ -164,19 +164,19 @@
           <!-- Dropdown thương hiệu -->
           <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
             <div class="font-bold text-gray-400 text-[11px] uppercase px-3 py-1.5">Thương hiệu điện thoại</div>
-            <a href="<?php echo esc_url( home_url( '/product-category/apple/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=apple' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
               <span>Apple iPhone (VN/A)</span>
               <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full font-bold">Mới</span>
             </a>
-            <a href="<?php echo esc_url( home_url( '/product-category/samsung/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Samsung Galaxy</span></a>
-            <a href="<?php echo esc_url( home_url( '/product-category/xiaomi/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Xiaomi &amp; POCO</span></a>
-            <a href="<?php echo esc_url( home_url( '/product-category/oppo/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>OPPO</span></a>
-            <a href="<?php echo esc_url( home_url( '/product-category/vivo/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>vivo</span></a>
-            <a href="<?php echo esc_url( home_url( '/product-category/realme/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>realme</span></a>
-            <a href="<?php echo esc_url( home_url( '/product-category/google-pixel/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Google Pixel</span></a>
-            <a href="<?php echo esc_url( home_url( '/product-category/nothing/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Nothing Phone</span></a>
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=samsung' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Samsung Galaxy</span></a>
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=xiaomi' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Xiaomi &amp; POCO</span></a>
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=oppo' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>OPPO</span></a>
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=vivo' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>vivo</span></a>
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=realme' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>realme</span></a>
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=google-pixel' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Google Pixel</span></a>
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=nothing-phone' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Nothing Phone</span></a>
             <div class="border-t border-gray-100 my-1"></div>
-            <a href="<?php echo esc_url( home_url( '/shop/?category=smartphone' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors">
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors">
               <span>Xem tất cả điện thoại</span>
               <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
             </a>
@@ -675,7 +675,7 @@
               <span class="material-symbols-outlined text-red-600 text-[18px]">home</span>
               <span>Trang chủ</span>
             </a>
-            <a href="<?php echo esc_url( home_url( '/shop/?category=smartphone' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+            <a href="<?php echo esc_url( home_url( '/dien-thoai/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
               <span class="material-symbols-outlined text-red-600 text-[18px]">smartphone</span>
               <span>Điện thoại</span>
             </a>
