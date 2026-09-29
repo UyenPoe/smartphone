@@ -29,6 +29,7 @@ function phonex_get_default_flashsale_settings() {
 		'view_more_text'       => 'Xem thêm deal Flash Sale',
 		'all_deals_text'       => 'Xem tất cả khuyến mãi',
 		'all_deals_url'        => '/khuyen-mai/',
+		'initial_count'        => 8, // Số sản phẩm hiển thị ban đầu (còn lại sẽ mở rộng khi bấm Xem thêm)
 		'auto_slot'            => '1', // Automatically switch slot based on server time
 		'active_slot_index'    => 1,   // Default to 12:00 slot
 		'countdown_mode'       => 'auto', // 'auto' (until slot end_time) or 'custom'
@@ -303,6 +304,7 @@ function phonex_flashsale_render_admin_page() {
 		$current['view_more_text']    = sanitize_text_field( wp_unslash( $_POST['view_more_text'] ?? 'Xem thêm deal Flash Sale' ) );
 		$current['all_deals_text']    = sanitize_text_field( wp_unslash( $_POST['all_deals_text'] ?? 'Xem tất cả khuyến mãi' ) );
 		$current['all_deals_url']     = sanitize_text_field( wp_unslash( $_POST['all_deals_url'] ?? '/khuyen-mai/' ) );
+		$current['initial_count']     = max( 1, intval( $_POST['initial_count'] ?? 8 ) );
 
 		$current['auto_slot']         = isset( $_POST['auto_slot'] ) ? '1' : '0';
 		$current['active_slot_index'] = intval( $_POST['active_slot_index'] ?? 1 );
@@ -325,10 +327,10 @@ function phonex_flashsale_render_admin_page() {
 			$current['slots'] = $cleaned_slots;
 		}
 
-		// Products (8 items = 2 rows x 4 cols)
+		// Products (Dynamic unlimited repeater)
 		if ( isset( $_POST['products'] ) && is_array( $_POST['products'] ) ) {
 			$cleaned_products = array();
-			foreach ( $_POST['products'] as $idx => $prod ) {
+			foreach ( array_values( $_POST['products'] ) as $idx => $prod ) {
 				$prod_id = intval( $prod['product_id'] ?? 0 );
 				$cleaned_products[] = array(
 					'id'          => $idx + 1,
@@ -373,8 +375,8 @@ function phonex_flashsale_render_admin_page() {
 			</div>
 			<div style="display: flex; gap: 10px;">
 				<div style="background: rgba(255,255,255,0.15); padding: 10px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); text-align: center;">
-					<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85;">Quy mô</div>
-					<div style="font-size: 18px; font-weight: 800; color: #ffd700;">2 Hàng (8 Sản Phẩm)</div>
+					<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85;">Quy mô Flash Sale</div>
+					<div id="stat-total-products" style="font-size: 18px; font-weight: 800; color: #ffd700;"><?php echo count( $settings['products'] ); ?> Sản Phẩm</div>
 				</div>
 				<div style="background: rgba(255,255,255,0.15); padding: 10px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); text-align: center;">
 					<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85;">Kho WooCommerce</div>
@@ -539,6 +541,13 @@ function phonex_flashsale_render_admin_page() {
 							</td>
 						</tr>
 						<tr>
+							<th scope="row"><label for="initial_count">Số sản phẩm hiển thị ban đầu</label></th>
+							<td>
+								<input type="number" id="initial_count" name="initial_count" value="<?php echo esc_attr( $settings['initial_count'] ?? 8 ); ?>" min="1" max="100" style="width: 80px; font-weight: 700; text-align: center;">
+								<span class="description" style="color: #64748b; margin-left: 10px;">(Mặc định: <strong>8</strong> sản phẩm = 2 hàng × 4 cột. Các sản phẩm vượt quá số này sẽ tự động nằm trong nút "Xem thêm")</span>
+							</td>
+						</tr>
+						<tr>
 							<th scope="row"><label for="view_more_text">Chữ trên nút Xem Thêm</label></th>
 							<td>
 								<input type="text" id="view_more_text" name="view_more_text" value="<?php echo esc_attr( $settings['view_more_text'] ?? 'Xem thêm deal Flash Sale' ); ?>" class="regular-text" style="font-weight: 600;">
@@ -611,53 +620,78 @@ function phonex_flashsale_render_admin_page() {
 				</table>
 			</div>
 
-			<!-- SECTION 5: QUẢN LÝ 12 SẢN PHẨM FLASH SALE (8 HIỂN THỊ BAN ĐẦU + 4 MỞ RỘNG KHI BẤM XEM THÊM) -->
+			<!-- SECTION 5: QUẢN LÝ SẢN PHẨM FLASH SALE (DẠNG REPEATER ĐỘNG KHÔNG GIỚI HẠN) -->
+			<?php 
+				$initial_count = intval( $settings['initial_count'] ?? 8 );
+			?>
 			<div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;">
 				<div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 2px solid #f3f4f6; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
 					<div>
 						<h2 style="font-size: 18px; font-weight: 700; color: #111827; margin: 0; display: flex; align-items: center; gap: 8px;">
 							<span class="dashicons dashicons-products" style="color: #ba0d1a;"></span>
-							5. Danh Sách Sản Phẩm Flash Sale (8 Hiển Thị Ban Đầu + 4 Mở Rộng Khi Bấm 'Xem Thêm')
+							5. Danh Sách Sản Phẩm Flash Sale (Thêm / Xóa / Kéo Dài Không Giới Hạn)
 						</h2>
 						<p style="color: #64748b; font-size: 13px; margin: 4px 0 0 0;">
-							Bạn có thể <strong>chọn sản phẩm từ kho WooCommerce</strong> để tự động điền Tên, Giá, Link mua hàng; đồng thời <strong>tùy biến giá sốc &amp; thanh tiến trình</strong> theo ý bạn.
+							Bạn có thể thêm không giới hạn sản phẩm. <strong><?php echo esc_html( $initial_count ); ?> sản phẩm đầu</strong> hiển thị sẵn trên trang chủ, các sản phẩm còn lại sẽ tự động nằm trong nút <strong>"Xem thêm deal Flash Sale"</strong>.
 						</p>
 					</div>
 
-					<div style="display: flex; gap: 8px; flex-wrap: wrap;">
+					<div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+						<button type="button" id="btn-add-product-top" class="button" style="background: #16a34a; color: #fff; border-color: #15803d; font-weight: 700; display: flex; align-items: center; gap: 5px;">
+							<span class="dashicons dashicons-plus-alt2" style="font-size: 16px; width: 16px; height: 16px;"></span>
+							+ Thêm Sản Phẩm Flash Sale
+						</button>
 						<button type="button" id="btn-autofill-wc" class="button" style="background: #0284c7; color: #fff; border-color: #0369a1; font-weight: 600; display: flex; align-items: center; gap: 5px;">
 							<span class="dashicons dashicons-update-alt" style="font-size: 16px; width: 16px; height: 16px;"></span>
-							⚡ Tự Động Điền 12 Sản Phẩm Từ WooCommerce
+							⚡ Tự Động Điền Từ WooCommerce
 						</button>
-						<span style="background: #fee2e2; color: #ba0d1a; font-weight: 700; font-size: 12px; padding: 6px 14px; border-radius: 9999px; display: inline-flex; align-items: center;">
+						<span id="phonex-fs-total-badge" style="background: #fee2e2; color: #ba0d1a; font-weight: 700; font-size: 12px; padding: 6px 14px; border-radius: 9999px; display: inline-flex; align-items: center;">
 							Tổng cộng: <?php echo count( $settings['products'] ); ?> Sản phẩm
+						</span>
+						<span id="phonex-fs-sub-badge" style="background: #f1f5f9; color: #475569; font-weight: 600; font-size: 12px; padding: 6px 12px; border-radius: 9999px; display: inline-flex; align-items: center;">
+							(<?php echo min( count( $settings['products'] ), $initial_count ); ?> hiển thị ban đầu + <?php echo max( 0, count( $settings['products'] ) - $initial_count ); ?> trong 'Xem thêm')
 						</span>
 					</div>
 				</div>
 
-				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px;">
+				<!-- PRODUCTS GRID CONTAINER -->
+				<div id="phonex-prod-cards-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 20px;">
 					<?php foreach ( $settings['products'] as $idx => $prod ) : ?>
 						<?php 
-							$row_num = ( $idx < 4 ) ? 1 : ( ( $idx < 8 ) ? 2 : 3 );
-							$is_extra_row = ( $idx >= 8 );
+							$row_num = (int) floor( $idx / 4 ) + 1;
+							$col_num = ( $idx % 4 ) + 1;
+							$is_extra_row = ( $idx >= $initial_count );
 							$saved_pid = intval( $prod['product_id'] ?? 0 );
 						?>
-						<div class="phonex-prod-card" data-idx="<?php echo esc_attr( $idx ); ?>" style="border: 1.5px solid <?php echo $is_extra_row ? '#d8b4fe' : ( $row_num === 2 ? '#fecdd3' : '#e2e8f0' ); ?>; border-radius: 12px; padding: 16px; background: <?php echo $is_extra_row ? '#faf5ff' : ( $row_num === 2 ? '#fff9f9' : '#ffffff' ); ?>; box-shadow: 0 2px 6px rgba(0,0,0,0.04); transition: border-color 0.2s; position: relative;">
+						<div class="phonex-prod-card" data-idx="<?php echo esc_attr( $idx ); ?>" style="border: 1.5px solid <?php echo $is_extra_row ? '#d8b4fe' : ( $row_num === 2 ? '#fecdd3' : '#e2e8f0' ); ?>; border-radius: 12px; padding: 16px; background: <?php echo $is_extra_row ? '#faf5ff' : ( $row_num === 2 ? '#fff9f9' : '#ffffff' ); ?>; box-shadow: 0 2px 6px rgba(0,0,0,0.04); transition: border-color 0.2s, background 0.2s; position: relative;">
 							<input type="hidden" name="products[<?php echo esc_attr( $idx ); ?>][product_id]" class="field-product-id" value="<?php echo esc_attr( $saved_pid ); ?>">
 
-							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+							<!-- Card Header: Title & Action Controls (Move Up/Down, Delete) -->
+							<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 8px;">
 								<div>
-									<span style="font-weight: 800; font-size: 13px; color: <?php echo $is_extra_row ? '#7c3aed' : ( $row_num === 2 ? '#ba0d1a' : '#0f172a' ); ?>;">
-										#<?php echo esc_html( $idx + 1 ); ?> - Hàng <?php echo esc_html( $row_num ); ?> (Cột <?php echo esc_html( ( $idx % 4 ) + 1 ); ?>)
+									<span class="card-num-title" style="font-weight: 800; font-size: 13px; color: <?php echo $is_extra_row ? '#7c3aed' : ( $row_num === 2 ? '#ba0d1a' : '#0f172a' ); ?>;">
+										#<span class="card-num-text"><?php echo esc_html( $idx + 1 ); ?></span> - Hàng <span class="card-row-text"><?php echo esc_html( $row_num ); ?></span> (Cột <span class="card-col-text"><?php echo esc_html( $col_num ); ?></span>)
 									</span>
-									<div style="font-size: 10px; font-weight: 700; color: <?php echo $is_extra_row ? '#9333ea' : '#16a34a'; ?>; margin-top: 2px;">
+									<div class="card-status-text" style="font-size: 10px; font-weight: 700; color: <?php echo $is_extra_row ? '#9333ea' : '#16a34a'; ?>; margin-top: 2px;">
 										<?php echo $is_extra_row ? '⚡ Mở rộng khi bấm "Xem thêm"' : '✓ Hiển thị mặc định ban đầu'; ?>
 									</div>
 								</div>
-								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][badge]" class="field-badge" value="<?php echo esc_attr( $prod['badge'] ); ?>" style="width: 75px; text-align: center; font-weight: 700; font-size: 12px; background: <?php echo $is_extra_row ? '#f3e8ff' : '#fee2e2'; ?>; color: <?php echo $is_extra_row ? '#7c3aed' : '#ba0d1a'; ?>; border: 1px solid <?php echo $is_extra_row ? '#d8b4fe' : '#fecaca'; ?>; border-radius: 6px; padding: 2px 6px;" placeholder="-15%">
+
+								<!-- Action Buttons -->
+								<div style="display: flex; align-items: center; gap: 4px;">
+									<button type="button" class="button button-small btn-move-up" title="Di chuyển sản phẩm này lên trước" style="padding: 0 6px; height: 26px; line-height: 24px;" <?php disabled( $idx === 0 ); ?>>▲</button>
+									<button type="button" class="button button-small btn-move-down" title="Di chuyển sản phẩm này xuống sau" style="padding: 0 6px; height: 26px; line-height: 24px;" <?php disabled( $idx === count( $settings['products'] ) - 1 ); ?>>▼</button>
+									<button type="button" class="button button-small btn-delete-card" title="Xóa thẻ sản phẩm này" style="color: #ef4444; border-color: #fca5a5; padding: 0 6px; height: 26px; line-height: 24px; font-weight: 700;">✕</button>
+								</div>
 							</div>
 
-							<!-- WOOCOMMERCE PRODUCT PICKER DROPDOWN -->
+							<!-- Discount Badge -->
+							<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; background: <?php echo $is_extra_row ? '#f3e8ff' : '#fee2e2'; ?>; padding: 4px 8px; border-radius: 6px; border: 1px solid <?php echo $is_extra_row ? '#d8b4fe' : '#fecaca'; ?>;">
+								<span style="font-size: 11px; font-weight: 700; color: <?php echo $is_extra_row ? '#7c3aed' : '#ba0d1a'; ?>;">Huy hiệu giảm giá:</span>
+								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][badge]" class="field-badge" value="<?php echo esc_attr( $prod['badge'] ); ?>" style="width: 80px; text-align: center; font-weight: 700; font-size: 12px; background: #fff; color: <?php echo $is_extra_row ? '#7c3aed' : '#ba0d1a'; ?>; border: 1px solid <?php echo $is_extra_row ? '#c4b5fd' : '#fca5a5'; ?>; border-radius: 4px; padding: 2px 6px;" placeholder="-15%">
+							</div>
+
+							<!-- WooCommerce Product Picker -->
 							<div style="background: <?php echo $is_extra_row ? '#f5f3ff' : '#f1f5f9'; ?>; padding: 8px 10px; border-radius: 8px; margin-bottom: 12px; border: 1.5px dashed <?php echo $is_extra_row ? '#c4b5fd' : '#cbd5e1'; ?>;">
 								<label style="font-size: 11px; font-weight: 700; color: <?php echo $is_extra_row ? '#6d28d9' : '#0369a1'; ?>; display: flex; align-items: center; gap: 4px; margin-bottom: 4px;">
 									<span class="dashicons dashicons-cart" style="font-size: 14px; width: 14px; height: 14px;"></span>
@@ -745,6 +779,13 @@ function phonex_flashsale_render_admin_page() {
 						</div>
 					<?php endforeach; ?>
 				</div>
+
+				<!-- BIG DASHED BUTTON TO ADD PRODUCT AT BOTTOM -->
+				<div id="btn-add-product-bottom" style="border: 2px dashed #ba0d1a; border-radius: 12px; padding: 20px; text-align: center; background: #fff5f5; cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;">
+					<span class="dashicons dashicons-plus-alt2" style="font-size: 30px; width: 30px; height: 30px; color: #ba0d1a;"></span>
+					<span style="font-size: 15px; font-weight: 800; color: #ba0d1a;">+ Thêm Thẻ Sản Phẩm Flash Sale Mới</span>
+					<span style="font-size: 12px; color: #64748b;">(Thêm không giới hạn sản phẩm - Hệ thống tự động phân trang vào 'Xem thêm')</span>
+				</div>
 			</div>
 
 			<!-- SUBMIT BUTTONS -->
@@ -760,52 +801,335 @@ function phonex_flashsale_render_admin_page() {
 		</form>
 	</div>
 
-	<!-- CLIENT-SIDE SCRIPT FOR SELECTION & AUTO-FILL -->
+	<!-- TEMPLATE SKELETON FOR DYNAMICALLY ADDED PRODUCT CARDS -->
+	<template id="tmpl-phonex-prod-card">
+		<div class="phonex-prod-card" data-idx="__INDEX__" style="border: 1.5px solid #d8b4fe; border-radius: 12px; padding: 16px; background: #faf5ff; box-shadow: 0 2px 6px rgba(0,0,0,0.04); transition: border-color 0.2s, background 0.2s; position: relative;">
+			<input type="hidden" name="products[__INDEX__][product_id]" class="field-product-id" value="0">
+
+			<!-- Card Header: Title & Action Controls (Move Up/Down, Delete) -->
+			<div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 8px;">
+				<div>
+					<span class="card-num-title" style="font-weight: 800; font-size: 13px; color: #7c3aed;">
+						#<span class="card-num-text">__NUM__</span> - Hàng <span class="card-row-text">3</span> (Cột <span class="card-col-text">1</span>)
+					</span>
+					<div class="card-status-text" style="font-size: 10px; font-weight: 700; color: #9333ea; margin-top: 2px;">
+						⚡ Mở rộng khi bấm "Xem thêm"
+					</div>
+				</div>
+
+				<!-- Action Buttons -->
+				<div style="display: flex; align-items: center; gap: 4px;">
+					<button type="button" class="button button-small btn-move-up" title="Di chuyển lên trước" style="padding: 0 6px; height: 26px; line-height: 24px;">▲</button>
+					<button type="button" class="button button-small btn-move-down" title="Di chuyển xuống sau" style="padding: 0 6px; height: 26px; line-height: 24px;">▼</button>
+					<button type="button" class="button button-small btn-delete-card" title="Xóa thẻ sản phẩm này" style="color: #ef4444; border-color: #fca5a5; padding: 0 6px; height: 26px; line-height: 24px; font-weight: 700;">✕</button>
+				</div>
+			</div>
+
+			<!-- Discount Badge -->
+			<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; background: #f3e8ff; padding: 4px 8px; border-radius: 6px; border: 1px solid #d8b4fe;">
+				<span style="font-size: 11px; font-weight: 700; color: #7c3aed;">Huy hiệu giảm giá:</span>
+				<input type="text" name="products[__INDEX__][badge]" class="field-badge" value="-15%" style="width: 80px; text-align: center; font-weight: 700; font-size: 12px; background: #fff; color: #7c3aed; border: 1px solid #c4b5fd; border-radius: 4px; padding: 2px 6px;" placeholder="-15%">
+			</div>
+
+			<!-- WooCommerce Product Picker -->
+			<div style="background: #f5f3ff; padding: 8px 10px; border-radius: 8px; margin-bottom: 12px; border: 1.5px dashed #c4b5fd;">
+				<label style="font-size: 11px; font-weight: 700; color: #6d28d9; display: flex; align-items: center; gap: 4px; margin-bottom: 4px;">
+					<span class="dashicons dashicons-cart" style="font-size: 14px; width: 14px; height: 14px;"></span>
+					Chọn nhanh từ Sản Phẩm WooCommerce:
+				</label>
+				<select class="wc-product-picker" data-idx="__INDEX__" style="width: 100%; font-size: 12px; height: 32px; border-color: #cbd5e1;">
+					<option value="">-- Tự nhập thủ công (hoặc chọn để tự điền) --</option>
+					<?php foreach ( $wc_products as $wcp ) : 
+						$wcp_id = $wcp->get_id();
+						$wcp_name = $wcp->get_name();
+						$wcp_reg_price = $wcp->get_regular_price();
+						$wcp_sale_price = $wcp->get_sale_price();
+						$wcp_cur_price = $wcp->get_price();
+						$wcp_img = wp_get_attachment_image_url( $wcp->get_image_id(), 'full' );
+						$wcp_url = $wcp->get_permalink();
+						$wcp_badge = '';
+						if ( ! empty( $wcp_reg_price ) && ! empty( $wcp_sale_price ) && floatval( $wcp_reg_price ) > 0 ) {
+							$pct = round( ( ( floatval( $wcp_reg_price ) - floatval( $wcp_sale_price ) ) / floatval( $wcp_reg_price ) ) * 100 );
+							if ( $pct > 0 ) {
+								$wcp_badge = '-' . $pct . '%';
+							}
+						}
+					?>
+						<option value="<?php echo esc_attr( $wcp_id ); ?>"
+							data-name="<?php echo esc_attr( $wcp_name ); ?>"
+							data-price-orig="<?php echo esc_attr( ! empty( $wcp_reg_price ) ? number_format( $wcp_reg_price, 0, ',', '.' ) . '₫' : '' ); ?>"
+							data-price-sale="<?php echo esc_attr( ! empty( $wcp_sale_price ) ? number_format( $wcp_sale_price, 0, ',', '.' ) . '₫' : ( ! empty( $wcp_cur_price ) ? number_format( $wcp_cur_price, 0, ',', '.' ) . '₫' : '' ) ); ?>"
+							data-badge="<?php echo esc_attr( $wcp_badge ); ?>"
+							data-img="<?php echo esc_attr( $wcp_img ); ?>"
+							data-url="<?php echo esc_attr( $wcp_url ); ?>"
+						>
+							#<?php echo esc_html( $wcp_id ); ?> - <?php echo esc_html( $wcp_name ); ?> (<?php echo esc_html( number_format( $wcp_cur_price, 0, ',', '.' ) . '₫' ); ?>)
+						</option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+
+			<div style="margin-bottom: 8px;">
+				<label style="font-size: 11px; color: #475569; font-weight: 600;">Tên sản phẩm:</label>
+				<input type="text" name="products[__INDEX__][name]" class="field-name" value="" style="width: 100%; font-weight: 600; font-size: 13px;" placeholder="Nhập tên sản phẩm...">
+			</div>
+
+			<div style="margin-bottom: 8px;">
+				<label style="font-size: 11px; color: #475569; font-weight: 600;">Thông số (Dung lượng | Chip):</label>
+				<input type="text" name="products[__INDEX__][specs]" class="field-specs" value="Chính hãng VN/A" style="width: 100%; font-size: 12px;">
+			</div>
+
+			<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+				<div>
+					<label style="font-size: 11px; color: #ba0d1a; font-weight: 700;">Giá Flash Sale:</label>
+					<input type="text" name="products[__INDEX__][price_sale]" class="field-price-sale" value="" style="width: 100%; font-weight: 700; color: #ba0d1a;" placeholder="19.990.000₫">
+				</div>
+				<div>
+					<label style="font-size: 11px; color: #64748b; font-weight: 600;">Giá gốc:</label>
+					<input type="text" name="products[__INDEX__][price_orig]" class="field-price-orig" value="" style="width: 100%; color: #64748b;" placeholder="24.990.000₫">
+				</div>
+			</div>
+
+			<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
+				<div>
+					<label style="font-size: 11px; color: #475569; font-weight: 600;">Đã bán:</label>
+					<input type="number" name="products[__INDEX__][sold]" class="field-sold" value="12" style="width: 100%;">
+				</div>
+				<div>
+					<label style="font-size: 11px; color: #475569; font-weight: 600;">Tổng suất:</label>
+					<input type="number" name="products[__INDEX__][total_stock]" class="field-total-stock" value="50" style="width: 100%;">
+				</div>
+			</div>
+
+			<div style="margin-bottom: 8px;">
+				<label style="font-size: 11px; color: #475569; font-weight: 600;">Trạng thái tồn kho:</label>
+				<input type="text" name="products[__INDEX__][stock_text]" class="field-stock-text" value="Còn 38 suất" style="width: 100%; font-size: 12px;" placeholder="Gần cháy hàng">
+			</div>
+
+			<div style="margin-bottom: 8px;">
+				<label style="font-size: 11px; color: #475569; font-weight: 600;">Link ảnh URL:</label>
+				<input type="text" name="products[__INDEX__][image]" class="field-image" value="" style="width: 100%; font-size: 11px;" placeholder="https://...">
+			</div>
+
+			<div>
+				<label style="font-size: 11px; color: #475569; font-weight: 600;">Link mua hàng / chi tiết:</label>
+				<input type="text" name="products[__INDEX__][link]" class="field-link" value="#" style="width: 100%; font-size: 11px;">
+			</div>
+		</div>
+	</template>
+
+	<!-- CLIENT-SIDE REPEATER & INTERACTION JAVASCRIPT -->
 	<script>
 	document.addEventListener('DOMContentLoaded', function() {
-		// When individual picker changes
-		document.querySelectorAll('.wc-product-picker').forEach(function(select) {
-			select.addEventListener('change', function() {
-				const opt = this.options[this.selectedIndex];
-				const card = this.closest('.phonex-prod-card');
-				if (!card) return;
+		const container = document.getElementById('phonex-prod-cards-container');
+		const template = document.getElementById('tmpl-phonex-prod-card');
+		const initialCountInput = document.getElementById('initial_count');
+		const badgeTotal = document.getElementById('phonex-fs-total-badge');
+		const badgeBreakdown = document.getElementById('phonex-fs-sub-badge');
+		const statTotal = document.getElementById('stat-total-products');
 
-				if (opt && opt.value) {
-					const name = opt.dataset.name || '';
-					const priceOrig = opt.dataset.priceOrig || '';
-					const priceSale = opt.dataset.priceSale || '';
-					const badge = opt.dataset.badge || '';
-					const img = opt.dataset.img || '';
-					const url = opt.dataset.url || '';
+		function getInitialCount() {
+			return parseInt(initialCountInput ? initialCountInput.value : '8', 10) || 8;
+		}
 
-					const fId = card.querySelector('.field-product-id');
-					const fName = card.querySelector('.field-name');
-					const fPriceOrig = card.querySelector('.field-price-orig');
-					const fPriceSale = card.querySelector('.field-price-sale');
-					const fBadge = card.querySelector('.field-badge');
-					const fLink = card.querySelector('.field-link');
-					const fImg = card.querySelector('.field-image');
+		// Re-indexes card numbers, row numbers, form input names, and extra/initial statuses
+		function reindexAllCards() {
+			if (!container) return;
+			const cards = container.querySelectorAll('.phonex-prod-card');
+			const total = cards.length;
+			const initialCount = getInitialCount();
 
-					if (fId) fId.value = opt.value;
-					if (fName && name) fName.value = name;
-					if (fPriceOrig && priceOrig) fPriceOrig.value = priceOrig;
-					if (fPriceSale && priceSale) fPriceSale.value = priceSale;
-					if (fBadge && badge) fBadge.value = badge;
-					if (fLink && url) fLink.value = url;
-					if (fImg && img) fImg.value = img;
+			cards.forEach(function(card, idx) {
+				card.dataset.idx = idx;
+				const row = Math.floor(idx / 4) + 1;
+				const col = (idx % 4) + 1;
+				const isExtra = (idx >= initialCount);
 
-					// Visual highlight
-					card.style.borderColor = '#0284c7';
-					setTimeout(() => { card.style.borderColor = '#e2e8f0'; }, 1000);
+				// Update number and row text
+				const numText = card.querySelector('.card-num-text');
+				if (numText) numText.textContent = idx + 1;
+
+				const rowText = card.querySelector('.card-row-text');
+				if (rowText) rowText.textContent = row;
+
+				const colText = card.querySelector('.card-col-text');
+				if (colText) colText.textContent = col;
+
+				const numTitle = card.querySelector('.card-num-title');
+				if (numTitle) {
+					numTitle.style.color = isExtra ? '#7c3aed' : (row === 2 ? '#ba0d1a' : '#0f172a');
+				}
+
+				// Update status badge text & styling
+				const statusText = card.querySelector('.card-status-text');
+				if (statusText) {
+					if (isExtra) {
+						statusText.textContent = '⚡ Mở rộng khi bấm "Xem thêm"';
+						statusText.style.color = '#9333ea';
+					} else {
+						statusText.textContent = '✓ Hiển thị mặc định ban đầu';
+						statusText.style.color = '#16a34a';
+					}
+				}
+
+				// Update card border & background
+				if (isExtra) {
+					card.style.borderColor = '#d8b4fe';
+					card.style.background = '#faf5ff';
+				} else {
+					card.style.borderColor = (row === 2) ? '#fecdd3' : '#e2e8f0';
+					card.style.background = (row === 2) ? '#fff9f9' : '#ffffff';
+				}
+
+				// Move buttons disable state
+				const btnUp = card.querySelector('.btn-move-up');
+				const btnDown = card.querySelector('.btn-move-down');
+				if (btnUp) btnUp.disabled = (idx === 0);
+				if (btnDown) btnDown.disabled = (idx === total - 1);
+
+				// Update input name attributes
+				const fields = ['product_id', 'badge', 'name', 'specs', 'price_sale', 'price_orig', 'sold', 'total_stock', 'stock_text', 'image', 'link'];
+				fields.forEach(function(f) {
+					const input = card.querySelector('.field-' + f.replace('_', '-'));
+					if (input) {
+						input.name = 'products[' + idx + '][' + f + ']';
+					}
+				});
+
+				const picker = card.querySelector('.wc-product-picker');
+				if (picker) {
+					picker.dataset.idx = idx;
 				}
 			});
-		});
+
+			// Update summary badges
+			const initialShown = Math.min(total, initialCount);
+			const extraShown = Math.max(0, total - initialCount);
+			if (badgeTotal) badgeTotal.textContent = 'Tổng cộng: ' + total + ' Sản phẩm';
+			if (badgeBreakdown) badgeBreakdown.textContent = '(' + initialShown + ' hiển thị ban đầu + ' + extraShown + ' trong "Xem thêm")';
+			if (statTotal) statTotal.textContent = total + ' Sản Phẩm';
+		}
+
+		// Initialize event listeners on a single card
+		function initCardListeners(card) {
+			// Quick picker dropdown
+			const picker = card.querySelector('.wc-product-picker');
+			if (picker) {
+				picker.addEventListener('change', function() {
+					const opt = this.options[this.selectedIndex];
+					if (opt && opt.value) {
+						const fId = card.querySelector('.field-product-id');
+						const fName = card.querySelector('.field-name');
+						const fPriceOrig = card.querySelector('.field-price-orig');
+						const fPriceSale = card.querySelector('.field-price-sale');
+						const fBadge = card.querySelector('.field-badge');
+						const fLink = card.querySelector('.field-link');
+						const fImg = card.querySelector('.field-image');
+
+						if (fId) fId.value = opt.value;
+						if (fName && opt.dataset.name) fName.value = opt.dataset.name;
+						if (fPriceOrig && opt.dataset.priceOrig) fPriceOrig.value = opt.dataset.priceOrig;
+						if (fPriceSale && opt.dataset.priceSale) fPriceSale.value = opt.dataset.priceSale;
+						if (fBadge && opt.dataset.badge) fBadge.value = opt.dataset.badge;
+						if (fLink && opt.dataset.url) fLink.value = opt.dataset.url;
+						if (fImg && opt.dataset.img) fImg.value = opt.dataset.img;
+
+						card.style.borderColor = '#0284c7';
+						setTimeout(() => { reindexAllCards(); }, 600);
+					}
+				});
+			}
+
+			// Move Up Button
+			const btnUp = card.querySelector('.btn-move-up');
+			if (btnUp) {
+				btnUp.addEventListener('click', function(e) {
+					e.stopPropagation();
+					const prev = card.previousElementSibling;
+					if (prev && prev.classList.contains('phonex-prod-card')) {
+						container.insertBefore(card, prev);
+						reindexAllCards();
+						card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+					}
+				});
+			}
+
+			// Move Down Button
+			const btnDown = card.querySelector('.btn-move-down');
+			if (btnDown) {
+				btnDown.addEventListener('click', function(e) {
+					e.stopPropagation();
+					const next = card.nextElementSibling;
+					if (next && next.classList.contains('phonex-prod-card')) {
+						container.insertBefore(next, card);
+						reindexAllCards();
+						card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+					}
+				});
+			}
+
+			// Delete Button
+			const btnDelete = card.querySelector('.btn-delete-card');
+			if (btnDelete) {
+				btnDelete.addEventListener('click', function(e) {
+					e.stopPropagation();
+					const cards = container.querySelectorAll('.phonex-prod-card');
+					if (cards.length <= 1) {
+						alert('Bạn cần giữ lại ít nhất 1 sản phẩm Flash Sale!');
+						return;
+					}
+					const nameInput = card.querySelector('.field-name');
+					const pName = nameInput ? nameInput.value : '';
+					if (confirm('Bạn có chắc chắn muốn xóa sản phẩm "' + (pName || 'này') + '" khỏi Flash Sale không?')) {
+						card.remove();
+						reindexAllCards();
+					}
+				});
+			}
+		}
+
+		// Add new product card function
+		function addNewCard() {
+			if (!template || !container) return;
+			const total = container.querySelectorAll('.phonex-prod-card').length;
+			const html = template.innerHTML
+				.replace(/__INDEX__/g, total)
+				.replace(/__NUM__/g, total + 1);
+
+			const tempDiv = document.createElement('div');
+			tempDiv.innerHTML = html.trim();
+			const newCard = tempDiv.firstElementChild;
+
+			container.appendChild(newCard);
+			initCardListeners(newCard);
+			reindexAllCards();
+
+			newCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			newCard.style.outline = '3px solid #16a34a';
+			setTimeout(() => { newCard.style.outline = 'none'; }, 1200);
+		}
+
+		// Attach listeners to all existing cards
+		container.querySelectorAll('.phonex-prod-card').forEach(initCardListeners);
+		reindexAllCards();
+
+		// Add buttons
+		const btnAddTop = document.getElementById('btn-add-product-top');
+		if (btnAddTop) btnAddTop.addEventListener('click', addNewCard);
+
+		const btnAddBottom = document.getElementById('btn-add-product-bottom');
+		if (btnAddBottom) btnAddBottom.addEventListener('click', addNewCard);
+
+		if (initialCountInput) {
+			initialCountInput.addEventListener('change', reindexAllCards);
+			initialCountInput.addEventListener('input', reindexAllCards);
+		}
 
 		// 1-Click Master Autofill from WooCommerce
 		const btnAutofill = document.getElementById('btn-autofill-wc');
 		if (btnAutofill) {
 			btnAutofill.addEventListener('click', function() {
-				const cards = document.querySelectorAll('.phonex-prod-card');
+				const cards = container.querySelectorAll('.phonex-prod-card');
 				const firstPicker = document.querySelector('.wc-product-picker');
 				if (!firstPicker) return;
 
@@ -826,7 +1150,7 @@ function phonex_flashsale_render_admin_page() {
 					}
 				});
 
-				alert('Đã tự động tải thành công các sản phẩm từ kho WooCommerce vào 12 ô sản phẩm!');
+				alert('Đã tự động điền sản phẩm từ kho WooCommerce vào ' + Math.min(cards.length, availableOpts.length) + ' thẻ sản phẩm!');
 			});
 		}
 

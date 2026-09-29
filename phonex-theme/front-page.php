@@ -186,9 +186,10 @@ if ( $fs_enabled === '1' ) :
 		$container_style = 'background: #ffffff; border-color: #e2e8f0;';
 	}
 
-	// Products split: 8 initial products, remaining into expandable 'Xem thêm'
-	$initial_products  = array_slice( $fs_products, 0, 8 );
-	$extra_products    = array_slice( $fs_products, 8 );
+	// Products split: dynamic initial count (default 8), remaining into expandable 'Xem thêm'
+	$initial_count     = max( 1, intval( $flashsale_settings['initial_count'] ?? 8 ) );
+	$initial_products  = array_slice( $fs_products, 0, $initial_count );
+	$extra_products    = array_slice( $fs_products, $initial_count );
 	$has_extra         = ! empty( $extra_products );
 	$view_more_enabled = ( ( $flashsale_settings['view_more_enabled'] ?? '1' ) === '1' );
 	$view_more_text    = $flashsale_settings['view_more_text'] ?? 'Xem thêm deal Flash Sale';
@@ -336,7 +337,7 @@ if ( $fs_enabled === '1' ) :
     <?php if ( $has_extra ) : ?>
       <div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-space-md transition-all duration-300" id="phonex-fs-extra-grid">
         <?php foreach ( $extra_products as $idx => $prod ) {
-          $render_fs_card( $prod, 8 + $idx );
+          $render_fs_card( $prod, count( $initial_products ) + $idx );
         } ?>
       </div>
     <?php endif; ?>
