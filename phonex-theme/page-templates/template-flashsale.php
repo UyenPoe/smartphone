@@ -489,14 +489,23 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
           </div>
         </div>
 
+        <?php
+        $phone_brands = array();
+        foreach ( $phone_prods as $p ) {
+            $b = $p['brand'] ?? '';
+            if ( ! empty( $b ) && 'all' !== $b && ! in_array( $b, $phone_brands, true ) ) {
+                $phone_brands[] = $b;
+            }
+        }
+        ?>
         <!-- Brand Filter Pills -->
         <div class="flex items-center gap-1.5 flex-wrap text-xs font-bold" id="brand-filters-phone">
-          <button type="button" class="px-3.5 py-1.5 rounded-full bg-white text-red-700 shadow-xs cursor-pointer active-filter" onclick="filterCategory(this, 'all', '#phone-grid')">Tất cả</button>
-          <button type="button" class="px-3.5 py-1.5 rounded-full bg-white/20 hover:bg-white text-white hover:text-red-700 transition-colors cursor-pointer" onclick="filterCategory(this, 'iphone', '#phone-grid')">iPhone</button>
-          <button type="button" class="px-3.5 py-1.5 rounded-full bg-white/20 hover:bg-white text-white hover:text-red-700 transition-colors cursor-pointer" onclick="filterCategory(this, 'samsung', '#phone-grid')">Samsung</button>
-          <button type="button" class="px-3.5 py-1.5 rounded-full bg-white/20 hover:bg-white text-white hover:text-red-700 transition-colors cursor-pointer" onclick="filterCategory(this, 'xiaomi', '#phone-grid')">Xiaomi</button>
-          <button type="button" class="px-3.5 py-1.5 rounded-full bg-white/20 hover:bg-white text-white hover:text-red-700 transition-colors cursor-pointer" onclick="filterCategory(this, 'oppo', '#phone-grid')">OPPO</button>
-          <button type="button" class="px-3.5 py-1.5 rounded-full bg-white/20 hover:bg-white text-white hover:text-red-700 transition-colors cursor-pointer" onclick="filterCategory(this, 'vivo', '#phone-grid')">vivo</button>
+          <button type="button" class="px-3.5 py-1.5 rounded-full bg-white text-red-700 shadow-xs cursor-pointer active-filter" onclick="filterCategory(this, 'all', '#phone-grid')">Tất cả (<?php echo count( $phone_prods ); ?>)</button>
+          <?php foreach ( $phone_brands as $pb ) : ?>
+            <button type="button" class="px-3.5 py-1.5 rounded-full bg-white/20 hover:bg-white text-white hover:text-red-700 transition-colors cursor-pointer" onclick="filterCategory(this, '<?php echo esc_js( $pb ); ?>', '#phone-grid')">
+              <?php echo esc_html( function_exists( 'phonex_get_brand_label' ) ? phonex_get_brand_label( $pb ) : ucfirst( $pb ) ); ?>
+            </button>
+          <?php endforeach; ?>
         </div>
       </div>
 
@@ -658,6 +667,17 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
 
     <!-- ================= SECTION 5: PHỤ KIỆN XẢ KHO - ĐỒNG GIÁ TỪ 99K (TGDD Style #phu-kien) ================= -->
     <section id="phu-kien" class="scroll-mt-28 space-y-4">
+      <?php
+      $acc_brands = array();
+      if ( ! empty( $acc_prods ) ) {
+          foreach ( $acc_prods as $p ) {
+              $b = $p['brand'] ?? '';
+              if ( ! empty( $b ) && 'all' !== $b && ! in_array( $b, $acc_brands, true ) ) {
+                  $acc_brands[] = $b;
+              }
+          }
+      }
+      ?>
       <div class="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 rounded-2xl p-4 sm:p-5 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center shrink-0">
@@ -668,12 +688,24 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
             <p class="text-xs sm:text-sm text-amber-100"><?php echo esc_html( $sec_acc_s ); ?></p>
           </div>
         </div>
+
+        <!-- Dynamic Brand Filter Pills for Accessories -->
+        <div class="flex items-center gap-1.5 flex-wrap text-xs font-bold" id="brand-filters-acc">
+          <button type="button" class="px-3.5 py-1.5 rounded-full bg-white text-amber-800 shadow-xs cursor-pointer active-filter" onclick="filterCategory(this, 'all', '#acc-grid')">
+            Tất cả (<?php echo count( $acc_prods ); ?>)
+          </button>
+          <?php foreach ( $acc_brands as $ab ) : ?>
+            <button type="button" class="px-3.5 py-1.5 rounded-full bg-white/20 hover:bg-white text-white hover:text-amber-800 transition-colors cursor-pointer" onclick="filterCategory(this, '<?php echo esc_js( $ab ); ?>', '#acc-grid')">
+              <?php echo esc_html( function_exists( 'phonex_get_brand_label' ) ? phonex_get_brand_label( $ab ) : ucfirst( $ab ) ); ?>
+            </button>
+          <?php endforeach; ?>
+        </div>
       </div>
 
       <!-- Accessories Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4" id="acc-grid">
         <?php foreach ( $acc_prods as $p ) : ?>
-          <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-amber-500 relative hover:-translate-y-1 duration-200">
+          <div class="prod-filter-item bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-amber-500 relative hover:-translate-y-1 duration-200" data-brand="<?php echo esc_attr( $p['brand'] ?? 'all' ); ?>">
             <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
               <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-amber-600 text-white text-[10px] font-extrabold shadow-xs">
                 <?php echo esc_html( $p['badge'] ?? '-20%' ); ?>
@@ -925,12 +957,14 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
   function filterCategory(btn, brand, gridSelector) {
     const grid = document.querySelector(gridSelector);
     if (!grid) return;
+    const isAcc = gridSelector.indexOf('acc') !== -1;
+    const activeColor = isAcc ? 'text-amber-800' : 'text-red-700';
 
     btn.parentElement.querySelectorAll('button').forEach(b => {
-      b.classList.remove('bg-white', 'text-red-700');
+      b.classList.remove('bg-white', 'text-red-700', 'text-amber-800', 'shadow-xs');
       b.classList.add('bg-white/20', 'text-white');
     });
-    btn.classList.add('bg-white', 'text-red-700');
+    btn.classList.add('bg-white', activeColor, 'shadow-xs');
     btn.classList.remove('bg-white/20', 'text-white');
 
     const items = grid.querySelectorAll('.prod-filter-item');

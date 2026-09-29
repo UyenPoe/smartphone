@@ -674,16 +674,54 @@ function phonex_format_wc_promotion_item( $wc_prod ) {
 	// Detect Brand for filtering
 	$brand      = 'all';
 	$name_lower = mb_strtolower( $name, 'UTF-8' );
-	if ( strpos( $name_lower, 'iphone' ) !== false || strpos( $name_lower, 'apple' ) !== false ) {
-		$brand = 'iphone';
-	} elseif ( strpos( $name_lower, 'samsung' ) !== false || strpos( $name_lower, 'galaxy' ) !== false ) {
-		$brand = 'samsung';
-	} elseif ( strpos( $name_lower, 'xiaomi' ) !== false || strpos( $name_lower, 'redmi' ) !== false ) {
-		$brand = 'xiaomi';
-	} elseif ( strpos( $name_lower, 'oppo' ) !== false ) {
-		$brand = 'oppo';
-	} elseif ( strpos( $name_lower, 'vivo' ) !== false ) {
-		$brand = 'vivo';
+
+	// 1. Check Product Categories if available
+	$terms = wp_get_post_terms( $id, 'product_cat', array( 'fields' => 'slugs' ) );
+	if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+		if ( in_array( 'apple', $terms, true ) || in_array( 'phu-kien-apple', $terms, true ) ) {
+			$brand = 'apple';
+		} elseif ( in_array( 'samsung', $terms, true ) ) {
+			$brand = 'samsung';
+		} elseif ( in_array( 'xiaomi', $terms, true ) ) {
+			$brand = 'xiaomi';
+		} elseif ( in_array( 'oppo', $terms, true ) ) {
+			$brand = 'oppo';
+		} elseif ( in_array( 'vivo', $terms, true ) ) {
+			$brand = 'vivo';
+		} elseif ( in_array( 'realme', $terms, true ) ) {
+			$brand = 'realme';
+		}
+	}
+
+	// 2. Name keywords detection / fallback
+	if ( 'all' === $brand ) {
+		if ( strpos( $name_lower, 'iphone' ) !== false || strpos( $name_lower, 'apple' ) !== false || strpos( $name_lower, 'airpods' ) !== false ) {
+			$brand = 'apple';
+		} elseif ( strpos( $name_lower, 'samsung' ) !== false || strpos( $name_lower, 'galaxy' ) !== false ) {
+			$brand = 'samsung';
+		} elseif ( strpos( $name_lower, 'xiaomi' ) !== false || strpos( $name_lower, 'redmi' ) !== false ) {
+			$brand = 'xiaomi';
+		} elseif ( strpos( $name_lower, 'oppo' ) !== false ) {
+			$brand = 'oppo';
+		} elseif ( strpos( $name_lower, 'vivo' ) !== false ) {
+			$brand = 'vivo';
+		} elseif ( strpos( $name_lower, 'anker' ) !== false ) {
+			$brand = 'anker';
+		} elseif ( strpos( $name_lower, 'baseus' ) !== false ) {
+			$brand = 'baseus';
+		} elseif ( strpos( $name_lower, 'jbl' ) !== false ) {
+			$brand = 'jbl';
+		} elseif ( strpos( $name_lower, 'mipow' ) !== false ) {
+			$brand = 'mipow';
+		} elseif ( strpos( $name_lower, 'torras' ) !== false ) {
+			$brand = 'torras';
+		} elseif ( strpos( $name_lower, 'sony' ) !== false ) {
+			$brand = 'sony';
+		} elseif ( strpos( $name_lower, 'garmin' ) !== false ) {
+			$brand = 'garmin';
+		} elseif ( strpos( $name_lower, 'huawei' ) !== false ) {
+			$brand = 'huawei';
+		}
 	}
 
 	// Specs / Description
@@ -765,5 +803,32 @@ function phonex_get_default_product_image_by_title( $title ) {
 	}
 
 	return get_template_directory_uri() . '/assets/images/categories/accessories/hub-cap-chuyen-doi.png';
+}
+
+/**
+ * Get human-readable Brand Label
+ *
+ * @param string $brand_slug
+ * @return string
+ */
+function phonex_get_brand_label( $brand_slug ) {
+	$map = array(
+		'apple'   => 'Apple',
+		'iphone'  => 'iPhone',
+		'samsung' => 'Samsung',
+		'xiaomi'  => 'Xiaomi',
+		'oppo'    => 'OPPO',
+		'vivo'    => 'vivo',
+		'realme'  => 'realme',
+		'anker'   => 'Anker',
+		'baseus'  => 'Baseus',
+		'jbl'     => 'JBL',
+		'mipow'   => 'Mipow',
+		'torras'  => 'TORRAS',
+		'sony'    => 'Sony',
+		'garmin'  => 'Garmin',
+		'huawei'  => 'Huawei',
+	);
+	return $map[ $brand_slug ] ?? ucfirst( $brand_slug );
 }
 
