@@ -235,7 +235,18 @@ if ( $fs_enabled === '1' ) :
         $sold = intval( $prod['sold'] ?? 0 );
         $total = max( 1, intval( $prod['total_stock'] ?? 50 ) );
         $percent = min( 100, max( 5, round( ( $sold / $total ) * 100 ) ) );
-        $prod_link = ! empty( $prod['link'] ) ? esc_url( get_template_directory_uri() . $prod['link'] ) : esc_url( get_template_directory_uri() . '/pages/shop/product-detail/index.html' );
+        
+        $raw_link = $prod['link'] ?? '';
+        $pid = intval( $prod['product_id'] ?? 0 );
+        if ( $pid > 0 && function_exists( 'get_permalink' ) && get_post_status( $pid ) === 'publish' ) {
+            $prod_link = esc_url( get_permalink( $pid ) );
+        } elseif ( strpos( $raw_link, 'http' ) === 0 ) {
+            $prod_link = esc_url( $raw_link );
+        } elseif ( ! empty( $raw_link ) && strpos( $raw_link, '/' ) === 0 ) {
+            $prod_link = esc_url( home_url( $raw_link ) );
+        } else {
+            $prod_link = esc_url( get_template_directory_uri() . '/pages/shop/product-detail/index.html' );
+        }
       ?>
         <!-- Item <?php echo esc_html( $idx + 1 ); ?> -->
         <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">

@@ -1,12 +1,12 @@
 <?php
 /**
- * PhoneX Flash Sale Giờ Vàng - Admin Settings & Management
+ * PhoneX Flash Sale Giờ Vàng - Admin Settings & Management (Hybrid Model)
  *
- * Provides full control in WP Admin for:
- * - Enabling/disabling Flash Sale section
- * - Managing timeline slots (e.g. 09:00, 12:00, 14:00, 18:00, 21:00)
- * - Real-time countdown timer settings
- * - Managing 8 products (2 rows x 4 columns) with discounts, sold quantities, and stock
+ * Provides the BEST of both worlds:
+ * 1. Pulls real products directly from WooCommerce Catalog (1-click auto-fill or dropdown per card)
+ * 2. Connects "Mua Ngay" directly to real WooCommerce product checkout/cart
+ * 3. Keeps full marketing flexibility: Custom special flash-price override, scarcity progress bars ("Đã bán 45/50")
+ * 4. Manages 5 timeline slots (09:00, 12:00, 14:00, 18:00, 21:00) with live ticking countdown
  *
  * @package PhoneX
  */
@@ -65,6 +65,7 @@ function phonex_get_default_flashsale_settings() {
 			// HÀNG 1 (Row 1: 4 Products)
 			array(
 				'id'          => 1,
+				'product_id'  => 16,
 				'name'        => 'iPhone 18 Pro Max 256GB VN/A',
 				'specs'       => '256GB | A19 Pro Bionic',
 				'badge'       => '-15%',
@@ -74,10 +75,11 @@ function phonex_get_default_flashsale_settings() {
 				'total_stock' => 50,
 				'stock_text'  => 'Gần cháy hàng',
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H',
-				'link'        => '/pages/shop/product-detail/index.html',
+				'link'        => '/product/iphone-16-pro-max-256gb-chinh-hang-vn-a/',
 			),
 			array(
 				'id'          => 2,
+				'product_id'  => 17,
 				'name'        => 'Galaxy S25 Ultra 512GB SSVN',
 				'specs'       => '512GB | Snapdragon 8 Elite',
 				'badge'       => '-18%',
@@ -87,10 +89,11 @@ function phonex_get_default_flashsale_settings() {
 				'total_stock' => 50,
 				'stock_text'  => 'Còn 12 suất',
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCZ8cuMHSs16BGSbqL3osP6m_454IdcEnFrET6PX-zB9G7FJ3N9j6g5f-O5mlEKAnKNCGzpjZHaPqDHk5eQ7aAUYTQSpL2T2BXsRZVBRIsmzpkd39YqtnzfYdn1xj2QRF58FGv3hauWnmQwJYu9fthOr04mXeo6X_TDY6z2u2dYJyX4gKVk_GIImuiFHFOgKWKAzCYuFW7dx2G-84U7j4r5HUvh1xOZ714bcFju9liesR5DmsXco6mn',
-				'link'        => '/pages/shop/product-detail/index.html',
+				'link'        => '/product/samsung-galaxy-s25-ultra-512gb-chinh-hang-ssvn/',
 			),
 			array(
 				'id'          => 3,
+				'product_id'  => 18,
 				'name'        => 'Xiaomi 14T Pro 5G Leica 512GB',
 				'specs'       => '512GB | Dimensity 9300+',
 				'badge'       => '-22%',
@@ -100,10 +103,11 @@ function phonex_get_default_flashsale_settings() {
 				'total_stock' => 50,
 				'stock_text'  => 'Gần cháy hàng',
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp',
-				'link'        => '/pages/shop/product-detail/index.html',
+				'link'        => '/product/xiaomi-15-pro-256gb-leica-optics-edition/',
 			),
 			array(
 				'id'          => 4,
+				'product_id'  => 21,
 				'name'        => 'iPhone 16 Pro Max 256GB Like New',
 				'specs'       => 'Pin 98% | Grade A 99%',
 				'badge'       => '#USED-99%',
@@ -113,60 +117,64 @@ function phonex_get_default_flashsale_settings() {
 				'total_stock' => 20,
 				'stock_text'  => 'Duy nhất 1 chiếc',
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAPT8j9gPDdQw803_EjHE9CrxcBd9ByYWch8rA3iK2EBwUlD-AYBurDY51Zuw1-Qsp9Vt7q1Pd3TVFYZSrTi9fCyrBWkDC5RcYBn8JZgRzAewL2GfxpWRIqXsBv_xwE0rndJ5hkpIutccJGL_JBkwS1NztjDieoZb_RoQt57EclFFLXTYI0bltlq5jZN_GOmx2UWCj1fqYtciRolzYGtW8p2r7rv-v-M7usKZhT8cNXKavd4vLaz8TF',
-				'link'        => '/pages/shop/product-detail/index.html',
+				'link'        => '/product/iphone-15-pro-max-256gb-titan-tu-nhien-may-cu-99/',
 			),
-			// HÀNG 2 (Row 2: 4 Products - DÒNG BỔ SUNG MỚI)
+			// HÀNG 2 (Row 2: 4 Products)
 			array(
 				'id'          => 5,
-				'name'        => 'iPad Pro M4 11 inch 256GB Wifi',
-				'specs'       => '256GB | Apple M4 Chip 3nm',
+				'product_id'  => 19,
+				'name'        => 'OPPO Find X8 Pro 512GB Hasselblad',
+				'specs'       => '512GB | Camera Kép Kính Tiềm Vọng',
 				'badge'       => '-20%',
 				'price_sale'  => '23.990.000₫',
-				'price_orig'  => '28.990.000₫',
+				'price_orig'  => '29.990.000₫',
 				'sold'        => 28,
 				'total_stock' => 35,
 				'stock_text'  => 'Đang bán chạy',
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCZ8cuMHSs16BGSbqL3osP6m_454IdcEnFrET6PX-zB9G7FJ3N9j6g5f-O5mlEKAnKNCGzpjZHaPqDHk5eQ7aAUYTQSpL2T2BXsRZVBRIsmzpkd39YqtnzfYdn1xj2QRF58FGv3hauWnmQwJYu9fthOr04mXeo6X_TDY6z2u2dYJyX4gKVk_GIImuiFHFOgKWKAzCYuFW7dx2G-84U7j4r5HUvh1xOZ714bcFju9liesR5DmsXco6mn',
-				'link'        => '/pages/shop/product-detail/index.html',
+				'link'        => '/product/oppo-find-x8-pro-512gb-hasselblad-camera-master/',
 			),
 			array(
 				'id'          => 6,
-				'name'        => 'Samsung Galaxy Z Fold6 512GB AI',
-				'specs'       => '512GB | Màn hình gập Dynamic AMOLED',
+				'product_id'  => 20,
+				'name'        => 'vivo X200 Pro 256GB ZEISS APO',
+				'specs'       => '256GB | Cảm biến 200MP Chân Dung',
 				'badge'       => '-25%',
-				'price_sale'  => '36.990.000₫',
-				'price_orig'  => '45.490.000₫',
+				'price_sale'  => '19.990.000₫',
+				'price_orig'  => '23.990.000₫',
 				'sold'        => 15,
 				'total_stock' => 20,
 				'stock_text'  => 'Còn 5 suất',
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp',
-				'link'        => '/pages/shop/product-detail/index.html',
+				'link'        => '/product/vivo-x200-pro-256gb-zeiss-apo-telephoto/',
 			),
 			array(
 				'id'          => 7,
-				'name'        => 'Apple AirPods Pro 2 Type-C MagSafe',
-				'specs'       => 'Chống ồn 2X | Chip H2',
+				'product_id'  => 23,
+				'name'        => 'Tai Nghe Apple AirPods Pro 2 MagSafe Type-C',
+				'specs'       => 'Chống ồn 2X | Chip H2 Chính Hãng',
 				'badge'       => '-30%',
 				'price_sale'  => '4.890.000₫',
-				'price_orig'  => '6.190.000₫',
+				'price_orig'  => '5.690.000₫',
 				'sold'        => 89,
 				'total_stock' => 100,
 				'stock_text'  => 'Gần cháy hàng',
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJyznqsxffSwTtLf_Zq39mGYtP6-N2l1DW7UdBg4VHdO7TB7TP1Emx96FLeopoInASb14-MUqPS_MVc7IBTm_htX4I9jv-o1HtFHiro4wY1W7k7OLbzTxK46_0bYmADaWguBvx-U_xMCQwFM1MMRaKY8kkOfa63ICmdfXEFRffFJ07gQOtBLu1tHSnjRgA7vBSx5HN89ilJQoCjC5_RfyrGfgBXhBU-3mnFbC7xUyCO6hubG4c29n5',
-				'link'        => '/pages/shop/product-detail/index.html',
+				'link'        => '/product/tai-nghe-apple-airpods-pro-2-magsafe-usb-c/',
 			),
 			array(
 				'id'          => 8,
-				'name'        => 'Apple Watch Ultra 2 GPS + Cellular 49mm',
-				'specs'       => 'Titanium | Pin 72 giờ | Lặn 40m',
-				'badge'       => '-18%',
-				'price_sale'  => '17.990.000₫',
-				'price_orig'  => '21.990.000₫',
-				'sold'        => 22,
-				'total_stock' => 30,
-				'stock_text'  => 'Còn 8 suất',
+				'product_id'  => 24,
+				'name'        => 'Pin Sạc Dự Phòng Anker MagGo Qi2 10.000mAh',
+				'specs'       => 'Hỗ Trợ MagSafe 15W Siêu Nhanh',
+				'badge'       => '-25%',
+				'price_sale'  => '990.000₫',
+				'price_orig'  => '1.290.000₫',
+				'sold'        => 62,
+				'total_stock' => 80,
+				'stock_text'  => 'Còn 18 suất',
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H',
-				'link'        => '/pages/shop/product-detail/index.html',
+				'link'        => '/product/pin-sac-du-phong-anker-maggo-qi2-10000mah/',
 			),
 		),
 	);
@@ -210,6 +218,14 @@ function phonex_flashsale_render_admin_page() {
 		return;
 	}
 
+	// Fetch all published WooCommerce products for instant selection
+	$wc_products = function_exists( 'wc_get_products' ) ? wc_get_products( array(
+		'limit'   => -1,
+		'status'  => 'publish',
+		'orderby' => 'date',
+		'order'   => 'DESC',
+	) ) : array();
+
 	// Handle Save Action
 	if ( isset( $_POST['phonex_flashsale_save_nonce'] ) && wp_verify_nonce( sanitize_key( $_POST['phonex_flashsale_save_nonce'] ), 'phonex_flashsale_save_action' ) ) {
 		$current = phonex_get_flashsale_settings();
@@ -243,8 +259,10 @@ function phonex_flashsale_render_admin_page() {
 		if ( isset( $_POST['products'] ) && is_array( $_POST['products'] ) ) {
 			$cleaned_products = array();
 			foreach ( $_POST['products'] as $idx => $prod ) {
+				$prod_id = intval( $prod['product_id'] ?? 0 );
 				$cleaned_products[] = array(
 					'id'          => $idx + 1,
+					'product_id'  => $prod_id,
 					'name'        => sanitize_text_field( $prod['name'] ?? '' ),
 					'specs'       => sanitize_text_field( $prod['specs'] ?? '' ),
 					'badge'       => sanitize_text_field( $prod['badge'] ?? '' ),
@@ -271,24 +289,31 @@ function phonex_flashsale_render_admin_page() {
 
 	$settings = phonex_get_flashsale_settings();
 	?>
-	<div class="wrap phonex-admin-wrap" style="max-width: 1200px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-		<div style="background: linear-gradient(135deg, #ba0d1a 0%, #e60012 100%); color: #fff; padding: 24px 30px; border-radius: 14px; margin: 20px 0 25px 0; box-shadow: 0 10px 25px rgba(186, 13, 26, 0.25); display: flex; align-items: center; justify-content: space-between;">
+	<div class="wrap phonex-admin-wrap" style="max-width: 1240px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+		<!-- HEADER BANNER -->
+		<div style="background: linear-gradient(135deg, #ba0d1a 0%, #e60012 100%); color: #fff; padding: 24px 30px; border-radius: 14px; margin: 20px 0 25px 0; box-shadow: 0 10px 25px rgba(186, 13, 26, 0.25); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
 			<div>
 				<h1 style="color: #fff; margin: 0; font-size: 26px; font-weight: 800; display: flex; align-items: center; gap: 10px;">
 					<span class="dashicons dashicons-flame" style="font-size: 32px; width: 32px; height: 32px; color: #ffd700;"></span>
-					Quản Trị Flash Sale Giờ Vàng - PhoneX
+					Quản Trị Flash Sale Giờ Vàng - PhoneX (Mô Hình Lai Tối Ưu)
 				</h1>
 				<p style="margin: 8px 0 0 0; color: rgba(255,255,255,0.9); font-size: 14px;">
-					Quản lý các khung giờ vàng (12:00, 14:00, 18:00...), đồng hồ đếm ngược trực tiếp và 2 dòng sản phẩm giảm giá cực sốc.
+					Kết hợp tốt nhất giữa <strong>Sản phẩm thật trong WooCommerce</strong> và <strong>Số liệu kích cầu linh hoạt</strong> (Giá sale sốc, % giảm, thanh tiến trình "Gần cháy hàng").
 				</p>
 			</div>
-			<div style="background: rgba(255,255,255,0.15); padding: 10px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); text-align: center;">
-				<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85;">Quy mô sản phẩm</div>
-				<div style="font-size: 20px; font-weight: 800; color: #ffd700;">2 Dòng (8 Sản Phẩm)</div>
+			<div style="display: flex; gap: 10px;">
+				<div style="background: rgba(255,255,255,0.15); padding: 10px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); text-align: center;">
+					<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85;">Quy mô</div>
+					<div style="font-size: 18px; font-weight: 800; color: #ffd700;">2 Hàng (8 Sản Phẩm)</div>
+				</div>
+				<div style="background: rgba(255,255,255,0.15); padding: 10px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.25); text-align: center;">
+					<div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85;">Kho WooCommerce</div>
+					<div style="font-size: 18px; font-weight: 800; color: #fff;"><?php echo count( $wc_products ); ?> Sản phẩm</div>
+				</div>
 			</div>
 		</div>
 
-		<form method="post" action="">
+		<form method="post" action="" id="phonex-flashsale-form">
 			<?php wp_nonce_field( 'phonex_flashsale_save_action', 'phonex_flashsale_save_nonce' ); ?>
 
 			<!-- SECTION 1: CẤU HÌNH CHUNG & ĐỒNG HỒ COUNTDOWN -->
@@ -305,7 +330,7 @@ function phonex_flashsale_render_admin_page() {
 							<td>
 								<label style="display: inline-flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer;">
 									<input type="checkbox" id="enabled" name="enabled" value="1" <?php checked( $settings['enabled'], '1' ); ?>>
-									<span>Bật khối "FLASH SALE GIỜ VÀNG"</span>
+									<span>Bật khối "FLASH SALE GIỜ VÀNG" trên trang chủ</span>
 								</label>
 							</td>
 						</tr>
@@ -395,67 +420,128 @@ function phonex_flashsale_render_admin_page() {
 
 			<!-- SECTION 3: QUẢN LÝ 8 SẢN PHẨM FLASH SALE (2 HÀNG X 4 CỘT) -->
 			<div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;">
-				<div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 2px solid #f3f4f6; margin-bottom: 16px;">
-					<h2 style="font-size: 18px; font-weight: 700; color: #111827; margin: 0; display: flex; align-items: center; gap: 8px;">
-						<span class="dashicons dashicons-products" style="color: #ba0d1a;"></span>
-						3. Danh Sách 8 Sản Phẩm Flash Sale (2 Dòng x 4 Cột)
-					</h2>
-					<span style="background: #fee2e2; color: #ba0d1a; font-weight: 700; font-size: 12px; padding: 4px 12px; border-radius: 9999px;">
-						Đầy đủ 2 hàng trên trang chủ
-					</span>
+				<div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 2px solid #f3f4f6; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+					<div>
+						<h2 style="font-size: 18px; font-weight: 700; color: #111827; margin: 0; display: flex; align-items: center; gap: 8px;">
+							<span class="dashicons dashicons-products" style="color: #ba0d1a;"></span>
+							3. Danh Sách 8 Sản Phẩm Flash Sale (2 Dòng x 4 Cột)
+						</h2>
+						<p style="color: #64748b; font-size: 13px; margin: 4px 0 0 0;">
+							Bạn có thể <strong>chọn sản phẩm từ kho WooCommerce</strong> để tự động điền Tên, Giá, Link mua hàng; đồng thời <strong>tùy biến giá sốc &amp; thanh tiến trình</strong> theo ý bạn.
+						</p>
+					</div>
+
+					<div style="display: flex; gap: 8px; flex-wrap: wrap;">
+						<button type="button" id="btn-autofill-wc" class="button" style="background: #0284c7; color: #fff; border-color: #0369a1; font-weight: 600; display: flex; align-items: center; gap: 5px;">
+							<span class="dashicons dashicons-update-alt" style="font-size: 16px; width: 16px; height: 16px;"></span>
+							⚡ Tự Động Điền 8 Sản Phẩm Từ WooCommerce
+						</button>
+						<span style="background: #fee2e2; color: #ba0d1a; font-weight: 700; font-size: 12px; padding: 6px 14px; border-radius: 9999px; display: inline-flex; align-items: center;">
+							Đầy đủ 2 hàng trên trang chủ
+						</span>
+					</div>
 				</div>
 
-				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px;">
 					<?php foreach ( $settings['products'] as $idx => $prod ) : ?>
-						<?php $row_num = ( $idx < 4 ) ? 1 : 2; ?>
-						<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: <?php echo $row_num === 2 ? '#fff9f9' : '#ffffff'; ?>; box-shadow: 0 1px 4px rgba(0,0,0,0.04);">
-							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+						<?php 
+							$row_num = ( $idx < 4 ) ? 1 : 2; 
+							$saved_pid = intval( $prod['product_id'] ?? 0 );
+						?>
+						<div class="phonex-prod-card" data-idx="<?php echo esc_attr( $idx ); ?>" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; background: <?php echo $row_num === 2 ? '#fff9f9' : '#ffffff'; ?>; box-shadow: 0 2px 6px rgba(0,0,0,0.04); transition: border-color 0.2s;">
+							<input type="hidden" name="products[<?php echo esc_attr( $idx ); ?>][product_id]" class="field-product-id" value="<?php echo esc_attr( $saved_pid ); ?>">
+
+							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
 								<span style="font-weight: 800; font-size: 13px; color: <?php echo $row_num === 2 ? '#ba0d1a' : '#0f172a'; ?>;">
 									#<?php echo esc_html( $idx + 1 ); ?> - Hàng <?php echo esc_html( $row_num ); ?> (Cột <?php echo esc_html( ( $idx % 4 ) + 1 ); ?>)
 								</span>
-								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][badge]" value="<?php echo esc_attr( $prod['badge'] ); ?>" style="width: 70px; text-align: center; font-weight: 700; font-size: 11px; background: #fee2e2; color: #ba0d1a; border: none; border-radius: 4px; padding: 2px 4px;" placeholder="-15%">
+								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][badge]" class="field-badge" value="<?php echo esc_attr( $prod['badge'] ); ?>" style="width: 75px; text-align: center; font-weight: 700; font-size: 12px; background: #fee2e2; color: #ba0d1a; border: 1px solid #fecaca; border-radius: 6px; padding: 2px 6px;" placeholder="-15%">
 							</div>
 
-							<div style="margin-bottom: 6px;">
-								<label style="font-size: 11px; color: #64748b; font-weight: 600;">Tên sản phẩm:</label>
-								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][name]" value="<?php echo esc_attr( $prod['name'] ); ?>" style="width: 100%; font-weight: 600; font-size: 13px;">
+							<!-- WOOCOMMERCE PRODUCT PICKER DROPDOWN -->
+							<div style="background: #f1f5f9; padding: 8px 10px; border-radius: 8px; margin-bottom: 12px; border: 1.5px dashed #cbd5e1;">
+								<label style="font-size: 11px; font-weight: 700; color: #0369a1; display: flex; align-items: center; gap: 4px; margin-bottom: 4px;">
+									<span class="dashicons dashicons-cart" style="font-size: 14px; width: 14px; height: 14px;"></span>
+									Chọn nhanh từ Sản Phẩm WooCommerce:
+								</label>
+								<select class="wc-product-picker" data-idx="<?php echo esc_attr( $idx ); ?>" style="width: 100%; font-size: 12px; height: 32px; border-color: #cbd5e1;">
+									<option value="">-- Tự nhập thủ công (hoặc chọn để tự điền) --</option>
+									<?php foreach ( $wc_products as $wcp ) : 
+										$wcp_id = $wcp->get_id();
+										$wcp_name = $wcp->get_name();
+										$wcp_reg_price = $wcp->get_regular_price();
+										$wcp_sale_price = $wcp->get_sale_price();
+										$wcp_cur_price = $wcp->get_price();
+										$wcp_img = wp_get_attachment_image_url( $wcp->get_image_id(), 'full' );
+										$wcp_url = $wcp->get_permalink();
+										$wcp_badge = '';
+										if ( ! empty( $wcp_reg_price ) && ! empty( $wcp_sale_price ) && floatval( $wcp_reg_price ) > 0 ) {
+											$pct = round( ( ( floatval( $wcp_reg_price ) - floatval( $wcp_sale_price ) ) / floatval( $wcp_reg_price ) ) * 100 );
+											if ( $pct > 0 ) {
+												$wcp_badge = '-' . $pct . '%';
+											}
+										}
+									?>
+										<option value="<?php echo esc_attr( $wcp_id ); ?>"
+											data-name="<?php echo esc_attr( $wcp_name ); ?>"
+											data-price-orig="<?php echo esc_attr( ! empty( $wcp_reg_price ) ? number_format( $wcp_reg_price, 0, ',', '.' ) . '₫' : '' ); ?>"
+											data-price-sale="<?php echo esc_attr( ! empty( $wcp_sale_price ) ? number_format( $wcp_sale_price, 0, ',', '.' ) . '₫' : ( ! empty( $wcp_cur_price ) ? number_format( $wcp_cur_price, 0, ',', '.' ) . '₫' : '' ) ); ?>"
+											data-badge="<?php echo esc_attr( $wcp_badge ); ?>"
+											data-img="<?php echo esc_attr( $wcp_img ); ?>"
+											data-url="<?php echo esc_attr( $wcp_url ); ?>"
+											<?php selected( $saved_pid, $wcp_id ); ?>
+										>
+											#<?php echo esc_html( $wcp_id ); ?> - <?php echo esc_html( $wcp_name ); ?> (<?php echo esc_html( number_format( $wcp_cur_price, 0, ',', '.' ) . '₫' ); ?>)
+										</option>
+									<?php endforeach; ?>
+								</select>
 							</div>
 
-							<div style="margin-bottom: 6px;">
-								<label style="font-size: 11px; color: #64748b; font-weight: 600;">Thông số (Dung lượng | Chip):</label>
-								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][specs]" value="<?php echo esc_attr( $prod['specs'] ); ?>" style="width: 100%; font-size: 12px;">
+							<div style="margin-bottom: 8px;">
+								<label style="font-size: 11px; color: #475569; font-weight: 600;">Tên sản phẩm:</label>
+								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][name]" class="field-name" value="<?php echo esc_attr( $prod['name'] ); ?>" style="width: 100%; font-weight: 600; font-size: 13px;">
 							</div>
 
-							<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+							<div style="margin-bottom: 8px;">
+								<label style="font-size: 11px; color: #475569; font-weight: 600;">Thông số (Dung lượng | Chip):</label>
+								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][specs]" class="field-specs" value="<?php echo esc_attr( $prod['specs'] ); ?>" style="width: 100%; font-size: 12px;">
+							</div>
+
+							<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
 								<div>
-									<label style="font-size: 11px; color: #ba0d1a; font-weight: 700;">Giá Sale:</label>
-									<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][price_sale]" value="<?php echo esc_attr( $prod['price_sale'] ); ?>" style="width: 100%; font-weight: 700; color: #ba0d1a;">
+									<label style="font-size: 11px; color: #ba0d1a; font-weight: 700;">Giá Flash Sale:</label>
+									<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][price_sale]" class="field-price-sale" value="<?php echo esc_attr( $prod['price_sale'] ); ?>" style="width: 100%; font-weight: 700; color: #ba0d1a;">
 								</div>
 								<div>
 									<label style="font-size: 11px; color: #64748b; font-weight: 600;">Giá gốc:</label>
-									<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][price_orig]" value="<?php echo esc_attr( $prod['price_orig'] ); ?>" style="width: 100%; color: #64748b;">
+									<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][price_orig]" class="field-price-orig" value="<?php echo esc_attr( $prod['price_orig'] ); ?>" style="width: 100%; color: #64748b;">
 								</div>
 							</div>
 
-							<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+							<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px;">
 								<div>
-									<label style="font-size: 11px; color: #64748b; font-weight: 600;">Đã bán:</label>
-									<input type="number" name="products[<?php echo esc_attr( $idx ); ?>][sold]" value="<?php echo esc_attr( $prod['sold'] ); ?>" style="width: 100%;">
+									<label style="font-size: 11px; color: #475569; font-weight: 600;">Đã bán:</label>
+									<input type="number" name="products[<?php echo esc_attr( $idx ); ?>][sold]" class="field-sold" value="<?php echo esc_attr( $prod['sold'] ); ?>" style="width: 100%;">
 								</div>
 								<div>
-									<label style="font-size: 11px; color: #64748b; font-weight: 600;">Tổng suất:</label>
-									<input type="number" name="products[<?php echo esc_attr( $idx ); ?>][total_stock]" value="<?php echo esc_attr( $prod['total_stock'] ); ?>" style="width: 100%;">
+									<label style="font-size: 11px; color: #475569; font-weight: 600;">Tổng suất:</label>
+									<input type="number" name="products[<?php echo esc_attr( $idx ); ?>][total_stock]" class="field-total-stock" value="<?php echo esc_attr( $prod['total_stock'] ); ?>" style="width: 100%;">
 								</div>
 							</div>
 
-							<div style="margin-bottom: 6px;">
-								<label style="font-size: 11px; color: #64748b; font-weight: 600;">Trạng thái tồn kho:</label>
-								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][stock_text]" value="<?php echo esc_attr( $prod['stock_text'] ); ?>" style="width: 100%; font-size: 12px;" placeholder="Gần cháy hàng">
+							<div style="margin-bottom: 8px;">
+								<label style="font-size: 11px; color: #475569; font-weight: 600;">Trạng thái tồn kho:</label>
+								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][stock_text]" class="field-stock-text" value="<?php echo esc_attr( $prod['stock_text'] ); ?>" style="width: 100%; font-size: 12px;" placeholder="Gần cháy hàng">
+							</div>
+
+							<div style="margin-bottom: 8px;">
+								<label style="font-size: 11px; color: #475569; font-weight: 600;">Link ảnh URL:</label>
+								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][image]" class="field-image" value="<?php echo esc_attr( $prod['image'] ); ?>" style="width: 100%; font-size: 11px;">
 							</div>
 
 							<div>
-								<label style="font-size: 11px; color: #64748b; font-weight: 600;">Link ảnh URL:</label>
-								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][image]" value="<?php echo esc_attr( $prod['image'] ); ?>" style="width: 100%; font-size: 11px;">
+								<label style="font-size: 11px; color: #475569; font-weight: 600;">Link mua hàng / chi tiết:</label>
+								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][link]" class="field-link" value="<?php echo esc_attr( $prod['link'] ); ?>" style="width: 100%; font-size: 11px;">
 							</div>
 						</div>
 					<?php endforeach; ?>
@@ -463,16 +549,88 @@ function phonex_flashsale_render_admin_page() {
 			</div>
 
 			<!-- SUBMIT BUTTONS -->
-			<div style="display: flex; align-items: center; gap: 15px; margin-top: 20px;">
-				<button type="submit" class="button button-primary" style="background: #ba0d1a; border-color: #9b0b15; font-size: 15px; font-weight: 700; padding: 6px 28px; height: auto; box-shadow: 0 4px 12px rgba(186, 13, 26, 0.3);">
+			<div style="display: flex; align-items: center; gap: 15px; margin-top: 25px; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;">
+				<button type="submit" class="button button-primary" style="background: #ba0d1a; border-color: #9b0b15; font-size: 15px; font-weight: 700; padding: 8px 32px; height: auto; box-shadow: 0 4px 12px rgba(186, 13, 26, 0.3);">
 					Lưu Thay Đổi Flash Sale
 				</button>
 
 				<button type="submit" name="phonex_reset_default" value="1" class="button button-secondary" onclick="return confirm('Bạn có chắc chắn muốn khôi phục về 8 sản phẩm và 5 khung giờ mặc định ban đầu không?');">
-					Khôi Phục Mặc Định (8 Sản Phẩm Flagship)
+					Khôi Phục 8 Flagship Mẫu PhoneX
 				</button>
 			</div>
 		</form>
 	</div>
+
+	<!-- CLIENT-SIDE SCRIPT FOR SELECTION & AUTO-FILL -->
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		// When individual picker changes
+		document.querySelectorAll('.wc-product-picker').forEach(function(select) {
+			select.addEventListener('change', function() {
+				const opt = this.options[this.selectedIndex];
+				const card = this.closest('.phonex-prod-card');
+				if (!card) return;
+
+				if (opt && opt.value) {
+					const name = opt.dataset.name || '';
+					const priceOrig = opt.dataset.priceOrig || '';
+					const priceSale = opt.dataset.priceSale || '';
+					const badge = opt.dataset.badge || '';
+					const img = opt.dataset.img || '';
+					const url = opt.dataset.url || '';
+
+					const fId = card.querySelector('.field-product-id');
+					const fName = card.querySelector('.field-name');
+					const fPriceOrig = card.querySelector('.field-price-orig');
+					const fPriceSale = card.querySelector('.field-price-sale');
+					const fBadge = card.querySelector('.field-badge');
+					const fLink = card.querySelector('.field-link');
+					const fImg = card.querySelector('.field-image');
+
+					if (fId) fId.value = opt.value;
+					if (fName && name) fName.value = name;
+					if (fPriceOrig && priceOrig) fPriceOrig.value = priceOrig;
+					if (fPriceSale && priceSale) fPriceSale.value = priceSale;
+					if (fBadge && badge) fBadge.value = badge;
+					if (fLink && url) fLink.value = url;
+					if (fImg && img) fImg.value = img;
+
+					// Visual highlight
+					card.style.borderColor = '#0284c7';
+					setTimeout(() => { card.style.borderColor = '#e2e8f0'; }, 1000);
+				}
+			});
+		});
+
+		// 1-Click Master Autofill from WooCommerce
+		const btnAutofill = document.getElementById('btn-autofill-wc');
+		if (btnAutofill) {
+			btnAutofill.addEventListener('click', function() {
+				const cards = document.querySelectorAll('.phonex-prod-card');
+				const firstPicker = document.querySelector('.wc-product-picker');
+				if (!firstPicker) return;
+
+				const availableOpts = Array.from(firstPicker.options).filter(o => o.value !== '');
+				if (availableOpts.length === 0) {
+					alert('Chưa tìm thấy sản phẩm nào trong WooCommerce để tự động điền!');
+					return;
+				}
+
+				cards.forEach(function(card, idx) {
+					if (idx < availableOpts.length) {
+						const opt = availableOpts[idx];
+						const picker = card.querySelector('.wc-product-picker');
+						if (picker) {
+							picker.value = opt.value;
+							picker.dispatchEvent(new Event('change'));
+						}
+					}
+				});
+
+				alert('Đã tự động tải thành công các sản phẩm từ kho WooCommerce vào 8 ô sản phẩm!');
+			});
+		}
+	});
+	</script>
 	<?php
 }
