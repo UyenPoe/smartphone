@@ -68,6 +68,73 @@ $fs_slots = $flashsale_settings['slots'] ?? array(
 );
 
 $fs_products = $flashsale_settings['products'] ?? array();
+
+// Hybrid Promotion Products (Pinned IDs + WooCommerce On-Sale Auto-fill + Fallback)
+$phone_pinned = $promo_settings['sec_phone_pinned'] ?? '16, 17, 18, 19, 20, 21';
+$apple_pinned = $promo_settings['sec_apple_pinned'] ?? '16, 27, 23, 26, 22';
+$tablet_pinned = $promo_settings['sec_tablet_pinned'] ?? '27';
+$acc_pinned = $promo_settings['sec_accessory_pinned'] ?? '24, 25, 22, 23';
+$watch_pinned = $promo_settings['sec_watch_pinned'] ?? '26';
+
+$phone_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_promotion_products( array(
+	'pinned_ids'     => $phone_pinned,
+	'category_slugs' => array( 'apple', 'samsung', 'xiaomi', 'oppo', 'vivo' ),
+	'limit'          => 12,
+) ) : array();
+
+$apple_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_promotion_products( array(
+	'pinned_ids'     => $apple_pinned,
+	'category_slugs' => array( 'apple', 'phu-kien-apple' ),
+	'limit'          => 6,
+) ) : array();
+
+$tablet_fallbacks = array(
+	array( 'name' => 'iPad 10.9 inch Gen 10 WiFi 64GB', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/op-lung-may-tinh-bang.png', 'price_sale' => '8.990.000₫', 'price_orig' => '10.990.000₫', 'badge' => '-18%', 'specs' => '10.9 inch • A14 Bionic', 'rating' => '4.8', 'reviews' => '540 đánh giá' ),
+	array( 'name' => 'Samsung Galaxy Tab S9 FE WiFi', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/but-tablet.png', 'price_sale' => '7.990.000₫', 'price_orig' => '9.990.000₫', 'badge' => '-20%', 'specs' => 'Bút S-Pen • 128GB', 'rating' => '4.7', 'reviews' => '320 đánh giá' ),
+	array( 'name' => 'Xiaomi Pad 6 8GB/128GB', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/op-lung-may-tinh-bang.png', 'price_sale' => '6.990.000₫', 'price_orig' => '8.990.000₫', 'badge' => '-25%', 'specs' => '144Hz • Snapdragon 870', 'rating' => '4.9', 'reviews' => '410 đánh giá' ),
+	array( 'name' => 'Laptop Asus Vivobook 15 OLED i5', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/balo-tui-chong-soc.png', 'price_sale' => '16.490.000₫', 'price_orig' => '19.490.000₫', 'badge' => '-15%', 'specs' => 'Core i5 • OLED FHD', 'rating' => '4.8', 'reviews' => '190 đánh giá' ),
+	array( 'name' => 'Lenovo IdeaPad Slim 3 i5 12450H', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/balo-tui-chong-soc.png', 'price_sale' => '13.990.000₫', 'price_orig' => '15.990.000₫', 'badge' => '-12%', 'specs' => '16GB RAM • 512GB', 'rating' => '4.7', 'reviews' => '210 đánh giá' ),
+	array( 'name' => 'Màn hình Asus VY249HGR 24 inch FHD', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/gia-treo-man-hinh.png', 'price_sale' => '2.390.000₫', 'price_orig' => '3.190.000₫', 'badge' => '-22%', 'specs' => '120Hz • 1ms IPS', 'rating' => '4.9', 'reviews' => '650 đánh giá' ),
+);
+
+$tablet_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_promotion_products( array(
+	'pinned_ids'     => $tablet_pinned,
+	'category_slugs' => array( 'tablet', 'laptop', 'phu-kien-laptop-pc', 'but-tablet' ),
+	'limit'          => 6,
+	'fallbacks'      => $tablet_fallbacks,
+) ) : $tablet_fallbacks;
+
+$acc_fallbacks = array(
+	array( 'name' => 'Pin Dự Phòng Anker MagGo Qi2 10.000mAh', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/sac-du-phong.png', 'price_sale' => '990.000₫', 'price_orig' => '1.290.000₫', 'badge' => '-25%', 'specs' => 'Qi2 • 15W', 'rating' => '4.9', 'reviews' => '720 đánh giá' ),
+	array( 'name' => 'Kính Cường Lực Mipow Kingbull HD IP16', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/mieng-dan.png', 'price_sale' => '319.000₫', 'price_orig' => '420.000₫', 'badge' => '-24%', 'specs' => 'Chống trộm 9H', 'rating' => '4.8', 'reviews' => '1.400 đánh giá' ),
+	array( 'name' => 'Loa Bluetooth JBL Clip 4 Bass Cực Căng', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/loa.png', 'price_sale' => '1.090.000₫', 'price_orig' => '1.690.000₫', 'badge' => '-35%', 'specs' => 'Chống nước IP67', 'rating' => '4.9', 'reviews' => '850 đánh giá' ),
+	array( 'name' => 'Cáp Type-C to Type-C Baseus 100W 1.2m', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/sac-cap.png', 'price_sale' => '149.000₫', 'price_orig' => '250.000₫', 'badge' => '-40%', 'specs' => 'PD 100W • Bọc Dù', 'rating' => '4.7', 'reviews' => '3.100 đánh giá' ),
+	array( 'name' => 'Củ Sạc Nhanh TORRAS ICENANO 20W Kèm Cáp', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/sac-cap.png', 'price_sale' => '390.000₫', 'price_orig' => '550.000₫', 'badge' => '-30%', 'specs' => 'ICENANO Siêu Nhỏ', 'rating' => '4.8', 'reviews' => '620 đánh giá' ),
+	array( 'name' => 'Ốp Lưng MagSafe Apple iPhone 15 Pro', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/op-lung-dien-thoai.png', 'price_sale' => '1.090.000₫', 'price_orig' => '1.490.000₫', 'badge' => '-25%', 'specs' => 'Chính Hãng Apple', 'rating' => '4.9', 'reviews' => '910 đánh giá' ),
+);
+
+$acc_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_promotion_products( array(
+	'pinned_ids'     => $acc_pinned,
+	'category_slugs' => array( 'phu-kien', 'sac-cap', 'pin-du-phong', 'tai-nghe-loa', 'kinh-cuong-luc' ),
+	'limit'          => 6,
+	'fallbacks'      => $acc_fallbacks,
+) ) : $acc_fallbacks;
+
+$watch_fallbacks = array(
+	array( 'name' => 'Apple Watch Series 10 Nhôm GPS 46mm', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/kinh-thong-minh.png', 'price_sale' => '9.990.000₫', 'price_orig' => '11.990.000₫', 'badge' => '-17%', 'specs' => 'GPS 46mm • OLED', 'rating' => '4.9', 'reviews' => '380 đánh giá' ),
+	array( 'name' => 'Garmin Fenix 8 Sapphire 51mm Titanium', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/day-deo-dien-thoai.png', 'price_sale' => '28.990.000₫', 'price_orig' => '31.990.000₫', 'badge' => '-10%', 'specs' => 'Titanium • Sapphire', 'rating' => '4.9', 'reviews' => '150 đánh giá' ),
+	array( 'name' => 'Samsung Galaxy Watch 7 40mm Bluetooth', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/kinh-thong-minh.png', 'price_sale' => '6.190.000₫', 'price_orig' => '7.990.000₫', 'badge' => '-22%', 'specs' => 'Galaxy AI • 40mm', 'rating' => '4.8', 'reviews' => '290 đánh giá' ),
+	array( 'name' => 'Huawei Watch GT 5 Pro 46mm Dây Cao Su', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/kinh-thong-minh.png', 'price_sale' => '5.990.000₫', 'price_orig' => '7.490.000₫', 'badge' => '-20%', 'specs' => 'Pin 14 Ngày • Titanium', 'rating' => '4.8', 'reviews' => '180 đánh giá' ),
+	array( 'name' => 'Xiaomi Watch S3 Viền Khung Có Thể Đổi', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/kinh-thong-minh.png', 'price_sale' => '2.690.000₫', 'price_orig' => '3.490.000₫', 'badge' => '-23%', 'specs' => 'HyperOS • AMOLED 1.43"', 'rating' => '4.7', 'reviews' => '240 đánh giá' ),
+	array( 'name' => 'Vòng Đeo Tay Xiaomi Smart Band 9 Active', 'link' => home_url( '/shop/' ), 'image' => get_template_directory_uri() . '/assets/images/categories/accessories/day-deo-dien-thoai.png', 'price_sale' => '590.000₫', 'price_orig' => '790.000₫', 'badge' => '-25%', 'specs' => 'Pin 18 Ngày • 5ATM', 'rating' => '4.9', 'reviews' => '890 đánh giá' ),
+);
+
+$watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_promotion_products( array(
+	'pinned_ids'     => $watch_pinned,
+	'category_slugs' => array( 'smartwatch', 'dong-ho' ),
+	'limit'          => 6,
+	'fallbacks'      => $watch_fallbacks,
+) ) : $watch_fallbacks;
 ?>
 
 <!-- PhoneX Mega Campaign Flash Sale Page (Designed after thegioididong.com/flashsale with PhoneX Brand Red & White) -->
@@ -435,189 +502,49 @@ $fs_products = $flashsale_settings['products'] ?? array();
 
       <!-- Product Grid (6 columns desktop) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4" id="phone-grid">
-        
-        <!-- Phone 1 -->
-        <div class="prod-filter-item bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-primary relative hover:-translate-y-1 duration-200" data-brand="iphone">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-14%</span>
-            <span class="absolute bottom-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-rose-50 text-red-700 border border-rose-200 text-[9px] font-bold">Trả góp 0%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPhone 16 Pro Max 256GB" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">A18 Pro • 256GB</span>
+        <?php foreach ( $phone_prods as $p ) : ?>
+          <div class="prod-filter-item bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-primary relative hover:-translate-y-1 duration-200" data-brand="<?php echo esc_attr( $p['brand'] ?? 'all' ); ?>">
+            <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
+              <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">
+                <?php echo esc_html( $p['badge'] ?? '-15%' ); ?>
+              </span>
+              <?php if ( ! empty( $p['sub_badge'] ) ) : ?>
+                <span class="absolute bottom-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-rose-50 text-red-700 border border-rose-200 text-[9px] font-bold">
+                  <?php echo esc_html( $p['sub_badge'] ); ?>
+                </span>
+              <?php endif; ?>
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="<?php echo esc_attr( $p['name'] ); ?>" src="<?php echo esc_url( $p['image'] ); ?>" loading="lazy"/>
+              </a>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-1 mb-1">
+                  <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium truncate max-w-full">
+                    <?php echo esc_html( $p['specs'] ?? 'Chính hãng VN/A' ); ?>
+                  </span>
+                </div>
+                <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors" title="<?php echo esc_attr( $p['name'] ); ?>">
+                  <a href="<?php echo esc_url( $p['link'] ); ?>" class="hover:text-primary transition-colors">
+                    <?php echo esc_html( $p['name'] ); ?>
+                  </a>
+                </h3>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                iPhone 16 Pro Max 256GB VN/A
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-primary leading-tight">33.490.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">34.990.000₫</div>
-            </div>
-            <div class="mt-2 text-[10px] text-gray-500 bg-gray-50 p-1.5 rounded flex items-center gap-1">
-              <span class="material-symbols-outlined text-[13px] text-amber-500">star</span>
-              <span class="font-bold text-gray-700">4.9</span>
-              <span>(1.280 đánh giá)</span>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Phone 2 -->
-        <div class="prod-filter-item bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-primary relative hover:-translate-y-1 duration-200" data-brand="samsung">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-18%</span>
-            <span class="absolute bottom-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-rose-50 text-red-700 border border-rose-200 text-[9px] font-bold">Thu cũ +3Tr</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Galaxy S25 Ultra" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ8cuMHSs16BGSbqL3osP6m_454IdcEnFrET6PX-zB9G7FJ3N9j6g5f-O5mlEKAnKNCGzpjZHaPqDHk5eQ7aAUYTQSpL2T2BXsRZVBRIsmzpkd39YqtnzfYdn1xj2QRF58FGv3hauWnmQwJYu9fthOr04mXeo6X_TDY6z2u2dYJyX4gKVk_GIImuiFHFOgKWKAzCYuFW7dx2G-84U7j4r5HUvh1xOZ714bcFju9liesR5DmsXco6mn" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">Snapdragon 8 Elite</span>
+              <div class="mt-2">
+                <div class="text-[16px] sm:text-[17px] font-black text-primary leading-tight"><?php echo esc_html( $p['price_sale'] ); ?></div>
+                <div class="text-[11px] sm:text-[12px] text-secondary line-through"><?php echo esc_html( $p['price_orig'] ); ?></div>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Samsung Galaxy S25 Ultra 512GB SSVN
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-primary leading-tight">34.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">42.600.000₫</div>
-            </div>
-            <div class="mt-2 text-[10px] text-gray-500 bg-gray-50 p-1.5 rounded flex items-center gap-1">
-              <span class="material-symbols-outlined text-[13px] text-amber-500">star</span>
-              <span class="font-bold text-gray-700">4.8</span>
-              <span>(890 đánh giá)</span>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Phone 3 -->
-        <div class="prod-filter-item bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-primary relative hover:-translate-y-1 duration-200" data-brand="iphone">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-16%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPhone 16 128GB" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPT8j9gPDdQw803_EjHE9CrxcBd9ByYWch8rA3iK2EBwUlD-AYBurDY51Zuw1-Qsp9Vt7q1Pd3TVFYZSrTi9fCyrBWkDC5RcYBn8JZgRzAewL2GfxpWRIqXsBv_xwE0rndJ5hkpIutccJGL_JBkwS1NztjDieoZb_RoQt57EclFFLXTYI0bltlq5jZN_GOmx2UWCj1fqYtciRolzYGtW8p2r7rv-v-M7usKZhT8cNXKavd4vLaz8TF" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">A18 • 128GB</span>
+              <div class="mt-2 text-[10px] text-gray-500 bg-gray-50 p-1.5 rounded flex items-center gap-1">
+                <span class="material-symbols-outlined text-[13px] text-amber-500">star</span>
+                <span class="font-bold text-gray-700"><?php echo esc_html( $p['rating'] ?? '4.9' ); ?></span>
+                <span>(<?php echo esc_html( $p['reviews'] ?? '180 đánh giá' ); ?>)</span>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                iPhone 16 128GB VN/A
-              </h3>
             </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-primary leading-tight">21.890.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">22.990.000₫</div>
-            </div>
-            <div class="mt-2 text-[10px] text-gray-500 bg-gray-50 p-1.5 rounded flex items-center gap-1">
-              <span class="material-symbols-outlined text-[13px] text-amber-500">star</span>
-              <span class="font-bold text-gray-700">4.9</span>
-              <span>(640 đánh giá)</span>
-            </div>
+            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+              Mua Ngay
+            </a>
           </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Phone 4 -->
-        <div class="prod-filter-item bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-primary relative hover:-translate-y-1 duration-200" data-brand="xiaomi">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-22%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Xiaomi 15 Pro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">Leica Optics • 256GB</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Xiaomi 15 Pro 5G Leica Edition
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-primary leading-tight">15.490.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">19.990.000₫</div>
-            </div>
-            <div class="mt-2 text-[10px] text-gray-500 bg-gray-50 p-1.5 rounded flex items-center gap-1">
-              <span class="material-symbols-outlined text-[13px] text-amber-500">star</span>
-              <span class="font-bold text-gray-700">4.7</span>
-              <span>(412 đánh giá)</span>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Phone 5 -->
-        <div class="prod-filter-item bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-primary relative hover:-translate-y-1 duration-200" data-brand="oppo">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-20%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="OPPO Find X8 Pro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu_9AXg1F-hNXVDThacap6KkD1w0RouLY7G5_x1hInqKGQ7k1LBUyXtFtqS2Wzb4XNJDUvoETcEZ1bV0hQpFwFump0hX5v0sX9yBwzUfavEMyguH2xelmCSR1blBQv942EFdLpC79AzVGFQG2i7FV_QPGw_tw7TDgobOrNWqS53JP8tRMgtEifRLNz_CflR9NIygo4ggcNHqNOsmT9_dMdSBAcRvAnODB7V0SL9u7hIBjKYH5n1iBT" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">Hasselblad • 512GB</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                OPPO Find X8 Pro 512GB Hasselblad
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-primary leading-tight">23.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">29.990.000₫</div>
-            </div>
-            <div class="mt-2 text-[10px] text-gray-500 bg-gray-50 p-1.5 rounded flex items-center gap-1">
-              <span class="material-symbols-outlined text-[13px] text-amber-500">star</span>
-              <span class="font-bold text-gray-700">4.8</span>
-              <span>(310 đánh giá)</span>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Phone 6 -->
-        <div class="prod-filter-item bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-primary relative hover:-translate-y-1 duration-200" data-brand="vivo">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-25%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="vivo X200 Pro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRBzg3aq6sxZduVxZ6TuiFGHjC7CrATsVyVLV2sk8mjnmSygK6XWcgic3TYrHutR2Eb38VNmKw9T59VYW7vAQCmTRGiT7tJtgKRsjs9WJT-xaH2S_FOwMzaGGzNQczvNgdo-wbIn-IwLheyG9Rb3CzoVz915kikp3H8Nx-tSF-ET7RmXgv3H67L7bAdw0Q9eGwRY9XfLmP-TlJWChtjO9riOWRRuyKRBMEUZzYQ1sgrG-QZOpp-4Ey" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">ZEISS APO • 256GB</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                vivo X200 Pro 256GB ZEISS APO
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-primary leading-tight">19.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">23.990.000₫</div>
-            </div>
-            <div class="mt-2 text-[10px] text-gray-500 bg-gray-50 p-1.5 rounded flex items-center gap-1">
-              <span class="material-symbols-outlined text-[13px] text-amber-500">star</span>
-              <span class="font-bold text-gray-700">4.9</span>
-              <span>(250 đánh giá)</span>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
+        <?php endforeach; ?>
       </div>
     </section>
 
@@ -641,157 +568,39 @@ $fs_products = $flashsale_settings['products'] ?? array();
 
       <!-- Apple Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
-        
-        <!-- Apple 1: Mac mini M4 -->
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-gray-900 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-gray-900 text-white text-[10px] font-extrabold shadow-xs">M4 CHIP</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Mac mini M4" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/hub-cap-chuyen-doi.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">16GB | 256GB</span>
+        <?php foreach ( $apple_prods as $p ) : ?>
+          <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-gray-900 relative hover:-translate-y-1 duration-200">
+            <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
+              <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-gray-900 text-white text-[10px] font-extrabold shadow-xs">
+                <?php echo esc_html( $p['badge'] ?? 'APPLE' ); ?>
+              </span>
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="<?php echo esc_attr( $p['name'] ); ?>" src="<?php echo esc_url( $p['image'] ); ?>" loading="lazy"/>
+              </a>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-1 mb-1">
+                  <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium truncate max-w-full">
+                    <?php echo esc_html( $p['specs'] ?? 'Chính Hãng VN/A' ); ?>
+                  </span>
+                </div>
+                <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors" title="<?php echo esc_attr( $p['name'] ); ?>">
+                  <a href="<?php echo esc_url( $p['link'] ); ?>" class="hover:text-primary transition-colors">
+                    <?php echo esc_html( $p['name'] ); ?>
+                  </a>
+                </h3>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Mac mini M4 16GB/256GB Chính Hãng
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-gray-900 leading-tight">14.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">15.990.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Apple 2: iPad Air M2 -->
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-gray-900 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-15%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPad Air 11 M2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">Apple M2 • 128GB</span>
+              <div class="mt-2">
+                <div class="text-[16px] sm:text-[17px] font-black text-gray-900 leading-tight"><?php echo esc_html( $p['price_sale'] ); ?></div>
+                <div class="text-[11px] sm:text-[12px] text-secondary line-through"><?php echo esc_html( $p['price_orig'] ); ?></div>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                iPad Air 11 inch M2 WiFi 128GB
-              </h3>
             </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-gray-900 leading-tight">14.490.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">16.990.000₫</div>
-            </div>
+            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+              Mua Ngay
+            </a>
           </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Apple 3: AirPods Pro 2 Type-C -->
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-gray-900 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-30%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="AirPods Pro 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJyznqsxffSwTtLf_Zq39mGYtP6-N2l1DW7UdBg4VHdO7TB7TP1Emx96FLeopoInASb14-MUqPS_MVc7IBTm_htX4I9jv-o1HtFHiro4wY1W7k7OLbzTxK46_0bYmADaWguBvx-U_xMCQwFM1MMRaKY8kkOfa63ICmdfXEFRffFJ07gQOtBLu1tHSnjRgA7vBSx5HN89ilJQoCjC5_RfyrGfgBXhBU-3mnFbC7xUyCO6hubG4c29n5" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">Chống ồn 2X • Chip H2</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Tai Nghe Apple AirPods Pro 2 Type-C
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-gray-900 leading-tight">4.890.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">5.690.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Apple 4: Apple Watch Series 10 -->
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-gray-900 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-17%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Apple Watch Series 10" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/kinh-thong-minh.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">GPS 46mm • OLED</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Apple Watch Series 10 Nhôm GPS 46mm
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-gray-900 leading-tight">9.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">11.990.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Apple 5: Củ sạc 20W -->
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-gray-900 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-24%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Củ sạc Apple 20W" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/sac-cap.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">PD 20W • Type-C</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Củ Sạc Nhanh Apple 20W Type-C VN/A
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-gray-900 leading-tight">449.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">590.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <!-- Apple 6: MacBook Air M3 -->
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-gray-900 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-10%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="MacBook Air M3" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/phu-phim-laptop.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">Apple M3 • 16GB</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                MacBook Air 13 inch M3 16GB/256GB
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-gray-900 leading-tight">27.490.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">29.990.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
+        <?php endforeach; ?>
       </div>
     </section>
 
@@ -811,151 +620,39 @@ $fs_products = $flashsale_settings['products'] ?? array();
 
       <!-- Tablet Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
-        
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-blue-600 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-18%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPad 10.9 Gen 10" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/op-lung-may-tinh-bang.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">10.9 inch • A14 Bionic</span>
+        <?php foreach ( $tablet_prods as $p ) : ?>
+          <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-blue-600 relative hover:-translate-y-1 duration-200">
+            <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
+              <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-blue-600 text-white text-[10px] font-extrabold shadow-xs">
+                <?php echo esc_html( $p['badge'] ?? '-15%' ); ?>
+              </span>
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="<?php echo esc_attr( $p['name'] ); ?>" src="<?php echo esc_url( $p['image'] ); ?>" loading="lazy"/>
+              </a>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-1 mb-1">
+                  <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium truncate max-w-full">
+                    <?php echo esc_html( $p['specs'] ?? 'Chính hãng VN/A' ); ?>
+                  </span>
+                </div>
+                <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors" title="<?php echo esc_attr( $p['name'] ); ?>">
+                  <a href="<?php echo esc_url( $p['link'] ); ?>" class="hover:text-primary transition-colors">
+                    <?php echo esc_html( $p['name'] ); ?>
+                  </a>
+                </h3>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                iPad 10.9 inch Gen 10 WiFi 64GB
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-blue-800 leading-tight">8.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">10.990.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-blue-600 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-20%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Samsung Galaxy Tab S9 FE" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/but-tablet.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">Bút S-Pen • 128GB</span>
+              <div class="mt-2">
+                <div class="text-[16px] sm:text-[17px] font-black text-blue-800 leading-tight"><?php echo esc_html( $p['price_sale'] ); ?></div>
+                <div class="text-[11px] sm:text-[12px] text-secondary line-through"><?php echo esc_html( $p['price_orig'] ); ?></div>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Samsung Galaxy Tab S9 FE WiFi
-              </h3>
             </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-blue-800 leading-tight">7.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">9.990.000₫</div>
-            </div>
+            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+              Mua Ngay
+            </a>
           </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-blue-600 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-25%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Xiaomi Pad 6" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/op-lung-may-tinh-bang.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">144Hz • Snapdragon 870</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Xiaomi Pad 6 8GB/128GB
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-blue-800 leading-tight">6.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">8.990.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-blue-600 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-15%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Laptop Asus Vivobook" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/balo-tui-chong-soc.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">Core i5 • OLED FHD</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Laptop Asus Vivobook 15 OLED i5 13500H
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-blue-800 leading-tight">16.490.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">19.490.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-blue-600 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-12%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Lenovo Ideapad Slim 3" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/balo-tui-chong-soc.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">16GB RAM • 512GB</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Lenovo IdeaPad Slim 3 i5 12450H
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-blue-800 leading-tight">13.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">15.990.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-blue-600 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-22%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Màn hình Asus 24 inch" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/gia-treo-man-hinh.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-gray-100 rounded text-[10px] text-secondary font-medium">120Hz • 1ms IPS</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Màn hình Asus VY249HGR 24 inch FHD
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-blue-800 leading-tight">2.390.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">3.190.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
+        <?php endforeach; ?>
       </div>
     </section>
 
@@ -975,151 +672,39 @@ $fs_products = $flashsale_settings['products'] ?? array();
 
       <!-- Accessories Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
-        
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-amber-500 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-amber-600 text-white text-[10px] font-extrabold shadow-xs">-25%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Pin Anker MagGo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/sac-du-phong.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-amber-50 text-amber-800 rounded text-[10px] font-medium">Qi2 • 15W</span>
+        <?php foreach ( $acc_prods as $p ) : ?>
+          <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-amber-500 relative hover:-translate-y-1 duration-200">
+            <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
+              <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-amber-600 text-white text-[10px] font-extrabold shadow-xs">
+                <?php echo esc_html( $p['badge'] ?? '-20%' ); ?>
+              </span>
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="<?php echo esc_attr( $p['name'] ); ?>" src="<?php echo esc_url( $p['image'] ); ?>" loading="lazy"/>
+              </a>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-1 mb-1">
+                  <span class="px-1.5 py-0.5 bg-amber-50 text-amber-800 rounded text-[10px] font-medium truncate max-w-full">
+                    <?php echo esc_html( $p['specs'] ?? 'Chính Hãng' ); ?>
+                  </span>
+                </div>
+                <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors" title="<?php echo esc_attr( $p['name'] ); ?>">
+                  <a href="<?php echo esc_url( $p['link'] ); ?>" class="hover:text-primary transition-colors">
+                    <?php echo esc_html( $p['name'] ); ?>
+                  </a>
+                </h3>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Pin Dự Phòng Anker MagGo Qi2 10.000mAh
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-amber-800 leading-tight">990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">1.290.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-amber-500 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-amber-600 text-white text-[10px] font-extrabold shadow-xs">-24%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Kính Mipow Kingbull" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/mieng-dan.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-amber-50 text-amber-800 rounded text-[10px] font-medium">Chống trộm 9H</span>
+              <div class="mt-2">
+                <div class="text-[16px] sm:text-[17px] font-black text-amber-800 leading-tight"><?php echo esc_html( $p['price_sale'] ); ?></div>
+                <div class="text-[11px] sm:text-[12px] text-secondary line-through"><?php echo esc_html( $p['price_orig'] ); ?></div>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Kính Cường Lực Mipow Kingbull HD IP16
-              </h3>
             </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-amber-800 leading-tight">319.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">420.000₫</div>
-            </div>
+            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+              Mua Ngay
+            </a>
           </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-amber-500 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-amber-600 text-white text-[10px] font-extrabold shadow-xs">-35%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Loa JBL Clip 4" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/loa.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-amber-50 text-amber-800 rounded text-[10px] font-medium">Chống nước IP67</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Loa Bluetooth JBL Clip 4 Bass Cực Căng
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-amber-800 leading-tight">1.090.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">1.690.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-amber-500 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-amber-600 text-white text-[10px] font-extrabold shadow-xs">-40%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Cáp sạc Baseus Type-C" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/sac-cap.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-amber-50 text-amber-800 rounded text-[10px] font-medium">PD 100W • Bọc Dù</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Cáp Type-C to Type-C Baseus 100W 1.2m
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-amber-800 leading-tight">149.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">250.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-amber-500 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-amber-600 text-white text-[10px] font-extrabold shadow-xs">-30%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Củ sạc Torras 20W" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/sac-cap.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-amber-50 text-amber-800 rounded text-[10px] font-medium">ICENANO Siêu Nhỏ</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Củ Sạc Nhanh TORRAS ICENANO 20W Kèm Cáp
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-amber-800 leading-tight">390.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">550.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-amber-500 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-amber-600 text-white text-[10px] font-extrabold shadow-xs">-25%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Ốp lưng MagSafe" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/op-lung-dien-thoai.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-amber-50 text-amber-800 rounded text-[10px] font-medium">Chính Hãng Apple</span>
-              </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Ốp Lưng MagSafe Apple iPhone 15 Pro
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-amber-800 leading-tight">1.090.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">1.490.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
+        <?php endforeach; ?>
       </div>
     </section>
 
@@ -1138,55 +723,39 @@ $fs_products = $flashsale_settings['products'] ?? array();
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
-        
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-emerald-600 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-10%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Garmin Fenix 8" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/day-deo-dien-thoai.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[10px] font-medium">Titanium • Sapphire</span>
+        <?php foreach ( $watch_prods as $p ) : ?>
+          <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-emerald-600 relative hover:-translate-y-1 duration-200">
+            <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
+              <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-emerald-700 text-white text-[10px] font-extrabold shadow-xs">
+                <?php echo esc_html( $p['badge'] ?? '-15%' ); ?>
+              </span>
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="<?php echo esc_attr( $p['name'] ); ?>" src="<?php echo esc_url( $p['image'] ); ?>" loading="lazy"/>
+              </a>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-1 mb-1">
+                  <span class="px-1.5 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[10px] font-medium truncate max-w-full">
+                    <?php echo esc_html( $p['specs'] ?? 'Chính Hãng' ); ?>
+                  </span>
+                </div>
+                <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors" title="<?php echo esc_attr( $p['name'] ); ?>">
+                  <a href="<?php echo esc_url( $p['link'] ); ?>" class="hover:text-primary transition-colors">
+                    <?php echo esc_html( $p['name'] ); ?>
+                  </a>
+                </h3>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Garmin Fenix 8 Sapphire 51mm Titanium
-              </h3>
-            </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-emerald-800 leading-tight">28.990.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">31.990.000₫</div>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
-        <div class="bg-white rounded-xl p-3 sm:p-3.5 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-emerald-600 relative hover:-translate-y-1 duration-200">
-          <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50 rounded-lg mb-2 overflow-hidden">
-            <span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-extrabold shadow-xs">-22%</span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Samsung Galaxy Watch 7" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/categories/accessories/kinh-thong-minh.png" loading="lazy"/>
-          </div>
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-1 mb-1">
-                <span class="px-1.5 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[10px] font-medium">Galaxy AI • 40mm</span>
+              <div class="mt-2">
+                <div class="text-[16px] sm:text-[17px] font-black text-emerald-800 leading-tight"><?php echo esc_html( $p['price_sale'] ); ?></div>
+                <div class="text-[11px] sm:text-[12px] text-secondary line-through"><?php echo esc_html( $p['price_orig'] ); ?></div>
               </div>
-              <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors">
-                Samsung Galaxy Watch 7 40mm Bluetooth
-              </h3>
             </div>
-            <div class="mt-2">
-              <div class="text-[16px] sm:text-[17px] font-black text-emerald-800 leading-tight">6.190.000₫</div>
-              <div class="text-[11px] sm:text-[12px] text-secondary line-through">7.990.000₫</div>
-            </div>
+            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+              Mua Ngay
+            </a>
           </div>
-          <button type="button" class="mt-3 w-full h-8.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition-colors">
-            Mua Ngay
-          </button>
-        </div>
-
+        <?php endforeach; ?>
       </div>
     </section>
 
