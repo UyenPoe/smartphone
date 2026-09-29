@@ -197,7 +197,7 @@ if ( $fs_enabled === '1' ) :
 	$all_deals_url     = $flashsale_settings['all_deals_url'] ?? '/khuyen-mai/';
 
 	// Helper function for rendering card
-	$render_fs_card = function( $prod, $idx ) {
+	$render_fs_card = function( $prod, $idx, $row_type = 'row1' ) {
 		$sold = intval( $prod['sold'] ?? 0 );
 		$total = max( 1, intval( $prod['total_stock'] ?? 50 ) );
 		$percent = min( 100, max( 5, round( ( $sold / $total ) * 100 ) ) );
@@ -213,12 +213,41 @@ if ( $fs_enabled === '1' ) :
 		} else {
 			$prod_link = esc_url( get_template_directory_uri() . '/pages/shop/product-detail/index.html' );
 		}
+
+		$is_row2 = ( $row_type === 'row2' );
+		$is_row3 = ( $row_type === 'row3' );
+
+		if ( $is_row2 ) {
+			$card_border = 'border-amber-200/90 hover:border-amber-500';
+			$badge_bg    = 'bg-gradient-to-r from-amber-500 to-orange-500 text-white';
+			$bar_bg      = 'bg-gradient-to-r from-amber-500 to-orange-500';
+			$btn_bg      = 'bg-amber-600 hover:bg-amber-700 text-white';
+			$price_color = 'text-amber-800';
+			$stock_color = 'text-amber-700';
+			$type_pill   = '<span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-amber-50 text-amber-800 border border-amber-200/80">Ecosystem</span>';
+		} elseif ( $is_row3 ) {
+			$card_border = 'border-purple-200/90 hover:border-purple-500';
+			$badge_bg    = 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white';
+			$bar_bg      = 'bg-gradient-to-r from-purple-600 to-indigo-600';
+			$btn_bg      = 'bg-purple-700 hover:bg-purple-800 text-white';
+			$price_color = 'text-purple-800';
+			$stock_color = 'text-purple-700';
+			$type_pill   = '<span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-purple-50 text-purple-800 border border-purple-200/80">Hot Deal</span>';
+		} else {
+			$card_border = 'border-rose-200/90 hover:border-primary';
+			$badge_bg    = 'bg-primary-container text-on-primary';
+			$bar_bg      = 'bg-primary-container';
+			$btn_bg      = 'bg-primary-container hover:bg-primary-hover text-on-primary';
+			$price_color = 'text-primary';
+			$stock_color = 'text-primary';
+			$type_pill   = '<span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-rose-50 text-primary border border-rose-200/80">Flagship</span>';
+		}
 		?>
 		<!-- Flash Sale Item #<?php echo esc_html( $idx + 1 ); ?> -->
-		<div class="bg-surface-pure rounded-xl p-3 sm:p-3.5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
+		<div class="bg-surface-pure rounded-xl p-3 sm:p-3.5 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group border <?php echo esc_attr( $card_border ); ?> relative hover:-translate-y-1 duration-200">
 			<!-- Thumbnail & Badges -->
 			<div class="relative w-full aspect-square flex items-center justify-center p-2 bg-surface-container-low rounded-lg mb-2 overflow-hidden">
-				<span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary-container text-on-primary text-[10px] font-bold shadow-sm">
+				<span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded <?php echo esc_attr( $badge_bg ); ?> text-[10px] font-extrabold shadow-sm">
 					<?php echo esc_html( $prod['badge'] ?? '-15%' ); ?>
 				</span>
 				<span class="absolute top-1.5 right-1.5 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
@@ -230,7 +259,8 @@ if ( $fs_enabled === '1' ) :
 			<!-- Content Details -->
 			<div class="flex-1 flex flex-col justify-between">
 				<div>
-					<div class="flex gap-1 mb-1">
+					<div class="flex items-center gap-1 mb-1">
+						<?php echo $type_pill; ?>
 						<span class="px-1.5 py-0.5 bg-surface-container rounded text-[10px] text-secondary font-medium truncate max-w-full">
 							<?php echo esc_html( $prod['specs'] ?? 'Chính hãng VN/A' ); ?>
 						</span>
@@ -240,7 +270,7 @@ if ( $fs_enabled === '1' ) :
 					</h4>
 				</div>
 				<div class="mt-2 flex flex-wrap items-baseline gap-1.5">
-					<span class="text-[15px] sm:text-[16px] xl:text-[17px] font-black text-primary leading-tight">
+					<span class="text-[15px] sm:text-[16px] xl:text-[17px] font-black <?php echo esc_attr( $price_color ); ?> leading-tight">
 						<?php echo esc_html( $prod['price_sale'] ); ?>
 					</span>
 					<span class="text-[11px] sm:text-[12px] text-secondary line-through">
@@ -252,16 +282,16 @@ if ( $fs_enabled === '1' ) :
 				<div class="mt-2.5 space-y-1">
 					<div class="flex justify-between text-[10px] text-secondary">
 						<span>Đã bán <?php echo esc_html( $sold ); ?>/<?php echo esc_html( $total ); ?></span>
-						<span class="text-primary font-bold truncate ml-1"><?php echo esc_html( $prod['stock_text'] ?? 'Bán chạy' ); ?></span>
+						<span class="<?php echo esc_attr( $stock_color ); ?> font-bold truncate ml-1"><?php echo esc_html( $prod['stock_text'] ?? 'Bán chạy' ); ?></span>
 					</div>
 					<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
-						<div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: <?php echo esc_attr( $percent ); ?>%;"></div>
+						<div class="h-full <?php echo esc_attr( $bar_bg ); ?> rounded-full transition-all duration-500" style="width: <?php echo esc_attr( $percent ); ?>%;"></div>
 					</div>
 				</div>
 			</div>
 
 			<!-- Action Button -->
-			<button class="mt-3 w-full h-9 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary text-xs sm:text-[13px] font-bold transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='<?php echo $prod_link; ?>'">
+			<button class="mt-3 w-full h-9 rounded-lg <?php echo esc_attr( $btn_bg ); ?> text-xs sm:text-[13px] font-bold transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='<?php echo $prod_link; ?>'">
 				<span>Mua Ngay</span>
 			</button>
 		</div>
@@ -328,19 +358,78 @@ if ( $fs_enabled === '1' ) :
       </div>
     </div>
 
-    <!-- Default Products Grid (1 dòng 6 cột trên Desktop) -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-3.5 lg:gap-4 mt-space-md" id="phonex-fs-product-grid">
-      <?php foreach ( $initial_products as $idx => $prod ) {
-        $render_fs_card( $prod, $idx );
-      } ?>
+    <!-- PHÂN CHIA RÕ RÀNG 2 DÒNG FLASHSALE (DÒNG 1 & DÒNG 2) -->
+    <?php 
+      $row1_products = array_slice( $initial_products, 0, 6 );
+      $row2_products = array_slice( $initial_products, 6 );
+    ?>
+
+    <!-- ================= DÒNG 1: SMARTPHONE FLAGSHIP GIẢM SỐC ================= -->
+    <div class="space-y-3" id="phonex-fs-row-1">
+      <div class="flex items-center justify-between flex-wrap gap-2 pt-2 pb-1.5 border-b border-rose-200/70">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-primary-container text-on-primary text-xs font-black uppercase tracking-wider shadow-xs">
+            <span class="material-symbols-outlined text-[15px]">smartphone</span>
+            <span>DÒNG 1 • SMARTPHONE FLAGSHIP GIẢM SỐC</span>
+          </span>
+          <span class="text-xs text-secondary font-medium hidden sm:inline">6 mẫu điện thoại cao cấp bán chạy nhất khung giờ vàng</span>
+        </div>
+        <span class="text-xs font-bold text-primary bg-rose-100/90 border border-rose-300 px-3 py-1 rounded-full flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+          <span>Giảm Đến 25% • Trợ Giá Thu Cũ 3Tr</span>
+        </span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-3.5 lg:gap-4" id="phonex-fs-grid-row1">
+        <?php foreach ( $row1_products as $idx => $prod ) {
+          $render_fs_card( $prod, $idx, 'row1' );
+        } ?>
+      </div>
     </div>
 
-    <!-- Extra Expandable Products Grid (1 dòng 6 cột khi bấm 'Xem thêm') -->
+    <!-- ================= DÒNG 2: PHỤ KIỆN CAO CẤP & THIẾT BỊ HỆ SINH THÁI (PHÂN TÁCH RÕ RÀNG) ================= -->
+    <?php if ( ! empty( $row2_products ) ) : ?>
+      <div class="space-y-3 mt-7 pt-6 border-t-2 border-dashed border-rose-300/80" id="phonex-fs-row-2">
+        <div class="flex items-center justify-between flex-wrap gap-2 pt-1 pb-1.5 border-b border-amber-200">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-600 text-white text-xs font-black uppercase tracking-wider shadow-xs">
+              <span class="material-symbols-outlined text-[15px]">headphones</span>
+              <span>DÒNG 2 • PHỤ KIỆN CAO CẤP &amp; HỆ SINH THÁI THÔNG MINH</span>
+            </span>
+            <span class="text-xs text-secondary font-medium hidden sm:inline">Apple Watch, iPad, Tai nghe AirPods &amp; Củ sạc nhanh chính hãng</span>
+          </div>
+          <span class="text-xs font-bold text-amber-800 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">verified</span>
+            <span>Giảm Sốc Đến 30% • Bảo Hành 1 Đổi 1</span>
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-3.5 lg:gap-4" id="phonex-fs-grid-row2">
+          <?php foreach ( $row2_products as $idx => $prod ) {
+            $render_fs_card( $prod, 6 + $idx, 'row2' );
+          } ?>
+        </div>
+      </div>
+    <?php endif; ?>
+
+    <!-- Extra Expandable Products Grid (Dòng 3+ mở rộng khi bấm 'Xem thêm') -->
     <?php if ( $has_extra ) : ?>
-      <div class="hidden grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-3.5 lg:gap-4 mt-space-md transition-all duration-300" id="phonex-fs-extra-grid">
-        <?php foreach ( $extra_products as $idx => $prod ) {
-          $render_fs_card( $prod, count( $initial_products ) + $idx );
-        } ?>
+      <div class="hidden space-y-3 mt-7 pt-6 border-t-2 border-dashed border-purple-300/80 transition-all duration-300" id="phonex-fs-extra-grid">
+        <div class="flex items-center justify-between flex-wrap gap-2 pt-1 pb-1.5 border-b border-purple-200">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-purple-700 text-white text-xs font-black uppercase tracking-wider shadow-xs">
+              <span class="material-symbols-outlined text-[15px]">add_circle</span>
+              <span>DÒNG 3 • DEAL KHUYẾN MÃI MỞ RỘNG</span>
+            </span>
+            <span class="text-xs text-secondary font-medium hidden sm:inline">Ưu đãi bổ sung cho khách hàng theo dõi Flash Sale</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-3.5 lg:gap-4">
+          <?php foreach ( $extra_products as $idx => $prod ) {
+            $render_fs_card( $prod, count( $initial_products ) + $idx, 'row3' );
+          } ?>
+        </div>
       </div>
     <?php endif; ?>
 
