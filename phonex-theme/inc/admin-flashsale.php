@@ -29,7 +29,7 @@ function phonex_get_default_flashsale_settings() {
 		'view_more_text'       => 'Xem thêm deal Flash Sale',
 		'all_deals_text'       => 'Xem tất cả khuyến mãi',
 		'all_deals_url'        => '/khuyen-mai/',
-		'initial_count'        => 8, // Số sản phẩm hiển thị ban đầu (còn lại sẽ mở rộng khi bấm Xem thêm)
+		'initial_count'        => 12, // Mặc định 2 hàng x 6 cột = 12 sản phẩm (còn lại mở rộng khi bấm Xem thêm)
 		'auto_slot'            => '1', // Automatically switch slot based on server time
 		'active_slot_index'    => 1,   // Default to 12:00 slot
 		'countdown_mode'       => 'auto', // 'auto' (until slot end_time) or 'custom'
@@ -543,8 +543,8 @@ function phonex_flashsale_render_admin_page() {
 						<tr>
 							<th scope="row"><label for="initial_count">Số sản phẩm hiển thị ban đầu</label></th>
 							<td>
-								<input type="number" id="initial_count" name="initial_count" value="<?php echo esc_attr( $settings['initial_count'] ?? 8 ); ?>" min="1" max="100" style="width: 80px; font-weight: 700; text-align: center;">
-								<span class="description" style="color: #64748b; margin-left: 10px;">(Mặc định: <strong>8</strong> sản phẩm = 2 hàng × 4 cột. Các sản phẩm vượt quá số này sẽ tự động nằm trong nút "Xem thêm")</span>
+								<input type="number" id="initial_count" name="initial_count" value="<?php echo esc_attr( $settings['initial_count'] ?? 12 ); ?>" min="1" max="100" style="width: 80px; font-weight: 700; text-align: center;">
+								<span class="description" style="color: #64748b; margin-left: 10px;">(Giao diện chuẩn 1 dòng 6 cột. Hiện tại đặt: <strong>12</strong> sản phẩm = <strong>2 dòng đầy đủ</strong>. Các sản phẩm từ số 13 trở đi sẽ nằm trong nút "Xem thêm")</span>
 							</td>
 						</tr>
 						<tr>
@@ -622,17 +622,17 @@ function phonex_flashsale_render_admin_page() {
 
 			<!-- SECTION 5: QUẢN LÝ SẢN PHẨM FLASH SALE (DẠNG REPEATER ĐỘNG KHÔNG GIỚI HẠN) -->
 			<?php 
-				$initial_count = intval( $settings['initial_count'] ?? 8 );
+				$initial_count = intval( $settings['initial_count'] ?? 6 );
 			?>
 			<div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;">
 				<div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 2px solid #f3f4f6; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
 					<div>
 						<h2 style="font-size: 18px; font-weight: 700; color: #111827; margin: 0; display: flex; align-items: center; gap: 8px;">
 							<span class="dashicons dashicons-products" style="color: #ba0d1a;"></span>
-							5. Danh Sách Sản Phẩm Flash Sale (Thêm / Xóa / Kéo Dài Không Giới Hạn)
+							5. Danh Sách Sản Phẩm Flash Sale (1 Dòng 6 Cột - Thêm / Xóa / Kéo Dài Không Giới Hạn)
 						</h2>
 						<p style="color: #64748b; font-size: 13px; margin: 4px 0 0 0;">
-							Bạn có thể thêm không giới hạn sản phẩm. <strong><?php echo esc_html( $initial_count ); ?> sản phẩm đầu</strong> hiển thị sẵn trên trang chủ, các sản phẩm còn lại sẽ tự động nằm trong nút <strong>"Xem thêm deal Flash Sale"</strong>.
+							Giao diện hiển thị chuẩn <strong>1 dòng 6 cột</strong>. <strong><?php echo esc_html( $initial_count ); ?> sản phẩm đầu</strong> hiển thị sẵn trên trang chủ, các sản phẩm còn lại sẽ tự động nằm trong nút <strong>"Xem thêm deal Flash Sale"</strong>.
 						</p>
 					</div>
 
@@ -658,8 +658,8 @@ function phonex_flashsale_render_admin_page() {
 				<div id="phonex-prod-cards-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 20px;">
 					<?php foreach ( $settings['products'] as $idx => $prod ) : ?>
 						<?php 
-							$row_num = (int) floor( $idx / 4 ) + 1;
-							$col_num = ( $idx % 4 ) + 1;
+							$row_num = (int) floor( $idx / 6 ) + 1;
+							$col_num = ( $idx % 6 ) + 1;
 							$is_extra_row = ( $idx >= $initial_count );
 							$saved_pid = intval( $prod['product_id'] ?? 0 );
 						?>
@@ -941,8 +941,8 @@ function phonex_flashsale_render_admin_page() {
 
 			cards.forEach(function(card, idx) {
 				card.dataset.idx = idx;
-				const row = Math.floor(idx / 4) + 1;
-				const col = (idx % 4) + 1;
+				const row = Math.floor(idx / 6) + 1;
+				const col = (idx % 6) + 1;
 				const isExtra = (idx >= initialCount);
 
 				// Update number and row text

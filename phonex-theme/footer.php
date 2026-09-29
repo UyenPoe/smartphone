@@ -8,7 +8,7 @@
 
 <!-- PhoneX Flagship Unified Footer (Desktop, Tablet & Mobile - Stitch Visual Parity) -->
 <footer class="w-full bg-white border-t border-gray-200 mt-16 pt-12 pb-24 md:pb-12 text-gray-700 font-sans" data-component="footer">
-  <div class="max-w-7xl mx-auto px-4">
+  <div class="max-w-[1440px] mx-auto px-4">
     <!-- Top 5-Column Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-gray-200">
       <!-- Col 1 & 2: Brand Information & Hotline -->

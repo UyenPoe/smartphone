@@ -10,7 +10,7 @@ get_header();
 
 <main class="w-full pt-4 md:pt-6 bg-background"><div class="flex flex-col w-full">
 <!-- SECTION 1: HERO SHOWCASE -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-md">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-md">
 <div class="relative w-full rounded-2xl overflow-hidden bg-surface-pure shadow-md">
 <div class="absolute inset-0 bg-gradient-to-r from-surface-pure via-surface-pure/90 to-transparent z-10 w-full lg:w-3/5"></div>
 <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
@@ -90,7 +90,7 @@ get_header();
 </div>
 </section>
 <!-- SECTION 2: QUICK CATEGORIES -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-md">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-md">
 <div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-10 gap-space-sm">
 <a class="flex flex-col items-center p-space-sm bg-surface-pure rounded-xl shadow-sm hover:shadow hover:bg-surface-container-low transition-all text-center group" data-path="brand-apple" href="<?php echo esc_url(function_exists("wc_get_page_permalink") ? wc_get_page_permalink("shop") : home_url("/shop/")); ?>">
 <div class="w-12 h-12 rounded-full bg-surface-container-low group-hover:bg-primary/10 flex items-center justify-center text-text-main group-hover:text-primary transition-colors mb-2">
@@ -215,58 +215,60 @@ if ( $fs_enabled === '1' ) :
 		}
 		?>
 		<!-- Flash Sale Item #<?php echo esc_html( $idx + 1 ); ?> -->
-		<div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
+		<div class="bg-surface-pure rounded-xl p-3 sm:p-3.5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
 			<!-- Thumbnail & Badges -->
-			<div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
-				<span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">
+			<div class="relative w-full aspect-square flex items-center justify-center p-2 bg-surface-container-low rounded-lg mb-2 overflow-hidden">
+				<span class="absolute top-1.5 left-1.5 z-10 px-1.5 py-0.5 rounded bg-primary-container text-on-primary text-[10px] font-bold shadow-sm">
 					<?php echo esc_html( $prod['badge'] ?? '-15%' ); ?>
 				</span>
-				<span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
-					<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+				<span class="absolute top-1.5 right-1.5 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
+					<span class="material-symbols-outlined text-[18px]">favorite_border</span>
 				</span>
 				<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="<?php echo esc_attr( $prod['name'] ); ?>" src="<?php echo esc_url( $prod['image'] ); ?>" loading="lazy"/>
 			</div>
 
 			<!-- Content Details -->
-			<div>
-				<div class="flex gap-1 mb-1">
-					<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">
-						<?php echo esc_html( $prod['specs'] ?? 'Chính hãng VN/A' ); ?>
-					</span>
+			<div class="flex-1 flex flex-col justify-between">
+				<div>
+					<div class="flex gap-1 mb-1">
+						<span class="px-1.5 py-0.5 bg-surface-container rounded text-[10px] text-secondary font-medium truncate max-w-full">
+							<?php echo esc_html( $prod['specs'] ?? 'Chính hãng VN/A' ); ?>
+						</span>
+					</div>
+					<h4 class="text-[13px] sm:text-[14px] leading-snug font-bold text-text-main line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors" title="<?php echo esc_attr( $prod['name'] ); ?>">
+						<?php echo esc_html( $prod['name'] ); ?>
+					</h4>
 				</div>
-				<h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">
-					<?php echo esc_html( $prod['name'] ); ?>
-				</h4>
-				<div class="mt-2 flex items-baseline gap-2">
-					<span class="font-price-card text-price-card text-primary font-bold">
+				<div class="mt-2 flex flex-wrap items-baseline gap-1.5">
+					<span class="text-[15px] sm:text-[16px] xl:text-[17px] font-black text-primary leading-tight">
 						<?php echo esc_html( $prod['price_sale'] ); ?>
 					</span>
-					<span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">
+					<span class="text-[11px] sm:text-[12px] text-secondary line-through">
 						<?php echo esc_html( $prod['price_orig'] ); ?>
 					</span>
 				</div>
 
 				<!-- Sold Progress Bar -->
-				<div class="mt-3 space-y-1">
-					<div class="flex justify-between font-label-badge text-label-badge text-secondary">
+				<div class="mt-2.5 space-y-1">
+					<div class="flex justify-between text-[10px] text-secondary">
 						<span>Đã bán <?php echo esc_html( $sold ); ?>/<?php echo esc_html( $total ); ?></span>
-						<span class="text-primary font-bold"><?php echo esc_html( $prod['stock_text'] ?? 'Đang bán chạy' ); ?></span>
+						<span class="text-primary font-bold truncate ml-1"><?php echo esc_html( $prod['stock_text'] ?? 'Bán chạy' ); ?></span>
 					</div>
-					<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+					<div class="w-full h-1.5 rounded-full bg-surface-container overflow-hidden">
 						<div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: <?php echo esc_attr( $percent ); ?>%;"></div>
 					</div>
 				</div>
 			</div>
 
 			<!-- Action Button -->
-			<button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='<?php echo $prod_link; ?>'">
+			<button class="mt-3 w-full h-9 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary text-xs sm:text-[13px] font-bold transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='<?php echo $prod_link; ?>'">
 				<span>Mua Ngay</span>
 			</button>
 		</div>
 		<?php
 	};
 ?>
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg" id="section-flash-sale">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-lg" id="section-flash-sale">
   <div class="rounded-2xl p-space-md lg:p-space-lg shadow-sm border transition-all duration-300" style="<?php echo $container_style; ?>">
     <!-- Top Header Bar -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
@@ -326,16 +328,16 @@ if ( $fs_enabled === '1' ) :
       </div>
     </div>
 
-    <!-- 8 Default Products Grid (2 Rows x 4 Columns) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-space-md" id="phonex-fs-product-grid">
+    <!-- Default Products Grid (1 dòng 6 cột trên Desktop) -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-3.5 lg:gap-4 mt-space-md" id="phonex-fs-product-grid">
       <?php foreach ( $initial_products as $idx => $prod ) {
         $render_fs_card( $prod, $idx );
       } ?>
     </div>
 
-    <!-- Extra Expandable Products Grid (Products 9-12+ when user clicks "Xem thêm") -->
+    <!-- Extra Expandable Products Grid (1 dòng 6 cột khi bấm 'Xem thêm') -->
     <?php if ( $has_extra ) : ?>
-      <div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-space-md transition-all duration-300" id="phonex-fs-extra-grid">
+      <div class="hidden grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-3.5 lg:gap-4 mt-space-md transition-all duration-300" id="phonex-fs-extra-grid">
         <?php foreach ( $extra_products as $idx => $prod ) {
           $render_fs_card( $prod, count( $initial_products ) + $idx );
         } ?>
@@ -529,7 +531,7 @@ if ( $fs_enabled === '1' ) :
 <?php endif; ?>
 
 <!-- SECTION 4: BỘ SƯU TẬP MŨI NHỌN (TABS) -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-lg">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-md">
 <div>
 <span class="font-label-badge text-label-badge text-primary uppercase font-bold tracking-wider">Hiệu Năng Vô Địch</span>
@@ -641,7 +643,7 @@ if ( $fs_enabled === '1' ) :
 </div>
 </section>
 <!-- SECTION 5: ĐỐI TÁC CHIẾN LƯỢC -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-md">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-md">
 <div class="bg-surface-pure rounded-2xl p-space-lg shadow-sm">
 <div class="text-center max-w-2xl mx-auto mb-space-lg">
 <span class="font-label-badge text-label-badge text-secondary uppercase font-bold tracking-wider">Hệ Sinh Thái Phân Phối</span>
@@ -681,7 +683,7 @@ if ( $fs_enabled === '1' ) :
 </div>
 </section>
 <!-- SECTION 6: ĐIỆN THOẠI MỚI 100% NGUYÊN SEAL VN/A -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-lg">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-md">
 <div>
 <div class="flex items-center gap-2">
@@ -763,7 +765,7 @@ if ( $fs_enabled === '1' ) :
 </div>
 </section>
 <!-- SECTION 7: KHO MÁY CŨ TUYỂN CHỌN ĐỘC BẢN (PRE-OWNED VAULT) -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg" id="preowned-vault">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-lg" id="preowned-vault">
 <div class="rounded-2xl bg-surface-pure p-space-md lg:p-space-lg shadow-sm">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm mb-space-md">
 <div>
@@ -869,7 +871,7 @@ if ( $fs_enabled === '1' ) :
 </div>
 </section>
 <!-- SECTION 8: WIDGET ĐỊNH GIÁ THU CŨ LÊN ĐỜI 60 GIÂY -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg" id="trade-in-calculator">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-lg" id="trade-in-calculator">
 <div class="bg-surface-pure rounded-2xl p-space-lg lg:p-space-xl shadow-sm">
 <div class="max-w-3xl mb-space-lg">
 <span class="font-label-badge text-label-badge text-primary uppercase font-bold tracking-wider">Trợ Giá Trực Tiếp Đến 3.000.000₫</span>
@@ -965,7 +967,7 @@ if ( $fs_enabled === '1' ) :
 </div>
 </section>
 <!-- SECTION 9: CHỌN ĐIỆN THOẠI THEO NHU CẦU -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-lg">
 <div class="mb-space-md">
 <span class="font-label-badge text-label-badge text-primary uppercase font-bold tracking-wider">Trợ Lý Mua Sắm Cá Nhân Hóa</span>
 <h2 class="font-headline-lg text-headline-lg text-text-main tracking-tight mt-1">Chọn Smartphone Theo Nhu Cầu Của Bạn</h2>
@@ -1044,7 +1046,7 @@ if ( $fs_enabled === '1' ) :
 </div>
 </section>
 <!-- SECTION 10: ƯU ĐÃI THANH TOÁN -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-md">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-md">
 <div class="bg-gradient-to-r from-surface-pure via-surface-container-low to-surface-pure rounded-2xl p-space-md lg:p-space-lg shadow-sm">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-center">
 <div class="flex items-center gap-space-md p-space-sm">
@@ -1078,7 +1080,7 @@ if ( $fs_enabled === '1' ) :
 </div>
 </section>
 <!-- SECTION 11: PHONEX LAB & TIN TỨC CÔNG NGHỆ -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-lg">
 <div class="flex items-center justify-between mb-space-md">
 <div>
 <span class="font-label-badge text-label-badge text-primary uppercase font-bold tracking-wider">Chuyên Sâu Điện Thoại</span>
@@ -1168,7 +1170,7 @@ if ( $fs_enabled === '1' ) :
 </div>
 </section>
 <!-- SECTION 12: HỆ THỐNG 128 CỬA HÀNG & SHOWROOM TRẢI NGHIỆM -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-lg">
 <div class="bg-surface-pure rounded-2xl p-space-md lg:p-space-lg shadow-sm">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
 <!-- Store info (5 Cols) -->
@@ -1213,7 +1215,7 @@ if ( $fs_enabled === '1' ) :
 </div>
 </section>
 <!-- SECTION 13: 4 CAM KẾT VÀNG & CHÍNH SÁCH BẢO HÀNH -->
-<section class="w-full max-w-7xl mx-auto px-margin py-space-lg mb-space-xl">
+<section class="w-full max-w-[1440px] mx-auto px-margin py-space-lg mb-space-xl">
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
 <!-- Commitment 1 -->
 <div class="bg-surface-pure rounded-xl p-space-md shadow-sm flex items-start gap-space-sm">
@@ -1260,7 +1262,7 @@ if ( $fs_enabled === '1' ) :
 
 <!-- SECTION 14: PHONEX 46-SCREEN UI REVIEW & NAVIGATION HUB -->
 <section id="phonex-ui-hub" class="w-full bg-gradient-to-b from-gray-50 to-gray-100 border-t border-b border-gray-200 py-12 px-4 my-8">
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-[1440px] mx-auto">
     <!-- Header banner -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
       <div>

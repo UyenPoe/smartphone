@@ -43,7 +43,7 @@
 
   <!-- 2. MAIN HEADER ROW (Logo | Pill Search Bar | 4 Actions: User, Voucher, Cart, Location) -->
   <div class="bg-white border-b border-gray-100 relative z-30">
-    <div class="max-w-7xl mx-auto px-4 h-16 md:h-18 flex items-center justify-between gap-3 md:gap-6">
+    <div class="max-w-[1440px] mx-auto px-4 h-16 md:h-18 flex items-center justify-between gap-3 md:gap-6">
       
       <!-- Left: Mobile Hamburger + PhoneX Logo -->
       <div class="flex items-center gap-2 md:gap-3.5 shrink-0">
@@ -145,7 +145,7 @@
 
   <!-- 3. CATEGORY NAVIGATION BAR (Row 2: Requested Categories & TGDD-style Accessories Mega Menu) -->
   <div class="w-full bg-white border-b border-gray-200/80 shadow-2xs relative z-30">
-    <div class="max-w-7xl mx-auto px-4 relative">
+    <div class="max-w-[1440px] mx-auto px-4 relative">
       <nav class="flex items-center gap-1 md:gap-2 py-1.5 overflow-x-auto whitespace-nowrap text-[13px] md:text-sm font-bold text-gray-800 scrollbar-none" aria-label="<?php esc_attr_e('Danh mục ngành hàng', 'phonex'); ?>">
         
         <!-- 1. Trang chủ -->
@@ -424,9 +424,9 @@
     </div>
   </div>
 
-  <!-- 4. TOP CAMPAIGN SLIDER (Sau Menu: Nằm gọn trong container max-w-7xl, không tràn màn hình, tỷ lệ 2400x480, có nút X đóng) -->
+  <!-- 4. TOP CAMPAIGN SLIDER (Sau Menu: Nằm gọn trong container max-w-[1440px], không tràn màn hình, tỷ lệ 2400x480, có nút X đóng) -->
   <div id="pxTopCampaignSlider" class="w-full relative z-20 transition-all duration-300 overflow-hidden" style="transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, margin 0.3s ease-in-out, padding 0.3s ease-in-out;">
-    <div class="max-w-7xl mx-auto px-4 pt-3 pb-1">
+    <div class="max-w-[1440px] mx-auto px-4 pt-3 pb-1">
       <div class="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-[#7d000a] shadow-md border border-red-950/30">
         <!-- Close "X" Button -->
         <button 
