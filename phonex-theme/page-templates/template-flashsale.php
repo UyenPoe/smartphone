@@ -7,7 +7,7 @@
 
 get_header();
 
-// Fetch live Flash Sale settings from Admin Panel
+// Fetch live Flash Sale settings from Admin Panel ("⚡ Flash Sale Giờ Vàng")
 $flashsale_settings = get_option( 'phonex_flashsale_settings', array() );
 $fs_enabled         = ( ( $flashsale_settings['enabled'] ?? '1' ) === '1' );
 $fs_title           = $flashsale_settings['title'] ?? 'FLASH SALE GIỜ VÀNG';
@@ -15,6 +15,48 @@ $fs_subtitle        = $flashsale_settings['subtitle'] ?? 'Khung giờ vàng gi�
 $cd_hours           = intval( $flashsale_settings['countdown_hours'] ?? 2 );
 $cd_minutes         = intval( $flashsale_settings['countdown_minutes'] ?? 45 );
 $cd_seconds         = intval( $flashsale_settings['countdown_seconds'] ?? 18 );
+
+// Fetch live Mega Promotions settings from Admin Panel ("🎁 Trang Khuyến Mãi")
+$promo_settings = function_exists( 'phonex_get_promotions_settings' ) ? phonex_get_promotions_settings() : array();
+$hero_badge     = $promo_settings['hero_badge'] ?? 'ĐẠI HỘI FLASH SALE 2026 • ĐỘC QUYỀN TẠI PHONEX';
+$hero_title_1   = $promo_settings['hero_title_1'] ?? 'TỰU TRƯỜNG DEAL THƠMMM';
+$hero_title_2   = $promo_settings['hero_title_2'] ?? 'GIẢM SỐC ĐẾN 50%';
+$hero_desc      = $promo_settings['hero_desc'] ?? 'Hàng nghìn siêu phẩm Smartphone Flagship, Tablet, Laptop, Phụ kiện & Smartwatch chính hãng VN/A đồng loạt hạ giá khung giờ vàng. Trợ giá thu cũ đổi mới lên đến 3.000.000đ, trả góp 0% lãi suất.';
+$hero_hours     = intval( $promo_settings['hero_hours'] ?? $cd_hours );
+$hero_minutes   = intval( $promo_settings['hero_minutes'] ?? $cd_minutes );
+$hero_seconds   = intval( $promo_settings['hero_seconds'] ?? $cd_seconds );
+$badge_1_text   = $promo_settings['badge_1_text'] ?? '100% Chính Hãng VN/A';
+$badge_2_text   = $promo_settings['badge_2_text'] ?? '1 Đổi 1 Trong 30 Ngày';
+$badge_3_text   = $promo_settings['badge_3_text'] ?? 'Giao Hỏa Tốc 1H';
+
+$v1_badge       = $promo_settings['voucher_1_badge'] ?? '500K';
+$v1_title       = $promo_settings['voucher_1_title'] ?? 'Giảm 500.000₫ cho Điện Thoại';
+$v1_desc        = $promo_settings['voucher_1_desc'] ?? 'Đơn từ 10.000.000₫ • HSD: Hôm nay';
+$v1_code        = $promo_settings['voucher_1_code'] ?? 'PHONEX500K';
+
+$v2_badge       = $promo_settings['voucher_2_badge'] ?? '200K';
+$v2_title       = $promo_settings['voucher_2_title'] ?? 'Giảm 200.000₫ cho Phụ Kiện';
+$v2_desc        = $promo_settings['voucher_2_desc'] ?? 'Đơn từ 800.000₫ • HSD: Hôm nay';
+$v2_code        = $promo_settings['voucher_2_code'] ?? 'PHONEX200K';
+
+$sec_phone_t    = $promo_settings['sec_phone_title'] ?? 'ĐIỆN THOẠI GIÁ RẺ QUÁ - GIẢM ĐẾN 35%';
+$sec_phone_s    = $promo_settings['sec_phone_subtitle'] ?? 'Bảo hành 12 tháng chính hãng • Thu cũ đổi mới trợ giá 3 triệu';
+
+$sec_apple_t    = $promo_settings['sec_apple_title'] ?? 'HỆ SINH THÁI APPLE CHÍNH HÃNG VN/A';
+$sec_apple_s    = $promo_settings['sec_apple_subtitle'] ?? 'Đại lý ủy quyền chính thức • Trợ giá học sinh sinh viên đến 3 triệu';
+$sec_apple_b    = $promo_settings['sec_apple_badge'] ?? 'Apple Authorised Reseller';
+
+$sec_tablet_t   = $promo_settings['sec_tablet_title'] ?? 'TABLET & LAPTOP HỌC TẬP - VĂN PHÒNG';
+$sec_tablet_s   = $promo_settings['sec_tablet_subtitle'] ?? 'Ưu đãi sinh viên giảm thêm 500.000₫ • Tặng kèm túi chống sốc';
+
+$sec_acc_t      = $promo_settings['sec_accessory_title'] ?? 'PHỤ KIỆN CHÍNH HÃNG - ĐỒNG GIÁ TỪ 99K';
+$sec_acc_s      = $promo_settings['sec_accessory_subtitle'] ?? 'Bảo hành 1 đổi 1 trong 12 tháng • Mua 2 giảm thêm 10%';
+
+$sec_watch_t    = $promo_settings['sec_watch_title'] ?? 'ĐỒNG HỒ THÔNG MINH & SỨC KHỎE 24/7';
+$sec_watch_s    = $promo_settings['sec_watch_subtitle'] ?? 'Đo điện tâm đồ ECG • Huyết áp • GPS đa băng tần chính xác';
+
+$sec_trade_t    = $promo_settings['sec_tradein_title'] ?? 'Lên Đời Smartphone Mới – Trợ Giá Đến 3.000.000đ';
+$sec_trade_s    = $promo_settings['sec_tradein_subtitle'] ?? 'PhoneX tiếp nhận thu mua máy cũ tất cả các dòng iPhone, Samsung, Xiaomi,... Thẩm định chuẩn AI 60 giây, giải ngân nhận tiền mặt hoặc trừ tiếp vào giá máy mới.';
 
 // Timeline slots from settings
 $fs_slots = $flashsale_settings['slots'] ?? array(
@@ -51,31 +93,31 @@ $fs_products = $flashsale_settings['products'] ?? array();
         <div class="lg:col-span-8 space-y-3.5">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-amber-300 text-xs font-black uppercase tracking-wider border border-white/25">
             <span class="material-symbols-outlined text-[16px] animate-pulse">local_fire_department</span>
-            <span>ĐẠI HỘI FLASH SALE 2026 • ĐỘC QUYỀN TẠI PHONEX</span>
+            <span><?php echo esc_html( $hero_badge ); ?></span>
           </div>
 
           <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black tracking-tight leading-tight">
-            TỰU TRƯỜNG DEAL THƠMMM <br class="hidden sm:inline" />
-            <span class="text-amber-300 drop-shadow-sm">GIẢM SỐC ĐẾN 50%</span>
+            <?php echo esc_html( $hero_title_1 ); ?> <br class="hidden sm:inline" />
+            <span class="text-amber-300 drop-shadow-sm"><?php echo esc_html( $hero_title_2 ); ?></span>
           </h1>
 
           <p class="text-rose-100 text-sm sm:text-base max-w-2xl leading-relaxed">
-            Hàng nghìn siêu phẩm Smartphone Flagship, Tablet, Laptop, Phụ kiện &amp; Smartwatch chính hãng VN/A đồng loạt hạ giá khung giờ vàng. Trợ giá thu cũ đổi mới lên đến 3.000.000₫, trả góp 0% lãi suất.
+            <?php echo esc_html( $hero_desc ); ?>
           </p>
 
           <!-- Highlights Pills -->
           <div class="flex flex-wrap items-center gap-2 pt-1 text-xs font-bold">
             <span class="bg-black/30 border border-white/20 px-3 py-1.5 rounded-lg flex items-center gap-1.5 text-white">
               <span class="material-symbols-outlined text-amber-300 text-[16px]">verified</span>
-              <span>100% Chính Hãng VN/A</span>
+              <span><?php echo esc_html( $badge_1_text ); ?></span>
             </span>
             <span class="bg-black/30 border border-white/20 px-3 py-1.5 rounded-lg flex items-center gap-1.5 text-white">
               <span class="material-symbols-outlined text-amber-300 text-[16px]">cached</span>
-              <span>1 Đổi 1 Trong 30 Ngày</span>
+              <span><?php echo esc_html( $badge_2_text ); ?></span>
             </span>
             <span class="bg-black/30 border border-white/20 px-3 py-1.5 rounded-lg flex items-center gap-1.5 text-white">
               <span class="material-symbols-outlined text-amber-300 text-[16px]">local_shipping</span>
-              <span>Giao Hỏa Tốc 1H</span>
+              <span><?php echo esc_html( $badge_3_text ); ?></span>
             </span>
           </div>
         </div>
@@ -88,11 +130,11 @@ $fs_products = $flashsale_settings['products'] ?? array();
               <span class="font-extrabold text-sm uppercase tracking-wide">KẾT THÚC SAU</span>
             </div>
             <div class="flex items-center gap-1 font-mono font-black" id="px-hero-countdown">
-              <span class="bg-black/40 px-2 py-1 rounded text-base min-w-[32px] text-center" id="hero-cd-h"><?php echo sprintf( '%02d', $cd_hours ); ?></span>
+              <span class="bg-black/40 px-2 py-1 rounded text-base min-w-[32px] text-center" id="hero-cd-h"><?php echo sprintf( '%02d', $hero_hours ); ?></span>
               <span>:</span>
-              <span class="bg-black/40 px-2 py-1 rounded text-base min-w-[32px] text-center" id="hero-cd-m"><?php echo sprintf( '%02d', $cd_minutes ); ?></span>
+              <span class="bg-black/40 px-2 py-1 rounded text-base min-w-[32px] text-center" id="hero-cd-m"><?php echo sprintf( '%02d', $hero_minutes ); ?></span>
               <span>:</span>
-              <span class="bg-amber-400 text-red-900 px-2 py-1 rounded text-base min-w-[32px] text-center font-black" id="hero-cd-s"><?php echo sprintf( '%02d', $cd_seconds ); ?></span>
+              <span class="bg-amber-400 text-red-900 px-2 py-1 rounded text-base min-w-[32px] text-center font-black" id="hero-cd-s"><?php echo sprintf( '%02d', $hero_seconds ); ?></span>
             </div>
           </div>
 
@@ -107,14 +149,14 @@ $fs_products = $flashsale_settings['products'] ?? array();
             <div class="bg-white text-text-main rounded-xl p-2.5 flex items-center justify-between gap-2 shadow-xs border border-rose-100">
               <div class="flex items-center gap-2">
                 <div class="w-10 h-10 rounded-lg bg-red-100 text-primary flex items-center justify-center font-black text-sm shrink-0">
-                  500K
+                  <?php echo esc_html( $v1_badge ); ?>
                 </div>
                 <div>
-                  <div class="font-bold text-xs leading-tight">Giảm 500.000₫ cho Điện Thoại</div>
-                  <div class="text-[10px] text-secondary">Đơn từ 10.000.000₫ • HSD: Hôm nay</div>
+                  <div class="font-bold text-xs leading-tight"><?php echo esc_html( $v1_title ); ?></div>
+                  <div class="text-[10px] text-secondary"><?php echo esc_html( $v1_desc ); ?></div>
                 </div>
               </div>
-              <button type="button" class="btn-claim-voucher px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-all shrink-0 cursor-pointer" onclick="claimVoucher(this, 'PHONEX500')">
+              <button type="button" class="btn-claim-voucher px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-all shrink-0 cursor-pointer" onclick="claimVoucher(this, '<?php echo esc_js( $v1_code ); ?>')">
                 Lưu mã
               </button>
             </div>
@@ -123,14 +165,14 @@ $fs_products = $flashsale_settings['products'] ?? array();
             <div class="bg-white text-text-main rounded-xl p-2.5 flex items-center justify-between gap-2 shadow-xs border border-rose-100">
               <div class="flex items-center gap-2">
                 <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-black text-sm shrink-0">
-                  200K
+                  <?php echo esc_html( $v2_badge ); ?>
                 </div>
                 <div>
-                  <div class="font-bold text-xs leading-tight">Giảm 200.000₫ cho Phụ Kiện</div>
-                  <div class="text-[10px] text-secondary">Đơn từ 800.000₫ • HSD: Hôm nay</div>
+                  <div class="font-bold text-xs leading-tight"><?php echo esc_html( $v2_title ); ?></div>
+                  <div class="text-[10px] text-secondary"><?php echo esc_html( $v2_desc ); ?></div>
                 </div>
               </div>
-              <button type="button" class="btn-claim-voucher px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-all shrink-0 cursor-pointer" onclick="claimVoucher(this, 'PHONEX200')">
+              <button type="button" class="btn-claim-voucher px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-all shrink-0 cursor-pointer" onclick="claimVoucher(this, '<?php echo esc_js( $v2_code ); ?>')">
                 Lưu mã
               </button>
             </div>
@@ -140,6 +182,7 @@ $fs_products = $flashsale_settings['products'] ?? array();
 
     </div>
   </section>
+
 
   <!-- ================= 2. STICKY CATEGORY NAVIGATION (TGDD Style wrapmenu-scroll) ================= -->
   <nav class="sticky top-[60px] md:top-[68px] z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xs" id="px-sticky-campaign-nav">
@@ -374,8 +417,8 @@ $fs_products = $flashsale_settings['products'] ?? array();
             <span class="material-symbols-outlined text-[28px] text-amber-300">smartphone</span>
           </div>
           <div>
-            <h2 class="text-xl sm:text-2xl font-black tracking-tight">ĐIỆN THOẠI GIÁ RẺ QUÁ - GIẢM ĐẾN 35%</h2>
-            <p class="text-xs sm:text-sm text-rose-100">Bảo hành 12 tháng chính hãng • Thu cũ đổi mới trợ giá 3 triệu</p>
+            <h2 class="text-xl sm:text-2xl font-black tracking-tight"><?php echo esc_html( $sec_phone_t ); ?></h2>
+            <p class="text-xs sm:text-sm text-rose-100"><?php echo esc_html( $sec_phone_s ); ?></p>
           </div>
         </div>
 
@@ -586,13 +629,13 @@ $fs_products = $flashsale_settings['products'] ?? array();
             <span class="material-symbols-outlined text-[28px] text-amber-300">phone_iphone</span>
           </div>
           <div>
-            <h2 class="text-xl sm:text-2xl font-black tracking-tight">HỆ SINH THÁI APPLE CHÍNH HÃNG VN/A</h2>
-            <p class="text-xs sm:text-sm text-gray-300">Đại lý ủy quyền chính thức • Trợ giá học sinh sinh viên đến 3 triệu</p>
+            <h2 class="text-xl sm:text-2xl font-black tracking-tight"><?php echo esc_html( $sec_apple_t ); ?></h2>
+            <p class="text-xs sm:text-sm text-gray-300"><?php echo esc_html( $sec_apple_s ); ?></p>
           </div>
         </div>
 
         <div class="flex items-center gap-2">
-          <span class="px-3 py-1.5 rounded-full bg-white/15 text-xs font-bold text-white">Apple Authorised Reseller</span>
+          <span class="px-3 py-1.5 rounded-full bg-white/15 text-xs font-bold text-white"><?php echo esc_html( $sec_apple_b ); ?></span>
         </div>
       </div>
 
@@ -760,8 +803,8 @@ $fs_products = $flashsale_settings['products'] ?? array();
             <span class="material-symbols-outlined text-[28px] text-amber-300">tablet_mac</span>
           </div>
           <div>
-            <h2 class="text-xl sm:text-2xl font-black tracking-tight">TABLET &amp; LAPTOP HỌC TẬP - VĂN PHÒNG</h2>
-            <p class="text-xs sm:text-sm text-blue-100">Ưu đãi sinh viên giảm thêm 500.000₫ • Tặng kèm túi chống sốc</p>
+            <h2 class="text-xl sm:text-2xl font-black tracking-tight"><?php echo esc_html( $sec_tablet_t ); ?></h2>
+            <p class="text-xs sm:text-sm text-blue-100"><?php echo esc_html( $sec_tablet_s ); ?></p>
           </div>
         </div>
       </div>
@@ -924,8 +967,8 @@ $fs_products = $flashsale_settings['products'] ?? array();
             <span class="material-symbols-outlined text-[28px] text-white">headphones</span>
           </div>
           <div>
-            <h2 class="text-xl sm:text-2xl font-black tracking-tight">PHỤ KIỆN CHÍNH HÃNG - ĐỒNG GIÁ TỪ 99K</h2>
-            <p class="text-xs sm:text-sm text-amber-100">Bảo hành 1 đổi 1 trong 12 tháng • Mua 2 giảm thêm 10%</p>
+            <h2 class="text-xl sm:text-2xl font-black tracking-tight"><?php echo esc_html( $sec_acc_t ); ?></h2>
+            <p class="text-xs sm:text-sm text-amber-100"><?php echo esc_html( $sec_acc_s ); ?></p>
           </div>
         </div>
       </div>
@@ -1088,8 +1131,8 @@ $fs_products = $flashsale_settings['products'] ?? array();
             <span class="material-symbols-outlined text-[28px] text-amber-300">watch</span>
           </div>
           <div>
-            <h2 class="text-xl sm:text-2xl font-black tracking-tight">ĐỒNG HỒ THÔNG MINH &amp; SỨC KHỎE 24/7</h2>
-            <p class="text-xs sm:text-sm text-emerald-100">Đo điện tâm đồ ECG • Huyết áp • GPS đa băng tần chính xác</p>
+            <h2 class="text-xl sm:text-2xl font-black tracking-tight"><?php echo esc_html( $sec_watch_t ); ?></h2>
+            <p class="text-xs sm:text-sm text-emerald-100"><?php echo esc_html( $sec_watch_s ); ?></p>
           </div>
         </div>
       </div>
@@ -1156,10 +1199,10 @@ $fs_products = $flashsale_settings['products'] ?? array();
             <span>CHÍNH SÁCH THU CŨ ĐỔI MỚI TRỢ GIÁ KHỦNG</span>
           </div>
           <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-            Lên Đời Smartphone Mới - Trợ Giá Đến <span class="text-primary">3.000.000₫</span>
+            <?php echo esc_html( $sec_trade_t ); ?>
           </h2>
           <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-            PhoneX tiếp nhận thu mua máy cũ tất cả các dòng iPhone, Samsung, Xiaomi,... Thẩm định chuẩn AI 60 giây, giải ngân nhận tiền mặt hoặc trừ trực tiếp vào giá máy mới.
+            <?php echo esc_html( $sec_trade_s ); ?>
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">

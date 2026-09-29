@@ -271,3 +271,9 @@ if ( class_exists( 'WooCommerce' ) ) {
  * PhoneX Flash Sale Giờ Vàng Management & Options
  */
 require get_template_directory() . '/inc/admin-flashsale.php';
+
+/**
+ * PhoneX Mega Promotions Page Management & Options
+ */
+require get_template_directory() . '/inc/admin-promotions.php';
+
