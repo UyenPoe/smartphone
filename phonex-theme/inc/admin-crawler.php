@@ -185,20 +185,22 @@ function phonex_crawler_parse_products( $html, $forced_brand = '' ) {
 		$spec_summary = implode( ' • ', $specs );
 
 		// Check if product already exists in PhoneX DB
-		$existing_id = phonex_crawler_find_existing_product( $clean_name, $source_url );
+		$existing_id           = phonex_crawler_find_existing_product( $clean_name, $source_url );
+		$existing_last_crawled = $existing_id ? get_post_meta( $existing_id, '_last_crawled_at', true ) : '';
 
 		$products[] = array(
-			'name'          => $clean_name,
-			'source_url'    => $source_url,
-			'price_current' => $price_current,
-			'price_old'     => $price_old,
-			'brand'         => $brand,
-			'model'         => $model_name,
-			'capacity'      => $capacity,
-			'specs'         => $spec_summary,
-			'image'         => $img_url,
-			'updated_at'    => $now_vn,
-			'existing_id'   => $existing_id,
+			'name'                  => $clean_name,
+			'source_url'            => $source_url,
+			'price_current'         => $price_current,
+			'price_old'             => $price_old,
+			'brand'                 => $brand,
+			'model'                 => $model_name,
+			'capacity'              => $capacity,
+			'specs'                 => $spec_summary,
+			'image'                 => $img_url,
+			'updated_at'            => $now_vn,
+			'existing_id'           => $existing_id,
+			'existing_last_crawled' => $existing_last_crawled,
 		);
 	}
 
@@ -552,14 +554,19 @@ function phonex_crawler_render_admin_page() {
 				</div>
 
 				<!-- Action Buttons -->
-				<div style="display: flex; gap: 10px;">
+				<div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
 					<button type="button" id="btn-scan" class="button button-primary" style="height: 40px; padding: 0 20px; font-weight: 700; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px; background: #0284c7; border-color: #0284c7;">
 						<span class="dashicons dashicons-search" style="margin-top: 1px;"></span> 1. Quét Dữ Liệu TGDD
 					</button>
 
 					<button type="button" id="btn-import-all" class="button" disabled style="height: 40px; padding: 0 20px; font-weight: 700; border-radius: 8px; display: inline-flex; align-items: center; gap: 6px; background: #16a34a; border-color: #16a34a; color: #fff; cursor: not-allowed; opacity: 0.6;">
-						<span class="dashicons dashicons-cloud-upload" style="margin-top: 1px;"></span> 2. Nhập Tất Cả Vào WooCommerce
+						<span class="dashicons dashicons-cloud-upload" style="margin-top: 1px;"></span> 2. Nhập Hàng Loạt Vào Web
 					</button>
+
+					<label style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #475569; margin-left: 6px; cursor: pointer;">
+						<input type="checkbox" id="crawler-skip-existing" checked="checked" style="accent-color: #16a34a; width: 16px; height: 16px;" />
+						Chỉ nhập máy MỚI (Bỏ qua máy đã có)
+					</label>
 				</div>
 			</div>
 
@@ -587,8 +594,21 @@ function phonex_crawler_render_admin_page() {
 
 		<!-- Scanned Products Table -->
 		<div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
-			<div style="padding: 16px 20px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center;">
-				<h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1e293b;">Danh Sách Sản Phẩm Tìm Thấy</h3>
+			<div style="padding: 14px 20px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+				<div style="display: flex; align-items: center; gap: 12px;">
+					<h3 style="margin: 0; font-size: 15px; font-weight: 700; color: #1e293b;">Danh Sách Sản Phẩm</h3>
+					<div id="filter-tabs" style="display: flex; gap: 6px;">
+						<button type="button" class="tab-filter-btn active" data-filter="all" style="border: 1px solid #cbd5e1; background: #2563eb; color: #fff; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; cursor: pointer;">
+							Tất cả (<span id="count-all">0</span>)
+						</button>
+						<button type="button" class="tab-filter-btn" data-filter="new" style="border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; cursor: pointer;">
+							✨ Máy mới chưa có (<span id="count-new">0</span>)
+						</button>
+						<button type="button" class="tab-filter-btn" data-filter="exist" style="border: 1px solid #cbd5e1; background: #fff; color: #475569; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; cursor: pointer;">
+							🟢 Đã có trên web (<span id="count-exist">0</span>)
+						</button>
+					</div>
+				</div>
 				<span id="badge-total" style="background: #f1f5f9; color: #475569; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 700;">Chưa quét</span>
 			</div>
 
@@ -598,13 +618,13 @@ function phonex_crawler_render_admin_page() {
 						<tr>
 							<th style="width: 50px; text-align: center;">Ảnh</th>
 							<th style="width: 220px;">Tên Sản Phẩm</th>
-							<th style="width: 90px;">Hãng/Model</th>
+							<th style="width: 140px;">Trạng Thái Nhập</th>
+							<th style="width: 80px;">Hãng</th>
 							<th style="width: 80px;">Dung lượng</th>
 							<th style="width: 110px;">Giá Hiện Tại</th>
 							<th style="width: 110px;">Giá Cũ (Gốc)</th>
 							<th>Thông Số Kỹ Thuật</th>
-							<th style="width: 140px;">Thời Điểm</th>
-							<th style="width: 120px; text-align: center;">Hành Động</th>
+							<th style="width: 130px; text-align: center;">Hành Động</th>
 						</tr>
 					</thead>
 					<tbody id="products-tbody">
@@ -627,6 +647,7 @@ function phonex_crawler_render_admin_page() {
 		const ajaxUrl = '<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>';
 		const securityNonce = '<?php echo esc_js( $ajax_nonce ); ?>';
 		let scannedProducts = [];
+		let currentFilter = 'all';
 
 		const btnScan = document.getElementById('btn-scan');
 		const btnImportAll = document.getElementById('btn-import-all');
@@ -640,12 +661,32 @@ function phonex_crawler_render_admin_page() {
 		const progressPercent = document.getElementById('progress-percent');
 		const progressLog = document.getElementById('progress-log');
 		const chkDownloadImg = document.getElementById('crawler-download-img');
+		const chkSkipExisting = document.getElementById('crawler-skip-existing');
+		const countAll = document.getElementById('count-all');
+		const countNew = document.getElementById('count-new');
+		const countExist = document.getElementById('count-exist');
 
 		// Format currency VND helper
 		function formatVND(num) {
 			if (!num || num <= 0) return '<span style="color:#94a3b8;">-</span>';
 			return new Intl.NumberFormat('vi-VN').format(num) + '₫';
 		}
+
+		// Tab filter click
+		document.querySelectorAll('.tab-filter-btn').forEach(btn => {
+			btn.addEventListener('click', function() {
+				document.querySelectorAll('.tab-filter-btn').forEach(b => {
+					b.style.background = '#fff';
+					b.style.color = '#475569';
+					b.classList.remove('active');
+				});
+				this.style.background = '#2563eb';
+				this.style.color = '#fff';
+				this.classList.add('active');
+				currentFilter = this.getAttribute('data-filter');
+				renderTable();
+			});
+		});
 
 		// 1. Quét dữ liệu từ TGDD
 		btnScan.addEventListener('click', function() {
@@ -687,6 +728,17 @@ function phonex_crawler_render_admin_page() {
 					return;
 				}
 
+				// Update counts
+				let newCount = 0;
+				let existCount = 0;
+				scannedProducts.forEach(p => {
+					if (p.existing_id > 0) existCount++;
+					else newCount++;
+				});
+				countAll.textContent = scannedProducts.length;
+				countNew.textContent = newCount;
+				countExist.textContent = existCount;
+
 				// Enable Import All Button
 				btnImportAll.disabled = false;
 				btnImportAll.style.opacity = '1';
@@ -705,26 +757,55 @@ function phonex_crawler_render_admin_page() {
 		// Render products list in table
 		function renderTable() {
 			let html = '';
-			scannedProducts.forEach((p, idx) => {
-				const isSale = p.price_old > p.price_current;
-				const existTag = p.existing_id > 0 
-					? '<span style="display:inline-block; font-size:10px; background:#e0e7ff; color:#3730a3; padding:2px 6px; border-radius:4px; font-weight:700;">Đã có ID: ' + p.existing_id + '</span>'
-					: '<span style="display:inline-block; font-size:10px; background:#dcfce7; color:#166534; padding:2px 6px; border-radius:4px; font-weight:700;">Mới</span>';
+			let visibleCount = 0;
 
-				html += '<tr id="row-prod-' + idx + '">';
-				html += '<td style="text-align:center;"><img src="' + (p.image || '') + '" style="width:40px; height:40px; object-fit:contain; border-radius:6px; background:#f8fafc; border:1px solid #e2e8f0;" loading="lazy"/></td>';
-				html += '<td><strong>' + p.name + '</strong><br/>' + existTag + ' <a href="' + p.source_url + '" target="_blank" style="font-size:11px; color:#0284c7; text-decoration:none;" title="Xem trên TGDD">&#x2197; Link nguồn</a></td>';
-				html += '<td><span style="font-weight:700; color:#1e293b;">' + (p.brand || '-') + '</span></td>';
-				html += '<td><span style="font-weight:600; color:#475569;">' + (p.capacity || '-') + '</span></td>';
-				html += '<td style="font-weight:800; color:#b7000c;">' + formatVND(p.price_current) + '</td>';
-				html += '<td style="color:#64748b;' + (isSale ? ' text-decoration:line-through;' : '') + '">' + formatVND(p.price_old) + '</td>';
-				html += '<td style="font-size:12px; color:#475569;">' + (p.specs || '<span style="color:#94a3b8;">-</span>') + '</td>';
-				html += '<td style="font-size:11px; color:#64748b;">' + p.updated_at + '</td>';
-				html += '<td style="text-align:center;" id="action-cell-' + idx + '">';
-				html += '<button type="button" class="button button-small btn-import-one" data-index="' + idx + '" style="font-weight:600; border-radius:6px;">Nhập máy này</button>';
-				html += '</td>';
-				html += '</tr>';
+			scannedProducts.forEach((p, idx) => {
+				const isExisting = p.existing_id > 0;
+
+				// Filter check
+				if (currentFilter === 'new' && isExisting) return;
+				if (currentFilter === 'exist' && !isExisting) return;
+
+				visibleCount++;
+				const isSale = p.price_old > p.price_current;
+
+				let statusHtml = '';
+				let actionBtnHtml = '';
+
+				if (isExisting) {
+					statusHtml = `
+						<div style="display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:6px; background:#f0fdf4; border:1px solid #bbf7d0; color:#15803d; font-weight:700; font-size:11px;">
+							<span class="dashicons dashicons-yes-alt" style="font-size:14px; width:14px; height:14px; color:#16a34a;"></span> Đã có (#${p.existing_id})
+						</div>
+						${p.existing_last_crawled ? `<div style="font-size:10px; color:#64748b; margin-top:3px;">Lần crawl: ${p.existing_last_crawled}</div>` : ''}
+					`;
+					actionBtnHtml = `<button type="button" class="button btn-import-one" data-index="${idx}" style="font-weight:700; border-radius:6px; background:#0284c7; color:#fff; border:0; padding:3px 10px; font-size:11px;">🔄 Cập nhật giá</button>`;
+				} else {
+					statusHtml = `
+						<div style="display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:6px; background:#fffbeb; border:1px solid #fde68a; color:#b45309; font-weight:700; font-size:11px;">
+							<span class="dashicons dashicons-plus-alt" style="font-size:14px; width:14px; height:14px; color:#d97706;"></span> Máy mới
+						</div>
+					`;
+					actionBtnHtml = `<button type="button" class="button btn-import-one" data-index="${idx}" style="font-weight:700; border-radius:6px; background:#16a34a; color:#fff; border:0; padding:3px 10px; font-size:11px;">📥 Nhập ngay</button>`;
+				}
+
+				html += `<tr id="row-prod-${idx}">`;
+				html += `<td style="text-align:center;"><img src="${p.image || ''}" style="width:40px; height:40px; object-fit:contain; border-radius:6px; background:#f8fafc; border:1px solid #e2e8f0;" loading="lazy"/></td>`;
+				html += `<td><strong>${p.name}</strong><br/><a href="${p.source_url}" target="_blank" style="font-size:11px; color:#0284c7; text-decoration:none;" title="Xem trên TGDD">&#x2197; Link gốc TGDD</a></td>`;
+				html += `<td>${statusHtml}</td>`;
+				html += `<td><span style="font-weight:700; color:#1e293b;">${p.brand || '-'}</span></td>`;
+				html += `<td><span style="font-weight:600; color:#475569;">${p.capacity || '-'}</span></td>`;
+				html += `<td style="font-weight:800; color:#b7000c;">${formatVND(p.price_current)}</td>`;
+				html += `<td style="color:#64748b; ${isSale ? 'text-decoration:line-through;' : ''}">${formatVND(p.price_old)}</td>`;
+				html += `<td style="font-size:12px; color:#475569;">${p.specs || '<span style="color:#94a3b8;">-</span>'}</td>`;
+				html += `<td style="text-align:center;" id="action-cell-${idx}">${actionBtnHtml}</td>`;
+				html += `</tr>`;
 			});
+
+			if (visibleCount === 0) {
+				html = '<tr><td colspan="9" style="text-align:center; padding:30px; color:#94a3b8;">Không có sản phẩm nào thuộc bộ lọc này.</td></tr>';
+			}
+
 			tbody.innerHTML = html;
 
 			// Attach click events for individual buttons
@@ -767,10 +848,14 @@ function phonex_crawler_render_admin_page() {
 			})
 			.then(res => res.json())
 			.then(data => {
-				if (cell) {
-					if (data.success) {
-						cell.innerHTML = '<span style="color:#16a34a; font-weight:700; font-size:11px;">&#x2714; ' + data.data.message + ' (ID: ' + data.data.id + ')</span>';
-					} else {
+				if (data.success) {
+					p.existing_id = data.data.id;
+					p.existing_last_crawled = p.updated_at;
+					if (cell) {
+						cell.innerHTML = '<span style="color:#16a34a; font-weight:700; font-size:11px;">&#x2714; Đã lưu (#ID: ' + data.data.id + ')</span>';
+					}
+				} else {
+					if (cell) {
 						cell.innerHTML = '<span style="color:#dc2626; font-size:11px;">&#x2718; Lỗi: ' + (data.data.message || 'Thất bại') + '</span>';
 					}
 				}
@@ -795,7 +880,22 @@ function phonex_crawler_render_admin_page() {
 				return;
 			}
 
-			if (!confirm('Bạn có chắc chắn muốn nhập tất cả ' + scannedProducts.length + ' sản phẩm vào WooCommerce?')) {
+			const skipExisting = chkSkipExisting.checked;
+			let itemsToProcess = [];
+
+			scannedProducts.forEach((p, idx) => {
+				if (skipExisting && p.existing_id > 0) {
+					return; // Skip already crawled products
+				}
+				itemsToProcess.push(idx);
+			});
+
+			if (itemsToProcess.length === 0) {
+				alert('Tất cả sản phẩm quét được đều đã có trên web! Bạn có thể bỏ tích "Chỉ nhập máy mới" nếu muốn cập nhật lại giá cho các máy này.');
+				return;
+			}
+
+			if (!confirm('Bạn có chắc chắn muốn xử lý ' + itemsToProcess.length + ' sản phẩm vào WooCommerce?')) {
 				return;
 			}
 
@@ -803,12 +903,12 @@ function phonex_crawler_render_admin_page() {
 			btnImportAll.disabled = true;
 			progressContainer.style.display = 'block';
 
-			let currentIndex = 0;
-			const total = scannedProducts.length;
+			let step = 0;
+			const total = itemsToProcess.length;
 			let successCount = 0;
 
 			function processNext() {
-				if (currentIndex >= total) {
+				if (step >= total) {
 					progressStatus.innerHTML = '<span style="color:#16a34a;">&#x2714; Hoàn tất! Đã xử lý ' + total + ' sản phẩm (' + successCount + ' thành công).</span>';
 					progressBarFill.style.width = '100%';
 					progressPercent.textContent = '100%';
@@ -818,19 +918,20 @@ function phonex_crawler_render_admin_page() {
 					return;
 				}
 
-				const currentItem = scannedProducts[currentIndex];
-				const percent = Math.round(((currentIndex) / total) * 100);
+				const prodIndex = itemsToProcess[step];
+				const currentItem = scannedProducts[prodIndex];
+				const percent = Math.round(((step) / total) * 100);
 				progressBarFill.style.width = percent + '%';
 				progressPercent.textContent = percent + '%';
-				progressStatus.textContent = 'Đang nhập [' + (currentIndex + 1) + '/' + total + ']: ' + currentItem.name;
+				progressStatus.textContent = 'Đang nhập [' + (step + 1) + '/' + total + ']: ' + currentItem.name;
 				progressLog.textContent = 'Xử lý: ' + currentItem.name + ' (' + currentItem.brand + ')...';
 
-				importSingleProduct(currentIndex, function(res) {
+				importSingleProduct(prodIndex, function(res) {
 					if (res && res.success) {
 						successCount++;
 					}
-					currentIndex++;
-					setTimeout(processNext, 200); // Small interval to keep server responsive
+					step++;
+					setTimeout(processNext, 200);
 				});
 			}
 
@@ -851,3 +952,166 @@ function phonex_crawler_render_admin_page() {
 	</style>
 	<?php
 }
+
+/**
+ * ==============================================================================
+ * WOOCOMMERCE ADMIN PRODUCTS LIST: ADD "Nguồn Dữ Liệu" COLUMN & FILTER
+ * ==============================================================================
+ */
+
+/**
+ * Add custom column header to WooCommerce Products list
+ */
+function phonex_crawler_add_product_columns( $columns ) {
+	$new_cols = array();
+	foreach ( $columns as $key => $title ) {
+		$new_cols[ $key ] = $title;
+		if ( 'name' === $key ) {
+			$new_cols['phonex_source'] = __( 'Nguồn Dữ Liệu', 'phonex' );
+		}
+	}
+	return $new_cols;
+}
+add_filter( 'manage_edit-product_columns', 'phonex_crawler_add_product_columns' );
+
+/**
+ * Render custom column content in WooCommerce Products list
+ */
+function phonex_crawler_render_product_custom_column( $column, $post_id ) {
+	if ( 'phonex_source' !== $column ) {
+		return;
+	}
+
+	$source_url   = get_post_meta( $post_id, '_source_url', true );
+	$last_crawled = get_post_meta( $post_id, '_last_crawled_at', true );
+	$brand        = get_post_meta( $post_id, '_brand_name', true );
+	$capacity     = get_post_meta( $post_id, '_storage_capacity', true );
+
+	if ( ! empty( $source_url ) ) {
+		echo '<div style="display:flex; flex-direction:column; gap:3px;">';
+		echo '<div style="display:flex; align-items:center; gap:5px;">';
+		echo '<span style="background:#ffedd5; color:#c2410c; padding:2px 7px; border-radius:4px; font-size:10px; font-weight:800; border:1px solid #fed7aa;">TGDD</span>';
+		echo '<a href="' . esc_url( $source_url ) . '" target="_blank" style="font-weight:700; color:#0284c7; text-decoration:none; font-size:11px;" title="Xem bài gốc trên thegioididong.com">Link gốc &#x2197;</a>';
+		echo '</div>';
+		if ( ! empty( $capacity ) ) {
+			echo '<span style="font-size:11px; color:#475569; font-weight:600;">' . esc_html( $capacity ) . ( $brand ? ' &bull; ' . esc_html( $brand ) : '' ) . '</span>';
+		}
+		if ( ! empty( $last_crawled ) ) {
+			echo '<span style="font-size:10px; color:#94a3b8;" title="' . esc_attr( $last_crawled ) . '">Crawl: ' . esc_html( date( 'd/m/Y H:i', strtotime( $last_crawled ) ) ) . '</span>';
+		}
+		echo '</div>';
+	} else {
+		echo '<span style="color:#94a3b8; font-size:11px; font-style:italic;">Thủ công</span>';
+	}
+}
+add_action( 'manage_product_posts_custom_column', 'phonex_crawler_render_product_custom_column', 10, 2 );
+
+/**
+ * Add filter dropdown in WooCommerce admin: "Lọc theo nguồn"
+ */
+function phonex_crawler_filter_source_dropdown() {
+	global $typenow;
+	if ( 'product' !== $typenow ) {
+		return;
+	}
+	$selected = isset( $_GET['filter_crawl_source'] ) ? sanitize_text_field( $_GET['filter_crawl_source'] ) : '';
+	?>
+	<select name="filter_crawl_source">
+		<option value=""><?php esc_html_e( 'Tất cả nguồn dữ liệu', 'phonex' ); ?></option>
+		<option value="tgdd" <?php selected( $selected, 'tgdd' ); ?>><?php esc_html_e( '🔥 Chỉ sản phẩm Crawl từ TGDD', 'phonex' ); ?></option>
+		<option value="manual" <?php selected( $selected, 'manual' ); ?>><?php esc_html_e( '📝 Sản phẩm nhập thủ công', 'phonex' ); ?></option>
+	</select>
+	<?php
+}
+add_action( 'restrict_manage_posts', 'phonex_crawler_filter_source_dropdown' );
+
+/**
+ * Filter query by crawl source
+ */
+function phonex_crawler_filter_source_query( $query ) {
+	global $pagenow, $typenow;
+	if ( is_admin() && $query->is_main_query() && 'edit.php' === $pagenow && 'product' === $typenow && ! empty( $_GET['filter_crawl_source'] ) ) {
+		$source = sanitize_text_field( $_GET['filter_crawl_source'] );
+		if ( 'tgdd' === $source ) {
+			$query->set(
+				'meta_query',
+				array(
+					array(
+						'key'     => '_source_url',
+						'compare' => 'EXISTS',
+					),
+					array(
+						'key'     => '_source_url',
+						'value'   => '',
+						'compare' => '!=',
+					),
+				)
+			);
+		} elseif ( 'manual' === $source ) {
+			$query->set(
+				'meta_query',
+				array(
+					'relation' => 'OR',
+					array(
+						'key'     => '_source_url',
+						'compare' => 'NOT EXISTS',
+					),
+					array(
+						'key'     => '_source_url',
+						'value'   => '',
+						'compare' => '=',
+					),
+				)
+			);
+		}
+	}
+}
+add_action( 'pre_get_posts', 'phonex_crawler_filter_source_query' );
+
+/**
+ * Add Metabox on Product Edit Screen
+ */
+function phonex_crawler_add_product_metabox() {
+	add_meta_box(
+		'phonex_tgdd_meta_box',
+		__( '📥 Nguồn Dữ Liệu TGDD', 'phonex' ),
+		'phonex_crawler_render_product_metabox',
+		'product',
+		'side',
+		'high'
+	);
+}
+add_action( 'add_meta_boxes', 'phonex_crawler_add_product_metabox' );
+
+/**
+ * Render Metabox Content
+ */
+function phonex_crawler_render_product_metabox( $post ) {
+	$source_url   = get_post_meta( $post->ID, '_source_url', true );
+	$last_crawled = get_post_meta( $post->ID, '_last_crawled_at', true );
+	$brand        = get_post_meta( $post->ID, '_brand_name', true );
+	$capacity     = get_post_meta( $post->ID, '_storage_capacity', true );
+	$specs        = get_post_meta( $post->ID, '_basic_specs', true );
+
+	if ( empty( $source_url ) ) {
+		echo '<p style="color:#64748b; font-size:12px; margin:0;">Sản phẩm này được tạo thủ công, không có nguồn crawl từ TGDD.</p>';
+		return;
+	}
+	?>
+	<div style="font-size: 12px; line-height: 1.5; color: #334155;">
+		<div style="margin-bottom: 8px;">
+			<span style="display:inline-block; background: #ffedd5; color: #c2410c; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px; border: 1px solid #fed7aa;">ĐÃ CRAWL TỪ TGDD</span>
+		</div>
+		<p style="margin: 0 0 6px;"><strong>Hãng:</strong> <?php echo esc_html( $brand ?: '-' ); ?></p>
+		<p style="margin: 0 0 6px;"><strong>Dung lượng:</strong> <?php echo esc_html( $capacity ?: '-' ); ?></p>
+		<p style="margin: 0 0 6px;"><strong>Thông số cơ bản:</strong><br/><span style="color:#64748b;"><?php echo esc_html( $specs ?: '-' ); ?></span></p>
+		<p style="margin: 0 0 6px;"><strong>Thời điểm cập nhật:</strong><br/><span style="color:#0f766e; font-weight:600;"><?php echo esc_html( $last_crawled ?: '-' ); ?></span></p>
+		<div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed #e2e8f0;">
+			<a href="<?php echo esc_url( $source_url ); ?>" target="_blank" style="color: #0284c7; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+				Mở link gốc trên TGDD &#x2197;
+			</a>
+		</div>
+	</div>
+	<?php
+}
+
