@@ -1,217 +1,473 @@
-<!-- PhoneX Flagship Unified Header (Desktop, Tablet & Mobile with Popup Support) -->
-<header class="sticky top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 font-sans" data-component="header">
-  <!-- 1. Top Announcement Bar (Desktop & Tablet) -->
-  <div class="hidden md:block w-full bg-gray-100 border-b border-gray-200 text-sm text-gray-700 py-2 px-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
-        <span class="font-bold text-red-600">Hotline miễn phí: 1800.6868</span> (8h00 - 21h30)
-        <span class="text-gray-300">|</span>
-        <span class="font-medium text-gray-600">Hệ thống 128 cửa hàng toàn quốc</span>
+<!-- PhoneX Flagship Unified Header (TGDD Structure with PhoneX Brand Red & Clean Aesthetics) -->
+<header class="sticky top-0 left-0 w-full z-50 bg-white shadow-xs font-sans" data-component="header">
+  
+  <!-- 1. TOP CAMPAIGN BANNER (TGDD Top Banner Structure) -->
+  <div id="pxTopCampaignBanner" class="w-full bg-gradient-to-r from-red-700 via-red-600 to-rose-600 text-white text-xs md:text-sm py-2 px-3 relative z-50 border-b border-red-800/40">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2 overflow-hidden truncate">
+        <span class="inline-flex items-center gap-1 bg-white/20 backdrop-blur-xs text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase shrink-0 animate-pulse">
+          <span class="material-symbols-outlined text-[15px]">bolt</span>
+          72 Model Giá Sốc
+        </span>
+        <span class="font-bold hidden sm:inline">Duy nhất 3 ngày (28 - 30.09.2026):</span>
+        <span class="truncate font-medium">Giảm khủng đến <strong class="text-amber-200 font-extrabold text-xs md:text-sm">35%</strong> cho Điện Thoại, Tablet &amp; Phụ Kiện</span>
       </div>
-      <div class="flex items-center gap-5 text-sm">
-        <a href="{{ROOT}}pages/warranty/warranty-lookup/index.html" class="hover:text-red-600 font-medium transition-colors">Tra cứu bảo hành điện tử</a>
-        <span class="text-gray-300">|</span>
-        <a href="{{ROOT}}pages/trade-in/sell-phone/index.html" class="hover:text-red-600 transition-colors text-red-600 font-bold">Thu cũ đổi mới trợ giá đến 3.000.000₫</a>
-        <span class="text-gray-300">|</span>
-        <a href="{{ROOT}}pages/shop/order-tracking/index.html" class="hover:text-red-600 font-medium transition-colors">Tra cứu đơn hàng</a>
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="{{ROOT}}pages/promotions/promotions/index.html" class="px-3.5 py-1 bg-white text-red-600 hover:bg-gray-100 rounded-full font-extrabold text-xs shadow-xs transition-colors shrink-0 uppercase tracking-tight flex items-center gap-1">
+          <span>Mua Ngay</span>
+          <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+        </a>
+        <button type="button" aria-label="Đóng banner" onclick="PhoneXTopBanner.dismiss()" class="w-6 h-6 flex items-center justify-center rounded-full hover:bg-white/20 text-white/90 hover:text-white transition-colors" title="Đóng thông báo">
+          <span class="material-symbols-outlined text-[16px]">close</span>
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- 2. Main Navigation Bar -->
-  <div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4">
-    <!-- Left: Mobile Hamburger + Logo -->
-    <div class="flex items-center gap-2 md:gap-4 shrink-0">
-      <!-- Hamburger Button -> Triggers Mobile Popup Menu -->
-      <button type="button" aria-label="Mở danh mục menu" class="md:hidden w-11 h-11 flex items-center justify-center rounded-xl text-gray-800 hover:bg-gray-100 active:bg-gray-200 transition-colors" onclick="PhoneXPopups.openMenu()">
-        <span class="material-symbols-outlined text-[30px]">menu</span>
-      </button>
-
-      <!-- PhoneX Logo -->
-      <a href="{{ROOT}}pages/shop/home/index.html" data-path="home" class="flex items-center gap-2">
-        <div class="flex flex-col">
-          <span class="text-2xl md:text-3xl font-black text-gray-900 tracking-tight leading-none">Phone<span class="text-red-600">X</span></span>
-          <span class="text-[11px] md:text-xs text-gray-500 font-bold uppercase tracking-wider leading-none mt-1 hidden sm:inline">Smartphone Specialist</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Center: Search Bar (Desktop & Tablet) -->
-    <div class="hidden sm:flex flex-1 max-w-xl mx-2">
-      <form action="{{ROOT}}pages/shop/search/index.html" method="get" class="relative w-full flex items-center" onsubmit="const q=this.querySelector('input').value.trim(); if(!q){event.preventDefault();}">
-        <input name="q" class="w-full h-11 md:h-12 pl-4 pr-12 bg-gray-100 rounded-xl text-base text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-red-600 transition-all border border-transparent focus:border-red-600" placeholder="Tìm kiếm smartphone, iPhone 16 Pro Max, Galaxy S25 Ultra, Xiaomi 15..." type="text">
-        <button type="submit" aria-label="Tìm kiếm" class="absolute right-1.5 w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors">
-          <span class="material-symbols-outlined text-[22px]">search</span>
+  <!-- 2. MAIN HEADER ROW (Logo | Pill Search Bar | 4 Actions: User, Voucher, Cart, Location) -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 h-16 md:h-18 flex items-center justify-between gap-3 md:gap-6">
+      
+      <!-- Left: Mobile Hamburger + PhoneX Logo -->
+      <div class="flex items-center gap-2 md:gap-3.5 shrink-0">
+        <!-- Mobile Menu Hamburger Button -->
+        <button type="button" aria-label="Mở menu" class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl text-gray-800 hover:bg-gray-100 active:bg-gray-200 transition-colors" onclick="PhoneXPopups.openMenu()">
+          <span class="material-symbols-outlined text-[28px]">menu</span>
         </button>
-      </form>
-    </div>
 
-    <!-- Right: Action Icons & User Info -->
-    <div class="flex items-center gap-1.5 sm:gap-3.5 shrink-0">
-      <!-- Search Icon (Mobile only -> Triggers Search Popup) -->
-      <button type="button" aria-label="Tìm kiếm" onclick="PhoneXPopups.openSearch()" class="sm:hidden w-11 h-11 flex items-center justify-center rounded-xl text-gray-800 hover:bg-gray-100 active:bg-gray-200 transition-colors">
-        <span class="material-symbols-outlined text-[26px]">search</span>
-      </button>
-
-      <!-- So sánh (Tablet & Desktop) -->
-      <a href="{{ROOT}}pages/shop/compare/index.html" data-path="compare" class="hidden lg:flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-red-600 transition-colors">
-        <div class="relative flex items-center justify-center">
-          <span class="material-symbols-outlined text-[24px] text-gray-600">compare_arrows</span>
-          <span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-xs font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center">2</span>
-        </div>
-        <span class="text-sm font-semibold">So sánh</span>
-      </a>
-
-      <!-- Yêu thích (Tablet & Desktop) -->
-      <a href="{{ROOT}}pages/account/favorites/index.html" data-path="wishlist" class="hidden lg:flex items-center gap-2 px-3 py-2 text-gray-700 hover:text-red-600 transition-colors">
-        <div class="relative flex items-center justify-center">
-          <span class="material-symbols-outlined text-[24px] text-gray-600">favorite_border</span>
-          <span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-xs font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center">3</span>
-        </div>
-        <span class="text-sm font-semibold">Yêu thích</span>
-      </a>
-
-      <!-- Giỏ hàng (All platforms) -->
-      <a href="{{ROOT}}pages/shop/cart/index.html" data-path="cart" class="flex items-center gap-2.5 px-3.5 py-2 bg-gray-100 hover:bg-gray-200 rounded-xl transition-colors">
-        <div class="relative flex items-center justify-center">
-          <span class="material-symbols-outlined text-[26px] text-red-600">shopping_cart</span>
-          <span class="absolute -top-1.5 -right-2 bg-red-600 text-white text-xs font-bold w-4.5 h-4.5 rounded-full flex items-center justify-center" data-cart-count>1</span>
-        </div>
-        <div class="hidden sm:flex flex-col text-left">
-          <span class="text-xs text-gray-500 uppercase font-bold leading-tight">Giỏ hàng</span>
-          <span class="text-sm font-black text-red-600 leading-tight">34.990.000₫</span>
-        </div>
-      </a>
-
-      <!-- Tài khoản (Desktop) -->
-      <div class="hidden sm:flex items-center pl-2">
-        <a href="{{ROOT}}pages/account/account/index.html" data-path="account-settings" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
-          <div class="w-9 h-9 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-sm ring-2 ring-gray-200">
-            MQ
+        <!-- PhoneX Brand Logo -->
+        <a href="{{ROOT}}pages/shop/home/index.html" data-path="home" class="flex items-center gap-2.5 group">
+          <div class="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-red-600 group-hover:bg-red-700 flex items-center justify-center text-white shadow-sm shadow-red-200 transition-all">
+            <span class="material-symbols-outlined text-[22px] md:text-[24px]">smartphone</span>
           </div>
-          <div class="hidden xl:flex flex-col text-left">
-            <span class="text-sm font-bold text-gray-900 leading-tight">Minh Quân</span>
-            <span class="text-xs text-red-600 font-bold leading-none mt-0.5">VIP Member</span>
+          <div class="flex flex-col leading-none">
+            <span class="text-2xl md:text-[26px] font-black text-gray-900 tracking-tight flex items-center">
+              Phone<span class="text-red-600">X</span>
+              <span class="text-[11px] text-gray-400 font-bold ml-0.5">.vn</span>
+            </span>
+            <span class="text-[10px] text-gray-500 font-semibold tracking-wider mt-0.5 hidden xl:inline">Hệ Thống 128 Showroom Toàn Quốc</span>
           </div>
         </a>
       </div>
+
+      <!-- Center: Pill-shaped Search Bar (TGDD Structure) -->
+      <div class="hidden sm:flex flex-1 max-w-lg lg:max-w-xl mx-2">
+        <form action="{{ROOT}}pages/shop/search/index.html" method="get" class="relative w-full flex items-center" onsubmit="const q=this.querySelector('input').value.trim(); if(!q){event.preventDefault();}">
+          <span class="absolute left-4 text-gray-400 pointer-events-none material-symbols-outlined text-[20px]">search</span>
+          <input 
+            name="q" 
+            class="w-full h-11 pl-11 pr-12 bg-gray-100/90 hover:bg-gray-100 focus:bg-white rounded-full text-sm md:text-[15px] text-gray-900 placeholder-gray-400 border border-gray-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 transition-all outline-none" 
+            placeholder="Bạn tìm gì? iPhone 16 Pro Max, Galaxy S25, Xiaomi 15..." 
+            type="text"
+          >
+          <button type="submit" aria-label="Tìm kiếm" class="absolute right-1.5 w-8 h-8 flex items-center justify-center bg-red-600 hover:bg-red-700 text-white rounded-full transition-colors shadow-xs">
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Right: 4 Action Items (Đăng nhập | Voucher | Giỏ hàng | Hồ Chí Minh >) -->
+      <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+        
+        <!-- Mobile Search Button -->
+        <button type="button" aria-label="Tìm kiếm" onclick="PhoneXPopups.openSearch()" class="sm:hidden w-10 h-10 flex items-center justify-center rounded-xl text-gray-800 hover:bg-gray-100 active:bg-gray-200 transition-colors">
+          <span class="material-symbols-outlined text-[24px]">search</span>
+        </button>
+
+        <!-- 1. Đăng nhập / Tài khoản -->
+        <a href="{{ROOT}}pages/account/profile/index.html" data-path="profile" class="flex items-center gap-1.5 text-gray-800 hover:text-red-600 transition-colors text-xs md:text-sm font-semibold group px-1 py-1">
+          <div class="w-7 h-7 rounded-full bg-red-100 text-red-600 font-bold text-xs flex items-center justify-center ring-2 ring-red-200">MQ</div>
+          <div class="hidden lg:flex flex-col text-left leading-tight">
+            <span class="max-w-[85px] truncate font-bold">Minh Quân</span>
+            <span class="text-[10px] text-red-600 font-bold uppercase">VIP Member</span>
+          </div>
+        </a>
+
+        <!-- 2. Voucher / Khuyến mãi -->
+        <a href="{{ROOT}}pages/promotions/promotions/index.html" data-path="promotions" class="flex items-center gap-1.5 text-gray-800 hover:text-red-600 transition-colors text-xs md:text-sm font-semibold group px-1 py-1">
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined text-[22px] text-red-600 group-hover:scale-110 transition-transform">confirmation_number</span>
+            <span class="hidden xl:inline-block absolute -top-1 -right-2 px-1.5 py-0.2 bg-red-100 text-red-700 text-[9px] font-black rounded-full uppercase">Hot</span>
+          </div>
+          <span class="hidden sm:inline">Voucher</span>
+        </a>
+
+        <!-- 3. Giỏ hàng -->
+        <a href="{{ROOT}}pages/shop/cart/index.html" data-path="cart" class="flex items-center gap-1.5 text-gray-800 hover:text-red-600 transition-colors text-xs md:text-sm font-semibold group px-1 py-1">
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined text-[24px] text-gray-800 group-hover:text-red-600 transition-colors">shopping_cart</span>
+            <span class="absolute -top-1.5 -right-2.5 bg-red-600 text-white text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center shadow-xs">2</span>
+          </div>
+          <span class="hidden sm:inline">Giỏ hàng</span>
+        </a>
+
+        <!-- 4. Location Selector (Hồ Chí Minh >) -->
+        <button type="button" onclick="PhoneXLocation.openModal()" class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50/90 hover:bg-gray-100 hover:border-red-400 text-gray-800 hover:text-red-600 text-xs md:text-[13px] font-semibold transition-all shrink-0 shadow-2xs" title="Bấm để chọn vị trí xem giá &amp; tồn kho">
+          <span class="material-symbols-outlined text-red-600 text-[18px]">location_on</span>
+          <span id="pxLocationLabel" class="max-w-[85px] sm:max-w-none truncate font-bold">Hồ Chí Minh</span>
+          <span class="material-symbols-outlined text-gray-400 text-[16px]">chevron_right</span>
+        </button>
+
+      </div>
     </div>
   </div>
 
-  <!-- 3. Subnav: Brand Category Bar (Scrollable on Tablet & Mobile) -->
-  <div class="w-full bg-white border-t border-gray-100">
+  <!-- 3. CATEGORY NAVIGATION BAR (Row 2: Horizontal Menu with TGDD Structure & Icons) -->
+  <div class="w-full bg-white border-b border-gray-200/80 shadow-2xs">
     <div class="max-w-7xl mx-auto px-4">
-      <nav class="flex items-center gap-1.5 sm:gap-2.5 py-2.5 overflow-x-auto whitespace-nowrap text-sm font-semibold scrollbar-none" aria-label="Danh mục thương hiệu">
-        <a href="{{ROOT}}pages/shop/home/index.html" data-path="home" class="px-3.5 py-1.5 rounded-lg text-red-600 font-bold hover:bg-red-50 transition-colors">Trang chủ</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-apple" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">iPhone</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-samsung" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Samsung</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-xiaomi" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Xiaomi</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-oppo" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">OPPO</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-vivo" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">vivo</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-realme" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">realme</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-google-pixel" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Google Pixel</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="brand-nothing" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Nothing Phone</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="deals" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Điện thoại giá tốt</a>
-        <a href="{{ROOT}}pages/promotions/promotions/index.html" data-path="promotions" class="px-3.5 py-1.5 rounded-lg text-red-600 font-bold hover:bg-red-50 transition-colors">Khuyến mãi Hot</a>
-        <a href="{{ROOT}}pages/trade-in/sell-phone/index.html" data-path="trade-in" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Thu cũ đổi mới</a>
-        <a href="{{ROOT}}pages/shop/products/index.html" data-path="installment" class="px-3.5 py-1.5 rounded-lg text-gray-700 hover:text-red-600 hover:bg-gray-50 transition-colors">Trả góp 0%</a>
+      <nav class="flex items-center gap-1 md:gap-1.5 py-1.5 overflow-x-auto whitespace-nowrap text-xs md:text-sm font-semibold scrollbar-none" aria-label="Danh mục ngành hàng">
+        
+        <!-- 1. Điện thoại -->
+        <div class="px-nav-item">
+          <a href="{{ROOT}}pages/shop/brand/index.html" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px] text-gray-600">smartphone</span>
+            <span>Điện thoại</span>
+          </a>
+          <div class="px-dropdown-menu">
+            <div class="font-bold text-gray-900 text-xs uppercase px-3 py-1 text-gray-400">Thương hiệu điện thoại</div>
+            <a href="{{ROOT}}pages/shop/brand/index.html" class="px-dropdown-item"><span>iPhone (Apple VN/A)</span><span class="badge bg-red-100 text-red-700">Mới</span></a>
+            <a href="{{ROOT}}pages/shop/series/index.html" class="px-dropdown-item"><span>Samsung Galaxy</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Xiaomi &amp; POCO</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>OPPO</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>vivo</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>realme</span></a>
+            <div class="border-t border-gray-100 my-1"></div>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item text-red-600 font-bold"><span>Xem tất cả điện thoại</span><span>&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- 2. Laptop -->
+        <div class="px-nav-item">
+          <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px] text-gray-600">laptop_mac</span>
+            <span>Laptop</span>
+          </a>
+          <div class="px-dropdown-menu">
+            <a href="{{ROOT}}pages/shop/product-detail/index.html" class="px-dropdown-item"><span>MacBook Pro &amp; MacBook Air</span><span class="badge bg-red-100 text-red-700">M4</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Laptop Gaming</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Laptop Văn phòng</span></a>
+          </div>
+        </div>
+
+        <!-- 3. Phụ kiện ⌵ -->
+        <div class="px-nav-item">
+          <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[18px] text-gray-600">headphones</span>
+            <span>Phụ kiện</span>
+            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
+          </a>
+          <div class="px-dropdown-menu">
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Tai nghe AirPods &amp; Bluetooth</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Củ sạc nhanh GaN (30W - 100W)</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Cáp Type-C, Lightning</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Pin sạc dự phòng MagSafe</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Ốp lưng &amp; Kính cường lực</span></a>
+          </div>
+        </div>
+
+        <!-- 4. Smartwatch -->
+        <div class="px-nav-item">
+          <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px] text-gray-600">watch</span>
+            <span>Smartwatch</span>
+          </a>
+          <div class="px-dropdown-menu">
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Apple Watch Series 10 &amp; Ultra 2</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Samsung Galaxy Watch</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Garmin thể thao</span></a>
+          </div>
+        </div>
+
+        <!-- 5. Đồng hồ -->
+        <div class="px-nav-item">
+          <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[18px] text-gray-600">schedule</span>
+            <span>Đồng hồ</span>
+          </a>
+          <div class="px-dropdown-menu">
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Đồng hồ nam chính hãng</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Đồng hồ nữ thời trang</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Vòng đeo tay thông minh</span></a>
+          </div>
+        </div>
+
+        <!-- 6. Tablet ⌵ -->
+        <div class="px-nav-item">
+          <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[18px] text-gray-600">tablet_mac</span>
+            <span>Tablet</span>
+            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
+          </a>
+          <div class="px-dropdown-menu">
+            <a href="{{ROOT}}pages/shop/product-detail/index.html" class="px-dropdown-item"><span>iPad Pro M4 &amp; iPad Air M2</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>iPad 10.9 &amp; iPad mini</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Samsung Galaxy Tab</span></a>
+          </div>
+        </div>
+
+        <!-- 7. Máy cũ, Thu cũ ⌵ -->
+        <div class="px-nav-item">
+          <a href="{{ROOT}}pages/trade-in/device-selection/index.html" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[18px] text-red-600">sync_alt</span>
+            <span>Máy cũ, Thu cũ</span>
+            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
+          </a>
+          <div class="px-dropdown-menu">
+            <a href="{{ROOT}}pages/trade-in/device-selection/index.html" class="px-dropdown-item text-red-600 font-bold"><span>Thu cũ đổi mới - Trợ giá 3Tr</span><span class="badge bg-red-100 text-red-700">Hot</span></a>
+            <a href="{{ROOT}}pages/shop/used-detail/index.html" class="px-dropdown-item"><span>iPhone cũ 99% Like New</span></a>
+            <a href="{{ROOT}}pages/stores/used-phones/index.html" class="px-dropdown-item"><span>Máy cũ theo từng Showroom</span></a>
+            <a href="{{ROOT}}pages/trade-in/valuation/index.html" class="px-dropdown-item"><span>Định giá máy online 30s</span></a>
+          </div>
+        </div>
+
+        <!-- 8. Màn hình, Máy in ⌵ -->
+        <div class="px-nav-item">
+          <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[18px] text-gray-600">desktop_windows</span>
+            <span>Màn hình, Máy in</span>
+            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
+          </a>
+          <div class="px-dropdown-menu">
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Màn hình đồ hoạ &amp; 4K</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Màn hình Gaming 144Hz - 240Hz</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Máy in văn phòng chính hãng</span></a>
+          </div>
+        </div>
+
+        <!-- 9. Sim, Thẻ cào ⌵ -->
+        <div class="px-nav-item">
+          <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
+            <span class="material-symbols-outlined text-[18px] text-gray-600">sim_card</span>
+            <span>Sim, Thẻ cào</span>
+            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
+          </a>
+          <div class="px-dropdown-menu">
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>SIM 4G/5G Data Không Giới Hạn</span></a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="px-dropdown-item"><span>Thẻ cào điện thoại chiết khấu cao</span></a>
+            <a href="{{ROOT}}pages/shop/checkout/index.html" class="px-dropdown-item text-red-600 font-bold"><span>Trả góp 0% duyệt 3 phút</span></a>
+          </div>
+        </div>
+
+        <!-- 10. Dịch vụ tiện ích ⌃ (Distinctive Pill Button with Dropdown matching TGDD) -->
+        <div class="px-nav-item dropdown-right ml-auto">
+          <button type="button" class="border border-gray-200 bg-gray-50/90 hover:bg-red-50 hover:border-red-300 hover:text-red-600 text-gray-800 rounded-lg px-2.5 py-1 text-xs md:text-sm font-bold flex items-center gap-1.5 transition-all shadow-2xs">
+            <span class="material-symbols-outlined text-[18px] text-red-600">receipt_long</span>
+            <span>Dịch vụ tiện ích</span>
+            <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
+          </button>
+          <div class="px-dropdown-menu">
+            <div class="font-bold text-gray-900 text-xs uppercase px-3 py-1 text-gray-400">Dịch vụ PhoneX</div>
+            <a href="{{ROOT}}pages/warranty/warranty-lookup/index.html" class="px-dropdown-item">
+              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-green-600">verified_user</span>Tra cứu bảo hành điện tử</span>
+            </a>
+            <a href="{{ROOT}}pages/shop/order-tracking/index.html" class="px-dropdown-item">
+              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-blue-600">local_shipping</span>Tra cứu tiến độ đơn hàng</span>
+            </a>
+            <a href="{{ROOT}}pages/stores/find-store-stock/index.html" class="px-dropdown-item">
+              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-red-600">store</span>Hệ thống 128 Showroom</span>
+            </a>
+            <a href="{{ROOT}}pages/shop/checkout/index.html" class="px-dropdown-item">
+              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-amber-600">credit_card</span>Trả góp 0% duyệt siêu tốc</span>
+            </a>
+            <div class="border-t border-gray-100 my-1"></div>
+            <a href="tel:18006868" class="px-dropdown-item text-red-600 font-bold">
+              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">call</span>Hotline miễn phí: 1800.6868</span>
+            </a>
+          </div>
+        </div>
+
       </nav>
     </div>
   </div>
 
-  <!-- =========================================================
-       4. MOBILE POPUP: BOTTOM SHEET NAVIGATION MENU
-       ========================================================= -->
+  <!-- ===================================================
+       LOCATION PICKER MODAL
+       =================================================== -->
+  <div id="pxLocationModal" class="px-location-modal" role="dialog" aria-modal="true" aria-label="Chọn tỉnh thành">
+    <div class="px-popup-backdrop" onclick="PhoneXLocation.closeModal()"></div>
+    <div class="px-location-dialog">
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-gray-100 flex items-center justify-between bg-gray-50/80">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
+            <span class="material-symbols-outlined text-[22px]">location_on</span>
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-extrabold text-gray-900 leading-tight">Chọn Khu Vực Của Bạn</h3>
+            <p class="text-xs text-gray-500 mt-0.5">Để hiển thị giá ưu đãi và tồn kho tại 128 showroom gần bạn nhất</p>
+          </div>
+        </div>
+        <button type="button" aria-label="Đóng" onclick="PhoneXLocation.closeModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 text-gray-500 transition-colors">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Quick Search City Input -->
+      <div class="p-4 border-b border-gray-100">
+        <div class="relative">
+          <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-gray-400 text-[20px]">search</span>
+          <input 
+            type="text" 
+            id="pxCitySearchInput" 
+            oninput="PhoneXLocation.filterCities(this.value)" 
+            class="w-full h-10 pl-10 pr-4 bg-gray-100 rounded-xl text-sm text-gray-900 placeholder-gray-400 border border-transparent focus:border-red-600 focus:bg-white focus:outline-none transition-all" 
+            placeholder="Nhập tên tỉnh, thành phố..."
+          >
+        </div>
+      </div>
+
+      <!-- Province / City List -->
+      <div id="pxCityListContainer" class="p-4 overflow-y-auto max-h-[55vh] grid grid-cols-2 sm:grid-cols-3 gap-2">
+        <button type="button" onclick="PhoneXLocation.selectCity('Hồ Chí Minh')" class="px-city-btn p-3 rounded-xl border border-red-200 bg-red-50 text-red-700 font-bold text-sm text-left hover:border-red-600 hover:bg-red-100 transition-all flex items-center justify-between">
+          <span>Hồ Chí Minh</span>
+          <span class="text-[11px] bg-red-600 text-white font-extrabold px-1.5 py-0.2 rounded-full">128 shop</span>
+        </button>
+        <button type="button" onclick="PhoneXLocation.selectCity('Hà Nội')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
+          <span>Hà Nội</span>
+          <span class="text-[11px] text-gray-400 font-normal">85 shop</span>
+        </button>
+        <button type="button" onclick="PhoneXLocation.selectCity('Đà Nẵng')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
+          <span>Đà Nẵng</span>
+          <span class="text-[11px] text-gray-400 font-normal">24 shop</span>
+        </button>
+        <button type="button" onclick="PhoneXLocation.selectCity('Cần Thơ')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
+          <span>Cần Thơ</span>
+          <span class="text-[11px] text-gray-400 font-normal">18 shop</span>
+        </button>
+        <button type="button" onclick="PhoneXLocation.selectCity('Hải Phòng')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
+          <span>Hải Phòng</span>
+          <span class="text-[11px] text-gray-400 font-normal">16 shop</span>
+        </button>
+        <button type="button" onclick="PhoneXLocation.selectCity('Bình Dương')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
+          <span>Bình Dương</span>
+          <span class="text-[11px] text-gray-400 font-normal">22 shop</span>
+        </button>
+        <button type="button" onclick="PhoneXLocation.selectCity('Đồng Nai')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
+          <span>Đồng Nai</span>
+          <span class="text-[11px] text-gray-400 font-normal">19 shop</span>
+        </button>
+        <button type="button" onclick="PhoneXLocation.selectCity('Vũng Tàu')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
+          <span>Vũng Tàu</span>
+          <span class="text-[11px] text-gray-400 font-normal">12 shop</span>
+        </button>
+        <button type="button" onclick="PhoneXLocation.selectCity('Nha Trang')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
+          <span>Nha Trang</span>
+          <span class="text-[11px] text-gray-400 font-normal">10 shop</span>
+        </button>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-gray-100 bg-gray-50 flex items-center justify-between text-xs">
+        <a href="{{ROOT}}pages/stores/find-store-stock/index.html" class="font-bold text-red-600 hover:underline flex items-center gap-1">
+          <span>Xem bản đồ chi tiết 128 Showroom</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+        <span class="text-gray-400">Giao hàng toàn quốc 2h</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================
+       MOBILE BOTTOM SHEET POPUP MENU
+       =================================================== -->
   <div id="pxMenuPopup" class="px-popup px-popup-menu" role="dialog" aria-modal="true" aria-label="Menu điều hướng di động">
-    <!-- Backdrop Overlay (Tap to close) -->
     <div class="px-popup-backdrop" onclick="PhoneXPopups.closeMenu()"></div>
-
-    <!-- Popup Dialog Sheet -->
     <div class="px-popup-dialog">
-      <!-- Drag handle bar for mobile sheet -->
       <div class="w-14 h-1.5 bg-gray-300 rounded-full mx-auto mt-3 mb-1 md:hidden"></div>
-
-      <!-- Popup Header -->
       <div class="p-4 border-b border-gray-100 flex items-center justify-between">
         <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white">
+            <span class="material-symbols-outlined text-[18px]">smartphone</span>
+          </div>
           <span class="text-2xl font-black text-gray-900 tracking-tight">Phone<span class="text-red-600">X</span></span>
-          <span class="text-xs bg-red-100 text-red-700 font-bold px-2.5 py-0.5 rounded-full uppercase">Menu Nhanh</span>
+          <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full uppercase">Menu</span>
         </div>
         <button type="button" aria-label="Đóng popup" class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 active:scale-95 transition-all" onclick="PhoneXPopups.closeMenu()">
           <span class="material-symbols-outlined text-[22px]">close</span>
         </button>
       </div>
 
-      <!-- Scrollable Popup Content -->
       <div class="overflow-y-auto p-4 space-y-5 max-h-[75vh]">
-        <!-- VIP User Card -->
+        <!-- User Banner Card -->
         <div class="p-4 rounded-2xl bg-gradient-to-r from-red-600 to-red-700 text-white flex items-center justify-between shadow-md">
           <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-base ring-2 ring-white/40">
-              MQ
-            </div>
+            <div class="w-12 h-12 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-base ring-2 ring-white/40">MQ</div>
             <div>
               <div class="font-extrabold text-base leading-tight">Minh Quân</div>
               <div class="text-sm text-red-100 mt-0.5">Thành viên VIP (14.850 PX)</div>
             </div>
           </div>
-          <a href="{{ROOT}}pages/account/account/index.html" class="px-3.5 py-2 bg-white text-red-600 rounded-xl text-xs font-bold shadow-sm hover:bg-gray-50 transition-colors">
+          <a href="{{ROOT}}pages/account/profile/index.html" class="px-3.5 py-2 bg-white text-red-600 rounded-xl text-xs font-bold shadow-sm hover:bg-gray-50 transition-colors">
             Hồ sơ &rarr;
           </a>
         </div>
 
-        <!-- Quick 4-Grid Action Buttons -->
+        <!-- Location Quick Change -->
+        <div class="p-3 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-red-600 text-[20px]">location_on</span>
+            <span class="text-xs text-gray-500">Khu vực: <strong id="pxMobileLocationLabel" class="text-gray-900 font-bold">Hồ Chí Minh</strong></span>
+          </div>
+          <button type="button" onclick="PhoneXPopups.closeMenu(); PhoneXLocation.openModal();" class="text-xs text-red-600 font-bold hover:underline">
+            Đổi khu vực &rarr;
+          </button>
+        </div>
+
+        <!-- Quick Action Grid -->
         <div>
           <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2.5">Tiện ích nhanh</div>
           <div class="grid grid-cols-2 gap-2.5">
             <a href="{{ROOT}}pages/shop/order-tracking/index.html" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
-              <span class="material-symbols-outlined text-red-600 text-[26px]">local_shipping</span>
-              <div class="text-left">
-                <div class="text-sm font-bold text-gray-900">Tra cứu đơn</div>
-                <div class="text-xs text-gray-500">Tiến độ giao hàng</div>
-              </div>
+              <span class="material-symbols-outlined text-blue-600 text-[24px]">local_shipping</span>
+              <div class="text-left"><div class="text-sm font-bold text-gray-900">Tra cứu đơn</div><div class="text-xs text-gray-500">Tiến độ giao hàng</div></div>
             </a>
             <a href="{{ROOT}}pages/warranty/warranty-lookup/index.html" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
-              <span class="material-symbols-outlined text-green-600 text-[26px]">verified_user</span>
-              <div class="text-left">
-                <div class="text-sm font-bold text-gray-900">Bảo hành</div>
-                <div class="text-xs text-gray-500">Tra cứu IMEI/SĐT</div>
-              </div>
+              <span class="material-symbols-outlined text-green-600 text-[24px]">verified_user</span>
+              <div class="text-left"><div class="text-sm font-bold text-gray-900">Bảo hành</div><div class="text-xs text-gray-500">Tra cứu IMEI/SĐT</div></div>
             </a>
             <a href="{{ROOT}}pages/trade-in/sell-phone/index.html" class="p-3.5 rounded-xl bg-red-50 hover:bg-red-100 border border-red-100 flex items-center gap-3 transition-colors">
-              <span class="material-symbols-outlined text-red-600 text-[26px]">sync_alt</span>
-              <div class="text-left">
-                <div class="text-sm font-bold text-red-700">Thu cũ đổi mới</div>
-                <div class="text-xs text-red-500">Trợ giá đến 3tr</div>
-              </div>
+              <span class="material-symbols-outlined text-red-600 text-[24px]">sync_alt</span>
+              <div class="text-left"><div class="text-sm font-bold text-red-700">Thu cũ đổi mới</div><div class="text-xs text-red-500">Trợ giá 3Tr</div></div>
             </a>
-            <a href="{{ROOT}}pages/stores/stores/index.html" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
-              <span class="material-symbols-outlined text-blue-600 text-[26px]">store</span>
-              <div class="text-left">
-                <div class="text-sm font-bold text-gray-900">Cửa hàng</div>
-                <div class="text-xs text-gray-500">128 Showroom</div>
-              </div>
+            <a href="{{ROOT}}pages/stores/find-store-stock/index.html" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
+              <span class="material-symbols-outlined text-purple-600 text-[24px]">store</span>
+              <div class="text-left"><div class="text-sm font-bold text-gray-900">128 Cửa hàng</div><div class="text-xs text-gray-500">Gần bạn nhất</div></div>
             </a>
           </div>
         </div>
 
-        <!-- Brand Categories List -->
+        <!-- Category Links -->
         <div>
-          <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2.5">Thương hiệu Smartphone</div>
-          <div class="grid grid-cols-3 gap-2.5 text-center text-sm font-bold text-gray-800">
-            <a href="{{ROOT}}pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">iPhone</a>
-            <a href="{{ROOT}}pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">Samsung</a>
-            <a href="{{ROOT}}pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">Xiaomi</a>
-            <a href="{{ROOT}}pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">OPPO</a>
-            <a href="{{ROOT}}pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">vivo</a>
-            <a href="{{ROOT}}pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">realme</a>
-            <a href="{{ROOT}}pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">Pixel</a>
-            <a href="{{ROOT}}pages/shop/products/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors">Nothing</a>
-            <a href="{{ROOT}}pages/shop/products/index.html" class="p-3 rounded-xl bg-red-100 text-red-700 font-extrabold hover:bg-red-200 transition-colors">Trả góp 0%</a>
+          <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2.5">Danh mục sản phẩm</div>
+          <div class="grid grid-cols-2 gap-2 text-sm font-bold text-gray-800">
+            <a href="{{ROOT}}pages/shop/brand/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-red-600 text-[20px]">smartphone</span>
+              <span>Điện thoại</span>
+            </a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-600 text-[20px]">laptop_mac</span>
+              <span>Laptop &amp; Mac</span>
+            </a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-amber-600 text-[20px]">headphones</span>
+              <span>Phụ kiện</span>
+            </a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-green-600 text-[20px]">watch</span>
+              <span>Smartwatch</span>
+            </a>
+            <a href="{{ROOT}}pages/shop/search-filter/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-indigo-600 text-[20px]">tablet_mac</span>
+              <span>Tablet / iPad</span>
+            </a>
+            <a href="{{ROOT}}pages/shop/used-detail/index.html" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-rose-600 text-[20px]">devices_other</span>
+              <span>Máy cũ 99%</span>
+            </a>
           </div>
         </div>
 
-        <!-- Hotline call box -->
+        <!-- Hotline Call Support -->
         <div class="pt-2">
           <a href="tel:18006868" class="w-full py-3.5 px-4 bg-gray-900 text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-black transition-colors shadow-sm">
             <span class="material-symbols-outlined text-[20px] text-red-500">call</span>
@@ -222,83 +478,129 @@
     </div>
   </div>
 
-  <!-- =========================================================
-       5. MOBILE POPUP: TOP SEARCH DIALOG MODAL
-       ========================================================= -->
+  <!-- ===================================================
+       MOBILE TOP SEARCH POPUP MODAL
+       =================================================== -->
   <div id="pxSearchPopup" class="px-popup px-popup-search" role="dialog" aria-modal="true" aria-label="Tìm kiếm di động">
-    <!-- Backdrop Overlay (Tap to close) -->
     <div class="px-popup-backdrop" onclick="PhoneXPopups.closeSearch()"></div>
-
-    <!-- Popup Dialog Box -->
     <div class="px-popup-dialog overflow-hidden">
-      <!-- Search Input Box -->
-      <form action="{{ROOT}}pages/shop/search/index.html" method="get" class="p-3.5 border-b border-gray-100 flex items-center gap-2.5">
-        <span class="material-symbols-outlined text-gray-400 pl-1 text-[24px]">search</span>
-        <input id="pxMobileSearchInput" name="q" class="w-full h-11 text-base text-gray-900 placeholder-gray-400 focus:outline-none bg-transparent" placeholder="Tìm iPhone, Samsung, Xiaomi..." type="text">
+      <form action="{{ROOT}}pages/shop/search/index.html" method="get" class="p-3.5 border-b border-gray-100 flex items-center gap-2.5 bg-white">
+        <span class="material-symbols-outlined text-gray-400 pl-1 text-[22px]">search</span>
+        <input id="pxMobileSearchInput" name="q" class="w-full h-11 text-base text-gray-900 placeholder-gray-400 focus:outline-none bg-transparent" placeholder="Bạn tìm gì? iPhone 16, S25 Ultra..." type="text">
         <button type="button" aria-label="Đóng tìm kiếm" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500" onclick="PhoneXPopups.closeSearch()">
           <span class="material-symbols-outlined text-[22px]">close</span>
         </button>
       </form>
-
-      <!-- Hot Search Keywords -->
       <div class="p-4 bg-gray-50">
         <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
           <span class="material-symbols-outlined text-red-600 text-[16px]">local_fire_department</span>
-          Tìm kiếm phổ biến
+          Tìm kiếm xu hướng
         </div>
         <div class="flex flex-wrap gap-2 text-sm">
-          <a href="{{ROOT}}pages/shop/search/index.html?q=iPhone+16+Pro+Max" class="px-3.5 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">iPhone 16 Pro Max</a>
-          <a href="{{ROOT}}pages/shop/search/index.html?q=Galaxy+S25+Ultra" class="px-3.5 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Galaxy S25 Ultra</a>
-          <a href="{{ROOT}}pages/trade-in/sell-phone/index.html" class="px-3.5 py-1.5 bg-red-50 border border-red-200 rounded-full text-red-600 font-bold hover:bg-red-100 transition-colors">Thu cũ trợ giá 3tr</a>
-          <a href="{{ROOT}}pages/shop/search/index.html?q=Xiaomi+15" class="px-3.5 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Xiaomi 15 Pro</a>
-          <a href="{{ROOT}}pages/shop/products/index.html" class="px-3.5 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Máy cũ 99%</a>
+          <a href="{{ROOT}}pages/shop/search/index.html?q=iPhone+16+Pro+Max" class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">iPhone 16 Pro Max</a>
+          <a href="{{ROOT}}pages/shop/search/index.html?q=Galaxy+S25+Ultra" class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Galaxy S25 Ultra</a>
+          <a href="{{ROOT}}pages/trade-in/device-selection/index.html" class="px-3 py-1.5 bg-red-50 border border-red-200 rounded-full text-red-600 font-bold hover:bg-red-100 transition-colors">Thu cũ trợ giá 3Tr</a>
+          <a href="{{ROOT}}pages/shop/search/index.html?q=Xiaomi+15" class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Xiaomi 15 Pro</a>
+          <a href="{{ROOT}}pages/shop/used-detail/index.html" class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Máy cũ 99%</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Popup Controller Script -->
+  <!-- ===================================================
+       HEADER SCRIPTS (Popups, Location & Banner Controller)
+       =================================================== -->
   <script>
+    // 1. Mobile Popups Controller
     window.PhoneXPopups = {
       openMenu: function() {
         const p = document.getElementById('pxMenuPopup');
-        if (p) {
-          p.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        }
+        if (p) { p.classList.add('active'); document.body.style.overflow = 'hidden'; }
       },
       closeMenu: function() {
         const p = document.getElementById('pxMenuPopup');
-        if (p) {
-          p.classList.remove('active');
-          document.body.style.overflow = '';
-        }
+        if (p) { p.classList.remove('active'); document.body.style.overflow = ''; }
       },
       openSearch: function() {
         const p = document.getElementById('pxSearchPopup');
         if (p) {
           p.classList.add('active');
           document.body.style.overflow = 'hidden';
-          setTimeout(() => {
-            const input = document.getElementById('pxMobileSearchInput');
-            if (input) input.focus();
-          }, 150);
+          setTimeout(() => { const input = document.getElementById('pxMobileSearchInput'); if (input) input.focus(); }, 150);
         }
       },
       closeSearch: function() {
         const p = document.getElementById('pxSearchPopup');
-        if (p) {
-          p.classList.remove('active');
-          document.body.style.overflow = '';
+        if (p) { p.classList.remove('active'); document.body.style.overflow = ''; }
+      }
+    };
+
+    // 2. Location Picker Controller
+    window.PhoneXLocation = {
+      openModal: function() {
+        const m = document.getElementById('pxLocationModal');
+        if (m) { m.classList.add('active'); document.body.style.overflow = 'hidden'; }
+      },
+      closeModal: function() {
+        const m = document.getElementById('pxLocationModal');
+        if (m) { m.classList.remove('active'); document.body.style.overflow = ''; }
+      },
+      selectCity: function(cityName) {
+        localStorage.setItem('phonex_user_location', cityName);
+        const label = document.getElementById('pxLocationLabel');
+        const mLabel = document.getElementById('pxMobileLocationLabel');
+        if (label) label.textContent = cityName;
+        if (mLabel) mLabel.textContent = cityName;
+        this.closeModal();
+      },
+      filterCities: function(keyword) {
+        const term = keyword.toLowerCase().trim();
+        const buttons = document.querySelectorAll('#pxCityListContainer .px-city-btn');
+        buttons.forEach(btn => {
+          const text = btn.textContent.toLowerCase();
+          btn.style.display = text.includes(term) ? 'flex' : 'none';
+        });
+      },
+      init: function() {
+        const saved = localStorage.getItem('phonex_user_location');
+        if (saved) {
+          const label = document.getElementById('pxLocationLabel');
+          const mLabel = document.getElementById('pxMobileLocationLabel');
+          if (label) label.textContent = saved;
+          if (mLabel) mLabel.textContent = saved;
         }
       }
     };
 
-    // Close on Escape key
+    // 3. Top Banner Controller
+    window.PhoneXTopBanner = {
+      dismiss: function() {
+        const b = document.getElementById('pxTopCampaignBanner');
+        if (b) {
+          b.style.display = 'none';
+          sessionStorage.setItem('phonex_top_banner_dismissed', '1');
+        }
+      },
+      init: function() {
+        if (sessionStorage.getItem('phonex_top_banner_dismissed') === '1') {
+          const b = document.getElementById('pxTopCampaignBanner');
+          if (b) b.style.display = 'none';
+        }
+      }
+    };
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      PhoneXLocation.init();
+      PhoneXTopBanner.init();
+    });
+
+    // Escape key listener for closing modals
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        PhoneXPopups.closeMenu();
-        PhoneXPopups.closeSearch();
+      if (e.key === 'Escape') { 
+        PhoneXPopups.closeMenu(); 
+        PhoneXPopups.closeSearch(); 
+        PhoneXLocation.closeModal(); 
       }
     });
   </script>
