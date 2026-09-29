@@ -348,7 +348,7 @@ html_banner1 = """<!DOCTYPE html>
       <div class="title-col">
         <div class="brand-pill">
           <div class="brand-logo-icon">&#x26A1;</div>
-          <div class="brand-name">Phone<span>X</span>.vn</div>
+          <div class="brand-name">Phone<span>X</span></div>
         </div>
 
         <div class="title-tuu-truong">TỰU TRƯỜNG</div>
