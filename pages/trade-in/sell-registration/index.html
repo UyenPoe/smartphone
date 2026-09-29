@@ -12,27 +12,21 @@
 <!-- PhoneX Flagship Unified Header (TGDD Structure with PhoneX Brand Red & Clean Aesthetics) -->
 <header class="sticky top-0 left-0 w-full z-50 bg-white shadow-xs font-sans" data-component="header">
   
-  <!-- 1. TOP CAMPAIGN BANNER (TGDD Top Banner Structure) -->
-  <div id="pxTopCampaignBanner" class="w-full bg-gradient-to-r from-red-700 via-red-600 to-rose-600 text-white text-sm md:text-base py-2.5 md:py-3 px-4 relative z-40 border-b border-red-800/40 shadow-xs">
-    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
-      <div class="flex items-center gap-2.5 overflow-hidden truncate">
-        <span class="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-xs text-white text-xs md:text-sm font-black px-3.5 py-1 rounded-full uppercase shrink-0 animate-pulse tracking-wide">
-          <span class="material-symbols-outlined text-[18px]">bolt</span>
-          72 Model Giá Sốc
-        </span>
-        <span class="font-extrabold hidden sm:inline text-sm md:text-[15px]">Duy nhất 3 ngày (28 – 30.09.2026):</span>
-        <span class="truncate font-semibold text-sm md:text-[15px]">Giảm khủng đến <strong class="text-amber-300 font-black text-base md:text-lg px-0.5">35%</strong> cho Điện Thoại, Tablet &amp; Phụ Kiện</span>
-      </div>
-      <div class="flex items-center gap-2.5 shrink-0">
-        <a href="../../../pages/promotions/promotions/index.html" class="px-4 md:px-5 py-1.5 md:py-2 bg-white text-red-600 hover:bg-gray-100 rounded-full font-black text-xs md:text-sm shadow-sm transition-all hover:scale-105 active:scale-95 shrink-0 uppercase tracking-tight flex items-center gap-1.5">
-          <span>Mua Ngay</span>
-          <span class="material-symbols-outlined text-[16px] md:text-[18px]">arrow_forward</span>
-        </a>
-        <button type="button" aria-label="Đóng banner" onclick="PhoneXTopBanner.dismiss()" class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full hover:bg-white/20 text-white/90 hover:text-white transition-colors" title="Đóng thông báo">
-          <span class="material-symbols-outlined text-[18px] md:text-[20px]">close</span>
-        </button>
-      </div>
-    </div>
+  <!-- 1. TOP CAMPAIGN BANNER (2400x88 Image Banner) -->
+  <div id="pxTopCampaignBanner" class="w-full bg-[#7a0008] relative z-40 border-b border-red-800/40 shadow-xs overflow-hidden leading-none">
+    <a href="../../../pages/promotions/promotions/index.html" class="block w-full text-center relative group" title="72 Model Giá Sốc - Giảm đến 35%">
+      <img 
+        src="../../../assets/images/banners/top-campaign-banner-2400x88.png" 
+        alt="72 Model Giá Sốc - Duy nhất 3 ngày (28 – 30.09.2026): Giảm khủng đến 35% cho Điện Thoại, Tablet & Phụ Kiện - Mua Ngay" 
+        class="w-full h-auto max-h-[44px] sm:max-h-[50px] md:max-h-[56px] object-cover mx-auto block" 
+        width="2400" 
+        height="88" 
+        loading="eager" 
+      />
+    </a>
+    <button type="button" aria-label="Đóng banner" onclick="PhoneXTopBanner.dismiss()" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-black/30 hover:bg-black/60 text-white/90 hover:text-white flex items-center justify-center transition-all z-10" title="Đóng thông báo">
+      <span class="material-symbols-outlined text-[15px] sm:text-[17px]">close</span>
+    </button>
   </div>
 
   <!-- 2. MAIN HEADER ROW (Logo | Pill Search Bar | 4 Actions: User, Voucher, Cart, Location) -->
@@ -243,7 +237,6 @@
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-red-600 text-[22px]">headphones</span>
             <h3 class="font-extrabold text-gray-900 text-base md:text-lg">Danh Mục Phụ Kiện Chính Hãng</h3>
-            <span class="text-xs bg-red-100 text-red-700 font-bold px-2 py-0.5 rounded-full">TGDD Standard</span>
           </div>
           <button type="button" aria-label="Đóng menu phụ kiện" onclick="PhoneXAccessoriesMegaMenu.close()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 flex items-center justify-center transition-colors">
             <span class="material-symbols-outlined text-[18px]">close</span>
