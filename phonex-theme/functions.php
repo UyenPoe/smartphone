@@ -282,3 +282,8 @@ require get_template_directory() . '/inc/admin-promotions.php';
  */
 require get_template_directory() . '/inc/admin-crawler.php';
 
+/**
+ * PhoneX Category SEO & Industry Info (Thông tin ngành hàng chuẩn TGDD)
+ */
+require get_template_directory() . '/inc/admin-category-seo.php';
+

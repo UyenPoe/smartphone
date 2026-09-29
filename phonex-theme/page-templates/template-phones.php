@@ -533,6 +533,13 @@ $brand_meta = array(
       </div>
     </div>
 
+    <!-- ================= 8. THÔNG TIN NGÀNH HÀNG (SEO TGDD Standard) ================= -->
+    <?php
+    if ( function_exists( 'phonex_render_category_seo_frontend' ) ) {
+      phonex_render_category_seo_frontend( 77 );
+    }
+    ?>
+
   </div>
 </div>
 
