@@ -457,9 +457,9 @@
 </a>
 </div>
 </section>
-<!-- SECTION 3: FLASH SALE GIỜ VÀNG (2 HÀNG - 8 SẢN PHẨM & TIMELINE TABS & LIVE COUNTDOWN) -->
+<!-- SECTION 3: FLASH SALE GIỜ VÀNG (12 SẢN PHẨM & TIMELINE TABS & LIVE COUNTDOWN & XEM THÊM) -->
 <section class="w-full max-w-7xl mx-auto px-margin py-space-lg" id="section-flash-sale">
-  <div class="rounded-2xl bg-surface-pure p-space-md lg:p-space-lg shadow-sm border border-border-subtle/60">
+  <div class="rounded-2xl p-space-md lg:p-space-lg shadow-sm border transition-all duration-300" style="background: linear-gradient(180deg, #fff5f5 0%, #fff0f2 100%); border-color: #fecdd3; box-shadow: 0 10px 30px rgba(186, 13, 26, 0.05);">
     <!-- Top Header Bar -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
       <div class="flex items-center gap-space-md flex-wrap">
@@ -473,7 +473,7 @@
       </div>
 
       <!-- Real-Time Countdown Box -->
-      <div class="flex items-center gap-space-xs font-label-button text-label-button bg-surface-container-low px-4 py-2 rounded-xl border border-border-subtle/80">
+      <div class="flex items-center gap-space-xs font-label-button text-label-button bg-white px-4 py-2 rounded-xl border border-border-subtle/80 shadow-xs">
         <span class="text-secondary text-sm font-medium" id="fs-countdown-label">Kết thúc sau:</span>
         <div class="flex items-center gap-1 font-mono text-on-primary font-bold" id="phonex-fs-countdown" data-hours="2" data-minutes="45" data-seconds="18">
           <span class="bg-inverse-surface px-2.5 py-1 rounded text-sm shadow-inner min-w-[28px] text-center" id="fs-cd-h">02</span>
@@ -486,7 +486,7 @@
     </div>
 
     <!-- Timeline Slots Navigation (Shopee/TGDĐ Style with PhoneX Brand Red & Gold) -->
-    <div class="mt-4 mb-6 border-b border-border-subtle overflow-x-auto no-scrollbar">
+    <div class="mt-4 mb-6 border-b border-border-subtle/60 overflow-x-auto no-scrollbar">
       <div class="flex items-center gap-2 sm:gap-3 min-w-[620px] pb-3" id="phonex-flashsale-tabs">
         <button 
           type="button" 
@@ -518,7 +518,7 @@
 
         <button 
           type="button" 
-          class="flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-surface-container-low text-text-main border-border-subtle hover:bg-surface-container hover:text-primary hover:border-primary/40"
+          class="flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-white text-text-main border-border-subtle hover:bg-rose-50 hover:text-primary hover:border-primary/40 shadow-xs"
           data-slot-index="2"
           data-slot-time="14:00"
           data-slot-status="upcoming"
@@ -530,7 +530,7 @@
 
         <button 
           type="button" 
-          class="flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-surface-container-low text-text-main border-border-subtle hover:bg-surface-container hover:text-primary hover:border-primary/40"
+          class="flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-white text-text-main border-border-subtle hover:bg-rose-50 hover:text-primary hover:border-primary/40 shadow-xs"
           data-slot-index="3"
           data-slot-time="18:00"
           data-slot-status="upcoming"
@@ -542,7 +542,7 @@
 
         <button 
           type="button" 
-          class="flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-surface-container-low text-text-main border-border-subtle hover:bg-surface-container hover:text-primary hover:border-primary/40"
+          class="flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-white text-text-main border-border-subtle hover:bg-rose-50 hover:text-primary hover:border-primary/40 shadow-xs"
           data-slot-index="4"
           data-slot-time="21:00"
           data-slot-status="upcoming"
@@ -554,22 +554,22 @@
       </div>
     </div>
 
-    <!-- 8 Products Grid (2 Rows x 4 Columns) -->
+    <!-- 8 Default Products Grid (2 Rows x 4 Columns) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-space-md" id="phonex-fs-product-grid">
       <!-- Item 1 -->
-      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
         <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
           <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-15%</span>
           <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
             <span class="material-symbols-outlined text-[20px]">favorite_border</span>
           </span>
-          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPhone 18 Pro Max" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H" loading="lazy"/>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPhone 16 Pro Max" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H" loading="lazy"/>
         </div>
         <div>
           <div class="flex gap-1 mb-1">
-            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">256GB | A19 Pro Bionic</span>
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">256GB | A18 Pro Bionic</span>
           </div>
-          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">iPhone 18 Pro Max 256GB VN/A</h4>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">iPhone 16 Pro Max 256GB VN/A</h4>
           <div class="mt-2 flex items-baseline gap-2">
             <span class="font-price-card text-price-card text-primary font-bold">33.490.000₫</span>
             <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">39.400.000₫</span>
@@ -590,7 +590,7 @@
       </div>
 
       <!-- Item 2 -->
-      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
         <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
           <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-18%</span>
           <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
@@ -623,19 +623,19 @@
       </div>
 
       <!-- Item 3 -->
-      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
         <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
           <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-22%</span>
           <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
             <span class="material-symbols-outlined text-[20px]">favorite_border</span>
           </span>
-          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Xiaomi 14T Pro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp" loading="lazy"/>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Xiaomi 15 Pro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp" loading="lazy"/>
         </div>
         <div>
           <div class="flex gap-1 mb-1">
-            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">512GB | Dimensity 9300+</span>
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">256GB | Leica Optics</span>
           </div>
-          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Xiaomi 14T Pro 5G Leica 512GB</h4>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Xiaomi 15 Pro 256GB Leica Edition</h4>
           <div class="mt-2 flex items-baseline gap-2">
             <span class="font-price-card text-price-card text-primary font-bold">15.490.000₫</span>
             <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">19.990.000₫</span>
@@ -656,20 +656,20 @@
       </div>
 
       <!-- Item 4 -->
-      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
         <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
           <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-surface-container-highest text-text-main font-mono font-label-badge text-label-badge font-bold">#USED-99%</span>
           <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
             <span class="material-symbols-outlined text-[20px]">favorite_border</span>
           </span>
-          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPhone 16 Pro Max" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPT8j9gPDdQw803_EjHE9CrxcBd9ByYWch8rA3iK2EBwUlD-AYBurDY51Zuw1-Qsp9Vt7q1Pd3TVFYZSrTi9fCyrBWkDC5RcYBn8JZgRzAewL2GfxpWRIqXsBv_xwE0rndJ5hkpIutccJGL_JBkwS1NztjDieoZb_RoQt57EclFFLXTYI0bltlq5jZN_GOmx2UWCj1fqYtciRolzYGtW8p2r7rv-v-M7usKZhT8cNXKavd4vLaz8TF" loading="lazy"/>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPhone 15 Pro Max" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPT8j9gPDdQw803_EjHE9CrxcBd9ByYWch8rA3iK2EBwUlD-AYBurDY51Zuw1-Qsp9Vt7q1Pd3TVFYZSrTi9fCyrBWkDC5RcYBn8JZgRzAewL2GfxpWRIqXsBv_xwE0rndJ5hkpIutccJGL_JBkwS1NztjDieoZb_RoQt57EclFFLXTYI0bltlq5jZN_GOmx2UWCj1fqYtciRolzYGtW8p2r7rv-v-M7usKZhT8cNXKavd4vLaz8TF" loading="lazy"/>
         </div>
         <div>
           <div class="flex gap-1 mb-1">
             <span class="px-1.5 py-0.5 bg-primary-fixed text-primary font-label-badge text-label-badge font-bold">Pin 98%</span>
-            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">Grade A 99%</span>
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">Titan Tự Nhiên 99%</span>
           </div>
-          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">iPhone 16 Pro Max 256GB Like New</h4>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">iPhone 15 Pro Max 256GB Like New</h4>
           <div class="mt-2 flex items-baseline gap-2">
             <span class="font-price-card text-price-card text-primary font-bold">24.890.000₫</span>
             <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">27.500.000₫</span>
@@ -689,23 +689,23 @@
         </button>
       </div>
 
-      <!-- Item 5 (HÀNG 2 - BỔ SUNG MỚI) -->
-      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
+      <!-- Item 5 -->
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
         <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
           <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-20%</span>
           <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
             <span class="material-symbols-outlined text-[20px]">favorite_border</span>
           </span>
-          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPad Pro M4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ8cuMHSs16BGSbqL3osP6m_454IdcEnFrET6PX-zB9G7FJ3N9j6g5f-O5mlEKAnKNCGzpjZHaPqDHk5eQ7aAUYTQSpL2T2BXsRZVBRIsmzpkd39YqtnzfYdn1xj2QRF58FGv3hauWnmQwJYu9fthOr04mXeo6X_TDY6z2u2dYJyX4gKVk_GIImuiFHFOgKWKAzCYuFW7dx2G-84U7j4r5HUvh1xOZ714bcFju9liesR5DmsXco6mn" loading="lazy"/>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="OPPO Find X8 Pro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ8cuMHSs16BGSbqL3osP6m_454IdcEnFrET6PX-zB9G7FJ3N9j6g5f-O5mlEKAnKNCGzpjZHaPqDHk5eQ7aAUYTQSpL2T2BXsRZVBRIsmzpkd39YqtnzfYdn1xj2QRF58FGv3hauWnmQwJYu9fthOr04mXeo6X_TDY6z2u2dYJyX4gKVk_GIImuiFHFOgKWKAzCYuFW7dx2G-84U7j4r5HUvh1xOZ714bcFju9liesR5DmsXco6mn" loading="lazy"/>
         </div>
         <div>
           <div class="flex gap-1 mb-1">
-            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">256GB | Apple M4 Chip 3nm</span>
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">512GB | Hasselblad</span>
           </div>
-          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">iPad Pro M4 11 inch 256GB Wifi</h4>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">OPPO Find X8 Pro 512GB Hasselblad</h4>
           <div class="mt-2 flex items-baseline gap-2">
             <span class="font-price-card text-price-card text-primary font-bold">23.990.000₫</span>
-            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">28.990.000₫</span>
+            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">29.990.000₫</span>
           </div>
           <div class="mt-3 space-y-1">
             <div class="flex justify-between font-label-badge text-label-badge text-secondary">
@@ -722,23 +722,23 @@
         </button>
       </div>
 
-      <!-- Item 6 (HÀNG 2 - BỔ SUNG MỚI) -->
-      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
+      <!-- Item 6 -->
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
         <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
           <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-25%</span>
           <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
             <span class="material-symbols-outlined text-[20px]">favorite_border</span>
           </span>
-          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Galaxy Z Fold6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp" loading="lazy"/>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="vivo X200 Pro" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp" loading="lazy"/>
         </div>
         <div>
           <div class="flex gap-1 mb-1">
-            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">512GB | Màn hình gập Dynamic AMOLED</span>
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">256GB | ZEISS APO</span>
           </div>
-          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Samsung Galaxy Z Fold6 512GB AI</h4>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">vivo X200 Pro 256GB ZEISS APO</h4>
           <div class="mt-2 flex items-baseline gap-2">
-            <span class="font-price-card text-price-card text-primary font-bold">36.990.000₫</span>
-            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">45.490.000₫</span>
+            <span class="font-price-card text-price-card text-primary font-bold">19.990.000₫</span>
+            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">23.990.000₫</span>
           </div>
           <div class="mt-3 space-y-1">
             <div class="flex justify-between font-label-badge text-label-badge text-secondary">
@@ -755,8 +755,8 @@
         </button>
       </div>
 
-      <!-- Item 7 (HÀNG 2 - BỔ SUNG MỚI) -->
-      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
+      <!-- Item 7 -->
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
         <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
           <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-30%</span>
           <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
@@ -768,10 +768,10 @@
           <div class="flex gap-1 mb-1">
             <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">Chống ồn 2X | Chip H2</span>
           </div>
-          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Apple AirPods Pro 2 Type-C MagSafe</h4>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Tai Nghe AirPods Pro 2 MagSafe USB-C</h4>
           <div class="mt-2 flex items-baseline gap-2">
             <span class="font-price-card text-price-card text-primary font-bold">4.890.000₫</span>
-            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">6.190.000₫</span>
+            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">5.690.000₫</span>
           </div>
           <div class="mt-3 space-y-1">
             <div class="flex justify-between font-label-badge text-label-badge text-secondary">
@@ -788,31 +788,31 @@
         </button>
       </div>
 
-      <!-- Item 8 (HÀNG 2 - BỔ SUNG MỚI) -->
-      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
+      <!-- Item 8 -->
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
         <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
-          <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-18%</span>
+          <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-25%</span>
           <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
             <span class="material-symbols-outlined text-[20px]">favorite_border</span>
           </span>
-          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Apple Watch Ultra 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H" loading="lazy"/>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Pin Anker MagGo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H" loading="lazy"/>
         </div>
         <div>
           <div class="flex gap-1 mb-1">
-            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">Titanium | Pin 72 giờ | Lặn 40m</span>
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">MagSafe 15W | Chuẩn Qi2</span>
           </div>
-          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Apple Watch Ultra 2 GPS + Cellular 49mm</h4>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Pin Dự Phòng Anker MagGo Qi2 10.000mAh</h4>
           <div class="mt-2 flex items-baseline gap-2">
-            <span class="font-price-card text-price-card text-primary font-bold">17.990.000₫</span>
-            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">21.990.000₫</span>
+            <span class="font-price-card text-price-card text-primary font-bold">990.000₫</span>
+            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">1.290.000₫</span>
           </div>
           <div class="mt-3 space-y-1">
             <div class="flex justify-between font-label-badge text-label-badge text-secondary">
-              <span>Đã bán 22/30</span>
-              <span class="text-primary font-bold">Còn 8 suất</span>
+              <span>Đã bán 62/80</span>
+              <span class="text-primary font-bold">Còn 18 suất</span>
             </div>
             <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-              <div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: 73%;"></div>
+              <div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: 77%;"></div>
             </div>
           </div>
         </div>
@@ -821,10 +821,169 @@
         </button>
       </div>
     </div>
+
+    <!-- Extra Expandable Products Grid (Products 9-12 when user clicks "Xem thêm") -->
+    <div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-space-md transition-all duration-300" id="phonex-fs-extra-grid">
+      <!-- Item 9 -->
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
+        <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
+          <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-24%</span>
+          <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
+            <span class="material-symbols-outlined text-[20px]">favorite_border</span>
+          </span>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Củ sạc Apple 20W" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJyznqsxffSwTtLf_Zq39mGYtP6-N2l1DW7UdBg4VHdO7TB7TP1Emx96FLeopoInASb14-MUqPS_MVc7IBTm_htX4I9jv-o1HtFHiro4wY1W7k7OLbzTxK46_0bYmADaWguBvx-U_xMCQwFM1MMRaKY8kkOfa63ICmdfXEFRffFJ07gQOtBLu1tHSnjRgA7vBSx5HN89ilJQoCjC5_RfyrGfgBXhBU-3mnFbC7xUyCO6hubG4c29n5" loading="lazy"/>
+        </div>
+        <div>
+          <div class="flex gap-1 mb-1">
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">PD 20W | Chuẩn Apple VN/A</span>
+          </div>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Củ Sạc Nhanh Apple 20W Type-C VN/A</h4>
+          <div class="mt-2 flex items-baseline gap-2">
+            <span class="font-price-card text-price-card text-primary font-bold">449.000₫</span>
+            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">590.000₫</span>
+          </div>
+          <div class="mt-3 space-y-1">
+            <div class="flex justify-between font-label-badge text-label-badge text-secondary">
+              <span>Đã bán 78/100</span>
+              <span class="text-primary font-bold">Bán chạy</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+              <div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: 78%;"></div>
+            </div>
+          </div>
+        </div>
+        <button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='../../../pages/shop/product-detail/index.html'">
+          <span>Mua Ngay</span>
+        </button>
+      </div>
+
+      <!-- Item 10 -->
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
+        <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
+          <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-24%</span>
+          <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
+            <span class="material-symbols-outlined text-[20px]">favorite_border</span>
+          </span>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Kính Mipow Kingbull" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H" loading="lazy"/>
+        </div>
+        <div>
+          <div class="flex gap-1 mb-1">
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">Chống nhìn trộm | 9H</span>
+          </div>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Kính Cường Lực Mipow Kingbull HD iPhone 16 Pro Max</h4>
+          <div class="mt-2 flex items-baseline gap-2">
+            <span class="font-price-card text-price-card text-primary font-bold">319.000₫</span>
+            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">420.000₫</span>
+          </div>
+          <div class="mt-3 space-y-1">
+            <div class="flex justify-between font-label-badge text-label-badge text-secondary">
+              <span>Đã bán 95/100</span>
+              <span class="text-primary font-bold">Gần cháy hàng</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+              <div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: 95%;"></div>
+            </div>
+          </div>
+        </div>
+        <button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='../../../pages/shop/product-detail/index.html'">
+          <span>Mua Ngay</span>
+        </button>
+      </div>
+
+      <!-- Item 11 -->
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
+        <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
+          <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-17%</span>
+          <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
+            <span class="material-symbols-outlined text-[20px]">favorite_border</span>
+          </span>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="Apple Watch Series 10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ8cuMHSs16BGSbqL3osP6m_454IdcEnFrET6PX-zB9G7FJ3N9j6g5f-O5mlEKAnKNCGzpjZHaPqDHk5eQ7aAUYTQSpL2T2BXsRZVBRIsmzpkd39YqtnzfYdn1xj2QRF58FGv3hauWnmQwJYu9fthOr04mXeo6X_TDY6z2u2dYJyX4gKVk_GIImuiFHFOgKWKAzCYuFW7dx2G-84U7j4r5HUvh1xOZ714bcFju9liesR5DmsXco6mn" loading="lazy"/>
+        </div>
+        <div>
+          <div class="flex gap-1 mb-1">
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">OLED Góc Rộng | GPS 46mm</span>
+          </div>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">Apple Watch Series 10 Nhôm GPS 46mm</h4>
+          <div class="mt-2 flex items-baseline gap-2">
+            <span class="font-price-card text-price-card text-primary font-bold">9.990.000₫</span>
+            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">11.990.000₫</span>
+          </div>
+          <div class="mt-3 space-y-1">
+            <div class="flex justify-between font-label-badge text-label-badge text-secondary">
+              <span>Đã bán 14/25</span>
+              <span class="text-primary font-bold">Còn 11 suất</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+              <div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: 56%;"></div>
+            </div>
+          </div>
+        </div>
+        <button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='../../../pages/shop/product-detail/index.html'">
+          <span>Mua Ngay</span>
+        </button>
+      </div>
+
+      <!-- Item 12 -->
+      <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
+        <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
+          <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">-15%</span>
+          <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
+            <span class="material-symbols-outlined text-[20px]">favorite_border</span>
+          </span>
+          <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="iPad Air M2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp" loading="lazy"/>
+        </div>
+        <div>
+          <div class="flex gap-1 mb-1">
+            <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">Chip Apple M2 | 128GB Wifi</span>
+          </div>
+          <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">iPad Air 11 inch M2 WiFi 128GB</h4>
+          <div class="mt-2 flex items-baseline gap-2">
+            <span class="font-price-card text-price-card text-primary font-bold">14.490.000₫</span>
+            <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">16.990.000₫</span>
+          </div>
+          <div class="mt-3 space-y-1">
+            <div class="flex justify-between font-label-badge text-label-badge text-secondary">
+              <span>Đã bán 18/30</span>
+              <span class="text-primary font-bold">Còn 12 suất</span>
+            </div>
+            <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+              <div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: 60%;"></div>
+            </div>
+          </div>
+        </div>
+        <button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='../../../pages/shop/product-detail/index.html'">
+          <span>Mua Ngay</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Action Bar: "Xem thêm" & "Xem tất cả khuyến mãi" -->
+    <div class="mt-8 pt-5 border-t border-border-subtle/50 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4" id="phonex-fs-more-bar">
+      <button 
+        type="button" 
+        id="btn-toggle-fs-more" 
+        class="w-full sm:w-auto px-7 py-3 rounded-xl bg-white hover:bg-rose-50 text-primary font-bold text-sm border-2 border-primary/30 hover:border-primary shadow-sm hover:shadow transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer group"
+        data-expanded="0"
+        data-more-text="Xem thêm deal Flash Sale (4 sản phẩm)"
+        data-less-text="Thu gọn bớt deal Flash Sale"
+      >
+        <span id="label-toggle-fs-more">Xem thêm deal Flash Sale (4 sản phẩm)</span>
+        <span class="material-symbols-outlined text-[20px] transition-transform duration-200 group-hover:translate-y-0.5" id="icon-toggle-fs-more">expand_more</span>
+      </button>
+
+      <a 
+        href="../../../pages/promotions/promotions/index.html" 
+        class="w-full sm:w-auto px-7 py-3 rounded-xl bg-primary-container hover:bg-primary-hover text-on-primary font-bold text-sm shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center gap-2"
+      >
+        <span>Xem tất cả khuyến mãi</span>
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+    </div>
+
   </div>
 </section>
 
-<!-- LIVE FLASHSALE COUNTDOWN & TIMELINE INTERACTION SCRIPT -->
+<!-- LIVE FLASHSALE COUNTDOWN & TIMELINE & XEM THÊM INTERACTION SCRIPT -->
 <script>
 (function() {
   const cdContainer = document.getElementById('phonex-fs-countdown');
@@ -869,12 +1028,12 @@
   }
 
   updateTimerDisplay();
-  setInterval(updateTimerDisplay, 1000);
+  const timerInterval = setInterval(updateTimerDisplay, 1000);
 
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
       tabs.forEach(t => {
-        t.className = 'flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-surface-container-low text-text-main border-border-subtle hover:bg-surface-container hover:text-primary hover:border-primary/40';
+        t.className = 'flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-white text-text-main border-border-subtle hover:bg-rose-50 hover:text-primary hover:border-primary/40 shadow-xs';
         const labelText = t.querySelector('.slot-label-text');
         if (labelText) {
           labelText.classList.remove('text-amber-300');
@@ -928,6 +1087,43 @@
       updateTimerDisplay();
     });
   });
+
+  // Toggle "Xem Thêm" Extra Products Handler
+  const btnToggleMore = document.getElementById('btn-toggle-fs-more');
+  const extraGrid = document.getElementById('phonex-fs-extra-grid');
+  const labelToggleMore = document.getElementById('label-toggle-fs-more');
+  const iconToggleMore = document.getElementById('icon-toggle-fs-more');
+
+  if (btnToggleMore && extraGrid) {
+    btnToggleMore.addEventListener('click', function() {
+      const isExpanded = this.dataset.expanded === '1';
+      if (!isExpanded) {
+        extraGrid.classList.remove('hidden');
+        extraGrid.classList.add('grid');
+        this.dataset.expanded = '1';
+        if (labelToggleMore) labelToggleMore.textContent = this.dataset.lessText || 'Thu gọn bớt deal Flash Sale';
+        if (iconToggleMore) {
+          iconToggleMore.textContent = 'expand_less';
+          iconToggleMore.classList.remove('group-hover:translate-y-0.5');
+          iconToggleMore.classList.add('group-hover:-translate-y-0.5');
+        }
+      } else {
+        extraGrid.classList.remove('grid');
+        extraGrid.classList.add('hidden');
+        this.dataset.expanded = '0';
+        if (labelToggleMore) labelToggleMore.textContent = this.dataset.moreText || 'Xem thêm deal Flash Sale (4 sản phẩm)';
+        if (iconToggleMore) {
+          iconToggleMore.textContent = 'expand_more';
+          iconToggleMore.classList.remove('group-hover:-translate-y-0.5');
+          iconToggleMore.classList.add('group-hover:translate-y-0.5');
+        }
+        const fsSection = document.getElementById('section-flash-sale');
+        if (fsSection) {
+          fsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  }
 })();
 </script>
 <!-- SECTION 4: BỘ SƯU TẬP MŨI NHỌN (TABS) -->

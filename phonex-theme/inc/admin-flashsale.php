@@ -16,13 +16,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Default Flash Sale Settings & 8 Flagship Products (2 rows x 4 cols)
+ * Default Flash Sale Settings & 12 Flagship Products (8 default + 4 on 'Xem thêm')
  */
 function phonex_get_default_flashsale_settings() {
 	return array(
 		'enabled'              => '1',
 		'title'                => 'FLASH SALE GIỜ VÀNG',
 		'subtitle'             => 'Khung giờ vàng giảm sốc - Số lượng có hạn',
+		'bg_preset'            => 'brand_rose', // 'brand_rose' (#fff5f5), 'warm_cream' (#fff6e3), 'clean_white' (#ffffff), 'custom'
+		'bg_custom'            => '#fff5f5',
+		'view_more_enabled'    => '1',
+		'view_more_text'       => 'Xem thêm deal Flash Sale',
+		'all_deals_text'       => 'Xem tất cả khuyến mãi',
+		'all_deals_url'        => '/khuyen-mai/',
 		'auto_slot'            => '1', // Automatically switch slot based on server time
 		'active_slot_index'    => 1,   // Default to 12:00 slot
 		'countdown_mode'       => 'auto', // 'auto' (until slot end_time) or 'custom'
@@ -62,12 +68,12 @@ function phonex_get_default_flashsale_settings() {
 			),
 		),
 		'products'             => array(
-			// HÀNG 1 (Row 1: 4 Products)
+			// HÀNG 1 (Row 1: 4 Products - Hiển thị ban đầu)
 			array(
 				'id'          => 1,
 				'product_id'  => 16,
-				'name'        => 'iPhone 18 Pro Max 256GB VN/A',
-				'specs'       => '256GB | A19 Pro Bionic',
+				'name'        => 'iPhone 16 Pro Max 256GB VN/A',
+				'specs'       => '256GB | A18 Pro Bionic',
 				'badge'       => '-15%',
 				'price_sale'  => '33.490.000₫',
 				'price_orig'  => '39.400.000₫',
@@ -94,8 +100,8 @@ function phonex_get_default_flashsale_settings() {
 			array(
 				'id'          => 3,
 				'product_id'  => 18,
-				'name'        => 'Xiaomi 14T Pro 5G Leica 512GB',
-				'specs'       => '512GB | Dimensity 9300+',
+				'name'        => 'Xiaomi 15 Pro 256GB Leica Edition',
+				'specs'       => '256GB | Snapdragon 8 Elite',
 				'badge'       => '-22%',
 				'price_sale'  => '15.490.000₫',
 				'price_orig'  => '19.990.000₫',
@@ -108,8 +114,8 @@ function phonex_get_default_flashsale_settings() {
 			array(
 				'id'          => 4,
 				'product_id'  => 21,
-				'name'        => 'iPhone 16 Pro Max 256GB Like New',
-				'specs'       => 'Pin 98% | Grade A 99%',
+				'name'        => 'iPhone 15 Pro Max 256GB Like New',
+				'specs'       => 'Pin 98% | Titan Tự Nhiên 99%',
 				'badge'       => '#USED-99%',
 				'price_sale'  => '24.890.000₫',
 				'price_orig'  => '27.500.000₫',
@@ -119,7 +125,7 @@ function phonex_get_default_flashsale_settings() {
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuAPT8j9gPDdQw803_EjHE9CrxcBd9ByYWch8rA3iK2EBwUlD-AYBurDY51Zuw1-Qsp9Vt7q1Pd3TVFYZSrTi9fCyrBWkDC5RcYBn8JZgRzAewL2GfxpWRIqXsBv_xwE0rndJ5hkpIutccJGL_JBkwS1NztjDieoZb_RoQt57EclFFLXTYI0bltlq5jZN_GOmx2UWCj1fqYtciRolzYGtW8p2r7rv-v-M7usKZhT8cNXKavd4vLaz8TF',
 				'link'        => '/product/iphone-15-pro-max-256gb-titan-tu-nhien-may-cu-99/',
 			),
-			// HÀNG 2 (Row 2: 4 Products)
+			// HÀNG 2 (Row 2: 4 Products - Hiển thị ban đầu)
 			array(
 				'id'          => 5,
 				'product_id'  => 19,
@@ -175,6 +181,63 @@ function phonex_get_default_flashsale_settings() {
 				'stock_text'  => 'Còn 18 suất',
 				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H',
 				'link'        => '/product/pin-sac-du-phong-anker-maggo-qi2-10000mah/',
+			),
+			// HÀNG 3 (Row 3: 4 Products - Mở rộng khi bấm 'Xem thêm')
+			array(
+				'id'          => 9,
+				'product_id'  => 22,
+				'name'        => 'Củ Sạc Nhanh Apple 20W Type-C VN/A',
+				'specs'       => 'PD 20W | Chuẩn Apple Chính Hãng',
+				'badge'       => '-24%',
+				'price_sale'  => '449.000₫',
+				'price_orig'  => '590.000₫',
+				'sold'        => 78,
+				'total_stock' => 100,
+				'stock_text'  => 'Bán chạy',
+				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuBJyznqsxffSwTtLf_Zq39mGYtP6-N2l1DW7UdBg4VHdO7TB7TP1Emx96FLeopoInASb14-MUqPS_MVc7IBTm_htX4I9jv-o1HtFHiro4wY1W7k7OLbzTxK46_0bYmADaWguBvx-U_xMCQwFM1MMRaKY8kkOfa63ICmdfXEFRffFJ07gQOtBLu1tHSnjRgA7vBSx5HN89ilJQoCjC5_RfyrGfgBXhBU-3mnFbC7xUyCO6hubG4c29n5',
+				'link'        => '/product/cu-sac-nhanh-apple-20w-type-c-chinh-hang-apple-vn-a/',
+			),
+			array(
+				'id'          => 10,
+				'product_id'  => 25,
+				'name'        => 'Kính Cường Lực Mipow Kingbull HD iPhone 16 Pro Max',
+				'specs'       => 'Chống nhìn trộm | Siêu mượt 9H',
+				'badge'       => '-24%',
+				'price_sale'  => '319.000₫',
+				'price_orig'  => '420.000₫',
+				'sold'        => 95,
+				'total_stock' => 100,
+				'stock_text'  => 'Gần cháy hàng',
+				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuD-4en2O7D4jSmK1F_307aWHglaOxV3xJ5ikX_dcyBMbBC3uzM1eWtcTda9qSNyj_KT_D8YCSigC9x6hikTgPPqmdR3mLvLBLqJqMdCYCFNFV-iKZDPMzZM55q5n6_dS9YSQZNoHMasEmcFfdqklJf7-jPcatAnEPC3J_GXTllmfXHFWQKdLUi65SnBrvmsXo1LKfT7q8zYI7Ep0IGPHGJ-iQ6Ty-EJsmkost536obrn0l6wLIwet8H',
+				'link'        => '/product/kinh-cuong-luc-mipow-kingbull-hd-chong-nhin-trom-iphone-16-pro-max/',
+			),
+			array(
+				'id'          => 11,
+				'product_id'  => 26,
+				'name'        => 'Apple Watch Series 10 Nhôm GPS 46mm',
+				'specs'       => 'OLED Góc Rộng | Sạc Nhanh 80%',
+				'badge'       => '-17%',
+				'price_sale'  => '9.990.000₫',
+				'price_orig'  => '11.990.000₫',
+				'sold'        => 14,
+				'total_stock' => 25,
+				'stock_text'  => 'Còn 11 suất',
+				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCZ8cuMHSs16BGSbqL3osP6m_454IdcEnFrET6PX-zB9G7FJ3N9j6g5f-O5mlEKAnKNCGzpjZHaPqDHk5eQ7aAUYTQSpL2T2BXsRZVBRIsmzpkd39YqtnzfYdn1xj2QRF58FGv3hauWnmQwJYu9fthOr04mXeo6X_TDY6z2u2dYJyX4gKVk_GIImuiFHFOgKWKAzCYuFW7dx2G-84U7j4r5HUvh1xOZ714bcFju9liesR5DmsXco6mn',
+				'link'        => '/product/apple-watch-series-10-nhom-gps-46mm/',
+			),
+			array(
+				'id'          => 12,
+				'product_id'  => 27,
+				'name'        => 'iPad Air 11 inch M2 WiFi 128GB',
+				'specs'       => 'Chip M2 | Liquid Retina | Chuẩn Apple',
+				'badge'       => '-15%',
+				'price_sale'  => '14.490.000₫',
+				'price_orig'  => '16.990.000₫',
+				'sold'        => 18,
+				'total_stock' => 30,
+				'stock_text'  => 'Còn 12 suất',
+				'image'       => 'https://lh3.googleusercontent.com/aida-public/AB6AXuCfb9IgGxJEJ2xwiFRabguXqW52iA82cPiloD2HdZ5f1f_VgP3OdsUljxxbatuahW7eAT0SAqJ8KIoki7bWG6PcATan8ckLOdPgZX2M_wnTFbmiPn5dRDEekn2y0g5VPGpoIUkBfXzEVuE7n9QvMnVO050dfoluQAN9SRijuSaZWFGOAm-yX8dJxQt4sYwWOQSfrWNTLogGFW5eaq1k2Xi2K89I4iYgDvTw-IDpMWpMgOWB84z9EpGp',
+				'link'        => '/product/ipad-air-11-inch-m2-wifi-128gb/',
 			),
 		),
 	);
@@ -234,6 +297,13 @@ function phonex_flashsale_render_admin_page() {
 		$current['enabled']           = isset( $_POST['enabled'] ) ? '1' : '0';
 		$current['title']             = sanitize_text_field( wp_unslash( $_POST['title'] ?? 'FLASH SALE GIỜ VÀNG' ) );
 		$current['subtitle']          = sanitize_text_field( wp_unslash( $_POST['subtitle'] ?? '' ) );
+		$current['bg_preset']         = sanitize_text_field( wp_unslash( $_POST['bg_preset'] ?? 'brand_rose' ) );
+		$current['bg_custom']         = sanitize_hex_color( wp_unslash( $_POST['bg_custom'] ?? '#fff5f5' ) ) ?: '#fff5f5';
+		$current['view_more_enabled'] = isset( $_POST['view_more_enabled'] ) ? '1' : '0';
+		$current['view_more_text']    = sanitize_text_field( wp_unslash( $_POST['view_more_text'] ?? 'Xem thêm deal Flash Sale' ) );
+		$current['all_deals_text']    = sanitize_text_field( wp_unslash( $_POST['all_deals_text'] ?? 'Xem tất cả khuyến mãi' ) );
+		$current['all_deals_url']     = sanitize_text_field( wp_unslash( $_POST['all_deals_url'] ?? '/khuyen-mai/' ) );
+
 		$current['auto_slot']         = isset( $_POST['auto_slot'] ) ? '1' : '0';
 		$current['active_slot_index'] = intval( $_POST['active_slot_index'] ?? 1 );
 		$current['countdown_mode']    = sanitize_text_field( wp_unslash( $_POST['countdown_mode'] ?? 'auto' ) );
@@ -370,11 +440,134 @@ function phonex_flashsale_render_admin_page() {
 				</table>
 			</div>
 
-			<!-- SECTION 2: QUẢN LÝ CÁC KHUNG GIỜ VÀNG (TIMELINE TABS) -->
+			<!-- SECTION 2: TÙY CHỌN MÀU NỀN SECTION FLASH SALE -->
+			<div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;">
+				<h2 style="font-size: 18px; font-weight: 700; color: #111827; margin-top: 0; padding-bottom: 12px; border-bottom: 2px solid #f3f4f6; display: flex; align-items: center; gap: 8px;">
+					<span class="dashicons dashicons-art" style="color: #ba0d1a;"></span>
+					2. Màu Nền Section Flash Sale (Đồng Bộ Nhận Diện Thương Hiệu Website)
+				</h2>
+				<p style="color: #64748b; font-size: 13px; margin-bottom: 16px;">
+					Chọn tông màu nền cho toàn bộ khối Flash Sale. Màu sắc được phối theo chuẩn phong cách pastel sang trọng giúp các thẻ sản phẩm màu trắng nổi bật rực rỡ.
+				</p>
+
+				<?php 
+					$cur_preset = $settings['bg_preset'] ?? 'brand_rose';
+					$cur_custom = $settings['bg_custom'] ?? '#fff5f5';
+				?>
+				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 16px;">
+					<!-- Option 1: PhoneX Brand Rose Pastel (Default) -->
+					<label style="display: flex; flex-direction: column; border: 2px solid <?php echo $cur_preset === 'brand_rose' ? '#ba0d1a' : '#e2e8f0'; ?>; border-radius: 12px; padding: 14px; background: #fff5f5; cursor: pointer; position: relative;">
+						<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+							<div style="display: flex; align-items: center; gap: 8px;">
+								<input type="radio" name="bg_preset" value="brand_rose" <?php checked( $cur_preset, 'brand_rose' ); ?>>
+								<strong style="color: #ba0d1a; font-size: 14px;">Hồng Phấn Pastel PhoneX</strong>
+							</div>
+							<span style="background: #ba0d1a; color: #fff; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 9999px;">KHUYÊN DÙNG</span>
+						</div>
+						<div style="height: 38px; border-radius: 8px; background: linear-gradient(180deg, #fff5f5 0%, #fff0f1 100%); border: 1px solid #fecdd3; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #ba0d1a;">
+							#fff5f5 (Màu website PhoneX)
+						</div>
+						<p style="font-size: 12px; color: #475569; margin: 0; line-height: 1.4;">
+							Chuẩn nhận diện thương hiệu đỏ PhoneX kết hợp nền pastel hồng phấn dịu mắt, thẻ sản phẩm trắng nổi bật đẳng cấp.
+						</p>
+					</label>
+
+					<!-- Option 2: Warm Cream (Image Reference) -->
+					<label style="display: flex; flex-direction: column; border: 2px solid <?php echo $cur_preset === 'warm_cream' ? '#ba0d1a' : '#e2e8f0'; ?>; border-radius: 12px; padding: 14px; background: #fffbf2; cursor: pointer;">
+						<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+							<input type="radio" name="bg_preset" value="warm_cream" <?php checked( $cur_preset, 'warm_cream' ); ?>>
+							<strong style="color: #b45309; font-size: 14px;">Kem Vàng Nhạt Ấm Áp</strong>
+						</div>
+						<div style="height: 38px; border-radius: 8px; background: linear-gradient(180deg, #fffcf5 0%, #fff6e3 100%); border: 1px solid #fde68a; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #b45309;">
+							#fff6e3 (Y hệt ảnh bạn gửi)
+						</div>
+						<p style="font-size: 12px; color: #475569; margin: 0; line-height: 1.4;">
+							Màu vàng kem ấm áp chuẩn 100% theo tông màu bức ảnh mẫu e-commerce bạn đã tải lên.
+						</p>
+					</label>
+
+					<!-- Option 3: Clean White -->
+					<label style="display: flex; flex-direction: column; border: 2px solid <?php echo $cur_preset === 'clean_white' ? '#ba0d1a' : '#e2e8f0'; ?>; border-radius: 12px; padding: 14px; background: #ffffff; cursor: pointer;">
+						<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+							<input type="radio" name="bg_preset" value="clean_white" <?php checked( $cur_preset, 'clean_white' ); ?>>
+							<strong style="color: #0f172a; font-size: 14px;">Trắng Hiện Đại</strong>
+						</div>
+						<div style="height: 38px; border-radius: 8px; background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #64748b;">
+							#ffffff (Nền trắng tinh)
+						</div>
+						<p style="font-size: 12px; color: #475569; margin: 0; line-height: 1.4;">
+							Khung viền mỏng hiện đại, nền trong suốt hòa quyện với bố cục trang web.
+						</p>
+					</label>
+
+					<!-- Option 4: Custom Hex -->
+					<label style="display: flex; flex-direction: column; border: 2px solid <?php echo $cur_preset === 'custom' ? '#ba0d1a' : '#e2e8f0'; ?>; border-radius: 12px; padding: 14px; background: #f8fafc; cursor: pointer;">
+						<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+							<input type="radio" name="bg_preset" value="custom" <?php checked( $cur_preset, 'custom' ); ?>>
+							<strong style="color: #0f172a; font-size: 14px;">Tùy Chỉnh Mã Màu HEX</strong>
+						</div>
+						<div style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+							<input type="color" id="bg_custom_picker" value="<?php echo esc_attr( $cur_custom ); ?>" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer;" oninput="document.getElementById('bg_custom').value = this.value">
+							<input type="text" id="bg_custom" name="bg_custom" value="<?php echo esc_attr( $cur_custom ); ?>" style="font-size: 13px; font-weight: 700; width: 100%; height: 38px;" placeholder="#fff5f5" oninput="document.getElementById('bg_custom_picker').value = this.value">
+						</div>
+						<p style="font-size: 12px; color: #475569; margin: 0; line-height: 1.4;">
+							Nhập bất kỳ mã màu nền HEX nào bạn muốn áp dụng cho khối Flash Sale.
+						</p>
+					</label>
+				</div>
+			</div>
+
+			<!-- SECTION 3: CẤU HÌNH NÚT 'XEM THÊM' & 'TẤT CẢ DEAL' -->
+			<div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;">
+				<h2 style="font-size: 18px; font-weight: 700; color: #111827; margin-top: 0; padding-bottom: 12px; border-bottom: 2px solid #f3f4f6; display: flex; align-items: center; gap: 8px;">
+					<span class="dashicons dashicons-plus-alt2" style="color: #ba0d1a;"></span>
+					3. Cấu Hình Nút "Xem Thêm" Khi Có Nhiều Sản Phẩm Flash Sale
+				</h2>
+				<p style="color: #64748b; font-size: 13px; margin-bottom: 16px;">
+					Khi bạn có nhiều hơn 8 sản phẩm Flash Sale, trang chủ sẽ hiển thị 8 sản phẩm đầu tiên và có nút <strong>"Xem thêm deal Flash Sale ▾"</strong>. Khách bấm vào sẽ mở rộng thêm 4 sản phẩm tiếp theo mượt mà ngay tại chỗ!
+				</p>
+
+				<table class="form-table" role="presentation">
+					<tbody>
+						<tr>
+							<th scope="row"><label for="view_more_enabled">Bật nút "Xem thêm"</label></th>
+							<td>
+								<label style="display: inline-flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer;">
+									<input type="checkbox" id="view_more_enabled" name="view_more_enabled" value="1" <?php checked( $settings['view_more_enabled'] ?? '1', '1' ); ?>>
+									<span>Hiển thị cụm nút "Xem thêm deal Flash Sale" &amp; "Xem tất cả khuyến mãi"</span>
+								</label>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="view_more_text">Chữ trên nút Xem Thêm</label></th>
+							<td>
+								<input type="text" id="view_more_text" name="view_more_text" value="<?php echo esc_attr( $settings['view_more_text'] ?? 'Xem thêm deal Flash Sale' ); ?>" class="regular-text" style="font-weight: 600;">
+								<span class="description" style="color: #64748b; margin-left: 10px;">(Mặc định: Xem thêm deal Flash Sale)</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="all_deals_text">Chữ trên nút Xem Tất Cả</label></th>
+							<td>
+								<input type="text" id="all_deals_text" name="all_deals_text" value="<?php echo esc_attr( $settings['all_deals_text'] ?? 'Xem tất cả khuyến mãi' ); ?>" class="regular-text">
+								<span class="description" style="color: #64748b; margin-left: 10px;">(Mặc định: Xem tất cả khuyến mãi)</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="all_deals_url">Link trang khuyến mãi</label></th>
+							<td>
+								<input type="text" id="all_deals_url" name="all_deals_url" value="<?php echo esc_attr( $settings['all_deals_url'] ?? '/khuyen-mai/' ); ?>" class="regular-text">
+								<span class="description" style="color: #64748b; margin-left: 10px;">(Ví dụ: /khuyen-mai/ hoặc link tùy ý)</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<!-- SECTION 4: QUẢN LÝ CÁC KHUNG GIỜ VÀNG (TIMELINE TABS) -->
 			<div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;">
 				<h2 style="font-size: 18px; font-weight: 700; color: #111827; margin-top: 0; padding-bottom: 12px; border-bottom: 2px solid #f3f4f6; display: flex; align-items: center; gap: 8px;">
 					<span class="dashicons dashicons-clock" style="color: #ba0d1a;"></span>
-					2. Quản Lý Khung Giờ Vàng (09:00, 12:00, 14:00, 18:00, 21:00...)
+					4. Quản Lý Khung Giờ Vàng (09:00, 12:00, 14:00, 18:00, 21:00...)
 				</h2>
 				<p style="color: #64748b; font-size: 13px; margin-bottom: 16px;">
 					Tùy chỉnh giờ bắt đầu, kết thúc và trạng thái hiển thị cho từng khung giờ trên thanh tab ngang của website.
@@ -418,13 +611,13 @@ function phonex_flashsale_render_admin_page() {
 				</table>
 			</div>
 
-			<!-- SECTION 3: QUẢN LÝ 8 SẢN PHẨM FLASH SALE (2 HÀNG X 4 CỘT) -->
+			<!-- SECTION 5: QUẢN LÝ 12 SẢN PHẨM FLASH SALE (8 HIỂN THỊ BAN ĐẦU + 4 MỞ RỘNG KHI BẤM XEM THÊM) -->
 			<div style="background: #fff; border-radius: 12px; padding: 25px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;">
 				<div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 14px; border-bottom: 2px solid #f3f4f6; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
 					<div>
 						<h2 style="font-size: 18px; font-weight: 700; color: #111827; margin: 0; display: flex; align-items: center; gap: 8px;">
 							<span class="dashicons dashicons-products" style="color: #ba0d1a;"></span>
-							3. Danh Sách 8 Sản Phẩm Flash Sale (2 Dòng x 4 Cột)
+							5. Danh Sách Sản Phẩm Flash Sale (8 Hiển Thị Ban Đầu + 4 Mở Rộng Khi Bấm 'Xem Thêm')
 						</h2>
 						<p style="color: #64748b; font-size: 13px; margin: 4px 0 0 0;">
 							Bạn có thể <strong>chọn sản phẩm từ kho WooCommerce</strong> để tự động điền Tên, Giá, Link mua hàng; đồng thời <strong>tùy biến giá sốc &amp; thanh tiến trình</strong> theo ý bạn.
@@ -434,10 +627,10 @@ function phonex_flashsale_render_admin_page() {
 					<div style="display: flex; gap: 8px; flex-wrap: wrap;">
 						<button type="button" id="btn-autofill-wc" class="button" style="background: #0284c7; color: #fff; border-color: #0369a1; font-weight: 600; display: flex; align-items: center; gap: 5px;">
 							<span class="dashicons dashicons-update-alt" style="font-size: 16px; width: 16px; height: 16px;"></span>
-							⚡ Tự Động Điền 8 Sản Phẩm Từ WooCommerce
+							⚡ Tự Động Điền 12 Sản Phẩm Từ WooCommerce
 						</button>
 						<span style="background: #fee2e2; color: #ba0d1a; font-weight: 700; font-size: 12px; padding: 6px 14px; border-radius: 9999px; display: inline-flex; align-items: center;">
-							Đầy đủ 2 hàng trên trang chủ
+							Tổng cộng: <?php echo count( $settings['products'] ); ?> Sản phẩm
 						</span>
 					</div>
 				</div>
@@ -445,22 +638,28 @@ function phonex_flashsale_render_admin_page() {
 				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 18px;">
 					<?php foreach ( $settings['products'] as $idx => $prod ) : ?>
 						<?php 
-							$row_num = ( $idx < 4 ) ? 1 : 2; 
+							$row_num = ( $idx < 4 ) ? 1 : ( ( $idx < 8 ) ? 2 : 3 );
+							$is_extra_row = ( $idx >= 8 );
 							$saved_pid = intval( $prod['product_id'] ?? 0 );
 						?>
-						<div class="phonex-prod-card" data-idx="<?php echo esc_attr( $idx ); ?>" style="border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; background: <?php echo $row_num === 2 ? '#fff9f9' : '#ffffff'; ?>; box-shadow: 0 2px 6px rgba(0,0,0,0.04); transition: border-color 0.2s;">
+						<div class="phonex-prod-card" data-idx="<?php echo esc_attr( $idx ); ?>" style="border: 1.5px solid <?php echo $is_extra_row ? '#d8b4fe' : ( $row_num === 2 ? '#fecdd3' : '#e2e8f0' ); ?>; border-radius: 12px; padding: 16px; background: <?php echo $is_extra_row ? '#faf5ff' : ( $row_num === 2 ? '#fff9f9' : '#ffffff' ); ?>; box-shadow: 0 2px 6px rgba(0,0,0,0.04); transition: border-color 0.2s; position: relative;">
 							<input type="hidden" name="products[<?php echo esc_attr( $idx ); ?>][product_id]" class="field-product-id" value="<?php echo esc_attr( $saved_pid ); ?>">
 
 							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-								<span style="font-weight: 800; font-size: 13px; color: <?php echo $row_num === 2 ? '#ba0d1a' : '#0f172a'; ?>;">
-									#<?php echo esc_html( $idx + 1 ); ?> - Hàng <?php echo esc_html( $row_num ); ?> (Cột <?php echo esc_html( ( $idx % 4 ) + 1 ); ?>)
-								</span>
-								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][badge]" class="field-badge" value="<?php echo esc_attr( $prod['badge'] ); ?>" style="width: 75px; text-align: center; font-weight: 700; font-size: 12px; background: #fee2e2; color: #ba0d1a; border: 1px solid #fecaca; border-radius: 6px; padding: 2px 6px;" placeholder="-15%">
+								<div>
+									<span style="font-weight: 800; font-size: 13px; color: <?php echo $is_extra_row ? '#7c3aed' : ( $row_num === 2 ? '#ba0d1a' : '#0f172a' ); ?>;">
+										#<?php echo esc_html( $idx + 1 ); ?> - Hàng <?php echo esc_html( $row_num ); ?> (Cột <?php echo esc_html( ( $idx % 4 ) + 1 ); ?>)
+									</span>
+									<div style="font-size: 10px; font-weight: 700; color: <?php echo $is_extra_row ? '#9333ea' : '#16a34a'; ?>; margin-top: 2px;">
+										<?php echo $is_extra_row ? '⚡ Mở rộng khi bấm "Xem thêm"' : '✓ Hiển thị mặc định ban đầu'; ?>
+									</div>
+								</div>
+								<input type="text" name="products[<?php echo esc_attr( $idx ); ?>][badge]" class="field-badge" value="<?php echo esc_attr( $prod['badge'] ); ?>" style="width: 75px; text-align: center; font-weight: 700; font-size: 12px; background: <?php echo $is_extra_row ? '#f3e8ff' : '#fee2e2'; ?>; color: <?php echo $is_extra_row ? '#7c3aed' : '#ba0d1a'; ?>; border: 1px solid <?php echo $is_extra_row ? '#d8b4fe' : '#fecaca'; ?>; border-radius: 6px; padding: 2px 6px;" placeholder="-15%">
 							</div>
 
 							<!-- WOOCOMMERCE PRODUCT PICKER DROPDOWN -->
-							<div style="background: #f1f5f9; padding: 8px 10px; border-radius: 8px; margin-bottom: 12px; border: 1.5px dashed #cbd5e1;">
-								<label style="font-size: 11px; font-weight: 700; color: #0369a1; display: flex; align-items: center; gap: 4px; margin-bottom: 4px;">
+							<div style="background: <?php echo $is_extra_row ? '#f5f3ff' : '#f1f5f9'; ?>; padding: 8px 10px; border-radius: 8px; margin-bottom: 12px; border: 1.5px dashed <?php echo $is_extra_row ? '#c4b5fd' : '#cbd5e1'; ?>;">
+								<label style="font-size: 11px; font-weight: 700; color: <?php echo $is_extra_row ? '#6d28d9' : '#0369a1'; ?>; display: flex; align-items: center; gap: 4px; margin-bottom: 4px;">
 									<span class="dashicons dashicons-cart" style="font-size: 14px; width: 14px; height: 14px;"></span>
 									Chọn nhanh từ Sản Phẩm WooCommerce:
 								</label>
@@ -554,8 +753,8 @@ function phonex_flashsale_render_admin_page() {
 					Lưu Thay Đổi Flash Sale
 				</button>
 
-				<button type="submit" name="phonex_reset_default" value="1" class="button button-secondary" onclick="return confirm('Bạn có chắc chắn muốn khôi phục về 8 sản phẩm và 5 khung giờ mặc định ban đầu không?');">
-					Khôi Phục 8 Flagship Mẫu PhoneX
+				<button type="submit" name="phonex_reset_default" value="1" class="button button-secondary" onclick="return confirm('Bạn có chắc chắn muốn khôi phục về 12 sản phẩm và 5 khung giờ mặc định ban đầu không?');">
+					Khôi Phục 12 Flagship Mẫu PhoneX
 				</button>
 			</div>
 		</form>
@@ -627,9 +826,19 @@ function phonex_flashsale_render_admin_page() {
 					}
 				});
 
-				alert('Đã tự động tải thành công các sản phẩm từ kho WooCommerce vào 8 ô sản phẩm!');
+				alert('Đã tự động tải thành công các sản phẩm từ kho WooCommerce vào 12 ô sản phẩm!');
 			});
 		}
+
+		// Preset radio border highlighter
+		document.querySelectorAll('input[name="bg_preset"]').forEach(function(radio) {
+			radio.addEventListener('change', function() {
+				document.querySelectorAll('input[name="bg_preset"]').forEach(function(r) {
+					const lbl = r.closest('label');
+					if (lbl) lbl.style.borderColor = r.checked ? '#ba0d1a' : '#e2e8f0';
+				});
+			});
+		});
 	});
 	</script>
 	<?php

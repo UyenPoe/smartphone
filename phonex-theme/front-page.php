@@ -168,9 +168,105 @@ if ( $fs_enabled === '1' ) :
 	$cd_hours        = intval( $flashsale_settings['countdown_hours'] ?? 2 );
 	$cd_minutes      = intval( $flashsale_settings['countdown_minutes'] ?? 45 );
 	$cd_seconds      = intval( $flashsale_settings['countdown_seconds'] ?? 0 );
+
+	// Background color & styling presets (Pastel PhoneX brand red / Warm cream)
+	$bg_preset       = $flashsale_settings['bg_preset'] ?? 'brand_rose';
+	$bg_custom       = $flashsale_settings['bg_custom'] ?? '#fff5f5';
+
+	if ( $bg_preset === 'brand_rose' ) {
+		// PhoneX brand soft rose pastel gradient (inspired by reference image, matching site primary)
+		$container_style = 'background: linear-gradient(180deg, #fff5f5 0%, #fff0f2 100%); border-color: #fecdd3; box-shadow: 0 10px 30px rgba(186, 13, 26, 0.05);';
+	} elseif ( $bg_preset === 'warm_cream' ) {
+		// Warm cream pastel directly from user-uploaded image (#fff6e3)
+		$container_style = 'background: linear-gradient(180deg, #fffcf5 0%, #fff6e3 100%); border-color: #fde68a; box-shadow: 0 10px 30px rgba(245, 158, 11, 0.06);';
+	} elseif ( $bg_preset === 'custom' && ! empty( $bg_custom ) ) {
+		$container_style = 'background: ' . esc_attr( $bg_custom ) . '; border-color: #e2e8f0;';
+	} else {
+		// clean_white
+		$container_style = 'background: #ffffff; border-color: #e2e8f0;';
+	}
+
+	// Products split: 8 initial products, remaining into expandable 'Xem thêm'
+	$initial_products  = array_slice( $fs_products, 0, 8 );
+	$extra_products    = array_slice( $fs_products, 8 );
+	$has_extra         = ! empty( $extra_products );
+	$view_more_enabled = ( ( $flashsale_settings['view_more_enabled'] ?? '1' ) === '1' );
+	$view_more_text    = $flashsale_settings['view_more_text'] ?? 'Xem thêm deal Flash Sale';
+	$all_deals_text    = $flashsale_settings['all_deals_text'] ?? 'Xem tất cả khuyến mãi';
+	$all_deals_url     = $flashsale_settings['all_deals_url'] ?? '/khuyen-mai/';
+
+	// Helper function for rendering card
+	$render_fs_card = function( $prod, $idx ) {
+		$sold = intval( $prod['sold'] ?? 0 );
+		$total = max( 1, intval( $prod['total_stock'] ?? 50 ) );
+		$percent = min( 100, max( 5, round( ( $sold / $total ) * 100 ) ) );
+		
+		$raw_link = $prod['link'] ?? '';
+		$pid = intval( $prod['product_id'] ?? 0 );
+		if ( $pid > 0 && function_exists( 'get_permalink' ) && get_post_status( $pid ) === 'publish' ) {
+			$prod_link = esc_url( get_permalink( $pid ) );
+		} elseif ( strpos( $raw_link, 'http' ) === 0 ) {
+			$prod_link = esc_url( $raw_link );
+		} elseif ( ! empty( $raw_link ) && strpos( $raw_link, '/' ) === 0 ) {
+			$prod_link = esc_url( home_url( $raw_link ) );
+		} else {
+			$prod_link = esc_url( get_template_directory_uri() . '/pages/shop/product-detail/index.html' );
+		}
+		?>
+		<!-- Flash Sale Item #<?php echo esc_html( $idx + 1 ); ?> -->
+		<div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative hover:-translate-y-1 duration-200">
+			<!-- Thumbnail & Badges -->
+			<div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
+				<span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">
+					<?php echo esc_html( $prod['badge'] ?? '-15%' ); ?>
+				</span>
+				<span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
+					<span class="material-symbols-outlined text-[20px]">favorite_border</span>
+				</span>
+				<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="<?php echo esc_attr( $prod['name'] ); ?>" src="<?php echo esc_url( $prod['image'] ); ?>" loading="lazy"/>
+			</div>
+
+			<!-- Content Details -->
+			<div>
+				<div class="flex gap-1 mb-1">
+					<span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">
+						<?php echo esc_html( $prod['specs'] ?? 'Chính hãng VN/A' ); ?>
+					</span>
+				</div>
+				<h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">
+					<?php echo esc_html( $prod['name'] ); ?>
+				</h4>
+				<div class="mt-2 flex items-baseline gap-2">
+					<span class="font-price-card text-price-card text-primary font-bold">
+						<?php echo esc_html( $prod['price_sale'] ); ?>
+					</span>
+					<span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">
+						<?php echo esc_html( $prod['price_orig'] ); ?>
+					</span>
+				</div>
+
+				<!-- Sold Progress Bar -->
+				<div class="mt-3 space-y-1">
+					<div class="flex justify-between font-label-badge text-label-badge text-secondary">
+						<span>Đã bán <?php echo esc_html( $sold ); ?>/<?php echo esc_html( $total ); ?></span>
+						<span class="text-primary font-bold"><?php echo esc_html( $prod['stock_text'] ?? 'Đang bán chạy' ); ?></span>
+					</div>
+					<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+						<div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: <?php echo esc_attr( $percent ); ?>%;"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Action Button -->
+			<button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='<?php echo $prod_link; ?>'">
+				<span>Mua Ngay</span>
+			</button>
+		</div>
+		<?php
+	};
 ?>
 <section class="w-full max-w-7xl mx-auto px-margin py-space-lg" id="section-flash-sale">
-  <div class="rounded-2xl bg-surface-pure p-space-md lg:p-space-lg shadow-sm border border-border-subtle/60">
+  <div class="rounded-2xl p-space-md lg:p-space-lg shadow-sm border transition-all duration-300" style="<?php echo $container_style; ?>">
     <!-- Top Header Bar -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
       <div class="flex items-center gap-space-md flex-wrap">
@@ -184,7 +280,7 @@ if ( $fs_enabled === '1' ) :
       </div>
 
       <!-- Real-Time Countdown Box -->
-      <div class="flex items-center gap-space-xs font-label-button text-label-button bg-surface-container-low px-4 py-2 rounded-xl border border-border-subtle/80">
+      <div class="flex items-center gap-space-xs font-label-button text-label-button bg-white px-4 py-2 rounded-xl border border-border-subtle/80 shadow-xs">
         <span class="text-secondary text-sm font-medium" id="fs-countdown-label">Kết thúc sau:</span>
         <div class="flex items-center gap-1 font-mono text-on-primary font-bold" id="phonex-fs-countdown" data-hours="<?php echo esc_attr( $cd_hours ); ?>" data-minutes="<?php echo esc_attr( $cd_minutes ); ?>" data-seconds="<?php echo esc_attr( $cd_seconds ); ?>">
           <span class="bg-inverse-surface px-2.5 py-1 rounded text-sm shadow-inner min-w-[28px] text-center" id="fs-cd-h"><?php echo esc_html( sprintf( '%02d', $cd_hours ) ); ?></span>
@@ -196,8 +292,8 @@ if ( $fs_enabled === '1' ) :
       </div>
     </div>
 
-    <!-- Timeline Slots Navigation (Shopee/TGDĐ Style with PhoneX Brand Red & Gold) -->
-    <div class="mt-4 mb-6 border-b border-border-subtle overflow-x-auto no-scrollbar">
+    <!-- Timeline Slots Navigation (PhoneX Brand Red & Gold) -->
+    <div class="mt-4 mb-6 border-b border-border-subtle/60 overflow-x-auto no-scrollbar">
       <div class="flex items-center gap-2 sm:gap-3 min-w-[620px] pb-3" id="phonex-flashsale-tabs">
         <?php foreach ( $fs_slots as $idx => $slot ) : 
           $is_active = ( $idx === $fs_active_index );
@@ -205,7 +301,7 @@ if ( $fs_enabled === '1' ) :
         ?>
           <button 
             type="button" 
-            class="flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border <?php echo $is_active ? 'bg-primary-container text-on-primary shadow-md border-primary-container transform scale-[1.02]' : ( $is_ended ? 'bg-surface-container text-secondary/70 border-transparent hover:bg-surface-container-high' : 'bg-surface-container-low text-text-main border-border-subtle hover:bg-surface-container hover:text-primary hover:border-primary/40' ); ?>"
+            class="flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border <?php echo $is_active ? 'bg-primary-container text-on-primary shadow-md border-primary-container transform scale-[1.02]' : ( $is_ended ? 'bg-surface-container text-secondary/70 border-transparent hover:bg-surface-container-high' : 'bg-white text-text-main border-border-subtle hover:bg-rose-50 hover:text-primary hover:border-primary/40 shadow-xs' ); ?>"
             data-slot-index="<?php echo esc_attr( $idx ); ?>"
             data-slot-time="<?php echo esc_attr( $slot['time'] ); ?>"
             data-slot-endtime="<?php echo esc_attr( $slot['end_time'] ?? '' ); ?>"
@@ -229,80 +325,56 @@ if ( $fs_enabled === '1' ) :
       </div>
     </div>
 
-    <!-- 8 Products Grid (2 Rows x 4 Columns) -->
+    <!-- 8 Default Products Grid (2 Rows x 4 Columns) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-space-md" id="phonex-fs-product-grid">
-      <?php foreach ( $fs_products as $idx => $prod ) : 
-        $sold = intval( $prod['sold'] ?? 0 );
-        $total = max( 1, intval( $prod['total_stock'] ?? 50 ) );
-        $percent = min( 100, max( 5, round( ( $sold / $total ) * 100 ) ) );
-        
-        $raw_link = $prod['link'] ?? '';
-        $pid = intval( $prod['product_id'] ?? 0 );
-        if ( $pid > 0 && function_exists( 'get_permalink' ) && get_post_status( $pid ) === 'publish' ) {
-            $prod_link = esc_url( get_permalink( $pid ) );
-        } elseif ( strpos( $raw_link, 'http' ) === 0 ) {
-            $prod_link = esc_url( $raw_link );
-        } elseif ( ! empty( $raw_link ) && strpos( $raw_link, '/' ) === 0 ) {
-            $prod_link = esc_url( home_url( $raw_link ) );
-        } else {
-            $prod_link = esc_url( get_template_directory_uri() . '/pages/shop/product-detail/index.html' );
-        }
-      ?>
-        <!-- Item <?php echo esc_html( $idx + 1 ); ?> -->
-        <div class="bg-surface-pure rounded-xl p-space-md shadow-sm hover:shadow-md transition-all flex flex-col justify-between group border border-border-subtle/70 hover:border-primary/50 relative">
-          <!-- Thumbnail & Badges -->
-          <div class="relative w-full aspect-square flex items-center justify-center p-space-sm bg-surface-container-low rounded-lg mb-space-sm overflow-hidden">
-            <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-badge text-label-badge font-bold shadow-sm">
-              <?php echo esc_html( $prod['badge'] ?? '-15%' ); ?>
-            </span>
-            <span class="absolute top-2 right-2 z-10 text-secondary hover:text-primary cursor-pointer transition-colors">
-              <span class="material-symbols-outlined text-[20px]">favorite_border</span>
-            </span>
-            <img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" alt="<?php echo esc_attr( $prod['name'] ); ?>" src="<?php echo esc_url( $prod['image'] ); ?>" loading="lazy"/>
-          </div>
-
-          <!-- Content Details -->
-          <div>
-            <div class="flex gap-1 mb-1">
-              <span class="px-1.5 py-0.5 bg-surface-container rounded font-label-badge text-label-badge text-secondary font-medium">
-                <?php echo esc_html( $prod['specs'] ?? 'Chính hãng VN/A' ); ?>
-              </span>
-            </div>
-            <h4 class="font-title-product text-title-product text-text-main line-clamp-1 group-hover:text-primary transition-colors font-bold">
-              <?php echo esc_html( $prod['name'] ); ?>
-            </h4>
-            <div class="mt-2 flex items-baseline gap-2">
-              <span class="font-price-card text-price-card text-primary font-bold">
-                <?php echo esc_html( $prod['price_sale'] ); ?>
-              </span>
-              <span class="font-price-strikethrough text-price-strikethrough text-secondary line-through">
-                <?php echo esc_html( $prod['price_orig'] ); ?>
-              </span>
-            </div>
-
-            <!-- Sold Progress Bar -->
-            <div class="mt-3 space-y-1">
-              <div class="flex justify-between font-label-badge text-label-badge text-secondary">
-                <span>Đã bán <?php echo esc_html( $sold ); ?>/<?php echo esc_html( $total ); ?></span>
-                <span class="text-primary font-bold"><?php echo esc_html( $prod['stock_text'] ?? 'Đang bán chạy' ); ?></span>
-              </div>
-              <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
-                <div class="h-full bg-primary-container rounded-full transition-all duration-500" style="width: <?php echo esc_attr( $percent ); ?>%;"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Action Button -->
-          <button class="mt-space-md w-full h-10 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary font-label-button text-label-button transition-colors flex items-center justify-center gap-1 shadow-sm fs-product-buy-btn" onclick="window.location.href='<?php echo $prod_link; ?>'">
-            <span>Mua Ngay</span>
-          </button>
-        </div>
-      <?php endforeach; ?>
+      <?php foreach ( $initial_products as $idx => $prod ) {
+        $render_fs_card( $prod, $idx );
+      } ?>
     </div>
+
+    <!-- Extra Expandable Products Grid (Products 9-12+ when user clicks "Xem thêm") -->
+    <?php if ( $has_extra ) : ?>
+      <div class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mt-space-md transition-all duration-300" id="phonex-fs-extra-grid">
+        <?php foreach ( $extra_products as $idx => $prod ) {
+          $render_fs_card( $prod, 8 + $idx );
+        } ?>
+      </div>
+    <?php endif; ?>
+
+    <!-- Action Bar: "Xem thêm" & "Xem tất cả khuyến mãi" -->
+    <?php if ( $view_more_enabled ) : ?>
+      <div class="mt-8 pt-5 border-t border-border-subtle/50 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4" id="phonex-fs-more-bar">
+        <?php if ( $has_extra ) : ?>
+          <button 
+            type="button" 
+            id="btn-toggle-fs-more" 
+            class="w-full sm:w-auto px-7 py-3 rounded-xl bg-white hover:bg-rose-50 text-primary font-bold text-sm border-2 border-primary/30 hover:border-primary shadow-sm hover:shadow transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer group"
+            data-expanded="0"
+            data-more-text="<?php echo esc_attr( $view_more_text . ' (' . count( $extra_products ) . ' sản phẩm)' ); ?>"
+            data-less-text="Thu gọn bớt deal Flash Sale"
+          >
+            <span id="label-toggle-fs-more"><?php echo esc_html( $view_more_text . ' (' . count( $extra_products ) . ' sản phẩm)' ); ?></span>
+            <span class="material-symbols-outlined text-[20px] transition-transform duration-200 group-hover:translate-y-0.5" id="icon-toggle-fs-more">expand_more</span>
+          </button>
+        <?php endif; ?>
+
+        <?php 
+          $all_url = ( strpos( $all_deals_url, 'http' ) === 0 ) ? esc_url( $all_deals_url ) : esc_url( home_url( $all_deals_url ) );
+        ?>
+        <a 
+          href="<?php echo $all_url; ?>" 
+          class="w-full sm:w-auto px-7 py-3 rounded-xl bg-primary-container hover:bg-primary-hover text-on-primary font-bold text-sm shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center gap-2"
+        >
+          <span><?php echo esc_html( $all_deals_text ); ?></span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+    <?php endif; ?>
+
   </div>
 </section>
 
-<!-- LIVE FLASHSALE COUNTDOWN & TIMELINE INTERACTION SCRIPT -->
+<!-- LIVE FLASHSALE COUNTDOWN & TIMELINE & XEM THÊM INTERACTION SCRIPT -->
 <script>
 (function() {
   const cdContainer = document.getElementById('phonex-fs-countdown');
@@ -356,7 +428,7 @@ if ( $fs_enabled === '1' ) :
     tab.addEventListener('click', function() {
       // Remove active classes from all tabs
       tabs.forEach(t => {
-        t.className = 'flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-surface-container-low text-text-main border-border-subtle hover:bg-surface-container hover:text-primary hover:border-primary/40';
+        t.className = 'flashsale-slot-tab flex-1 py-3 px-3 sm:px-4 rounded-xl flex flex-col items-center justify-center transition-all duration-200 cursor-pointer text-center relative border bg-white text-text-main border-border-subtle hover:bg-rose-50 hover:text-primary hover:border-primary/40 shadow-xs';
         const labelText = t.querySelector('.slot-label-text');
         if (labelText) {
           labelText.classList.remove('text-amber-300');
@@ -411,6 +483,46 @@ if ( $fs_enabled === '1' ) :
       updateTimerDisplay();
     });
   });
+
+  // Toggle "Xem Thêm" Extra Products Handler
+  const btnToggleMore = document.getElementById('btn-toggle-fs-more');
+  const extraGrid = document.getElementById('phonex-fs-extra-grid');
+  const labelToggleMore = document.getElementById('label-toggle-fs-more');
+  const iconToggleMore = document.getElementById('icon-toggle-fs-more');
+
+  if (btnToggleMore && extraGrid) {
+    btnToggleMore.addEventListener('click', function() {
+      const isExpanded = this.dataset.expanded === '1';
+      if (!isExpanded) {
+        // Expand extra products
+        extraGrid.classList.remove('hidden');
+        extraGrid.classList.add('grid');
+        this.dataset.expanded = '1';
+        if (labelToggleMore) labelToggleMore.textContent = this.dataset.lessText || 'Thu gọn bớt deal Flash Sale';
+        if (iconToggleMore) {
+          iconToggleMore.textContent = 'expand_less';
+          iconToggleMore.classList.remove('group-hover:translate-y-0.5');
+          iconToggleMore.classList.add('group-hover:-translate-y-0.5');
+        }
+      } else {
+        // Collapse extra products
+        extraGrid.classList.remove('grid');
+        extraGrid.classList.add('hidden');
+        this.dataset.expanded = '0';
+        if (labelToggleMore) labelToggleMore.textContent = this.dataset.moreText || 'Xem thêm deal Flash Sale';
+        if (iconToggleMore) {
+          iconToggleMore.textContent = 'expand_more';
+          iconToggleMore.classList.remove('group-hover:-translate-y-0.5');
+          iconToggleMore.classList.add('group-hover:translate-y-0.5');
+        }
+        // Smooth scroll back to top of Flash Sale section
+        const fsSection = document.getElementById('section-flash-sale');
+        if (fsSection) {
+          fsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  }
 })();
 </script>
 <?php endif; ?>
