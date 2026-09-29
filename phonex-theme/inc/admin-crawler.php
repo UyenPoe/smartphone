@@ -955,56 +955,50 @@ function phonex_crawler_render_admin_page() {
 
 /**
  * ==============================================================================
- * WOOCOMMERCE ADMIN PRODUCTS LIST: ADD "Nguồn Dữ Liệu" COLUMN & FILTER
+ * WOOCOMMERCE ADMIN PRODUCTS LIST: INLINE TGDD BADGE & SOURCE FILTER
  * ==============================================================================
  */
 
 /**
- * Add custom column header to WooCommerce Products list
+ * Display clean badge next to product title in WooCommerce list (No column clutter!)
  */
-function phonex_crawler_add_product_columns( $columns ) {
-	$new_cols = array();
-	foreach ( $columns as $key => $title ) {
-		$new_cols[ $key ] = $title;
-		if ( 'name' === $key ) {
-			$new_cols['phonex_source'] = __( 'Nguồn Dữ Liệu', 'phonex' );
+function phonex_crawler_display_product_states( $post_states, $post ) {
+	if ( 'product' === $post->post_type ) {
+		$source_url   = get_post_meta( $post->ID, '_source_url', true );
+		$capacity     = get_post_meta( $post->ID, '_storage_capacity', true );
+		$last_crawled = get_post_meta( $post->ID, '_last_crawled_at', true );
+
+		if ( ! empty( $source_url ) ) {
+			$badge_text = 'TGDD' . ( $capacity ? ' • ' . $capacity : '' );
+			$date_str   = $last_crawled ? 'Cập nhật: ' . date( 'd/m/Y H:i', strtotime( $last_crawled ) ) : '';
+
+			$post_states['phonex_tgdd_badge'] = sprintf(
+				'<span style="display:inline-flex; align-items:center; gap:3px; background:#fff7ed; color:#c2410c; border:1px solid #fed7aa; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:700; margin-left:6px;" title="%s">%s</span>',
+				esc_attr( $date_str ),
+				esc_html( $badge_text )
+			);
 		}
 	}
-	return $new_cols;
+	return $post_states;
 }
-add_filter( 'manage_edit-product_columns', 'phonex_crawler_add_product_columns' );
+add_filter( 'display_post_states', 'phonex_crawler_display_product_states', 10, 2 );
 
 /**
- * Render custom column content in WooCommerce Products list
+ * Add "Xem link gốc TGDD" to quick actions row under product title
  */
-function phonex_crawler_render_product_custom_column( $column, $post_id ) {
-	if ( 'phonex_source' !== $column ) {
-		return;
-	}
-
-	$source_url   = get_post_meta( $post_id, '_source_url', true );
-	$last_crawled = get_post_meta( $post_id, '_last_crawled_at', true );
-	$brand        = get_post_meta( $post_id, '_brand_name', true );
-	$capacity     = get_post_meta( $post_id, '_storage_capacity', true );
-
-	if ( ! empty( $source_url ) ) {
-		echo '<div style="display:flex; flex-direction:column; gap:3px;">';
-		echo '<div style="display:flex; align-items:center; gap:5px;">';
-		echo '<span style="background:#ffedd5; color:#c2410c; padding:2px 7px; border-radius:4px; font-size:10px; font-weight:800; border:1px solid #fed7aa;">TGDD</span>';
-		echo '<a href="' . esc_url( $source_url ) . '" target="_blank" style="font-weight:700; color:#0284c7; text-decoration:none; font-size:11px;" title="Xem bài gốc trên thegioididong.com">Link gốc &#x2197;</a>';
-		echo '</div>';
-		if ( ! empty( $capacity ) ) {
-			echo '<span style="font-size:11px; color:#475569; font-weight:600;">' . esc_html( $capacity ) . ( $brand ? ' &bull; ' . esc_html( $brand ) : '' ) . '</span>';
+function phonex_crawler_product_row_actions( $actions, $post ) {
+	if ( 'product' === $post->post_type ) {
+		$source_url = get_post_meta( $post->ID, '_source_url', true );
+		if ( ! empty( $source_url ) ) {
+			$actions['phonex_source_link'] = sprintf(
+				'<a href="%s" target="_blank" style="color:#0284c7; font-weight:600;" title="Xem sản phẩm gốc trên thegioididong.com">Link gốc TGDD &#x2197;</a>',
+				esc_url( $source_url )
+			);
 		}
-		if ( ! empty( $last_crawled ) ) {
-			echo '<span style="font-size:10px; color:#94a3b8;" title="' . esc_attr( $last_crawled ) . '">Crawl: ' . esc_html( date( 'd/m/Y H:i', strtotime( $last_crawled ) ) ) . '</span>';
-		}
-		echo '</div>';
-	} else {
-		echo '<span style="color:#94a3b8; font-size:11px; font-style:italic;">Thủ công</span>';
 	}
+	return $actions;
 }
-add_action( 'manage_product_posts_custom_column', 'phonex_crawler_render_product_custom_column', 10, 2 );
+add_filter( 'post_row_actions', 'phonex_crawler_product_row_actions', 10, 2 );
 
 /**
  * Add filter dropdown in WooCommerce admin: "Lọc theo nguồn"
