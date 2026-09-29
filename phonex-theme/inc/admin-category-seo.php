@@ -2,15 +2,20 @@
 /**
  * PhoneX Category SEO Content Management (Thông tin ngành hàng - Chuẩn TGDD)
  *
- * Allows administrators to write, edit, and manage rich SEO articles for
- * product categories (specifically "Điện Thoại") modeled after thegioididong.com.
- * Features:
- * - Admin page under "Sản phẩm > Thông tin ngành hàng"
- * - Taxonomy term meta fields in "Sản phẩm > Danh mục"
- * - Meta box on Page editor (Page ID 50 / template-phones.php)
- * - Auto-generated Table of Contents (Mục lục nội dung chính)
- * - Collapsible "Xem thêm / Thu gọn" box with gradient fade
- * - Pre-loaded default SEO article matching thegioididong layout
+ * Cho phép quản trị viên nhập bài viết SEO chuyên sâu cho từng Danh Mục Sản Phẩm (WooCommerce),
+ * đặc biệt là danh mục Điện Thoại theo phong cách Thế Giới Di Động.
+ *
+ * Tính năng chính:
+ * - Tích hợp đầy đủ vào màn hình Sửa Danh Mục (Sản phẩm > Danh mục > Chỉnh sửa)
+ * - Tích hợp bộ tải ảnh WordPress Media Library (wp.media): Chọn ảnh, xem trước, chèn 1-click vào bài viết
+ * - Tích hợp trang quản trị riêng: Sản phẩm > 📝 Thông tin ngành hàng
+ * - Tích hợp Meta Box trong trang Sửa Trang (Page ID 50 / template-phones.php)
+ * - Tự động tạo Bảng mục lục nội dung chính (Table of Contents) với hiệu ứng cuộn mượt
+ * - Hiệu ứng Xem thêm / Thu gọn với dải mờ gradient chuẩn TGDD
+ * - Màu sắc chuẩn hệ thống thương hiệu PhoneX:
+ *   🔵 Primary: #0B5ED7 | 🔷 Dark: #084298 | 🟦 Light: #E7F1FF
+ *   🔴 Sale: #E53935 | 🟠 Khuyến mãi: #FF9800 | 🟢 Còn hàng: #198754
+ *   ⚫ Chữ chính: #172033 | 🩶 Chữ phụ: #667085 | ◻️ Nền section: #F5F7FA | Border: #E5E7EB
  *
  * @package PhoneX
  */
@@ -20,7 +25,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Get default SEO content for "Điện Thoại" matching TGDD structure
+ * Enqueue WordPress Media Uploader scripts & styles for Category and Admin pages
+ */
+function phonex_category_seo_admin_assets( $hook ) {
+	$screen = get_current_screen();
+	$is_cat_edit = ( $screen && 'edit-tags' === $screen->base && 'product_cat' === $screen->taxonomy ) || ( $screen && 'term' === $screen->base && 'product_cat' === $screen->taxonomy );
+	$is_seo_page = isset( $_GET['page'] ) && 'phonex-industry-seo' === $_GET['page'];
+	$is_page_edit = ( $screen && 'page' === $screen->post_type );
+
+	if ( $is_cat_edit || $is_seo_page || $is_page_edit ) {
+		wp_enqueue_media();
+	}
+}
+add_action( 'admin_enqueue_scripts', 'phonex_category_seo_admin_assets' );
+
+/**
+ * Get default SEO article data for "Điện Thoại" matching TGDD structure
  */
 function phonex_get_default_category_seo_data() {
 	$badge_title = 'THÔNG TIN NGÀNH HÀNG';
@@ -127,36 +147,63 @@ HTML;
 		'sapo'        => $sapo,
 		'content'     => $content,
 		'enable_toc'  => true,
+		'img_1'       => 'https://cdn.tgdd.vn/Products/Images/42/370982/iphone-18-pro-max-den-thumb-600x600.jpg',
+		'img_2'       => 'https://cdn.tgdd.vn/Products/Images/42/368236/motorola-razr-fold-trang-thumb-600x600.jpg',
+		'img_3'       => 'https://cdn.tgdd.vn/Products/Images/42/369628/xiaomi-redmi-note-17-pro-max-5g-purple-thumb-600x600.jpg',
 	);
 }
 
 /**
- * Get category SEO data from DB (or fallback to default)
+ * Resolve Category Term ID for "Điện Thoại"
+ */
+function phonex_get_phone_cat_term_id() {
+	if ( is_tax( 'product_cat' ) ) {
+		return get_queried_object_id();
+	}
+	$term = get_term_by( 'slug', 'dien-thoai', 'product_cat' );
+	if ( $term && ! is_wp_error( $term ) ) {
+		return $term->term_id;
+	}
+	return 77; // default DB term id for dien-thoai
+}
+
+/**
+ * Get category SEO data from Category Term Meta (Prioritizing User input in wp-admin)
  *
  * @param int $term_id Optional category term ID.
  * @return array
  */
 function phonex_get_category_seo_data( $term_id = 0 ) {
+	if ( empty( $term_id ) ) {
+		$term_id = phonex_get_phone_cat_term_id();
+	}
+
 	$defaults = phonex_get_default_category_seo_data();
 
-	// Check if term meta exists
+	// 1. Check if term meta exists in the Category Edit screen
 	if ( $term_id > 0 ) {
 		$badge   = get_term_meta( $term_id, '_phonex_cat_seo_badge', true );
 		$sapo    = get_term_meta( $term_id, '_phonex_cat_seo_sapo', true );
 		$content = get_term_meta( $term_id, '_phonex_cat_seo_content', true );
 		$toc     = get_term_meta( $term_id, '_phonex_cat_seo_toc', true );
+		$img_1   = get_term_meta( $term_id, '_phonex_cat_seo_img_1', true );
+		$img_2   = get_term_meta( $term_id, '_phonex_cat_seo_img_2', true );
+		$img_3   = get_term_meta( $term_id, '_phonex_cat_seo_img_3', true );
 
-		if ( ! empty( $content ) ) {
+		if ( ! empty( $content ) || ! empty( $sapo ) || ! empty( $badge ) ) {
 			return array(
 				'badge_title' => ! empty( $badge ) ? $badge : $defaults['badge_title'],
 				'sapo'        => ! empty( $sapo ) ? $sapo : $defaults['sapo'],
-				'content'     => $content,
+				'content'     => ! empty( $content ) ? $content : $defaults['content'],
 				'enable_toc'  => ( 'no' === $toc ) ? false : true,
+				'img_1'       => ! empty( $img_1 ) ? $img_1 : $defaults['img_1'],
+				'img_2'       => ! empty( $img_2 ) ? $img_2 : $defaults['img_2'],
+				'img_3'       => ! empty( $img_3 ) ? $img_3 : $defaults['img_3'],
 			);
 		}
 	}
 
-	// Check global phone SEO option
+	// 2. Check global phone SEO option
 	$saved_opt = get_option( 'phonex_industry_seo_dien_thoai', null );
 	if ( is_array( $saved_opt ) && ! empty( $saved_opt['content'] ) ) {
 		return array(
@@ -164,10 +211,13 @@ function phonex_get_category_seo_data( $term_id = 0 ) {
 			'sapo'        => isset( $saved_opt['sapo'] ) ? $saved_opt['sapo'] : $defaults['sapo'],
 			'content'     => $saved_opt['content'],
 			'enable_toc'  => isset( $saved_opt['enable_toc'] ) ? (bool) $saved_opt['enable_toc'] : true,
+			'img_1'       => $saved_opt['img_1'] ?? $defaults['img_1'],
+			'img_2'       => $saved_opt['img_2'] ?? $defaults['img_2'],
+			'img_3'       => $saved_opt['img_3'] ?? $defaults['img_3'],
 		);
 	}
 
-	// Also check Page ID 50 meta
+	// 3. Fallback to Page ID 50 meta
 	$page_content = get_post_meta( 50, '_phonex_category_seo_content', true );
 	if ( ! empty( $page_content ) ) {
 		$page_badge = get_post_meta( 50, '_phonex_category_seo_badge', true );
@@ -177,6 +227,9 @@ function phonex_get_category_seo_data( $term_id = 0 ) {
 			'sapo'        => ! empty( $page_sapo ) ? $page_sapo : $defaults['sapo'],
 			'content'     => $page_content,
 			'enable_toc'  => true,
+			'img_1'       => $defaults['img_1'],
+			'img_2'       => $defaults['img_2'],
+			'img_3'       => $defaults['img_3'],
 		);
 	}
 
@@ -184,7 +237,7 @@ function phonex_get_category_seo_data( $term_id = 0 ) {
 }
 
 /**
- * Save Category SEO data
+ * Save Category SEO data to Term Meta and Sync
  *
  * @param int   $term_id
  * @param array $data
@@ -194,15 +247,21 @@ function phonex_save_category_seo_data( $term_id, $data ) {
 	$sapo    = wp_kses_post( $data['sapo'] ?? '' );
 	$content = wp_kses_post( $data['content'] ?? '' );
 	$toc     = ! empty( $data['enable_toc'] ) ? 'yes' : 'no';
+	$img_1   = esc_url_raw( $data['img_1'] ?? '' );
+	$img_2   = esc_url_raw( $data['img_2'] ?? '' );
+	$img_3   = esc_url_raw( $data['img_3'] ?? '' );
 
 	if ( $term_id > 0 ) {
 		update_term_meta( $term_id, '_phonex_cat_seo_badge', $badge );
 		update_term_meta( $term_id, '_phonex_cat_seo_sapo', $sapo );
 		update_term_meta( $term_id, '_phonex_cat_seo_content', $content );
 		update_term_meta( $term_id, '_phonex_cat_seo_toc', $toc );
+		update_term_meta( $term_id, '_phonex_cat_seo_img_1', $img_1 );
+		update_term_meta( $term_id, '_phonex_cat_seo_img_2', $img_2 );
+		update_term_meta( $term_id, '_phonex_cat_seo_img_3', $img_3 );
 	}
 
-	// Also save to global option for easy retrieval across templates
+	// Also sync global option
 	update_option(
 		'phonex_industry_seo_dien_thoai',
 		array(
@@ -210,6 +269,9 @@ function phonex_save_category_seo_data( $term_id, $data ) {
 			'sapo'        => $sapo,
 			'content'     => $content,
 			'enable_toc'  => ( 'yes' === $toc ),
+			'img_1'       => $img_1,
+			'img_2'       => $img_2,
+			'img_3'       => $img_3,
 		)
 	);
 
@@ -218,6 +280,205 @@ function phonex_save_category_seo_data( $term_id, $data ) {
 	update_post_meta( 50, '_phonex_category_seo_sapo', $sapo );
 	update_post_meta( 50, '_phonex_category_seo_content', $content );
 }
+
+/**
+ * Add custom fields to Product Category edit screen (Sản phẩm > Danh mục > Chỉnh sửa)
+ */
+function phonex_edit_product_cat_seo_fields( $term ) {
+	$term_id  = $term->term_id;
+	$seo_data = phonex_get_category_seo_data( $term_id );
+	?>
+	<tr class="form-field">
+		<th scope="row" colspan="2" style="padding-top: 30px;">
+			<div style="background:#E7F1FF; border-left: 4px solid #0B5ED7; padding: 12px 16px; border-radius: 6px;">
+				<h2 style="font-size: 18px; font-weight: 800; color: #084298; margin: 0 0 6px 0;">
+					📝 THÔNG TIN NGÀNH HÀNG (BÀI VIẾT CHUẨN SEO THEGIOIDIDONG)
+				</h2>
+				<p style="margin: 0; color: #172033; font-size: 13px;">
+					Nội dung này hiển thị trực tiếp ở chân trang danh mục <strong><?php echo esc_html( $term->name ); ?></strong>. 
+					Có sẵn bộ tải ảnh (WordPress Media) để chọn và chèn ảnh 1-click vào bài viết mà không cần nhập URL thủ công!
+				</p>
+			</div>
+		</th>
+	</tr>
+
+	<tr class="form-field">
+		<th scope="row"><label for="_phonex_cat_seo_badge"><strong>Nhãn Ngành Hàng (Badge)</strong></label></th>
+		<td>
+			<input name="_phonex_cat_seo_badge" id="_phonex_cat_seo_badge" type="text" value="<?php echo esc_attr( $seo_data['badge_title'] ); ?>" style="max-width: 400px; font-weight: bold; color: #0B5ED7; border-color: #0B5ED7; border-radius: 6px;" />
+			<p class="description">Ví dụ: <code>THÔNG TIN NGÀNH HÀNG</code> hoặc <code>ĐIỆN THOẠI CHÍNH HÃNG</code></p>
+		</td>
+	</tr>
+
+	<tr class="form-field">
+		<th scope="row"><label for="_phonex_cat_seo_sapo"><strong>Đoạn Mở Đầu (Sapo)</strong></label></th>
+		<td>
+			<textarea name="_phonex_cat_seo_sapo" id="_phonex_cat_seo_sapo" rows="4" style="border-radius: 6px;"><?php echo esc_textarea( $seo_data['sapo'] ); ?></textarea>
+			<p class="description">Đoạn tóm tắt mở đầu bài viết chuẩn SEO.</p>
+		</td>
+	</tr>
+
+	<!-- MEDIA UPLOADER SECTION (CHÈN HÌNH ẢNH MINH HỌA) -->
+	<tr class="form-field">
+		<th scope="row"><label><strong>📷 Bộ Chèn Hình Ảnh Ngành Hàng</strong></label></th>
+		<td>
+			<p class="description" style="margin-bottom: 12px;">
+				Bấm <strong>"Chọn / Tải ảnh"</strong> để mở Thư viện Media WordPress, sau đó bấm <strong>"➕ Chèn vào bài viết"</strong> để đưa ảnh ngay vào vị trí con trỏ trong khung soạn thảo bên dưới:
+			</p>
+
+			<div style="display: flex; gap: 16px; flex-wrap: wrap;">
+				<?php for ( $i = 1; $i <= 3; $i++ ) : 
+					$slot_val = $seo_data['img_' . $i] ?? '';
+				?>
+					<div id="slot_box_<?php echo $i; ?>" style="background: #F5F7FA; border: 1px solid #E5E7EB; border-radius: 10px; padding: 12px; width: 220px; text-align: center;">
+						<strong style="display: block; margin-bottom: 8px; color: #172033; font-size: 13px;">Ảnh Minh Họa <?php echo $i; ?></strong>
+						
+						<div style="height: 120px; background: #fff; border: 1px dashed #ccd0d4; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 10px;">
+							<img id="seo_img_preview_<?php echo $i; ?>" src="<?php echo esc_url( $slot_val ); ?>" style="max-height: 100%; max-width: 100%; object-fit: contain; <?php echo empty( $slot_val ) ? 'display:none;' : ''; ?>" />
+							<span id="seo_img_placeholder_<?php echo $i; ?>" style="color: #667085; font-size: 12px; <?php echo ! empty( $slot_val ) ? 'display:none;' : ''; ?>">Chưa chọn ảnh</span>
+						</div>
+
+						<input type="hidden" name="_phonex_cat_seo_img_<?php echo $i; ?>" id="_phonex_cat_seo_img_<?php echo $i; ?>" value="<?php echo esc_attr( $slot_val ); ?>" />
+
+						<div style="display: flex; flex-direction: column; gap: 6px;">
+							<button type="button" class="button phonex-upload-media-btn" data-slot="<?php echo $i; ?>" style="color: #0B5ED7; border-color: #0B5ED7; font-weight: bold;">
+								📷 Chọn / Tải ảnh lên
+							</button>
+
+							<button type="button" class="button phonex-insert-editor-btn" data-slot="<?php echo $i; ?>" id="btn_insert_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> background: #0B5ED7; color: #fff; border-color: #0B5ED7; font-weight: bold;">
+								➕ Chèn vào bài viết
+							</button>
+
+							<button type="button" class="button phonex-remove-media-btn" data-slot="<?php echo $i; ?>" id="btn_remove_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> color: #E53935; border-color: #E53935;">
+								❌ Xóa ảnh
+							</button>
+						</div>
+					</div>
+				<?php endfor; ?>
+			</div>
+		</td>
+	</tr>
+
+	<tr class="form-field">
+		<th scope="row"><label for="_phonex_cat_seo_content"><strong>Nội Dung Chi Tiết (SEO)</strong></label></th>
+		<td>
+			<div style="margin-bottom: 8px;">
+				<label>
+					<input name="_phonex_cat_seo_toc" type="checkbox" id="_phonex_cat_seo_toc" value="yes" <?php checked( $seo_data['enable_toc'], true ); ?> />
+					<strong>Bật Bảng Mục Lục Tự Động (Nội dung chính)</strong> - Hệ thống tự động quét các thẻ H2, H3 để tạo bảng mục lục có thể thu gọn giống Thế Giới Di Động.
+				</label>
+			</div>
+
+			<?php
+			wp_editor(
+				$seo_data['content'],
+				'_phonex_cat_seo_content',
+				array(
+					'textarea_name' => '_phonex_cat_seo_content',
+					'textarea_rows' => 20,
+					'media_buttons' => true,
+					'tinymce'       => true,
+					'quicktags'     => true,
+				)
+			);
+			?>
+			<p class="description" style="margin-top: 6px;">
+				💡 <em>Mẹo: Bạn có thể bấm nút <strong>"Thêm Media"</strong> phía trên thanh công cụ soạn thảo, hoặc bấm nút <strong>"➕ Chèn vào bài viết"</strong> ở các ô ảnh minh họa phía trên để đưa hình vào bài viết lập tức.</em>
+			</p>
+		</td>
+	</tr>
+
+	<!-- Media Uploader Script -->
+	<script>
+	jQuery(document).ready(function($) {
+		var editorId = '_phonex_cat_seo_content';
+
+		// Upload / Select Media
+		$('.phonex-upload-media-btn').on('click', function(e) {
+			e.preventDefault();
+			var slot = $(this).data('slot');
+			var mediaFrame = wp.media({
+				title: 'Chọn hoặc Tải Ảnh Minh Họa Ngành Hàng',
+				button: { text: 'Sử dụng ảnh này' },
+				multiple: false
+			}).on('select', function() {
+				var attachment = mediaFrame.state().get('selection').first().toJSON();
+				$('#_phonex_cat_seo_img_' + slot).val(attachment.url);
+				$('#seo_img_preview_' + slot).attr('src', attachment.url).show();
+				$('#seo_img_placeholder_' + slot).hide();
+				$('#btn_insert_' + slot).show();
+				$('#btn_remove_' + slot).show();
+			}).open();
+		});
+
+		// Remove Media
+		$('.phonex-remove-media-btn').on('click', function(e) {
+			e.preventDefault();
+			var slot = $(this).data('slot');
+			$('#_phonex_cat_seo_img_' + slot).val('');
+			$('#seo_img_preview_' + slot).attr('src', '').hide();
+			$('#seo_img_placeholder_' + slot).show();
+			$('#btn_insert_' + slot).hide();
+			$(this).hide();
+		});
+
+		// Insert into WP Editor
+		$('.phonex-insert-editor-btn').on('click', function(e) {
+			e.preventDefault();
+			var slot = $(this).data('slot');
+			var url = $('#_phonex_cat_seo_img_' + slot).val();
+			if (!url) return;
+
+			var htmlToInsert = '\n<div class="my-4 text-center">' +
+				'\n  <img src="' + url + '" alt="Minh họa sản phẩm" class="mx-auto rounded-xl max-h-[380px] object-contain shadow-xs border border-gray-100" />' +
+				'\n  <p class="text-xs text-gray-500 italic mt-1.5">Ảnh thực tế sản phẩm tại PhoneX</p>' +
+				'\n</div>\n';
+
+			if (typeof tinyMCE !== 'undefined' && tinyMCE.get(editorId) && !tinyMCE.get(editorId).isHidden()) {
+				tinyMCE.get(editorId).insertContent(htmlToInsert);
+			} else {
+				var textarea = document.getElementById(editorId);
+				if (textarea) {
+					var pos = textarea.selectionStart || textarea.value.length;
+					textarea.value = textarea.value.substring(0, pos) + htmlToInsert + textarea.value.substring(pos);
+				}
+			}
+			alert('Đã chèn ảnh vào vị trí con trỏ trong bài viết!');
+		});
+	});
+	</script>
+	<?php
+}
+add_action( 'product_cat_edit_form_fields', 'phonex_edit_product_cat_seo_fields', 20 );
+
+/**
+ * Save custom fields from Product Category edit screen
+ */
+function phonex_save_product_cat_seo_fields( $term_id ) {
+	if ( isset( $_POST['_phonex_cat_seo_content'] ) ) {
+		$badge   = sanitize_text_field( $_POST['_phonex_cat_seo_badge'] ?? 'THÔNG TIN NGÀNH HÀNG' );
+		$sapo    = wp_kses_post( $_POST['_phonex_cat_seo_sapo'] ?? '' );
+		$content = wp_kses_post( $_POST['_phonex_cat_seo_content'] ?? '' );
+		$toc     = isset( $_POST['_phonex_cat_seo_toc'] ) ? 'yes' : 'no';
+		$img_1   = esc_url_raw( $_POST['_phonex_cat_seo_img_1'] ?? '' );
+		$img_2   = esc_url_raw( $_POST['_phonex_cat_seo_img_2'] ?? '' );
+		$img_3   = esc_url_raw( $_POST['_phonex_cat_seo_img_3'] ?? '' );
+
+		phonex_save_category_seo_data(
+			$term_id,
+			array(
+				'badge_title' => $badge,
+				'sapo'        => $sapo,
+				'content'     => $content,
+				'enable_toc'  => ( 'yes' === $toc ),
+				'img_1'       => $img_1,
+				'img_2'       => $img_2,
+				'img_3'       => $img_3,
+			)
+		);
+	}
+}
+add_action( 'edited_product_cat', 'phonex_save_product_cat_seo_fields' );
 
 /**
  * Register Admin Menu under WooCommerce Products
@@ -235,13 +496,15 @@ function phonex_register_category_seo_admin_menu() {
 add_action( 'admin_menu', 'phonex_register_category_seo_admin_menu', 25 );
 
 /**
- * Render Admin Management Page
+ * Render Admin Management Page (Sản phẩm > 📝 Thông tin ngành hàng)
  */
 function phonex_render_category_seo_admin_page() {
+	$target_term_id = phonex_get_phone_cat_term_id();
+
 	// Handle reset to default
 	if ( isset( $_POST['phonex_reset_default_seo'] ) && check_admin_referer( 'phonex_reset_seo_action', 'phonex_seo_nonce' ) ) {
 		$default = phonex_get_default_category_seo_data();
-		phonex_save_category_seo_data( 77, $default );
+		phonex_save_category_seo_data( $target_term_id, $default );
 		echo '<div class="notice notice-success is-dismissible"><p><strong>Đã khôi phục bài viết SEO mẫu chuẩn Thế Giới Di Động thành công!</strong></p></div>';
 	}
 
@@ -251,30 +514,37 @@ function phonex_render_category_seo_admin_page() {
 		$sapo    = wp_unslash( $_POST['sapo'] ?? '' );
 		$content = wp_unslash( $_POST['seo_content'] ?? '' );
 		$toc     = isset( $_POST['enable_toc'] ) ? true : false;
+		$img_1   = esc_url_raw( $_POST['img_1'] ?? '' );
+		$img_2   = esc_url_raw( $_POST['img_2'] ?? '' );
+		$img_3   = esc_url_raw( $_POST['img_3'] ?? '' );
 
 		phonex_save_category_seo_data(
-			77,
+			$target_term_id,
 			array(
 				'badge_title' => $badge,
 				'sapo'        => $sapo,
 				'content'     => $content,
 				'enable_toc'  => $toc,
+				'img_1'       => $img_1,
+				'img_2'       => $img_2,
+				'img_3'       => $img_3,
 			)
 		);
-		echo '<div class="notice notice-success is-dismissible"><p><strong>Đã lưu nội dung Thông Tin Ngành Hàng thành công!</strong></p></div>';
+		echo '<div class="notice notice-success is-dismissible"><p><strong>Đã lưu nội dung Thông Tin Ngành Hàng thành công! Dữ liệu được đồng bộ trực tiếp vào Danh mục Điện Thoại.</strong></p></div>';
 	}
 
-	$seo_data = phonex_get_category_seo_data( 77 );
+	$seo_data = phonex_get_category_seo_data( $target_term_id );
 	?>
 	<div class="wrap" style="max-width: 1100px;">
 		<h1 style="display:flex; align-items:center; gap:8px;">
-			<span class="dashicons dashicons-text-page" style="font-size:28px; width:28px; height:28px; color:#b7000c;"></span>
-			Quản Lý Bài Viết SEO Danh Mục: Thông Tin Ngành Hàng (Chuẩn TGDD)
+			<span class="dashicons dashicons-text-page" style="font-size:28px; width:28px; height:28px; color:#0B5ED7;"></span>
+			Quản Lý Bài Viết SEO: Thông Tin Ngành Hàng (Đồng bộ Danh Mục)
 		</h1>
 		<p class="description" style="font-size: 14px; margin-bottom: 20px;">
-			Trang này dùng để soạn thảo và hiển thị bài viết SEO chuẩn <strong>Thegioididong</strong> ở cuối trang danh mục 
+			Dữ liệu tại đây liên kết trực tiếp với mục 
+			<a href="<?php echo esc_url( admin_url( 'term.php?taxonomy=product_cat&tag_ID=' . $target_term_id . '&post_type=product' ) ); ?>" target="_blank" style="font-weight: bold; text-decoration: underline;">Danh mục Điện Thoại ↗</a>
+			và hiển thị ở chân trang 
 			<a href="<?php echo esc_url( home_url( '/dien-thoai/' ) ); ?>" target="_blank" style="font-weight: bold; text-decoration: underline;">Điện Thoại (/dien-thoai/) ↗</a>.
-			Bao gồm nhãn ngành hàng, đoạn sapo, mục lục nội dung tự động (Table of Contents), và bài viết phân tích chi tiết.
 		</p>
 
 		<div style="background:#fff; border:1px solid #ccd0d4; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.05); margin-bottom: 24px;">
@@ -288,7 +558,7 @@ function phonex_render_category_seo_admin_page() {
 								<label for="badge_title"><strong>Nhãn Tiêu Đề (Badge)</strong></label>
 							</th>
 							<td>
-								<input name="badge_title" type="text" id="badge_title" value="<?php echo esc_attr( $seo_data['badge_title'] ); ?>" class="regular-text" style="font-weight: bold; color: #0284c7; border-color: #0284c7; border-radius: 6px;" />
+								<input name="badge_title" type="text" id="badge_title" value="<?php echo esc_attr( $seo_data['badge_title'] ); ?>" class="regular-text" style="font-weight: bold; color: #0B5ED7; border-color: #0B5ED7; border-radius: 6px;" />
 								<p class="description">Hiển thị dạng huy hiệu bo góc phía trên bài viết (Mặc định: <code>THÔNG TIN NGÀNH HÀNG</code>).</p>
 							</td>
 						</tr>
@@ -300,6 +570,39 @@ function phonex_render_category_seo_admin_page() {
 							<td>
 								<textarea name="sapo" id="sapo" rows="4" class="large-text" style="border-radius: 6px;"><?php echo esc_textarea( $seo_data['sapo'] ); ?></textarea>
 								<p class="description">Đoạn văn tóm tắt ngắn mở đầu bài viết, giúp công cụ tìm kiếm và người đọc nắm nhanh nội dung.</p>
+							</td>
+						</tr>
+
+						<tr>
+							<th scope="row">
+								<label><strong>📷 Bộ Chèn Ảnh Ngành Hàng</strong></label>
+							</th>
+							<td>
+								<div style="display: flex; gap: 16px; flex-wrap: wrap;">
+									<?php for ( $i = 1; $i <= 3; $i++ ) : 
+										$slot_val = $seo_data['img_' . $i] ?? '';
+									?>
+										<div style="background: #F5F7FA; border: 1px solid #E5E7EB; border-radius: 10px; padding: 12px; width: 220px; text-align: center;">
+											<strong style="display: block; margin-bottom: 8px; color: #172033; font-size: 13px;">Ảnh Minh Họa <?php echo $i; ?></strong>
+											<div style="height: 120px; background: #fff; border: 1px dashed #ccd0d4; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 10px;">
+												<img id="seo_img_preview_<?php echo $i; ?>" src="<?php echo esc_url( $slot_val ); ?>" style="max-height: 100%; max-width: 100%; object-fit: contain; <?php echo empty( $slot_val ) ? 'display:none;' : ''; ?>" />
+												<span id="seo_img_placeholder_<?php echo $i; ?>" style="color: #667085; font-size: 12px; <?php echo ! empty( $slot_val ) ? 'display:none;' : ''; ?>">Chưa chọn ảnh</span>
+											</div>
+											<input type="hidden" name="img_<?php echo $i; ?>" id="_phonex_cat_seo_img_<?php echo $i; ?>" value="<?php echo esc_attr( $slot_val ); ?>" />
+											<div style="display: flex; flex-direction: column; gap: 6px;">
+												<button type="button" class="button phonex-upload-media-btn" data-slot="<?php echo $i; ?>" style="color: #0B5ED7; border-color: #0B5ED7; font-weight: bold;">
+													📷 Chọn / Tải ảnh lên
+												</button>
+												<button type="button" class="button phonex-insert-editor-btn" data-slot="<?php echo $i; ?>" id="btn_insert_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> background: #0B5ED7; color: #fff; border-color: #0B5ED7; font-weight: bold;">
+													➕ Chèn vào bài viết
+												</button>
+												<button type="button" class="button phonex-remove-media-btn" data-slot="<?php echo $i; ?>" id="btn_remove_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> color: #E53935; border-color: #E53935;">
+													❌ Xóa ảnh
+												</button>
+											</div>
+										</div>
+									<?php endfor; ?>
+								</div>
 							</td>
 						</tr>
 
@@ -325,121 +628,105 @@ function phonex_render_category_seo_admin_page() {
 									'textarea_name' => 'seo_content',
 									'textarea_rows' => 22,
 									'media_buttons' => true,
-									'teeny'         => false,
+									'tinymce'       => true,
 									'quicktags'     => true,
 								);
 								wp_editor( $seo_data['content'], 'phonex_seo_editor', $editor_settings );
 								?>
-								<p class="description" style="margin-top: 8px;">
-									💡 <em>Mẹo SEO: Dùng các thẻ <code>&lt;h2&gt;</code> cho tiêu đề chính (1, 2, 3...) và <code>&lt;h3&gt;</code> cho các dòng máy (iPhone, Galaxy, OPPO...) để hệ thống tự động đánh chỉ mục vào bảng Mục lục nội dung chính.</em>
-								</p>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 
 				<div style="margin-top: 24px; display:flex; align-items:center; gap:16px;">
-					<button type="submit" name="phonex_save_industry_seo" class="button button-primary button-large" style="background:#b7000c; border-color:#b7000c; font-weight:bold; padding: 4px 24px;">
+					<button type="submit" name="phonex_save_industry_seo" class="button button-primary button-large" style="background:#0B5ED7; border-color:#0B5ED7; font-weight:bold; padding: 4px 24px;">
 						💾 Lưu Bài Viết SEO Ngành Hàng
 					</button>
 
 					<a href="<?php echo esc_url( home_url( '/dien-thoai/' ) ); ?>" target="_blank" class="button button-secondary button-large" style="display:flex; align-items:center; gap:4px;">
-						<span class="dashicons dashicons-visibility" style="margin-top:2px;"></span> Xem Trang Ngoài Web (Frontend)
+						<span class="dashicons dashicons-visibility" style="margin-top:2px;"></span> Xem Trang Ngoài Web
 					</a>
 				</div>
 			</form>
 		</div>
 
-		<!-- One-click Reset Section -->
-		<div style="background:#fff8e5; border:1px solid #ffeeba; border-radius:12px; padding:16px 20px; display:flex; align-items:center; justify-content:space-between;">
+		<!-- Reset default -->
+		<div style="background:#E7F1FF; border:1px solid #bcdcff; border-radius:12px; padding:16px 20px; display:flex; align-items:center; justify-content:space-between;">
 			<div>
-				<strong style="color:#856404; font-size:14px;">Khôi phục bài viết mẫu chuẩn Thế Giới Di Động</strong>
-				<p style="margin:4px 0 0; color:#856404; font-size:13px;">
-					Nhấn nút này nếu bạn muốn nạp lại toàn bộ bài viết mẫu chuẩn SEO gồm 7 mục, bảng mục lục và cấu trúc ảnh giống trang thegioididong.com/dtdd.
+				<strong style="color:#084298; font-size:14px;">Khôi phục bài viết mẫu chuẩn Thế Giới Di Động</strong>
+				<p style="margin:4px 0 0; color:#172033; font-size:13px;">
+					Nạp lại nội dung bài viết mẫu chuẩn SEO gồm 7 mục, bảng mục lục và cấu trúc ảnh chuẩn TGDD.
 				</p>
 			</div>
-			<form method="post" action="" onsubmit="return confirm('Bạn có chắc chắn muốn nạp lại nội dung bài viết SEO mẫu gốc của Thế Giới Di Động? Các thay đổi chưa lưu sẽ bị ghi đè.');">
+			<form method="post" action="" onsubmit="return confirm('Bạn có chắc chắn muốn nạp lại bài mẫu?');">
 				<?php wp_nonce_field( 'phonex_reset_seo_action', 'phonex_seo_nonce' ); ?>
-				<button type="submit" name="phonex_reset_default_seo" class="button button-secondary" style="color:#856404; border-color:#ffeeba; background:#fff; font-weight:bold;">
+				<button type="submit" name="phonex_reset_default_seo" class="button button-secondary" style="color:#084298; border-color:#bcdcff; background:#fff; font-weight:bold;">
 					🔄 Nạp Lại Bài Mẫu TGDD
 				</button>
 			</form>
 		</div>
 	</div>
+
+	<script>
+	jQuery(document).ready(function($) {
+		var editorId = 'phonex_seo_editor';
+
+		$('.phonex-upload-media-btn').on('click', function(e) {
+			e.preventDefault();
+			var slot = $(this).data('slot');
+			var mediaFrame = wp.media({
+				title: 'Chọn hoặc Tải Ảnh Minh Họa Ngành Hàng',
+				button: { text: 'Sử dụng ảnh này' },
+				multiple: false
+			}).on('select', function() {
+				var attachment = mediaFrame.state().get('selection').first().toJSON();
+				$('#_phonex_cat_seo_img_' + slot).val(attachment.url);
+				$('#seo_img_preview_' + slot).attr('src', attachment.url).show();
+				$('#seo_img_placeholder_' + slot).hide();
+				$('#btn_insert_' + slot).show();
+				$('#btn_remove_' + slot).show();
+			}).open();
+		});
+
+		$('.phonex-remove-media-btn').on('click', function(e) {
+			e.preventDefault();
+			var slot = $(this).data('slot');
+			$('#_phonex_cat_seo_img_' + slot).val('');
+			$('#seo_img_preview_' + slot).attr('src', '').hide();
+			$('#seo_img_placeholder_' + slot).show();
+			$('#btn_insert_' + slot).hide();
+			$(this).hide();
+		});
+
+		$('.phonex-insert-editor-btn').on('click', function(e) {
+			e.preventDefault();
+			var slot = $(this).data('slot');
+			var url = $('#_phonex_cat_seo_img_' + slot).val();
+			if (!url) return;
+
+			var htmlToInsert = '\n<div class="my-4 text-center">' +
+				'\n  <img src="' + url + '" alt="Minh họa sản phẩm" class="mx-auto rounded-xl max-h-[380px] object-contain shadow-xs border border-gray-100" />' +
+				'\n  <p class="text-xs text-gray-500 italic mt-1.5">Ảnh thực tế sản phẩm tại PhoneX</p>' +
+				'\n</div>\n';
+
+			if (typeof tinyMCE !== 'undefined' && tinyMCE.get(editorId) && !tinyMCE.get(editorId).isHidden()) {
+				tinyMCE.get(editorId).insertContent(htmlToInsert);
+			} else {
+				var textarea = document.getElementById(editorId);
+				if (textarea) {
+					var pos = textarea.selectionStart || textarea.value.length;
+					textarea.value = textarea.value.substring(0, pos) + htmlToInsert + textarea.value.substring(pos);
+				}
+			}
+			alert('Đã chèn ảnh vào bài viết!');
+		});
+	});
+	</script>
 	<?php
 }
 
 /**
- * Add custom fields to Product Category edit screen (Sản phẩm > Danh mục > Chỉnh sửa)
- */
-function phonex_edit_product_cat_seo_fields( $term ) {
-	$term_id  = $term->term_id;
-	$seo_data = phonex_get_category_seo_data( $term_id );
-	?>
-	<tr class="form-field">
-		<th scope="row" colspan="2" style="padding-top: 30px;">
-			<h2 style="font-size: 18px; font-weight: bold; color: #b7000c; border-bottom: 2px solid #b7000c; padding-bottom: 8px;">
-				📝 Thông Tin Ngành Hàng (Bài Viết Chuẩn SEO TGDD)
-			</h2>
-			<p class="description">Hiển thị ở chân trang danh mục với bố cục nhãn ngành hàng, bảng mục lục tương tác và bài viết chi tiết.</p>
-		</th>
-	</tr>
-	<tr class="form-field">
-		<th scope="row"><label for="_phonex_cat_seo_badge">Nhãn Ngành Hàng (Badge)</label></th>
-		<td>
-			<input name="_phonex_cat_seo_badge" id="_phonex_cat_seo_badge" type="text" value="<?php echo esc_attr( $seo_data['badge_title'] ); ?>" />
-		</td>
-	</tr>
-	<tr class="form-field">
-		<th scope="row"><label for="_phonex_cat_seo_sapo">Đoạn Mở Đầu (Sapo)</label></th>
-		<td>
-			<textarea name="_phonex_cat_seo_sapo" id="_phonex_cat_seo_sapo" rows="4"><?php echo esc_textarea( $seo_data['sapo'] ); ?></textarea>
-		</td>
-	</tr>
-	<tr class="form-field">
-		<th scope="row"><label for="_phonex_cat_seo_content">Nội Dung Chi Tiết (SEO)</label></th>
-		<td>
-			<?php
-			wp_editor(
-				$seo_data['content'],
-				'_phonex_cat_seo_content',
-				array(
-					'textarea_name' => '_phonex_cat_seo_content',
-					'textarea_rows' => 15,
-					'media_buttons' => true,
-				)
-			);
-			?>
-		</td>
-	</tr>
-	<?php
-}
-add_action( 'product_cat_edit_form_fields', 'phonex_edit_product_cat_seo_fields', 20 );
-
-/**
- * Save custom fields from Product Category edit screen
- */
-function phonex_save_product_cat_seo_fields( $term_id ) {
-	if ( isset( $_POST['_phonex_cat_seo_content'] ) ) {
-		$badge   = sanitize_text_field( $_POST['_phonex_cat_seo_badge'] ?? 'THÔNG TIN NGÀNH HÀNG' );
-		$sapo    = wp_kses_post( $_POST['_phonex_cat_seo_sapo'] ?? '' );
-		$content = wp_kses_post( $_POST['_phonex_cat_seo_content'] ?? '' );
-
-		phonex_save_category_seo_data(
-			$term_id,
-			array(
-				'badge_title' => $badge,
-				'sapo'        => $sapo,
-				'content'     => $content,
-				'enable_toc'  => true,
-			)
-		);
-	}
-}
-add_action( 'edited_product_cat', 'phonex_save_product_cat_seo_fields' );
-
-/**
- * Add Meta Box on Page Editor (e.g. Page ID 50 / template-phones.php)
+ * Add Meta Box on Page Editor
  */
 function phonex_add_page_category_seo_metabox() {
 	add_meta_box(
@@ -454,14 +741,13 @@ function phonex_add_page_category_seo_metabox() {
 add_action( 'add_meta_boxes', 'phonex_add_page_category_seo_metabox' );
 
 function phonex_render_page_category_seo_metabox( $post ) {
-	// Only show note if not phone template, or show editor
 	wp_nonce_field( 'phonex_page_seo_meta_save', 'phonex_page_seo_nonce' );
 	$seo_data = phonex_get_category_seo_data( 77 );
 	?>
 	<div style="padding: 10px 0;">
 		<p class="description" style="margin-bottom: 15px;">
-			Cấu hình bài viết <strong>Thông Tin Ngành Hàng</strong> hiển thị ở cuối trang Danh Mục Điện Thoại.
-			Bạn cũng có thể quản lý trực tiếp tại menu <a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" target="_blank" style="font-weight:bold;">Sản phẩm &gt; 📝 Thông tin ngành hàng</a>.
+			Nội dung này được đồng bộ trực tiếp với mục <a href="<?php echo esc_url( admin_url( 'term.php?taxonomy=product_cat&tag_ID=77&post_type=product' ) ); ?>" target="_blank" style="font-weight:bold;">Danh mục Điện Thoại</a>
+			hoặc chỉnh sửa nhanh tại <a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" target="_blank" style="font-weight:bold;">Sản phẩm &gt; 📝 Thông tin ngành hàng</a>.
 		</p>
 		<p>
 			<label for="_page_seo_badge"><strong>Nhãn tiêu đề:</strong></label><br/>
@@ -532,11 +818,9 @@ function phonex_generate_toc_and_anchors( $html ) {
 		);
 	}
 
-	// Use regex to find all h2 and h3
-	$toc_items    = array();
-	$counter_h2   = 0;
-	$counter_h3   = 0;
-	$current_item = null;
+	$toc_items  = array();
+	$counter_h2 = 0;
+	$counter_h3 = 0;
 
 	// Add ids if not present
 	$content_html = preg_replace_callback(
@@ -546,7 +830,6 @@ function phonex_generate_toc_and_anchors( $html ) {
 			$attrs = $matches[2];
 			$title = wp_strip_all_tags( $matches[3] );
 
-			// Check if id exists
 			if ( preg_match( '/id=["\']([^"\']+)["\']/i', $attrs, $id_match ) ) {
 				$anchor = $id_match[1];
 			} else {
@@ -567,13 +850,11 @@ function phonex_generate_toc_and_anchors( $html ) {
 				'anchor' => $anchor,
 			);
 
-			// Return updated heading with smooth-scroll scroll-margin-top
 			return '<' . $tag . $attrs . ' class="scroll-mt-24">' . $matches[3] . '</' . $tag . '>';
 		},
 		$html
 	);
 
-	// Build TOC HTML
 	if ( empty( $toc_items ) ) {
 		return array(
 			'toc_html'     => '',
@@ -581,16 +862,16 @@ function phonex_generate_toc_and_anchors( $html ) {
 		);
 	}
 
-	$toc_html  = '<div id="seo-toc-container" class="my-5 rounded-2xl border border-blue-100 bg-[#f4f8fd] p-5 sm:p-6 transition-all shadow-2xs">';
-	$toc_html .= '  <button type="button" id="toggle-seo-toc" class="w-full flex items-center justify-between text-left font-bold text-gray-900 text-sm sm:text-base cursor-pointer focus:outline-none select-none">';
-	$toc_html .= '    <span class="flex items-center gap-2 text-gray-900">';
-	$toc_html .= '      <span class="material-symbols-outlined text-blue-600 text-[22px]">list_alt</span>';
+	$toc_html  = '<div id="seo-toc-container" class="my-5 rounded-2xl border border-[#E7F1FF] bg-[#F5F7FA] p-5 sm:p-6 transition-all shadow-2xs">';
+	$toc_html .= '  <button type="button" id="toggle-seo-toc" class="w-full flex items-center justify-between text-left font-extrabold text-[#172033] text-sm sm:text-base cursor-pointer focus:outline-none select-none">';
+	$toc_html .= '    <span class="flex items-center gap-2 text-[#172033]">';
+	$toc_html .= '      <span class="material-symbols-outlined text-[#0B5ED7] text-[22px]">list_alt</span>';
 	$toc_html .= '      Nội dung chính';
 	$toc_html .= '    </span>';
-	$toc_html .= '    <span id="toc-chevron" class="material-symbols-outlined text-gray-500 transition-transform duration-200">expand_more</span>';
+	$toc_html .= '    <span id="toc-chevron" class="material-symbols-outlined text-[#667085] transition-transform duration-200">expand_more</span>';
 	$toc_html .= '  </button>';
 
-	$toc_html .= '  <div id="seo-toc-list" class="mt-4 pt-3 border-t border-blue-100/70 text-xs sm:text-sm leading-relaxed">';
+	$toc_html .= '  <div id="seo-toc-list" class="mt-4 pt-3 border-t border-[#E5E7EB] text-xs sm:text-sm leading-relaxed">';
 	$toc_html .= '    <ul class="space-y-2">';
 
 	$in_sublist = false;
@@ -601,18 +882,18 @@ function phonex_generate_toc_and_anchors( $html ) {
 				$toc_html  .= '</ul></li>';
 				$in_sublist = false;
 			}
-			$toc_html .= '<li class="font-bold text-blue-700">';
-			$toc_html .= '  <a href="#' . esc_attr( $item['anchor'] ) . '" class="text-[#0071e3] hover:text-blue-900 hover:underline transition-colors">';
+			$toc_html .= '<li class="font-bold text-[#0B5ED7]">';
+			$toc_html .= '  <a href="#' . esc_attr( $item['anchor'] ) . '" class="text-[#0B5ED7] hover:text-[#084298] hover:underline transition-colors">';
 			$toc_html .= esc_html( $item['title'] );
 			$toc_html .= '  </a>';
 			$toc_html .= '</li>';
 		} elseif ( 'h3' === $item['tag'] ) {
 			if ( ! $in_sublist ) {
-				$toc_html  .= '<li class="pt-0.5"><ul class="pl-5 space-y-1.5 list-disc text-gray-600">';
+				$toc_html  .= '<li class="pt-0.5"><ul class="pl-5 space-y-1.5 list-disc text-[#667085]">';
 				$in_sublist = true;
 			}
 			$toc_html .= '<li class="font-normal">';
-			$toc_html .= '  <a href="#' . esc_attr( $item['anchor'] ) . '" class="text-blue-600 hover:text-blue-900 hover:underline transition-colors">';
+			$toc_html .= '  <a href="#' . esc_attr( $item['anchor'] ) . '" class="text-[#084298] hover:text-[#0B5ED7] hover:underline transition-colors">';
 			$toc_html .= esc_html( $item['title'] );
 			$toc_html .= '  </a>';
 			$toc_html .= '</li>';
@@ -634,11 +915,15 @@ function phonex_generate_toc_and_anchors( $html ) {
 }
 
 /**
- * Render Frontend Section: Thông Tin Ngành Hàng (SEO TGDD Standard)
+ * Render Frontend Section: Thông Tin Ngành Hàng (SEO TGDD Standard with PhoneX Brand Palette)
  *
  * @param int $term_id
  */
-function phonex_render_category_seo_frontend( $term_id = 77 ) {
+function phonex_render_category_seo_frontend( $term_id = 0 ) {
+	if ( empty( $term_id ) ) {
+		$term_id = phonex_get_phone_cat_term_id();
+	}
+
 	$data = phonex_get_category_seo_data( $term_id );
 
 	$badge_title = ! empty( $data['badge_title'] ) ? $data['badge_title'] : 'THÔNG TIN NGÀNH HÀNG';
@@ -651,25 +936,31 @@ function phonex_render_category_seo_frontend( $term_id = 77 ) {
 	$content_html = $processed['content_html'];
 	?>
 	<!-- ================= 8. THÔNG TIN NGÀNH HÀNG (SEO TGDD Standard) ================= -->
-	<div id="thong-tin-nganh-hang" class="bg-white rounded-2xl p-6 sm:p-8 shadow-2xs border border-gray-100 space-y-5 mt-8">
+	<div id="thong-tin-nganh-hang" class="bg-white rounded-2xl p-6 sm:p-8 shadow-2xs border border-[#E5E7EB] space-y-5 mt-8">
 		
 		<!-- Badge Header: THÔNG TIN NGÀNH HÀNG -->
 		<div class="flex items-center justify-between flex-wrap gap-3">
-			<div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-2 border-blue-500 text-blue-600 bg-blue-50/50 text-xs sm:text-sm font-extrabold uppercase tracking-wide shadow-2xs">
+			<div class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-2 border-[#0B5ED7] text-[#0B5ED7] bg-[#E7F1FF] text-xs sm:text-sm font-extrabold uppercase tracking-wide shadow-2xs">
 				<span class="material-symbols-outlined text-[18px]">verified</span>
 				<span><?php echo esc_html( $badge_title ); ?></span>
 			</div>
 
 			<?php if ( current_user_can( 'manage_options' ) ) : ?>
-				<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" class="text-[12px] font-bold text-gray-400 hover:text-primary transition-colors flex items-center gap-1" title="Chỉnh sửa bài viết SEO này">
-					<span class="material-symbols-outlined text-[16px]">edit_note</span> Sửa nội dung SEO
-				</a>
+				<div class="flex items-center gap-3">
+					<a href="<?php echo esc_url( admin_url( 'term.php?taxonomy=product_cat&tag_ID=' . $term_id . '&post_type=product' ) ); ?>" class="text-[12px] font-bold text-[#667085] hover:text-[#0B5ED7] transition-colors flex items-center gap-1" title="Sửa bài viết trong Danh Mục">
+						<span class="material-symbols-outlined text-[16px]">category</span> Sửa trong Danh Mục
+					</a>
+					<span class="text-[#E5E7EB]">|</span>
+					<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" class="text-[12px] font-bold text-[#667085] hover:text-[#0B5ED7] transition-colors flex items-center gap-1" title="Trang soạn thảo SEO">
+						<span class="material-symbols-outlined text-[16px]">edit_note</span> Soạn thảo SEO
+					</a>
+				</div>
 			<?php endif; ?>
 		</div>
 
 		<!-- Sapo Paragraph -->
 		<?php if ( ! empty( $sapo ) ) : ?>
-			<div class="text-xs sm:text-sm leading-relaxed text-gray-700 bg-gray-50/70 p-4 rounded-xl border border-gray-100">
+			<div class="text-xs sm:text-sm leading-relaxed text-[#172033] bg-[#F5F7FA] p-4 rounded-xl border border-[#E5E7EB]">
 				<?php echo wp_kses_post( $sapo ); ?>
 			</div>
 		<?php endif; ?>
@@ -681,7 +972,7 @@ function phonex_render_category_seo_frontend( $term_id = 77 ) {
 
 		<!-- Expandable Article Content Wrapper -->
 		<div class="relative mt-4">
-			<div id="seo-content-body" class="max-h-[620px] overflow-hidden transition-all duration-500 space-y-4 text-xs sm:text-sm leading-relaxed text-gray-700 [&>h2]:text-base sm:[&>h2]:text-lg [&>h2]:font-black [&>h2]:text-gray-900 [&>h2]:pt-4 [&>h2]:pb-1 [&>h2]:border-b [&>h2]:border-gray-100 [&>h3]:text-sm sm:[&>h3]:text-base [&>h3]:font-extrabold [&>h3]:text-gray-900 [&>h3]:pt-2 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-1.5 [&>p]:leading-relaxed">
+			<div id="seo-content-body" class="max-h-[620px] overflow-hidden transition-all duration-500 space-y-4 text-xs sm:text-sm leading-relaxed text-[#172033] [&>h2]:text-base sm:[&>h2]:text-lg [&>h2]:font-black [&>h2]:text-[#172033] [&>h2]:pt-4 [&>h2]:pb-1 [&>h2]:border-b [&>h2]:border-[#E5E7EB] [&>h3]:text-sm sm:[&>h3]:text-base [&>h3]:font-extrabold [&>h3]:text-[#084298] [&>h3]:pt-2 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-1.5 [&>p]:leading-relaxed">
 				<?php echo $content_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 
@@ -691,7 +982,7 @@ function phonex_render_category_seo_frontend( $term_id = 77 ) {
 
 		<!-- Expand / Collapse Button -->
 		<div class="text-center pt-2 relative z-10">
-			<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-gray-200 bg-white hover:bg-gray-50 text-gray-800 text-xs sm:text-sm font-extrabold shadow-2xs hover:shadow-xs transition-all cursor-pointer">
+			<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#E5E7EB] bg-white hover:bg-[#E7F1FF] text-[#0B5ED7] hover:text-[#084298] text-xs sm:text-sm font-extrabold shadow-2xs hover:shadow-xs transition-all cursor-pointer">
 				<span id="btn-toggle-seo-text">Xem thêm nội dung</span>
 				<span id="btn-toggle-seo-icon" class="material-symbols-outlined text-[18px] transition-transform duration-300">keyboard_arrow_down</span>
 			</button>
@@ -757,7 +1048,6 @@ function phonex_render_category_seo_frontend( $term_id = 77 ) {
 				const targetEl = document.getElementById(targetId);
 				if (targetEl) {
 					e.preventDefault();
-					// If collapsed, expand it first
 					if (!isExpanded && btnToggleMore) {
 						btnToggleMore.click();
 					}
