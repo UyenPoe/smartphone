@@ -202,12 +202,12 @@ $brand_meta = array(
 
   <!-- ================= BREADCRUMB ================= -->
   <div class="border-b border-gray-200 bg-white">
-    <div class="max-w-[1240px] mx-auto px-4 py-2.5 flex items-center gap-2 text-xs text-gray-500">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:text-primary transition-colors flex items-center gap-1">
-        <span class="material-symbols-outlined text-[16px]">home</span> Trang chủ
+    <div class="max-w-[1240px] mx-auto px-4 py-3 flex items-center gap-2 text-sm text-gray-500">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:text-primary transition-colors flex items-center gap-1 font-medium">
+        <span class="material-symbols-outlined text-[18px]">home</span> Trang chủ
       </a>
       <span class="text-gray-300">/</span>
-      <span class="font-bold text-gray-800">Điện thoại</span>
+      <span class="font-bold text-gray-900">Điện thoại</span>
     </div>
   </div>
 
@@ -216,67 +216,67 @@ $brand_meta = array(
     <!-- ================= 1. PROMOTION HERO BANNER (TGDD Style) ================= -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
       <!-- Main Featured Banner -->
-      <div class="md:col-span-2 relative rounded-2xl overflow-hidden shadow-sm bg-gradient-to-r from-red-700 via-rose-700 to-red-800 text-white p-6 sm:p-8 flex flex-col justify-between min-h-[200px]">
-        <div class="relative z-10 max-w-[420px]">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs font-bold text-amber-300 mb-2.5">
-            <span class="material-symbols-outlined text-[16px]">local_fire_department</span> ĐẠI TIỆC SMARTPHONE 2026
+      <div class="md:col-span-2 relative rounded-2xl overflow-hidden shadow-sm bg-gradient-to-r from-red-700 via-rose-700 to-red-800 text-white p-6 sm:p-8 flex flex-col justify-between min-h-[220px]">
+        <div class="relative z-10 max-w-[460px]">
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs sm:text-sm font-bold text-amber-300 mb-2.5">
+            <span class="material-symbols-outlined text-[18px]">local_fire_department</span> ĐẠI TIỆC SMARTPHONE 2026
           </span>
-          <h1 class="text-2xl sm:text-3xl font-black tracking-tight leading-tight">
+          <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
             ĐIỆN THOẠI CHÍNH HÃNG<br/>GIẢM SỐC ĐẾN 35%
           </h1>
-          <p class="text-xs sm:text-sm text-red-100 mt-2 line-clamp-2">
+          <p class="text-xs sm:text-sm text-red-100 mt-2.5 line-clamp-2 leading-relaxed">
             Thu cũ đổi mới trợ giá 3 triệu &bull; Trả góp 0% lãi suất &bull; Bảo hành 12 tháng 1 đổi 1 trong 30 ngày.
           </p>
         </div>
-        <div class="relative z-10 mt-4 flex items-center gap-3">
-          <a href="#phone-catalog" class="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-red-950 font-black text-xs sm:text-sm transition-all shadow-md inline-flex items-center gap-1.5">
-            Săn Deal Ngay <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+        <div class="relative z-10 mt-5 flex items-center gap-4 flex-wrap">
+          <a href="#phone-catalog" class="px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-red-950 font-black text-xs sm:text-sm transition-all shadow-md inline-flex items-center gap-1.5">
+            Săn Deal Ngay <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
           </a>
-          <span class="text-xs text-red-200 font-medium">Cam kết rẻ nhất thị trường</span>
+          <span class="text-xs sm:text-sm text-red-200 font-semibold">Cam kết giá rẻ nhất thị trường</span>
         </div>
         <!-- Decorative graphic elements -->
         <div class="absolute -right-8 -bottom-8 w-60 h-60 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
         <div class="absolute top-4 right-6 hidden sm:block opacity-25">
-          <span class="material-symbols-outlined text-[120px]">smartphone</span>
+          <span class="material-symbols-outlined text-[130px]">smartphone</span>
         </div>
       </div>
 
       <!-- Right Sub-Banners -->
       <div class="flex flex-col gap-3">
-        <div class="rounded-2xl p-4 bg-gradient-to-r from-blue-700 to-indigo-800 text-white flex items-center justify-between shadow-xs">
+        <div class="rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-blue-700 to-indigo-800 text-white flex items-center justify-between shadow-xs">
           <div>
-            <div class="text-[11px] font-extrabold uppercase text-blue-200 tracking-wider">Hệ Sinh Thái Apple</div>
-            <div class="text-base font-black">iPhone 17 | 18 Pro Max</div>
-            <div class="text-xs text-blue-100 mt-0.5">Sẵn hàng VN/A &bull; Giao hỏa tốc 1H</div>
+            <div class="text-xs font-black uppercase text-blue-200 tracking-wider">Hệ Sinh Thái Apple</div>
+            <div class="text-base sm:text-lg font-black mt-0.5">iPhone 17 | 18 Pro Max</div>
+            <div class="text-xs sm:text-sm text-blue-100 mt-1">Sẵn hàng VN/A &bull; Giao hỏa tốc 1H</div>
           </div>
-          <span class="material-symbols-outlined text-[36px] text-blue-200 shrink-0">verified</span>
+          <span class="material-symbols-outlined text-[40px] text-blue-200 shrink-0">verified</span>
         </div>
-        <div class="rounded-2xl p-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white flex items-center justify-between shadow-xs">
+        <div class="rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-amber-600 to-orange-600 text-white flex items-center justify-between shadow-xs">
           <div>
-            <div class="text-[11px] font-extrabold uppercase text-amber-200 tracking-wider">Trợ Giá Lên Đời</div>
-            <div class="text-base font-black">Thu Cũ Giá Cao Nhất</div>
-            <div class="text-xs text-amber-100 mt-0.5">Trợ giá thêm đến 3.000.000₫</div>
+            <div class="text-xs font-black uppercase text-amber-200 tracking-wider">Trợ Giá Lên Đời</div>
+            <div class="text-base sm:text-lg font-black mt-0.5">Thu Cũ Giá Cao Nhất</div>
+            <div class="text-xs sm:text-sm text-amber-100 mt-1">Trợ giá thêm đến 3.000.000₫</div>
           </div>
-          <span class="material-symbols-outlined text-[36px] text-amber-200 shrink-0">sync_alt</span>
+          <span class="material-symbols-outlined text-[40px] text-amber-200 shrink-0">sync_alt</span>
         </div>
       </div>
     </div>
 
     <!-- ================= 2. BRAND LOGOS & QUICK PILLS (TGDD Brand Slider) ================= -->
-    <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-2xs border border-gray-100" id="phone-catalog">
-      <div class="flex items-center justify-between mb-3">
-        <h2 class="text-sm sm:text-base font-black text-gray-800 uppercase tracking-tight flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-primary text-[20px]">apps</span>
+    <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-2xs border border-gray-100" id="phone-catalog">
+      <div class="flex items-center justify-between mb-3.5">
+        <h2 class="text-base sm:text-lg font-black text-gray-900 uppercase tracking-tight flex items-center gap-2">
+          <span class="material-symbols-outlined text-primary text-[22px]">apps</span>
           Chọn Thương Hiệu Điện Thoại
         </h2>
-        <span class="text-xs text-gray-400 font-medium">Hiện có <?php echo count( $all_brands ); ?> hãng hàng đầu</span>
+        <span class="text-xs sm:text-sm text-gray-500 font-medium">Hiện có <?php echo count( $all_brands ); ?> hãng hàng đầu</span>
       </div>
 
-      <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="brand-selector-list">
+      <div class="flex items-center gap-2.5 overflow-x-auto pb-1 scrollbar-none" id="brand-selector-list">
         <!-- Button: Tất cả -->
-        <button type="button" class="brand-btn active shrink-0 px-4 py-2 rounded-xl border border-primary bg-primary text-white text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer" data-brand="all">
+        <button type="button" class="brand-btn active shrink-0 px-4 sm:px-5 py-2.5 rounded-xl border border-primary bg-primary text-white text-[13px] sm:text-[14px] font-bold transition-all shadow-xs flex items-center gap-2 cursor-pointer" data-brand="all">
           <span>Tất cả</span>
-          <span class="px-1.5 py-0.2 rounded-full bg-white/20 text-[10px]"><?php echo count( $phones_list ); ?></span>
+          <span class="px-2 py-0.5 rounded-full bg-white/20 text-[11px]"><?php echo count( $phones_list ); ?></span>
         </button>
 
         <?php foreach ( $all_brands as $b ) : ?>
@@ -289,53 +289,53 @@ $brand_meta = array(
 			  }
 		  }
 			?>
-          <button type="button" class="brand-btn shrink-0 px-3.5 py-2 rounded-xl border border-gray-200 hover:border-primary bg-white hover:bg-red-50/50 text-gray-700 hover:text-primary text-xs font-bold transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer" data-brand="<?php echo esc_attr( $b ); ?>">
+          <button type="button" class="brand-btn shrink-0 px-4 sm:px-4.5 py-2.5 rounded-xl border border-gray-200 hover:border-primary bg-white hover:bg-red-50/50 text-gray-800 hover:text-primary text-[13px] sm:text-[14px] font-bold transition-all shadow-2xs flex items-center gap-2 cursor-pointer" data-brand="<?php echo esc_attr( $b ); ?>">
             <span><?php echo esc_html( $b ); ?></span>
-            <span class="px-1.5 py-0.2 rounded-full bg-gray-100 text-gray-600 text-[10px]"><?php echo $b_count; ?></span>
+            <span class="px-2 py-0.5 rounded-full bg-gray-100 text-gray-700 text-[11px]"><?php echo $b_count; ?></span>
           </button>
         <?php endforeach; ?>
       </div>
     </div>
 
     <!-- ================= 3. QUICK DEMANDS (Nhu cầu tìm kiếm - TGDD Style) ================= -->
-    <div class="flex items-center gap-2 overflow-x-auto pb-1 text-xs font-semibold scrollbar-none" id="demand-selector-list">
-      <span class="text-gray-400 shrink-0 font-bold text-[11px] uppercase mr-1">Nhu cầu:</span>
-      <button type="button" class="demand-btn shrink-0 px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-600 cursor-pointer" data-demand="gaming">
+    <div class="flex items-center gap-2.5 overflow-x-auto pb-1 text-xs sm:text-sm font-bold scrollbar-none" id="demand-selector-list">
+      <span class="text-gray-400 shrink-0 font-extrabold text-xs uppercase mr-1">Nhu cầu:</span>
+      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-700 cursor-pointer" data-demand="gaming">
         🎮 Chơi game / Cấu hình cao
       </button>
-      <button type="button" class="demand-btn shrink-0 px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-600 cursor-pointer" data-demand="camera">
+      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-700 cursor-pointer" data-demand="camera">
         📸 Chụp ảnh, quay phim đẹp
       </button>
-      <button type="button" class="demand-btn shrink-0 px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-600 cursor-pointer" data-demand="foldable">
+      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-700 cursor-pointer" data-demand="foldable">
         📱 Màn hình gập cao cấp
       </button>
-      <button type="button" class="demand-btn shrink-0 px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-600 cursor-pointer" data-demand="battery">
+      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-700 cursor-pointer" data-demand="battery">
         🔋 Pin trâu dùng cả ngày
       </button>
-      <button type="button" class="demand-btn shrink-0 px-3 py-1.5 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-600 cursor-pointer" data-demand="budget">
+      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-gray-200 bg-white hover:border-primary hover:text-primary transition-all text-gray-700 cursor-pointer" data-demand="budget">
         💰 Giá rẻ học sinh, sinh viên
       </button>
     </div>
 
     <!-- ================= 4. COMPREHENSIVE FILTER BOX (Bộ lọc đa tiêu chí) ================= -->
-    <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-2xs border border-gray-100 space-y-4">
+    <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-2xs border border-gray-100 space-y-4">
       <div class="flex items-center justify-between border-b border-gray-100 pb-3">
         <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-primary text-[20px]">tune</span>
-          <span class="font-bold text-gray-800 text-sm sm:text-base">Bộ Lọc Tìm Kiếm Chi Tiết</span>
+          <span class="material-symbols-outlined text-primary text-[22px]">tune</span>
+          <span class="font-black text-gray-900 text-sm sm:text-base">Bộ Lọc Tìm Kiếm Chi Tiết</span>
         </div>
-        <button type="button" id="btn-reset-filters" class="text-xs text-primary font-bold hover:underline hidden flex items-center gap-1">
-          <span class="material-symbols-outlined text-[14px]">refresh</span> Xóa tất cả bộ lọc
+        <button type="button" id="btn-reset-filters" class="text-xs sm:text-sm text-primary font-bold hover:underline hidden flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">refresh</span> Xóa tất cả bộ lọc
         </button>
       </div>
 
       <!-- Filter Controls Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5 text-xs sm:text-sm">
         
         <!-- Price Range Filter -->
         <div>
-          <label class="block font-bold text-gray-700 mb-1.5">Mức Giá:</label>
-          <select id="filter-price" class="w-full h-9 rounded-xl border border-gray-200 px-3 font-medium bg-gray-50 focus:bg-white focus:border-primary outline-hidden transition-all">
+          <label class="block font-bold text-gray-800 mb-1.5">Mức Giá:</label>
+          <select id="filter-price" class="w-full h-10 rounded-xl border border-gray-200 px-3 font-semibold bg-gray-50 focus:bg-white focus:border-primary outline-hidden transition-all text-xs sm:text-sm">
             <option value="all">Tất cả mức giá</option>
             <option value="under-10m">Dưới 10 triệu</option>
             <option value="10m-20m">Từ 10 - 20 triệu</option>
@@ -346,8 +346,8 @@ $brand_meta = array(
 
         <!-- Storage Filter -->
         <div>
-          <label class="block font-bold text-gray-700 mb-1.5">Dung Lượng Bộ Nhớ:</label>
-          <select id="filter-storage" class="w-full h-9 rounded-xl border border-gray-200 px-3 font-medium bg-gray-50 focus:bg-white focus:border-primary outline-hidden transition-all">
+          <label class="block font-bold text-gray-800 mb-1.5">Dung Lượng Bộ Nhớ:</label>
+          <select id="filter-storage" class="w-full h-10 rounded-xl border border-gray-200 px-3 font-semibold bg-gray-50 focus:bg-white focus:border-primary outline-hidden transition-all text-xs sm:text-sm">
             <option value="all">Tất cả dung lượng</option>
             <option value="128GB">128 GB</option>
             <option value="256GB">256 GB</option>
@@ -358,8 +358,8 @@ $brand_meta = array(
 
         <!-- OS Filter -->
         <div>
-          <label class="block font-bold text-gray-700 mb-1.5">Hệ Điều Hành:</label>
-          <select id="filter-os" class="w-full h-9 rounded-xl border border-gray-200 px-3 font-medium bg-gray-50 focus:bg-white focus:border-primary outline-hidden transition-all">
+          <label class="block font-bold text-gray-800 mb-1.5">Hệ Điều Hành:</label>
+          <select id="filter-os" class="w-full h-10 rounded-xl border border-gray-200 px-3 font-semibold bg-gray-50 focus:bg-white focus:border-primary outline-hidden transition-all text-xs sm:text-sm">
             <option value="all">Tất cả hệ điều hành</option>
             <option value="ios">iOS (Apple iPhone)</option>
             <option value="android">Android (Samsung, Xiaomi, OPPO...)</option>
@@ -368,8 +368,8 @@ $brand_meta = array(
 
         <!-- Sort Filter -->
         <div>
-          <label class="block font-bold text-gray-700 mb-1.5">Sắp Xếp Theo:</label>
-          <select id="filter-sort" class="w-full h-9 rounded-xl border border-gray-200 px-3 font-medium bg-gray-50 focus:bg-white focus:border-primary outline-hidden transition-all">
+          <label class="block font-bold text-gray-800 mb-1.5">Sắp Xếp Theo:</label>
+          <select id="filter-sort" class="w-full h-10 rounded-xl border border-gray-200 px-3 font-semibold bg-gray-50 focus:bg-white focus:border-primary outline-hidden transition-all text-xs sm:text-sm">
             <option value="default">Nổi bật nhất</option>
             <option value="price-asc">Giá: Thấp đến Cao</option>
             <option value="price-desc">Giá: Cao đến Thấp</option>
@@ -381,17 +381,17 @@ $brand_meta = array(
 
     <!-- ================= 5. SORT & RESULTS COUNTER BAR ================= -->
     <div class="flex items-center justify-between flex-wrap gap-3 pt-1">
-      <div class="text-sm font-bold text-gray-800">
+      <div class="text-sm sm:text-base font-extrabold text-gray-900">
         Tìm thấy <span id="results-count" class="text-primary font-black"><?php echo count( $phones_list ); ?></span> điện thoại chính hãng
       </div>
-      <div class="flex items-center gap-1.5 text-xs text-gray-500 font-medium">
-        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+      <div class="flex items-center gap-1.5 text-xs sm:text-sm text-gray-600 font-medium">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
         Sẵn hàng toàn quốc &bull; Trả góp 0%
       </div>
     </div>
 
     <!-- ================= 6. PRODUCT GRID (TGDD Style Grid) ================= -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4" id="phones-grid">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4.5" id="phones-grid">
       <?php foreach ( $phones_list as $p ) : ?>
         <div class="phone-item bg-white rounded-2xl p-3 sm:p-4 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-gray-200 hover:border-primary relative hover:-translate-y-1 duration-200"
              data-id="<?php echo esc_attr( $p['id'] ); ?>"
@@ -408,16 +408,16 @@ $brand_meta = array(
             <!-- Thumbnail Box with Badge -->
             <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-gray-50/80 rounded-xl mb-3 overflow-hidden">
               <?php if ( $p['discount_pct'] > 0 ) : ?>
-                <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-md bg-primary text-white text-[10px] sm:text-[11px] font-black shadow-xs">
+                <span class="absolute top-2 left-2 z-10 px-2.5 py-0.5 rounded-md bg-primary text-white text-[11px] sm:text-[12px] font-black shadow-xs">
                   -<?php echo esc_html( $p['discount_pct'] ); ?>%
                 </span>
               <?php elseif ( $p['is_new'] ) : ?>
-                <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-md bg-blue-600 text-white text-[10px] sm:text-[11px] font-black shadow-xs">
+                <span class="absolute top-2 left-2 z-10 px-2.5 py-0.5 rounded-md bg-blue-600 text-white text-[11px] sm:text-[12px] font-black shadow-xs">
                   Mẫu Mới
                 </span>
               <?php endif; ?>
 
-              <span class="absolute top-2 right-2 z-10 px-1.5 py-0.5 rounded bg-gray-100 text-gray-600 text-[10px] font-bold">
+              <span class="absolute top-2 right-2 z-10 px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[11px] font-bold">
                 Trả góp 0%
               </span>
 
@@ -432,14 +432,14 @@ $brand_meta = array(
             <!-- Specs tag -->
             <?php if ( ! empty( $p['specs'] ) ) : ?>
               <div class="mb-1.5 flex items-center gap-1 overflow-hidden">
-                <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-700 text-[10px] font-medium truncate max-w-full">
+                <span class="px-2 py-0.5 rounded bg-gray-100 text-gray-800 text-[11px] sm:text-[12px] font-medium truncate max-w-full">
                   <?php echo esc_html( $p['specs'] ); ?>
                 </span>
               </div>
             <?php endif; ?>
 
             <!-- Title -->
-            <h3 class="text-[13px] sm:text-[14px] leading-snug font-bold text-gray-900 line-clamp-2 min-h-[38px] group-hover:text-primary transition-colors" title="<?php echo esc_attr( $p['name'] ); ?>">
+            <h3 class="text-[14px] sm:text-[16px] leading-snug font-extrabold text-gray-900 line-clamp-2 min-h-[42px] group-hover:text-primary transition-colors" title="<?php echo esc_attr( $p['name'] ); ?>">
               <a href="<?php echo esc_url( $p['permalink'] ); ?>" class="hover:text-primary transition-colors">
                 <?php echo esc_html( $p['name'] ); ?>
               </a>
@@ -447,8 +447,8 @@ $brand_meta = array(
 
             <!-- Storage pill -->
             <?php if ( ! empty( $p['capacity'] ) ) : ?>
-              <div class="mt-1.5 flex items-center gap-1">
-                <span class="px-1.5 py-0.5 rounded border border-gray-200 text-gray-600 text-[10px] font-bold">
+              <div class="mt-2 flex items-center gap-1">
+                <span class="px-2 py-0.5 rounded border border-gray-200 text-gray-700 text-[11px] sm:text-[12px] font-bold bg-gray-50">
                   <?php echo esc_html( $p['capacity'] ); ?>
                 </span>
               </div>
@@ -456,18 +456,18 @@ $brand_meta = array(
 
             <!-- Price Display -->
             <div class="mt-2.5">
-              <div class="text-[16px] sm:text-[18px] font-black text-primary leading-tight">
+              <div class="text-[17px] sm:text-[19px] font-black text-primary leading-tight">
                 <?php echo number_format( $p['price'], 0, ',', '.' ); ?>₫
               </div>
               <?php if ( $p['price_old'] > $p['price'] ) : ?>
-                <div class="text-[11px] sm:text-[12px] text-gray-400 line-through">
+                <div class="text-[12px] sm:text-[13px] text-gray-400 line-through font-medium">
                   <?php echo number_format( $p['price_old'], 0, ',', '.' ); ?>₫
                 </div>
               <?php endif; ?>
             </div>
 
             <!-- Star rating & Reviews -->
-            <div class="mt-2 flex items-center gap-1 text-[11px] text-amber-500 font-bold">
+            <div class="mt-2 flex items-center gap-1 text-[12px] sm:text-[13px] text-amber-500 font-bold">
               <span>★</span>
               <span>5.0</span>
               <span class="text-gray-400 font-normal">(<?php echo esc_html( $p['reviews'] ); ?>)</span>
@@ -475,7 +475,7 @@ $brand_meta = array(
           </div>
 
           <!-- Bottom Button -->
-          <a href="<?php echo esc_url( $p['permalink'] ); ?>" class="mt-3 w-full h-8.5 rounded-xl bg-red-50 hover:bg-primary text-primary hover:text-white text-xs font-bold transition-all flex items-center justify-center gap-1 shadow-2xs">
+          <a href="<?php echo esc_url( $p['permalink'] ); ?>" class="mt-3.5 w-full h-9 sm:h-10 rounded-xl bg-red-50 hover:bg-primary text-primary hover:text-white text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-1 shadow-2xs">
             Xem Chi Tiết
           </a>
         </div>
@@ -485,26 +485,26 @@ $brand_meta = array(
     <!-- Empty State -->
     <div id="no-products-msg" class="hidden bg-white rounded-2xl p-12 text-center border border-gray-200 space-y-3">
       <span class="material-symbols-outlined text-[48px] text-gray-300">search_off</span>
-      <h3 class="text-base font-bold text-gray-800">Không tìm thấy điện thoại nào phù hợp</h3>
-      <p class="text-xs text-gray-500 max-w-md mx-auto">
+      <h3 class="text-base sm:text-lg font-bold text-gray-800">Không tìm thấy điện thoại nào phù hợp</h3>
+      <p class="text-xs sm:text-sm text-gray-500 max-w-md mx-auto">
         Hãy thử thay đổi hoặc xóa các tiêu chí bộ lọc để xem thêm các mẫu điện thoại khác.
       </p>
-      <button type="button" onclick="resetAllFilters()" class="px-5 py-2 rounded-xl bg-primary text-white text-xs font-bold cursor-pointer">
+      <button type="button" onclick="resetAllFilters()" class="px-5 py-2.5 rounded-xl bg-primary text-white text-xs sm:text-sm font-bold cursor-pointer shadow-xs">
         Xóa Tất Cả Bộ Lọc
       </button>
     </div>
 
     <!-- ================= 7. BUYING GUIDE & ACCORDION (TGDD Style SEO Content) ================= -->
     <div class="bg-white rounded-2xl p-6 shadow-2xs border border-gray-100 space-y-4 mt-8">
-      <h2 class="text-lg font-black text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
-        <span class="material-symbols-outlined text-primary">menu_book</span>
+      <h2 class="text-base sm:text-xl font-black text-gray-900 border-b border-gray-100 pb-3 flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-[24px]">menu_book</span>
         Cẩm Nang &amp; Tiêu Chí Chọn Mua Điện Thoại Thông Minh Tại PhoneX
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs leading-relaxed text-gray-600">
-        <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
-          <h3 class="font-bold text-gray-900 mb-1.5 flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-blue-600 text-[18px]">verified</span> 1. Chọn theo Hệ điều hành
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm leading-relaxed text-gray-600">
+        <div class="p-4 rounded-xl bg-gray-50 border border-gray-100">
+          <h3 class="font-bold text-gray-900 mb-1.5 flex items-center gap-1.5 text-sm sm:text-base">
+            <span class="material-symbols-outlined text-blue-600 text-[20px]">verified</span> 1. Chọn theo Hệ điều hành
           </h3>
           <p>
             <strong>iOS (iPhone):</strong> Ổn định, mượt mà lâu dài, bảo mật cao và đồng bộ hoàn hảo trong hệ sinh thái Apple.<br/>
@@ -512,9 +512,9 @@ $brand_meta = array(
           </p>
         </div>
 
-        <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
-          <h3 class="font-bold text-gray-900 mb-1.5 flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-amber-600 text-[18px]">memory</span> 2. Chọn Dung lượng lưu trữ
+        <div class="p-4 rounded-xl bg-gray-50 border border-gray-100">
+          <h3 class="font-bold text-gray-900 mb-1.5 flex items-center gap-1.5 text-sm sm:text-base">
+            <span class="material-symbols-outlined text-amber-600 text-[20px]">memory</span> 2. Chọn Dung lượng lưu trữ
           </h3>
           <p>
             <strong>128GB:</strong> Phù hợp nhu cầu cơ bản, chụp ảnh vừa phải và ứng dụng hàng ngày.<br/>
@@ -522,9 +522,9 @@ $brand_meta = array(
           </p>
         </div>
 
-        <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
-          <h3 class="font-bold text-gray-900 mb-1.5 flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-emerald-600 text-[18px]">shield</span> 3. Quyền lợi tại PhoneX
+        <div class="p-4 rounded-xl bg-gray-50 border border-gray-100">
+          <h3 class="font-bold text-gray-900 mb-1.5 flex items-center gap-1.5 text-sm sm:text-base">
+            <span class="material-symbols-outlined text-emerald-600 text-[20px]">shield</span> 3. Quyền lợi tại PhoneX
           </h3>
           <p>
             100% điện thoại chính hãng VN/A, nguyên seal mới 100%. Bảo hành 12 tháng chính hãng toàn quốc, lỗi 1 đổi 1 trong 30 ngày đầu, giao hỏa tốc 1 giờ.
