@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Generate 2 Campaign Banners (2400 x 480 px) with PhoneX Red brand theme as dominant color.
+Generate 2 Campaign Banners (2400 x 480 px) with PhoneX Red brand theme.
+All small text enlarged for crystal-clear readability across all screens.
 Exact dimensions: 2400x480 (5:1 aspect ratio).
 Outputs:
 - assets/images/banners/slider-banner-1-2400x480.png
@@ -65,7 +66,6 @@ html_banner1 = """<!DOCTYPE html>
       background: radial-gradient(circle, rgba(255, 215, 0, 0.22) 0%, rgba(255, 215, 0, 0) 65%);
       z-index: 1;
     }
-    /* Subtle decorative diagonal shine */
     .bg-shine {
       position: absolute;
       inset: 0;
@@ -78,79 +78,79 @@ html_banner1 = """<!DOCTYPE html>
     .left-panel {
       position: relative;
       z-index: 4;
-      width: 530px;
+      width: 560px;
       height: 480px;
       background: #ffffff;
       border-top-right-radius: 240px;
       border-bottom-right-radius: 240px;
-      box-shadow: 20px 0 45px rgba(0, 0, 0, 0.25);
+      box-shadow: 20px 0 45px rgba(0, 0, 0, 0.28);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 30px 50px 30px 40px;
+      padding: 24px 50px 24px 36px;
       text-align: center;
     }
     .panel-line-1 {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 900;
       color: #ba0d1a;
       text-transform: uppercase;
       letter-spacing: -0.3px;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .panel-line-2 {
-      font-size: 32px;
-      font-weight: 900;
+      font-size: 36px;
+      font-weight: 950;
       color: #111827;
       text-transform: uppercase;
       letter-spacing: -0.5px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .panel-line-3 {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 900;
       color: #ba0d1a;
       text-transform: uppercase;
       margin-bottom: 2px;
     }
     .panel-line-4 {
-      font-size: 25px;
-      font-weight: 800;
+      font-size: 30px;
+      font-weight: 850;
       color: #1f2937;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .panel-divider {
-      width: 180px;
-      height: 3px;
+      width: 220px;
+      height: 4px;
       background: #ffd000;
       border-radius: 2px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .panel-line-5 {
-      font-size: 28px;
-      font-weight: 900;
+      font-size: 34px;
+      font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       letter-spacing: -0.3px;
     }
     .panel-line-6 {
-      font-size: 24px;
-      font-weight: 800;
+      font-size: 30px;
+      font-weight: 850;
       color: #1f2937;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .panel-line-7 {
-      font-size: 25px;
-      font-weight: 900;
+      font-size: 32px;
+      font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
-      line-height: 1.25;
+      line-height: 1.2;
     }
     .panel-line-8 {
-      font-size: 22px;
-      font-weight: 900;
-      color: #4b5563;
+      font-size: 27px;
+      font-weight: 950;
+      color: #374151;
       text-transform: uppercase;
       margin-top: 4px;
       letter-spacing: 0.5px;
@@ -162,8 +162,8 @@ html_banner1 = """<!DOCTYPE html>
       z-index: 4;
       display: flex;
       align-items: center;
-      gap: 30px;
-      margin-left: 20px;
+      gap: 25px;
+      margin-left: 10px;
     }
     .title-col {
       display: flex;
@@ -173,29 +173,29 @@ html_banner1 = """<!DOCTYPE html>
     .brand-pill {
       background: #ffffff;
       color: #111827;
-      padding: 9px 28px;
+      padding: 10px 32px;
       border-radius: 9999px;
       display: flex;
       align-items: center;
       gap: 12px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       border: 1px solid rgba(255, 255, 255, 0.4);
     }
     .brand-logo-icon {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       background: #ba0d1a;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 19px;
+      font-size: 22px;
       font-weight: 900;
       color: #fff;
     }
     .brand-name {
-      font-size: 26px;
+      font-size: 30px;
       font-weight: 900;
       letter-spacing: -0.5px;
       color: #111827;
@@ -205,7 +205,7 @@ html_banner1 = """<!DOCTYPE html>
     }
 
     .title-tuu-truong {
-      font-size: 64px;
+      font-size: 68px;
       font-weight: 950;
       color: #ffffff;
       text-transform: uppercase;
@@ -216,7 +216,7 @@ html_banner1 = """<!DOCTYPE html>
       filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
     }
     .title-deal-thom {
-      font-size: 92px;
+      font-size: 96px;
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: -2px;
@@ -231,10 +231,10 @@ html_banner1 = """<!DOCTYPE html>
     }
     .crown-icon {
       position: absolute;
-      top: -30px;
+      top: -32px;
       left: 10px;
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       fill: #ffd700;
       filter: drop-shadow(0 3px 6px rgba(0,0,0,0.5));
     }
@@ -261,30 +261,30 @@ html_banner1 = """<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-right: 60px;
+      margin-right: 90px;
     }
     .top-promo-header {
       display: flex;
       align-items: baseline;
-      gap: 14px;
-      margin-bottom: 10px;
+      gap: 16px;
+      margin-bottom: 8px;
     }
     .promo-subtext {
-      font-size: 32px;
-      font-weight: 900;
+      font-size: 38px;
+      font-weight: 950;
       color: #ffffff;
-      line-height: 1.1;
+      line-height: 1.15;
       text-align: right;
       text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
     }
     .promo-subtext span {
       display: block;
-      font-size: 26px;
-      font-weight: 800;
+      font-size: 32px;
+      font-weight: 900;
       color: #ffeb3b;
     }
     .promo-giant-num {
-      font-size: 96px;
+      font-size: 106px;
       font-weight: 950;
       color: #ffd700;
       line-height: 0.9;
@@ -294,8 +294,8 @@ html_banner1 = """<!DOCTYPE html>
       align-items: baseline;
     }
     .grad-cap {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       fill: #ffd700;
       filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));
       margin-left: 10px;
@@ -307,8 +307,8 @@ html_banner1 = """<!DOCTYPE html>
       align-items: flex-end;
       justify-content: center;
       gap: 20px;
-      margin-top: 10px;
-      margin-bottom: 18px;
+      margin-top: 6px;
+      margin-bottom: 16px;
     }
     .device-item {
       position: relative;
@@ -331,20 +331,20 @@ html_banner1 = """<!DOCTYPE html>
       transform: rotate(6deg);
     }
 
-    /* Mua Ngay Button (Golden Luxury on Red) */
+    /* Mua Ngay Button */
     .btn-action-buy {
       background: linear-gradient(180deg, #fff7a0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
       color: #4d0004;
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      padding: 14px 60px;
+      padding: 16px 64px;
       border-radius: 9999px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 2px 3px rgba(255, 255, 255, 0.8);
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       cursor: pointer;
       border: 2px solid #fff59d;
     }
@@ -352,7 +352,6 @@ html_banner1 = """<!DOCTYPE html>
 </head>
 <body>
   <div class="banner">
-    <!-- Ambient Background Lighting -->
     <div class="bg-light-ambient-1"></div>
     <div class="bg-light-ambient-2"></div>
     <div class="bg-shine"></div>
@@ -450,9 +449,7 @@ html_banner1 = """<!DOCTYPE html>
           <svg viewBox="0 0 150 205" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="5" y="5" width="140" height="195" rx="24" fill="#18181b" stroke="#e4e4e7" stroke-width="3"/>
             <rect x="10" y="10" width="130" height="185" rx="20" fill="#09090b"/>
-            <!-- Dynamic Island -->
             <rect x="56" y="15" width="38" height="11" rx="5.5" fill="#000"/>
-            <!-- Screen wallpaper -->
             <circle cx="75" cy="120" r="55" fill="url(#grad2)"/>
             <defs>
               <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1">
@@ -484,7 +481,7 @@ html_banner1 = """<!DOCTYPE html>
       <!-- Action Button -->
       <div class="btn-action-buy">
         <span>MUA NGAY</span>
-        <svg style="width:24px;height:24px;fill:#4d0004;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <svg style="width:26px;height:26px;fill:#4d0004;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
       </div>
     </div>
   </div>
@@ -521,7 +518,7 @@ html_banner2 = """<!DOCTYPE html>
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 60px;
+      padding: 0 50px;
       overflow: hidden;
     }
 
@@ -561,10 +558,10 @@ html_banner2 = """<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-left: 20px;
+      margin-left: 15px;
     }
     .title-pha-co {
-      font-size: 78px;
+      font-size: 82px;
       font-weight: 950;
       color: #ffffff;
       text-transform: uppercase;
@@ -574,7 +571,7 @@ html_banner2 = """<!DOCTYPE html>
       filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
     }
     .title-tung-deal {
-      font-size: 110px;
+      font-size: 116px;
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: -3px;
@@ -590,36 +587,37 @@ html_banner2 = """<!DOCTYPE html>
     .ribbon-dates {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       background: #ffffff;
-      border: 2px solid #ffd700;
+      border: 3px solid #ffd700;
       border-radius: 9999px;
-      padding: 8px 24px;
+      padding: 10px 28px;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
     }
     .ribbon-icon {
-      font-size: 26px;
+      font-size: 30px;
     }
     .ribbon-text-1 {
-      font-size: 23px;
-      font-weight: 900;
+      font-size: 28px;
+      font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
+      letter-spacing: 0.2px;
     }
     .ribbon-text-2 {
-      font-size: 22px;
-      font-weight: 800;
-      color: #374151;
+      font-size: 26px;
+      font-weight: 850;
+      color: #1f2937;
     }
 
-    /* 2. CENTER WHITE PROMO CARD */
+    /* 2. CENTER WHITE PROMO CARD (Enlarged for maximum readability) */
     .center-card {
       position: relative;
       z-index: 4;
-      width: 780px;
+      width: 850px;
       background: #ffffff;
-      border-radius: 32px;
-      padding: 30px 40px;
+      border-radius: 34px;
+      padding: 24px 38px;
       box-shadow: 0 16px 45px rgba(0, 0, 0, 0.38);
       display: flex;
       flex-direction: column;
@@ -627,22 +625,22 @@ html_banner2 = """<!DOCTYPE html>
       border: 2px solid rgba(255, 255, 255, 0.95);
     }
     .card-top-title {
-      font-size: 25px;
-      font-weight: 900;
+      font-size: 30px;
+      font-weight: 950;
       color: #ba0d1a;
       text-align: center;
-      margin-bottom: 4px;
-      letter-spacing: -0.2px;
+      margin-bottom: 2px;
+      letter-spacing: -0.3px;
     }
     .card-sub-head {
-      font-size: 27px;
-      font-weight: 900;
+      font-size: 34px;
+      font-weight: 950;
       color: #111827;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
     .card-big-price {
-      font-size: 60px;
+      font-size: 68px;
       font-weight: 950;
       color: #ba0d1a;
       line-height: 1;
@@ -650,16 +648,16 @@ html_banner2 = """<!DOCTYPE html>
       margin: 4px 0 6px 0;
     }
     .card-note {
-      font-size: 15px;
-      font-weight: 700;
-      color: #6b7280;
-      margin-bottom: 14px;
+      font-size: 20px;
+      font-weight: 800;
+      color: #4b5563;
+      margin-bottom: 12px;
     }
     .card-bottom-divider {
       width: 100%;
       height: 1px;
-      border-top: 2px dashed #e5e7eb;
-      margin-bottom: 14px;
+      border-top: 2px dashed #cbd5e1;
+      margin-bottom: 12px;
     }
     .card-bottom-grid {
       display: grid;
@@ -668,28 +666,28 @@ html_banner2 = """<!DOCTYPE html>
       text-align: center;
     }
     .col-left {
-      padding-right: 18px;
-      border-right: 1px dashed #e5e7eb;
+      padding-right: 20px;
+      border-right: 2px dashed #cbd5e1;
     }
     .col-right {
-      padding-left: 18px;
+      padding-left: 20px;
     }
     .col-title {
-      font-size: 15px;
-      font-weight: 800;
+      font-size: 20px;
+      font-weight: 850;
       color: #111827;
       margin-bottom: 3px;
     }
     .col-highlight {
-      font-size: 22px;
-      font-weight: 900;
+      font-size: 28px;
+      font-weight: 950;
       color: #ba0d1a;
-      line-height: 1.15;
+      line-height: 1.2;
     }
     .col-note {
-      font-size: 13px;
-      font-weight: 700;
-      color: #6b7280;
+      font-size: 18px;
+      font-weight: 800;
+      color: #4b5563;
       margin-top: 3px;
     }
 
@@ -700,21 +698,21 @@ html_banner2 = """<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-right: 20px;
+      margin-right: 15px;
     }
     .ecosystem-group {
       position: relative;
       width: 380px;
-      height: 250px;
+      height: 240px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .eco-tablet {
       position: absolute;
       left: 30px;
-      top: 15px;
+      top: 10px;
       width: 250px;
       height: 190px;
       border-radius: 18px;
@@ -726,7 +724,7 @@ html_banner2 = """<!DOCTYPE html>
     .eco-phone {
       position: absolute;
       left: 130px;
-      top: 35px;
+      top: 30px;
       width: 110px;
       height: 185px;
       border-radius: 20px;
@@ -744,7 +742,7 @@ html_banner2 = """<!DOCTYPE html>
     .eco-watch {
       position: absolute;
       right: 50px;
-      bottom: 25px;
+      bottom: 20px;
       width: 60px;
       height: 75px;
       border-radius: 18px;
@@ -766,10 +764,10 @@ html_banner2 = """<!DOCTYPE html>
     .eco-speaker {
       position: absolute;
       right: 0px;
-      bottom: 60px;
-      width: 82px;
-      height: 48px;
-      border-radius: 12px;
+      bottom: 55px;
+      width: 86px;
+      height: 52px;
+      border-radius: 14px;
       background: #ba0d1a;
       border: 2px solid #ffffff;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
@@ -778,23 +776,24 @@ html_banner2 = """<!DOCTYPE html>
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 14px;
-      font-weight: 900;
+      font-size: 16px;
+      font-weight: 950;
+      letter-spacing: 0.5px;
     }
 
     .btn-action-buy {
       background: linear-gradient(180deg, #fff7a0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
       color: #4d0004;
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      padding: 14px 60px;
+      padding: 16px 64px;
       border-radius: 9999px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 2px 3px rgba(255, 255, 255, 0.8);
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       cursor: pointer;
       border: 2px solid #fff59d;
     }
@@ -857,7 +856,7 @@ html_banner2 = """<!DOCTYPE html>
 
       <div class="btn-action-buy">
         <span>MUA NGAY</span>
-        <svg style="width:24px;height:24px;fill:#4d0004;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <svg style="width:26px;height:26px;fill:#4d0004;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
       </div>
     </div>
   </div>
@@ -894,13 +893,13 @@ if __name__ == "__main__":
     os.makedirs(os.path.dirname(banner1_path), exist_ok=True)
     os.makedirs(os.path.dirname(wp_banner1), exist_ok=True)
 
-    print("Render Banner 1 (PhoneX Red)...")
+    print("Render Banner 1 with enlarged fonts...")
     render_html_to_png(html_banner1, banner1_path)
     subprocess.run(["cp", banner1_path, wp_banner1], check=True)
 
-    print("Render Banner 2 (PhoneX Red)...")
+    print("Render Banner 2 with enlarged fonts...")
     render_html_to_png(html_banner2, banner2_path)
     subprocess.run(["cp", banner2_path, wp_banner2], check=True)
 
-    print(f"Đã lưu Banner 1 PhoneX Red: {banner1_path} ({os.path.getsize(banner1_path)} bytes)")
-    print(f"Đã lưu Banner 2 PhoneX Red: {banner2_path} ({os.path.getsize(banner2_path)} bytes)")
+    print(f"Đã lưu Banner 1: {banner1_path} ({os.path.getsize(banner1_path)} bytes)")
+    print(f"Đã lưu Banner 2: {banner2_path} ({os.path.getsize(banner2_path)} bytes)")
