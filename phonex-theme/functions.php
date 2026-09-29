@@ -277,3 +277,8 @@ require get_template_directory() . '/inc/admin-flashsale.php';
  */
 require get_template_directory() . '/inc/admin-promotions.php';
 
+/**
+ * PhoneX TGDD Product Crawler & Importer
+ */
+require get_template_directory() . '/inc/admin-crawler.php';
+
