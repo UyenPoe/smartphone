@@ -13,9 +13,9 @@
  * - Tự động tạo Bảng mục lục nội dung chính (Table of Contents) với hiệu ứng cuộn mượt
  * - Hiệu ứng Xem thêm / Thu gọn với dải mờ gradient chuẩn TGDD
  * - Màu sắc chuẩn hệ thống thương hiệu PhoneX:
- *   🔵 Primary: #FF001F | 🔷 Dark: #D9001B | 🟦 Light: #FFF0F2
- *   🔴 Sale: #FF001F | 🟠 Khuyến mãi: #FF9800 | 🟢 Còn hàng: #198754
- *   ⚫ Chữ chính: #1F1F1F | 🩶 Chữ phụ: #6B7280 | ◻️ Nền section: #F6F7F9 | Border: #E5E7EB
+ *   🔵 Primary: #e60012 | 🔷 Dark: #b7000c | 🟦 Light: #ffdad5
+ *   🔴 Sale: #e60012 | 🟠 Khuyến mãi: #FF9800 | 🟢 Còn hàng: #198754
+ *   ⚫ Chữ chính: #222222 | 🩶 Chữ phụ: #5f5e5e | ◻️ Nền section: #f8f9fb | Border: #E5E7EB
  *
  * @package PhoneX
  */
@@ -290,11 +290,11 @@ function phonex_edit_product_cat_seo_fields( $term ) {
 	?>
 	<tr class="form-field">
 		<th scope="row" colspan="2" style="padding-top: 30px;">
-			<div style="background:#FFF0F2; border-left: 4px solid #FF001F; padding: 12px 16px; border-radius: 6px;">
-				<h2 style="font-size: 18px; font-weight: 800; color: #D9001B; margin: 0 0 6px 0;">
+			<div style="background:#ffdad5; border-left: 4px solid #e60012; padding: 12px 16px; border-radius: 6px;">
+				<h2 style="font-size: 18px; font-weight: 800; color: #b7000c; margin: 0 0 6px 0;">
 					📝 THÔNG TIN NGÀNH HÀNG (BÀI VIẾT CHUẨN SEO THEGIOIDIDONG)
 				</h2>
-				<p style="margin: 0; color: #1F1F1F; font-size: 13px;">
+				<p style="margin: 0; color: #222222; font-size: 13px;">
 					Nội dung này hiển thị trực tiếp ở chân trang danh mục <strong><?php echo esc_html( $term->name ); ?></strong>. 
 					Có sẵn bộ tải ảnh (WordPress Media) để chọn và chèn ảnh 1-click vào bài viết mà không cần nhập URL thủ công!
 				</p>
@@ -305,7 +305,7 @@ function phonex_edit_product_cat_seo_fields( $term ) {
 	<tr class="form-field">
 		<th scope="row"><label for="_phonex_cat_seo_badge"><strong>Nhãn Ngành Hàng (Badge)</strong></label></th>
 		<td>
-			<input name="_phonex_cat_seo_badge" id="_phonex_cat_seo_badge" type="text" value="<?php echo esc_attr( $seo_data['badge_title'] ); ?>" style="max-width: 400px; font-weight: bold; color: #FF001F; border-color: #FF001F; border-radius: 6px;" />
+			<input name="_phonex_cat_seo_badge" id="_phonex_cat_seo_badge" type="text" value="<?php echo esc_attr( $seo_data['badge_title'] ); ?>" style="max-width: 400px; font-weight: bold; color: #e60012; border-color: #e60012; border-radius: 6px;" />
 			<p class="description">Ví dụ: <code>THÔNG TIN NGÀNH HÀNG</code> hoặc <code>ĐIỆN THOẠI CHÍNH HÃNG</code></p>
 		</td>
 	</tr>
@@ -330,26 +330,26 @@ function phonex_edit_product_cat_seo_fields( $term ) {
 				<?php for ( $i = 1; $i <= 3; $i++ ) : 
 					$slot_val = $seo_data['img_' . $i] ?? '';
 				?>
-					<div id="slot_box_<?php echo $i; ?>" style="background: #F6F7F9; border: 1px solid #E5E7EB; border-radius: 10px; padding: 12px; width: 220px; text-align: center;">
-						<strong style="display: block; margin-bottom: 8px; color: #1F1F1F; font-size: 13px;">Ảnh Minh Họa <?php echo $i; ?></strong>
+					<div id="slot_box_<?php echo $i; ?>" style="background: #f8f9fb; border: 1px solid #E5E7EB; border-radius: 10px; padding: 12px; width: 220px; text-align: center;">
+						<strong style="display: block; margin-bottom: 8px; color: #222222; font-size: 13px;">Ảnh Minh Họa <?php echo $i; ?></strong>
 						
 						<div style="height: 120px; background: #fff; border: 1px dashed #ccd0d4; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 10px;">
 							<img id="seo_img_preview_<?php echo $i; ?>" src="<?php echo esc_url( $slot_val ); ?>" style="max-height: 100%; max-width: 100%; object-fit: contain; <?php echo empty( $slot_val ) ? 'display:none;' : ''; ?>" />
-							<span id="seo_img_placeholder_<?php echo $i; ?>" style="color: #6B7280; font-size: 12px; <?php echo ! empty( $slot_val ) ? 'display:none;' : ''; ?>">Chưa chọn ảnh</span>
+							<span id="seo_img_placeholder_<?php echo $i; ?>" style="color: #5f5e5e; font-size: 12px; <?php echo ! empty( $slot_val ) ? 'display:none;' : ''; ?>">Chưa chọn ảnh</span>
 						</div>
 
 						<input type="hidden" name="_phonex_cat_seo_img_<?php echo $i; ?>" id="_phonex_cat_seo_img_<?php echo $i; ?>" value="<?php echo esc_attr( $slot_val ); ?>" />
 
 						<div style="display: flex; flex-direction: column; gap: 6px;">
-							<button type="button" class="button phonex-upload-media-btn" data-slot="<?php echo $i; ?>" style="color: #FF001F; border-color: #FF001F; font-weight: bold;">
+							<button type="button" class="button phonex-upload-media-btn" data-slot="<?php echo $i; ?>" style="color: #e60012; border-color: #e60012; font-weight: bold;">
 								📷 Chọn / Tải ảnh lên
 							</button>
 
-							<button type="button" class="button phonex-insert-editor-btn" data-slot="<?php echo $i; ?>" id="btn_insert_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> background: #FF001F; color: #fff; border-color: #FF001F; font-weight: bold;">
+							<button type="button" class="button phonex-insert-editor-btn" data-slot="<?php echo $i; ?>" id="btn_insert_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> background: #e60012; color: #fff; border-color: #e60012; font-weight: bold;">
 								➕ Chèn vào bài viết
 							</button>
 
-							<button type="button" class="button phonex-remove-media-btn" data-slot="<?php echo $i; ?>" id="btn_remove_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> color: #FF001F; border-color: #FF001F;">
+							<button type="button" class="button phonex-remove-media-btn" data-slot="<?php echo $i; ?>" id="btn_remove_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> color: #e60012; border-color: #e60012;">
 								❌ Xóa ảnh
 							</button>
 						</div>
@@ -537,7 +537,7 @@ function phonex_render_category_seo_admin_page() {
 	?>
 	<div class="wrap" style="max-width: 1100px;">
 		<h1 style="display:flex; align-items:center; gap:8px;">
-			<span class="dashicons dashicons-text-page" style="font-size:28px; width:28px; height:28px; color:#FF001F;"></span>
+			<span class="dashicons dashicons-text-page" style="font-size:28px; width:28px; height:28px; color:#e60012;"></span>
 			Quản Lý Bài Viết SEO: Thông Tin Ngành Hàng (Đồng bộ Danh Mục)
 		</h1>
 		<p class="description" style="font-size: 14px; margin-bottom: 20px;">
@@ -558,7 +558,7 @@ function phonex_render_category_seo_admin_page() {
 								<label for="badge_title"><strong>Nhãn Tiêu Đề (Badge)</strong></label>
 							</th>
 							<td>
-								<input name="badge_title" type="text" id="badge_title" value="<?php echo esc_attr( $seo_data['badge_title'] ); ?>" class="regular-text" style="font-weight: bold; color: #FF001F; border-color: #FF001F; border-radius: 6px;" />
+								<input name="badge_title" type="text" id="badge_title" value="<?php echo esc_attr( $seo_data['badge_title'] ); ?>" class="regular-text" style="font-weight: bold; color: #e60012; border-color: #e60012; border-radius: 6px;" />
 								<p class="description">Hiển thị dạng huy hiệu bo góc phía trên bài viết (Mặc định: <code>THÔNG TIN NGÀNH HÀNG</code>).</p>
 							</td>
 						</tr>
@@ -582,21 +582,21 @@ function phonex_render_category_seo_admin_page() {
 									<?php for ( $i = 1; $i <= 3; $i++ ) : 
 										$slot_val = $seo_data['img_' . $i] ?? '';
 									?>
-										<div style="background: #F6F7F9; border: 1px solid #E5E7EB; border-radius: 10px; padding: 12px; width: 220px; text-align: center;">
-											<strong style="display: block; margin-bottom: 8px; color: #1F1F1F; font-size: 13px;">Ảnh Minh Họa <?php echo $i; ?></strong>
+										<div style="background: #f8f9fb; border: 1px solid #E5E7EB; border-radius: 10px; padding: 12px; width: 220px; text-align: center;">
+											<strong style="display: block; margin-bottom: 8px; color: #222222; font-size: 13px;">Ảnh Minh Họa <?php echo $i; ?></strong>
 											<div style="height: 120px; background: #fff; border: 1px dashed #ccd0d4; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 10px;">
 												<img id="seo_img_preview_<?php echo $i; ?>" src="<?php echo esc_url( $slot_val ); ?>" style="max-height: 100%; max-width: 100%; object-fit: contain; <?php echo empty( $slot_val ) ? 'display:none;' : ''; ?>" />
-												<span id="seo_img_placeholder_<?php echo $i; ?>" style="color: #6B7280; font-size: 12px; <?php echo ! empty( $slot_val ) ? 'display:none;' : ''; ?>">Chưa chọn ảnh</span>
+												<span id="seo_img_placeholder_<?php echo $i; ?>" style="color: #5f5e5e; font-size: 12px; <?php echo ! empty( $slot_val ) ? 'display:none;' : ''; ?>">Chưa chọn ảnh</span>
 											</div>
 											<input type="hidden" name="img_<?php echo $i; ?>" id="_phonex_cat_seo_img_<?php echo $i; ?>" value="<?php echo esc_attr( $slot_val ); ?>" />
 											<div style="display: flex; flex-direction: column; gap: 6px;">
-												<button type="button" class="button phonex-upload-media-btn" data-slot="<?php echo $i; ?>" style="color: #FF001F; border-color: #FF001F; font-weight: bold;">
+												<button type="button" class="button phonex-upload-media-btn" data-slot="<?php echo $i; ?>" style="color: #e60012; border-color: #e60012; font-weight: bold;">
 													📷 Chọn / Tải ảnh lên
 												</button>
-												<button type="button" class="button phonex-insert-editor-btn" data-slot="<?php echo $i; ?>" id="btn_insert_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> background: #FF001F; color: #fff; border-color: #FF001F; font-weight: bold;">
+												<button type="button" class="button phonex-insert-editor-btn" data-slot="<?php echo $i; ?>" id="btn_insert_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> background: #e60012; color: #fff; border-color: #e60012; font-weight: bold;">
 													➕ Chèn vào bài viết
 												</button>
-												<button type="button" class="button phonex-remove-media-btn" data-slot="<?php echo $i; ?>" id="btn_remove_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> color: #FF001F; border-color: #FF001F;">
+												<button type="button" class="button phonex-remove-media-btn" data-slot="<?php echo $i; ?>" id="btn_remove_<?php echo $i; ?>" style="<?php echo empty( $slot_val ) ? 'display:none;' : ''; ?> color: #e60012; border-color: #e60012;">
 													❌ Xóa ảnh
 												</button>
 											</div>
@@ -639,7 +639,7 @@ function phonex_render_category_seo_admin_page() {
 				</table>
 
 				<div style="margin-top: 24px; display:flex; align-items:center; gap:16px;">
-					<button type="submit" name="phonex_save_industry_seo" class="button button-primary button-large" style="background:#FF001F; border-color:#FF001F; font-weight:bold; padding: 4px 24px;">
+					<button type="submit" name="phonex_save_industry_seo" class="button button-primary button-large" style="background:#e60012; border-color:#e60012; font-weight:bold; padding: 4px 24px;">
 						💾 Lưu Bài Viết SEO Ngành Hàng
 					</button>
 
@@ -651,16 +651,16 @@ function phonex_render_category_seo_admin_page() {
 		</div>
 
 		<!-- Reset default -->
-		<div style="background:#FFF0F2; border:1px solid #bcdcff; border-radius:12px; padding:16px 20px; display:flex; align-items:center; justify-content:space-between;">
+		<div style="background:#ffdad5; border:1px solid #bcdcff; border-radius:12px; padding:16px 20px; display:flex; align-items:center; justify-content:space-between;">
 			<div>
-				<strong style="color:#D9001B; font-size:14px;">Khôi phục bài viết mẫu chuẩn Thế Giới Di Động</strong>
-				<p style="margin:4px 0 0; color:#1F1F1F; font-size:13px;">
+				<strong style="color:#b7000c; font-size:14px;">Khôi phục bài viết mẫu chuẩn Thế Giới Di Động</strong>
+				<p style="margin:4px 0 0; color:#222222; font-size:13px;">
 					Nạp lại nội dung bài viết mẫu chuẩn SEO gồm 7 mục, bảng mục lục và cấu trúc ảnh chuẩn TGDD.
 				</p>
 			</div>
 			<form method="post" action="" onsubmit="return confirm('Bạn có chắc chắn muốn nạp lại bài mẫu?');">
 				<?php wp_nonce_field( 'phonex_reset_seo_action', 'phonex_seo_nonce' ); ?>
-				<button type="submit" name="phonex_reset_default_seo" class="button button-secondary" style="color:#D9001B; border-color:#bcdcff; background:#fff; font-weight:bold;">
+				<button type="submit" name="phonex_reset_default_seo" class="button button-secondary" style="color:#b7000c; border-color:#bcdcff; background:#fff; font-weight:bold;">
 					🔄 Nạp Lại Bài Mẫu TGDD
 				</button>
 			</form>
@@ -862,13 +862,13 @@ function phonex_generate_toc_and_anchors( $html ) {
 		);
 	}
 
-	$toc_html  = '<div id="seo-toc-container" class="my-5 rounded-2xl border border-[#FFD5DA] bg-[#F9FAFB] p-5 sm:p-6 transition-all shadow-2xs">';
-	$toc_html .= '  <button type="button" id="toggle-seo-toc" class="w-full flex items-center justify-between text-left font-extrabold text-[#1F1F1F] text-sm sm:text-base cursor-pointer focus:outline-none select-none">';
-	$toc_html .= '    <span class="flex items-center gap-2 text-[#1F1F1F]">';
-	$toc_html .= '      <span class="material-symbols-outlined text-[#FF001F] text-[22px]">list_alt</span>';
+	$toc_html  = '<div id="seo-toc-container" class="my-5 rounded-2xl border border-[#e9bcb6] bg-[#f2f4f6] p-5 sm:p-6 transition-all shadow-2xs">';
+	$toc_html .= '  <button type="button" id="toggle-seo-toc" class="w-full flex items-center justify-between text-left font-extrabold text-[#222222] text-sm sm:text-base cursor-pointer focus:outline-none select-none">';
+	$toc_html .= '    <span class="flex items-center gap-2 text-[#222222]">';
+	$toc_html .= '      <span class="material-symbols-outlined text-[#e60012] text-[22px]">list_alt</span>';
 	$toc_html .= '      Nội dung chính';
 	$toc_html .= '    </span>';
-	$toc_html .= '    <span id="toc-chevron" class="material-symbols-outlined text-[#6B7280] transition-transform duration-200">expand_more</span>';
+	$toc_html .= '    <span id="toc-chevron" class="material-symbols-outlined text-[#5f5e5e] transition-transform duration-200">expand_more</span>';
 	$toc_html .= '  </button>';
 
 	$toc_html .= '  <div id="seo-toc-list" class="mt-4 pt-3 border-t border-[#E5E7EB] text-xs sm:text-sm leading-relaxed">';
@@ -882,18 +882,18 @@ function phonex_generate_toc_and_anchors( $html ) {
 				$toc_html  .= '</ul></li>';
 				$in_sublist = false;
 			}
-			$toc_html .= '<li class="font-bold text-[#FF001F]">';
-			$toc_html .= '  <a href="#' . esc_attr( $item['anchor'] ) . '" class="text-[#FF001F] hover:text-[#D9001B] hover:underline transition-colors">';
+			$toc_html .= '<li class="font-bold text-[#e60012]">';
+			$toc_html .= '  <a href="#' . esc_attr( $item['anchor'] ) . '" class="text-[#e60012] hover:text-[#b7000c] hover:underline transition-colors">';
 			$toc_html .= esc_html( $item['title'] );
 			$toc_html .= '  </a>';
 			$toc_html .= '</li>';
 		} elseif ( 'h3' === $item['tag'] ) {
 			if ( ! $in_sublist ) {
-				$toc_html  .= '<li class="pt-0.5"><ul class="pl-5 space-y-1.5 list-disc text-[#6B7280]">';
+				$toc_html  .= '<li class="pt-0.5"><ul class="pl-5 space-y-1.5 list-disc text-[#5f5e5e]">';
 				$in_sublist = true;
 			}
 			$toc_html .= '<li class="font-normal">';
-			$toc_html .= '  <a href="#' . esc_attr( $item['anchor'] ) . '" class="text-[#D9001B] hover:text-[#FF001F] hover:underline transition-colors">';
+			$toc_html .= '  <a href="#' . esc_attr( $item['anchor'] ) . '" class="text-[#b7000c] hover:text-[#e60012] hover:underline transition-colors">';
 			$toc_html .= esc_html( $item['title'] );
 			$toc_html .= '  </a>';
 			$toc_html .= '</li>';
@@ -941,17 +941,17 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 			
 			<!-- Badge Header: THÔNG TIN NGÀNH HÀNG (Centered as in TGDD) -->
 			<div class="flex flex-col items-center justify-center relative mb-2">
-				<span class="inline-flex items-center justify-center px-6 py-2 rounded-lg border border-[#FFD5DA] text-[#FF001F] bg-[#FFF0F2] text-[15px] sm:text-[16px] font-bold uppercase tracking-wider shadow-2xs">
+				<span class="inline-flex items-center justify-center px-6 py-2 rounded-lg border border-[#e9bcb6] text-[#e60012] bg-[#ffdad5] text-[15px] sm:text-[16px] font-bold uppercase tracking-wider shadow-2xs">
 					<?php echo esc_html( $badge_title ); ?>
 				</span>
 
 				<?php if ( current_user_can( 'manage_options' ) ) : ?>
 					<div class="mt-2 flex items-center gap-3">
-						<a href="<?php echo esc_url( admin_url( 'term.php?taxonomy=product_cat&tag_ID=' . $term_id . '&post_type=product' ) ); ?>" class="text-[12px] font-bold text-[#6B7280] hover:text-[#FF001F] transition-colors flex items-center gap-1" title="Sửa bài viết trong Danh Mục">
+						<a href="<?php echo esc_url( admin_url( 'term.php?taxonomy=product_cat&tag_ID=' . $term_id . '&post_type=product' ) ); ?>" class="text-[12px] font-bold text-[#5f5e5e] hover:text-[#e60012] transition-colors flex items-center gap-1" title="Sửa bài viết trong Danh Mục">
 							<span class="material-symbols-outlined text-[15px]">category</span> Sửa trong Danh Mục
 						</a>
 						<span class="text-[#E5E7EB]">|</span>
-						<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" class="text-[12px] font-bold text-[#6B7280] hover:text-[#FF001F] transition-colors flex items-center gap-1" title="Trang soạn thảo SEO">
+						<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" class="text-[12px] font-bold text-[#5f5e5e] hover:text-[#e60012] transition-colors flex items-center gap-1" title="Trang soạn thảo SEO">
 							<span class="material-symbols-outlined text-[15px]">edit_note</span> Soạn thảo SEO
 						</a>
 					</div>
@@ -960,7 +960,7 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 
 			<!-- Sapo Paragraph (Enlarged readable font) -->
 			<?php if ( ! empty( $sapo ) ) : ?>
-				<div class="text-[17px] sm:text-[18.5px] md:text-[19px] leading-[1.85] text-[#1F1F1F] text-left font-normal [&_a]:text-[#FF001F] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#D9001B]">
+				<div class="text-[17px] sm:text-[18.5px] md:text-[19px] leading-[1.85] text-[#222222] text-left font-normal [&_a]:text-[#e60012] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#b7000c]">
 					<?php echo wp_kses_post( $sapo ); ?>
 				</div>
 			<?php endif; ?>
@@ -972,7 +972,7 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 
 			<!-- Expandable Article Content Wrapper (Enlarged typography) -->
 			<div class="relative mt-2">
-				<div id="seo-content-body" class="max-h-[360px] sm:max-h-[400px] overflow-hidden transition-all duration-500 space-y-5 text-[17px] sm:text-[18.5px] md:text-[19px] leading-[1.85] text-[#1F1F1F] [&>h2]:text-[22px] sm:[&>h2]:text-[26px] [&>h2]:font-black [&>h2]:text-[#1F1F1F] [&>h2]:pt-6 [&>h2]:pb-2 [&>h2]:border-b [&>h2]:border-[#E5E7EB] [&>h3]:text-[18px] sm:[&>h3]:text-[21px] [&>h3]:font-extrabold [&>h3]:text-[#D9001B] [&>h3]:pt-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-3 [&>p]:leading-[1.85] [&>p]:mb-4 [&_a]:text-[#FF001F] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#D9001B]">
+				<div id="seo-content-body" class="max-h-[360px] sm:max-h-[400px] overflow-hidden transition-all duration-500 space-y-5 text-[17px] sm:text-[18.5px] md:text-[19px] leading-[1.85] text-[#222222] [&>h2]:text-[22px] sm:[&>h2]:text-[26px] [&>h2]:font-black [&>h2]:text-[#222222] [&>h2]:pt-6 [&>h2]:pb-2 [&>h2]:border-b [&>h2]:border-[#E5E7EB] [&>h3]:text-[18px] sm:[&>h3]:text-[21px] [&>h3]:font-extrabold [&>h3]:text-[#b7000c] [&>h3]:pt-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-3 [&>p]:leading-[1.85] [&>p]:mb-4 [&_a]:text-[#e60012] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#b7000c]">
 					<?php echo $content_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 
@@ -982,7 +982,7 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 
 			<!-- Expand / Collapse Button (Clean Blue Link as in Screenshot) -->
 			<div class="text-center pt-2 relative z-10">
-				<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-1 text-[#FF001F] hover:text-[#D9001B] text-[15px] sm:text-[16px] font-bold hover:underline transition-all cursor-pointer">
+				<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-1 text-[#e60012] hover:text-[#b7000c] text-[15px] sm:text-[16px] font-bold hover:underline transition-all cursor-pointer">
 					<span id="btn-toggle-seo-text">Xem thêm</span>
 					<span id="btn-toggle-seo-icon" class="material-symbols-outlined text-[20px] transition-transform duration-300">keyboard_arrow_down</span>
 				</button>
