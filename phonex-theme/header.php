@@ -25,7 +25,7 @@
 <header class="sticky top-0 left-0 w-full z-50 bg-white shadow-xs font-sans" data-component="header">
   
   <!-- 1. TOP CAMPAIGN BANNER (TGDD Top Banner Structure) -->
-  <div id="pxTopCampaignBanner" class="w-full bg-gradient-to-r from-red-700 via-red-600 to-rose-600 text-white text-xs md:text-sm py-2 px-3 relative z-50 border-b border-red-800/40">
+  <div id="pxTopCampaignBanner" class="w-full bg-gradient-to-r from-red-700 via-red-600 to-rose-600 text-white text-xs md:text-sm py-2 px-3 relative z-40 border-b border-red-800/40">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
       <div class="flex items-center gap-2 overflow-hidden truncate">
         <span class="inline-flex items-center gap-1 bg-white/20 backdrop-blur-xs text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded-full uppercase shrink-0 animate-pulse">
@@ -48,7 +48,7 @@
   </div>
 
   <!-- 2. MAIN HEADER ROW (Logo | Pill Search Bar | 4 Actions: User, Voucher, Cart, Location) -->
-  <div class="bg-white border-b border-gray-100">
+  <div class="bg-white border-b border-gray-100 relative z-30">
     <div class="max-w-7xl mx-auto px-4 h-16 md:h-18 flex items-center justify-between gap-3 md:gap-6">
       
       <!-- Left: Mobile Hamburger + PhoneX Logo -->
@@ -94,7 +94,7 @@
       <!-- Right: 4 Action Items (Đăng nhập | Voucher | Giỏ hàng | Hồ Chí Minh >) -->
       <div class="flex items-center gap-2 sm:gap-4 shrink-0">
         
-        <!-- Mobile Search Button (Triggers Mobile Search Modal) -->
+        <!-- Mobile Search Button -->
         <button type="button" aria-label="<?php esc_attr_e('Tìm kiếm', 'phonex'); ?>" onclick="PhoneXPopups.openSearch()" class="sm:hidden w-10 h-10 flex items-center justify-center rounded-xl text-gray-800 hover:bg-gray-100 active:bg-gray-200 transition-colors">
           <span class="material-symbols-outlined text-[24px]">search</span>
         </button>
@@ -150,166 +150,177 @@
   </div>
 
   <!-- 3. CATEGORY NAVIGATION BAR (Row 2: Horizontal Menu with TGDD Structure & Icons) -->
-  <div class="w-full bg-white border-b border-gray-200/80 shadow-2xs">
+  <div class="w-full bg-white border-b border-gray-200/80 shadow-2xs relative z-20">
     <div class="max-w-7xl mx-auto px-4">
       <nav class="flex items-center gap-1 md:gap-1.5 py-1.5 overflow-x-auto whitespace-nowrap text-xs md:text-sm font-semibold scrollbar-none" aria-label="<?php esc_attr_e('Danh mục ngành hàng', 'phonex'); ?>">
         
         <!-- 1. Điện thoại -->
-        <div class="px-nav-item">
+        <div class="relative group">
           <a href="<?php echo esc_url(home_url('/shop/?category=smartphone')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[18px] text-gray-600">smartphone</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">smartphone</span>
             <span>Điện thoại</span>
           </a>
-          <!-- Dropdown Mega Menu -->
-          <div class="px-dropdown-menu">
-            <div class="font-bold text-gray-900 text-xs uppercase px-3 py-1 text-gray-400">Thương hiệu điện thoại</div>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=apple')); ?>" class="px-dropdown-item"><span>iPhone (Apple VN/A)</span><span class="badge bg-red-100 text-red-700">Mới</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=samsung')); ?>" class="px-dropdown-item"><span>Samsung Galaxy</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=xiaomi')); ?>" class="px-dropdown-item"><span>Xiaomi &amp; POCO</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=oppo')); ?>" class="px-dropdown-item"><span>OPPO</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=vivo')); ?>" class="px-dropdown-item"><span>vivo</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=realme')); ?>" class="px-dropdown-item"><span>realme</span></a>
+          <!-- Dropdown Mega Menu: Strictly hidden by default with Tailwind -->
+          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <div class="font-bold text-gray-400 text-[11px] uppercase px-3 py-1">Thương hiệu điện thoại</div>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=apple')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+              <span>iPhone (Apple VN/A)</span>
+              <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full font-bold">Mới</span>
+            </a>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=samsung')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Samsung Galaxy</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=xiaomi')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Xiaomi &amp; POCO</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=oppo')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>OPPO</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=vivo')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>vivo</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=realme')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>realme</span></a>
             <div class="border-t border-gray-100 my-1"></div>
-            <a href="<?php echo esc_url(home_url('/shop/')); ?>" class="px-dropdown-item text-red-600 font-bold"><span>Xem tất cả điện thoại</span><span>&rarr;</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors"><span>Xem tất cả điện thoại</span><span>&rarr;</span></a>
           </div>
         </div>
 
         <!-- 2. Laptop -->
-        <div class="px-nav-item">
+        <div class="relative group">
           <a href="<?php echo esc_url(home_url('/shop/?category=laptop')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[18px] text-gray-600">laptop_mac</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">laptop_mac</span>
             <span>Laptop</span>
           </a>
-          <div class="px-dropdown-menu">
-            <a href="<?php echo esc_url(home_url('/shop/?category=macbook')); ?>" class="px-dropdown-item"><span>MacBook Pro &amp; MacBook Air</span><span class="badge bg-red-100 text-red-700">Apple M4</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=gaming')); ?>" class="px-dropdown-item"><span>Laptop Gaming</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=office')); ?>" class="px-dropdown-item"><span>Laptop Văn phòng mỏng nhẹ</span></a>
+          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <a href="<?php echo esc_url(home_url('/shop/?category=macbook')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>MacBook Pro &amp; Air</span><span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full font-bold">M4</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=gaming')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Laptop Gaming</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=office')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Laptop Văn phòng</span></a>
           </div>
         </div>
 
         <!-- 3. Phụ kiện ⌵ -->
-        <div class="px-nav-item">
+        <div class="relative group">
           <a href="<?php echo esc_url(home_url('/shop/?category=accessories')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
-            <span class="material-symbols-outlined text-[18px] text-gray-600">headphones</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">headphones</span>
             <span>Phụ kiện</span>
             <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
           </a>
-          <div class="px-dropdown-menu">
-            <a href="<?php echo esc_url(home_url('/shop/?category=earphones')); ?>" class="px-dropdown-item"><span>Tai nghe AirPods &amp; Bluetooth</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=charger')); ?>" class="px-dropdown-item"><span>Củ sạc nhanh GaN (30W - 100W)</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=cable')); ?>" class="px-dropdown-item"><span>Cáp Type-C, Lightning</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=powerbank')); ?>" class="px-dropdown-item"><span>Pin sạc dự phòng MagSafe</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=cases')); ?>" class="px-dropdown-item"><span>Ốp lưng &amp; Kính cường lực</span></a>
+          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <a href="<?php echo esc_url(home_url('/shop/?category=earphones')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Tai nghe AirPods &amp; Buds</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=charger')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Củ sạc nhanh GaN</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=cable')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Cáp sạc Type-C, Lightning</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=powerbank')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Pin sạc dự phòng</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=cases')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Ốp lưng &amp; Kính cường lực</span></a>
           </div>
         </div>
 
         <!-- 4. Smartwatch -->
-        <div class="px-nav-item">
+        <div class="relative group">
           <a href="<?php echo esc_url(home_url('/shop/?category=smartwatch')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[18px] text-gray-600">watch</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">watch</span>
             <span>Smartwatch</span>
           </a>
-          <div class="px-dropdown-menu">
-            <a href="<?php echo esc_url(home_url('/shop/?brand=apple-watch')); ?>" class="px-dropdown-item"><span>Apple Watch Series 10 &amp; Ultra 2</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=galaxy-watch')); ?>" class="px-dropdown-item"><span>Samsung Galaxy Watch</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=garmin')); ?>" class="px-dropdown-item"><span>Garmin thể thao chuyên nghiệp</span></a>
+          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <a href="<?php echo esc_url(home_url('/shop/?brand=apple-watch')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Apple Watch Series 10 / Ultra</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=galaxy-watch')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Samsung Galaxy Watch</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=garmin')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Garmin thể thao</span></a>
           </div>
         </div>
 
         <!-- 5. Đồng hồ -->
-        <div class="px-nav-item">
+        <div class="relative group">
           <a href="<?php echo esc_url(home_url('/shop/?category=watch')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1.5">
-            <span class="material-symbols-outlined text-[18px] text-gray-600">schedule</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">schedule</span>
             <span>Đồng hồ</span>
           </a>
-          <div class="px-dropdown-menu">
-            <a href="<?php echo esc_url(home_url('/shop/?category=mens-watch')); ?>" class="px-dropdown-item"><span>Đồng hồ nam chính hãng</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=womens-watch')); ?>" class="px-dropdown-item"><span>Đồng hồ nữ thời trang</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=smart-bands')); ?>" class="px-dropdown-item"><span>Vòng đeo tay thông minh</span></a>
+          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-60 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <a href="<?php echo esc_url(home_url('/shop/?category=mens-watch')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Đồng hồ nam</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=womens-watch')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Đồng hồ nữ</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=smart-bands')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Vòng đeo tay thông minh</span></a>
           </div>
         </div>
 
         <!-- 6. Tablet ⌵ -->
-        <div class="px-nav-item">
+        <div class="relative group">
           <a href="<?php echo esc_url(home_url('/shop/?category=tablet')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
-            <span class="material-symbols-outlined text-[18px] text-gray-600">tablet_mac</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">tablet_mac</span>
             <span>Tablet</span>
             <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
           </a>
-          <div class="px-dropdown-menu">
-            <a href="<?php echo esc_url(home_url('/shop/?brand=ipad')); ?>" class="px-dropdown-item"><span>iPad Pro M4 &amp; iPad Air M2</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=ipad-gen10')); ?>" class="px-dropdown-item"><span>iPad 10.9 &amp; iPad mini</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?brand=samsung-tab')); ?>" class="px-dropdown-item"><span>Samsung Galaxy Tab</span></a>
+          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <a href="<?php echo esc_url(home_url('/shop/?brand=ipad')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>iPad Pro M4 &amp; Air M2</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=ipad-gen10')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>iPad 10.9 &amp; iPad mini</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?brand=samsung-tab')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Samsung Galaxy Tab</span></a>
           </div>
         </div>
 
         <!-- 7. Máy cũ, Thu cũ ⌵ -->
-        <div class="px-nav-item">
+        <div class="relative group">
           <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
             <span class="material-symbols-outlined text-[18px] text-red-600">sync_alt</span>
             <span>Máy cũ, Thu cũ</span>
             <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
           </a>
-          <div class="px-dropdown-menu">
-            <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="px-dropdown-item text-red-600 font-bold"><span>Thu cũ đổi mới - Trợ giá 3Tr</span><span class="badge bg-red-100 text-red-700">Hot</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?condition=used&brand=apple')); ?>" class="px-dropdown-item"><span>iPhone cũ 99% Like New</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?condition=used')); ?>" class="px-dropdown-item"><span>Máy cũ chính hãng bảo hành 12T</span></a>
-            <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/#valuation')); ?>" class="px-dropdown-item"><span>Định giá máy online 30s</span></a>
+          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors">
+              <span>Thu cũ đổi mới - Trợ giá 3Tr</span>
+              <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded-full">Hot</span>
+            </a>
+            <a href="<?php echo esc_url(home_url('/shop/?condition=used&brand=apple')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>iPhone cũ 99% Like New</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?condition=used')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Máy cũ chính hãng BH 12T</span></a>
+            <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/#valuation')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Định giá máy online 30s</span></a>
           </div>
         </div>
 
         <!-- 8. Màn hình, Máy in ⌵ -->
-        <div class="px-nav-item">
+        <div class="relative group">
           <a href="<?php echo esc_url(home_url('/shop/?category=monitor-printer')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
-            <span class="material-symbols-outlined text-[18px] text-gray-600">desktop_windows</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">desktop_windows</span>
             <span>Màn hình, Máy in</span>
             <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
           </a>
-          <div class="px-dropdown-menu">
-            <a href="<?php echo esc_url(home_url('/shop/?category=monitor')); ?>" class="px-dropdown-item"><span>Màn hình đồ hoạ &amp; 4K</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=gaming-monitor')); ?>" class="px-dropdown-item"><span>Màn hình Gaming 144Hz - 240Hz</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=printer')); ?>" class="px-dropdown-item"><span>Máy in văn phòng chính hãng</span></a>
+          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <a href="<?php echo esc_url(home_url('/shop/?category=monitor')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Màn hình 4K &amp; Đồ hoạ</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=gaming-monitor')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Màn hình Gaming 144Hz</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=printer')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Máy in văn phòng</span></a>
           </div>
         </div>
 
         <!-- 9. Sim, Thẻ cào ⌵ -->
-        <div class="px-nav-item">
+        <div class="relative group">
           <a href="<?php echo esc_url(home_url('/shop/?category=sim')); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-red-600 hover:bg-red-50/80 transition-colors flex items-center gap-1">
-            <span class="material-symbols-outlined text-[18px] text-gray-600">sim_card</span>
+            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-red-600">sim_card</span>
             <span>Sim, Thẻ cào</span>
             <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
           </a>
-          <div class="px-dropdown-menu">
-            <a href="<?php echo esc_url(home_url('/shop/?category=sim-4g')); ?>" class="px-dropdown-item"><span>SIM 4G/5G Data Không Giới Hạn</span></a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=phone-cards')); ?>" class="px-dropdown-item"><span>Thẻ cào điện thoại chiết khấu cao</span></a>
-            <a href="<?php echo esc_url(home_url('/tra-gop/')); ?>" class="px-dropdown-item text-red-600 font-bold"><span>Trả góp 0% duyệt 3 phút</span></a>
+          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <a href="<?php echo esc_url(home_url('/shop/?category=sim-4g')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>SIM 4G/5G Data Không Giới Hạn</span></a>
+            <a href="<?php echo esc_url(home_url('/shop/?category=phone-cards')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors"><span>Thẻ cào nạp điện thoại</span></a>
+            <a href="<?php echo esc_url(home_url('/tra-gop/')); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors"><span>Trả góp 0% duyệt 3 phút</span></a>
           </div>
         </div>
 
         <!-- 10. Dịch vụ tiện ích ⌃ (Distinctive Pill Button with Dropdown matching TGDD) -->
-        <div class="px-nav-item dropdown-right ml-auto">
+        <div class="relative group ml-auto">
           <button type="button" class="border border-gray-200 bg-gray-50/90 hover:bg-red-50 hover:border-red-300 hover:text-red-600 text-gray-800 rounded-lg px-2.5 py-1 text-xs md:text-sm font-bold flex items-center gap-1.5 transition-all shadow-2xs">
             <span class="material-symbols-outlined text-[18px] text-red-600">receipt_long</span>
             <span>Dịch vụ tiện ích</span>
             <span class="material-symbols-outlined text-[16px] text-gray-400">keyboard_arrow_down</span>
           </button>
-          <div class="px-dropdown-menu">
-            <div class="font-bold text-gray-900 text-xs uppercase px-3 py-1 text-gray-400">Dịch vụ PhoneX</div>
-            <a href="<?php echo esc_url(home_url('/bao-hanh/')); ?>" class="px-dropdown-item">
-              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-green-600">verified_user</span>Tra cứu bảo hành điện tử</span>
+          <div class="hidden group-hover:block absolute top-full right-0 z-50 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
+            <div class="font-bold text-gray-400 text-[11px] uppercase px-3 py-1">Dịch vụ PhoneX</div>
+            <a href="<?php echo esc_url(home_url('/bao-hanh/')); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+              <span class="material-symbols-outlined text-[18px] text-green-600">verified_user</span>
+              <span>Tra cứu bảo hành điện tử</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/tra-cuu-don-hang/')); ?>" class="px-dropdown-item">
-              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-blue-600">local_shipping</span>Tra cứu tiến độ đơn hàng</span>
+            <a href="<?php echo esc_url(home_url('/tra-cuu-don-hang/')); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+              <span class="material-symbols-outlined text-[18px] text-blue-600">local_shipping</span>
+              <span>Tra cứu tiến độ đơn hàng</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/showroom/')); ?>" class="px-dropdown-item">
-              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-red-600">store</span>Hệ thống 128 Showroom</span>
+            <a href="<?php echo esc_url(home_url('/showroom/')); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+              <span class="material-symbols-outlined text-[18px] text-red-600">store</span>
+              <span>Hệ thống 128 Showroom</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/tra-gop/')); ?>" class="px-dropdown-item">
-              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-amber-600">credit_card</span>Trả góp 0% duyệt siêu tốc</span>
+            <a href="<?php echo esc_url(home_url('/tra-gop/')); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-red-600 hover:bg-red-50 transition-colors">
+              <span class="material-symbols-outlined text-[18px] text-amber-600">credit_card</span>
+              <span>Trả góp 0% duyệt siêu tốc</span>
             </a>
             <div class="border-t border-gray-100 my-1"></div>
-            <a href="tel:18006868" class="px-dropdown-item text-red-600 font-bold">
-              <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">call</span>Hotline miễn phí: 1800.6868</span>
+            <a href="tel:18006868" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-bold text-red-600 hover:bg-red-50 transition-colors">
+              <span class="material-symbols-outlined text-[18px]">call</span>
+              <span>Hotline miễn phí: 1800.6868</span>
             </a>
           </div>
         </div>
@@ -319,20 +330,23 @@
   </div>
 
   <!-- ===================================================
-       LOCATION PICKER MODAL (Popup to Pick City/Showroom)
+       LOCATION PICKER MODAL (Strictly Hidden by Default)
        =================================================== -->
-  <div id="pxLocationModal" class="px-location-modal" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Chọn tỉnh thành', 'phonex'); ?>">
-    <div class="px-popup-backdrop" onclick="PhoneXLocation.closeModal()"></div>
-    <div class="px-location-dialog">
+  <div id="pxLocationModal" class="fixed inset-0 z-[9999] hidden items-center justify-center p-4" style="display: none;" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Chọn tỉnh thành', 'phonex'); ?>">
+    <!-- Backdrop Overlay -->
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity" onclick="PhoneXLocation.closeModal()"></div>
+    
+    <!-- Modal Dialog Sheet -->
+    <div class="relative z-10 w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col max-h-[85vh]">
       <!-- Modal Header -->
-      <div class="p-4 sm:p-5 border-b border-gray-100 flex items-center justify-between bg-gray-50/80">
+      <div class="p-4 sm:p-5 border-b border-gray-100 flex items-center justify-between bg-gray-50/80 shrink-0">
         <div class="flex items-center gap-2.5">
           <div class="w-9 h-9 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
             <span class="material-symbols-outlined text-[22px]">location_on</span>
           </div>
           <div>
             <h3 class="text-base sm:text-lg font-extrabold text-gray-900 leading-tight">Chọn Khu Vực Của Bạn</h3>
-            <p class="text-xs text-gray-500 mt-0.5">Để hiển thị giá ưu đãi và tồn kho tại 128 showroom gần bạn nhất</p>
+            <p class="text-xs text-gray-500 mt-0.5">Hiển thị giá ưu đãi và tồn kho tại showroom gần bạn nhất</p>
           </div>
         </div>
         <button type="button" aria-label="<?php esc_attr_e('Đóng', 'phonex'); ?>" onclick="PhoneXLocation.closeModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 text-gray-500 transition-colors">
@@ -341,7 +355,7 @@
       </div>
 
       <!-- Quick Search City Input -->
-      <div class="p-4 border-b border-gray-100">
+      <div class="p-3 border-b border-gray-100 shrink-0">
         <div class="relative">
           <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-gray-400 text-[20px]">search</span>
           <input 
@@ -355,76 +369,77 @@
       </div>
 
       <!-- Province / City List -->
-      <div id="pxCityListContainer" class="p-4 overflow-y-auto max-h-[55vh] grid grid-cols-2 sm:grid-cols-3 gap-2">
+      <div id="pxCityListContainer" class="p-4 overflow-y-auto max-h-[50vh] grid grid-cols-2 sm:grid-cols-3 gap-2">
         <button type="button" onclick="PhoneXLocation.selectCity('Hồ Chí Minh')" class="px-city-btn p-3 rounded-xl border border-red-200 bg-red-50 text-red-700 font-bold text-sm text-left hover:border-red-600 hover:bg-red-100 transition-all flex items-center justify-between">
           <span>Hồ Chí Minh</span>
-          <span class="text-[11px] bg-red-600 text-white font-extrabold px-1.5 py-0.2 rounded-full">128 shop</span>
+          <span class="text-[10px] bg-red-600 text-white font-extrabold px-1.5 py-0.2 rounded-full">128 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Hà Nội')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Hà Nội</span>
-          <span class="text-[11px] text-gray-400 font-normal">85 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">85 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Đà Nẵng')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Đà Nẵng</span>
-          <span class="text-[11px] text-gray-400 font-normal">24 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">24 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Cần Thơ')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Cần Thơ</span>
-          <span class="text-[11px] text-gray-400 font-normal">18 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">18 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Hải Phòng')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Hải Phòng</span>
-          <span class="text-[11px] text-gray-400 font-normal">16 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">16 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Bình Dương')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Bình Dương</span>
-          <span class="text-[11px] text-gray-400 font-normal">22 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">22 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Đồng Nai')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Đồng Nai</span>
-          <span class="text-[11px] text-gray-400 font-normal">19 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">19 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Vũng Tàu')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Vũng Tàu</span>
-          <span class="text-[11px] text-gray-400 font-normal">12 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">12 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Nha Trang')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Nha Trang</span>
-          <span class="text-[11px] text-gray-400 font-normal">10 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">10 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Huế')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Huế</span>
-          <span class="text-[11px] text-gray-400 font-normal">8 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">8 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Quảng Ninh')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Quảng Ninh</span>
-          <span class="text-[11px] text-gray-400 font-normal">9 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">9 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Thanh Hóa')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-red-600 hover:bg-red-50 text-gray-800 hover:text-red-700 font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Thanh Hóa</span>
-          <span class="text-[11px] text-gray-400 font-normal">7 shop</span>
+          <span class="text-[10px] text-gray-400 font-normal">7 shop</span>
         </button>
       </div>
 
       <!-- Modal Footer -->
-      <div class="p-4 border-t border-gray-100 bg-gray-50 flex items-center justify-between text-xs">
+      <div class="p-3 sm:p-4 border-t border-gray-100 bg-gray-50 flex items-center justify-between text-xs shrink-0">
         <a href="<?php echo esc_url(home_url('/showroom/')); ?>" class="font-bold text-red-600 hover:underline flex items-center gap-1">
-          <span>Xem bản đồ chi tiết 128 Showroom</span>
+          <span>Xem 128 Showroom toàn quốc</span>
           <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </a>
-        <span class="text-gray-400">Giao hàng toàn quốc 2h</span>
+        <span class="text-gray-400">Giao nhanh 2h</span>
       </div>
     </div>
   </div>
 
   <!-- ===================================================
-       MOBILE BOTTOM SHEET POPUP MENU
+       MOBILE BOTTOM SHEET POPUP MENU (Strictly Hidden by Default)
        =================================================== -->
-  <div id="pxMenuPopup" class="px-popup px-popup-menu" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Menu điều hướng di động', 'phonex'); ?>">
-    <div class="px-popup-backdrop" onclick="PhoneXPopups.closeMenu()"></div>
-    <div class="px-popup-dialog">
-      <div class="w-14 h-1.5 bg-gray-300 rounded-full mx-auto mt-3 mb-1 md:hidden"></div>
-      <div class="p-4 border-b border-gray-100 flex items-center justify-between">
+  <div id="pxMenuPopup" class="fixed inset-0 z-[9999] hidden items-end md:items-center justify-center" style="display: none;" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Menu điều hướng di động', 'phonex'); ?>">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-xs" onclick="PhoneXPopups.closeMenu()"></div>
+    <div class="relative z-10 w-full md:max-w-md bg-white rounded-t-3xl md:rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden">
+      <div class="w-14 h-1.5 bg-gray-300 rounded-full mx-auto mt-3 mb-1 md:hidden shrink-0"></div>
+      
+      <div class="p-4 border-b border-gray-100 flex items-center justify-between shrink-0">
         <div class="flex items-center gap-2">
           <div class="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white">
             <span class="material-symbols-outlined text-[18px]">smartphone</span>
@@ -437,19 +452,19 @@
         </button>
       </div>
 
-      <div class="overflow-y-auto p-4 space-y-5 max-h-[75vh]">
+      <div class="overflow-y-auto p-4 space-y-4">
         <!-- User Banner Card -->
         <div class="p-4 rounded-2xl bg-gradient-to-r from-red-600 to-red-700 text-white flex items-center justify-between shadow-md">
-          <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-base ring-2 ring-white/40">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-white/20 text-white font-bold flex items-center justify-center text-sm ring-2 ring-white/40">
               <?php echo is_user_logged_in() ? esc_html(strtoupper(substr(wp_get_current_user()->display_name, 0, 2))) : 'MQ'; ?>
             </div>
             <div>
               <div class="font-extrabold text-base leading-tight"><?php echo is_user_logged_in() ? esc_html(wp_get_current_user()->display_name) : 'Minh Quân'; ?></div>
-              <div class="text-sm text-red-100 mt-0.5">Thành viên VIP (14.850 PX)</div>
+              <div class="text-xs text-red-100 mt-0.5">Thành viên VIP (14.850 PX)</div>
             </div>
           </div>
-          <a href="<?php echo esc_url(function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : home_url('/tai-khoan/')); ?>" class="px-3.5 py-2 bg-white text-red-600 rounded-xl text-xs font-bold shadow-sm hover:bg-gray-50 transition-colors">
+          <a href="<?php echo esc_url(function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : home_url('/tai-khoan/')); ?>" class="px-3 py-1.5 bg-white text-red-600 rounded-xl text-xs font-bold shadow-xs hover:bg-gray-50 transition-colors">
             Hồ sơ &rarr;
           </a>
         </div>
@@ -457,8 +472,8 @@
         <!-- Location Quick Change -->
         <div class="p-3 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-red-600 text-[20px]">location_on</span>
-            <span class="text-xs text-gray-500">Khu vực: <strong id="pxMobileLocationLabel" class="text-gray-900 font-bold">Hồ Chí Minh</strong></span>
+            <span class="material-symbols-outlined text-red-600 text-[18px]">location_on</span>
+            <span class="text-xs text-gray-600">Khu vực: <strong id="pxMobileLocationLabel" class="text-gray-900 font-bold">Hồ Chí Minh</strong></span>
           </div>
           <button type="button" onclick="PhoneXPopups.closeMenu(); PhoneXLocation.openModal();" class="text-xs text-red-600 font-bold hover:underline">
             Đổi khu vực &rarr;
@@ -467,62 +482,62 @@
 
         <!-- Quick Action Grid -->
         <div>
-          <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2.5">Tiện ích nhanh</div>
-          <div class="grid grid-cols-2 gap-2.5">
-            <a href="<?php echo esc_url(home_url('/tra-cuu-don-hang/')); ?>" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
-              <span class="material-symbols-outlined text-blue-600 text-[24px]">local_shipping</span>
-              <div class="text-left"><div class="text-sm font-bold text-gray-900">Tra cứu đơn</div><div class="text-xs text-gray-500">Tiến độ giao hàng</div></div>
+          <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Tiện ích nhanh</div>
+          <div class="grid grid-cols-2 gap-2">
+            <a href="<?php echo esc_url(home_url('/tra-cuu-don-hang/')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-2.5 transition-colors">
+              <span class="material-symbols-outlined text-blue-600 text-[22px]">local_shipping</span>
+              <div class="text-left"><div class="text-xs font-bold text-gray-900">Tra cứu đơn</div><div class="text-[11px] text-gray-500">Tiến độ giao hàng</div></div>
             </a>
-            <a href="<?php echo esc_url(home_url('/bao-hanh/')); ?>" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
-              <span class="material-symbols-outlined text-green-600 text-[24px]">verified_user</span>
-              <div class="text-left"><div class="text-sm font-bold text-gray-900">Bảo hành</div><div class="text-xs text-gray-500">Tra cứu IMEI/SĐT</div></div>
+            <a href="<?php echo esc_url(home_url('/bao-hanh/')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-2.5 transition-colors">
+              <span class="material-symbols-outlined text-green-600 text-[22px]">verified_user</span>
+              <div class="text-left"><div class="text-xs font-bold text-gray-900">Bảo hành</div><div class="text-[11px] text-gray-500">Tra cứu IMEI/SĐT</div></div>
             </a>
-            <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="p-3.5 rounded-xl bg-red-50 hover:bg-red-100 border border-red-100 flex items-center gap-3 transition-colors">
-              <span class="material-symbols-outlined text-red-600 text-[24px]">sync_alt</span>
-              <div class="text-left"><div class="text-sm font-bold text-red-700">Thu cũ đổi mới</div><div class="text-xs text-red-500">Trợ giá 3Tr</div></div>
+            <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="p-3 rounded-xl bg-red-50 hover:bg-red-100 border border-red-100 flex items-center gap-2.5 transition-colors">
+              <span class="material-symbols-outlined text-red-600 text-[22px]">sync_alt</span>
+              <div class="text-left"><div class="text-xs font-bold text-red-700">Thu cũ đổi mới</div><div class="text-[11px] text-red-500">Trợ giá 3Tr</div></div>
             </a>
-            <a href="<?php echo esc_url(home_url('/showroom/')); ?>" class="p-3.5 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-3 transition-colors">
-              <span class="material-symbols-outlined text-purple-600 text-[24px]">store</span>
-              <div class="text-left"><div class="text-sm font-bold text-gray-900">128 Cửa hàng</div><div class="text-xs text-gray-500">Gần bạn nhất</div></div>
+            <a href="<?php echo esc_url(home_url('/showroom/')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-2.5 transition-colors">
+              <span class="material-symbols-outlined text-purple-600 text-[22px]">store</span>
+              <div class="text-left"><div class="text-xs font-bold text-gray-900">128 Cửa hàng</div><div class="text-[11px] text-gray-500">Gần bạn nhất</div></div>
             </a>
           </div>
         </div>
 
         <!-- Category Links -->
         <div>
-          <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2.5">Danh mục sản phẩm</div>
-          <div class="grid grid-cols-2 gap-2 text-sm font-bold text-gray-800">
-            <a href="<?php echo esc_url(home_url('/shop/?category=smartphone')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-red-600 text-[20px]">smartphone</span>
+          <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Danh mục sản phẩm</div>
+          <div class="grid grid-cols-2 gap-2 text-xs font-bold text-gray-800">
+            <a href="<?php echo esc_url(home_url('/shop/?category=smartphone')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-red-600 text-[18px]">smartphone</span>
               <span>Điện thoại</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=laptop')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-blue-600 text-[20px]">laptop_mac</span>
+            <a href="<?php echo esc_url(home_url('/shop/?category=laptop')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-blue-600 text-[18px]">laptop_mac</span>
               <span>Laptop &amp; Mac</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=accessories')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-amber-600 text-[20px]">headphones</span>
+            <a href="<?php echo esc_url(home_url('/shop/?category=accessories')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-amber-600 text-[18px]">headphones</span>
               <span>Phụ kiện</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=smartwatch')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-green-600 text-[20px]">watch</span>
+            <a href="<?php echo esc_url(home_url('/shop/?category=smartwatch')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-green-600 text-[18px]">watch</span>
               <span>Smartwatch</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/shop/?category=tablet')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-indigo-600 text-[20px]">tablet_mac</span>
+            <a href="<?php echo esc_url(home_url('/shop/?category=tablet')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-indigo-600 text-[18px]">tablet_mac</span>
               <span>Tablet / iPad</span>
             </a>
-            <a href="<?php echo esc_url(home_url('/shop/?condition=used')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-rose-600 text-[20px]">devices_other</span>
+            <a href="<?php echo esc_url(home_url('/shop/?condition=used')); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-red-50 hover:text-red-600 border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-rose-600 text-[18px]">devices_other</span>
               <span>Máy cũ 99%</span>
             </a>
           </div>
         </div>
 
         <!-- Hotline Call Support -->
-        <div class="pt-2">
-          <a href="tel:18006868" class="w-full py-3.5 px-4 bg-gray-900 text-white rounded-xl font-bold text-sm flex items-center justify-center gap-2 hover:bg-black transition-colors shadow-sm">
-            <span class="material-symbols-outlined text-[20px] text-red-500">call</span>
+        <div class="pt-1">
+          <a href="tel:18006868" class="w-full py-3 px-4 bg-gray-900 text-white rounded-xl font-bold text-xs flex items-center justify-center gap-2 hover:bg-black transition-colors shadow-sm">
+            <span class="material-symbols-outlined text-[18px] text-red-500">call</span>
             Gọi tư vấn miễn phí: 1800.6868
           </a>
         </div>
@@ -531,30 +546,30 @@
   </div>
 
   <!-- ===================================================
-       MOBILE TOP SEARCH POPUP MODAL
+       MOBILE TOP SEARCH POPUP MODAL (Strictly Hidden by Default)
        =================================================== -->
-  <div id="pxSearchPopup" class="px-popup px-popup-search" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Tìm kiếm di động', 'phonex'); ?>">
-    <div class="px-popup-backdrop" onclick="PhoneXPopups.closeSearch()"></div>
-    <div class="px-popup-dialog overflow-hidden">
-      <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="p-3.5 border-b border-gray-100 flex items-center gap-2.5 bg-white">
+  <div id="pxSearchPopup" class="fixed inset-0 z-[9999] hidden items-start justify-center p-4 pt-16" style="display: none;" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e('Tìm kiếm di động', 'phonex'); ?>">
+    <div class="fixed inset-0 bg-black/60 backdrop-blur-xs" onclick="PhoneXPopups.closeSearch()"></div>
+    <div class="relative z-10 w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="p-3 border-b border-gray-100 flex items-center gap-2 bg-white">
         <span class="material-symbols-outlined text-gray-400 pl-1 text-[22px]">search</span>
-        <input id="pxMobileSearchInput" name="s" value="<?php echo get_search_query(); ?>" class="w-full h-11 text-base text-gray-900 placeholder-gray-400 focus:outline-none bg-transparent" placeholder="Bạn tìm gì? iPhone 16, S25 Ultra..." type="search">
+        <input id="pxMobileSearchInput" name="s" value="<?php echo get_search_query(); ?>" class="w-full h-10 text-sm md:text-base text-gray-900 placeholder-gray-400 focus:outline-none bg-transparent" placeholder="Bạn tìm gì? iPhone 16, S25 Ultra..." type="search">
         <?php if (function_exists('is_woocommerce')) : ?><input type="hidden" name="post_type" value="product" /><?php endif; ?>
-        <button type="button" aria-label="<?php esc_attr_e('Đóng tìm kiếm', 'phonex'); ?>" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500" onclick="PhoneXPopups.closeSearch()">
-          <span class="material-symbols-outlined text-[22px]">close</span>
+        <button type="button" aria-label="<?php esc_attr_e('Đóng tìm kiếm', 'phonex'); ?>" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500" onclick="PhoneXPopups.closeSearch()">
+          <span class="material-symbols-outlined text-[20px]">close</span>
         </button>
       </form>
-      <div class="p-4 bg-gray-50">
-        <div class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-red-600 text-[16px]">local_fire_department</span>
+      <div class="p-3 bg-gray-50">
+        <div class="text-[11px] font-bold text-gray-500 uppercase tracking-wider mb-2 flex items-center gap-1">
+          <span class="material-symbols-outlined text-red-600 text-[15px]">local_fire_department</span>
           Tìm kiếm xu hướng
         </div>
-        <div class="flex flex-wrap gap-2 text-sm">
-          <a href="<?php echo esc_url(home_url('/?s=iPhone+16+Pro+Max&post_type=product')); ?>" class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">iPhone 16 Pro Max</a>
-          <a href="<?php echo esc_url(home_url('/?s=Galaxy+S25+Ultra&post_type=product')); ?>" class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Galaxy S25 Ultra</a>
-          <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="px-3 py-1.5 bg-red-50 border border-red-200 rounded-full text-red-600 font-bold hover:bg-red-100 transition-colors">Thu cũ trợ giá 3Tr</a>
-          <a href="<?php echo esc_url(home_url('/?s=Xiaomi+15&post_type=product')); ?>" class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Xiaomi 15 Pro</a>
-          <a href="<?php echo esc_url(home_url('/shop/?condition=used')); ?>" class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Máy cũ 99%</a>
+        <div class="flex flex-wrap gap-1.5 text-xs">
+          <a href="<?php echo esc_url(home_url('/?s=iPhone+16+Pro+Max&post_type=product')); ?>" class="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">iPhone 16 Pro Max</a>
+          <a href="<?php echo esc_url(home_url('/?s=Galaxy+S25+Ultra&post_type=product')); ?>" class="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Galaxy S25 Ultra</a>
+          <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="px-2.5 py-1 bg-red-50 border border-red-200 rounded-full text-red-600 font-bold hover:bg-red-100 transition-colors">Thu cũ trợ giá 3Tr</a>
+          <a href="<?php echo esc_url(home_url('/?s=Xiaomi+15&post_type=product')); ?>" class="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Xiaomi 15 Pro</a>
+          <a href="<?php echo esc_url(home_url('/shop/?condition=used')); ?>" class="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-800 hover:border-red-600 hover:text-red-600 transition-colors font-medium">Máy cũ 99%</a>
         </div>
       </div>
     </div>
@@ -568,23 +583,36 @@
     window.PhoneXPopups = {
       openMenu: function() {
         const p = document.getElementById('pxMenuPopup');
-        if (p) { p.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        if (p) { 
+          p.style.display = 'flex'; 
+          p.classList.remove('hidden'); 
+          document.body.style.overflow = 'hidden'; 
+        }
       },
       closeMenu: function() {
         const p = document.getElementById('pxMenuPopup');
-        if (p) { p.classList.remove('active'); document.body.style.overflow = ''; }
+        if (p) { 
+          p.style.display = 'none'; 
+          p.classList.add('hidden'); 
+          document.body.style.overflow = ''; 
+        }
       },
       openSearch: function() {
         const p = document.getElementById('pxSearchPopup');
         if (p) {
-          p.classList.add('active');
+          p.style.display = 'flex';
+          p.classList.remove('hidden');
           document.body.style.overflow = 'hidden';
           setTimeout(() => { const input = document.getElementById('pxMobileSearchInput'); if (input) input.focus(); }, 150);
         }
       },
       closeSearch: function() {
         const p = document.getElementById('pxSearchPopup');
-        if (p) { p.classList.remove('active'); document.body.style.overflow = ''; }
+        if (p) { 
+          p.style.display = 'none'; 
+          p.classList.add('hidden'); 
+          document.body.style.overflow = ''; 
+        }
       }
     };
 
@@ -592,11 +620,19 @@
     window.PhoneXLocation = {
       openModal: function() {
         const m = document.getElementById('pxLocationModal');
-        if (m) { m.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        if (m) { 
+          m.style.display = 'flex'; 
+          m.classList.remove('hidden'); 
+          document.body.style.overflow = 'hidden'; 
+        }
       },
       closeModal: function() {
         const m = document.getElementById('pxLocationModal');
-        if (m) { m.classList.remove('active'); document.body.style.overflow = ''; }
+        if (m) { 
+          m.style.display = 'none'; 
+          m.classList.add('hidden'); 
+          document.body.style.overflow = ''; 
+        }
       },
       selectCity: function(cityName) {
         localStorage.setItem('phonex_user_location', cityName);
