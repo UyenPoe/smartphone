@@ -325,10 +325,11 @@
               $url  = ($term && !is_wp_error(get_term_link($term))) ? get_term_link($term) : home_url('/shop/?category=' . $item['slug']);
               $badge = $item['badge'] ?? '';
               $badge_bg = ($badge === 'Hot') ? 'bg-red-500 text-white' : 'bg-rose-500 text-white';
+              $img_url = get_template_directory_uri() . '/assets/images/categories/accessories/' . $item['slug'] . '.png';
               ?>
               <a href="<?php echo esc_url($url); ?>" class="group flex flex-col items-center text-center p-1 rounded-xl hover:bg-red-50/40 transition-all relative">
-                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center text-gray-700 group-hover:text-red-600 transition-all relative shrink-0 shadow-2xs">
-                  <span class="material-symbols-outlined text-[24px] sm:text-[26px]"><?php echo esc_html($item['icon']); ?></span>
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gray-50 border border-gray-100 group-hover:border-red-300 group-hover:bg-red-50/70 flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1">
+                  <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($item['name']); ?>" class="w-8 h-8 sm:w-9 sm:h-9 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
                   <?php if ($badge) : ?>
                     <span class="absolute -top-1.5 -right-1.5 text-[9px] font-extrabold <?php echo esc_attr($badge_bg); ?> px-1.5 py-0.2 rounded-full leading-none shadow-xs">
                       <?php echo esc_html($badge); ?>
