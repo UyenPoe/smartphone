@@ -242,8 +242,6 @@ function phonex_get_default_used_phone_seo_data() {
   <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
     <strong class="text-gray-900 block mb-1">Ở xa mua online có được kiểm tra máy trước khi thanh toán không?</strong>
     <p class="text-gray-600 text-sm">PhoneX hỗ trợ giao hàng hỏa tốc toàn quốc. Bạn được quyền mở hộp đồng kiểm đúng số serial, ngoại hình và bật nguồn test máy đầy đủ trước khi thanh toán cho nhân viên giao hàng.</p>
-  </div>
-</div>
 HTML;
 
 	return array(
@@ -254,6 +252,208 @@ HTML;
 		'img_1'       => 'https://cdn.tgdd.vn/Products/Images/42/370982/iphone-18-pro-max-den-thumb-600x600.jpg',
 		'img_2'       => 'https://cdn.tgdd.vn/Products/Images/42/367339/samsung-galaxy-s26-ultra-den-thumb-600x600.jpg',
 		'img_3'       => 'https://cdn.tgdd.vn/Products/Images/42/368236/motorola-razr-fold-trang-thumb-600x600.jpg',
+	);
+}
+
+/**
+ * Default SEO content for "Loa" (Category: loa, term 62)
+ *
+ * @return array
+ */
+function phonex_get_default_loa_seo_data() {
+	$badge_title = 'THÔNG TIN NGÀNH HÀNG LOA';
+	$sapo        = '<strong>Loa</strong> là thiết bị khuếch đại âm thanh không thể thiếu cho nhu cầu thưởng thức âm nhạc, xem phim, giải trí gia đình hay tổ chức những buổi tiệc sôi động. Tại PhoneX, chúng tôi phân phối 100% các dòng loa chính hãng từ những thương hiệu âm thanh huyền thoại như <strong>JBL, Marshall, Sony, Harman Kardon, Edifier và Nanomax</strong>. Tất cả sản phẩm đều được bảo hành chính hãng 12 tháng 1 đổi 1, hỗ trợ trả góp 0% lãi suất và giao hàng hỏa tốc trong 1 giờ.';
+
+	$content = <<<HTML
+<h2 id="loa-section-1">1. Loa là gì? Vai trò của loa trong giải trí và công việc</h2>
+<p><strong>Loa</strong> (Loudspeaker) là thiết bị ngoại vi chuyển đổi tín hiệu điện tử thành sóng âm thanh có thể nghe được bằng tai người. Ngày nay, loa không chỉ đơn thuần để phát nhạc mà đã trở thành thiết bị đa năng phục vụ học tập trực tuyến, hội họp từ xa, xem phim chuẩn rạp hát tại gia và khuấy động những buổi tiệc dã ngoại, cắm trại ngoài trời.</p>
+
+<div class="my-4 text-center">
+  <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/285750/loa-bluetooth-marshall-emberton-ii-thumb-600x600.jpg" alt="Loa Marshall chính hãng tại PhoneX" class="mx-auto rounded-xl max-h-[360px] object-contain shadow-xs border border-gray-100" />
+  <p class="text-xs text-gray-500 italic mt-1.5">Loa Marshall thiết kế Vintage quý phái cùng chất âm chi tiết chân thực tại PhoneX</p>
+</div>
+
+<h2 id="loa-section-2">2. Các dòng loa phổ biến được ưa chuộng hiện nay</h2>
+<ul>
+  <li><strong>Loa Bluetooth di động:</strong> Nhỏ gọn, tích hợp pin dung lượng cao, chuẩn chống nước bụi IP67 bền bỉ. Điển hình như <em>JBL Charge 5, Marshall Emberton II, Sony SRS-XE300</em>.</li>
+  <li><strong>Loa Karaoke di động (PartyBox, loa kéo):</strong> Công suất mạnh mẽ từ 100W đến 800W, tích hợp sẵn hoặc tặng kèm 2 Micro không dây UHF cao cấp, hiệu ứng đèn LED RGB đổi màu theo nhịp điệu bài hát. Điển hình: <em>JBL PartyBox Encore, Nanomax Pro 800W</em>.</li>
+  <li><strong>Loa Vi tính để bàn &amp; Soundbar:</strong> Thiết kế thanh lịch, tái tạo không gian âm thanh vòm sống động cho PC, Laptop và Smart TV. Điển hình: <em>Edifier MP230</em>.</li>
+  <li><strong>Loa Cầm Tay Mini:</strong> Siêu nhẹ, bỏ vừa balo túi xách, giá thành phải chăng chỉ từ vài trăm nghìn đồng.</li>
+</ul>
+
+<h2 id="loa-section-3">3. Tiêu chí chọn công suất loa theo diện tích phòng</h2>
+<ul>
+  <li><strong>Phòng nhỏ dưới 15m² (Phòng ngủ, bàn làm việc):</strong> Công suất từ <strong>10W - 30W</strong> là đủ để lấp đầy không gian mà không gây chói gắt.</li>
+  <li><strong>Phòng khách từ 15m² - 30m²:</strong> Nên chọn loa có công suất từ <strong>40W - 80W</strong> để đảm bảo âm bass uy lực, chắc nịch và lan tỏa đều khắp phòng.</li>
+  <li><strong>Không gian mở, sân vườn trên 30m² hoặc dã ngoại:</strong> Lựa chọn tối ưu là các mẫu loa công suất từ <strong>100W - 800W</strong> có tay kéo hoặc quai xách chắc chắn.</li>
+</ul>
+
+<h2 id="loa-section-4">4. Những công nghệ âm thanh đáng giá trên loa hiện đại</h2>
+<ul>
+  <li><strong>Chuẩn kết nối Bluetooth 5.1 - 5.3:</strong> Tốc độ truyền tải nhanh, không độ trễ, tiết kiệm pin và phạm vi kết nối ổn định lên đến 15 - 20 mét.</li>
+  <li><strong>Công nghệ Bass Boost / Extra Bass:</strong> Tăng cường dải âm trầm sâu lắng mà không làm méo tiếng ca sĩ.</li>
+  <li><strong>Ghép đôi không dây True Wireless Stereo (TWS):</strong> Kết nối 2 loa cùng lúc để tạo thành hệ thống âm thanh vòm Stereo 2 kênh trái - phải tách bạch.</li>
+  <li><strong>Kháng nước và kháng bụi chuẩn IP67:</strong> Thoải mái mang loa đi bơi, đi biển hay gặp trời mưa mà không sợ hỏng vi mạch.</li>
+  <li><strong>Thời lượng pin dài từ 12 đến 30 giờ:</strong> Đồng thời hỗ trợ tính năng Powerbank sạc ngược cho điện thoại trong tình huống khẩn cấp.</li>
+</ul>
+
+<h2 id="loa-section-5">5. Top thương hiệu loa danh tiếng thế giới tại PhoneX</h2>
+<p>PhoneX là đại lý ủy quyền chính thức của các thương hiệu âm thanh số 1 thế giới:</p>
+<ul>
+  <li><strong>JBL (Mỹ):</strong> Nổi tiếng với chất âm trẻ trung, dải bass bùng nổ, độ bền "nồi đồng cối đá".</li>
+  <li><strong>Marshall (Anh Quốc):</strong> Đỉnh cao thiết kế Retro cổ điển, dải trung và âm cao mộc mạc, chi tiết sắc bén.</li>
+  <li><strong>Sony (Nhật Bản):</strong> Công nghệ Extra Bass trứ danh, pin siêu bền và khả năng chống chịu thời tiết vượt trội.</li>
+  <li><strong>Harman Kardon (Mỹ):</strong> Thiết kế vị lai đẳng cấp, âm thanh trung thực chuẩn Hi-Fi sang trọng.</li>
+</ul>
+
+<h2 id="loa-section-6">6. Quyền lợi khi mua loa tại hệ thống PhoneX</h2>
+<ul>
+  <li><strong>Cam kết 100% chính hãng:</strong> Đầy đủ tem chống giả, hóa đơn VAT và bảo hành điện tử chính hãng 12 tháng.</li>
+  <li><strong>Lỗi 1 Đổi 1 trong 30 ngày:</strong> Đổi ngay sản phẩm mới nếu phát sinh lỗi từ nhà sản xuất.</li>
+  <li><strong>Hỗ trợ Trả Góp 0% Lãi Suất:</strong> Thủ tục đơn giản chỉ cần CCCD gắn chip, duyệt hồ sơ online trong 5 phút.</li>
+  <li><strong>Giao hàng hỏa tốc trong 1 giờ:</strong> Nhận hàng ngay tại nhà, kiểm tra âm thanh ưng ý mới thanh toán.</li>
+</ul>
+
+<h2 id="loa-section-7">7. Câu hỏi thường gặp khi mua loa (FAQ)</h2>
+<div class="space-y-3 mt-3">
+  <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
+    <strong class="text-gray-900 block mb-1">Loa Bluetooth có kết nối được với Smart TV không?</strong>
+    <p class="text-gray-600 text-sm">Hầu hết Smart TV hiện nay (Samsung, Sony, LG) đều hỗ trợ kết nối Bluetooth hoặc cổng AUX 3.5mm / Cáp quang Optical với loa một cách nhanh chóng và dễ dàng.</p>
+  </div>
+  <div class="p-3.5 rounded-xl bg-gray-50 border border-gray-100">
+    <strong class="text-gray-900 block mb-1">Mua loa PartyBox có hát karaoke được bằng điện thoại không?</strong>
+    <p class="text-gray-600 text-sm">Hoàn toàn được! Bạn chỉ cần bật Bluetooth trên điện thoại, mở ứng dụng YouTube hoặc Zing MP3 và cầm micro không dây lên là có thể hát karaoke thỏa thích cùng người thân.</p>
+  </div>
+</div>
+HTML;
+
+	return array(
+		'badge_title' => $badge_title,
+		'sapo'        => $sapo,
+		'content'     => $content,
+		'enable_toc'  => true,
+		'img_1'       => 'https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/248386/loa-bluetooth-jbl-charge-5-thumb-600x600.jpg',
+		'img_2'       => 'https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/285750/loa-bluetooth-marshall-emberton-ii-thumb-600x600.jpg',
+		'img_3'       => 'https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/285746/loa-bluetooth-jbl-partybox-encore-2mic-thumb-600x600.jpg',
+	);
+}
+
+/**
+ * Default SEO content for "Micro" (Category: micro, term 63)
+ *
+ * @return array
+ */
+function phonex_get_default_micro_seo_data() {
+	$badge_title = 'THÔNG TIN NGÀNH HÀNG MICRO';
+	$sapo        = '<strong>Micro</strong> là thiết bị thu âm thanh thiết yếu quyết định trực tiếp đến chất lượng giọng hát, video TikTok, livestream bán hàng, podcast hay các cuộc họp hội nghị trực tuyến. PhoneX tự hào là địa chỉ cung cấp micro chính hãng hàng đầu từ các thương hiệu lừng danh như <strong>Boya, Rode, Shure, DJI, JBL, Kingston HyperX và Excelvan</strong>. Cam kết hàng chuẩn 100%, bảo hành 12 tháng 1 đổi 1 và hỗ trợ kỹ thuật cân chỉnh âm thanh chuyên sâu.';
+
+	$content = <<<HTML
+<h2 id="micro-section-1">1. Tầm quan trọng của micro chất lượng cao</h2>
+<p>Trong thời đại bùng nổ của mạng xã hội video ngắn (TikTok, YouTube Shorts, Reels) và các nền tảng phát sóng trực tiếp, chất lượng âm thanh chiếm tới <strong>60% thành công</strong> của một nội dung video. Một chiếc <strong>micro</strong> tốt giúp giọng nói trong trẻo, loại bỏ tạp âm đường phố, khử gió rít và tôn lên chất giọng trầm ấm, giúp người nghe tập trung và yêu thích nội dung của bạn hơn.</p>
+
+<div class="my-4 text-center">
+  <img src="https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/313886/micro-thu-am-boya-by-v20-thumb-600x600.jpg" alt="Micro thu âm không dây Boya tại PhoneX" class="mx-auto rounded-xl max-h-[360px] object-contain shadow-xs border border-gray-100" />
+  <p class="text-xs text-gray-500 italic mt-1.5">Micro cài áo không dây khử tiếng ồn AI thông minh chuyên dụng cho điện thoại</p>
+</div>
+
+<h2 id="micro-section-2">2. Các dòng micro phổ biến nhất trên thị trường</h2>
+<ul>
+  <li><strong>Micro cài áo không dây (Wireless Lavalier):</strong> Siêu nhẹ, ghim trực tiếp vào cổ áo, kết nối không dây tầm xa 50m - 200m qua cổng Type-C hoặc Lightning. Lựa chọn số 1 cho nhà sáng tạo nội dung TikToker, Vlogger, Livestreamer. Điển hình: <em>Boya BY-V20, Rode Wireless GO II, DJI Mic 2</em>.</li>
+  <li><strong>Micro thu âm Podcast &amp; Studio (Condenser USB/XLR):</strong> Dải tần rộng, bắt trọn từng sắc thái âm thanh tinh tế, cắm trực tiếp vào máy tính qua cổng USB hoặc vang số qua cổng XLR. Điển hình: <em>Shure MV7, HyperX QuadCast S</em>.</li>
+  <li><strong>Micro Karaoke Không Dây (UHF Handheld):</strong> Tay micro kim loại đầm chắc, bắt sóng ổn định, chống hú rít hiệu quả, tương thích với amply và loa kéo. Điển hình: <em>JBL Wireless Microphone Set, Excelvan K18V</em>.</li>
+  <li><strong>Micro Karaoke Bluetooth tích hợp loa:</strong> Tích hợp loa ngay trên thân máy, phù hợp giải trí nhanh, du lịch hoặc làm quà tặng cho trẻ em. Điển hình: <em>Micro SD-10</em>.</li>
+</ul>
+
+<h2 id="micro-section-3">3. Những thông số kỹ thuật cốt lõi cần quan tâm khi mua micro</h2>
+<ul>
+  <li><strong>Dải tần số đáp ứng (Frequency Response):</strong> Nên chọn micro có dải tần từ <strong>20Hz - 20kHz</strong> để thu trọn vẹn cả âm trầm ấm và âm bổng trong sáng.</li>
+  <li><strong>Khả năng khử ồn (Noise Cancellation):</strong> Chip xử lý AI tích hợp giúp lọc sạch tiếng còi xe, tiếng quạt gió và tiếng ồn môi trường chỉ với một nút bấm.</li>
+  <li><strong>Băng tần sóng (UHF vs 2.4GHz):</strong> Băng tần UHF cho khả năng xuyên tường và chống nhiễu sóng cực tốt; băng tần số 2.4GHz mã hóa số kỹ thuật số cho âm thanh trong trẻo, không độ trễ.</li>
+  <li><strong>Thời lượng pin:</strong> Micro cài áo nên có thời lượng pin từ 6 - 10 giờ liên tục, kèm hộp sạc dự phòng để tiện dùng cả ngày dài ngoài trời.</li>
+</ul>
+
+<h2 id="micro-section-4">4. Top các thương hiệu micro hàng đầu tại PhoneX</h2>
+<ul>
+  <li><strong>Rode (Australia):</strong> Tiêu chuẩn vàng của ngành thu âm thế giới với chất âm ấm áp, ứng dụng di động mạnh mẽ.</li>
+  <li><strong>DJI (Công nghệ cao):</strong> Dẫn đầu công nghệ ghi âm 32-bit Float không lo vỡ âm thanh, hộp sạc thông minh cao cấp.</li>
+  <li><strong>Shure (Mỹ):</strong> Huyền thoại âm thanh phòng thu và sân khấu ca nhạc đỉnh cao.</li>
+  <li><strong>BOYA:</strong> Phổ cập chất lượng thu âm chuyên nghiệp với mức giá bình dân, dễ tiếp cận cho học sinh sinh viên.</li>
+  <li><strong>JBL:</strong> Micro karaoke không dây bền bỉ, tôn giọng hát nhẹ và chống hú tuyệt đối.</li>
+</ul>
+
+<h2 id="micro-section-5">5. Chính sách bảo hành và cam kết chất lượng PhoneX</h2>
+<ul>
+  <li>100% Micro chính hãng nguyên hộp, có tem kiểm định an toàn và tem nhập khẩu chính ngạch.</li>
+  <li>Chính sách 1 đổi 1 trong 30 ngày đầu tiên nếu sản phẩm bị lỗi phần cứng từ nhà sản xuất.</li>
+  <li>Được kỹ thuật viên hướng dẫn cài đặt phần mềm thu âm, test thử giọng trực tiếp tại 128 Showroom PhoneX toàn quốc.</li>
+</ul>
+HTML;
+
+	return array(
+		'badge_title' => $badge_title,
+		'sapo'        => $sapo,
+		'content'     => $content,
+		'enable_toc'  => true,
+		'img_1'       => 'https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/313886/micro-thu-am-boya-by-v20-thumb-600x600.jpg',
+		'img_2'       => 'https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/285755/micro-rode-wireless-go-ii-thumb-600x600.jpg',
+		'img_3'       => 'https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/248390/bo-2-micro-khong-day-jbl-wireless-set-thumb-600x600.jpg',
+	);
+}
+
+/**
+ * Default SEO content for General Accessories "Phụ Kiện" (Category: phu-kien, term 23)
+ *
+ * @return array
+ */
+function phonex_get_default_accessories_seo_data() {
+	$badge_title = 'THÔNG TIN NGÀNH HÀNG PHỤ KIỆN';
+	$sapo        = '<strong>Phụ kiện công nghệ chính hãng</strong> là những mảnh ghép hoàn hảo giúp nâng tầm trải nghiệm, tối ưu hóa công năng và bảo vệ toàn diện cho chiếc điện thoại, máy tính bảng hay laptop của bạn. Tại hệ sinh thái PhoneX, chúng tôi mang đến hàng ngàn mẫu phụ kiện chuẩn chất lượng từ <strong>Apple, Anker, JBL, Marshall, Sony, Ugreen, Baseus, Logitech, EZVIZ</strong> với chính sách bảo hành 1 đổi 1 từ 12 đến 24 tháng, cam kết giá tốt nhất thị trường.';
+
+	$content = <<<HTML
+<h2 id="pk-section-1">1. Hệ sinh thái phụ kiện công nghệ toàn diện tại PhoneX</h2>
+<p>Một chiếc smartphone hay laptop hiện đại sẽ không thể phát huy hết sức mạnh nếu thiếu đi các món phụ kiện đồng hành đắc lực. Tại PhoneX, chúng tôi cung cấp đầy đủ các nhóm phụ kiện chính yếu:</p>
+<ul>
+  <li><strong>Thiết bị Âm thanh:</strong> Loa Bluetooth di động, Loa karaoke, Tai nghe chống ồn không dây TWS, Tai nghe chụp tai Hi-Res.</li>
+  <li><strong>Thiết bị Thu âm &amp; Livestream:</strong> Micro cài áo không dây, Micro thu âm Podcast, Micro karaoke gia đình.</li>
+  <li><strong>Năng lượng &amp; Cáp sạc:</strong> Củ sạc nhanh GaN siêu nhỏ gọn, Cáp sạc dù chống đứt, Pin sạc dự phòng dung lượng khủng hỗ trợ chuẩn sạc không dây MagSafe / Qi2.</li>
+  <li><strong>Bảo vệ thiết bị:</strong> Ốp lưng chống sốc chuẩn quân đội, Kính cường lực Kingbull 9H chống nhìn trộm, Miếng dán bảo vệ cụm camera sapphire.</li>
+  <li><strong>Phụ kiện Laptop &amp; Văn phòng:</strong> Chuột không dây công thái học, Bàn phím cơ Bluetooth, Hub chuyển đổi đa năng Type-C, Balo chống nước.</li>
+  <li><strong>Camera &amp; Nhà thông minh:</strong> Camera giám sát an ninh 360 độ, Chuông cửa thông minh, Webcam hội nghị Full HD.</li>
+</ul>
+
+<h2 id="pk-section-2">2. Cảnh báo nguy cơ khi sử dụng phụ kiện trôi nổi, giá rẻ</h2>
+<p>Việc sử dụng các loại củ sạc, cáp sạc hay pin dự phòng không rõ nguồn gốc tiềm ẩn những mối nguy hiểm khôn lường:</p>
+<ul>
+  <li><strong>Cháy nổ và đoản mạch:</strong> Linh kiện giá rẻ không có mạch ngắt tự động khi quá nhiệt, dễ dẫn đến hiện tượng cháy nổ pin cực kỳ nguy hiểm.</li>
+  <li><strong>Chai pin và hỏng nguồn điện thoại:</strong> Dòng điện chập chờn, không ổn định làm suy giảm tuổi thọ pin nhanh chóng và dễ làm chết IC nguồn của máy.</li>
+  <li><strong>Mất dữ liệu và rò rỉ bảo mật:</strong> Cáp sạc giả có thể chứa vi mạch độc hại ghi nhận thao tác của người dùng khi cắm vào máy tính.</li>
+</ul>
+
+<h2 id="pk-section-3">3. Các chứng chỉ an toàn quốc tế cần có khi chọn mua phụ kiện</h2>
+<ul>
+  <li><strong>Chứng chỉ Apple MFi (Made for iPhone/iPad):</strong> Đảm bảo 100% tương thích, không bị báo lỗi "Phụ kiện không được hỗ trợ" sau các bản cập nhật iOS.</li>
+  <li><strong>Công nghệ sạc bán dẫn GaN (Gallium Nitride):</strong> Cho phép củ sạc có kích thước thu nhỏ đến 50%, tỏa nhiệt ít hơn và sạc nhanh an toàn gấp 3 lần củ sạc thông thường.</li>
+  <li><strong>Chuẩn sạc không dây Qi2 &amp; MagSafe:</strong> Hít nam châm chắc chắn, công suất sạc nhanh không dây lên đến 15W mà không gây nóng máy.</li>
+  <li><strong>Chuẩn Power Delivery (PD) &amp; Quick Charge (QC 3.0/4.0):</strong> Tự động điều chỉnh điện áp phù hợp từng thiết bị từ tai nghe nhỏ (5W) đến laptop (100W).</li>
+</ul>
+
+<h2 id="pk-section-4">4. Đặc quyền khi mua phụ kiện chính hãng tại PhoneX</h2>
+<ul>
+  <li><strong>100% Phụ kiện chính hãng:</strong> Xuất xứ minh bạch, nguyên seal hộp, tem kiểm định của nhà phân phối.</li>
+  <li><strong>Bảo hành 1 Đổi 1 trong 12 - 24 tháng:</strong> Đổi ngay sản phẩm mới tinh nếu phát sinh lỗi kỹ thuật.</li>
+  <li><strong>Dán màn hình miễn phí &amp; Bảo hành dán lại 3 lần:</strong> Nhân viên tay nghề cao dán cường lực không bọt khí ngay tại showroom.</li>
+  <li><strong>Giao hàng hỏa tốc trong 1 giờ:</strong> Đặt hàng online, nhận phụ kiện tận tay nhanh chóng.</li>
+</ul>
+HTML;
+
+	return array(
+		'badge_title' => $badge_title,
+		'sapo'        => $sapo,
+		'content'     => $content,
+		'enable_toc'  => true,
+		'img_1'       => 'https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/248386/loa-bluetooth-jbl-charge-5-thumb-600x600.jpg',
+		'img_2'       => 'https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/2162/313886/micro-thu-am-boya-by-v20-thumb-600x600.jpg',
+		'img_3'       => 'https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/9499/315000/adapter-sac-3-cong-67w-anker-prime-thumb-600x600.jpg',
 	);
 }
 
@@ -282,20 +482,23 @@ function phonex_get_category_seo_data( $term_id = 0 ) {
 		$term_id = phonex_get_phone_cat_term_id();
 	}
 
-	// Detect if this is used phone category
-	$is_used = false;
-	if ( 21 === (int) $term_id ) {
-		$is_used = true;
+	$term_obj = ( $term_id > 0 ) ? get_term( $term_id, 'product_cat' ) : null;
+	$term_slug = ( $term_obj && ! is_wp_error( $term_obj ) ) ? $term_obj->slug : '';
+
+	// Detect Category Type for Defaults
+	if ( 21 === (int) $term_id || in_array( $term_slug, array( 'used', 'may-cu-99', 'dien-thoai-cu' ), true ) ) {
+		$defaults = phonex_get_default_used_phone_seo_data();
+	} elseif ( 62 === (int) $term_id || in_array( $term_slug, array( 'loa', 'loa-bluetooth', 'loa-karaoke', 'loa-laptop' ), true ) ) {
+		$defaults = phonex_get_default_loa_seo_data();
+	} elseif ( 63 === (int) $term_id || in_array( $term_slug, array( 'micro', 'micro-thu-am', 'micro-karaoke', 'micro-cai-ao' ), true ) ) {
+		$defaults = phonex_get_default_micro_seo_data();
+	} elseif ( 23 === (int) $term_id || in_array( $term_slug, array( 'phu-kien', 'accessories', 'phu-kien-di-dong', 'phu-kien-laptop-pc', 'thiet-bi-nghe-nhin-luu-tru', 'sac-cap', 'sac-du-phong', 'camera-giam-sat' ), true ) ) {
+		$defaults = phonex_get_default_accessories_seo_data();
 	} else {
-		$term_obj = get_term( $term_id, 'product_cat' );
-		if ( $term_obj && ! is_wp_error( $term_obj ) && in_array( $term_obj->slug, array( 'used', 'may-cu-99', 'dien-thoai-cu' ), true ) ) {
-			$is_used = true;
-		}
+		$defaults = phonex_get_default_category_seo_data();
 	}
 
-	$defaults = $is_used ? phonex_get_default_used_phone_seo_data() : phonex_get_default_category_seo_data();
-
-	// 1. Check if term meta exists in the Category Edit screen
+	// 1. Check if term meta exists in the Category Edit screen (User custom input always takes precedence)
 	if ( $term_id > 0 ) {
 		$badge   = get_term_meta( $term_id, '_phonex_cat_seo_badge', true );
 		$sapo    = get_term_meta( $term_id, '_phonex_cat_seo_sapo', true );
@@ -318,34 +521,36 @@ function phonex_get_category_seo_data( $term_id = 0 ) {
 		}
 	}
 
-	// 2. Check global phone SEO option
-	$saved_opt = get_option( 'phonex_industry_seo_dien_thoai', null );
-	if ( is_array( $saved_opt ) && ! empty( $saved_opt['content'] ) ) {
-		return array(
-			'badge_title' => ! empty( $saved_opt['badge_title'] ) ? $saved_opt['badge_title'] : $defaults['badge_title'],
-			'sapo'        => isset( $saved_opt['sapo'] ) ? $saved_opt['sapo'] : $defaults['sapo'],
-			'content'     => $saved_opt['content'],
-			'enable_toc'  => isset( $saved_opt['enable_toc'] ) ? (bool) $saved_opt['enable_toc'] : true,
-			'img_1'       => $saved_opt['img_1'] ?? $defaults['img_1'],
-			'img_2'       => $saved_opt['img_2'] ?? $defaults['img_2'],
-			'img_3'       => $saved_opt['img_3'] ?? $defaults['img_3'],
-		);
-	}
+	// 2. Check global phone SEO option (ONLY for dien-thoai category)
+	if ( 77 === (int) $term_id || 'dien-thoai' === $term_slug ) {
+		$saved_opt = get_option( 'phonex_industry_seo_dien_thoai', null );
+		if ( is_array( $saved_opt ) && ! empty( $saved_opt['content'] ) ) {
+			return array(
+				'badge_title' => ! empty( $saved_opt['badge_title'] ) ? $saved_opt['badge_title'] : $defaults['badge_title'],
+				'sapo'        => isset( $saved_opt['sapo'] ) ? $saved_opt['sapo'] : $defaults['sapo'],
+				'content'     => $saved_opt['content'],
+				'enable_toc'  => isset( $saved_opt['enable_toc'] ) ? (bool) $saved_opt['enable_toc'] : true,
+				'img_1'       => $saved_opt['img_1'] ?? $defaults['img_1'],
+				'img_2'       => $saved_opt['img_2'] ?? $defaults['img_2'],
+				'img_3'       => $saved_opt['img_3'] ?? $defaults['img_3'],
+			);
+		}
 
-	// 3. Fallback to Page ID 50 meta
-	$page_content = get_post_meta( 50, '_phonex_category_seo_content', true );
-	if ( ! empty( $page_content ) ) {
-		$page_badge = get_post_meta( 50, '_phonex_category_seo_badge', true );
-		$page_sapo  = get_post_meta( 50, '_phonex_category_seo_sapo', true );
-		return array(
-			'badge_title' => ! empty( $page_badge ) ? $page_badge : $defaults['badge_title'],
-			'sapo'        => ! empty( $page_sapo ) ? $page_sapo : $defaults['sapo'],
-			'content'     => $page_content,
-			'enable_toc'  => true,
-			'img_1'       => $defaults['img_1'],
-			'img_2'       => $defaults['img_2'],
-			'img_3'       => $defaults['img_3'],
-		);
+		// 3. Fallback to Page ID 50 meta for phones
+		$page_content = get_post_meta( 50, '_phonex_category_seo_content', true );
+		if ( ! empty( $page_content ) ) {
+			$page_badge = get_post_meta( 50, '_phonex_category_seo_badge', true );
+			$page_sapo  = get_post_meta( 50, '_phonex_category_seo_sapo', true );
+			return array(
+				'badge_title' => ! empty( $page_badge ) ? $page_badge : $defaults['badge_title'],
+				'sapo'        => ! empty( $page_sapo ) ? $page_sapo : $defaults['sapo'],
+				'content'     => $page_content,
+				'enable_toc'  => true,
+				'img_1'       => $defaults['img_1'],
+				'img_2'       => $defaults['img_2'],
+				'img_3'       => $defaults['img_3'],
+			);
+		}
 	}
 
 	return $defaults;
