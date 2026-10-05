@@ -1183,7 +1183,7 @@ function phonex_generate_toc_and_anchors( $html ) {
 	}
 
 	$toc_html  = '<div id="seo-toc-container" class="my-5 rounded-2xl border border-[#e9bcb6] bg-[#f2f4f6] p-5 sm:p-6 transition-all shadow-2xs">';
-	$toc_html .= '  <button type="button" id="toggle-seo-toc" class="w-full flex items-center justify-between text-left font-extrabold text-[#222222] text-sm sm:text-base cursor-pointer focus:outline-none select-none">';
+	$toc_html .= '  <button type="button" id="toggle-seo-toc" class="w-full flex items-center justify-between text-left font-semibold text-[#222222] text-[15px] sm:text-[16px] cursor-pointer focus:outline-none select-none">';
 	$toc_html .= '    <span class="flex items-center gap-2 text-[#222222]">';
 	$toc_html .= '      <span class="material-symbols-outlined text-[#e60012] text-[22px]">list_alt</span>';
 	$toc_html .= '      Nội dung chính';
@@ -1191,7 +1191,7 @@ function phonex_generate_toc_and_anchors( $html ) {
 	$toc_html .= '    <span id="toc-chevron" class="material-symbols-outlined text-[#5f5e5e] transition-transform duration-200">expand_more</span>';
 	$toc_html .= '  </button>';
 
-	$toc_html .= '  <div id="seo-toc-list" class="mt-4 pt-3 border-t border-[#E5E7EB] text-xs sm:text-sm leading-relaxed">';
+	$toc_html .= '  <div id="seo-toc-list" class="mt-4 pt-3 border-t border-[#E5E7EB] text-[13px] sm:text-[14px] leading-relaxed">';
 	$toc_html .= '    <ul class="space-y-2">';
 
 	$in_sublist = false;
@@ -1202,7 +1202,7 @@ function phonex_generate_toc_and_anchors( $html ) {
 				$toc_html  .= '</ul></li>';
 				$in_sublist = false;
 			}
-			$toc_html .= '<li class="font-bold text-[#e60012]">';
+			$toc_html .= '<li class="font-semibold text-[#e60012]">';
 			$toc_html .= '  <a href="#' . esc_attr( $item['anchor'] ) . '" class="text-[#e60012] hover:text-[#b7000c] hover:underline transition-colors">';
 			$toc_html .= esc_html( $item['title'] );
 			$toc_html .= '  </a>';
@@ -1254,6 +1254,16 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 	$processed    = phonex_generate_toc_and_anchors( $raw_content );
 	$toc_html     = $data['enable_toc'] ? $processed['toc_html'] : '';
 	$content_html = $processed['content_html'];
+
+	// Auto-replace any remote cdn.tgdd.vn phone images with local theme assets
+	$content_html = preg_replace_callback( '#https://cdn\.tgdd\.vn/Products/Images/42/(\d+)/[^\s"\'<]+#i', function( $matches ) {
+		$p_id = $matches[1];
+		$glob_matches = glob( get_template_directory() . '/assets/images/products/dien-thoai/*/' . $p_id . '-*.*' );
+		if ( ! empty( $glob_matches ) ) {
+			return str_replace( get_template_directory(), get_template_directory_uri(), $glob_matches[0] );
+		}
+		return $matches[0];
+	}, $content_html );
 	?>
 	<!-- ================= 8. THÔNG TIN NGÀNH HÀNG (SEO TGDD Standard with PhoneX Brand Palette) ================= -->
 	<div class="w-full flex justify-center mt-6">
@@ -1261,26 +1271,26 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 			
 			<!-- Badge Header: THÔNG TIN NGÀNH HÀNG (Centered as in TGDD) -->
 			<div class="flex flex-col items-center justify-center relative mb-2">
-				<span class="inline-flex items-center justify-center px-6 py-2 rounded-lg border border-[#e9bcb6] text-[#e60012] bg-[#ffdad5] text-[15px] sm:text-[16px] font-bold uppercase tracking-wider shadow-2xs">
+				<span class="inline-flex items-center justify-center px-4 py-1.5 rounded-[6px] border border-[#e9bcb6] text-[#e60012] bg-[#ffdad5] text-[12px] sm:text-[13px] font-bold uppercase tracking-wider shadow-2xs">
 					<?php echo esc_html( $badge_title ); ?>
 				</span>
 
 				<?php if ( current_user_can( 'manage_options' ) ) : ?>
 					<div class="mt-2 flex items-center gap-3">
-						<a href="<?php echo esc_url( admin_url( 'term.php?taxonomy=product_cat&tag_ID=' . $term_id . '&post_type=product' ) ); ?>" class="text-[12px] font-bold text-[#5f5e5e] hover:text-[#e60012] transition-colors flex items-center gap-1" title="Sửa bài viết trong Danh Mục">
+						<a href="<?php echo esc_url( admin_url( 'term.php?taxonomy=product_cat&tag_ID=' . $term_id . '&post_type=product' ) ); ?>" class="text-[12px] font-semibold text-[#5f5e5e] hover:text-[#e60012] transition-colors flex items-center gap-1" title="Sửa bài viết trong Danh Mục">
 							<span class="material-symbols-outlined text-[15px]">category</span> Sửa trong Danh Mục
 						</a>
 						<span class="text-[#E5E7EB]">|</span>
-						<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" class="text-[12px] font-bold text-[#5f5e5e] hover:text-[#e60012] transition-colors flex items-center gap-1" title="Trang soạn thảo SEO">
+						<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=product&page=phonex-industry-seo' ) ); ?>" class="text-[12px] font-semibold text-[#5f5e5e] hover:text-[#e60012] transition-colors flex items-center gap-1" title="Trang soạn thảo SEO">
 							<span class="material-symbols-outlined text-[15px]">edit_note</span> Soạn thảo SEO
 						</a>
 					</div>
 				<?php endif; ?>
 			</div>
 
-			<!-- Sapo Paragraph (Enlarged readable font) -->
+			<!-- Sapo Paragraph (Standard 16px readable font, line-height 1.65) -->
 			<?php if ( ! empty( $sapo ) ) : ?>
-				<div class="text-[17px] sm:text-[18.5px] md:text-[19px] leading-[1.85] text-[#222222] text-left font-normal [&_a]:text-[#e60012] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#b7000c]">
+				<div class="text-[16px] leading-[1.65] text-[#222222] text-left font-normal mb-4 [&_a]:text-[#e60012] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#b7000c]">
 					<?php echo wp_kses_post( $sapo ); ?>
 				</div>
 			<?php endif; ?>
@@ -1290,9 +1300,9 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 				<?php echo $toc_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<?php endif; ?>
 
-			<!-- Expandable Article Content Wrapper (Enlarged typography) -->
+			<!-- Expandable Article Content Wrapper (16px body, H2 22-26px, H3 18-22px) -->
 			<div class="relative mt-2">
-				<div id="seo-content-body" class="max-h-[360px] sm:max-h-[400px] overflow-hidden transition-all duration-500 space-y-5 text-[17px] sm:text-[18.5px] md:text-[19px] leading-[1.85] text-[#222222] [&>h2]:text-[22px] sm:[&>h2]:text-[26px] [&>h2]:font-black [&>h2]:text-[#222222] [&>h2]:pt-6 [&>h2]:pb-2 [&>h2]:border-b [&>h2]:border-[#E5E7EB] [&>h3]:text-[18px] sm:[&>h3]:text-[21px] [&>h3]:font-extrabold [&>h3]:text-[#b7000c] [&>h3]:pt-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-3 [&>p]:leading-[1.85] [&>p]:mb-4 [&_a]:text-[#e60012] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#b7000c]">
+				<div id="seo-content-body" class="max-h-[360px] sm:max-h-[400px] overflow-hidden transition-all duration-500 space-y-4 text-[16px] leading-[1.65] text-[#222222] [&>h2]:text-[22px] sm:[&>h2]:text-[24px] md:[&>h2]:text-[26px] [&>h2]:font-bold [&>h2]:text-[#222222] [&>h2]:pt-6 [&>h2]:pb-2 [&>h2]:border-b [&>h2]:border-[#E5E7EB] [&>h3]:text-[18px] sm:[&>h3]:text-[20px] md:[&>h3]:text-[22px] [&>h3]:font-semibold [&>h3]:text-[#b7000c] [&>h3]:pt-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2 [&>p]:leading-[1.65] [&>p]:mb-4 [&_a]:text-[#e60012] [&_a]:underline [&_a]:font-semibold hover:[&_a]:text-[#b7000c]">
 					<?php echo $content_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 
@@ -1300,9 +1310,9 @@ function phonex_render_category_seo_frontend( $term_id = 0 ) {
 				<div id="seo-fade-overlay" class="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-white via-white/85 to-transparent pointer-events-none transition-opacity duration-300"></div>
 			</div>
 
-			<!-- Expand / Collapse Button (Clean Blue Link as in Screenshot) -->
+			<!-- Expand / Collapse Button -->
 			<div class="text-center pt-2 relative z-10">
-				<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-1 text-[#e60012] hover:text-[#b7000c] text-[15px] sm:text-[16px] font-bold hover:underline transition-all cursor-pointer">
+				<button type="button" id="btn-toggle-seo-content" class="inline-flex items-center gap-1 text-[#e60012] hover:text-[#b7000c] text-[14px] sm:text-[15px] font-semibold hover:underline transition-all cursor-pointer">
 					<span id="btn-toggle-seo-text">Xem thêm</span>
 					<span id="btn-toggle-seo-icon" class="material-symbols-outlined text-[20px] transition-transform duration-300">keyboard_arrow_down</span>
 				</button>

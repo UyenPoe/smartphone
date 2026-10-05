@@ -1,10 +1,10 @@
 /*
-Theme Name: PhoneX - Smartphone Specialist & Trade-in
+Theme Name: PhoneX Buyback - Thu Mua & Định Giá Điện Thoại
 Theme URI: https://phonex.vn
 Author: PhoneX Engineering Team
 Author URI: https://phonex.vn
-Description: Official WordPress & WooCommerce Flagship Theme for PhoneX. Features full responsive layout, Trade-in engine, 128 Showrooms inventory, Electronic Warranty (Serial/IMEI), Phone OTP authentication, and WooCommerce HPOS integration.
-Version: 1.0.0
+Description: Hệ thống Thu Mua Điện Thoại Cũ, Định Giá Tự Động 30s, Tiêu Chuẩn Phân Loại Grade A/B/C/D 30 Bước, Tra Cứu Phiếu Thu Mua, Bán Sỉ Like New 99% & Thị Trường Chợ Tốt Intelligence.
+Version: 2.5.0
 Tested up to: 6.7
 Requires at least: 6.0
 Requires PHP: 7.4
@@ -18,8 +18,10 @@ Tags: e-commerce, custom-menu, featured-images, flexible-header, full-width-temp
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  color: #191c1e;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #222222;
   background-color: #f8f9fb;
   -webkit-font-smoothing: antialiased;
 }
@@ -42,4 +44,62 @@ img {
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* ==========================================================================
+   PhoneX Global Specifications Modal (Standardized & Pure CSS Resilient)
+   ========================================================================== */
+#pxGlobalSpecsModal {
+  display: none;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999999 !important;
+  background-color: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 12px !important;
+  box-sizing: border-box !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#pxGlobalSpecsModal.is-open,
+#pxGlobalSpecsModal.active {
+  display: flex !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+#pxGlobalSpecsModal .modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+  animation: pxModalIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pxModalIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

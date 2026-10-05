@@ -33,3 +33,13 @@ build/
 # Local WordPress environment
 wordpress/
 wp-cli.phar
+
+# Antigravity & Scratch
+antigravity/
+antigrativity/
+scratch/
+*.log
+
+# Experimental or symlink folders
+phonex-shop/
+phonex-buyback

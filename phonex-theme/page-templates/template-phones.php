@@ -39,6 +39,37 @@ if ( ! $query->have_posts() ) {
 	$query             = new WP_Query( $args );
 }
 
+// 1.1 LOAD CRAWLED JSON CATALOG & BUILD LOCAL IMAGE MAPS
+$json_path           = get_template_directory() . '/data/phones.json';
+$raw_phones          = array();
+$remote_to_local_map = array();
+$name_to_local_map   = array();
+$name_to_specs_map   = array();
+
+if ( file_exists( $json_path ) ) {
+	$raw_phones = json_decode( file_get_contents( $json_path ), true ) ?: array();
+	foreach ( $raw_phones as $jp ) {
+		$l_img = $jp['image'] ?? '';
+		if ( ! empty( $l_img ) && strpos( $l_img, 'http' ) !== 0 ) {
+			$l_img = get_template_directory_uri() . '/' . ltrim( $l_img, '/' );
+		}
+		if ( ! empty( $jp['image_remote'] ) ) {
+			$remote_to_local_map[ $jp['image_remote'] ] = $l_img;
+		}
+		if ( ! empty( $jp['name'] ) ) {
+			$c_name = mb_strtolower( trim( $jp['name'] ) );
+			$name_to_local_map[ $c_name ] = $l_img;
+			$spec_data = array(
+				'spec_groups'   => $jp['spec_groups'] ?? array(),
+				'summary_specs' => $jp['summary_specs'] ?? null,
+			);
+			$name_to_specs_map[ $c_name ] = $spec_data;
+			$clean_key = preg_replace( '/^điện thoại\s+/iu', '', $c_name );
+			$name_to_specs_map[ $clean_key ] = $spec_data;
+		}
+	}
+}
+
 $phones_list = array();
 $all_brands  = array();
 
@@ -106,13 +137,21 @@ if ( $query->have_posts() ) {
 			$discount_pct  = 0;
 		}
 
-		// Image
-		$image_url = get_the_post_thumbnail_url( $pid, 'medium' );
+		// Image: resolve to local theme asset
+		$image_url = get_the_post_thumbnail_url( $pid, 'medium_large' ) ?: get_the_post_thumbnail_url( $pid, 'full' );
 		if ( ! $image_url ) {
 			$image_url = get_post_meta( $pid, '_crawler_image_url', true );
 		}
+		if ( empty( $image_url ) || strpos( $image_url, 'cdn.tgdd.vn' ) !== false ) {
+			$clean_title = mb_strtolower( trim( get_the_title() ) );
+			if ( ! empty( $image_url ) && isset( $remote_to_local_map[ $image_url ] ) ) {
+				$image_url = $remote_to_local_map[ $image_url ];
+			} elseif ( isset( $name_to_local_map[ $clean_title ] ) ) {
+				$image_url = $name_to_local_map[ $clean_title ];
+			}
+		}
 		if ( ! $image_url ) {
-			$image_url = wc_placeholder_img_src();
+			$image_url = get_template_directory_uri() . '/assets/images/placeholder.jpg';
 		}
 
 		// Specs
@@ -140,69 +179,134 @@ if ( $query->have_posts() ) {
 			$demands[] = 'battery';
 		}
 
+		$c_title = mb_strtolower( trim( get_the_title() ) );
+		$c_title_clean = preg_replace( '/\s*[-–]\s*chính hãng.*$/iu', '', $c_title );
+		$c_title_clean = preg_replace( '/^điện thoại\s+/iu', '', $c_title_clean );
+
+		$item_spec_groups = get_post_meta( $pid, '_spec_groups', true );
+		if ( empty( $item_spec_groups ) ) {
+			$base_m = preg_replace( '/\s*(256gb|512gb|128gb|64gb|1tb).*$/iu', '', $c_title_clean );
+			$base_m = trim( $base_m );
+			if ( isset( $name_to_specs_map[ $c_title ] ) ) {
+				$item_spec_groups = $name_to_specs_map[ $c_title ]['spec_groups'];
+			} elseif ( isset( $name_to_specs_map[ $c_title_clean ] ) ) {
+				$item_spec_groups = $name_to_specs_map[ $c_title_clean ]['spec_groups'];
+			} elseif ( isset( $name_to_specs_map[ $base_m ] ) ) {
+				$item_spec_groups = $name_to_specs_map[ $base_m ]['spec_groups'];
+			} else {
+				foreach ( $name_to_specs_map as $sm_k => $sm_val ) {
+					if ( ! empty( $sm_val['spec_groups'] ) && ! empty( $base_m ) && ( stripos( $sm_k, $base_m ) !== false || stripos( $base_m, $sm_k ) !== false ) ) {
+						$item_spec_groups = $sm_val['spec_groups'];
+						break;
+					}
+				}
+			}
+		}
+		$item_summary_specs = get_post_meta( $pid, '_summary_specs', true );
+		if ( empty( $item_summary_specs ) ) {
+			if ( isset( $name_to_specs_map[ $c_title ] ) ) {
+				$item_summary_specs = $name_to_specs_map[ $c_title ]['summary_specs'];
+			} elseif ( isset( $name_to_specs_map[ $c_title_clean ] ) ) {
+				$item_summary_specs = $name_to_specs_map[ $c_title_clean ]['summary_specs'];
+			}
+		}
+
 		$phones_list[] = array(
-			'id'           => $pid,
-			'name'         => get_the_title(),
-			'permalink'    => get_permalink( $pid ),
-			'image'        => $image_url,
-			'price'        => $display_price,
-			'price_old'    => $display_old,
-			'discount_pct' => $discount_pct,
-			'brand'        => $brand_clean,
-			'capacity'     => $capacity,
-			'specs'        => $specs,
-			'os'           => $os,
-			'demands'      => implode( ',', $demands ),
-			'rating'       => '5.0',
-			'reviews'      => rand( 12, 186 ),
-			'is_new'       => ( $display_old == 0 || $pid >= 30 ),
+			'id'            => $pid,
+			'name'          => get_the_title(),
+			'permalink'     => get_permalink( $pid ),
+			'image'         => $image_url,
+			'price'         => $display_price,
+			'price_old'     => $display_old,
+			'discount_pct'  => $discount_pct,
+			'brand'         => $brand_clean,
+			'capacity'      => $capacity,
+			'specs'         => $specs,
+			'spec_groups'   => $item_spec_groups ?: array(),
+			'summary_specs' => $item_summary_specs ?: null,
+			'os'            => $os,
+			'demands'       => implode( ',', $demands ),
+			'rating'        => '5.0',
+			'reviews'       => rand( 12, 186 ),
+			'is_new'        => ( $display_old == 0 || $pid >= 30 ),
 		);
 	}
 	wp_reset_postdata();
 }
 
-// Brand Logos & Icons mapping
-$brand_meta = array(
-	'Apple'         => array(
-		'label' => 'iPhone (Apple)',
-		'icon'  => 'https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png',
-	),
-	'Samsung'       => array(
-		'label' => 'Samsung',
-		'icon'  => 'https://cdn.tgdd.vn/Brand/1/samsungnew-220x48-1.png',
-	),
-	'OPPO'          => array(
-		'label' => 'OPPO',
-		'icon'  => 'https://cdn.tgdd.vn/Brand/1/OPPO42-b_5.jpg',
-	),
-	'Xiaomi'        => array(
-		'label' => 'Xiaomi',
-		'icon'  => 'https://cdn.tgdd.vn/Brand/1/logo-xiaomi-220x48-5.png',
-	),
-	'Vivo'          => array(
-		'label' => 'vivo',
-		'icon'  => 'https://cdn.tgdd.vn/Brand/1/vivo-logo-220-220x48-3.png',
-	),
-	'Realme'        => array(
-		'label' => 'realme',
-		'icon'  => 'https://cdn.tgdd.vn/Brand/1/Realme42-b_37.png',
-	),
-	'Motorola'      => array(
-		'label' => 'Motorola',
-		'icon'  => '',
-	),
-	'Nothing Phone' => array(
-		'label' => 'Nothing',
-		'icon'  => '',
-	),
-);
+// 2. MERGE CRAWLED PHONE CATALOG
+if ( ! empty( $raw_phones ) ) {
+	$existing_names = array_map( function( $p ) {
+		return mb_strtolower( trim( $p['name'] ) );
+	}, $phones_list );
+
+	foreach ( $raw_phones as $jp ) {
+		$clean_name = mb_strtolower( trim( $jp['name'] ?? '' ) );
+		if ( empty( $clean_name ) || in_array( $clean_name, $existing_names, true ) ) {
+			continue;
+		}
+
+		$img = $jp['image'] ?? '';
+		if ( ! empty( $img ) && strpos( $img, 'http' ) !== 0 ) {
+			$img = get_template_directory_uri() . '/' . ltrim( $img, '/' );
+		}
+		if ( empty( $img ) ) {
+			$img = get_template_directory_uri() . '/assets/images/placeholder.jpg';
+		}
+
+		$brand_c = trim( $jp['brand'] ?? 'Khác' );
+		if ( ! empty( $brand_c ) && ! in_array( $brand_c, $all_brands, true ) ) {
+			$all_brands[] = $brand_c;
+		}
+
+		$phones_list[] = array(
+			'id'            => $jp['id'] ?? uniqid(),
+			'name'          => $jp['name'],
+			'permalink'     => home_url( '/lien-he/?product=' . rawurlencode( $jp['name'] ) ),
+			'image'         => $img,
+			'price'         => floatval( $jp['price'] ?? 0 ),
+			'price_old'     => floatval( $jp['price_old'] ?? 0 ),
+			'discount_pct'  => intval( $jp['discount_pct'] ?? 0 ),
+			'brand'         => $brand_c,
+			'capacity'      => $jp['capacity'] ?? '',
+			'specs'         => $jp['specs'] ?? '',
+			'spec_groups'   => $jp['spec_groups'] ?? array(),
+			'summary_specs' => $jp['summary_specs'] ?? null,
+			'os'            => $jp['os'] ?? 'android',
+			'demands'       => $jp['demands'] ?? '',
+			'rating'        => $jp['rating'] ?? '5.0',
+			'reviews'       => intval( $jp['reviews'] ?? 48 ),
+			'is_new'        => ! empty( $jp['is_new'] ),
+		);
+	}
+}
+
+// Sort brands with major manufacturers first
+$priority_brands = array( 'Apple', 'Samsung', 'OPPO', 'Xiaomi', 'Vivo', 'Realme', 'Honor', 'Tecno', 'Nokia', 'Motorola', 'Nothing Phone', 'Masstel', 'Mobell' );
+usort( $all_brands, function( $a, $b ) use ( $priority_brands ) {
+	$pos_a = array_search( $a, $priority_brands, true );
+	$pos_b = array_search( $b, $priority_brands, true );
+	if ( false !== $pos_a && false !== $pos_b ) {
+		return $pos_a - $pos_b;
+	}
+	if ( false !== $pos_a ) {
+		return -1;
+	}
+	if ( false !== $pos_b ) {
+		return 1;
+	}
+	return strcmp( $a, $b );
+} );
 ?>
+<script>
+window.pxPhoneSpecsCatalog = <?php echo wp_json_encode( $phones_list ); ?>;
+</script>
 
 <div class="bg-[#f8f9fb] min-h-screen pb-16 text-[#222222] font-sans">
 
   <!-- ================= BREADCRUMB ================= -->
   <div class="border-b border-[#E5E7EB] bg-white">
-    <div class="max-w-[1240px] mx-auto px-4 py-3 flex items-center gap-2 text-sm text-[#5f5e5e]">
+    <div class="max-w-[1240px] mx-auto px-4 py-3 flex items-center gap-2 text-[12px] sm:text-[13px] md:text-[14px] text-[#5f5e5e]">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:text-[#e60012] transition-colors flex items-center gap-1 font-medium">
         <span class="material-symbols-outlined text-[18px]">home</span> Trang chủ
       </a>
@@ -218,21 +322,21 @@ $brand_meta = array(
       <!-- Main Featured Banner -->
       <div class="md:col-span-2 relative rounded-2xl overflow-hidden shadow-sm bg-gradient-to-r from-[#e60012] via-[#b7000c] to-[#b7000c] text-white p-6 sm:p-8 flex flex-col justify-between min-h-[220px]">
         <div class="relative z-10 max-w-[480px]">
-          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs sm:text-sm font-bold text-[#FF9800] mb-2.5">
-            <span class="material-symbols-outlined text-[18px]">local_fire_department</span> ĐẠI TIỆC SMARTPHONE 2026
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] bg-white/20 backdrop-blur-sm text-[11px] sm:text-[12px] font-bold text-[#FF9800] mb-2.5">
+            <span class="material-symbols-outlined text-[16px]">local_fire_department</span> ĐẠI TIỆC SMARTPHONE 2026
           </span>
-          <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+          <h1 class="text-[26px] sm:text-[30px] md:text-[34px] font-bold tracking-tight leading-tight">
             ĐIỆN THOẠI CHÍNH HÃNG<br/>GIẢM SỐC ĐẾN 35%
           </h1>
-          <p class="text-xs sm:text-sm text-[#ffdad5] mt-2.5 line-clamp-2 leading-relaxed">
+          <p class="text-[14px] text-[#ffdad5] mt-2.5 line-clamp-2 leading-relaxed font-normal">
             Thu cũ đổi mới trợ giá 3 triệu &bull; Trả góp 0% lãi suất &bull; Bảo hành 12 tháng 1 đổi 1 trong 30 ngày.
           </p>
         </div>
         <div class="relative z-10 mt-5 flex items-center gap-4 flex-wrap">
-          <a href="#phone-catalog" class="px-6 py-3 rounded-xl bg-[#FF9800] hover:bg-[#e68900] text-white font-black text-xs sm:text-sm transition-all shadow-md inline-flex items-center gap-1.5 cursor-pointer">
+          <a href="#phone-catalog" class="min-h-[48px] px-6 rounded-[8px] bg-[#FF9800] hover:bg-[#e68900] text-white font-semibold text-[15px] sm:text-[16px] transition-all shadow-md inline-flex items-center gap-1.5 cursor-pointer">
             Săn Deal Ngay <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
           </a>
-          <span class="text-xs sm:text-sm text-[#ffdad5] font-semibold">Cam kết giá rẻ nhất thị trường</span>
+          <span class="text-[13px] sm:text-[14px] text-[#ffdad5] font-medium">Cam kết giá rẻ nhất thị trường</span>
         </div>
         <!-- Decorative graphic elements -->
         <div class="absolute -right-8 -bottom-8 w-60 h-60 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
@@ -245,17 +349,17 @@ $brand_meta = array(
       <div class="flex flex-col gap-3">
         <div class="rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-[#b7000c] to-[#e60012] text-white flex items-center justify-between shadow-xs">
           <div>
-            <div class="text-xs font-black uppercase text-[#ffdad5] tracking-wider">Hệ Sinh Thái Apple</div>
-            <div class="text-base sm:text-lg font-black mt-0.5">iPhone 17 | 18 Pro Max</div>
-            <div class="text-xs sm:text-sm text-[#ffdad5]/90 mt-1">Sẵn hàng VN/A &bull; Giao hỏa tốc 1H</div>
+            <div class="text-[11px] sm:text-[12px] font-bold uppercase text-[#ffdad5] tracking-wider">Hệ Sinh Thái Apple</div>
+            <div class="text-[16px] sm:text-[18px] font-bold mt-0.5">iPhone 17 | 18 Pro Max</div>
+            <div class="text-[13px] sm:text-[14px] text-[#ffdad5]/90 mt-1 font-normal">Sẵn hàng VN/A &bull; Giao hỏa tốc 1H</div>
           </div>
           <span class="material-symbols-outlined text-[40px] text-[#ffdad5] shrink-0">verified</span>
         </div>
         <div class="rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-[#222222] to-[#b7000c] text-white flex items-center justify-between shadow-xs">
           <div>
-            <div class="text-xs font-black uppercase text-[#FF9800] tracking-wider">Trợ Giá Lên Đời</div>
-            <div class="text-base sm:text-lg font-black mt-0.5">Thu Cũ Giá Cao Nhất</div>
-            <div class="text-xs sm:text-sm text-[#ffdad5]/90 mt-1">Trợ giá thêm đến 3.000.000₫</div>
+            <div class="text-[11px] sm:text-[12px] font-bold uppercase text-[#FF9800] tracking-wider">Trợ Giá Lên Đời</div>
+            <div class="text-[16px] sm:text-[18px] font-bold mt-0.5">Thu Cũ Giá Cao Nhất</div>
+            <div class="text-[13px] sm:text-[14px] text-[#ffdad5]/90 mt-1 font-normal">Trợ giá thêm đến 3.000.000₫</div>
           </div>
           <span class="material-symbols-outlined text-[40px] text-[#FF9800] shrink-0">sync_alt</span>
         </div>
@@ -265,18 +369,18 @@ $brand_meta = array(
     <!-- ================= 2. BRAND LOGOS & QUICK PILLS (TGDD Brand Slider) ================= -->
     <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-2xs border border-[#E5E7EB]" id="phone-catalog">
       <div class="flex items-center justify-between mb-3.5">
-        <h2 class="text-base sm:text-lg font-black text-[#222222] uppercase tracking-tight flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#e60012] text-[22px]">apps</span>
+        <h2 class="text-[22px] sm:text-[24px] md:text-[26px] font-bold text-[#222222] uppercase tracking-tight flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#e60012] text-[24px]">apps</span>
           Chọn Thương Hiệu Điện Thoại
         </h2>
-        <span class="text-xs sm:text-sm text-[#5f5e5e] font-medium">Hiện có <?php echo count( $all_brands ); ?> hãng hàng đầu</span>
+        <span class="text-[13px] sm:text-[14px] text-[#5f5e5e] font-medium">Hiện có <?php echo count( $all_brands ); ?> hãng hàng đầu</span>
       </div>
 
       <div class="flex items-center gap-2.5 overflow-x-auto pb-1 scrollbar-none" id="brand-selector-list">
         <!-- Button: Tất cả -->
-        <button type="button" class="brand-btn active shrink-0 px-4 sm:px-5 py-2.5 rounded-xl border border-[#e60012] bg-[#e60012] text-white text-[13px] sm:text-[14px] font-bold transition-all shadow-xs flex items-center gap-2 cursor-pointer" data-brand="all">
+        <button type="button" class="brand-btn active shrink-0 min-h-[40px] px-4 sm:px-5 py-2 rounded-full border border-[#e60012] bg-[#e60012] text-white text-[13px] sm:text-[14px] font-semibold transition-all shadow-xs flex items-center gap-2 cursor-pointer" data-brand="all">
           <span>Tất cả</span>
-          <span class="px-2 py-0.5 rounded-full bg-white/20 text-[11px]"><?php echo count( $phones_list ); ?></span>
+          <span class="px-2 py-0.5 rounded-full bg-white/20 text-[11px] sm:text-[12px] font-bold"><?php echo count( $phones_list ); ?></span>
         </button>
 
         <?php foreach ( $all_brands as $b ) : ?>
@@ -289,30 +393,30 @@ $brand_meta = array(
 			  }
 		  }
 			?>
-          <button type="button" class="brand-btn shrink-0 px-4 sm:px-4.5 py-2.5 rounded-xl border border-[#E5E7EB] hover:border-[#e60012] bg-white hover:bg-[#ffdad5]/30 text-[#222222] hover:text-[#e60012] text-[13px] sm:text-[14px] font-bold transition-all shadow-2xs flex items-center gap-2 cursor-pointer" data-brand="<?php echo esc_attr( $b ); ?>">
+          <button type="button" class="brand-btn shrink-0 min-h-[40px] px-4 sm:px-4.5 py-2 rounded-full border border-[#E5E7EB] hover:border-[#e60012] bg-white hover:bg-[#ffdad5]/30 text-[#222222] hover:text-[#e60012] text-[13px] sm:text-[14px] font-semibold transition-all shadow-2xs flex items-center gap-2 cursor-pointer" data-brand="<?php echo esc_attr( $b ); ?>">
             <span><?php echo esc_html( $b ); ?></span>
-            <span class="px-2 py-0.5 rounded-full bg-[#f8f9fb] text-[#5f5e5e] text-[11px]"><?php echo $b_count; ?></span>
+            <span class="px-2 py-0.5 rounded-full bg-[#f8f9fb] text-[#5f5e5e] text-[11px] sm:text-[12px] font-medium"><?php echo $b_count; ?></span>
           </button>
         <?php endforeach; ?>
       </div>
     </div>
 
     <!-- ================= 3. QUICK DEMANDS (Nhu cầu tìm kiếm - TGDD Style) ================= -->
-    <div class="flex items-center gap-2.5 overflow-x-auto pb-1 text-xs sm:text-sm font-bold scrollbar-none" id="demand-selector-list">
-      <span class="text-[#5f5e5e] shrink-0 font-extrabold text-xs uppercase mr-1">Nhu cầu:</span>
-      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="gaming">
+    <div class="flex items-center gap-2.5 overflow-x-auto pb-1 text-[13px] sm:text-[14px] font-medium scrollbar-none" id="demand-selector-list">
+      <span class="text-[#5f5e5e] shrink-0 font-bold text-[12px] sm:text-[13px] uppercase mr-1">Nhu cầu:</span>
+      <button type="button" class="demand-btn shrink-0 min-h-[38px] px-3.5 py-1.5 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="gaming">
         🎮 Chơi game / Cấu hình cao
       </button>
-      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="camera">
+      <button type="button" class="demand-btn shrink-0 min-h-[38px] px-3.5 py-1.5 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="camera">
         📸 Chụp ảnh, quay phim đẹp
       </button>
-      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="foldable">
+      <button type="button" class="demand-btn shrink-0 min-h-[38px] px-3.5 py-1.5 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="foldable">
         📱 Màn hình gập cao cấp
       </button>
-      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="battery">
+      <button type="button" class="demand-btn shrink-0 min-h-[38px] px-3.5 py-1.5 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="battery">
         🔋 Pin trâu dùng cả ngày
       </button>
-      <button type="button" class="demand-btn shrink-0 px-3.5 py-2 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="budget">
+      <button type="button" class="demand-btn shrink-0 min-h-[38px] px-3.5 py-1.5 rounded-full border border-[#E5E7EB] bg-white hover:border-[#e60012] hover:text-[#e60012] transition-all text-[#222222] cursor-pointer" data-demand="budget">
         💰 Giá rẻ học sinh, sinh viên
       </button>
     </div>
@@ -322,20 +426,20 @@ $brand_meta = array(
       <div class="flex items-center justify-between border-b border-[#E5E7EB] pb-3">
         <div class="flex items-center gap-2">
           <span class="material-symbols-outlined text-[#e60012] text-[22px]">tune</span>
-          <span class="font-black text-[#222222] text-sm sm:text-base">Bộ Lọc Tìm Kiếm Chi Tiết</span>
+          <span class="font-semibold text-[#222222] text-[18px] sm:text-[20px]">Bộ Lọc Tìm Kiếm Chi Tiết</span>
         </div>
-        <button type="button" id="btn-reset-filters" class="text-xs sm:text-sm text-[#e60012] font-bold hover:underline hidden flex items-center gap-1 cursor-pointer">
+        <button type="button" id="btn-reset-filters" class="text-[13px] sm:text-[14px] text-[#e60012] font-semibold hover:underline hidden flex items-center gap-1 cursor-pointer">
           <span class="material-symbols-outlined text-[16px]">refresh</span> Xóa tất cả bộ lọc
         </button>
       </div>
 
-      <!-- Filter Controls Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5 text-xs sm:text-sm">
+      <!-- Filter Controls Grid (16px Input text to avoid iOS auto-zoom) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5">
         
         <!-- Price Range Filter -->
         <div>
-          <label class="block font-bold text-[#222222] mb-1.5">Mức Giá:</label>
-          <select id="filter-price" class="w-full h-10 rounded-xl border border-[#E5E7EB] px-3 font-semibold bg-[#f8f9fb] text-[#222222] focus:bg-white focus:border-[#e60012] outline-hidden transition-all text-xs sm:text-sm">
+          <label class="block font-semibold text-[#222222] text-[14px] mb-1.5">Mức Giá:</label>
+          <select id="filter-price" class="w-full h-[44px] sm:h-[48px] rounded-[8px] border border-[#E5E7EB] px-3.5 font-normal bg-[#f8f9fb] text-[#222222] focus:bg-white focus:border-[#e60012] outline-none transition-all text-[16px]">
             <option value="all">Tất cả mức giá</option>
             <option value="under-10m">Dưới 10 triệu</option>
             <option value="10m-20m">Từ 10 - 20 triệu</option>
@@ -346,9 +450,10 @@ $brand_meta = array(
 
         <!-- Storage Filter -->
         <div>
-          <label class="block font-bold text-[#222222] mb-1.5">Dung Lượng Bộ Nhớ:</label>
-          <select id="filter-storage" class="w-full h-10 rounded-xl border border-[#E5E7EB] px-3 font-semibold bg-[#f8f9fb] text-[#222222] focus:bg-white focus:border-[#e60012] outline-hidden transition-all text-xs sm:text-sm">
+          <label class="block font-semibold text-[#222222] text-[14px] mb-1.5">Dung Lượng Bộ Nhớ:</label>
+          <select id="filter-storage" class="w-full h-[44px] sm:h-[48px] rounded-[8px] border border-[#E5E7EB] px-3.5 font-normal bg-[#f8f9fb] text-[#222222] focus:bg-white focus:border-[#e60012] outline-none transition-all text-[16px]">
             <option value="all">Tất cả dung lượng</option>
+            <option value="64GB">64 GB</option>
             <option value="128GB">128 GB</option>
             <option value="256GB">256 GB</option>
             <option value="512GB">512 GB</option>
@@ -358,8 +463,8 @@ $brand_meta = array(
 
         <!-- OS Filter -->
         <div>
-          <label class="block font-bold text-[#222222] mb-1.5">Hệ Điều Hành:</label>
-          <select id="filter-os" class="w-full h-10 rounded-xl border border-[#E5E7EB] px-3 font-semibold bg-[#f8f9fb] text-[#222222] focus:bg-white focus:border-[#e60012] outline-hidden transition-all text-xs sm:text-sm">
+          <label class="block font-semibold text-[#222222] text-[14px] mb-1.5">Hệ Điều Hành:</label>
+          <select id="filter-os" class="w-full h-[44px] sm:h-[48px] rounded-[8px] border border-[#E5E7EB] px-3.5 font-normal bg-[#f8f9fb] text-[#222222] focus:bg-white focus:border-[#e60012] outline-none transition-all text-[16px]">
             <option value="all">Tất cả hệ điều hành</option>
             <option value="ios">iOS (Apple iPhone)</option>
             <option value="android">Android (Samsung, Xiaomi, OPPO...)</option>
@@ -368,8 +473,8 @@ $brand_meta = array(
 
         <!-- Sort Filter -->
         <div>
-          <label class="block font-bold text-[#222222] mb-1.5">Sắp Xếp Theo:</label>
-          <select id="filter-sort" class="w-full h-10 rounded-xl border border-[#E5E7EB] px-3 font-semibold bg-[#f8f9fb] text-[#222222] focus:bg-white focus:border-[#e60012] outline-hidden transition-all text-xs sm:text-sm">
+          <label class="block font-semibold text-[#222222] text-[14px] mb-1.5">Sắp Xếp Theo:</label>
+          <select id="filter-sort" class="w-full h-[44px] sm:h-[48px] rounded-[8px] border border-[#E5E7EB] px-3.5 font-normal bg-[#f8f9fb] text-[#222222] focus:bg-white focus:border-[#e60012] outline-none transition-all text-[16px]">
             <option value="default">Nổi bật nhất</option>
             <option value="price-asc">Giá: Thấp đến Cao</option>
             <option value="price-desc">Giá: Cao đến Thấp</option>
@@ -381,20 +486,41 @@ $brand_meta = array(
 
     <!-- ================= 5. SORT & RESULTS COUNTER BAR ================= -->
     <div class="flex items-center justify-between flex-wrap gap-3 pt-1">
-      <div class="text-sm sm:text-base font-extrabold text-[#222222]">
-        Tìm thấy <span id="results-count" class="text-[#e60012] font-black"><?php echo count( $phones_list ); ?></span> điện thoại chính hãng
+      <div class="text-[14px] sm:text-[15px] font-semibold text-[#222222]">
+        Tìm thấy <span id="results-count" class="text-[#e60012] font-bold"><?php echo count( $phones_list ); ?></span> điện thoại chính hãng
       </div>
-      <div class="flex items-center gap-1.5 text-xs sm:text-sm text-[#5f5e5e] font-medium">
+      <div class="flex items-center gap-1.5 text-[13px] sm:text-[14px] text-[#5f5e5e] font-normal">
         <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#198754]"></span>
         Sẵn hàng toàn quốc &bull; Trả góp 0%
       </div>
     </div>
 
+    <!-- ================= 5.1 USED PHONES CROSS-SELL BANNER (TGDD Style) ================= -->
+    <div class="rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-[#fff1f0] via-[#ffe4e6] to-[#fff1f0] border border-[#ffb4aa]/60 flex items-center justify-between gap-4 flex-wrap shadow-2xs">
+      <div class="flex items-center gap-3.5">
+        <div class="w-12 h-12 rounded-xl bg-[#b7000c] text-white flex items-center justify-center shrink-0 shadow-sm">
+          <span class="material-symbols-outlined text-[28px]">phone_android</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-[15px] sm:text-[16px] font-bold text-[#222222]">Bạn tìm kiếm Điện Thoại Cũ Giá Tốt?</span>
+            <span class="px-2 py-0.5 rounded-full bg-[#b7000c] text-white text-[11px] font-bold">Tiết kiệm đến 60%</span>
+          </div>
+          <p class="text-[13px] text-[#5f5e5e] mt-0.5">Máy chính hãng like new 99%, pin cao, kiểm định nghiêm ngặt, bảo hành 12 tháng 1 đổi 1.</p>
+        </div>
+      </div>
+      <a href="<?php echo esc_url( home_url( '/dien-thoai-cu/' ) ); ?>" class="min-h-[44px] px-5 rounded-[8px] bg-[#b7000c] hover:bg-[#C90010] text-white text-[13px] sm:text-[14px] font-semibold transition-all inline-flex items-center gap-1.5 shadow-xs cursor-pointer">
+        Xem 195+ Điện Thoại Cũ <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+    </div>
+
     <!-- ================= 6. PRODUCT GRID (TGDD Style Grid) ================= -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4.5" id="phones-grid">
-      <?php foreach ( $phones_list as $p ) : ?>
-        <div class="phone-item bg-white rounded-2xl p-3 sm:p-4 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-[#E5E7EB] hover:border-[#e60012] relative hover:-translate-y-1 duration-200"
+      <?php foreach ( $phones_list as $idx => $p ) : ?>
+        <div class="phone-item bg-white rounded-[12px] p-3 sm:p-4 shadow-2xs hover:shadow-md transition-all flex flex-col justify-between group border border-[#E5E7EB] hover:border-[#e60012] relative hover:-translate-y-1 duration-200"
+             style="<?php echo ( $idx >= 20 ) ? 'display: none;' : ''; ?>"
              data-id="<?php echo esc_attr( $p['id'] ); ?>"
+             data-phone-id="<?php echo esc_attr( $p['id'] ); ?>"
              data-name="<?php echo esc_attr( mb_strtolower( $p['name'] ) ); ?>"
              data-brand="<?php echo esc_attr( $p['brand'] ); ?>"
              data-price="<?php echo esc_attr( $p['price'] ); ?>"
@@ -406,25 +532,26 @@ $brand_meta = array(
 
           <div>
             <!-- Thumbnail Box with Badge -->
-            <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-[#f8f9fb] rounded-xl mb-3 overflow-hidden">
+            <div class="relative w-full aspect-square flex items-center justify-center p-2 bg-[#f8f9fb] rounded-[10px] mb-3 overflow-hidden">
               <?php if ( $p['discount_pct'] > 0 ) : ?>
-                <span class="absolute top-2 left-2 z-10 px-2.5 py-0.5 rounded-md bg-[#e60012] text-white text-[11px] sm:text-[12px] font-black shadow-xs">
+                <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-[6px] bg-[#e60012] text-white text-[11px] sm:text-[12px] font-bold shadow-xs">
                   -<?php echo esc_html( $p['discount_pct'] ); ?>%
                 </span>
-              <?php elseif ( $p['is_new'] ) : ?>
-                <span class="absolute top-2 left-2 z-10 px-2.5 py-0.5 rounded-md bg-[#e60012] text-white text-[11px] sm:text-[12px] font-black shadow-xs">
+              <?php elseif ( ! empty( $p['is_new'] ) ) : ?>
+                <span class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-[6px] bg-[#e60012] text-white text-[11px] sm:text-[12px] font-bold shadow-xs">
                   Mẫu Mới
                 </span>
               <?php endif; ?>
 
-              <span class="absolute top-2 right-2 z-10 px-2 py-0.5 rounded bg-white text-[#5f5e5e] border border-[#E5E7EB] text-[11px] font-bold">
+              <span class="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-[6px] bg-white text-[#5f5e5e] border border-[#E5E7EB] text-[11px] font-semibold">
                 Trả góp 0%
               </span>
 
-              <a href="<?php echo esc_url( $p['permalink'] ); ?>" class="w-full h-full flex items-center justify-center">
+              <a href="<?php echo esc_url( $p['permalink'] ); ?>" class="open-specs-modal-btn w-full h-full flex items-center justify-center cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( $p ) ); ?>" title="Xem thông số kỹ thuật <?php echo esc_attr( $p['name'] ); ?>">
                 <img class="w-full h-full object-contain group-hover:scale-108 transition-transform duration-300"
                      alt="<?php echo esc_attr( $p['name'] ); ?>"
                      src="<?php echo esc_url( $p['image'] ); ?>"
+                     width="300" height="300"
                      loading="lazy" />
               </a>
             </div>
@@ -432,15 +559,15 @@ $brand_meta = array(
             <!-- Specs tag -->
             <?php if ( ! empty( $p['specs'] ) ) : ?>
               <div class="mb-1.5 flex items-center gap-1 overflow-hidden">
-                <span class="px-2 py-0.5 rounded bg-[#f8f9fb] text-[#5f5e5e] border border-[#E5E7EB] text-[11px] sm:text-[12px] font-medium truncate max-w-full">
+                <span class="open-specs-modal-btn px-2 py-0.5 rounded-[6px] bg-[#f8f9fb] hover:bg-[#ffdad5] text-[#5f5e5e] hover:text-[#b7000c] border border-[#E5E7EB] text-[11px] sm:text-[12px] font-normal truncate max-w-full cursor-pointer transition-colors" data-product="<?php echo esc_attr( wp_json_encode( $p ) ); ?>" title="Click xem chi tiết thông số">
                   <?php echo esc_html( $p['specs'] ); ?>
                 </span>
               </div>
             <?php endif; ?>
 
             <!-- Title -->
-            <h3 class="text-[14px] sm:text-[16px] leading-snug font-extrabold text-[#222222] line-clamp-2 min-h-[42px] group-hover:text-[#e60012] transition-colors" title="<?php echo esc_attr( $p['name'] ); ?>">
-              <a href="<?php echo esc_url( $p['permalink'] ); ?>" class="hover:text-[#e60012] transition-colors">
+            <h3 class="text-[14px] sm:text-[16px] leading-snug font-semibold text-[#222222] line-clamp-2 min-h-[44px] group-hover:text-[#e60012] transition-colors" title="<?php echo esc_attr( $p['name'] ); ?>">
+              <a href="<?php echo esc_url( $p['permalink'] ); ?>" class="open-specs-modal-btn hover:text-[#e60012] transition-colors cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( $p ) ); ?>">
                 <?php echo esc_html( $p['name'] ); ?>
               </a>
             </h3>
@@ -448,44 +575,51 @@ $brand_meta = array(
             <!-- Storage pill -->
             <?php if ( ! empty( $p['capacity'] ) ) : ?>
               <div class="mt-2 flex items-center gap-1">
-                <span class="px-2 py-0.5 rounded border border-[#E5E7EB] text-[#222222] text-[11px] sm:text-[12px] font-bold bg-[#f8f9fb]">
+                <span class="px-2 py-0.5 rounded-[6px] border border-[#E5E7EB] text-[#222222] text-[11px] sm:text-[12px] font-semibold bg-[#f8f9fb]">
                   <?php echo esc_html( $p['capacity'] ); ?>
                 </span>
               </div>
             <?php endif; ?>
 
-            <!-- Price Display -->
+            <!-- Price Display (Desktop 20-24px, Tablet 20px, Mobile 18-20px) -->
             <div class="mt-2.5">
-              <div class="text-[17px] sm:text-[19px] font-black text-[#e60012] leading-tight">
+              <div class="text-[18px] sm:text-[20px] md:text-[22px] font-bold text-[#e60012] leading-tight">
                 <?php echo number_format( $p['price'], 0, ',', '.' ); ?>₫
               </div>
               <?php if ( $p['price_old'] > $p['price'] ) : ?>
-                <div class="text-[12px] sm:text-[13px] text-[#5f5e5e] line-through font-medium">
+                <div class="text-[13px] sm:text-[14px] text-[#5f5e5e] line-through font-normal">
                   <?php echo number_format( $p['price_old'], 0, ',', '.' ); ?>₫
                 </div>
               <?php endif; ?>
             </div>
 
             <!-- Star rating & Reviews -->
-            <div class="mt-2 flex items-center gap-1 text-[12px] sm:text-[13px] text-[#FF9800] font-bold">
+            <div class="mt-2 flex items-center gap-1 text-[12px] sm:text-[13px] text-[#FF9800] font-semibold">
               <span>★</span>
               <span>5.0</span>
               <span class="text-[#5f5e5e] font-normal">(<?php echo esc_html( $p['reviews'] ); ?>)</span>
             </div>
           </div>
 
-          <!-- Bottom Button -->
-          <a href="<?php echo esc_url( $p['permalink'] ); ?>" class="mt-3.5 w-full h-9 sm:h-10 rounded-xl bg-[#ffdad5] hover:bg-[#e60012] text-[#e60012] hover:text-white text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-1 shadow-2xs">
-            Xem Chi Tiết
-          </a>
+          <!-- Card Action Buttons: Đặt mua ngay + Xem chi tiết -->
+          <div class="mt-3.5 flex flex-col gap-1.5 w-full">
+            <a href="<?php echo esc_url( $p['permalink'] ); ?>" class="w-full min-h-[40px] rounded-[8px] bg-[#b7000c] hover:bg-[#C90010] text-white text-[13px] sm:text-[14px] font-semibold transition-all flex items-center justify-center gap-1.5 shadow-xs">
+              <span class="material-symbols-outlined text-[17px]">shopping_bag</span>
+              Đặt mua ngay
+            </a>
+            <button type="button" class="open-specs-modal-btn w-full min-h-[38px] rounded-[8px] border border-[#E5E7EB] bg-[#f8f9fb] hover:bg-[#ffdad5] text-[#222222] hover:text-[#b7000c] text-[13px] font-semibold transition-all flex items-center justify-center gap-1.5 cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( $p ) ); ?>">
+              <span class="material-symbols-outlined text-[16px] text-[#e60012]">info</span>
+              Xem chi tiết
+            </button>
+          </div>
         </div>
       <?php endforeach; ?>
     </div>
 
-    <!-- Centered "Xem thêm X Điện thoại" Button (As in Screenshot) -->
-    <div class="flex justify-center pt-3 pb-2">
-      <button type="button" id="btn-load-more-phones" onclick="window.scrollTo({top: document.getElementById('phones-grid').offsetTop - 80, behavior: 'smooth'})" class="inline-flex items-center justify-center gap-1.5 px-8 py-3 rounded-xl border border-[#e60012] bg-white hover:bg-[#ffdad5] text-[#e60012] font-bold text-sm sm:text-base shadow-2xs transition-all cursor-pointer">
-        <span>Xem thêm <span id="load-more-counter"><?php echo count( $phones_list ); ?></span> Điện thoại</span>
+    <!-- Centered "Xem thêm X Điện thoại" Button (TGDD Style Progressive Loading) -->
+    <div class="flex justify-center pt-3 pb-2" id="load-more-container">
+      <button type="button" id="btn-load-more-phones" onclick="window.loadMorePhones &amp;&amp; window.loadMorePhones(event)" class="inline-flex items-center justify-center gap-1.5 px-8 min-h-[48px] rounded-[8px] border border-[#e60012] bg-white hover:bg-[#ffdad5] text-[#e60012] font-semibold text-[15px] sm:text-[16px] shadow-2xs transition-all cursor-pointer">
+        <span>Xem thêm <span id="load-more-counter"><?php echo max( 0, count( $phones_list ) - 20 ); ?></span> Điện thoại</span>
         <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
       </button>
     </div>
@@ -589,6 +723,13 @@ $brand_meta = array(
   const resetBtn = document.getElementById('btn-reset-filters');
   const grid = document.getElementById('phones-grid');
   const items = Array.from(grid.querySelectorAll('.phone-item'));
+  const loadMoreBtn = document.getElementById('btn-load-more-phones');
+  const loadMoreContainer = document.getElementById('load-more-container');
+  const loadMoreCounter = document.getElementById('load-more-counter');
+
+  const PAGE_SIZE = 20;
+  let visibleLimit = PAGE_SIZE;
+  let currentMatching = [];
 
   // Brand click
   document.querySelectorAll('.brand-btn').forEach(btn => {
@@ -641,11 +782,7 @@ $brand_meta = array(
   osSelect.addEventListener('change', applyFilters);
   sortSelect.addEventListener('change', applyFilters);
 
-  if (resetBtn) {
-    resetBtn.addEventListener('click', resetAllFilters);
-  }
-
-  window.resetAllFilters = function() {
+  function resetAllFilters() {
     activeBrand = 'all';
     activeDemand = '';
     priceSelect.value = 'all';
@@ -674,7 +811,43 @@ $brand_meta = array(
     });
 
     applyFilters();
-  };
+  }
+  window.resetAllFilters = resetAllFilters;
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', resetAllFilters);
+  }
+
+  function renderPage() {
+    currentMatching.forEach((item, index) => {
+      if (index < visibleLimit) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    if (loadMoreContainer && loadMoreCounter) {
+      const remaining = currentMatching.length - visibleLimit;
+      if (remaining > 0) {
+        loadMoreContainer.classList.remove('hidden');
+        loadMoreCounter.textContent = remaining;
+      } else {
+        loadMoreContainer.classList.add('hidden');
+      }
+    }
+  }
+
+  function loadMorePhones(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    visibleLimit += PAGE_SIZE;
+    renderPage();
+  }
+  window.loadMorePhones = loadMorePhones;
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', loadMorePhones);
+  }
 
   function applyFilters() {
     const priceVal = priceSelect.value;
@@ -682,7 +855,8 @@ $brand_meta = array(
     const osVal = osSelect.value;
     const sortVal = sortSelect.value;
 
-    let visibleItems = [];
+    visibleLimit = PAGE_SIZE;
+    currentMatching = [];
 
     items.forEach(item => {
       const b = item.dataset.brand;
@@ -722,8 +896,7 @@ $brand_meta = array(
       }
 
       if (pass) {
-        item.style.display = '';
-        visibleItems.push(item);
+        currentMatching.push(item);
       } else {
         item.style.display = 'none';
       }
@@ -731,19 +904,22 @@ $brand_meta = array(
 
     // Sắp xếp
     if (sortVal === 'price-asc') {
-      visibleItems.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+      currentMatching.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
     } else if (sortVal === 'price-desc') {
-      visibleItems.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
+      currentMatching.sort((a, b) => parseFloat(b.dataset.price) - parseFloat(a.dataset.price));
     } else if (sortVal === 'discount-desc') {
-      visibleItems.sort((a, b) => parseFloat(b.dataset.discount) - parseFloat(a.dataset.discount));
+      currentMatching.sort((a, b) => parseFloat(b.dataset.discount) - parseFloat(a.dataset.discount));
     }
 
     // Re-append sorted
-    visibleItems.forEach(item => grid.appendChild(item));
+    currentMatching.forEach(item => grid.appendChild(item));
+
+    // Render first visible batch
+    renderPage();
 
     // Update Counter & Empty state
-    resultsCount.textContent = visibleItems.length;
-    if (visibleItems.length === 0) {
+    resultsCount.textContent = currentMatching.length;
+    if (currentMatching.length === 0) {
       grid.classList.add('hidden');
       noProductsMsg.classList.remove('hidden');
     } else {
@@ -758,6 +934,9 @@ $brand_meta = array(
       else resetBtn.classList.add('hidden');
     }
   }
+
+  // Initial render
+  applyFilters();
 
   // Read URL search params on load (e.g. ?brand=apple or ?demand=gaming)
   const urlParams = new URLSearchParams(window.location.search);

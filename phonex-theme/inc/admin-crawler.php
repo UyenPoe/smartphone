@@ -36,7 +36,8 @@ function phonex_crawler_add_admin_menu() {
 		28
 	);
 }
-add_action( 'admin_menu', 'phonex_crawler_add_admin_menu' );
+// TGDD crawler menu deactivated per request: TGDD products cleaned from system
+// add_action( 'admin_menu', 'phonex_crawler_add_admin_menu' );
 
 /**
  * Helper: Crawl HTML from TGDD via cURL with browser headers
@@ -360,6 +361,9 @@ function phonex_crawler_save_product( $item, $download_img = true ) {
 	$cat_ids = phonex_crawler_ensure_categories( $item['brand'] ?? '' );
 	if ( ! empty( $cat_ids ) ) {
 		wp_set_object_terms( $product_id, array_map( 'intval', $cat_ids ), 'product_cat' );
+	}
+	if ( ! empty( $item['brand'] ) ) {
+		wp_set_object_terms( $product_id, sanitize_text_field( $item['brand'] ), 'product_brand' );
 	}
 
 	// Handle Image
@@ -964,41 +968,51 @@ function phonex_crawler_render_admin_page() {
  */
 function phonex_crawler_display_product_states( $post_states, $post ) {
 	if ( 'product' === $post->post_type ) {
+		$crawl_source = get_post_meta( $post->ID, '_crawl_source', true );
+		$admin_note   = get_post_meta( $post->ID, '_admin_crawl_note', true );
 		$source_url   = get_post_meta( $post->ID, '_source_url', true );
-		$capacity     = get_post_meta( $post->ID, '_storage_capacity', true );
-		$last_crawled = get_post_meta( $post->ID, '_last_crawled_at', true );
+		$capacity     = get_post_meta( $post->ID, '_storage_capacity', true ) ?: get_post_meta( $post->ID, '_capacity', true );
 
-		if ( ! empty( $source_url ) ) {
-			$badge_text = 'TGDD' . ( $capacity ? ' • ' . $capacity : '' );
-			$date_str   = $last_crawled ? 'Cập nhật: ' . date( 'd/m/Y H:i', strtotime( $last_crawled ) ) : '';
+		$source_val = $admin_note ?: $crawl_source;
 
-			$post_states['phonex_tgdd_badge'] = sprintf(
-				'<span style="display:inline-flex; align-items:center; gap:3px; background:#fff7ed; color:#c2410c; border:1px solid #fed7aa; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:700; margin-left:6px;" title="%s">%s</span>',
-				esc_attr( $date_str ),
-				esc_html( $badge_text )
+		if ( ! empty( $source_val ) ) {
+			if ( stripos( $source_val, 'chợ tốt' ) !== false || stripos( $source_val, 'chotot' ) !== false ) {
+				$badge_bg = '#fff7ed';
+				$badge_color = '#c2410c';
+				$badge_border = '#fed7aa';
+				$label = 'Crawl Chợ Tốt';
+			} elseif ( stripos( $source_val, 'fastmobile' ) !== false || stripos( $source_val, 'factmobile' ) !== false ) {
+				$badge_bg = '#f0fdf4';
+				$badge_color = '#15803d';
+				$badge_border = '#bbf7d0';
+				$label = 'Crawl Fastmobile';
+			} elseif ( stripos( $source_val, 'tgdd' ) !== false || stripos( $source_url, 'thegioididong' ) !== false ) {
+				$badge_bg = '#eff6ff';
+				$badge_color = '#1d4ed8';
+				$badge_border = '#bfdbfe';
+				$label = 'Crawl TGDD';
+			} else {
+				$badge_bg = '#f8fafc';
+				$badge_color = '#334155';
+				$badge_border = '#cbd5e1';
+				$label = 'Crawl ' . $source_val;
+			}
+
+			$post_states['phonex_crawl_badge'] = sprintf(
+				'<span style="display:inline-flex; align-items:center; gap:3px; background:%s; color:%s; border:1px solid %s; padding:1px 6px; border-radius:4px; font-size:10.5px; font-weight:700; margin-left:6px;" title="Nguồn dữ liệu nội bộ (chỉ lưu quản trị)">📋 %s%s</span>',
+				esc_attr( $badge_bg ),
+				esc_attr( $badge_color ),
+				esc_attr( $badge_border ),
+				esc_html( $label ),
+				$capacity ? ' • ' . esc_html( $capacity ) : ''
 			);
+		} elseif ( ! empty( $source_url ) ) {
+			$post_states['phonex_tgdd_badge'] = '<span style="display:inline-flex; align-items:center; gap:3px; background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; padding:1px 6px; border-radius:4px; font-size:10px; font-weight:700; margin-left:6px;" title="Nguồn crawl nội bộ">📋 Crawl TGDD</span>';
 		}
 	}
 	return $post_states;
 }
 add_filter( 'display_post_states', 'phonex_crawler_display_product_states', 10, 2 );
-
-/**
- * Add "Xem link gốc TGDD" to quick actions row under product title
- */
-function phonex_crawler_product_row_actions( $actions, $post ) {
-	if ( 'product' === $post->post_type ) {
-		$source_url = get_post_meta( $post->ID, '_source_url', true );
-		if ( ! empty( $source_url ) ) {
-			$actions['phonex_source_link'] = sprintf(
-				'<a href="%s" target="_blank" style="color:#0284c7; font-weight:600;" title="Xem sản phẩm gốc trên thegioididong.com">Link gốc TGDD &#x2197;</a>',
-				esc_url( $source_url )
-			);
-		}
-	}
-	return $actions;
-}
-add_filter( 'post_row_actions', 'phonex_crawler_product_row_actions', 10, 2 );
 
 /**
  * Add filter dropdown in WooCommerce admin: "Lọc theo nguồn"
@@ -1012,12 +1026,44 @@ function phonex_crawler_filter_source_dropdown() {
 	?>
 	<select name="filter_crawl_source">
 		<option value=""><?php esc_html_e( 'Tất cả nguồn dữ liệu', 'phonex' ); ?></option>
-		<option value="tgdd" <?php selected( $selected, 'tgdd' ); ?>><?php esc_html_e( '🔥 Chỉ sản phẩm Crawl từ TGDD', 'phonex' ); ?></option>
+		<option value="chotot" <?php selected( $selected, 'chotot' ); ?>><?php esc_html_e( '🔥 Crawl: Chợ Tốt', 'phonex' ); ?></option>
+		<option value="fastmobile" <?php selected( $selected, 'fastmobile' ); ?>><?php esc_html_e( '⚡ Crawl: Fastmobile', 'phonex' ); ?></option>
+		<option value="tgdd" <?php selected( $selected, 'tgdd' ); ?>><?php esc_html_e( '📱 Crawl: TGDD', 'phonex' ); ?></option>
 		<option value="manual" <?php selected( $selected, 'manual' ); ?>><?php esc_html_e( '📝 Sản phẩm nhập thủ công', 'phonex' ); ?></option>
 	</select>
 	<?php
 }
 add_action( 'restrict_manage_posts', 'phonex_crawler_filter_source_dropdown' );
+
+/**
+ * Add filter dropdown in WooCommerce admin: "Lọc theo thương hiệu (Brand)"
+ */
+function phonex_admin_filter_brand_dropdown() {
+	global $typenow;
+	if ( 'product' !== $typenow ) {
+		return;
+	}
+	$selected = isset( $_GET['product_brand'] ) ? sanitize_text_field( $_GET['product_brand'] ) : '';
+	$brands = get_terms( array(
+		'taxonomy'   => 'product_brand',
+		'hide_empty' => true,
+		'orderby'    => 'name',
+		'order'      => 'ASC',
+	) );
+	if ( ! empty( $brands ) && ! is_wp_error( $brands ) ) {
+		?>
+		<select name="product_brand" id="filter-by-brand">
+			<option value=""><?php esc_html_e( 'Tất cả thương hiệu (Brands)', 'phonex' ); ?></option>
+			<?php foreach ( $brands as $brand ) : ?>
+				<option value="<?php echo esc_attr( $brand->slug ); ?>" <?php selected( $selected, $brand->slug ); ?>>
+					<?php echo esc_html( $brand->name ); ?> (<?php echo esc_html( $brand->count ); ?>)
+				</option>
+			<?php endforeach; ?>
+		</select>
+		<?php
+	}
+}
+add_action( 'restrict_manage_posts', 'phonex_admin_filter_brand_dropdown' );
 
 /**
  * Filter query by crawl source
@@ -1026,18 +1072,36 @@ function phonex_crawler_filter_source_query( $query ) {
 	global $pagenow, $typenow;
 	if ( is_admin() && $query->is_main_query() && 'edit.php' === $pagenow && 'product' === $typenow && ! empty( $_GET['filter_crawl_source'] ) ) {
 		$source = sanitize_text_field( $_GET['filter_crawl_source'] );
-		if ( 'tgdd' === $source ) {
+		if ( 'chotot' === $source ) {
+			$query->set(
+				'meta_query',
+				array(
+					array(
+						'key'     => '_crawl_source',
+						'value'   => 'Chợ Tốt',
+						'compare' => 'LIKE',
+					),
+				)
+			);
+		} elseif ( 'fastmobile' === $source ) {
+			$query->set(
+				'meta_query',
+				array(
+					array(
+						'key'     => '_crawl_source',
+						'value'   => 'Fastmobile',
+						'compare' => 'LIKE',
+					),
+				)
+			);
+		} elseif ( 'tgdd' === $source ) {
 			$query->set(
 				'meta_query',
 				array(
 					array(
 						'key'     => '_source_url',
-						'compare' => 'EXISTS',
-					),
-					array(
-						'key'     => '_source_url',
-						'value'   => '',
-						'compare' => '!=',
+						'value'   => 'thegioididong',
+						'compare' => 'LIKE',
 					),
 				)
 			);
@@ -1045,15 +1109,22 @@ function phonex_crawler_filter_source_query( $query ) {
 			$query->set(
 				'meta_query',
 				array(
-					'relation' => 'OR',
+					'relation' => 'AND',
 					array(
-						'key'     => '_source_url',
+						'key'     => '_crawl_source',
 						'compare' => 'NOT EXISTS',
 					),
 					array(
-						'key'     => '_source_url',
-						'value'   => '',
-						'compare' => '=',
+						'relation' => 'OR',
+						array(
+							'key'     => '_source_url',
+							'compare' => 'NOT EXISTS',
+						),
+						array(
+							'key'     => '_source_url',
+							'value'   => '',
+							'compare' => '=',
+						),
 					),
 				)
 			);
@@ -1067,8 +1138,8 @@ add_action( 'pre_get_posts', 'phonex_crawler_filter_source_query' );
  */
 function phonex_crawler_add_product_metabox() {
 	add_meta_box(
-		'phonex_tgdd_meta_box',
-		__( '📥 Nguồn Dữ Liệu TGDD', 'phonex' ),
+		'phonex_crawl_info_meta_box',
+		__( '📋 Nguồn Dữ Liệu Crawl (Chỉ Quản Trị)', 'phonex' ),
 		'phonex_crawler_render_product_metabox',
 		'product',
 		'side',
@@ -1078,34 +1149,74 @@ function phonex_crawler_add_product_metabox() {
 add_action( 'add_meta_boxes', 'phonex_crawler_add_product_metabox' );
 
 /**
- * Render Metabox Content
+ * Render Metabox Content (Admin Only)
  */
 function phonex_crawler_render_product_metabox( $post ) {
+	$crawl_source = get_post_meta( $post->ID, '_crawl_source', true );
+	$admin_note   = get_post_meta( $post->ID, '_admin_crawl_note', true );
 	$source_url   = get_post_meta( $post->ID, '_source_url', true );
-	$last_crawled = get_post_meta( $post->ID, '_last_crawled_at', true );
-	$brand        = get_post_meta( $post->ID, '_brand_name', true );
-	$capacity     = get_post_meta( $post->ID, '_storage_capacity', true );
-	$specs        = get_post_meta( $post->ID, '_basic_specs', true );
+	$condition    = get_post_meta( $post->ID, '_condition', true ) ?: get_post_meta( $post->ID, '_grade_label', true );
+	$brand        = get_post_meta( $post->ID, '_phonex_brand', true ) ?: get_post_meta( $post->ID, '_brand', true );
 
-	if ( empty( $source_url ) ) {
-		echo '<p style="color:#64748b; font-size:12px; margin:0;">Sản phẩm này được tạo thủ công, không có nguồn crawl từ TGDD.</p>';
+	if ( empty( $crawl_source ) && empty( $admin_note ) && empty( $source_url ) ) {
+		echo '<p style="color:#64748b; font-size:12px; margin:0;">Sản phẩm này được tạo thủ công trong kho PhoneX, không có nguồn crawl từ cơ sở dữ liệu ngoài.</p>';
 		return;
 	}
+
+	$source_val = $admin_note ?: ( $crawl_source ?: 'Crawl dữ liệu' );
 	?>
 	<div style="font-size: 12px; line-height: 1.5; color: #334155;">
 		<div style="margin-bottom: 8px;">
-			<span style="display:inline-block; background: #ffedd5; color: #c2410c; padding: 2px 7px; border-radius: 4px; font-weight: 800; font-size: 11px; border: 1px solid #fed7aa;">ĐÃ CRAWL TỪ TGDD</span>
+			<span style="display:inline-block; background: #fff7ed; color: #c2410c; padding: 3px 8px; border-radius: 4px; font-weight: 700; font-size: 11px; border: 1px solid #fed7aa;">NGUỒN CRAWL NỘI BỘ (CHỈ QUẢN TRỊ)</span>
 		</div>
-		<p style="margin: 0 0 6px;"><strong>Hãng:</strong> <?php echo esc_html( $brand ?: '-' ); ?></p>
-		<p style="margin: 0 0 6px;"><strong>Dung lượng:</strong> <?php echo esc_html( $capacity ?: '-' ); ?></p>
-		<p style="margin: 0 0 6px;"><strong>Thông số cơ bản:</strong><br/><span style="color:#64748b;"><?php echo esc_html( $specs ?: '-' ); ?></span></p>
-		<p style="margin: 0 0 6px;"><strong>Thời điểm cập nhật:</strong><br/><span style="color:#0f766e; font-weight:600;"><?php echo esc_html( $last_crawled ?: '-' ); ?></span></p>
-		<div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed #e2e8f0;">
-			<a href="<?php echo esc_url( $source_url ); ?>" target="_blank" style="color: #0284c7; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
-				Mở link gốc trên TGDD &#x2197;
-			</a>
+		<div style="background: #f8fafc; border-left: 3px solid #ea580c; padding: 6px 10px; margin-bottom: 10px; border-radius: 0 4px 4px 0;">
+			<strong style="color: #c2410c;">Ghi chú quản trị:</strong>
+			<p style="margin: 2px 0 0; color: #0f172a; font-weight: 700; font-size: 13px;"><?php echo esc_html( $source_val ); ?></p>
+			<p style="margin: 4px 0 0; color: #64748b; font-size: 11px; line-height: 1.4;">Thông tin nguồn crawl này chỉ hiển thị trong trang quản trị để quản trị viên đối chiếu. Website không hiển thị bất kỳ nguồn crawl hay thông tin người bán nào.</p>
 		</div>
+		<?php if ( ! empty( $condition ) ) : ?>
+			<p style="margin: 0 0 6px;"><strong>Phân hạng PhoneX:</strong> <span style="color:#e60012; font-weight:700;"><?php echo esc_html( $condition ); ?></span></p>
+		<?php endif; ?>
+		<?php if ( ! empty( $brand ) ) : ?>
+			<p style="margin: 0 0 6px;"><strong>Thương hiệu:</strong> <?php echo esc_html( $brand ); ?></p>
+		<?php endif; ?>
 	</div>
 	<?php
 }
+
+/**
+ * Add Admin Column for Crawled Products in WooCommerce Products List
+ */
+function phonex_crawler_product_columns( $columns ) {
+	$columns['crawled_db'] = __( 'Nguồn Dữ Liệu', 'phonex' );
+	return $columns;
+}
+add_filter( 'manage_edit-product_columns', 'phonex_crawler_product_columns', 20 );
+
+function phonex_crawler_product_column_content( $column, $post_id ) {
+	if ( 'crawled_db' === $column ) {
+		$crawl_source = get_post_meta( $post_id, '_crawl_source', true );
+		$admin_note   = get_post_meta( $post_id, '_admin_crawl_note', true );
+		$source_url   = get_post_meta( $post_id, '_source_url', true );
+
+		$source_val = $admin_note ?: $crawl_source;
+
+		if ( ! empty( $source_val ) ) {
+			if ( stripos( $source_val, 'chợ tốt' ) !== false || stripos( $source_val, 'chotot' ) !== false ) {
+				echo '<span style="display:inline-block; background:#fff7ed; color:#c2410c; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; border:1px solid #fed7aa;" title="Chỉ lưu quản trị">Crawl Chợ Tốt</span>';
+			} elseif ( stripos( $source_val, 'fastmobile' ) !== false || stripos( $source_val, 'factmobile' ) !== false ) {
+				echo '<span style="display:inline-block; background:#f0fdf4; color:#15803d; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; border:1px solid #bbf7d0;" title="Chỉ lưu quản trị">Crawl Fastmobile</span>';
+			} elseif ( stripos( $source_val, 'tgdd' ) !== false || stripos( $source_url, 'thegioididong' ) !== false ) {
+				echo '<span style="display:inline-block; background:#eff6ff; color:#1d4ed8; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; border:1px solid #bfdbfe;" title="Chỉ lưu quản trị">Crawl TGDD</span>';
+			} else {
+				echo '<span style="display:inline-block; background:#f1f5f9; color:#334155; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; border:1px solid #cbd5e1;">Crawl: ' . esc_html( $source_val ) . '</span>';
+			}
+		} elseif ( ! empty( $source_url ) ) {
+			echo '<span style="display:inline-block; background:#eff6ff; color:#1d4ed8; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; border:1px solid #bfdbfe;">Crawl TGDD</span>';
+		} else {
+			echo '<span style="color:#94a3b8; font-size:11px;">Thủ công</span>';
+		}
+	}
+}
+add_action( 'manage_product_posts_custom_column', 'phonex_crawler_product_column_content', 10, 2 );
 

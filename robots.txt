@@ -1,0 +1,30 @@
+# ================================================================
+# PhoneX Official Robots.txt - Optimized for Google Search Console
+# ================================================================
+
+User-agent: *
+Allow: /
+Allow: /smartphone/wp-content/uploads/
+Allow: /smartphone/wp-content/themes/
+Allow: /smartphone/wp-includes/js/
+Allow: /smartphone/wp-includes/css/
+Disallow: /smartphone/wp-admin/
+Disallow: /smartphone/wp-login.php
+Disallow: /smartphone/cart/
+Disallow: /smartphone/checkout/
+Disallow: /smartphone/my-account/
+Disallow: /smartphone/?s=
+Disallow: /smartphone/*?*utm_*
+Disallow: /smartphone/*?*fbclid*
+Disallow: /smartphone/*?*gclid*
+
+User-agent: Googlebot
+Allow: /
+Disallow: /smartphone/wp-admin/
+
+User-agent: Googlebot-Image
+Allow: /smartphone/wp-content/uploads/
+Allow: /smartphone/wp-content/themes/
+
+# XML Sitemap Location
+Sitemap: http://localhost/smartphone/sitemap.xml

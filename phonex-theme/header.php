@@ -1,7 +1,7 @@
 <?php
 /**
  * The header template for PhoneX WordPress Theme
- * Designed with TGDD-style structure & PhoneX flagship color scheme
+ * Designed with PhoneX Flagship structure & PhoneX flagship color scheme
  *
  * @package PhoneX
  */
@@ -13,15 +13,15 @@
   <meta name="referrer" content="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-  <style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+  <style>@layer base{html,body{margin:0;padding:0;width:100%;max-width:100vw;overflow-x:hidden;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
   <?php wp_head(); ?>
 </head>
-<body <?php body_class('bg-background font-body-regular text-body-regular text-on-surface antialiased'); ?>>
+<body <?php body_class('bg-background font-body-regular text-body-regular text-on-surface antialiased overflow-x-hidden'); ?>>
 <?php wp_body_open(); ?>
 
-<!-- PhoneX Flagship Unified Header (TGDD Structure with PhoneX Brand Red & Clean Aesthetics) -->
+<!-- PhoneX Flagship Unified Header (PhoneX Brand Red & Clean Aesthetics) -->
 <header class="sticky top-0 left-0 w-full z-50 bg-white shadow-xs font-sans" data-component="header">
   
   <!-- 1. TOP CAMPAIGN BANNER (2400x88 Image Banner) -->
@@ -60,371 +60,468 @@
           <div class="flex flex-col leading-none">
             <span class="text-2xl md:text-[26px] font-black text-gray-900 tracking-tight flex items-center">
               Phone<span class="text-[#e60012]">X</span>
-              <span class="text-[11px] text-gray-400 font-bold ml-0.5">.vn</span>
+              <span class="text-[11px] text-gray-600 font-bold ml-0.5">.vn</span>
             </span>
-            <span class="text-[10px] text-gray-500 font-semibold tracking-wider mt-0.5 hidden xl:inline">Hệ Thống 128 Showroom Toàn Quốc</span>
+            <span class="text-[10px] text-gray-700 font-bold tracking-wider mt-0.5 hidden xl:inline">Thu Mua &amp; Bán Sỉ Điện Thoại Cũ</span>
           </div>
         </a>
       </div>
 
-      <!-- Center: Pill-shaped Search Bar (TGDD Structure) -->
-      <div class="hidden sm:flex flex-1 max-w-lg lg:max-w-xl mx-2">
-        <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" class="relative w-full flex items-center">
-          <span class="absolute left-4 text-gray-400 pointer-events-none material-symbols-outlined text-[20px]">search</span>
+      <!-- Center: Pill-shaped Search Bar for Selling Phones -->
+      <div class="hidden sm:flex flex-1 max-w-lg lg:max-w-xl mx-2 relative" id="headerBuybackSearchWrapper">
+        <div class="relative w-full flex items-center">
+          <span class="absolute left-4 text-gray-600 pointer-events-none material-symbols-outlined text-[20px]">search</span>
           <input 
+            id="headerBuybackSearchInput"
             name="s" 
-            value="<?php echo get_search_query(); ?>" 
-            class="w-full h-11 pl-11 pr-12 bg-gray-100/90 hover:bg-gray-100 focus:bg-white rounded-full text-sm md:text-[15px] text-gray-900 placeholder-gray-400 border border-gray-200 focus:border-[#e60012] focus:ring-2 focus:ring-[#ffdad5] transition-all outline-none" 
-            placeholder="Bạn tìm gì? iPhone 16 Pro Max, Galaxy S25, Xiaomi 15..." 
+            class="w-full h-11 md:h-12 pl-11 pr-12 bg-gray-100/90 hover:bg-gray-100 focus:bg-white rounded-full text-[15px] text-gray-900 placeholder-gray-500 border border-gray-300 focus:border-[#e60012] focus:ring-2 focus:ring-[#ffdad5] transition-all outline-none font-medium" 
+            placeholder="Tìm điện thoại bạn muốn bán (vd: iPhone 15 Pro Max, Galaxy S25...)" 
             type="search"
+            autocomplete="off"
           >
-          <?php if (function_exists('is_woocommerce')) : ?><input type="hidden" name="post_type" value="product" /><?php endif; ?>
-          <button type="submit" aria-label="<?php esc_attr_e('Tìm kiếm', 'phonex'); ?>" class="absolute right-1.5 w-8 h-8 flex items-center justify-center bg-[#e60012] hover:bg-[#b7000c] text-white rounded-full transition-colors shadow-xs">
+          <a href="<?php echo esc_url( home_url( '/dinh-gia-dien-thoai/' ) ); ?>" aria-label="<?php esc_attr_e('Định giá ngay', 'phonex'); ?>" class="absolute right-1.5 w-8 h-8 flex items-center justify-center bg-[#e60012] hover:bg-[#b7000c] text-white rounded-full transition-colors shadow-xs">
             <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </button>
-        </form>
+          </a>
+        </div>
+        <!-- Live Search Dropdown -->
+        <div id="headerBuybackSearchResults" class="hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-100 p-2 z-50 text-left max-h-80 overflow-y-auto"></div>
       </div>
 
-      <!-- Right: 4 Action Items (Đăng nhập | Voucher | Giỏ hàng | Hồ Chí Minh >) -->
-      <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+      <!-- Right: Utility Actions (Tra cứu đơn | Vị trí Hồ Chí Minh) -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         
         <!-- Mobile Search Button -->
-        <button type="button" aria-label="<?php esc_attr_e('Tìm kiếm', 'phonex'); ?>" onclick="PhoneXPopups.openSearch()" class="sm:hidden w-10 h-10 flex items-center justify-center rounded-xl text-gray-800 hover:bg-gray-100 active:bg-gray-200 transition-colors">
+        <button type="button" aria-label="<?php esc_attr_e('Tìm kiếm', 'phonex'); ?>" onclick="PhoneXPopups.openSearch()" class="sm:hidden w-11 h-11 flex items-center justify-center rounded-xl text-gray-800 hover:bg-gray-100 active:bg-gray-200 transition-colors">
           <span class="material-symbols-outlined text-[24px]">search</span>
         </button>
 
-        <!-- 1. Đăng nhập / Tài khoản -->
-        <a href="<?php echo esc_url(function_exists('wc_get_page_permalink') ? wc_get_page_permalink('myaccount') : home_url('/tai-khoan/')); ?>" class="flex items-center gap-1.5 text-gray-800 hover:text-[#e60012] transition-colors text-xs md:text-sm font-semibold group px-1 py-1">
-          <?php if (is_user_logged_in()) : ?>
-            <div class="w-7 h-7 rounded-full bg-[#ffdad5] text-[#e60012] font-bold text-xs flex items-center justify-center ring-2 ring-red-200">
-              <?php echo esc_html(strtoupper(substr(wp_get_current_user()->display_name, 0, 2))); ?>
-            </div>
-            <div class="hidden lg:flex flex-col text-left leading-tight">
-              <span class="max-w-[85px] truncate font-bold"><?php echo esc_html(wp_get_current_user()->display_name); ?></span>
-              <span class="text-[10px] text-[#e60012] font-bold uppercase">VIP Member</span>
-            </div>
-          <?php else : ?>
-            <span class="material-symbols-outlined text-[24px] text-gray-700 group-hover:text-[#e60012] transition-colors">person</span>
-            <span class="hidden sm:inline">Đăng nhập</span>
-          <?php endif; ?>
+        <!-- Tra cứu đơn thu mua / yêu cầu -->
+        <a href="<?php echo esc_url( home_url( '/tra-cuu-yeu-cau/' ) ); ?>" class="hidden md:flex items-center gap-1.5 text-gray-800 hover:text-[#e60012] transition-colors text-[13px] md:text-[14px] font-semibold group px-2.5 py-1.5 rounded-xl hover:bg-gray-50 border border-transparent hover:border-gray-200">
+          <span class="material-symbols-outlined text-[20px] text-gray-700 group-hover:text-[#e60012] transition-transform group-hover:scale-105">track_changes</span>
+          <span class="hidden sm:inline">Tra cứu đơn</span>
         </a>
 
-        <!-- 2. Voucher / Khuyến mãi -->
-        <a href="<?php echo esc_url(home_url('/khuyen-mai/')); ?>" class="flex items-center gap-1.5 text-gray-800 hover:text-[#e60012] transition-colors text-xs md:text-sm font-semibold group px-1 py-1">
-          <div class="relative flex items-center">
-            <span class="material-symbols-outlined text-[22px] text-[#e60012] group-hover:scale-110 transition-transform">confirmation_number</span>
-            <span class="hidden xl:inline-block absolute -top-1 -right-2 px-1.5 py-0.2 bg-[#ffdad5] text-[#b7000c] text-[9px] font-black rounded-full uppercase">Hot</span>
-          </div>
-          <span class="hidden sm:inline">Voucher</span>
-        </a>
-
-        <!-- 3. Giỏ hàng (Dynamic WooCommerce Cart Count) -->
-        <?php
-        $cart_url = function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/');
-        $cart_count = (function_exists('WC') && WC()->cart) ? WC()->cart->get_cart_contents_count() : 0;
-        $cart_total = (function_exists('WC') && WC()->cart) ? WC()->cart->get_cart_total() : '0₫';
-        ?>
-        <a href="<?php echo esc_url($cart_url); ?>" class="flex items-center gap-1.5 text-gray-800 hover:text-[#e60012] transition-colors text-xs md:text-sm font-semibold group px-1 py-1">
-          <div class="relative flex items-center">
-            <span class="material-symbols-outlined text-[24px] text-gray-800 group-hover:text-[#e60012] transition-colors">shopping_cart</span>
-            <span class="absolute -top-1.5 -right-2.5 bg-[#E53935] text-white text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center shadow-xs" data-cart-count><?php echo esc_html($cart_count); ?></span>
-          </div>
-          <span class="hidden sm:inline">Giỏ hàng</span>
-        </a>
-
-        <!-- 4. Location Selector (Hồ Chí Minh >) -->
-        <button type="button" onclick="PhoneXLocation.openModal()" class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-gray-200 bg-gray-50/90 hover:bg-gray-100 hover:border-[#e60012] text-gray-800 hover:text-[#e60012] text-xs md:text-[13px] font-semibold transition-all shrink-0 shadow-2xs" title="Bấm để chọn vị trí xem giá &amp; tồn kho">
+        <!-- Location Selector (Hồ Chí Minh >) -->
+        <button type="button" onclick="PhoneXLocation.openModal()" class="flex items-center gap-1 p-2 sm:px-3 sm:py-1.5 rounded-full border border-gray-200 bg-gray-50/90 hover:bg-gray-100 hover:border-[#e60012] text-gray-800 hover:text-[#e60012] text-[12px] sm:text-[13px] md:text-[14px] font-semibold transition-all shrink-0 shadow-2xs" title="Bấm để chọn vị trí xem giá &amp; tồn kho">
           <span class="material-symbols-outlined text-[#e60012] text-[18px]">location_on</span>
-          <span id="pxLocationLabel" class="max-w-[85px] sm:max-w-none truncate font-bold">Hồ Chí Minh</span>
-          <span class="material-symbols-outlined text-gray-400 text-[16px]">chevron_right</span>
+          <span id="pxLocationLabel" class="hidden sm:inline max-w-[75px] sm:max-w-none truncate font-bold">Hồ Chí Minh</span>
+          <span class="hidden sm:inline material-symbols-outlined text-gray-600 text-[16px]">chevron_right</span>
         </button>
 
       </div>
     </div>
   </div>
 
-  <!-- 3. CATEGORY NAVIGATION BAR (Row 2: Requested Categories & TGDD-style Accessories Mega Menu) -->
-  <div class="w-full bg-white border-b border-gray-200/80 shadow-2xs relative z-30">
-    <div class="max-w-[1440px] mx-auto px-4 relative">
-      <nav class="flex items-center gap-1 md:gap-2 py-1.5 overflow-x-auto whitespace-nowrap text-[13px] md:text-sm font-bold text-gray-800 scrollbar-none" aria-label="<?php esc_attr_e('Danh mục ngành hàng', 'phonex'); ?>">
+  <!-- 3. MAIN NAVIGATION BAR & PHONE BUYBACK MEGA MENU -->
+  <div class="w-full bg-white border-b border-gray-200/80 shadow-2xs relative z-30 overflow-x-clip">
+    <div class="max-w-[1440px] mx-auto px-4 relative flex items-center justify-between">
+      <nav class="flex items-center gap-1.5 md:gap-2 xl:gap-2.5 py-1.5 overflow-x-auto lg:overflow-visible whitespace-nowrap text-[13px] xl:text-[14px] font-bold text-gray-800 scrollbar-none min-w-0" aria-label="<?php esc_attr_e('Menu chính PhoneX', 'phonex'); ?>">
         
-        <!-- 1. Trang chủ -->
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-[#e60012] hover:bg-[#ffdad5]/60 transition-colors flex items-center gap-1.5 shrink-0">
-          <span class="material-symbols-outlined text-[18px] text-gray-600 hover:text-[#e60012]">home</span>
-          <span>Trang chủ</span>
+        <!-- 1. THU MUA ĐIỆN THOẠI (MAIN BUTTON & MEGA MENU TRIGGER) -->
+        <div class="relative shrink-0" id="pxBuybackMenuWrapper" onmouseenter="PhoneXBuybackMegaMenu.onEnter()" onmouseleave="PhoneXBuybackMegaMenu.onLeave()">
+          <a href="<?php echo esc_url( home_url( '/thu-mua-dien-thoai/' ) ); ?>" id="pxBuybackMenuBtn" onclick="PhoneXBuybackMegaMenu.toggle(event)" class="px-3.5 xl:px-4 py-2 rounded-xl bg-[#e60012] hover:bg-[#b7000c] text-white flex items-center gap-1.5 shrink-0 transition-colors shadow-xs font-black cursor-pointer text-[13px] xl:text-[14px]">
+            <span class="material-symbols-outlined text-[19px]">currency_exchange</span>
+            <span>THU MUA ĐIỆN THOẠI</span>
+            <span id="pxBuybackMenuArrow" class="material-symbols-outlined text-[17px] transition-transform duration-200">keyboard_arrow_down</span>
+          </a>
+        </div>
+
+        <!-- 2. BẢNG GIÁ THU MUA (CHUẨN SEO & CATALOG 300+ MÁY) -->
+        <a href="<?php echo esc_url( home_url( '/bang-gia-thu-mua/' ) ); ?>" class="px-3 xl:px-3.5 py-2 rounded-xl bg-red-50/80 hover:bg-red-100 text-[#b7000c] hover:text-[#e60012] border border-red-200/80 transition-colors flex items-center gap-1.5 shrink-0 font-extrabold shadow-2xs">
+          <span class="material-symbols-outlined text-[18px] text-[#e60012]">table_chart</span>
+          <span>BẢNG GIÁ THU MUA</span>
+          <span class="text-[10px] bg-[#e60012] text-white px-1.5 py-0.5 rounded-full font-black">300+ máy</span>
         </a>
 
-        <!-- 2. Điện thoại (với dropdown thương hiệu) -->
-        <div class="relative group">
-          <a href="<?php echo esc_url( home_url( '/dien-thoai/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-[#e60012] hover:bg-[#ffdad5]/60 transition-colors flex items-center gap-1 shrink-0">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-[#e60012]">smartphone</span>
-            <span>Điện thoại</span>
-            <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover:text-[#e60012] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+        <!-- 3. KHO MÁY CŨ (PRE-OWNED INVENTORY) -->
+        <div class="relative group shrink-0" id="pxUsedPhonesMenuWrapper" onmouseenter="document.getElementById('pxUsedPhonesDropdown').classList.remove('hidden')" onmouseleave="document.getElementById('pxUsedPhonesDropdown').classList.add('hidden')">
+          <a href="<?php echo esc_url( home_url( '/kho-may-cu/' ) ); ?>" class="px-3 xl:px-3.5 py-2 rounded-xl bg-gray-100 hover:bg-[#ffdad5] text-gray-900 hover:text-[#b7000c] flex items-center gap-1.5 shrink-0 transition-colors shadow-2xs font-bold border border-gray-200/80 hover:border-[#ffb4aa] text-[13px] xl:text-[14px]">
+            <span class="material-symbols-outlined text-[19px] text-[#e60012]">inventory_2</span>
+            <span>KHO MÁY CŨ</span>
+            <span class="text-[9.5px] uppercase font-extrabold px-1.5 py-0.5 rounded-full bg-[#e60012] text-white">99%</span>
+            <span class="material-symbols-outlined text-[15px] text-gray-600 group-hover:text-[#b7000c] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
           </a>
-          <!-- Dropdown thương hiệu -->
-          <div class="hidden group-hover:block absolute top-full left-0 z-50 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <div class="font-bold text-gray-400 text-[11px] uppercase px-3 py-1.5">Thương hiệu điện thoại</div>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=apple' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors">
-              <span>Apple iPhone (VN/A)</span>
-              <span class="text-[10px] bg-[#ffdad5] text-[#b7000c] px-1.5 py-0.2 rounded-full font-bold">Mới</span>
-            </a>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=samsung' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors"><span>Samsung Galaxy</span></a>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=xiaomi' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors"><span>Xiaomi &amp; POCO</span></a>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=oppo' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors"><span>OPPO</span></a>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=vivo' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors"><span>vivo</span></a>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=realme' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors"><span>realme</span></a>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=google-pixel' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors"><span>Google Pixel</span></a>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/?brand=nothing-phone' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors"><span>Nothing Phone</span></a>
+          <!-- Dropdown for Kho Máy Cũ -->
+          <div id="pxUsedPhonesDropdown" class="hidden group-hover:block absolute top-full left-0 z-50 mt-1 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-3 text-gray-800 transition-all">
+            <div class="text-[11px] font-bold text-gray-700 uppercase tracking-wider px-2 py-1">Phân loại máy cũ theo thương hiệu</div>
+            <div class="grid grid-cols-2 gap-1 mb-2">
+              <a href="<?php echo esc_url( home_url( '/kho-may-cu/?cat=iphone' ) ); ?>" class="flex items-center gap-2 p-2 rounded-xl hover:bg-red-50 text-xs font-bold text-gray-800 hover:text-[#e60012] transition-colors">
+                <?php echo phonex_get_brand_logo_img( 'apple', 'w-4 h-4 object-contain inline-block shrink-0' ); ?>
+                <span>iPhone cũ (99%)</span>
+              </a>
+              <a href="<?php echo esc_url( home_url( '/kho-may-cu/?cat=samsung' ) ); ?>" class="flex items-center gap-2 p-2 rounded-xl hover:bg-red-50 text-xs font-bold text-gray-800 hover:text-[#e60012] transition-colors">
+                <?php echo phonex_get_brand_logo_img( 'samsung', 'w-4 h-4 object-contain inline-block shrink-0' ); ?>
+                <span>Samsung cũ</span>
+              </a>
+              <a href="<?php echo esc_url( home_url( '/kho-may-cu/?cat=oppo' ) ); ?>" class="flex items-center gap-2 p-2 rounded-xl hover:bg-red-50 text-xs font-bold text-gray-800 hover:text-[#e60012] transition-colors">
+                <?php echo phonex_get_brand_logo_img( 'oppo', 'w-4 h-4 object-contain inline-block shrink-0' ); ?>
+                <span>OPPO cũ</span>
+              </a>
+              <a href="<?php echo esc_url( home_url( '/kho-may-cu/?cat=xiaomi' ) ); ?>" class="flex items-center gap-2 p-2 rounded-xl hover:bg-red-50 text-xs font-bold text-gray-800 hover:text-[#e60012] transition-colors">
+                <?php echo phonex_get_brand_logo_img( 'xiaomi', 'w-4 h-4 object-contain inline-block shrink-0' ); ?>
+                <span>Xiaomi cũ</span>
+              </a>
+              <a href="<?php echo esc_url( home_url( '/kho-may-cu/?cat=vivo' ) ); ?>" class="flex items-center gap-2 p-2 rounded-xl hover:bg-red-50 text-xs font-bold text-gray-800 hover:text-[#e60012] transition-colors">
+                <?php echo phonex_get_brand_logo_img( 'vivo', 'w-4 h-4 object-contain inline-block shrink-0' ); ?>
+                <span>Vivo cũ</span>
+              </a>
+              <a href="<?php echo esc_url( home_url( '/kho-may-cu/?cat=realme' ) ); ?>" class="flex items-center gap-2 p-2 rounded-xl hover:bg-red-50 text-xs font-bold text-gray-800 hover:text-[#e60012] transition-colors">
+                <?php echo phonex_get_brand_logo_img( 'realme', 'w-4 h-4 object-contain inline-block shrink-0' ); ?>
+                <span>Realme cũ</span>
+              </a>
+            </div>
             <div class="border-t border-gray-100 my-1"></div>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/' ) ); ?>" class="flex items-center justify-between px-3 py-2 rounded-xl text-[13px] font-bold text-[#e60012] hover:bg-[#ffdad5] transition-colors">
-              <span>Xem tất cả điện thoại</span>
-              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </a>
+            <div class="space-y-0.5">
+              <a href="<?php echo esc_url( home_url( '/kho-may-cu/' ) ); ?>" class="flex items-center justify-between p-2 rounded-xl hover:bg-gray-50 text-xs font-bold text-gray-900 hover:text-[#e60012]">
+                <span class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[17px] text-[#e60012]">grid_view</span>
+                  <span>Tất cả kho máy cũ</span>
+                </span>
+                <span class="text-[11px] text-gray-600 font-bold">307 máy</span>
+              </a>
+              <a href="<?php echo esc_url( home_url( '/kho-may-cu/#b2b' ) ); ?>" class="flex items-center justify-between p-2 rounded-xl bg-red-50/60 hover:bg-red-50 text-xs font-bold text-[#b7000c]">
+                <span class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[17px] text-[#e60012]">storefront</span>
+                  <span>Bán sỉ B2B số lượng</span>
+                </span>
+                <span class="text-[10px] bg-[#e60012] text-white px-1.5 py-0.5 rounded-full font-bold">Giá tốt</span>
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- 3. Điện thoại cũ giá tốt -->
-        <a href="<?php echo esc_url( home_url( '/dien-thoai-cu/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-[#e60012] hover:bg-[#ffdad5]/60 transition-colors flex items-center gap-1.5 shrink-0">
-          <span class="material-symbols-outlined text-[18px] text-[#e60012]">sync_alt</span>
-          <span>Điện thoại cũ giá tốt</span>
-          <span class="text-[10px] bg-[#ffdad5] text-[#b7000c] px-1.5 py-0.2 rounded-full font-bold">99%</span>
+        <!-- 4. TRẢ GÓP 0% & THU CŨ LÊN ĐỜI (MỞ TRANG RIÊNG) -->
+        <a href="<?php echo esc_url( home_url( '/tra-gop/' ) ); ?>" class="px-3 xl:px-3.5 py-2 rounded-xl text-gray-800 hover:text-[#e60012] hover:bg-gray-100 transition-colors flex items-center gap-1.5 shrink-0 font-bold text-[13px] xl:text-[14px]">
+          <span class="material-symbols-outlined text-[19px] text-[#e60012]">credit_card</span>
+          <span>TRẢ GÓP 0%</span>
+          <span class="text-[9.5px] uppercase font-extrabold px-1.5 py-0.5 rounded-full bg-emerald-500 text-white">Duyệt 5p</span>
         </a>
 
-        <!-- 4. Phụ Kiện (Hover & Click để mở Mega Menu) -->
-        <div class="relative" id="pxAccessoriesWrapper" onmouseenter="PhoneXAccessoriesMegaMenu.onEnter()" onmouseleave="PhoneXAccessoriesMegaMenu.onLeave()">
-          <a href="<?php echo esc_url( home_url( '/product-category/phu-kien/' ) ); ?>" id="pxAccessoriesBtn" onclick="PhoneXAccessoriesMegaMenu.toggle(event)" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-[#e60012] hover:bg-[#ffdad5]/60 transition-colors flex items-center gap-1 shrink-0 cursor-pointer">
-            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-[#e60012]">headphones</span>
-            <span>Phụ Kiện</span>
-            <span id="pxAccessoriesArrow" class="material-symbols-outlined text-[16px] text-gray-400 group-hover:text-[#e60012] transition-transform duration-200">keyboard_arrow_down</span>
-          </a>
-        </div>
-
-        <!-- 5. Khuyến mãi Hot -->
-        <a href="<?php echo esc_url( home_url( '/khuyen-mai/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-[#e60012] hover:bg-[#ffdad5]/60 transition-colors flex items-center gap-1.5 shrink-0">
-          <span class="material-symbols-outlined text-[18px] text-[#e60012]">local_fire_department</span>
-          <span>Khuyến mãi Hot</span>
-          <span class="text-[10px] bg-[#ffdad5] text-[#b7000c] px-1.5 py-0.2 rounded-full font-bold">Hot</span>
-        </a>
-
-        <!-- 6. Thu cũ đổi mới -->
-        <a href="<?php echo esc_url( home_url( '/thu-cu-doi-moi/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-[#e60012] hover:bg-[#ffdad5]/60 transition-colors flex items-center gap-1.5 shrink-0">
-          <span class="material-symbols-outlined text-[18px] text-[#e60012]">currency_exchange</span>
-          <span>Thu cũ đổi mới</span>
-          <span class="text-[10px] bg-[#ffdad5] text-[#b7000c] px-1.5 py-0.2 rounded-full font-bold">Trợ giá 3Tr</span>
-        </a>
-
-        <!-- 7. Trả góp 0% -->
-        <a href="<?php echo esc_url( home_url( '/tra-gop/' ) ); ?>" class="px-2.5 py-1.5 rounded-lg text-gray-800 hover:text-[#e60012] hover:bg-[#ffdad5]/60 transition-colors flex items-center gap-1.5 shrink-0">
-          <span class="material-symbols-outlined text-[18px] text-amber-600">credit_card</span>
-          <span>Trả góp 0%</span>
-          <span class="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.2 rounded-full font-bold">0% LS</span>
-        </a>
-
-        <!-- 8. Dịch vụ tiện ích ⌃ -->
-        <div class="relative group ml-auto">
-          <button type="button" class="border border-gray-200 bg-gray-50/90 hover:bg-[#ffdad5] hover:border-red-300 hover:text-[#e60012] text-gray-800 rounded-lg px-2.5 py-1 text-xs md:text-sm font-bold flex items-center gap-1.5 transition-all shadow-2xs">
-            <span class="material-symbols-outlined text-[18px] text-[#e60012]">receipt_long</span>
-            <span>Dịch vụ tiện ích</span>
-            <span class="material-symbols-outlined text-[16px] text-gray-400 group-hover:text-[#e60012] transition-transform group-hover:rotate-180">keyboard_arrow_down</span>
+        <!-- 5. HƯỚNG DẪN & CHÍNH SÁCH -->
+        <div class="relative group shrink-0" onmouseenter="document.getElementById('pxServicesDropdown').classList.remove('hidden')" onmouseleave="document.getElementById('pxServicesDropdown').classList.add('hidden')">
+          <button type="button" class="px-3 xl:px-3.5 py-2 rounded-xl text-gray-800 hover:text-[#e60012] hover:bg-gray-100 transition-colors flex items-center gap-1 shrink-0 font-bold cursor-pointer">
+            <span class="material-symbols-outlined text-[18px] text-gray-600 group-hover:text-[#e60012]">verified_user</span>
+            <span>Hướng dẫn &amp; Chính sách</span>
+            <span class="material-symbols-outlined text-[16px] text-gray-500 group-hover:rotate-180 transition-transform">keyboard_arrow_down</span>
           </button>
-          <div class="hidden group-hover:block absolute top-full right-0 z-50 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800">
-            <div class="font-bold text-gray-400 text-[11px] uppercase px-3 py-1">Dịch vụ PhoneX</div>
-            <a href="<?php echo esc_url( home_url( '/bao-hanh/' ) ); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors">
-              <span class="material-symbols-outlined text-[18px] text-green-600">verified_user</span>
-              <span>Tra cứu bảo hành điện tử</span>
+          <!-- Dropdown Services -->
+          <div id="pxServicesDropdown" class="hidden group-hover:block absolute top-full left-0 z-50 mt-1 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800 transition-all">
+            <a href="<?php echo esc_url( home_url( '/quy-trinh-thu-mua/' ) ); ?>" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-xs font-bold text-gray-800 hover:text-[#e60012] transition-colors">
+              <span class="material-symbols-outlined text-[19px] text-[#e60012]">sync</span>
+              <div>
+                <div>Quy trình thu mua 7 bước</div>
+                <div class="text-[10px] text-gray-500 font-normal">Minh bạch • Công khai 30 bước test</div>
+              </div>
             </a>
-            <a href="<?php echo esc_url( home_url( '/tra-cuu-don-hang/' ) ); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors">
-              <span class="material-symbols-outlined text-[18px] text-[#e60012]">local_shipping</span>
-              <span>Tra cứu tiến độ đơn hàng</span>
-            </a>
-            <a href="<?php echo esc_url( home_url( '/showroom/' ) ); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors">
-              <span class="material-symbols-outlined text-[18px] text-[#e60012]">store</span>
-              <span>Hệ thống 128 Showroom</span>
-            </a>
-            <a href="<?php echo esc_url( home_url( '/tra-gop/' ) ); ?>" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-semibold text-gray-700 hover:text-[#e60012] hover:bg-[#ffdad5] transition-colors">
-              <span class="material-symbols-outlined text-[18px] text-amber-600">credit_card</span>
-              <span>Trả góp 0% duyệt siêu tốc</span>
+            <a href="<?php echo esc_url( home_url( '/tieu-chuan-kiem-dinh/' ) ); ?>" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-xs font-bold text-gray-800 hover:text-[#e60012] transition-colors">
+              <span class="material-symbols-outlined text-[19px] text-[#e60012]">rule</span>
+              <div>
+                <div>Tiêu chuẩn Grade A / B / C / D</div>
+                <div class="text-[10px] text-gray-500 font-normal">Quy chuẩn thẩm định phần cứng</div>
+              </div>
             </a>
             <div class="border-t border-gray-100 my-1"></div>
-            <a href="tel:18006868" class="flex items-center gap-2 px-3 py-2 rounded-xl text-[13px] font-bold text-[#e60012] hover:bg-[#ffdad5] transition-colors">
-              <span class="material-symbols-outlined text-[18px]">call</span>
-              <span>Hotline miễn phí: 1800.6868</span>
+            <a href="<?php echo esc_url( home_url( '/kho-may-cu/#b2b' ) ); ?>" class="flex items-center gap-2.5 p-2 rounded-xl bg-red-50/50 hover:bg-red-50 text-xs font-bold text-[#b7000c] transition-colors">
+              <span class="material-symbols-outlined text-[19px] text-[#e60012]">storefront</span>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <span>Bán sỉ B2B đại lý</span>
+                  <span class="text-[9px] bg-[#e60012] text-white px-1.5 py-0.2 rounded-full font-bold">Giá sỉ</span>
+                </div>
+                <div class="text-[10px] text-gray-600 font-normal">Nguồn hàng ổn định số lượng toàn quốc</div>
+              </div>
             </a>
           </div>
         </div>
+
+        <!-- 5. ĐỊNH GIÁ NGAY (Hiển thị trong thanh trượt ngang trên Mobile) -->
+        <a href="<?php echo esc_url( home_url( '/dinh-gia-dien-thoai/' ) ); ?>" class="md:hidden px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#e60012] to-[#b7000c] text-white flex items-center gap-1.5 shrink-0 font-black shadow-xs text-xs">
+          <span class="material-symbols-outlined text-[17px]">calculate</span>
+          <span>ĐỊNH GIÁ NGAY</span>
+          <span class="text-[9.5px] bg-white/20 text-white px-1.5 py-0.5 rounded-full font-bold">30s</span>
+        </a>
 
       </nav>
 
+      <!-- Right: Hotline + Nút CTA Desktop [ ĐỊNH GIÁ NGAY 30s ] -->
+      <div class="hidden md:flex items-center gap-2 sm:gap-3 shrink-0 pl-2">
+        <a href="tel:18006868" class="hidden 2xl:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-50 hover:bg-red-100 border border-red-200/80 text-[#e60012] font-black text-xs transition-all shadow-2xs whitespace-nowrap">
+          <span class="material-symbols-outlined text-[16px] text-[#e60012]">call</span>
+          <span>1800.6868</span>
+        </a>
+
+        <!-- Nút CTA Định Giá Ngay Nổi Bật (Desktop & Tablet) -->
+        <a href="<?php echo esc_url( home_url( '/dinh-gia-dien-thoai/' ) ); ?>" class="px-3.5 xl:px-4 py-2 rounded-xl bg-gradient-to-r from-[#e60012] to-[#b7000c] hover:from-[#b7000c] hover:to-[#910009] text-white flex items-center gap-1.5 shrink-0 transition-all shadow-sm hover:shadow-md font-black text-[12.5px] xl:text-[13.5px] group">
+          <span class="material-symbols-outlined text-[18px] group-hover:rotate-12 transition-transform">calculate</span>
+          <span>ĐỊNH GIÁ NGAY</span>
+          <span class="text-[10px] bg-white/25 text-white px-1.5 py-0.5 rounded-full font-bold leading-none">30s</span>
+        </a>
+      </div>
+
       <!-- ===================================================
-           THẾ GIỚI DI ĐỘNG STYLE ACCESSORIES MEGA MENU
-           (Hiển thị khi click vào mục Phụ Kiện)
+           PHONEX BUYBACK MEGA MENU (DỰA TRÊN YÊU CẦU ĐẶC TẢ)
+           Nhóm 1: Định giá & Thu mua
+           Nhóm 2: Thương hiệu phổ biến (Lấy ĐỘNG từ DB)
            =================================================== -->
       <?php
-      $pk_di_dong = array(
-          array('name' => 'Sạc dự phòng', 'slug' => 'sac-du-phong', 'icon' => 'battery_charging_full'),
-          array('name' => 'Sạc, cáp', 'slug' => 'sac-cap', 'icon' => 'bolt'),
-          array('name' => 'Ốp lưng điện thoại', 'slug' => 'op-lung-dien-thoai', 'icon' => 'phone_iphone'),
-          array('name' => 'Ốp lưng máy tính bảng', 'slug' => 'op-lung-may-tinh-bang', 'icon' => 'tablet_mac'),
-          array('name' => 'Miếng dán', 'slug' => 'mieng-dan', 'icon' => 'screen_lock_portrait'),
-          array('name' => 'Miếng dán Camera', 'slug' => 'mieng-dan-camera', 'icon' => 'camera_alt'),
-          array('name' => 'Túi đựng AirPods', 'slug' => 'tui-dung-airpods', 'icon' => 'headset'),
-          array('name' => 'Quạt mini', 'slug' => 'quat-mini', 'icon' => 'toys', 'badge' => 'Hot'),
-          array('name' => 'Bút tablet', 'slug' => 'but-tablet', 'icon' => 'draw'),
-          array('name' => 'Giá đỡ điện thoại/laptop', 'slug' => 'gia-do-dien-thoai-laptop', 'icon' => 'laptop_mac'),
-          array('name' => 'Dây đeo điện thoại', 'slug' => 'day-deo-dien-thoai', 'icon' => 'cable'),
-          array('name' => 'Ống kính điện thoại', 'slug' => 'ong-kinh-dien-thoai', 'icon' => 'center_focus_strong', 'badge' => 'Mới'),
-      );
-
-      $pk_laptop = array(
-          array('name' => 'Hub, cáp chuyển đổi', 'slug' => 'hub-cap-chuyen-doi', 'icon' => 'hub'),
-          array('name' => 'Chuột máy tính', 'slug' => 'chuot-may-tinh', 'icon' => 'mouse'),
-          array('name' => 'Bàn phím', 'slug' => 'ban-phim', 'icon' => 'keyboard'),
-          array('name' => 'Router - Thiết bị mạng', 'slug' => 'router-thiet-bi-mang', 'icon' => 'router'),
-          array('name' => 'Balo, túi chống sốc', 'slug' => 'balo-tui-chong-soc', 'icon' => 'backpack'),
-          array('name' => 'Túi đựng phụ kiện', 'slug' => 'tui-dung-phu-kien', 'icon' => 'business_center'),
-          array('name' => 'Phủ phím laptop', 'slug' => 'phu-phim-laptop', 'icon' => 'keyboard_alt'),
-          array('name' => 'Phần mềm', 'slug' => 'phan-mem', 'icon' => 'terminal'),
-          array('name' => 'Giá treo màn hình', 'slug' => 'gia-treo-man-hinh', 'icon' => 'fit_screen'),
-          array('name' => 'Miếng lót chuột', 'slug' => 'mieng-lot-chuot', 'icon' => 'crop_landscape'),
-          array('name' => 'Bảng vẽ điện tử', 'slug' => 'bang-ve-dien-tu', 'icon' => 'gesture'),
-      );
-
-      $pk_audio = array(
-          array('name' => 'Tai nghe Bluetooth', 'slug' => 'tai-nghe-bluetooth', 'icon' => 'headphones'),
-          array('name' => 'Tai nghe dây', 'slug' => 'tai-nghe-day', 'icon' => 'headset_mic'),
-          array('name' => 'Tai nghe chụp tai', 'slug' => 'tai-nghe-chup-tai', 'icon' => 'headphones'),
-          array('name' => 'Tai nghe thể thao', 'slug' => 'tai-nghe-the-thao', 'icon' => 'directions_run'),
-          array('name' => 'Loa', 'slug' => 'loa', 'icon' => 'speaker', 'badge' => 'Hot'),
-          array('name' => 'Micro', 'slug' => 'micro', 'icon' => 'mic'),
-          array('name' => 'Máy chiếu', 'slug' => 'may-chieu', 'icon' => 'videocam'),
-          array('name' => 'Kính thông minh', 'slug' => 'kinh-thong-minh', 'icon' => 'visibility'),
-          array('name' => 'Ổ cứng', 'slug' => 'o-cung', 'icon' => 'dns'),
-          array('name' => 'Thẻ nhớ', 'slug' => 'the-nho', 'icon' => 'sd_card'),
-          array('name' => 'USB', 'slug' => 'usb', 'icon' => 'usb'),
-      );
-
-      $pk_camera = array(
-          array('name' => 'Camera Giám Sát', 'slug' => 'camera-giam-sat', 'icon' => 'videocam', 'badge' => 'Hot'),
-          array('name' => 'Camera trong nhà', 'slug' => 'camera-trong-nha', 'icon' => 'camera_indoor'),
-          array('name' => 'Camera ngoài trời', 'slug' => 'camera-ngoai-troi', 'icon' => 'camera_outdoor'),
-          array('name' => 'Camera Năng Lượng Mặt Trời', 'slug' => 'camera-nang-luong-mat-troi', 'icon' => 'solar_power'),
-          array('name' => 'Camera 4G', 'slug' => 'camera-4g', 'icon' => 'cell_tower'),
-          array('name' => 'Chuông cửa Camera', 'slug' => 'chuong-cua-camera', 'icon' => 'doorbell'),
-          array('name' => 'Webcam', 'slug' => 'webcam', 'icon' => 'webcam'),
-      );
-
-      if ( ! function_exists('phonex_render_tgdd_item') ) {
-          function phonex_render_tgdd_item($item) {
-              $term = get_term_by('slug', $item['slug'], 'product_cat');
-              $url  = ($term && !is_wp_error(get_term_link($term))) ? get_term_link($term) : home_url('/shop/?category=' . $item['slug']);
-              $badge = $item['badge'] ?? '';
-              $badge_bg = ($badge === 'Hot') ? 'bg-[#ffdad5]0 text-white' : 'bg-rose-500 text-white';
-              $img_url = get_template_directory_uri() . '/assets/images/categories/accessories/' . $item['slug'] . '.png';
-              ?>
-              <a href="<?php echo esc_url($url); ?>" class="group flex flex-col items-center text-center p-1.5 rounded-2xl hover:bg-[#ffdad5]/50 transition-all relative">
-                <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white border border-gray-100 group-hover:border-red-300 group-hover:shadow-md flex items-center justify-center transition-all relative shrink-0 shadow-2xs p-1.5">
-                  <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($item['name']); ?>" class="w-11 h-11 sm:w-12 sm:h-12 object-contain transform group-hover:scale-110 transition-transform duration-200" loading="lazy" />
-                  <?php if ($badge) : ?>
-                    <span class="absolute -top-1.5 -right-1.5 text-[10px] font-extrabold <?php echo esc_attr($badge_bg); ?> px-2 py-0.5 rounded-full leading-none shadow-sm">
-                      <?php echo esc_html($badge); ?>
-                    </span>
-                  <?php endif; ?>
-                </div>
-                <span class="mt-2 text-xs sm:text-[13px] font-bold text-gray-800 group-hover:text-[#e60012] leading-snug max-w-[85px] sm:max-w-[100px] line-clamp-2 transition-colors">
-                  <?php echo esc_html($item['name']); ?>
-                </span>
-              </a>
-              <?php
-          }
+      global $wpdb;
+      $t_brands = $wpdb->prefix . 'phonex_buyback_brands';
+      $featured_brands = $wpdb->get_results( "SELECT * FROM $t_brands WHERE is_active = 1 AND is_featured = 1 ORDER BY sort_order ASC, name ASC LIMIT 12" );
+      if ( empty( $featured_brands ) ) {
+          $featured_brands = $wpdb->get_results( "SELECT * FROM $t_brands WHERE is_active = 1 ORDER BY sort_order ASC, name ASC LIMIT 12" );
       }
       ?>
-
-      <div id="pxAccessoriesMegaMenu" onmouseenter="PhoneXAccessoriesMegaMenu.onEnter()" onmouseleave="PhoneXAccessoriesMegaMenu.onLeave()" class="hidden absolute top-full left-0 right-0 z-50 mt-1 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 md:p-7 text-gray-800 transition-all duration-200" style="display: none;">
+      <div id="pxBuybackMegaMenu" onmouseenter="PhoneXBuybackMegaMenu.onEnter()" onmouseleave="PhoneXBuybackMegaMenu.onLeave()" class="hidden absolute top-full left-0 right-0 z-50 mt-1 bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 md:p-8 text-gray-800 transition-all duration-200">
+        
         <!-- Mega Menu Header -->
-        <div class="flex items-center justify-between pb-3.5 mb-6 border-b border-gray-100">
-          <div class="flex items-center gap-2.5">
-            <div class="w-8 h-8 rounded-xl bg-[#ffdad5] text-[#e60012] flex items-center justify-center">
-              <span class="material-symbols-outlined text-[20px]">headphones</span>
+        <div class="flex items-center justify-between pb-4 mb-6 border-b border-gray-100">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-red-50 text-[#e60012] flex items-center justify-center">
+              <span class="material-symbols-outlined text-[22px]">currency_exchange</span>
             </div>
-            <h3 class="font-black text-gray-900 text-lg md:text-xl tracking-tight">Danh Mục Phụ Kiện Chính Hãng</h3>
+            <div>
+              <h3 class="font-black text-gray-900 text-lg md:text-xl tracking-tight">Hệ Thống Thu Mua Điện Thoại PhoneX</h3>
+              <p class="text-xs text-gray-700 font-semibold">Định giá công khai • Kiểm định 30 bước • Thanh toán trong 5 phút</p>
+            </div>
           </div>
-          <button type="button" aria-label="<?php esc_attr_e('Đóng menu phụ kiện', 'phonex'); ?>" onclick="PhoneXAccessoriesMegaMenu.close()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 flex items-center justify-center transition-colors">
+          <button type="button" aria-label="<?php esc_attr_e('Đóng menu', 'phonex'); ?>" onclick="PhoneXBuybackMegaMenu.close()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 flex items-center justify-center transition-colors">
             <span class="material-symbols-outlined text-[18px]">close</span>
           </button>
         </div>
 
-        <!-- 2-Column Responsive Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
+        <!-- 2 Groups Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
-          <!-- LEFT COLUMN -->
-          <div class="space-y-7">
-            <!-- 1. Phụ kiện di động -->
-            <div>
-              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
-                <span class="w-2 h-4 bg-[#e60012] rounded-full"></span>
-                <span>Phụ kiện di động</span>
-              </h4>
-              <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
-                <?php foreach ($pk_di_dong as $it) phonex_render_tgdd_item($it); ?>
-              </div>
-            </div>
+          <!-- NHÓM 1: DỊCH VỤ & QUY CHUẨN THU MUA (5 cols) -->
+          <div class="lg:col-span-5 space-y-4">
+            <h4 class="font-black text-gray-900 text-sm md:text-base flex items-center gap-2 uppercase tracking-wider text-[#e60012]">
+              <span class="w-2 h-4 bg-[#e60012] rounded-full"></span>
+              <span>Dịch Vụ &amp; Quy Chuẩn Thu Mua</span>
+            </h4>
 
-            <!-- 2. Thiết bị nghe nhìn, lưu trữ, thu âm -->
-            <div class="pt-5 border-t border-gray-100">
-              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
-                <span class="w-2 h-4 bg-[#e60012] rounded-full"></span>
-                <span>Thiết bị nghe nhìn, lưu trữ, thu âm</span>
-              </h4>
-              <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
-                <?php foreach ($pk_audio as $it) phonex_render_tgdd_item($it); ?>
-              </div>
+            <div class="space-y-2">
+              <a href="<?php echo esc_url( home_url( '/dinh-gia-dien-thoai/' ) ); ?>" class="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-red-50/60 border border-transparent hover:border-red-100 transition-all group">
+                <div class="w-10 h-10 rounded-xl bg-red-100 text-[#b7000c] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined text-[22px]">calculate</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-gray-900 group-hover:text-[#e60012] transition-colors">Công cụ định giá tự động 30s</div>
+                  <div class="text-xs text-gray-700 font-medium mt-0.5">Tự đánh giá tình trạng máy và nhận báo giá trong 30 giây</div>
+                </div>
+              </a>
+
+              <a href="<?php echo esc_url( home_url( '/bang-gia-thu-mua/' ) ); ?>" class="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-red-50/60 border border-transparent hover:border-red-100 transition-all group">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined text-[22px]">table_chart</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-gray-900 group-hover:text-[#e60012] transition-colors">Bảng giá thu mua chi tiết</div>
+                  <div class="text-xs text-gray-700 font-medium mt-0.5">Tổng hợp 300+ model điện thoại theo Grade A/B/C/D</div>
+                </div>
+              </a>
+
+              <a href="<?php echo esc_url( home_url( '/quy-trinh-thu-mua/' ) ); ?>" class="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-red-50/60 border border-transparent hover:border-red-100 transition-all group">
+                <div class="w-10 h-10 rounded-xl bg-green-50 text-green-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined text-[22px]">sync</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-gray-900 group-hover:text-[#e60012] transition-colors">Quy trình thu mua 7 bước</div>
+                  <div class="text-xs text-gray-700 font-medium mt-0.5">Kiểm định minh bạch, công khai, giải ngân 5 phút</div>
+                </div>
+              </a>
+
+              <a href="<?php echo esc_url( home_url( '/tieu-chuan-kiem-dinh/' ) ); ?>" class="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-red-50/60 border border-transparent hover:border-red-100 transition-all group">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                  <span class="material-symbols-outlined text-[22px]">rule</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-gray-900 group-hover:text-[#e60012] transition-colors">Tiêu chuẩn kiểm định (Grade A, B, C, D)</div>
+                  <div class="text-xs text-gray-700 font-medium mt-0.5">Barem 30 bước phân loại tình trạng máy chi tiết</div>
+                </div>
+              </a>
             </div>
           </div>
 
-          <!-- RIGHT COLUMN -->
-          <div class="space-y-7 lg:pl-8 pt-6 lg:pt-0">
-            <!-- 3. Phụ kiện laptop, PC -->
-            <div>
-              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
+          <!-- NHÓM 2: THƯƠNG HIỆU PHỔ BIẾN (LẤY ĐỘNG TỪ DATABASE) (7 cols) -->
+          <div class="lg:col-span-7 lg:border-l lg:border-gray-100 lg:pl-8 space-y-4">
+            <div class="flex items-center justify-between">
+              <h4 class="font-black text-gray-900 text-sm md:text-base flex items-center gap-2 uppercase tracking-wider text-[#e60012]">
                 <span class="w-2 h-4 bg-[#e60012] rounded-full"></span>
-                <span>Phụ kiện laptop, PC</span>
+                <span>Nhóm Thương Hiệu Phổ Biến</span>
               </h4>
-              <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
-                <?php foreach ($pk_laptop as $it) phonex_render_tgdd_item($it); ?>
-              </div>
+              <a href="<?php echo esc_url( home_url( '/thu-mua-dien-thoai/' ) ); ?>" class="text-xs font-bold text-[#e60012] hover:underline flex items-center gap-1">
+                <span>Xem tất cả thương hiệu</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </a>
             </div>
 
-            <!-- 4. Camera -->
-            <div class="pt-5 border-t border-gray-100">
-              <h4 class="font-black text-gray-900 text-base md:text-lg mb-3.5 flex items-center gap-2">
-                <span class="w-2 h-4 bg-[#e60012] rounded-full"></span>
-                <span>Camera</span>
-              </h4>
-              <div class="grid grid-cols-4 sm:grid-cols-6 gap-x-2 gap-y-3">
-                <?php foreach ($pk_camera as $it) phonex_render_tgdd_item($it); ?>
-              </div>
+            <!-- Dynamic Brand Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+              <?php if ( ! empty( $featured_brands ) ) : ?>
+                <?php foreach ( $featured_brands as $fb ) : 
+                  $b_url = home_url( '/thu-mua-dien-thoai/' . $fb->slug . '/' );
+                ?>
+                  <a href="<?php echo esc_url( $b_url ); ?>" class="flex flex-col items-center p-3 rounded-2xl border border-gray-100 hover:border-[#e60012] hover:bg-red-50/30 transition-all text-center group shadow-2xs">
+                    <div class="w-14 h-12 rounded-xl bg-gray-50 group-hover:bg-white flex items-center justify-center p-2 mb-2 transition-colors">
+                      <?php echo phonex_get_brand_logo_img( $fb, 'max-w-full max-h-full object-contain' ); ?>
+                    </div>
+                    <span class="text-xs font-bold text-gray-800 group-hover:text-[#e60012] transition-colors"><?php echo esc_html( $fb->name ); ?></span>
+                    <span class="text-[10px] text-gray-600 font-semibold mt-0.5">Bảng giá 2026</span>
+                  </a>
+                <?php endforeach; ?>
+              <?php endif; ?>
             </div>
+
+            <!-- Bottom Promo Banner in Mega Menu -->
+            <div class="mt-4 p-4 rounded-2xl bg-gradient-to-r from-gray-900 to-[#1e2329] text-white flex items-center justify-between gap-4">
+              <div>
+                <div class="text-xs font-bold text-red-400 uppercase">Đối tác B2B &amp; Khách Sỉ</div>
+                <div class="text-sm font-bold text-white mt-0.5">Thu mua số lượng lớn từ công ty, doanh nghiệp với mức giá chiết khấu ưu đãi</div>
+              </div>
+              <a href="tel:18006868" class="px-4 py-2 rounded-xl bg-[#e60012] hover:bg-[#b7000c] text-white font-bold text-xs shrink-0 transition-colors">
+                Liên hệ sỉ
+              </a>
+            </div>
+
           </div>
 
         </div>
 
         <!-- Footer Notice -->
         <div class="mt-6 pt-4 border-t border-gray-100 flex flex-wrap items-center justify-between text-xs gap-2">
-          <div class="text-gray-500 flex items-center gap-1.5">
+          <div class="text-gray-700 font-medium flex items-center gap-1.5">
             <span class="material-symbols-outlined text-green-600 text-[18px]">verified</span>
-            <span>Cam kết 100% phụ kiện chính hãng &bull; Bảo hành 12-24 tháng 1 đổi 1 &bull; Giao siêu tốc 2 giờ</span>
+            <span>Cam kết 100% kiểm định công khai &bull; Không ép giá &bull; Chuyển khoản trong 5 phút</span>
           </div>
-          <a href="<?php echo esc_url( home_url( '/product-category/phu-kien/' ) ); ?>" class="font-bold text-[#e60012] hover:underline flex items-center gap-1">
-            <span>Xem tất cả danh mục phụ kiện</span>
-            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          <a href="<?php echo esc_url( home_url( '/thu-mua-dien-thoai/' ) ); ?>" class="font-bold text-[#e60012] hover:underline flex items-center gap-1">
+            <span>Xem tất cả thương hiệu &rarr;</span>
           </a>
         </div>
+
       </div>
 
     </div>
   </div>
 
+  <!-- Buyback Mega Menu Controller & Header Search Autocomplete -->
+  <script>
+  var PhoneXBuybackMegaMenu = (function() {
+    var timer = null;
+    var menu = null;
+    var arrow = null;
+
+    function getEls() {
+      if (!menu) menu = document.getElementById('pxBuybackMegaMenu');
+      if (!arrow) arrow = document.getElementById('pxBuybackMenuArrow');
+    }
+
+    return {
+      open: function() {
+        getEls();
+        if (timer) clearTimeout(timer);
+        if (menu) {
+          menu.classList.remove('hidden');
+          menu.style.display = 'block';
+        }
+        if (arrow) arrow.style.transform = 'rotate(180deg)';
+      },
+      close: function() {
+        getEls();
+        if (menu) {
+          menu.classList.add('hidden');
+          menu.style.display = 'none';
+        }
+        if (arrow) arrow.style.transform = 'rotate(0deg)';
+      },
+      toggle: function(e) {
+        if (e) e.preventDefault();
+        getEls();
+        if (menu && menu.classList.contains('hidden')) {
+          this.open();
+        } else {
+          this.close();
+        }
+      },
+      onEnter: function() {
+        if (timer) clearTimeout(timer);
+        this.open();
+      },
+      onLeave: function() {
+        var self = this;
+        timer = setTimeout(function() {
+          self.close();
+        }, 200);
+      }
+    };
+  })();
+
+  // Header Search Autocomplete Logic
+  document.addEventListener('DOMContentLoaded', function() {
+    var searchInput = document.getElementById('headerBuybackSearchInput');
+    var searchResults = document.getElementById('headerBuybackSearchResults');
+    var debounceTimer = null;
+
+    if (searchInput && searchResults) {
+      searchInput.addEventListener('input', function() {
+        var query = searchInput.value.trim();
+        clearTimeout(debounceTimer);
+
+        if (query.length < 2) {
+          searchResults.classList.add('hidden');
+          searchResults.innerHTML = '';
+          return;
+        }
+
+        debounceTimer = setTimeout(function() {
+          fetch('<?php echo esc_url( home_url( '/wp-json/phonex/v1/buyback/search?q=' ) ); ?>' + encodeURIComponent(query))
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+              if (data && data.results && data.results.length > 0) {
+                var html = '';
+                data.results.forEach(function(item) {
+                  html += '<a href="' + item.url + '" class="flex items-center justify-between p-2.5 hover:bg-red-50 rounded-xl transition-colors border-b border-gray-50 last:border-0">';
+                  html += '<div class="flex items-center gap-3">';
+                  html += '<img src="' + item.image_url + '" class="w-10 h-10 object-contain rounded-lg bg-gray-50 p-1" alt="' + item.model_name + '" />';
+                  html += '<div>';
+                  html += '<div class="text-sm font-bold text-gray-900">' + item.model_name + '</div>';
+                  html += '<div class="text-xs text-gray-700 font-medium flex items-center gap-1.5 mt-0.5">';
+                  if (item.brand_logo) {
+                    html += '<img src="' + item.brand_logo + '" class="w-3.5 h-3.5 object-contain inline-block" alt="' + item.brand_name + '" />';
+                  }
+                  html += '<span>' + item.brand_name + (item.series_name ? ' • ' + item.series_name : '') + '</span>';
+                  html += '</div>';
+                  html += '</div>';
+                  html += '</div>';
+                  html += '<div class="text-right">';
+                  html += '<div class="text-[10px] font-bold text-gray-600">Giá thu tới</div>';
+                  html += '<div class="text-sm font-black text-[#e60012]">' + item.base_buyback_price_formatted + '</div>';
+                  html += '</div>';
+                  html += '</a>';
+                });
+                searchResults.innerHTML = html;
+                searchResults.classList.remove('hidden');
+              } else {
+                searchResults.innerHTML = '<div class="p-4 text-center text-xs text-gray-700 font-medium">Không tìm thấy thiết bị phù hợp. Thử tìm với iPhone 15, Galaxy S24...</div>';
+                searchResults.classList.remove('hidden');
+              }
+            })
+            .catch(function(err) {
+              console.error('Header search error:', err);
+            });
+        }, 250);
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+          searchResults.classList.add('hidden');
+        }
+      });
+    }
+  });
+  </script>
+
   <!-- 4. TOP CAMPAIGN SLIDER (Sau Menu: Nằm gọn trong container max-w-[1440px], không tràn màn hình, tỷ lệ 2400x480, có nút X đóng) -->
+  <?php if ( is_front_page() || is_home() ) : ?>
   <div id="pxTopCampaignSlider" class="w-full relative z-20 transition-all duration-300 overflow-hidden" style="transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, margin 0.3s ease-in-out, padding 0.3s ease-in-out;">
     <div class="max-w-[1440px] mx-auto px-4 pt-3 pb-1">
       <div class="relative w-full rounded-2xl md:rounded-3xl overflow-hidden bg-[#7d000a] shadow-md border border-red-950/30">
@@ -442,22 +539,22 @@
 
         <!-- Slides Track -->
         <div id="pxCampaignSliderTrack" class="relative w-full flex transition-transform duration-500 ease-out" style="transform: translateX(0%);">
-          <!-- Slide 1 -->
-          <a href="<?php echo esc_url( home_url( '/shop/?category=smartphone' ) ); ?>" class="w-full shrink-0 block relative group" style="aspect-ratio: 2400 / 600;">
+          <!-- Slide 1: Thu Cũ Đổi Mới -->
+          <a href="<?php echo esc_url( home_url( '/dinh-gia-dien-thoai/' ) ); ?>" class="w-full shrink-0 block relative group" style="aspect-ratio: 2400 / 600;">
             <img 
               src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/banners/slider-banner-1-2400x600.png' ); ?>" 
-              alt="Tựu Trường Deal Thơm - Giảm đến 3 Triệu - Trả góp 0% - Smartphone Chính Hãng VN/A" 
+              alt="PhoneX Thu Cũ Đổi Mới - Định Giá Online 30 Giây - Trợ Giá Lên Đời Đến 3 Triệu - Giải Ngân Chuyển Khoản 5 Phút" 
               class="w-full h-full object-cover select-none"
               width="2400" 
               height="600"
               loading="eager"
             />
           </a>
-          <!-- Slide 2 -->
-          <a href="<?php echo esc_url( home_url( '/shop/?category=smartphone' ) ); ?>" class="w-full shrink-0 block relative group" style="aspect-ratio: 2400 / 600;">
+          <!-- Slide 2: Kho Máy Cũ Like New 99% -->
+          <a href="<?php echo esc_url( home_url( '/kho-may-cu/' ) ); ?>" class="w-full shrink-0 block relative group" style="aspect-ratio: 2400 / 600;">
             <img 
               src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/banners/slider-banner-2-2400x600.png' ); ?>" 
-              alt="Phá Cỗ Tung Deal - Điện thoại Tablet Flagship giảm thêm 150K - 1.5 Triệu - Phụ kiện giảm 15%" 
+              alt="Kho Máy Cũ PhoneX - Like New 99% Zin Nguyên Bản - Tiết Kiệm Đến 50% - Bảo Hành 12 Tháng 1 Đổi 1 - Nguồn Sỉ Chiết Khấu Cao" 
               class="w-full h-full object-cover select-none"
               width="2400" 
               height="600"
@@ -492,6 +589,7 @@
       </div>
     </div>
   </div>
+  <?php endif; ?>
 
   <!-- ===================================================
        LOCATION PICKER MODAL (Strictly Hidden by Default)
@@ -510,10 +608,10 @@
           </div>
           <div>
             <h3 class="text-base sm:text-lg font-extrabold text-gray-900 leading-tight">Chọn Khu Vực Của Bạn</h3>
-            <p class="text-xs text-gray-500 mt-0.5">Hiển thị giá ưu đãi và tồn kho tại showroom gần bạn nhất</p>
+            <p class="text-xs text-gray-700 font-medium mt-0.5">Hiển thị giá ưu đãi và tồn kho tại showroom gần bạn nhất</p>
           </div>
         </div>
-        <button type="button" aria-label="<?php esc_attr_e('Đóng', 'phonex'); ?>" onclick="PhoneXLocation.closeModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 text-gray-500 transition-colors">
+        <button type="button" aria-label="<?php esc_attr_e('Đóng', 'phonex'); ?>" onclick="PhoneXLocation.closeModal()" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 text-gray-700 transition-colors">
           <span class="material-symbols-outlined text-[20px]">close</span>
         </button>
       </div>
@@ -521,12 +619,12 @@
       <!-- Quick Search City Input -->
       <div class="p-3 border-b border-gray-100 shrink-0">
         <div class="relative">
-          <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-gray-400 text-[20px]">search</span>
+          <span class="material-symbols-outlined absolute left-3.5 top-2.5 text-gray-600 text-[20px]">search</span>
           <input 
             type="text" 
             id="pxCitySearchInput" 
             oninput="PhoneXLocation.filterCities(this.value)" 
-            class="w-full h-10 pl-10 pr-4 bg-gray-100 rounded-xl text-sm text-gray-900 placeholder-gray-400 border border-transparent focus:border-[#e60012] focus:bg-white focus:outline-none transition-all" 
+            class="w-full h-10 pl-10 pr-4 bg-gray-100 rounded-xl text-sm text-gray-900 placeholder-gray-500 border border-transparent focus:border-[#e60012] focus:bg-white focus:outline-none transition-all" 
             placeholder="Nhập tên tỉnh, thành phố..."
           >
         </div>
@@ -540,47 +638,47 @@
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Hà Nội')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Hà Nội</span>
-          <span class="text-[10px] text-gray-400 font-normal">85 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">85 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Đà Nẵng')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Đà Nẵng</span>
-          <span class="text-[10px] text-gray-400 font-normal">24 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">24 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Cần Thơ')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Cần Thơ</span>
-          <span class="text-[10px] text-gray-400 font-normal">18 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">18 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Hải Phòng')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Hải Phòng</span>
-          <span class="text-[10px] text-gray-400 font-normal">16 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">16 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Bình Dương')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Bình Dương</span>
-          <span class="text-[10px] text-gray-400 font-normal">22 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">22 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Đồng Nai')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Đồng Nai</span>
-          <span class="text-[10px] text-gray-400 font-normal">19 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">19 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Vũng Tàu')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Vũng Tàu</span>
-          <span class="text-[10px] text-gray-400 font-normal">12 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">12 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Nha Trang')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Nha Trang</span>
-          <span class="text-[10px] text-gray-400 font-normal">10 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">10 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Huế')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Huế</span>
-          <span class="text-[10px] text-gray-400 font-normal">8 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">8 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Quảng Ninh')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Quảng Ninh</span>
-          <span class="text-[10px] text-gray-400 font-normal">9 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">9 shop</span>
         </button>
         <button type="button" onclick="PhoneXLocation.selectCity('Thanh Hóa')" class="px-city-btn p-3 rounded-xl border border-gray-200 hover:border-[#e60012] hover:bg-[#ffdad5] text-gray-800 hover:text-[#b7000c] font-bold text-sm text-left transition-all flex items-center justify-between">
           <span>Thanh Hóa</span>
-          <span class="text-[10px] text-gray-400 font-normal">7 shop</span>
+          <span class="text-[10px] text-gray-600 font-bold">7 shop</span>
         </button>
       </div>
 
@@ -590,7 +688,7 @@
           <span>Xem 128 Showroom toàn quốc</span>
           <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </a>
-        <span class="text-gray-400">Giao nhanh 2h</span>
+        <span class="text-gray-700 font-semibold">Giao nhanh 2h</span>
       </div>
     </div>
   </div>
@@ -646,15 +744,15 @@
 
         <!-- Quick Action Grid -->
         <div>
-          <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Tiện ích nhanh</div>
+          <div class="text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-2">Tiện ích nhanh</div>
           <div class="grid grid-cols-2 gap-2">
             <a href="<?php echo esc_url(home_url('/tra-cuu-don-hang/')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-2.5 transition-colors">
               <span class="material-symbols-outlined text-[#e60012] text-[22px]">local_shipping</span>
-              <div class="text-left"><div class="text-xs font-bold text-gray-900">Tra cứu đơn</div><div class="text-[11px] text-gray-500">Tiến độ giao hàng</div></div>
+              <div class="text-left"><div class="text-xs font-bold text-gray-900">Tra cứu đơn</div><div class="text-[11px] text-gray-700 font-medium">Tiến độ giao hàng</div></div>
             </a>
             <a href="<?php echo esc_url(home_url('/bao-hanh/')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-2.5 transition-colors">
               <span class="material-symbols-outlined text-green-600 text-[22px]">verified_user</span>
-              <div class="text-left"><div class="text-xs font-bold text-gray-900">Bảo hành</div><div class="text-[11px] text-gray-500">Tra cứu IMEI/SĐT</div></div>
+              <div class="text-left"><div class="text-xs font-bold text-gray-900">Bảo hành</div><div class="text-[11px] text-gray-700 font-medium">Tra cứu IMEI/SĐT</div></div>
             </a>
             <a href="<?php echo esc_url(home_url('/thu-cu-doi-moi/')); ?>" class="p-3 rounded-xl bg-[#ffdad5] hover:bg-[#ffdad5] border border-[#ffdad5] flex items-center gap-2.5 transition-colors">
               <span class="material-symbols-outlined text-[#e60012] text-[22px]">sync_alt</span>
@@ -662,47 +760,58 @@
             </a>
             <a href="<?php echo esc_url(home_url('/showroom/')); ?>" class="p-3 rounded-xl bg-gray-50 hover:bg-gray-100 border border-gray-100 flex items-center gap-2.5 transition-colors">
               <span class="material-symbols-outlined text-purple-600 text-[22px]">store</span>
-              <div class="text-left"><div class="text-xs font-bold text-gray-900">128 Cửa hàng</div><div class="text-[11px] text-gray-500">Gần bạn nhất</div></div>
+              <div class="text-left"><div class="text-xs font-bold text-gray-900">128 Cửa hàng</div><div class="text-[11px] text-gray-700 font-medium">Gần bạn nhất</div></div>
             </a>
           </div>
         </div>
 
         <!-- Requested Main Menu Links for Mobile -->
         <div>
-          <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-2">Danh mục chính</div>
+          <div class="text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-2">Danh mục chính</div>
           <div class="grid grid-cols-2 gap-2 text-xs font-bold text-gray-800">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
               <span class="material-symbols-outlined text-[#e60012] text-[18px]">home</span>
               <span>Trang chủ</span>
             </a>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-[#e60012] text-[18px]">smartphone</span>
-              <span>Điện thoại</span>
-            </a>
-            <a href="<?php echo esc_url( home_url( '/dien-thoai-cu/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-[#e60012] text-[18px]">sync_alt</span>
-              <span>Máy cũ giá tốt</span>
-            </a>
-            <a href="<?php echo esc_url( home_url( '/khuyen-mai/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-[#e60012] text-[18px]">local_fire_department</span>
-              <span>Khuyến mãi Hot</span>
-            </a>
-            <a href="<?php echo esc_url( home_url( '/thu-cu-doi-moi/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
+            <a href="<?php echo esc_url( home_url( '/thu-mua-dien-thoai/' ) ); ?>" class="p-2.5 rounded-xl bg-red-50 hover:bg-red-100 text-[#b7000c] border border-red-200 transition-colors flex items-center gap-2">
               <span class="material-symbols-outlined text-[#e60012] text-[18px]">currency_exchange</span>
-              <span>Thu cũ đổi mới</span>
+              <span>Thu mua máy</span>
             </a>
-            <a href="<?php echo esc_url( home_url( '/tra-gop/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
-              <span class="material-symbols-outlined text-amber-600 text-[18px]">credit_card</span>
-              <span>Trả góp 0%</span>
+            <a href="<?php echo esc_url( home_url( '/bang-gia-thu-mua/' ) ); ?>" class="p-2.5 rounded-xl bg-red-50/80 hover:bg-red-100 text-[#b7000c] border border-red-200/90 transition-colors flex items-center justify-between">
+              <span class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-[#e60012] text-[18px]">table_chart</span>
+                <span>Bảng giá thu</span>
+              </span>
+              <span class="text-[9px] font-black uppercase px-1.5 py-0.5 rounded-full bg-[#e60012] text-white">300+</span>
+            </a>
+            <a href="<?php echo esc_url( home_url( '/kho-may-cu/' ) ); ?>" class="p-2.5 rounded-xl bg-amber-50/80 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-colors flex items-center justify-between">
+              <span class="flex items-center gap-1.5">
+                <span class="material-symbols-outlined text-amber-700 text-[18px]">inventory_2</span>
+                <span>Kho máy cũ</span>
+              </span>
+              <span class="text-[9px] font-black uppercase px-1.5 py-0.5 rounded-full bg-[#e60012] text-white">99%</span>
+            </a>
+            <!-- CTA Button Định Giá Máy Nổi Bật -->
+            <a href="<?php echo esc_url( home_url( '/dinh-gia-dien-thoai/' ) ); ?>" class="p-3 rounded-xl bg-gradient-to-r from-[#e60012] to-[#b7000c] text-white hover:from-[#b7000c] hover:to-[#910009] transition-all flex items-center justify-center gap-2 col-span-2 shadow-xs font-black text-sm">
+              <span class="material-symbols-outlined text-white text-[20px]">calculate</span>
+              <span>Định giá máy online ngay (30 giây) &rarr;</span>
+            </a>
+            <a href="<?php echo esc_url( home_url( '/quy-trinh-thu-mua/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-teal-600 text-[18px]">sync</span>
+              <span>Quy trình 7 bước</span>
+            </a>
+            <a href="<?php echo esc_url( home_url( '/tieu-chuan-kiem-dinh/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
+              <span class="material-symbols-outlined text-emerald-600 text-[18px]">rule</span>
+              <span>Chuẩn Grade A-D</span>
             </a>
           </div>
 
-          <!-- Phụ kiện TGDD 4 Groups Quick Access -->
+          <!-- Phụ kiện PhoneX 4 Groups Quick Access -->
           <div class="mt-4 pt-3 border-t border-gray-100">
             <div class="flex items-center justify-between mb-2">
-              <div class="text-[11px] font-bold text-gray-400 uppercase tracking-wider flex items-center gap-1.5">
+              <div class="text-[11px] font-bold text-gray-700 uppercase tracking-wider flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-[#e60012] text-[16px]">headphones</span>
-                <span>Phụ Kiện Chính Hãng (TGDD)</span>
+                <span>Phụ Kiện Chính Hãng PhoneX</span>
               </div>
               <a href="<?php echo esc_url( home_url( '/product-category/phu-kien/' ) ); ?>" class="text-[11px] text-[#e60012] font-bold hover:underline">Tất cả &rarr;</a>
             </div>
@@ -713,10 +822,12 @@
                   <span class="w-1.5 h-1.5 rounded-full bg-[#e60012]"></span> Phụ kiện di động
                 </div>
                 <div class="flex flex-wrap gap-1">
-                  <a href="<?php echo esc_url(home_url('/shop/?category=sac-du-phong')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Sạc dự phòng</a>
-                  <a href="<?php echo esc_url(home_url('/shop/?category=sac-cap')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Sạc cáp</a>
-                  <a href="<?php echo esc_url(home_url('/shop/?category=op-lung-dien-thoai')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Ốp lưng</a>
-                  <a href="<?php echo esc_url(home_url('/shop/?category=mieng-dan')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Kính cường lực</a>
+                  <a href="<?php echo esc_url(home_url('/sac-dtdd/')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Sạc dự phòng</a>
+                  <a href="<?php echo esc_url(home_url('/sac-cap/')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Sạc cáp</a>
+                  <a href="<?php echo esc_url(home_url('/op-lung-flipcover/')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Ốp lưng</a>
+                  <a href="<?php echo esc_url(home_url('/mieng-dan-man-hinh/')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Kính cường lực</a>
+                  <a href="<?php echo esc_url(home_url('/mieng-dan-camera/')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Dán Camera</a>
+                  <a href="<?php echo esc_url(home_url('/op-lung-may-tinh-bang/')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Bao da iPad</a>
                   <a href="<?php echo esc_url(home_url('/shop/?category=tui-dung-airpods')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Túi AirPods</a>
                   <a href="<?php echo esc_url(home_url('/shop/?category=gia-do-dien-thoai-laptop')); ?>" class="px-2 py-0.5 bg-white rounded border border-gray-200 text-[10px] font-medium text-gray-700">Giá đỡ</a>
                 </div>

@@ -400,9 +400,23 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
                   </div>
                 </div>
               </div>
-              <a href="<?php echo $link; ?>" class="mt-3 w-full h-9 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary text-xs sm:text-[13px] font-bold transition-colors flex items-center justify-center gap-1 shadow-sm">
-                Mua Ngay
-              </a>
+              <div class="mt-3 flex flex-col gap-1.5 w-full">
+                <a href="<?php echo $link; ?>" class="w-full h-9 rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary text-xs sm:text-[13px] font-bold transition-colors flex items-center justify-center gap-1 shadow-sm">
+                  <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                  <span>Đặt mua ngay</span>
+                </a>
+                <button type="button" class="open-specs-modal-btn w-full h-8 rounded-lg border border-rose-200 bg-rose-50/60 hover:bg-rose-100 text-primary text-[11px] sm:text-xs font-semibold transition-colors flex items-center justify-center gap-1 cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( array(
+                  'name'      => $prod['name'],
+                  'image'     => $prod['image'],
+                  'price'     => preg_replace('/[^\d]/', '', $prod['price_sale'] ?? '0'),
+                  'price_old' => preg_replace('/[^\d]/', '', $prod['price_orig'] ?? '0'),
+                  'specs'     => $prod['specs'] ?? '',
+                  'permalink' => $link
+                ) ) ); ?>">
+                  <span class="material-symbols-outlined text-[15px] text-primary">info</span>
+                  <span>Xem chi tiết</span>
+                </button>
+              </div>
             </div>
           <?php endforeach; ?>
         </div>
@@ -463,9 +477,23 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
                       </div>
                     </div>
                   </div>
-                  <a href="<?php echo $link; ?>" class="mt-3 w-full h-9 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs sm:text-[13px] font-bold transition-colors flex items-center justify-center gap-1 shadow-sm">
-                    Mua Ngay
-                  </a>
+                  <div class="mt-3 flex flex-col gap-1.5 w-full">
+                    <a href="<?php echo $link; ?>" class="w-full h-9 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs sm:text-[13px] font-bold transition-colors flex items-center justify-center gap-1 shadow-sm">
+                      <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+                      <span>Đặt mua ngay</span>
+                    </a>
+                    <button type="button" class="open-specs-modal-btn w-full h-8 rounded-lg border border-amber-200 bg-amber-50 hover:bg-amber-100 text-amber-800 text-[11px] sm:text-xs font-semibold transition-colors flex items-center justify-center gap-1 cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( array(
+                      'name'      => $prod['name'],
+                      'image'     => $prod['image'],
+                      'price'     => preg_replace('/[^\d]/', '', $prod['price_sale'] ?? '0'),
+                      'price_old' => preg_replace('/[^\d]/', '', $prod['price_orig'] ?? '0'),
+                      'specs'     => $prod['specs'] ?? '',
+                      'permalink' => $link
+                    ) ) ); ?>">
+                      <span class="material-symbols-outlined text-[15px] text-amber-700">info</span>
+                      <span>Xem chi tiết</span>
+                    </button>
+                  </div>
                 </div>
               <?php endforeach; ?>
             </div>
@@ -549,9 +577,23 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
                 <span>(<?php echo esc_html( $p['reviews'] ?? '180 đánh giá' ); ?>)</span>
               </div>
             </div>
-            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
-              Mua Ngay
-            </a>
+            <div class="mt-3 flex flex-col gap-1.5 w-full">
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-8.5 rounded-lg bg-primary hover:bg-primary-hover text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+                <span class="material-symbols-outlined text-[15px]">shopping_bag</span>
+                <span>Đặt mua ngay</span>
+              </a>
+              <button type="button" class="open-specs-modal-btn w-full h-7.5 rounded-lg border border-border-subtle bg-gray-50 hover:bg-rose-50 text-text-main hover:text-primary text-[11px] font-semibold transition-colors flex items-center justify-center gap-1 cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( array(
+                'name'      => $p['name'],
+                'image'     => $p['image'],
+                'price'     => preg_replace('/[^\d]/', '', $p['price_sale'] ?? '0'),
+                'price_old' => preg_replace('/[^\d]/', '', $p['price_orig'] ?? '0'),
+                'specs'     => $p['specs'] ?? '',
+                'permalink' => $p['link']
+              ) ) ); ?>">
+                <span class="material-symbols-outlined text-[14px] text-primary">info</span>
+                <span>Xem chi tiết</span>
+              </button>
+            </div>
           </div>
         <?php endforeach; ?>
       </div>
@@ -559,19 +601,20 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
 
     <!-- ================= SECTION 3: HỆ SINH THÁI APPLE CHÍNH HÃNG VN/A (TGDD Style #apple) ================= -->
     <section id="apple" class="scroll-mt-28 space-y-4">
-      <div class="bg-gradient-to-r from-gray-900 via-gray-800 to-black rounded-2xl p-4 sm:p-5 text-white flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-sm">
-        <div class="flex items-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-            <span class="material-symbols-outlined text-[28px] text-amber-300">phone_iphone</span>
+      <div class="rounded-2xl p-4 sm:p-5 text-[#1F1F1F] border border-[#ffb4aa] flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xs relative overflow-hidden" style="background-color: var(--px-primary-fixed, #FFF0F2);">
+        <div class="absolute -right-8 -top-8 w-48 h-48 bg-white/40 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="flex items-center gap-3 relative z-10">
+          <div class="w-12 h-12 rounded-xl bg-white border border-[#ffb4aa]/60 flex items-center justify-center shrink-0 shadow-2xs">
+            <span class="material-symbols-outlined text-[28px] text-[#FF001F]">phone_iphone</span>
           </div>
           <div>
-            <h2 class="text-xl sm:text-2xl font-black tracking-tight"><?php echo esc_html( $sec_apple_t ); ?></h2>
-            <p class="text-xs sm:text-sm text-gray-300"><?php echo esc_html( $sec_apple_s ); ?></p>
+            <h2 class="text-xl sm:text-2xl font-black text-[#1F1F1F] tracking-tight"><?php echo esc_html( $sec_apple_t ); ?></h2>
+            <p class="text-xs sm:text-sm text-gray-800 font-medium"><?php echo esc_html( $sec_apple_s ); ?></p>
           </div>
         </div>
 
-        <div class="flex items-center gap-2">
-          <span class="px-3 py-1.5 rounded-full bg-white/15 text-xs font-bold text-white"><?php echo esc_html( $sec_apple_b ); ?></span>
+        <div class="flex items-center gap-2 relative z-10">
+          <span class="px-3 py-1.5 rounded-full bg-white/95 border border-[#FF001F]/20 text-xs font-bold text-[#b7000c] shadow-2xs"><?php echo esc_html( $sec_apple_b ); ?></span>
         </div>
       </div>
 
@@ -605,9 +648,23 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
                 <div class="text-[11px] sm:text-[12px] text-secondary line-through"><?php echo esc_html( $p['price_orig'] ); ?></div>
               </div>
             </div>
-            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
-              Mua Ngay
-            </a>
+            <div class="mt-3 flex flex-col gap-1.5 w-full">
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-8.5 rounded-lg bg-gray-900 hover:bg-black text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+                <span class="material-symbols-outlined text-[15px]">shopping_bag</span>
+                <span>Đặt mua ngay</span>
+              </a>
+              <button type="button" class="open-specs-modal-btn w-full h-7.5 rounded-lg border border-border-subtle bg-gray-50 hover:bg-gray-100 text-text-main hover:text-black text-[11px] font-semibold transition-colors flex items-center justify-center gap-1 cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( array(
+                'name'      => $p['name'],
+                'image'     => $p['image'],
+                'price'     => preg_replace('/[^\d]/', '', $p['price_sale'] ?? '0'),
+                'price_old' => preg_replace('/[^\d]/', '', $p['price_orig'] ?? '0'),
+                'specs'     => $p['specs'] ?? '',
+                'permalink' => $p['link']
+              ) ) ); ?>">
+                <span class="material-symbols-outlined text-[14px] text-gray-800">info</span>
+                <span>Xem chi tiết</span>
+              </button>
+            </div>
           </div>
         <?php endforeach; ?>
       </div>
@@ -657,9 +714,23 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
                 <div class="text-[11px] sm:text-[12px] text-secondary line-through"><?php echo esc_html( $p['price_orig'] ); ?></div>
               </div>
             </div>
-            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
-              Mua Ngay
-            </a>
+            <div class="mt-3 flex flex-col gap-1.5 w-full">
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-8.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+                <span class="material-symbols-outlined text-[15px]">shopping_bag</span>
+                <span>Đặt mua ngay</span>
+              </a>
+              <button type="button" class="open-specs-modal-btn w-full h-7.5 rounded-lg border border-blue-200 bg-blue-50/60 hover:bg-blue-100 text-blue-800 text-[11px] font-semibold transition-colors flex items-center justify-center gap-1 cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( array(
+                'name'      => $p['name'],
+                'image'     => $p['image'],
+                'price'     => preg_replace('/[^\d]/', '', $p['price_sale'] ?? '0'),
+                'price_old' => preg_replace('/[^\d]/', '', $p['price_orig'] ?? '0'),
+                'specs'     => $p['specs'] ?? '',
+                'permalink' => $p['link']
+              ) ) ); ?>">
+                <span class="material-symbols-outlined text-[14px] text-blue-700">info</span>
+                <span>Xem chi tiết</span>
+              </button>
+            </div>
           </div>
         <?php endforeach; ?>
       </div>
@@ -732,9 +803,23 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
                 <div class="text-[11px] sm:text-[12px] text-secondary line-through"><?php echo esc_html( $p['price_orig'] ); ?></div>
               </div>
             </div>
-            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
-              Mua Ngay
-            </a>
+            <div class="mt-3 flex flex-col gap-1.5 w-full">
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-8.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+                <span class="material-symbols-outlined text-[15px]">shopping_bag</span>
+                <span>Đặt mua ngay</span>
+              </a>
+              <button type="button" class="open-specs-modal-btn w-full h-7.5 rounded-lg border border-amber-200 bg-amber-50/60 hover:bg-amber-100 text-amber-800 text-[11px] font-semibold transition-colors flex items-center justify-center gap-1 cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( array(
+                'name'      => $p['name'],
+                'image'     => $p['image'],
+                'price'     => preg_replace('/[^\d]/', '', $p['price_sale'] ?? '0'),
+                'price_old' => preg_replace('/[^\d]/', '', $p['price_orig'] ?? '0'),
+                'specs'     => $p['specs'] ?? '',
+                'permalink' => $p['link']
+              ) ) ); ?>">
+                <span class="material-symbols-outlined text-[14px] text-amber-700">info</span>
+                <span>Xem chi tiết</span>
+              </button>
+            </div>
           </div>
         <?php endforeach; ?>
       </div>
@@ -783,9 +868,23 @@ $watch_prods = function_exists( 'phonex_get_promotion_products' ) ? phonex_get_p
                 <div class="text-[11px] sm:text-[12px] text-secondary line-through"><?php echo esc_html( $p['price_orig'] ); ?></div>
               </div>
             </div>
-            <a href="<?php echo esc_url( $p['link'] ); ?>" class="mt-3 w-full h-8.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
-              Mua Ngay
-            </a>
+            <div class="mt-3 flex flex-col gap-1.5 w-full">
+              <a href="<?php echo esc_url( $p['link'] ); ?>" class="w-full h-8.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition-colors flex items-center justify-center gap-1 shadow-xs">
+                <span class="material-symbols-outlined text-[15px]">shopping_bag</span>
+                <span>Đặt mua ngay</span>
+              </a>
+              <button type="button" class="open-specs-modal-btn w-full h-7.5 rounded-lg border border-emerald-200 bg-emerald-50/60 hover:bg-emerald-100 text-emerald-800 text-[11px] font-semibold transition-colors flex items-center justify-center gap-1 cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( array(
+                'name'      => $p['name'],
+                'image'     => $p['image'],
+                'price'     => preg_replace('/[^\d]/', '', $p['price_sale'] ?? '0'),
+                'price_old' => preg_replace('/[^\d]/', '', $p['price_orig'] ?? '0'),
+                'specs'     => $p['specs'] ?? '',
+                'permalink' => $p['link']
+              ) ) ); ?>">
+                <span class="material-symbols-outlined text-[14px] text-emerald-700">info</span>
+                <span>Xem chi tiết</span>
+              </button>
+            </div>
           </div>
         <?php endforeach; ?>
       </div>

@@ -1,0 +1,3477 @@
+{
+  "metadata": {
+    "source": "https://www.chotot.com/mua-ban-dien-thoai",
+    "crawled_at": "2026-10-02 11:35:01",
+    "total_items": 60,
+    "grade_counts": {
+      "GRADE_A": 6,
+      "GRADE_B": 45,
+      "GRADE_C": 9,
+      "GRADE_D": 0
+    }
+  },
+  "phones": [
+    {
+      "id": "135015903",
+      "list_id": 135015903,
+      "title": "Apple iPhone 16 Pro Max 256GB Vàng 91%",
+      "brand": "Apple",
+      "model": "iPhone 16 Pro Max",
+      "price": 24500000,
+      "price_formatted": "24.500.000₫",
+      "seller_name": "thao",
+      "location": "Phường 25, Quận Bình Thạnh, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Vàng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ • Pin: Xuất sắc 91%",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Pin 91% (Cao)",
+          "grade": "GRADE_A",
+          "detail": "Dung lượng pin hoàn hảo 91% (>= 85%)"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "16 promax 256gb vàng samac vn fullbox Em sẵn cây pin 91,96 máy zin chuẩn Pin 91% 24tr5 Pin 96% 25tr6",
+      "images": [
+        "https://cdn.chotot.com/YK2LZL2_OQQhd78zSE8DPPfRNbWofKoORl8IJ2-bTTc/preset:view/plain/1609c428371feb4e41d3c83a6949c4a5-3004657260999991721.jpg",
+        "https://cdn.chotot.com/wY1NH2ip_X1ImbWKk-ZpbJUbbsUZXhB8rAr4H8iF__4/preset:view/plain/eccdd1b3d40493d02dac5f411180ba54-3004657260942383984.jpg",
+        "https://cdn.chotot.com/_8r9ux1XycYmCOdGFziJFycbOnzcXn2coszF4Uu9SQQ/preset:view/plain/5e5b41632e28222e291d07d8e8056410-3004657260782871395.jpg"
+      ],
+      "image": "https://cdn.chotot.com/YK2LZL2_OQQhd78zSE8DPPfRNbWofKoORl8IJ2-bTTc/preset:view/plain/1609c428371feb4e41d3c83a6949c4a5-3004657260999991721.jpg",
+      "chotot_url": "https://www.chotot.com/135015903.htm",
+      "crawled_at": "2026-10-02 11:34:32"
+    },
+    {
+      "id": "135015902",
+      "list_id": 135015902,
+      "title": "15prm trắng 🇺🇸 Qte zin áp máy đẹp pin 8x",
+      "brand": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "price": 18500000,
+      "price_formatted": "18.500.000₫",
+      "seller_name": "Lộc Nguyễn",
+      "location": "Phường Trảng Dài, Thành phố Biên Hòa, Đồng Nai",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Mỹ",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "15promax 256G Qte mỹ hàng nhập Máy đẹp zin áp pin zin 8x Giá mềm: 18tr500 Bảo hành 12 tháng + phụ kiện Hỗ trợ trả góp ngân hàng - icloud ChipApple",
+      "images": [
+        "https://cdn.chotot.com/b0wbc9krWnIxuNNVbL1zEK7ivrADb7bfZ9h_MH42JZg/preset:view/plain/50c96b68839209db4142fdcdd04d2bcf-3004657642360280556.jpg",
+        "https://cdn.chotot.com/MN0lmuxqO6XarEC1tb8-FMwSdQU0w2kSDeBNTj0sam8/preset:view/plain/c1016850522d2b83556f78a1ada8f0fd-3004657643090141609.jpg",
+        "https://cdn.chotot.com/FDAQRLVi2xNS-vhNh8rdqO1OOukBIjnPYJ7szdVfCSQ/preset:view/plain/e8cec5051c4d29b40e50bde1c5d2114a-3004657643721308518.jpg",
+        "https://cdn.chotot.com/bnyj9zvblKMoM05xEbpHluFL0A4Y_0P_fn3fZBDm7X0/preset:view/plain/07130eb2a7198480e0242fdac9589096-3004657660085723561.jpg",
+        "https://cdn.chotot.com/93N1_KwU1lc07d3REm68OU2X3bITAMCzy12GAFZmeE8/preset:view/plain/0eeb3e4b5a4bba610291640ce1506a68-3004657643258307427.jpg",
+        "https://cdn.chotot.com/T3gsXA-WStIStArX0qRlaIzgxdp3ysIvcn8CjS_YTuU/preset:view/plain/ca12331a3ae6c5716c0d7fc9dfcd8515-3004657644105578737.jpg"
+      ],
+      "image": "https://cdn.chotot.com/b0wbc9krWnIxuNNVbL1zEK7ivrADb7bfZ9h_MH42JZg/preset:view/plain/50c96b68839209db4142fdcdd04d2bcf-3004657642360280556.jpg",
+      "chotot_url": "https://www.chotot.com/135015902.htm",
+      "crawled_at": "2026-10-02 11:34:33"
+    },
+    {
+      "id": "134923752",
+      "list_id": 134923752,
+      "title": "iPhone 15 Pro Max 512GB",
+      "brand": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "price": 15850000,
+      "price_formatted": "15.850.000₫",
+      "seller_name": "nguyễn hải",
+      "location": "Phường Hiệp Thành, Quận 12, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Hết bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Mỹ",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "iphone 15promax 512gb máy xài tốt mọi tính năng.icloud chính chủ,reset thoải mái.chụp hình sắc nét.chiến game cực đã.máy đầy đù cáp xạc.có dán sẳn cường lực.dung lượng cực lớn lưu cả thế giới.máy xài kỉ nên còn rất đẹp.anh em qua xem thoải mái không được anh em vui vẻ không sao cả.ai có nhu cầu mua sử dụng thì liên hệ trực tiếp với e ạ.",
+      "images": [
+        "https://cdn.chotot.com/WAlI6NVcmLUR3C6gn49PLayQLRh6P6WQtDsRWgZhGqg/preset:view/plain/84c923b2f3b5632332cfaa072856d995-3003955268108428130.jpg",
+        "https://cdn.chotot.com/_jzEcxxXXq-Ht-1oDLvu36V0zJQCpI_Q86N0YvkqBO0/preset:view/plain/b23a0b33638b048fc40d124aca1ac053-3003955270496427290.jpg",
+        "https://cdn.chotot.com/l9GRuVbZETZebjFQXx_CJSf0l6zVSZq_N0LHabOquww/preset:view/plain/44f096b9f7938ca098511b3fbb8d0cda-3003955268682924537.jpg",
+        "https://cdn.chotot.com/5uFjgOAPqpPuCSdFliVDjZsdPgpUpUBs7VTqxGC1iJ8/preset:view/plain/1120b6e75c7a7d3224cca94ecad00702-3003955270035637476.jpg",
+        "https://cdn.chotot.com/jTJCKb1qRym4_JwiYLmeEzL1x02kjU1k32oYfpRjzgk/preset:view/plain/6d5501305d0ee01827e07ac9e7289b67-3003955269875363840.jpg",
+        "https://cdn.chotot.com/Ydz3hyhCe3ZCtriY8iLOfQKXJg0FhjafQYf4odSW65k/preset:view/plain/4841be792cbba91be1b44001de0637ad-3003955270159304722.jpg"
+      ],
+      "image": "https://cdn.chotot.com/WAlI6NVcmLUR3C6gn49PLayQLRh6P6WQtDsRWgZhGqg/preset:view/plain/84c923b2f3b5632332cfaa072856d995-3003955268108428130.jpg",
+      "chotot_url": "https://www.chotot.com/134923752.htm",
+      "crawled_at": "2026-10-02 11:34:33"
+    },
+    {
+      "id": "135015895",
+      "list_id": 135015895,
+      "title": "bán Xiaomi 13 giá 4tr5",
+      "brand": "Xiaomi",
+      "model": "13",
+      "price": 4500000,
+      "price_formatted": "4.500.000₫",
+      "seller_name": "Ý Hà",
+      "location": "Phường Linh Xuân (Quận Thủ Đức cũ), Thành phố Thủ Đức, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "HCM, Khu Vực Thủ Đức có xiaomi 13 8/256 máy kèm ốp, đản dán ppf màn giá 4tr5",
+      "images": [
+        "https://cdn.chotot.com/GPjOiiraRU3SpLNQe78tdLpM16RyFit57p1lHDWTpsQ/preset:view/plain/82361f6eaede946b93a379bd18295929-3004656829953663401.jpg",
+        "https://cdn.chotot.com/bm1iOrqCyr2Fv2t8UbJqqhhYr2Wv3boo8_fkhY8yr3s/preset:view/plain/af3f6aa726291fc3197872386bb968c2-3004656829716239852.jpg",
+        "https://cdn.chotot.com/wlSKCsv33ggGB2eskYscorywHmhMrH23zo4THHz3Bro/preset:view/plain/2cfc7bedb24fb2bc80cd950dc6ff83bd-3004656831054461286.jpg",
+        "https://cdn.chotot.com/zhSnmxlZFn07R68kPb9S498m-VGdgo2oM36FKcHiqNg/preset:view/plain/abf0e90a912afdc2cc1925dd7830c926-3004656831379792297.jpg",
+        "https://cdn.chotot.com/W2H9mi_Hi7ODqCECo5C3y4OLKBAhATtx-WT5Y0OAWzc/preset:view/plain/af5d8e679857d208bb6922c7ed876c94-3004656832719492588.jpg"
+      ],
+      "image": "https://cdn.chotot.com/GPjOiiraRU3SpLNQe78tdLpM16RyFit57p1lHDWTpsQ/preset:view/plain/82361f6eaede946b93a379bd18295929-3004656829953663401.jpg",
+      "chotot_url": "https://www.chotot.com/135015895.htm",
+      "crawled_at": "2026-10-02 11:34:33"
+    },
+    {
+      "id": "135015885",
+      "list_id": 135015885,
+      "title": "OPPO Reno8 5G 256GB Đen",
+      "brand": "Oppo",
+      "model": "Reno8",
+      "price": 1800000,
+      "price_formatted": "1.800.000₫",
+      "seller_name": "Tuan",
+      "location": "Phường 10, Quận 10, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Shop bán zeno 8 màn thay cảm ứng muọt 2 sim ram 8/256 Máy zin Full tất cả chức năng Gia 1800k Q10",
+      "images": [
+        "https://cdn.chotot.com/kAyhNVE29KfLFnSrdQCg9GQXu5iBRJ2e-UA_yeYyQaM/preset:view/plain/80b673f77933b9ca0763211282bbab5c-3004657563979122830.jpg",
+        "https://cdn.chotot.com/qYgNUngCDwhh3mf8FckLKQCSZoDfKYtDp-O--hLZyE8/preset:view/plain/df6305ffa8f1e5e87c1fd908ce9e4979-3004657563924881873.jpg",
+        "https://cdn.chotot.com/BCMh6rY5bYXb4VCtBPDJTRCmuqCyTHMtNJGgz34WO4M/preset:view/plain/f6d6e50b91949ed39287f7606f18b490-3004657563414487907.jpg"
+      ],
+      "image": "https://cdn.chotot.com/kAyhNVE29KfLFnSrdQCg9GQXu5iBRJ2e-UA_yeYyQaM/preset:view/plain/80b673f77933b9ca0763211282bbab5c-3004657563979122830.jpg",
+      "chotot_url": "https://www.chotot.com/135015885.htm",
+      "crawled_at": "2026-10-02 11:34:34"
+    },
+    {
+      "id": "135015884",
+      "list_id": 135015884,
+      "title": "Apple iPhone 17 Pro Max 512GB Cam 99%",
+      "brand": "Apple",
+      "model": "iPhone 17 Pro Max",
+      "price": 33000000,
+      "price_formatted": "33.000.000₫",
+      "seller_name": "Sơn Đào",
+      "location": "Vinhomes Royal City, Phường Thượng Đình, Quận Thanh Xuân, Thành phố Hà Nội, Việt Nam, Phường Hạ Đình, Quận Thanh Xuân, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": ">12 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Việt Nam",
+      "color": "Cam",
+      "grade": "GRADE_A",
+      "grade_label": "Grade A (99% Like New)",
+      "grade_short": "Grade A",
+      "grade_percent": "99% Like New",
+      "grade_color": "#00875A",
+      "grade_bg": "#E3FCEF",
+      "grade_border": "#ABF5D1",
+      "grade_badge_class": "bg-emerald-50 text-emerald-800 border-emerald-300",
+      "grade_rationale": "Vỏ máy: Đẹp như mới 99% Like New • Pin: Xuất sắc 99%",
+      "grade_factors": {
+        "body": {
+          "status": "99% Like New",
+          "grade": "GRADE_A",
+          "detail": "Ngoại hình đẹp xuất sắc không cấn móp"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Pin 99% (Cao)",
+          "grade": "GRADE_A",
+          "detail": "Dung lượng pin hoàn hảo 99% (>= 85%)"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Pass iphone 17 promax cam 512GB nguyên zin mới keng 99% pin 91, 33tr. Máy con gái dùng nên không xước gì cả. giấy tờ mua bán từ lúc mua đàng hoàng. bảo hành trọn đời FPT shop",
+      "images": [
+        "https://cdn.chotot.com/GjGDB8M6AqcfE_cDeIVbjK9Iwke67fXZ2KwlMEmRK8g/preset:view/plain/63f9cda6551ef68f5d36ab04e654e7ea-3004657171053034467.jpg",
+        "https://cdn.chotot.com/X19qT6NYGs56CCFZGzEP357yY_Acgjd1oWOO_qFh56Y/preset:view/plain/7fe3f08177a5a106a10a68f749ac21f5-3004657221802277105.jpg",
+        "https://cdn.chotot.com/_KxRFvG0adKe-G0WsiBhQ4q5V80EmKYy9YaJ59qbEt0/preset:view/plain/3c8956ae76404611e28d9eaf15d94dd1-3004657222102932336.jpg",
+        "https://cdn.chotot.com/wa6Ny6aAGSZu7MKGsvpi2_48itITFALC0d8JN7IARNo/preset:view/plain/67ba3c949af6b7f60969d2af3ffcac34-3004657222010200931.jpg"
+      ],
+      "image": "https://cdn.chotot.com/GjGDB8M6AqcfE_cDeIVbjK9Iwke67fXZ2KwlMEmRK8g/preset:view/plain/63f9cda6551ef68f5d36ab04e654e7ea-3004657171053034467.jpg",
+      "chotot_url": "https://www.chotot.com/135015884.htm",
+      "crawled_at": "2026-10-02 11:34:35"
+    },
+    {
+      "id": "135015881",
+      "list_id": 135015881,
+      "title": "iPhone 17 Pro Max 256GB Cam màn gx đẹp",
+      "brand": "Apple",
+      "model": "iPhone 17 Pro Max",
+      "price": 24500000,
+      "price_formatted": "24.500.000₫",
+      "seller_name": "Hậu Nhi Apple",
+      "location": "Phường 12, Quận Gò Vấp, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Cam",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "17 Promax 256GB màn gx pin 100 , máy đầy đủ chức năng không lỗi lầm Góp bao nợ xấu đưa 15tr góp 3 tháng 256/83 Phan Huy Ích F12 Gò Vấp Tặng full phụ kiện + bảo hành , có ship hoả tốc ạ Giao lưu trao đổi các dòng iphone #iphonegiare #gopbaonoxau",
+      "images": [
+        "https://cdn.chotot.com/GNrplFjy6LODa7YKKpp8Q-IGyIR_4WjACzxdVnrAB08/preset:view/plain/2fd027e55103c54415a0a6c02a21b619-3004657671351710571.jpg",
+        "https://cdn.chotot.com/53lkKNvjkd0GEJC3QkLVwmwS8bFUlmRpmh3fySyxG_A/preset:view/plain/5f2b1c45d977cd98240325d65ff96b1b-3004657670834905142.jpg",
+        "https://cdn.chotot.com/_asXEp8q4WEvItJpIVsTFehqClw8HrY4yMCJXpIA4Lc/preset:view/plain/2de45e52a98974c14ed20321b6502a39-3004657670376841681.jpg"
+      ],
+      "image": "https://cdn.chotot.com/GNrplFjy6LODa7YKKpp8Q-IGyIR_4WjACzxdVnrAB08/preset:view/plain/2fd027e55103c54415a0a6c02a21b619-3004657671351710571.jpg",
+      "chotot_url": "https://www.chotot.com/135015881.htm",
+      "crawled_at": "2026-10-02 11:34:36"
+    },
+    {
+      "id": "135015877",
+      "list_id": 135015877,
+      "title": "Honor 400 Lite Xanh 12GB/256GB bán gl nên ạ",
+      "brand": "Honor",
+      "model": "400 Lite",
+      "price": 4650000,
+      "price_formatted": "4.650.000₫",
+      "seller_name": "phan thắng ",
+      "location": "Nhà máy Pin Văn Điển, Thị trấn Văn Điển, Huyện Thanh Trì, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Việt Nam",
+      "color": "Xanh dương",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "máy quốc tế nguyên zin hộp sạc 2 ốp lưng không không lỗi gì mình bán gl nên ạ",
+      "images": [
+        "https://cdn.chotot.com/TZsysStGRtKrfddGyWVMKwkWpNVJ_wRiMjnwTqhGAG0/preset:view/plain/0e327cfdc92b111c7143ee55f62361e4-3004650113298929529.jpg",
+        "https://cdn.chotot.com/Al7kpPTrBDHYSIJOoWIpPHbLmNGeJPIjz4nJtLrO2QE/preset:view/plain/c42b5ef3307ba4fe9dc945c81cc76432-3004650113157160738.jpg"
+      ],
+      "image": "https://cdn.chotot.com/TZsysStGRtKrfddGyWVMKwkWpNVJ_wRiMjnwTqhGAG0/preset:view/plain/0e327cfdc92b111c7143ee55f62361e4-3004650113298929529.jpg",
+      "chotot_url": "https://www.chotot.com/135015877.htm",
+      "crawled_at": "2026-10-02 11:34:36"
+    },
+    {
+      "id": "134526215",
+      "list_id": 134526215,
+      "title": "Redmi Note 15 Pro Plus 12/512GB Xanh BH 6th có góp",
+      "brand": "Xiaomi",
+      "model": "Redmi Note 15 Pro+",
+      "price": 6990000,
+      "price_formatted": "6.990.000₫",
+      "seller_name": "Bèo Mobile Store",
+      "location": "Phường Thạc Gián, Quận Thanh Khê, Đà Nẵng",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Còn bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Trung Quốc",
+      "color": "Xanh dương",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Xiaomi Redmi Note 15 Pro Plus bản 12/512Gb. Màu xanh máy rin đẹp. Pin trâu sạc nhanh, 2 sim tiện dụng. 👉 Máy chạy rom gốc nội địa Trung. Shop đã cài full tiếng Việt tất cả các ứng và fix thông báo ầm ầm. Ae về chỉ việc xài (phần cài đặt máy tiếng Anh). Dùng được tất cả các app ngân hàng và vnied đầy đủ anh em nhé. Giá chỉ: 6.990.000 vnđ. Bảo hành 6 tháng (lấy sạc 67w + 250k). 👉 Có nhận thu lại máy cũ, đổi máy lên đời bù tiền. 👉 Bấm vào Logo “Bèo Mobile” bên trên để xem nhiều sản phẩm hiện có bên mình nhé. 👉 Hỗ trợ trả góp, thanh toán hoặc trả góp từ xa qua thẻ tín dụng, ship COD toàn quốc 🏡 Địa chỉ: Bèo Mobile Store - 167 Phan Thanh - Đà Nẵng (Open 8:30 AM- 7:30 PM). 👉 Ngoài ra bên mình còn chuyên thu mua lại điện thoại cũ, laptop cũ, xác điện thoại nát, vỡ màn hình, kính, lỗi chức năng...v..v Giá Cao.",
+      "images": [
+        "https://cdn.chotot.com/GPBZLfD1jWMpZa5S_fh7CKBrX5FBUSxhaJXMmKSsP4E/preset:view/plain/53dbe487f216746ac759c14bf63832ee-3000766731923387920.jpg",
+        "https://cdn.chotot.com/6iz-K9U6IADIqXY1rm7uW_t4m8EXqz_h0pWNcWh8RPQ/preset:view/plain/35ea6ed7d114022b1e37083f44c5d202-3000766731603465605.jpg",
+        "https://cdn.chotot.com/vk7xLb-xubIGtV9-H4O2Hbo2ttg8HSKOSuzv2xRFG38/preset:view/plain/e6910ee149dbd7898e2e367e7056ee09-3000766731815161296.jpg",
+        "https://cdn.chotot.com/33MWytYncGFMipQ-Ys_ZvxJbQaEadU1aCgHhhQ_GnFY/preset:view/plain/48ea1a9ba38e1addf34e4ef6d08b3773-3000766728432112608.jpg",
+        "https://cdn.chotot.com/AVBRVquIOHNeDMfKvA5SZz8dxf9Y1Hazz8OoODyVU9Y/preset:view/plain/14bcb2bab2c7ab524d472ad55ea0bc48-3000766728670132915.jpg"
+      ],
+      "image": "https://cdn.chotot.com/GPBZLfD1jWMpZa5S_fh7CKBrX5FBUSxhaJXMmKSsP4E/preset:view/plain/53dbe487f216746ac759c14bf63832ee-3000766731923387920.jpg",
+      "chotot_url": "https://www.chotot.com/134526215.htm",
+      "crawled_at": "2026-10-02 11:34:37"
+    },
+    {
+      "id": "132892527",
+      "list_id": 132892527,
+      "title": "iPhone 7 hàng zin sạch icloud, quốc tế",
+      "brand": "Apple",
+      "model": "iPhone 7",
+      "price": 800000,
+      "price_formatted": "800.000₫",
+      "seller_name": "An Trang",
+      "location": "Phường Thanh Khê Tây, Quận Thanh Khê, Đà Nẵng",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Còn bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Iphone 7 bản quốc tế, sim sóng đầy đủ Màn zin main zin, icloud sạch reset máy thoải mái Camera nét loa to rõ Lỗi 1 đổi 1 trong 7 ngày Ai cần làm mmo hoặc máy phụ nghe gọi thì liên hệ e nha, sẵn máy ạ Có ship khu vực đà nẵng và shipcod toàn quốc 🚛🚛🚛",
+      "images": [
+        "https://cdn.chotot.com/EZxDcngoren9cThWhUMfwLITc2u0OTIfXxyvxf-x32o/preset:view/plain/b58c145859eb07dc8248acd7aa4ce85f-2988125814165203663.jpg",
+        "https://cdn.chotot.com/P2W9Mj7lD1OAC6H_d0SmNlcMgijT099EWWPx3oOYdrI/preset:view/plain/48baa26e11733199419e81baac2552dc-2988125814513746621.jpg",
+        "https://cdn.chotot.com/kWzm5bXBLENmU3y8HCAZ-KGxHXv30E4QmUcNxI5ZC_8/preset:view/plain/382b669fcd9ae4217c8e61a5d3949cd1-2988125814421877271.jpg"
+      ],
+      "image": "https://cdn.chotot.com/EZxDcngoren9cThWhUMfwLITc2u0OTIfXxyvxf-x32o/preset:view/plain/b58c145859eb07dc8248acd7aa4ce85f-2988125814165203663.jpg",
+      "chotot_url": "https://www.chotot.com/132892527.htm",
+      "crawled_at": "2026-10-02 11:34:37"
+    },
+    {
+      "id": "134897661",
+      "list_id": 134897661,
+      "title": "Iphone 15 Pro Max Lock/ Titan đep/ eid/ pin100/ GL",
+      "brand": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "price": 12950000,
+      "price_formatted": "12.950.000₫",
+      "seller_name": "Tân Phạm",
+      "location": "Phường Bình Hưng Hoà B, Quận Bình Tân, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "1 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Mỹ",
+      "color": "Màu khác",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Tên: iphone 15 Pro Max 256gb Titan Lock Mỹ - Ngoại hình 98.5% khá đẹp - Màn thay SoftOled 120hz mượt hiển thị 9/10 - main zin bao check - Pin new 100% - Ổ sim EID gắn sim sài như QT - Tất cả chức năng cơ bản Tân test hoạt động ổn định ạ Máy có sao Tân báo cụ thể hết nha mọi người! Bảo hành trách nhiệm 7 ngày ạ Nhận shipcod mọi miền tổ quốc Nhận quẹt thẻ tín dụng Nhận Giao lưu trao đổi bù trừ hợp lý ạ Tiktok: Tân Old Phone #tanoldphone #iphone15promax #ip15promax #15prm",
+      "images": [
+        "https://cdn.chotot.com/58qSsHG-jliUtXVoEYoGtedI9VnGE4Cnstpi-X8itKs/preset:view/plain/049df1401039fa07e55ee2f57bc243e0-3003769752589448256.jpg",
+        "https://cdn.chotot.com/x2Kmxb2j0s9VsBBEpJw6OlBdclKT-qH-JkRBqME3ZmE/preset:view/plain/5017ca3bfad792eec0c80df5f9669155-3003769752461190557.jpg",
+        "https://cdn.chotot.com/uMaILSlwTjf-9q9mAMhmc-PgW5ECvrkirkACqoR86jk/preset:view/plain/4ebd571c383327c40e2f0aeff70a5f92-3003769752738993666.jpg",
+        "https://cdn.chotot.com/GnmGWGWS_Es7bRpBxrwWvGIfSpQAe6Id-MqLTAh9PLI/preset:view/plain/2ad30e30cea549c683df233b7b0dab6c-3003769752405093275.jpg",
+        "https://cdn.chotot.com/yrm5x1b_ojIxOZlFY5rzMufiV71BgkUjZ3Tb2I2vFuc/preset:view/plain/b181489fe83253b2f9bea4d7944e91b4-3003769752566550262.jpg",
+        "https://cdn.chotot.com/C-nLc7p4pXT61YgXzFOWPS5XWOQBLq7wyIljo5R9wSE/preset:view/plain/ef23211c17c3167614c5c87ab117c4ba-3003769752581668042.jpg"
+      ],
+      "image": "https://cdn.chotot.com/58qSsHG-jliUtXVoEYoGtedI9VnGE4Cnstpi-X8itKs/preset:view/plain/049df1401039fa07e55ee2f57bc243e0-3003769752589448256.jpg",
+      "chotot_url": "https://www.chotot.com/134897661.htm",
+      "crawled_at": "2026-10-02 11:34:37"
+    },
+    {
+      "id": "135015857",
+      "list_id": 135015857,
+      "title": "Xiaomi 15 256GB Đen Snapdragon 8 Elite",
+      "brand": "Xiaomi",
+      "model": "15",
+      "price": 8990000,
+      "price_formatted": "8.990.000₫",
+      "seller_name": "Lê Khang",
+      "location": "190/13 Hẻm 534 đường 30/04, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "3 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Trung Quốc",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ • Pin: Xuất sắc 98%",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Pin 98% (Cao)",
+          "grade": "GRADE_A",
+          "detail": "Dung lượng pin hoàn hảo 98% (>= 85%)"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "🔥 XIAOMI 15 12GB/256GB – ĐEN ✨ Ngoại hình có nhâm nhẹ theo thời gian 🔋 Pin 98% 💾 ROM quốc tế – máy nội địa ⚡ Snapdragon 8 Elite 📺 Màn hình AMOLED 1.5K 120Hz 📸 Camera Leica ⚡ Sạc nhanh 90W – kèm sạc 90W ✅ Đã up ROM quốc tế ✅ Sử dụng VNeID, ngân hàng bình thường ✅ Máy nguyên bản nội địa, hoạt động ổn định 🛡️ Đổi trả 7 ngày 💳 Có góp qua CCCD 🔄 Thu cũ đổi mới – trợ giá cao 🏪 Duy Khang Mobile – Cần Thơ #DuyKhangMobile #Xiaomi15 #Xiaomi #NguyenZin",
+      "images": [
+        "https://cdn.chotot.com/7l-7fp68CM4lpo5PEoRY7llUkUHBI71_16232uBZWok/preset:view/plain/4944a19d28e430d7aa7107d87586badb-3004657584813774316.jpg",
+        "https://cdn.chotot.com/3JNHqHUU3I6mcGMnBdDwGTlIBumxbg7sSgnQTv2aDGM/preset:view/plain/ebf21a035243dceb9bff478b9dc325e1-3004657584945947864.jpg",
+        "https://cdn.chotot.com/OPvVCXkuo8TBjXfAsmNtW9kryGbog2LDPjt0DP54YEk/preset:view/plain/166d1e708a4505f0cb1a8d0c089fc3f1-3004657586097480547.jpg",
+        "https://cdn.chotot.com/W7QUgjh5PaO2dsQzTmRN12jk0CNnhRxYriuPh3Tc4So/preset:view/plain/19886a889c5737b76ad7de767d98c0f5-3004657586231304617.jpg",
+        "https://cdn.chotot.com/Zx6ErRjmaWHTleRq1QLUVQmjbayL2oTDX8v6eA5Mmas/preset:view/plain/2a724ac1d69cfe55e44efc7b9b4ed01d-3004657587238396771.jpg",
+        "https://cdn.chotot.com/liKJ5WcrD3jCImIp7SZoitJRpH4PvH4MC-2H4tu9R3M/preset:view/plain/83d461f54fc19e228b4904f1e46852ed-3004657587338666409.jpg"
+      ],
+      "image": "https://cdn.chotot.com/7l-7fp68CM4lpo5PEoRY7llUkUHBI71_16232uBZWok/preset:view/plain/4944a19d28e430d7aa7107d87586badb-3004657584813774316.jpg",
+      "chotot_url": "https://www.chotot.com/135015857.htm",
+      "crawled_at": "2026-10-02 11:34:38"
+    },
+    {
+      "id": "134865082",
+      "list_id": 134865082,
+      "title": "Oppo A78 8GB/256GB Sạc Nhanh Vooc",
+      "brand": "Oppo",
+      "model": "A78",
+      "price": 2200000,
+      "price_formatted": "2.200.000₫",
+      "seller_name": "Oppo Giá Tốt",
+      "location": "Phường 10, Quận Gò Vấp, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Tím",
+      "grade": "GRADE_A",
+      "grade_label": "Grade A (99% Like New)",
+      "grade_short": "Grade A",
+      "grade_percent": "99% Like New",
+      "grade_color": "#00875A",
+      "grade_bg": "#E3FCEF",
+      "grade_border": "#ABF5D1",
+      "grade_badge_class": "bg-emerald-50 text-emerald-800 border-emerald-300",
+      "grade_rationale": "Vỏ máy: Đẹp như mới 99% Like New",
+      "grade_factors": {
+        "body": {
+          "status": "99% Like New",
+          "grade": "GRADE_A",
+          "detail": "Ngoại hình đẹp xuất sắc không cấn móp"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Oppo A78 Ram 8-256GB (full zin) Ngoại hình mới keng. Chip Dimensity 700 chạy app, chơi game khỏe, 2 sim nano. Pin Trâu 5000mAh, loa kép, sạc nhanh 33w vooc oppo giá #2tr200 kèm Bộ sạc typec + ốp lưng - Cường lực dán sẵn - Có giao dịch trực tiếp HCM Hcm có ship hỏa tốc - Cod toàn quốc Bảo hành máy 3 tháng Lh: 0814 739 53tam",
+      "images": [
+        "https://cdn.chotot.com/WWPXSYl_46wz77bV83qFQmrcP0y3Uw-4D-muSdHe7o4/preset:view/plain/d3e9b368b163a74aa026d3142fbcfea0-3003488495046332164.jpg",
+        "https://cdn.chotot.com/Gczs7w7t6J_WyOM0-nGc8wo6rsbU0GS7y6_XLEhQADc/preset:view/plain/2cf662fd367fc1309fa38a9c292af9c8-3003488494893012778.jpg",
+        "https://cdn.chotot.com/irwQCkIsTE3psJKdikQ92zcc1VIQEFfd0KQwgZ4qOH0/preset:view/plain/08b08c2d75d1d4e0ff127e66f7cf17ce-3003488495900210447.jpg",
+        "https://cdn.chotot.com/PLUWmm9Z1IpRSy3etr9bGmKSgGfwiWXJihB3rB5tKgI/preset:view/plain/4e70985db52741cd93db170dd79c394b-3003488496133527707.jpg"
+      ],
+      "image": "https://cdn.chotot.com/WWPXSYl_46wz77bV83qFQmrcP0y3Uw-4D-muSdHe7o4/preset:view/plain/d3e9b368b163a74aa026d3142fbcfea0-3003488495046332164.jpg",
+      "chotot_url": "https://www.chotot.com/134865082.htm",
+      "crawled_at": "2026-10-02 11:34:38"
+    },
+    {
+      "id": "135015826",
+      "list_id": 135015826,
+      "title": "Apple iPhone 14 Pro 256GB Tím",
+      "brand": "Apple",
+      "model": "iPhone 14 Pro",
+      "price": 10800000,
+      "price_formatted": "10.800.000₫",
+      "seller_name": "Đức Nam",
+      "location": "Phường Mỹ Đình 2, Quận Nam Từ Liêm, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Tím",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Cần pass iphone 14 pro 256gb màu tím, chức năng bình thường - pin còn 78%, là pin đã thay chính hãng ở apple store ai thích thì đưa thợ check Em không thích tiếp thợ",
+      "images": [
+        "https://cdn.chotot.com/0LedVZgIIEaLU7_8HmFhd2i-9daF-Mn6gPfJNT1KQUg/preset:view/plain/7430c9ed1bd7f19666ab6db5e0e99157-3004657119676455792.jpg",
+        "https://cdn.chotot.com/fC1Ac6oJTiped1Irzy2VYd7mRy7lvnJDtFg-m3zXCg4/preset:view/plain/a44207ab41333e37f29ad9a96e02a6dd-3004657121066607832.jpg",
+        "https://cdn.chotot.com/kgCP9HLZJ58OCJHUUXi7_8wkGMEOwADT3HtUEjBuiK0/preset:view/plain/56018832fc476236a4dc388ac7f1e536-3004657111019281264.jpg"
+      ],
+      "image": "https://cdn.chotot.com/0LedVZgIIEaLU7_8HmFhd2i-9daF-Mn6gPfJNT1KQUg/preset:view/plain/7430c9ed1bd7f19666ab6db5e0e99157-3004657119676455792.jpg",
+      "chotot_url": "https://www.chotot.com/135015826.htm",
+      "crawled_at": "2026-10-02 11:34:39"
+    },
+    {
+      "id": "135015808",
+      "list_id": 135015808,
+      "title": "iPhone 7 32GB Vàng Đã sử dụng",
+      "brand": "Apple",
+      "model": "iPhone 7",
+      "price": 650000,
+      "price_formatted": "650.000₫",
+      "seller_name": "Ngô Phương Linh",
+      "location": "Ngõ 74 Phố Nguyễn Chí Thanh, Phường Láng Thượng, Quận Đống Đa, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Hết bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Vàng",
+      "grade": "GRADE_C",
+      "grade_label": "Grade C (90% Good)",
+      "grade_short": "Grade C",
+      "grade_percent": "90% Good",
+      "grade_color": "#FF8B00",
+      "grade_bg": "#FFF0B3",
+      "grade_border": "#FFE380",
+      "grade_badge_class": "bg-amber-50 text-amber-800 border-amber-300",
+      "grade_rationale": "Pin: Chai dưới 80% (75%)",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Pin 75% (Chai)",
+          "grade": "GRADE_C",
+          "detail": "Dung lượng pin dưới 80% (75%), cần bảo trì"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Điện thoại iPhone 7 32GB màu vàng, thiết kế nhỏ gọn, hiệu năng ổn định. - Máy còn dùng tốt, ngoại hình khá. - Camera chụp ảnh rõ nét. - Máy còn 75% pin",
+      "images": [
+        "https://cdn.chotot.com/DC1jqaz-FIJKeekDoLQwk2HjgB984Do5vcbuuauzlNY/preset:view/plain/02f74ce070b32b3474449b596cbe6519-3004655878131048502.jpg",
+        "https://cdn.chotot.com/6CG0SwdRPqqUofCFNLBYjpOdjlXhav4Blu6lsJ7324U/preset:view/plain/cbd5b796bb8a68978bc889b59d774d17-3004655878169804805.jpg",
+        "https://cdn.chotot.com/c_IwSOivFrZZaCV1Vt_YaSiv2fksvg-oWDeDIS48rIM/preset:view/plain/b0f8d39250f293a46716d4a3fbc0b875-3004655878128580966.jpg"
+      ],
+      "image": "https://cdn.chotot.com/DC1jqaz-FIJKeekDoLQwk2HjgB984Do5vcbuuauzlNY/preset:view/plain/02f74ce070b32b3474449b596cbe6519-3004655878131048502.jpg",
+      "chotot_url": "https://www.chotot.com/135015808.htm",
+      "crawled_at": "2026-10-02 11:34:39"
+    },
+    {
+      "id": "135015806",
+      "list_id": 135015806,
+      "title": "Samsung A05 128GB Đen Đã sử dụng",
+      "brand": "Samsung",
+      "model": "Galaxy A05",
+      "price": 1650000,
+      "price_formatted": "1.650.000₫",
+      "seller_name": "Công Trần",
+      "location": "Phường Phú Mỹ, Quận 7, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "samsung A05 đã qua sử dụng ram6 128g pin 5000mah",
+      "images": [
+        "https://cdn.chotot.com/WW6gHOZuiYJfg3yuYOpnfph1N4CNr05mryFQ4I6olrc/preset:view/plain/5a4be18882b1650e29d18452719326b1-3004656856992495974.jpg",
+        "https://cdn.chotot.com/IR1OTqMbg1OTGWZaCzPkia2rimuTmeG4SLYA7n7a9V4/preset:view/plain/eee7386460d0859a3cbf1e8c696bf76e-3004656856925883424.jpg"
+      ],
+      "image": "https://cdn.chotot.com/WW6gHOZuiYJfg3yuYOpnfph1N4CNr05mryFQ4I6olrc/preset:view/plain/5a4be18882b1650e29d18452719326b1-3004656856992495974.jpg",
+      "chotot_url": "https://www.chotot.com/135015806.htm",
+      "crawled_at": "2026-10-02 11:34:39"
+    },
+    {
+      "id": "134941171",
+      "list_id": 134941171,
+      "title": "ip 14promax 128G VN/A zin đẹp . Góp Trả trc 7tr 🥰",
+      "brand": "Apple",
+      "model": "iPhone 14 Pro Max",
+      "price": 15500000,
+      "price_formatted": "15.500.000₫",
+      "seller_name": "Điện Thoại Tốt giá sinh viên ",
+      "location": "Phường Linh Xuân (Quận Thủ Đức cũ), Thành phố Thủ Đức, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "4-6 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Việt Nam",
+      "color": "Vàng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "iphone 14promax 128G VN/A Giá Tốt 🥰 Hỗ Trợ Góp Trả trước 7tr Nhận Máy Dùng Ngay . Bao N.Ợ X.ẤU Duyệt 100% . Không thẩm định . Không giữ icloudđ . Góp 3-6-9 Tháng thoải mái 👌 Máy Zin Màn Zin . Full chức năng . Face id nhạy . icloudđ sạch . Pin new 100% . Máy đẹp 99 👉 Dòng máy chuẩn Ngon Mượt Siêu Bền . Ace dùng rất oke trong tầm giá 🍎🍎🍎Giá : 15tr500k ( Tặng kèm đủ PK . BH 6 Tháng) ib lh : ***(zalo) ĐC : Linh xuân . Thủ đức . Tphcm",
+      "images": [
+        "https://cdn.chotot.com/jPO2iqfrUWrbr5d_e9G7LOARhdaniv-ZZTN9-AxmUzU/preset:view/plain/cc459b0dd64e87a13ac9a4d49767c4f2-3004099551907751219.jpg",
+        "https://cdn.chotot.com/KTcxtba1w7XemBzK4zPMMsaMHeel9xWFw7U9qtiSqjY/preset:view/plain/7ece6f65ede926ed866962e0c6841b06-3004099551978605691.jpg",
+        "https://cdn.chotot.com/4Y5GzbH29Zfd2A7E-Ocs5CwoodBYJn4zVtw2kJk580A/preset:view/plain/3f650d24953ffe23b5880ffe57fb6ae9-3004099551989325127.jpg",
+        "https://cdn.chotot.com/X83OtW7Xg8Yh2SOeFRNKh-6isx6AlqJPHhp6nIE70DQ/preset:view/plain/c695c011efe75e138e751e75cf132548-3004099552113872142.jpg",
+        "https://cdn.chotot.com/9cFuFWy8F9jnPA01c6NB3oBj_6eJrNP-RyDc4pmuJtc/preset:view/plain/130966c5f87b55475048539382f48f19-3004099551883561446.jpg",
+        "https://cdn.chotot.com/i3Px0h74aGGWh680U0IpRa5xzTvjogkx6-c3ocwfDrM/preset:view/plain/4d56d3f7230729423082cfb78667f64c-3004099552230421243.jpg"
+      ],
+      "image": "https://cdn.chotot.com/jPO2iqfrUWrbr5d_e9G7LOARhdaniv-ZZTN9-AxmUzU/preset:view/plain/cc459b0dd64e87a13ac9a4d49767c4f2-3004099551907751219.jpg",
+      "chotot_url": "https://www.chotot.com/134941171.htm",
+      "crawled_at": "2026-10-02 11:34:40"
+    },
+    {
+      "id": "135015799",
+      "list_id": 135015799,
+      "title": "OPPO Find X9 Pro rom QT 16/512 nâu như tin đăng gl",
+      "brand": "Oppo",
+      "model": "Find X8 Pro",
+      "price": 16800000,
+      "price_formatted": "16.800.000₫",
+      "seller_name": "T83",
+      "location": "Phường 9, Quận 3, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "1 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Màu khác",
+      "grade": "GRADE_A",
+      "grade_label": "Grade A (99% Like New)",
+      "grade_short": "Grade A",
+      "grade_percent": "99% Like New",
+      "grade_color": "#00875A",
+      "grade_bg": "#E3FCEF",
+      "grade_border": "#ABF5D1",
+      "grade_badge_class": "bg-emerald-50 text-emerald-800 border-emerald-300",
+      "grade_rationale": "Vỏ máy: Đẹp như mới 99% Like New",
+      "grade_factors": {
+        "body": {
+          "status": "99% Like New",
+          "grade": "GRADE_A",
+          "detail": "Ngoại hình đẹp xuất sắc không cấn móp"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "☎ OPPO FIND X9 PRO 16/512 NÂU 🚫 KHÔNG TIẾP TRẢ GIÁ 💰 Giá bán bao gồm phụ kiện như bài, bao test chức năng 7 ngày và bảo hành thêm 23 ngày 🛠 Nguồn gốc: Hàng cũ đã qua sử dụng, máy sạch reset thoải mái 👉 Xuất xứ: Nội địa ‼ Đặc tính: 2 sim vật lý 🚛 SHIP: Nội thành siêu tốc có tính phí, Tỉnh bằng GHTK phí theo app, có cọc trước ạ... 🔽 BẤM NÚT \"XEM THÊM\" 🔦 TÌNH TRẠNG: - Phần cứng: Nguyên zin - Phần mềm: Up rom Quốc Tế 2 sim vật lý (không cập nhật, nếu cập nhật thì chỉ xài được 1 sim), xài được VNEID và Ngân hàng - Chức năng: Đầy đủ, không lỗi gì hết - Màn hình: Màn zin hiển thị đẹp, không ám lưu, không đốm, không sọc - Pin: Còn 100% 👔 NGOẠI HÌNH 99%: - Màn hình: Không trầy - Viền: Không trầy - Mặt lưng: Không trầy - Kính camera: Không trầy 🛠 PHỤ KIỆN KÈM THEO: - Bộ sạc: Vooc 100W - Hộp: Không có 💸 THANH TOÁN: - Tiền mặt hoặc chuyển khoản. - Quẹt thẻ tín dụng: + Quẹt thẳng: Giá bán + 2% + Quẹt góp: Giá bán + 2% + Phí chuyển đổi + Hỗ trợ check phí trước khi mua. - Không góp ví trả sau Momo - Không góp qua hồ sơ ngân hàng - Không góp cài tài khoản Icloud. 💵 NHẬN THU, ĐỔI HÀNG RÕ NGUỒN GỐC: - Điện thoại thông minh - Máy tính bảng - Đồng hồ thông minh - Tai nghe Bluetooth 👉 CÓ BÁN ĐIỆN THOẠI CŨ GIÁ DƯỚI 5TR. 📞 LIÊN HỆ: Số Đăng tin (14h00 - 16h00 Off chuông), tin còn hàng còn. T83 ĐỊNH NGHĨA ĐIỆN THOẠI CŨ",
+      "images": [
+        "https://cdn.chotot.com/0k6bVXwscdhuLHCrmt_cRdgswYMG_z1Kcy2WBtLmhIk/preset:view/plain/7a033d99533ddf2de02ecb17b59a74bd-3004657333590571249.jpg",
+        "https://cdn.chotot.com/AEJuUPtvCtpJhGw9UB6k2c1dWUoIDr_TsCk7DU_4Dzs/preset:view/plain/5a600b8fc2fd4fd95aaf936bb6ffb0d5-3004657341281198947.jpg",
+        "https://cdn.chotot.com/d46zkeYNF6crcw-NgCaOGPe3cSNKmh_vTMgskr9THDQ/preset:view/plain/e5eeb326a510c416ff7ab5f79bc290f9-3004657341313966505.jpg",
+        "https://cdn.chotot.com/w5EeUcYDU4NKArdoxQsB3y-hjEHxRCtFkQigwNcjbU4/preset:view/plain/d03b64361a0de1db0387941bbfd99baf-3004657341424974182.jpg",
+        "https://cdn.chotot.com/CgzJiwfItR7iXxpq7MPGvssdNeB-bj1gKDgmz8MQl88/preset:view/plain/dc2a12098a68d351d7c61f88367477ef-3004657341861804273.jpg",
+        "https://cdn.chotot.com/fv8Tctzb9Vic28yujtl0cQtP7SxvVk675lkxDWPTAWo/preset:view/plain/0d940bc2321ebce18f1285cdd18d8157-3004657341806994648.jpg"
+      ],
+      "image": "https://cdn.chotot.com/0k6bVXwscdhuLHCrmt_cRdgswYMG_z1Kcy2WBtLmhIk/preset:view/plain/7a033d99533ddf2de02ecb17b59a74bd-3004657333590571249.jpg",
+      "chotot_url": "https://www.chotot.com/135015799.htm",
+      "crawled_at": "2026-10-02 11:34:40"
+    },
+    {
+      "id": "135015797",
+      "list_id": 135015797,
+      "title": "Apple iPhone 14 Pro Max 256GB Tím zin chuẩn",
+      "brand": "Apple",
+      "model": "iPhone 14 Pro Max",
+      "price": 12900000,
+      "price_formatted": "12.900.000₫",
+      "seller_name": "Shop Trung Văn Apple Watch",
+      "location": "Phường 10, Quận Tân Bình, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Mỹ",
+      "color": "Tím",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "iphone 14 promax tím 256 Gb zin áp full chức năng giá siêu tốt chỉ 12tr9 kv hcm hỗ trợ lên đời",
+      "images": [
+        "https://cdn.chotot.com/ZzkD5z2f8S2_tlEPj7kyFmICC4s2Y76N9aET8zmAWxE/preset:view/plain/bd83372634e6ffbf49d0b7610cc11395-3004656122156071270.jpg",
+        "https://cdn.chotot.com/Ghizc8zLg5X5bUdYotZUeCWBwmgKXxc-6rsoMXHScK0/preset:view/plain/29b8d95f85f7c103de18844d965562cb-3004656122257564767.jpg",
+        "https://cdn.chotot.com/2ZnyyY1XgAUDcH5tna5TwUfpUYuZF4oCCE5Bt324J18/preset:view/plain/3171511ce74d1430ce8823295c552858-3004656126654280217.jpg",
+        "https://cdn.chotot.com/-aA4Uh0XK6IEUCfYwTobiAbOfss0R3RhyEDVhqMrugs/preset:view/plain/060577d7c5131ec279929c71ca44489b-3004656122292138521.jpg",
+        "https://cdn.chotot.com/Bc_9YRJ0kmovj-wtgLunifsEWkqFsQq2--8dbeg-IIk/preset:view/plain/2e9fd0ce3993998f29e7c4b0d422eb29-3004656122336217230.jpg",
+        "https://cdn.chotot.com/aCdqs5ms65HCZsxNHDcPhsEyCir0V6wPfbB03wmP0kY/preset:view/plain/cd6d86715c0220d1ac813b413c6e43a1-3004656122960602328.jpg"
+      ],
+      "image": "https://cdn.chotot.com/ZzkD5z2f8S2_tlEPj7kyFmICC4s2Y76N9aET8zmAWxE/preset:view/plain/bd83372634e6ffbf49d0b7610cc11395-3004656122156071270.jpg",
+      "chotot_url": "https://www.chotot.com/135015797.htm",
+      "crawled_at": "2026-10-02 11:34:41"
+    },
+    {
+      "id": "133118662",
+      "list_id": 133118662,
+      "title": "🧲 Xiaomi Redmi K80 Pro Snap 8 Elite | 𝐆Ó𝐏 𝐎𝐍𝐋𝐈𝐍𝐄",
+      "brand": "Xiaomi",
+      "model": "Redmi K80 Pro",
+      "price": 9290000,
+      "price_formatted": "9.290.000₫",
+      "seller_name": "Võ Tấn Vui ",
+      "location": "Đường Lê Đức Thọ, Phường 7, Quận Gò Vấp, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Còn bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Nước khác",
+      "color": "Màu khác",
+      "grade": "GRADE_C",
+      "grade_label": "Grade C (90% Good)",
+      "grade_short": "Grade C",
+      "grade_percent": "90% Good",
+      "grade_color": "#FF8B00",
+      "grade_bg": "#FFF0B3",
+      "grade_border": "#FFE380",
+      "grade_badge_class": "bg-amber-50 text-amber-800 border-amber-300",
+      "grade_rationale": "Màn hình: Máy đã thay màn hình lô/màn linh kiện • Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Ám ố / Đã sửa",
+          "grade": "GRADE_C",
+          "detail": "Máy đã thay màn hình lô/màn linh kiện"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "☘️ 𝐒𝐇𝐎𝐏 𝐂Ó 𝐁Á𝐍 𝐓𝐑Ả 𝐆Ó𝐏 𝐎𝐍𝐋𝐈𝐍𝐄 ☘️ 🧲 Xiaomi Redmi K80 Pro 5G LikeNew ( máy trần ) ✔️ 12/256GB - 9.290.000 (97%) ✔️ 12/256GB - 9.990.000 (99%) ✔️ 16/512GB - 10.990.000 (99%) LikeNew Fullbox ✔️ 12/256GB - 10.590.000 (99%) ✔️ 16/512GB - 11.590.000 (99%) 👉🏾OLED​, 68B màu, 6,67 inch, 2k+, 120Hz, 3.200 nit 👉🏾Snap 8 Elite. 👉🏾Pin 6000 mAh. Sạc 120W 🔥𝐕𝐢𝐨 𝐒𝐭𝐨𝐫𝐞 cam kết chỉ bán hàng nguyên bản : 👉🏾 Main Zin , Màn zin ,chưa sửa chữa 👉🏾 Không bán hàng sửa main thay màn kém chất lượng ☎️𝐋𝐢ê𝐧 𝐥ạ𝐜 𝐯ớ𝐢 𝐜𝐡ú𝐧𝐠 𝐭ô𝐢 𝐕𝐈𝐎 𝐒𝐓𝐎𝐑𝐄 _ 𝐓𝐏. 𝐇Ồ 𝐂𝐇Í 𝐌𝐈𝐍𝐇 🏠 𝐂𝐍𝟏 : 97 Lê Đức Thọ, Phường 7, Quận Gò Vấp 🏠 𝐂𝐍𝟐 : 55 Nguyễn Thiện Thuật, Phường 2, Quận 3 🏠 𝐂𝐍𝟑 : 1140 Kha Vạn Cân , P.Linh Chiểu , TP Thủ Đức 𝐕𝐈𝐎 𝐒𝐓𝐎𝐑𝐄 _ 𝐁Ì𝐍𝐇 𝐃ƯƠ𝐍𝐆 🏠 𝐂𝐍𝟒 : 217 Thích Quảng Đức , P.Chánh Nghĩa ,TP Thủ Dầu Một ⛔️𝐂𝐡í𝐧𝐡 𝐒á𝐜𝐡 𝐁ả𝐨 𝐇à𝐧𝐡 : 👉🏾 Bao đổi 1 đổi 1 trong 30 ngày sử dụng 👉🏾 Bảo hành 12 tháng PHẦN CỨNG 👉🏾 Hỗ trợ phần mềm trọn đời máy 💡𝐇ỗ 𝐭𝐫ợ 𝐭𝐡𝐚𝐧𝐡 𝐭𝐨á𝐧 👉🏾 Hỗ trợ trả Góp Online Tại nhà trên toàn quốc 👉🏾 Trả góp 0% với Thẻ Tín Dụng 👉🏾 Hỗ trợ trả góp lãi suất thấp, Xét duyệt nhanh , thủ tục đơn giản 👉🏾 Hỗ trợ Quẹt thẻ thanh toán Với mọi Loại thẻ ATM ,Visa, Master... 🎂𝐏𝐡ụ 𝐤𝐢ệ𝐧 : 👉🏾 Tặng Gậy Lấy Sim 👉🏾 Hỗ trợ mua phụ kiện với giá ưu đãi khi mua kèm máy 🚚𝐕ậ𝐧 𝐜𝐡𝐮𝐲ể𝐧 , 𝐠𝐢𝐚𝐨 𝐡à𝐧𝐠 𝐭𝐨à𝐧 𝐪𝐮ố𝐜 , 𝐤𝐢ể𝐦 𝐭𝐫𝐚 𝐡à𝐧𝐠 𝐫ồ𝐢 𝐭𝐡𝐚𝐧𝐡 𝐭𝐨á𝐧 👉🏾 Giao hàng tận nơi nội thành TP.HCM 👉🏾 Giao hàng COD tận nơi 64 Tỉnh thành",
+      "images": [
+        "https://cdn.chotot.com/g5H2kxmmt7ODgxEnOB3TMo3eUcVY7oB6f29zUgXVtms/preset:view/plain/714f5f5576af9724eede7169038b548a-2989869512654285425.jpg",
+        "https://cdn.chotot.com/_LktYsh5gTrSKzb7yOGPmSKoo7gLsNqrshH-BIlPk4Q/preset:view/plain/d5e94ad9d80a0f4311e9c3cbd1c20300-2989869525807819377.jpg",
+        "https://cdn.chotot.com/TaYjoLxB3R6cQObfJ6DfV-kOKD8E0u9Q3teS5NNc1Bs/preset:view/plain/4d75fd79fa5f7531cd6d4c03841a277a-2989869525899667518.jpg",
+        "https://cdn.chotot.com/FH36Ct0Y-om0Nl5ib6bmwXwnSwUtVP--xLp74B54qj0/preset:view/plain/c633f4359af6ac5527e29c49123d4fac-2989869525884543990.jpg",
+        "https://cdn.chotot.com/RZjBkYvtINhB2vF-t4_mR_mMJ6aG0dEsXt1xpmxt_Q8/preset:view/plain/89f9bcec4e9081de35186ddb53440b4d-2989869526091586866.jpg",
+        "https://cdn.chotot.com/-oMfS96tm-PasugcFPUnZDXgF_herUV6bx6ysonSSFw/preset:view/plain/db8e4e81e401c6cc8193604288f3856a-2989869526006327044.jpg"
+      ],
+      "image": "https://cdn.chotot.com/g5H2kxmmt7ODgxEnOB3TMo3eUcVY7oB6f29zUgXVtms/preset:view/plain/714f5f5576af9724eede7169038b548a-2989869512654285425.jpg",
+      "chotot_url": "https://www.chotot.com/133118662.htm",
+      "crawled_at": "2026-10-02 11:34:41"
+    },
+    {
+      "id": "133118662",
+      "list_id": 133118662,
+      "title": "🧲 Xiaomi Redmi K80 Pro Snap 8 Elite | 𝐆Ó𝐏 𝐎𝐍𝐋𝐈𝐍𝐄",
+      "brand": "Xiaomi",
+      "model": "Redmi K80 Pro",
+      "price": 9290000,
+      "price_formatted": "9.290.000₫",
+      "seller_name": "Võ Tấn Vui ",
+      "location": "Đường Lê Đức Thọ, Phường 7, Quận Gò Vấp, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Còn bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Nước khác",
+      "color": "Màu khác",
+      "grade": "GRADE_C",
+      "grade_label": "Grade C (90% Good)",
+      "grade_short": "Grade C",
+      "grade_percent": "90% Good",
+      "grade_color": "#FF8B00",
+      "grade_bg": "#FFF0B3",
+      "grade_border": "#FFE380",
+      "grade_badge_class": "bg-amber-50 text-amber-800 border-amber-300",
+      "grade_rationale": "Màn hình: Máy đã thay màn hình lô/màn linh kiện • Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Ám ố / Đã sửa",
+          "grade": "GRADE_C",
+          "detail": "Máy đã thay màn hình lô/màn linh kiện"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "☘️ 𝐒𝐇𝐎𝐏 𝐂Ó 𝐁Á𝐍 𝐓𝐑Ả 𝐆Ó𝐏 𝐎𝐍𝐋𝐈𝐍𝐄 ☘️ 🧲 Xiaomi Redmi K80 Pro 5G LikeNew ( máy trần ) ✔️ 12/256GB - 9.290.000 (97%) ✔️ 12/256GB - 9.990.000 (99%) ✔️ 16/512GB - 10.990.000 (99%) LikeNew Fullbox ✔️ 12/256GB - 10.590.000 (99%) ✔️ 16/512GB - 11.590.000 (99%) 👉🏾OLED​, 68B màu, 6,67 inch, 2k+, 120Hz, 3.200 nit 👉🏾Snap 8 Elite. 👉🏾Pin 6000 mAh. Sạc 120W 🔥𝐕𝐢𝐨 𝐒𝐭𝐨𝐫𝐞 cam kết chỉ bán hàng nguyên bản : 👉🏾 Main Zin , Màn zin ,chưa sửa chữa 👉🏾 Không bán hàng sửa main thay màn kém chất lượng ☎️𝐋𝐢ê𝐧 𝐥ạ𝐜 𝐯ớ𝐢 𝐜𝐡ú𝐧𝐠 𝐭ô𝐢 𝐕𝐈𝐎 𝐒𝐓𝐎𝐑𝐄 _ 𝐓𝐏. 𝐇Ồ 𝐂𝐇Í 𝐌𝐈𝐍𝐇 🏠 𝐂𝐍𝟏 : 97 Lê Đức Thọ, Phường 7, Quận Gò Vấp 🏠 𝐂𝐍𝟐 : 55 Nguyễn Thiện Thuật, Phường 2, Quận 3 🏠 𝐂𝐍𝟑 : 1140 Kha Vạn Cân , P.Linh Chiểu , TP Thủ Đức 𝐕𝐈𝐎 𝐒𝐓𝐎𝐑𝐄 _ 𝐁Ì𝐍𝐇 𝐃ƯƠ𝐍𝐆 🏠 𝐂𝐍𝟒 : 217 Thích Quảng Đức , P.Chánh Nghĩa ,TP Thủ Dầu Một ⛔️𝐂𝐡í𝐧𝐡 𝐒á𝐜𝐡 𝐁ả𝐨 𝐇à𝐧𝐡 : 👉🏾 Bao đổi 1 đổi 1 trong 30 ngày sử dụng 👉🏾 Bảo hành 12 tháng PHẦN CỨNG 👉🏾 Hỗ trợ phần mềm trọn đời máy 💡𝐇ỗ 𝐭𝐫ợ 𝐭𝐡𝐚𝐧𝐡 𝐭𝐨á𝐧 👉🏾 Hỗ trợ trả Góp Online Tại nhà trên toàn quốc 👉🏾 Trả góp 0% với Thẻ Tín Dụng 👉🏾 Hỗ trợ trả góp lãi suất thấp, Xét duyệt nhanh , thủ tục đơn giản 👉🏾 Hỗ trợ Quẹt thẻ thanh toán Với mọi Loại thẻ ATM ,Visa, Master... 🎂𝐏𝐡ụ 𝐤𝐢ệ𝐧 : 👉🏾 Tặng Gậy Lấy Sim 👉🏾 Hỗ trợ mua phụ kiện với giá ưu đãi khi mua kèm máy 🚚𝐕ậ𝐧 𝐜𝐡𝐮𝐲ể𝐧 , 𝐠𝐢𝐚𝐨 𝐡à𝐧𝐠 𝐭𝐨à𝐧 𝐪𝐮ố𝐜 , 𝐤𝐢ể𝐦 𝐭𝐫𝐚 𝐡à𝐧𝐠 𝐫ồ𝐢 𝐭𝐡𝐚𝐧𝐡 𝐭𝐨á𝐧 👉🏾 Giao hàng tận nơi nội thành TP.HCM 👉🏾 Giao hàng COD tận nơi 64 Tỉnh thành",
+      "images": [
+        "https://cdn.chotot.com/g5H2kxmmt7ODgxEnOB3TMo3eUcVY7oB6f29zUgXVtms/preset:view/plain/714f5f5576af9724eede7169038b548a-2989869512654285425.jpg",
+        "https://cdn.chotot.com/_LktYsh5gTrSKzb7yOGPmSKoo7gLsNqrshH-BIlPk4Q/preset:view/plain/d5e94ad9d80a0f4311e9c3cbd1c20300-2989869525807819377.jpg",
+        "https://cdn.chotot.com/TaYjoLxB3R6cQObfJ6DfV-kOKD8E0u9Q3teS5NNc1Bs/preset:view/plain/4d75fd79fa5f7531cd6d4c03841a277a-2989869525899667518.jpg",
+        "https://cdn.chotot.com/FH36Ct0Y-om0Nl5ib6bmwXwnSwUtVP--xLp74B54qj0/preset:view/plain/c633f4359af6ac5527e29c49123d4fac-2989869525884543990.jpg",
+        "https://cdn.chotot.com/RZjBkYvtINhB2vF-t4_mR_mMJ6aG0dEsXt1xpmxt_Q8/preset:view/plain/89f9bcec4e9081de35186ddb53440b4d-2989869526091586866.jpg",
+        "https://cdn.chotot.com/-oMfS96tm-PasugcFPUnZDXgF_herUV6bx6ysonSSFw/preset:view/plain/db8e4e81e401c6cc8193604288f3856a-2989869526006327044.jpg"
+      ],
+      "image": "https://cdn.chotot.com/g5H2kxmmt7ODgxEnOB3TMo3eUcVY7oB6f29zUgXVtms/preset:view/plain/714f5f5576af9724eede7169038b548a-2989869512654285425.jpg",
+      "chotot_url": "https://www.chotot.com/133118662.htm",
+      "crawled_at": "2026-10-02 11:34:43"
+    },
+    {
+      "id": "134975199",
+      "list_id": 134975199,
+      "title": "OPPO Reno 4Z Xanh trắng",
+      "brand": "Oppo",
+      "model": "Reno4 Z 5G",
+      "price": 1650000,
+      "price_formatted": "1.650.000₫",
+      "seller_name": "Diệp Angel",
+      "location": "Phường Long Bình (Quận 9 cũ), Thành phố Thủ Đức, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Màu khác",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Mình vừa lên đời điện thoại nên dư ra em OPPO Reno 4Z này không dùng đến nữa, muốn nhượng lại cho bạn nào đang cần. Máy màu xanh trắng nhìn cưng lắm, bên ngoài còn mới đẹp do mình dùng giữ kỹ (chỉ xước xát nhẹ xíu phía sau không đáng kể). Máy nguyên bản, dùng mượt mà mọi chức năng, ổn định. Màn hình to xem phim, học online hay lướt TikTok rất thích. Cụm 4 camera sau + camera selfie kép chụp ảnh sắc nét. Cầm mỏng nhẹ, không mỏi tay. Bạn nào lấy mình tặng lại luôn cái ốp lưng đang dùng nha. Hình sao máy vậy, đồ cá nhân dùng sao nói vậy cho dễ. Mọi người cứ qua xem máy test thoải mái trước khi lấy, hoặc inbox Zalo mình quay video thực tế cho xem nha. Ai có nhu cầu nhắn mình nhé! ❤️",
+      "images": [
+        "https://cdn.chotot.com/P3WQtkNuKkA959daIEJbshTnY2gJtfqzExNhOPJDRPc/preset:view/plain/3efd9da71c409f11d43ef393960c9f82-3004360470813727964.jpg",
+        "https://cdn.chotot.com/bHU25mXmdq7HMd0A_wrYR2zMtLn2ZcmMRvjEjHdwMyQ/preset:view/plain/5b0a2723c9cc76a0ef5d7a2f122432b1-3004360470619751338.jpg"
+      ],
+      "image": "https://cdn.chotot.com/P3WQtkNuKkA959daIEJbshTnY2gJtfqzExNhOPJDRPc/preset:view/plain/3efd9da71c409f11d43ef393960c9f82-3004360470813727964.jpg",
+      "chotot_url": "https://www.chotot.com/134975199.htm",
+      "crawled_at": "2026-10-02 11:34:43"
+    },
+    {
+      "id": "135015786",
+      "list_id": 135015786,
+      "title": "iPhone 17 Pro Max Cam",
+      "brand": "Apple",
+      "model": "iPhone 17 Pro Max",
+      "price": 29000000,
+      "price_formatted": "29.000.000₫",
+      "seller_name": "nam",
+      "location": "Phường Thạch Thang, Quận Hải Châu, Đà Nẵng",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Cam",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ • Pin: Xuất sắc 97%",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Pin 97% (Cao)",
+          "grade": "GRADE_A",
+          "detail": "Dung lượng pin hoàn hảo 97% (>= 85%)"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Bán ip17prm tặng ốp arc pulse chính hãng (cả hai đều còn hộp) Giá 29tr. Máy zin full áp 99 . Bảo hành đến 09/11/26. 97% sạc 201 lần. Giao dịch tại nhà.",
+      "images": [
+        "https://cdn.chotot.com/Vu0FVYb20qOzMFRIs0hdCJk1tbUR_i1njHSdJNQmods/preset:view/plain/93e3bdd7ce390769b14a195cea682f2c-3004656842536903081.jpg",
+        "https://cdn.chotot.com/yPT4cFsDfBgzp4-44ULF7opH6jnU99W-hYhqiZlkuk4/preset:view/plain/23343c2b9bd1af52b085275e08b63fce-3004657107026238320.jpg"
+      ],
+      "image": "https://cdn.chotot.com/Vu0FVYb20qOzMFRIs0hdCJk1tbUR_i1njHSdJNQmods/preset:view/plain/93e3bdd7ce390769b14a195cea682f2c-3004656842536903081.jpg",
+      "chotot_url": "https://www.chotot.com/135015786.htm",
+      "crawled_at": "2026-10-02 11:34:43"
+    },
+    {
+      "id": "134366766",
+      "list_id": 134366766,
+      "title": "Xiaomi 13T Pro 5G Xanh 512Gb BH 6th có trả góp",
+      "brand": "Xiaomi",
+      "model": "13T Pro",
+      "price": 6650000,
+      "price_formatted": "6.650.000₫",
+      "seller_name": "Bèo Mobile Store",
+      "location": "Phường Thạc Gián, Quận Thanh Khê, Đà Nẵng",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Còn bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Trung Quốc",
+      "color": "Xanh dương",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Xiaomi 13T Pro 5G xanh lưng da cao cấp tuyệt đẹp Bản quốc tế 12/512Gb. Camera Leica chụp hình siêu xịn 2 sim vật lý tiện dụng, hỗ trợ mạng 5G mới hiện nay Giá chỉ: 6.650.000 vnđ. Bảo hành 6 tháng (lấy sạc 67w + 250k).",
+      "images": [
+        "https://cdn.chotot.com/v72sDOCXMqKQB2DogZxI8Rf2mjSkEGQXMr4WcN5N3Y8/preset:view/plain/51986ea333808c4937deaeb4af5f8a5e-2999313240738729448.jpg",
+        "https://cdn.chotot.com/97JFKIITDvUyFVwahELcZEpVoVb_beQ6UvSICp5lQnc/preset:view/plain/dd437f8bc668747664c6dda682bc990f-2999313240557702028.jpg",
+        "https://cdn.chotot.com/bgUy3KwN91l_kRr1x_fyRio5qI0PmqM47yyK3ch9kdI/preset:view/plain/d35ffa8faf4f257dc27d6c7c54ffe8cc-2999313241694351610.jpg",
+        "https://cdn.chotot.com/rkbLpbWBCzvMh-eMmlE-8iwxD_uOxGK-V7N20tcsIk4/preset:view/plain/5c280b626acc9f9e5e4688a405adbe7c-2999313240724790547.jpg",
+        "https://cdn.chotot.com/h-StM90KKtPNjNsde3AcyWTC6GhAPloL2YnCn8HeFBE/preset:view/plain/22c5e6d360990f178c11cef3b1c98780-2999313237617849282.jpg",
+        "https://cdn.chotot.com/ZwzFsz71AZLz_6Z_AOHEVE9wsNM214kc80sB4C746Eo/preset:view/plain/f115b766910a9b3b91b56b83487a5ddb-2999313237483458587.jpg"
+      ],
+      "image": "https://cdn.chotot.com/v72sDOCXMqKQB2DogZxI8Rf2mjSkEGQXMr4WcN5N3Y8/preset:view/plain/51986ea333808c4937deaeb4af5f8a5e-2999313240738729448.jpg",
+      "chotot_url": "https://www.chotot.com/134366766.htm",
+      "crawled_at": "2026-10-02 11:34:44"
+    },
+    {
+      "id": "134699619",
+      "list_id": 134699619,
+      "title": "Iphone 13 Mini/ QT/ 256gb/ Rõ tình trạng/ Giao Luu",
+      "brand": "Apple",
+      "model": "iPhone 13 Mini",
+      "price": 5350000,
+      "price_formatted": "5.350.000₫",
+      "seller_name": "Tân Phạm",
+      "location": "Phường Bình Hưng Hoà B, Quận Bình Tân, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "1 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Hàn Quốc",
+      "color": "Xanh dương",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Tên: Iphone 13 Mini Xanh 256gb Quốc Tế Hàn Tình trạng chi tiết: - Ngoại hình 98% như hình - Màn thay SoftOled hiển thị đẹp cận zin, cảm ứng ngon - Pin new 100% - Face ID nhạy - Tất cả chức năng cơ bản Tân test đều hoạt động tốt - Giá tốt cho 1 cây máy 256gb ạ Máy có sao Tân báo cụ thể hết nha mọi người! Bảo hành trách nhiệm 7 ngày ạ Nhận shipcod mọi miền tổ quốc Nhận quẹt thẻ tín dụng Nhận Giao lưu trao đổi bù trừ hợp lý ạ Tiktok: Tân Old Phone #tanoldphone #iphone13mini #ip13mini #13mini",
+      "images": [
+        "https://cdn.chotot.com/w5rmeXYnNf_P7nZGDyy55zEEaQG0ym-W9_aD-CrjjjA/preset:view/plain/c93fcf2700ec99245fa9b9a629084d98-3002186095095232704.jpg",
+        "https://cdn.chotot.com/_0p5Luhd1PSUfzP5ufRBgkUFEUv-Aa5P0Gmhd2i6DW0/preset:view/plain/b1b4422c8eab9a51478d685b1c6ac7c0-3002186095276196347.jpg",
+        "https://cdn.chotot.com/suKUKNzNrYdJzqPApQMD3qdBtP3mCEfSLsn2eRKr0LA/preset:view/plain/996ca3a80e932be3e7c374f7eac7c9fb-3002186094717102770.jpg",
+        "https://cdn.chotot.com/Zw-rrnzKDGsDiASJ799LNUww6Mf_RFYoAyWXM2k9VBw/preset:view/plain/f1478b83bee8a147e55196431bf24b76-3002186095521445130.jpg",
+        "https://cdn.chotot.com/G_55MI3wymYg3LZ9yaz6LFcqLpeVkl5lObOD1thmrck/preset:view/plain/1016136edbb95dc80642544ced8590d7-3002186095173006226.jpg",
+        "https://cdn.chotot.com/W70G7ZenRT3nLQmuYnasoqUYRggObIRvT5cumljgjrI/preset:view/plain/cd85d9daf9afb60c1398c4ec605fe27a-3002186095489173399.jpg"
+      ],
+      "image": "https://cdn.chotot.com/w5rmeXYnNf_P7nZGDyy55zEEaQG0ym-W9_aD-CrjjjA/preset:view/plain/c93fcf2700ec99245fa9b9a629084d98-3002186095095232704.jpg",
+      "chotot_url": "https://www.chotot.com/134699619.htm",
+      "crawled_at": "2026-10-02 11:34:44"
+    },
+    {
+      "id": "88171805",
+      "list_id": 88171805,
+      "title": "🌹🌹🌹𝐈𝐏𝐇𝐎𝐍𝐄 𝟏𝟏 𝐏𝐑𝐎/Max có trả góp 0 đồng",
+      "brand": "Apple",
+      "model": "iPhone 11 Pro",
+      "price": 3990000,
+      "price_formatted": "3.990.000₫",
+      "seller_name": "YourPhone 267 Nguyễn Hoàng",
+      "location": "Phường Bình Hiên, Quận Hải Châu, Đà Nẵng",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Còn bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Xanh dương",
+      "grade": "GRADE_C",
+      "grade_label": "Grade C (90% Good)",
+      "grade_short": "Grade C",
+      "grade_percent": "90% Good",
+      "grade_color": "#FF8B00",
+      "grade_bg": "#FFF0B3",
+      "grade_border": "#FFE380",
+      "grade_badge_class": "bg-amber-50 text-amber-800 border-amber-300",
+      "grade_rationale": "Màn hình: Máy đã qua ép lại kính ngoài • Pin: Pin chai / Đã thay thế",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Ám ố / Đã sửa",
+          "grade": "GRADE_C",
+          "detail": "Máy đã qua ép lại kính ngoài"
+        },
+        "battery": {
+          "status": "Chai pin / Đã thay",
+          "grade": "GRADE_C",
+          "detail": "Pin báo bảo trì hoặc đã thay thế bên ngoài"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "FB:YourPhone Điện Thoại Trả Góp tại Đà Nẵng.📌Đ/c 267 Nguyễn Hoàng-Hải Châu 💳 Có bán trả góp từ 18 tuổi-10 phút lấy máy ngay-quẹt thẻ tín dụng toàn quốc Nhận thu cũ đổi mới cho khách,mua máy cũ giá cao 💻iPhone 11 Pro-pro max đủ màu-có bản 64G với 256G ✅Máy nguyên rin dùng tốt, lỗi 1 đổi 1 ,hỗ trợ bảo hành 1 năm ✅Có nhiều máy cho khách lựa chọn ✅Camera cực nét,faceid nhạy ✅Ảnh thật chi tiết, 📌Tặng kèm AirPods pro rep trị giá 450k 📌Bảo hành 1 đổi 1 📌Tặng full sạc cáp -ốp lưng-cường lực(miễn phí dán màn hình trọn đời) 📌 Phiêú mua hàng tổng trị giá 1 triệu cho lần mua tiếp theo 📌Có trích hoa hồng cho khách giới thiệu 📌Phụ kiện bảo hành trọn đời 𝐜𝐨́ 𝐠𝐨́𝐩 𝐧𝐨̛̣ 𝐱𝐚̂́𝐮 𝗾𝘂𝗮 𝗶𝗰𝗹𝗼𝘂𝗱(𝗕𝗲̂𝗻 𝗺𝗶̀𝗻𝗵 𝗴𝗼́𝗽 𝗶𝗰𝗹𝗼𝘂𝗱 𝗸𝗼 𝗴𝗶𝘂̛̃ 𝗰𝗰𝗰𝗱,𝗰𝗵𝗼 𝗸𝗵𝗮́𝗰𝗵 𝘅𝗮̀𝗶 𝗳𝗮𝗰𝗲𝗶𝗱,𝗺𝗮̣̂𝘁 𝗸𝗵𝗮̂̉𝘂 𝘁𝗵𝗼𝗮̉𝗶 𝗺𝗮́𝗶-𝗹𝗮̃𝗶 𝘀𝘂𝗮̂́𝘁 𝗯𝗮̆̀𝗻𝗴 𝘃𝗼̛́𝗶 𝗻𝗴𝗮̂𝗻 𝗵𝗮̀𝗻𝗴 𝗵𝗶𝗲̣̂𝗻 𝘁𝗮̣𝗶-𝗴𝗼́𝗽 𝗯𝗮𝗼 𝗻𝗵𝗶𝗲̂𝘂 𝘁𝗵𝗮́𝗻𝗴 𝗰𝘂̃𝗻𝗴 đ𝘂̛𝗼̛̣𝗰) Giá bán chỉ từ 3tr890.đủ phụ kiện và bảo hành- khách hàng ko cần phải thêm tiền nữa Các dịch vụ mở rộng Thay pin-ép kính-ghép sim-thu mua giá cao ✅ Hỗ trợ trả góp - Xét duyệt chỉ 10' 💳 Trả góp Thẻ Tín Dụng - CMND - BLX 📌 Xét duyệt NHANH chỉ 10' . 📌 Không chứng minh thu nhập . 📌 Trả trước chỉ từ 300k đến 10% ( với giấy tờ tuỳ thân ) 📌 Trả trước 𝟬đ - Lãi suất 0% ( qua thẻ tín dụng ) 🆘 HỖ TRỢ #THU_MÁY_CŨ_ĐỔI_MÁY_MỚI-không cần bù thêm tiền 📌Nhận thu mua máy trả góp giá cao lên tới 90% giá trị máy 🚗 Ship COD",
+      "images": [
+        "https://cdn.chotot.com/xgK0gFBm7xhug3tDXvzKFrL3u9kGJCazMTqqBB1ZCbQ/preset:view/plain/d21c352c566dde94ca9df2bf6e6cc3a6-2911900436112450075.jpg",
+        "https://cdn.chotot.com/hgq369IpkwREqTjK_fyD-g_OX_QXQh6urQG4sGG05wc/preset:view/plain/9e8b0891cff96562ad608d72f22d0043-2911900435821936200.jpg",
+        "https://cdn.chotot.com/GhDHcAKGHPWTAWmSukO2MsVqfJO-i_qp2Jz4P16-0bU/preset:view/plain/42f22a04a8374fe6bafdbee1e1172c96-2911900437119660994.jpg",
+        "https://cdn.chotot.com/B2YMMjjD3Rp1VnNjymaRm_YgbkobFQhPI1Fiy87uIIE/preset:view/plain/1281f7237d36679541913b3a723343da-2911900437706929090.jpg"
+      ],
+      "image": "https://cdn.chotot.com/xgK0gFBm7xhug3tDXvzKFrL3u9kGJCazMTqqBB1ZCbQ/preset:view/plain/d21c352c566dde94ca9df2bf6e6cc3a6-2911900436112450075.jpg",
+      "chotot_url": "https://www.chotot.com/88171805.htm",
+      "crawled_at": "2026-10-02 11:34:45"
+    },
+    {
+      "id": "119945045",
+      "list_id": 119945045,
+      "title": "15 PRO MAX 256GB 512GB VN LL 99%-GÓP 0Đ-THU MUA",
+      "brand": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "price": 18800000,
+      "price_formatted": "18.800.000₫",
+      "seller_name": "Hoàng Hiệp Mobile",
+      "location": "undefined, Phường Tân Quy, Quận 7, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "7-12 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Việt Nam",
+      "color": "Bạc",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "⭐️15 PRO MAX 256GB 512GB VN LL 99%-GÓP 0Đ-THU MUA 15 Pro Max 256gb Natural LL/a P86% 98% -: 19800k 15 pro max 256gb vn/a đen/blue p87-88% đẹp 98% : 18.800k 15 pro max 256gb vn/a natural/trắng p87-88% đẹp 99% : 20.500k 15 pro max 512gb ll/a đen/blue p87-88% đẹp 99% : 20.500k 🤝 THU MUA GIÁ CAO & THU CŨ ĐỔI MỚI - LÊN ĐỜI SIÊU TIẾT KIỆM ▪️ Nhận thu mua điện thoại Cũ/Mới, đa dạng tình trạng. (Inbox trực tiếp cho Shop) ▪️ Trợ giá lên đời máy cực tốt. ▪️ Giao hàng tận nơi - Hỗ trợ thu máy tận nhà tiện lợi. ▪️ Lên đời trả góp: KHÔNG cần trả trước. 🎁 COMBO QUÀ TẶNG \"SẴN SÀNG SỬ DỤNG\" (Mua máy là dùng ngay, không phát sinh chi phí mua phụ kiện) 🔸 Tặng bộ sạc 20W chuẩn Store 🔸 Tặng kính cường lực cao cấp. 🔸 Tặng ốp lưng MagSafe ⚙️ CHÍNH SÁCH BẢO HÀNH AN TÂM TUYỆT ĐỐI 🔹 Bao test: Lỗi 1 đổi 1 trong 30 ngày đầu tiên. 🔹 Bảo hành phần cứng: 03 tháng tiêu chuẩn. 🔹 Bảo hành phần mềm: Hỗ trợ miễn phí trọn đời máy. 🏦 THANH TOÁN LINH HOẠT & TRẢ GÓP SIÊU TỐC 💎 Hỗ trợ đa phương thức: Tiền mặt, Chuyển khoản, Quẹt thẻ, Ví MoMo. 💎 Trả góp 0% lãi suất: Áp dụng qua thẻ tín dụng. 💎 Trả góp qua CCCD gắn chip: Thủ tục đơn giản qua các công ty tài chính. 💎 Trả góp qua MDM (nợ xấu) 🚚 GIAO HÀNG TẬN NƠI - VẬN CHUYỂN TOÀN QUỐC 🔘 Tại TP.HCM: Giao hỏa tốc trong 2 giờ. 🔘 Toàn quốc: Hỗ trợ Ship COD (Kiểm tra hàng ưng ý mới thanh toán). 🏪 HOÀNG HIỆP MOBILE 📍 Số 23, Đường số 85, Phường Tân Hưng, TP.HCM ⏰ 09:00 - 20:00 🏠 Fanpage: Hoàng Hiệp Mobile",
+      "images": [
+        "https://cdn.chotot.com/gFC1s3MWqAbhjgI77A6QnCnSGqtEiK6gG0IjvV0Jrbs/preset:view/plain/38f6190b58e45bdbe4bf0c699b347f8a-2991452882246375588.jpg",
+        "https://cdn.chotot.com/DfvLDy2-i9ePJCzdPKvBO3tOTdtn5iIuZM54EYmDLQg/preset:view/plain/02ca82d391a8a076d14606ba16e28a00-2991452882270609785.jpg",
+        "https://cdn.chotot.com/ZF2WAi6ZOMnPylEocfvpq_hLY9hFyzVomcZwL0_6STo/preset:view/plain/4440ed407bbc0a0114af390f93de3a03-2991452882463489126.jpg",
+        "https://cdn.chotot.com/RYCrmxQGJVNipx6inOAJ8h6P_9RuNZvlib8VxdbEsUo/preset:view/plain/473e9dd3392c364f702e4944e6cdea40-2991452882551013308.jpg",
+        "https://cdn.chotot.com/54b3m52E_wGSiZytBww9JQN40qef6zLKFj6wOdAf5g8/preset:view/plain/9b0288ec30f3472075988ec2e9871310-2991452882531934278.jpg",
+        "https://cdn.chotot.com/E4ew9UNK20Q6Hj5aUdpDBBTZPG5CXETAeenvFE1JVP4/preset:view/plain/de63d21e9ac3c91541eb77cdb1c4abb5-2991452882354866068.jpg"
+      ],
+      "image": "https://cdn.chotot.com/gFC1s3MWqAbhjgI77A6QnCnSGqtEiK6gG0IjvV0Jrbs/preset:view/plain/38f6190b58e45bdbe4bf0c699b347f8a-2991452882246375588.jpg",
+      "chotot_url": "https://www.chotot.com/119945045.htm",
+      "crawled_at": "2026-10-02 11:34:45"
+    },
+    {
+      "id": "135015736",
+      "list_id": 135015736,
+      "title": "Samsung S26 Ultra 12/256G Chính hãng BH 6/2027",
+      "brand": "Samsung",
+      "model": "Galaxy S25 Ultra",
+      "price": 22800000,
+      "price_formatted": "22.800.000₫",
+      "seller_name": "Đức Ty",
+      "location": "Phường 13, Quận 6, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Xanh dương",
+      "grade": "GRADE_A",
+      "grade_label": "Grade A (99% Like New)",
+      "grade_short": "Grade A",
+      "grade_percent": "99% Like New",
+      "grade_color": "#00875A",
+      "grade_bg": "#E3FCEF",
+      "grade_border": "#ABF5D1",
+      "grade_badge_class": "bg-emerald-50 text-emerald-800 border-emerald-300",
+      "grade_rationale": "Vỏ máy: Đẹp như mới 99% Like New",
+      "grade_factors": {
+        "body": {
+          "status": "99% Like New",
+          "grade": "GRADE_A",
+          "detail": "Ngoại hình đẹp xuất sắc không cấn móp"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Samsung S26 Ultra màu blue Ram 12/256G đẹp keng 99% nguyên zin Chính hãng thế giới di động có bảo hành 1-1 tháng 6/2027 yên tâm sử dụng Kèm ốp hãng",
+      "images": [
+        "https://cdn.chotot.com/IHsDqHUkMmwMrNMPEo9JkpPu_WXvSQQC-mPtjFEjc2U/preset:view/plain/47c7fdc24a46520f529a1be7d43de6c7-3004657031165567401.jpg",
+        "https://cdn.chotot.com/XGdChhErfhZYX8hVVkiAFFDJhdeWsTWfVAKqHtmuAYI/preset:view/plain/c312f8c48a886d48dfdf6cd7a90c31c0-3004657031099769699.jpg",
+        "https://cdn.chotot.com/9tMR1FicqSIbueH5IO3FvcpqlT6RF5kKLN_zdzBYkHc/preset:view/plain/6f3c94ea3fef1d0d0e90de3b1c13b9af-3004657032901289176.jpg",
+        "https://cdn.chotot.com/wuF4wEMiCI8B-0ewBZJgjlfwdRMKwsvzrktGMclxHXE/preset:view/plain/9e0371673ea72dd7017a935a7efdc048-3004657032559453027.jpg",
+        "https://cdn.chotot.com/ODnEvStTcV_WozB3xYVlPzmRFRc_CX34hd9jpfTTND8/preset:view/plain/852e2a3acc3b5eecf90d610e9a558417-3004657034069468003.jpg",
+        "https://cdn.chotot.com/uQJABlHqkYCQUPmYx41BKujptHVMU9QNzdQr2SDA7y8/preset:view/plain/38a16b797b47ddfc00325a1f34c9fa00-3004657034571407785.jpg"
+      ],
+      "image": "https://cdn.chotot.com/IHsDqHUkMmwMrNMPEo9JkpPu_WXvSQQC-mPtjFEjc2U/preset:view/plain/47c7fdc24a46520f529a1be7d43de6c7-3004657031165567401.jpg",
+      "chotot_url": "https://www.chotot.com/135015736.htm",
+      "crawled_at": "2026-10-02 11:34:45"
+    },
+    {
+      "id": "135015715",
+      "list_id": 135015715,
+      "title": "Xiaomi Mi 15S Pro 5G 16/512 Đen sạc 120w có COD",
+      "brand": "Xiaomi",
+      "model": "15S Pro",
+      "price": 10500000,
+      "price_formatted": "10.500.000₫",
+      "seller_name": "Trần Ngọc Hiếu",
+      "location": "số 76 hẻm 79 ngách 110 ngõ 99 Định Công Hạ, Phường Định Công, Quận Hoàng Mai, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Hết bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Trung Quốc",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Xiaomi Mi 15S Pro 5G màu đen bản 16/512 máy kèm sạc cáp 120w xiaomi giá : 10.500.000 đ máy cam kết màn zin - main zin - mọi chức năng dùng tốt không lỗi gì, bao test 7 ngày, lỗi đổi máy khác Địa chỉ : - Số 76 Hẻm 79 ngách 110 ngõ 99 Phố Định Công Hạ - Định Công - Hoàng mai Hỗ Trợ : ship COD toàn quốc - ship trực tiếp nội thành Hà Nội",
+      "images": [
+        "https://cdn.chotot.com/xqZRJycXOLQaxjnFy1Q3tr7gK3AOi1mKoYCb0uyNHEQ/preset:view/plain/d698a345e95415f707da88541ede8b70-3004656993232171883.jpg",
+        "https://cdn.chotot.com/vU5ec3SEuRctt2U7wrcVxnV_xtv1zOcORwhVY9Iu_LQ/preset:view/plain/b36101b2ef8d688d4f870f01db0651a1-3004656992591536593.jpg",
+        "https://cdn.chotot.com/__mwB-kvz5ZYGGJ9OJHOvwmfzEUHrT4MK9iv2wFGlT8/preset:view/plain/13610e3746f75b214f60047c17ac3989-3004656992879436201.jpg",
+        "https://cdn.chotot.com/9OwMw2F2R82UtM5FmjVmFpu2QQ4Bx_xf1JPhbb1rs_k/preset:view/plain/5f9edb4fd129a60f653bbcb5e4e885ec-3004656992928349155.jpg",
+        "https://cdn.chotot.com/aX1X1gpeV5m2C48vxDJHZgPo7JHfd8OXChz0gF2Qu48/preset:view/plain/b4fb84214b4fa3227e4256fa55208d37-3004656993190536126.jpg",
+        "https://cdn.chotot.com/qkDd5ZO06LtXWcuZ4RqdK4UR2A4zYme3YPo13TEXtYM/preset:view/plain/de82d5b75096813ac544c53b4498c3a6-3004656992646619190.jpg"
+      ],
+      "image": "https://cdn.chotot.com/xqZRJycXOLQaxjnFy1Q3tr7gK3AOi1mKoYCb0uyNHEQ/preset:view/plain/d698a345e95415f707da88541ede8b70-3004656993232171883.jpg",
+      "chotot_url": "https://www.chotot.com/135015715.htm",
+      "crawled_at": "2026-10-02 11:34:46"
+    },
+    {
+      "id": "132682383",
+      "list_id": 132682383,
+      "title": "Apple iPhone 15 Plus 256GB",
+      "brand": "Apple",
+      "model": "iPhone 15 Plus",
+      "price": 10300000,
+      "price_formatted": "10.300.000₫",
+      "seller_name": "Táo Sinh Viên",
+      "location": "Phường Phú Diễn, Quận Bắc Từ Liêm, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "15plus 128gb full chuc năng main zin màn zin hình thức 95% check test thoải mái có bảo hành đầy đủ",
+      "images": [
+        "https://cdn.chotot.com/ecIeHgZcCEViL11Ux1zhDbVNnh-eSquICdq7RmFQbB0/preset:view/plain/182c7c9bd044c337d7e334871183f574-2999431456654627807.jpg",
+        "https://cdn.chotot.com/MbDGjVsEdHCiWcfc2CpT-Qpm7S5Uvw-Qsqp2ewCYZ5M/preset:view/plain/624cf3cbe15db49d2a2b905abeba2998-2999431456443765414.jpg",
+        "https://cdn.chotot.com/sCP-Fo87zoyhcwyMxYmt7HzGS4SKRuVjCHhJhnqhRlY/preset:view/plain/b7c9ac7d0656f291a31d26baf165548c-2999431456558592962.jpg",
+        "https://cdn.chotot.com/kk9XJTKX9FVQj3hZYOd1h9w3E-mKaP1EFNsSPIWMxdk/preset:view/plain/43225024536b62304e04d91e3a1771df-2999431456302766817.jpg",
+        "https://cdn.chotot.com/NL4nYLlbKFzIlcy5kz7A6sQFCfyC94vmixRLFQ9es1U/preset:view/plain/df7598c4ae608b898ff491b66ba5132e-2999431456402876941.jpg"
+      ],
+      "image": "https://cdn.chotot.com/ecIeHgZcCEViL11Ux1zhDbVNnh-eSquICdq7RmFQbB0/preset:view/plain/182c7c9bd044c337d7e334871183f574-2999431456654627807.jpg",
+      "chotot_url": "https://www.chotot.com/132682383.htm",
+      "crawled_at": "2026-10-02 11:34:46"
+    },
+    {
+      "id": "135015706",
+      "list_id": 135015706,
+      "title": "iPhone 12 Pro 256gb zin nguyên ( máy clock)",
+      "brand": "Apple",
+      "model": "iPhone 12",
+      "price": 5500000,
+      "price_formatted": "5.500.000₫",
+      "seller_name": "Thang Tran",
+      "location": "Phường Trung Dũng, Thành phố Biên Hòa, Đồng Nai",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Khoá mạng (lock)",
+      "origin": "Đang cập nhật",
+      "color": "Xanh dương",
+      "grade": "GRADE_A",
+      "grade_label": "Grade A (99% Like New)",
+      "grade_short": "Grade A",
+      "grade_percent": "99% Like New",
+      "grade_color": "#00875A",
+      "grade_bg": "#E3FCEF",
+      "grade_border": "#ABF5D1",
+      "grade_badge_class": "bg-emerald-50 text-emerald-800 border-emerald-300",
+      "grade_rationale": "Vỏ máy: Đẹp như mới 99% Like New",
+      "grade_factors": {
+        "body": {
+          "status": "99% Like New",
+          "grade": "GRADE_A",
+          "detail": "Ngoại hình đẹp xuất sắc không cấn móp"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "📲iPhone 12 pro dung lượng 256g ( Máy clock sãn sim ghép ,bỏ sim vô full sóng ) Cam kết zin nguyên bản full chức năng ,ngoại hình zin đẹp cận 99% - Máy bán ra bao test 1 đổi 1 trong 30 ngày hoặc hoàn tiền nếu không thích. - Hỗ trợ trả góp cho khách nợ xấu với lãi suất thấp.",
+      "images": [
+        "https://cdn.chotot.com/8NCo9uVrgY5xyh1xcxLR3t91l9J-rSB25rw0j3MNCgQ/preset:view/plain/cad75644cae193a98363aaa402a8a70b-3004656806737774734.jpg",
+        "https://cdn.chotot.com/HWd519UKAH1J_HqgsXMJIfRIPwP9FidT0vUUwljn7oo/preset:view/plain/0ee2718ee791115072d5e8cf215aad69-3004656806600303459.jpg",
+        "https://cdn.chotot.com/xqjPgaywhzFIEktttPN9OIegGPJwe29Kh-b_6ZejgyY/preset:view/plain/e248e48ee3347f0a94ff16b6c33703eb-3004656806943506437.jpg",
+        "https://cdn.chotot.com/AIi3bRWKNZb-Rw0itRsbnGaJ_WwDyw5PUC-jsnfHmrU/preset:view/plain/f520ee26e264a41bb219e268ca4e73ca-3004656806764418540.jpg",
+        "https://cdn.chotot.com/WQ31pJ1BoN448Qedzd6vNc9lzfoBM4ww_erUn_MgH8Q/preset:view/plain/a89a186222ca6fd9e13d732510c61c75-3004656806868017577.jpg",
+        "https://cdn.chotot.com/I6_fq1INe9msWHFKydov-auXKPGfPGmciwQHwvGWd84/preset:view/plain/f9bd56ecd8229d29600b5fa0323cadfe-3004656806825092312.jpg"
+      ],
+      "image": "https://cdn.chotot.com/8NCo9uVrgY5xyh1xcxLR3t91l9J-rSB25rw0j3MNCgQ/preset:view/plain/cad75644cae193a98363aaa402a8a70b-3004656806737774734.jpg",
+      "chotot_url": "https://www.chotot.com/135015706.htm",
+      "crawled_at": "2026-10-02 11:34:47"
+    },
+    {
+      "id": "135015699",
+      "list_id": 135015699,
+      "title": "Xiaomi 17 Pro Max 12GB/512GB Xanh Nội địa Fullbox",
+      "brand": "Xiaomi",
+      "model": "17 Pro Max",
+      "price": 18990000,
+      "price_formatted": "18.990.000₫",
+      "seller_name": "Đức Ty",
+      "location": "Phường 13, Quận 6, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Xanh dương",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Xiaomi 17 Pro Max Màu xanh Ram 12/512G Máy đẹp ~99% có phẩy nhẹ viền Rom gốc xài dc Vneid,ngân hàng Fullbox",
+      "images": [
+        "https://cdn.chotot.com/zi8TDW35bTin--fjrOFNt_W4kU3csg6s0YJlESevAEM/preset:view/plain/9d1cdea5f8b3ebbbb7b565651f6f6ab5-3004656943443329029.jpg",
+        "https://cdn.chotot.com/emUeHgtGbpFuRFft4vTQfw2NpRPvOwSUIkfGH_Mao6s/preset:view/plain/e0e0831170b94000671ea425e2bca194-3004656942990550232.jpg",
+        "https://cdn.chotot.com/zP56OLeuHdZk7QmFZ5NghEO7lDoOOHQOS6OQNiEC7Og/preset:view/plain/68c2b01c93aa3c907ca47871961f8122-3004656944357850083.jpg",
+        "https://cdn.chotot.com/i_o81tgCLVsImEm_duJAzB9UzT-a7-yVo3SX8izc29M/preset:view/plain/c478f5e2624d8de2d16823521efb2e5c-3004656944752223448.jpg",
+        "https://cdn.chotot.com/B-vUatHUBR10rBD0H4jaEuHrfqqp1F0YwonCIlAallI/preset:view/plain/68e1d588f1346a5815a3d385e10bb8ba-3004656945581135340.jpg",
+        "https://cdn.chotot.com/1RQqn4ruZ4DlaSovnz1i0-sKE9AgxVPrig_I7rkTbDs/preset:view/plain/7828f7046b23d8d56160210b5c1431e2-3004656946136300515.jpg"
+      ],
+      "image": "https://cdn.chotot.com/zi8TDW35bTin--fjrOFNt_W4kU3csg6s0YJlESevAEM/preset:view/plain/9d1cdea5f8b3ebbbb7b565651f6f6ab5-3004656943443329029.jpg",
+      "chotot_url": "https://www.chotot.com/135015699.htm",
+      "crawled_at": "2026-10-02 11:34:47"
+    },
+    {
+      "id": "134632187",
+      "list_id": 134632187,
+      "title": "Vivo Y300i 256GB Bạc 12/256",
+      "brand": "Vivo",
+      "model": "Y300i",
+      "price": 4600000,
+      "price_formatted": "4.600.000₫",
+      "seller_name": "Phạm Vôn",
+      "location": "Phường Tân Tạo, Quận Bình Tân, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Bạc",
+      "grade": "GRADE_A",
+      "grade_label": "Grade A (99% Like New)",
+      "grade_short": "Grade A",
+      "grade_percent": "99% Like New",
+      "grade_color": "#00875A",
+      "grade_bg": "#E3FCEF",
+      "grade_border": "#ABF5D1",
+      "grade_badge_class": "bg-emerald-50 text-emerald-800 border-emerald-300",
+      "grade_rationale": "Vỏ máy: Đẹp như mới 99% Like New",
+      "grade_factors": {
+        "body": {
+          "status": "99% Like New",
+          "grade": "GRADE_A",
+          "detail": "Ngoại hình đẹp xuất sắc không cấn móp"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Điện thoại Vivo Y300i màu bạc, bộ nhớ 256GB, RAM 12+12GB, pin 6500mAh, chip Snapdragon 4 Gen 2. - Màn hình lớn, hiển thị sắc nét. - Camera chụp ảnh đẹp, quay video mượt. - Pin trâu dùng cả ngày. - Hiệu năng ổn định cho các tác vụ hàng ngày. -Máy đẹp 99% kèm sạc nhanh Quan tâm Zalo shop xem thêm sp khác Bài còn tin còn",
+      "images": [
+        "https://cdn.chotot.com/w4qSzoxDPC3LOgXQWsCqtfO2BR9hx1SDn0-1uNh_Luk/preset:view/plain/364e6fc4055c1a592a2e92de51c5e60f-3001619850536775867.jpg",
+        "https://cdn.chotot.com/FDV6rgqZlF_CZqmRhvk7uYVJ_WdWM1sUY7e8bkdTiuo/preset:view/plain/fd361d64525e5ef960325f5e7204c62f-3001619850752212109.jpg",
+        "https://cdn.chotot.com/ylSAO-fnVf-LOJxIHEe-hvBnWzIuUbzMph46kEgd1YY/preset:view/plain/bf79b0739a50e79f3cd9c78c42e85db8-3001619851733291496.jpg"
+      ],
+      "image": "https://cdn.chotot.com/w4qSzoxDPC3LOgXQWsCqtfO2BR9hx1SDn0-1uNh_Luk/preset:view/plain/364e6fc4055c1a592a2e92de51c5e60f-3001619850536775867.jpg",
+      "chotot_url": "https://www.chotot.com/134632187.htm",
+      "crawled_at": "2026-10-02 11:34:48"
+    },
+    {
+      "id": "135015696",
+      "list_id": 135015696,
+      "title": "Samsung Note 9 128GB check đơn, cày game",
+      "brand": "Samsung",
+      "model": "Galaxy Note 9",
+      "price": 1350000,
+      "price_formatted": "1.350.000₫",
+      "seller_name": "Trần Gia Bảo",
+      "location": "Phường 7, Quận Tân Bình, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "samsung Note9 màn to tràn viền. màn zin 2k sắc nét. Cấu hình 6gb/128gb, âm thanh to rõ, wifi mạnh mượt, tải ứng dụng, chạy app, chơi game cũng ok. Ngoại hình 70-80%, thanh lý.",
+      "images": [
+        "https://cdn.chotot.com/MBPyddPYVFeue0qUTdCYOGuQMHxxGfmUiAo2NblCnKM/preset:view/plain/beb7d75150915fade3fa0951e2ae03fb-3004656832252273065.jpg",
+        "https://cdn.chotot.com/h_InXz4e6EwG-1ubZOsrUMn-YCCHXtxKwgcgRtdajzg/preset:view/plain/79ff17e8a767db367288a7db21222d07-3004656832111491430.jpg",
+        "https://cdn.chotot.com/1MYJLqHcQC51HmX-bj3rjflq6ewI_27MCs1ZltMVRZY/preset:view/plain/660a312a80d5f901bc46b794f015b70b-3004656833376412073.jpg",
+        "https://cdn.chotot.com/tpAX8cnU7iSq35-mLPSP1aM33h0JDZKZGsDeaAWR9eo/preset:view/plain/1958eec16ec755ef7c3985fa92a15fa1-3004656833497893006.jpg"
+      ],
+      "image": "https://cdn.chotot.com/MBPyddPYVFeue0qUTdCYOGuQMHxxGfmUiAo2NblCnKM/preset:view/plain/beb7d75150915fade3fa0951e2ae03fb-3004656832252273065.jpg",
+      "chotot_url": "https://www.chotot.com/135015696.htm",
+      "crawled_at": "2026-10-02 11:34:48"
+    },
+    {
+      "id": "134997436",
+      "list_id": 134997436,
+      "title": "Apple iPhone 13 Pro Max 128GB Xám Đã sử dụng",
+      "brand": "Apple",
+      "model": "iPhone 13 Pro Max",
+      "price": 6500000,
+      "price_formatted": "6.500.000₫",
+      "seller_name": "Viễn Phong Apple",
+      "location": "Phường 9, Quận 3, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Xám",
+      "grade": "GRADE_C",
+      "grade_label": "Grade C (90% Good)",
+      "grade_short": "Grade C",
+      "grade_percent": "90% Good",
+      "grade_color": "#FF8B00",
+      "grade_bg": "#FFF0B3",
+      "grade_border": "#FFE380",
+      "grade_badge_class": "bg-amber-50 text-amber-800 border-amber-300",
+      "grade_rationale": "Pin: Pin chai / Đã thay thế",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Chai pin / Đã thay",
+          "grade": "GRADE_C",
+          "detail": "Pin báo bảo trì hoặc đã thay thế bên ngoài"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "bán cây 13promax 128gb quốc tế ,máy mới thay pin còn 100% ,màn zin ddã fix bị đốm trắng phía trên như hình còn lại nguyên zin ko sửa chữa gì hết full tất cả chức năng vỏ có cấn tí dưới góc hết giá 6500k xem máy tại cửa hàng nhà lh *** q3 hcm",
+      "images": [
+        "https://cdn.chotot.com/G7Cp23ZPE4De0N9lynIZZR6KMAE_H7INOKlNzzgL_pU/preset:view/plain/9472cc75c7a2bb7009522c9ce9cfb735-3004511585348180120.jpg",
+        "https://cdn.chotot.com/lvQcxB-oqL8mm6bd_G8e76ZEeuvgPmuCZD4eiNUZBNc/preset:view/plain/ce17beb1c5580bbf442100358f579f12-3004511585694475028.jpg",
+        "https://cdn.chotot.com/5wIuTpMdaWHO57GvTf_UODLs-Ab8BVi6qSvgZsDFdio/preset:view/plain/51cb286b7e1d915a1f7ad0d3566e8d6b-3004511585140601369.jpg",
+        "https://cdn.chotot.com/3ltow87j-91Cho8b0MEbNfbV_1zvkVfWDkxVuUFkwXU/preset:view/plain/28f0ac8ea2f875c861bb5adcb9c45b2d-3004511585634336773.jpg",
+        "https://cdn.chotot.com/j3JDJOvKkZlg0AWabOXFs5q2JG9NLqD_mbAIdkGppf0/preset:view/plain/35c9a7094b236be8acf0f1cb66448e80-3004511585677055912.jpg",
+        "https://cdn.chotot.com/cpUa5LC16o-ACaadST6s9Rymptw2A8EFU4Q5_p_xo8s/preset:view/plain/c84df0f7eee4641a8312ceb96f65c1f6-3004511585312398637.jpg"
+      ],
+      "image": "https://cdn.chotot.com/G7Cp23ZPE4De0N9lynIZZR6KMAE_H7INOKlNzzgL_pU/preset:view/plain/9472cc75c7a2bb7009522c9ce9cfb735-3004511585348180120.jpg",
+      "chotot_url": "https://www.chotot.com/134997436.htm",
+      "crawled_at": "2026-10-02 11:34:49"
+    },
+    {
+      "id": "135015690",
+      "list_id": 135015690,
+      "title": "Xiaomi Redmi Note 13 Xám",
+      "brand": "Xiaomi",
+      "model": "Redmi Note 13",
+      "price": 500000,
+      "price_formatted": "500.000₫",
+      "seller_name": "Hiền Lee",
+      "location": "Phường 7, Thành phố Tân An, Long An",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Xám",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Tìm mua note 13 hư man hinh gia vai tram",
+      "images": [
+        "https://cdn.chotot.com/9DgwYfNLxY9k_B6sacZI7PY8lKtM4-1c5_mGVyD5YeY/preset:view/plain/92809ba8ab2d40881cac42406e3a542e-3004656752871192934.jpg"
+      ],
+      "image": "https://cdn.chotot.com/9DgwYfNLxY9k_B6sacZI7PY8lKtM4-1c5_mGVyD5YeY/preset:view/plain/92809ba8ab2d40881cac42406e3a542e-3004656752871192934.jpg",
+      "chotot_url": "https://www.chotot.com/135015690.htm",
+      "crawled_at": "2026-10-02 11:34:49"
+    },
+    {
+      "id": "135015687",
+      "list_id": 135015687,
+      "title": "Vivo X70 Pro Plus 5G 12/512 Đen sạc 120w có COD",
+      "brand": "Vivo",
+      "model": "X70 Pro Plus",
+      "price": 4050000,
+      "price_formatted": "4.050.000₫",
+      "seller_name": "Trần Ngọc Hiếu",
+      "location": "số 76 hẻm 79 ngách 110 ngõ 99 Định Công Hạ, Phường Định Công, Quận Hoàng Mai, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Hết bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Trung Quốc",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Vivo X70 Pro Plus 5G màu đen bản 12/512 máy kèm sạc cáp 120w flashcharge giá : 4.050.000 đ máy cam kết màn zin - main zin - mọi chức năng dùng tốt không lỗi gì, bao test 7 ngày, lỗi đổi máy khác Địa chỉ : - Số 76 Hẻm 79 ngách 110 ngõ 99 Phố Định Công Hạ - Định Công - Hoàng mai Hỗ Trợ : ship COD toàn quốc - ship trực tiếp nội thành Hà Nội",
+      "images": [
+        "https://cdn.chotot.com/QPahRTfqvi0Mu6LzzsRtriSLy6Mhe6XtOI6_u8NKZOA/preset:view/plain/d450fa8394a809bfc685eddff560f752-3004656837117796777.jpg",
+        "https://cdn.chotot.com/LQ_PCjlkju91OPHeMx9Uc0Qm190ovrlsFqycAL37dUE/preset:view/plain/db0094056ce3c222ae9ad8a52cff2ab8-3004656836766196579.jpg",
+        "https://cdn.chotot.com/jYjhxCBs74PIImTLAVydV7WCyu0MCgUdolmjswhw7GY/preset:view/plain/0429a95e367c212ceb87f98d83509ae1-3004656837175338200.jpg",
+        "https://cdn.chotot.com/lyQ836HMy0I2SKSVzzrflNAhhOcwGdsBwTM1Ngc7Fro/preset:view/plain/d1f6c2f3b29bad4c9d008fe8b10d355f-3004656837048145388.jpg",
+        "https://cdn.chotot.com/1zuWpDRVTG3MiyGb5OXuwj49E3lHaAEkoW7jsagGg_U/preset:view/plain/a78cd12a4f2f635d317a8a4839a0369b-3004656837088282766.jpg",
+        "https://cdn.chotot.com/EGqsE5aV9ail-FLcbxJ4BQ-BGOhjtOyCLd8RB_B5nbI/preset:view/plain/98c01d5abac5e2b8a4da9cee084107ea-3004656837201247203.jpg"
+      ],
+      "image": "https://cdn.chotot.com/QPahRTfqvi0Mu6LzzsRtriSLy6Mhe6XtOI6_u8NKZOA/preset:view/plain/d450fa8394a809bfc685eddff560f752-3004656837117796777.jpg",
+      "chotot_url": "https://www.chotot.com/135015687.htm",
+      "crawled_at": "2026-10-02 11:34:49"
+    },
+    {
+      "id": "135015684",
+      "list_id": 135015684,
+      "title": "Xiaomi Redmi Note 12 Turbo 8GB/128GB Đen",
+      "brand": "Xiaomi",
+      "model": "Redmi Note 12 Turbo",
+      "price": 3300000,
+      "price_formatted": "3.300.000₫",
+      "seller_name": "Quang",
+      "location": "Xã Krông Jing, Huyện M'Đrắk, Đắk Lắk",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Xiaomi Redmi Note 12 Turbo Ram 8gb/128gb Full chức năng Sđt liên hệ ***",
+      "images": [
+        "https://cdn.chotot.com/ive5T2HBZBSYB5aDPpBj63s_w_7wYi6IB0__1krwT3w/preset:view/plain/a66ca3a649cc8d9ed8eebc378ae979a9-3004656849358666086.jpg",
+        "https://cdn.chotot.com/1y4aki0XS_hsGA1ogjbrkBJ1XeLTtreCI6bik-TXxic/preset:view/plain/81315d3b9c9dc34e21fbe4dafebb858c-3004656851704538328.jpg",
+        "https://cdn.chotot.com/Z8Q8zU0jUAgpBvEqLrBo2lE_kwghW-wy5MC1db4wahY/preset:view/plain/ad45c81c6f2c0b919ed7b42b94a0d976-3004656851177890659.jpg"
+      ],
+      "image": "https://cdn.chotot.com/ive5T2HBZBSYB5aDPpBj63s_w_7wYi6IB0__1krwT3w/preset:view/plain/a66ca3a649cc8d9ed8eebc378ae979a9-3004656849358666086.jpg",
+      "chotot_url": "https://www.chotot.com/135015684.htm",
+      "crawled_at": "2026-10-02 11:34:50"
+    },
+    {
+      "id": "135006449",
+      "list_id": 135006449,
+      "title": "ip 15promax 256G Quốc Tế Zin full . Góp Bao Nợ Xấu",
+      "brand": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "price": 18900000,
+      "price_formatted": "18.900.000₫",
+      "seller_name": "Điện Thoại Tốt giá sinh viên ",
+      "location": "Phường Linh Xuân (Quận Thủ Đức cũ), Thành phố Thủ Đức, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "4-6 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Mỹ",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "iphone 15promax 256G Quốc Tế Giá Tốt 🥰 Hỗ trợ góp trả trước 9tr400k Nhận Máy Dùng Ngay . Bao N.Ợ X.ẤU duyệt 100% . Không Thẩm định . Không cài icloudđ . Góp 3-6-9 tháng thoải mái 👌 Máy Zin Màn Zin . Full chức Năng . Face id nhạy . icloudđ sạch . Pin Cầm Tốt . Ngoại hình đẹp 99 👌 Dòng Máy chuẩn Ngon Mượt siêu bền . Màu và thiết kế đẹp Ace dùng rất oke 🔥🔥🔥Giá Tốt : 18tr900k ( Tặng kèm PK BH 6 Tháng ) ib lh : ***(zalo) ĐC : Linh xuân . Thủ đức . Tphcm #TrungNhanStore #GópBaoNoXau",
+      "images": [
+        "https://cdn.chotot.com/PAAQJSE0n5rNlgcRvqykC_hqZO3gytIOLjCihxt3KCY/preset:view/plain/68b76bbd1bcdc5c5732ef80ba90bd19e-3004559894220004078.jpg",
+        "https://cdn.chotot.com/c-eyMbu4M2RJuvlaCYcm62BhbrFCV7s6-ieJ99rdcL8/preset:view/plain/37731b97c87b1b3a3cbe7abe2b08b2de-3004559892925470872.jpg",
+        "https://cdn.chotot.com/YLsStCZt8Xsqq4Rju_nctThPFVo4-4BzOwKnuXE741E/preset:view/plain/4377cf50f63a29329e4a97ebb30bfd9f-3004559895392468997.jpg",
+        "https://cdn.chotot.com/ARbM9yhCCdmme2_Ve2F-xOSewI0WeJ8Q8rnG_kosZkA/preset:view/plain/882299c9f13eac9437efcef1c5709f6e-3004559894562730521.jpg"
+      ],
+      "image": "https://cdn.chotot.com/PAAQJSE0n5rNlgcRvqykC_hqZO3gytIOLjCihxt3KCY/preset:view/plain/68b76bbd1bcdc5c5732ef80ba90bd19e-3004559894220004078.jpg",
+      "chotot_url": "https://www.chotot.com/135006449.htm",
+      "crawled_at": "2026-10-02 11:34:50"
+    },
+    {
+      "id": "135015682",
+      "list_id": 135015682,
+      "title": "Apple iPhone 6s 64GB Hồng 72%",
+      "brand": "Apple",
+      "model": "iPhone 6S",
+      "price": 450000,
+      "price_formatted": "450.000₫",
+      "seller_name": "Cầm Đinh Anh Tú",
+      "location": "Tổ 2, Phường Chiềng Cơi, Thành phố Sơn La, Sơn La",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Hồng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "iPhone 6s 64GB màu hồng, hình thức như ảnh. - Máy hoạt động tốt, vân tay nhạy, pin còn dùng được. - Giá 450.000 đồng.",
+      "images": [
+        "https://cdn.chotot.com/NH0Lto4wZV_nwcFj22xkFRbz9t9_KiSVY-hQWBbaUSc/preset:view/plain/53b6c3f55773c6901813c9065195cb1e-3004656742399665368.jpg",
+        "https://cdn.chotot.com/xi7XE2U3RTt3n5cyKTK0sznxQdMsHJqUVY6tD6U4lBM/preset:view/plain/f3c0beb4e5b1cac2989d8b57f82acd4c-3004656742513805454.jpg",
+        "https://cdn.chotot.com/68C3ypBZWYTs07DDCBCubHE1uqHtWuJnqlMAuEOFKRc/preset:view/plain/474aa01bd2fad424e335ac108b9ec1d0-3004656742325412265.jpg",
+        "https://cdn.chotot.com/266Cqg6EGsw_Qde1W6At5znmV19_m4UgJttQet_yUuE/preset:view/plain/7f569ae2c3da33a0e38b27422b18e97a-3004656742334970214.jpg",
+        "https://cdn.chotot.com/uumxexpYkSeVLMj6XFzxVsJYTnWQ_AGDS00WRFGMAn8/preset:view/plain/a1cb41e39f6c9bf4348ac00fb81633c6-3004656742322148844.jpg",
+        "https://cdn.chotot.com/2Zt2HuOZHNraN1MMCexnpsnYKN0yxCf8_ggW0LbFV0A/preset:view/plain/16558e665a0202637aaea4025e8c176b-3004656742545278478.jpg"
+      ],
+      "image": "https://cdn.chotot.com/NH0Lto4wZV_nwcFj22xkFRbz9t9_KiSVY-hQWBbaUSc/preset:view/plain/53b6c3f55773c6901813c9065195cb1e-3004656742399665368.jpg",
+      "chotot_url": "https://www.chotot.com/135015682.htm",
+      "crawled_at": "2026-10-02 11:34:51"
+    },
+    {
+      "id": "135006449",
+      "list_id": 135006449,
+      "title": "ip 15promax 256G Quốc Tế Zin full . Góp Bao Nợ Xấu",
+      "brand": "Apple",
+      "model": "iPhone 15 Pro Max",
+      "price": 18900000,
+      "price_formatted": "18.900.000₫",
+      "seller_name": "Điện Thoại Tốt giá sinh viên ",
+      "location": "Phường Linh Xuân (Quận Thủ Đức cũ), Thành phố Thủ Đức, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "4-6 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Mỹ",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "iphone 15promax 256G Quốc Tế Giá Tốt 🥰 Hỗ trợ góp trả trước 9tr400k Nhận Máy Dùng Ngay . Bao N.Ợ X.ẤU duyệt 100% . Không Thẩm định . Không cài icloudđ . Góp 3-6-9 tháng thoải mái 👌 Máy Zin Màn Zin . Full chức Năng . Face id nhạy . icloudđ sạch . Pin Cầm Tốt . Ngoại hình đẹp 99 👌 Dòng Máy chuẩn Ngon Mượt siêu bền . Màu và thiết kế đẹp Ace dùng rất oke 🔥🔥🔥Giá Tốt : 18tr900k ( Tặng kèm PK BH 6 Tháng ) ib lh : ***(zalo) ĐC : Linh xuân . Thủ đức . Tphcm #TrungNhanStore #GópBaoNoXau",
+      "images": [
+        "https://cdn.chotot.com/PAAQJSE0n5rNlgcRvqykC_hqZO3gytIOLjCihxt3KCY/preset:view/plain/68b76bbd1bcdc5c5732ef80ba90bd19e-3004559894220004078.jpg",
+        "https://cdn.chotot.com/c-eyMbu4M2RJuvlaCYcm62BhbrFCV7s6-ieJ99rdcL8/preset:view/plain/37731b97c87b1b3a3cbe7abe2b08b2de-3004559892925470872.jpg",
+        "https://cdn.chotot.com/YLsStCZt8Xsqq4Rju_nctThPFVo4-4BzOwKnuXE741E/preset:view/plain/4377cf50f63a29329e4a97ebb30bfd9f-3004559895392468997.jpg",
+        "https://cdn.chotot.com/ARbM9yhCCdmme2_Ve2F-xOSewI0WeJ8Q8rnG_kosZkA/preset:view/plain/882299c9f13eac9437efcef1c5709f6e-3004559894562730521.jpg"
+      ],
+      "image": "https://cdn.chotot.com/PAAQJSE0n5rNlgcRvqykC_hqZO3gytIOLjCihxt3KCY/preset:view/plain/68b76bbd1bcdc5c5732ef80ba90bd19e-3004559894220004078.jpg",
+      "chotot_url": "https://www.chotot.com/135006449.htm",
+      "crawled_at": "2026-10-02 11:34:52"
+    },
+    {
+      "id": "135015682",
+      "list_id": 135015682,
+      "title": "Apple iPhone 6s 64GB Hồng 72%",
+      "brand": "Apple",
+      "model": "iPhone 6S",
+      "price": 450000,
+      "price_formatted": "450.000₫",
+      "seller_name": "Cầm Đinh Anh Tú",
+      "location": "Tổ 2, Phường Chiềng Cơi, Thành phố Sơn La, Sơn La",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Hồng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "iPhone 6s 64GB màu hồng, hình thức như ảnh. - Máy hoạt động tốt, vân tay nhạy, pin còn dùng được. - Giá 450.000 đồng.",
+      "images": [
+        "https://cdn.chotot.com/NH0Lto4wZV_nwcFj22xkFRbz9t9_KiSVY-hQWBbaUSc/preset:view/plain/53b6c3f55773c6901813c9065195cb1e-3004656742399665368.jpg",
+        "https://cdn.chotot.com/xi7XE2U3RTt3n5cyKTK0sznxQdMsHJqUVY6tD6U4lBM/preset:view/plain/f3c0beb4e5b1cac2989d8b57f82acd4c-3004656742513805454.jpg",
+        "https://cdn.chotot.com/68C3ypBZWYTs07DDCBCubHE1uqHtWuJnqlMAuEOFKRc/preset:view/plain/474aa01bd2fad424e335ac108b9ec1d0-3004656742325412265.jpg",
+        "https://cdn.chotot.com/266Cqg6EGsw_Qde1W6At5znmV19_m4UgJttQet_yUuE/preset:view/plain/7f569ae2c3da33a0e38b27422b18e97a-3004656742334970214.jpg",
+        "https://cdn.chotot.com/uumxexpYkSeVLMj6XFzxVsJYTnWQ_AGDS00WRFGMAn8/preset:view/plain/a1cb41e39f6c9bf4348ac00fb81633c6-3004656742322148844.jpg",
+        "https://cdn.chotot.com/2Zt2HuOZHNraN1MMCexnpsnYKN0yxCf8_ggW0LbFV0A/preset:view/plain/16558e665a0202637aaea4025e8c176b-3004656742545278478.jpg"
+      ],
+      "image": "https://cdn.chotot.com/NH0Lto4wZV_nwcFj22xkFRbz9t9_KiSVY-hQWBbaUSc/preset:view/plain/53b6c3f55773c6901813c9065195cb1e-3004656742399665368.jpg",
+      "chotot_url": "https://www.chotot.com/135015682.htm",
+      "crawled_at": "2026-10-02 11:34:52"
+    },
+    {
+      "id": "135015677",
+      "list_id": 135015677,
+      "title": "iPhone 17 Pro Max Xám 512GB",
+      "brand": "Apple",
+      "model": "iPhone 17 Pro Max",
+      "price": 28000000,
+      "price_formatted": "28.000.000₫",
+      "seller_name": "khoa Nguyễn ",
+      "location": "Phường An Khánh, Quận Ninh Kiều, Cần Thơ",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Hết bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Xanh dương",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ • Pin: Xuất sắc 90%",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Pin 90% (Cao)",
+          "grade": "GRADE_A",
+          "detail": "Dung lượng pin hoàn hảo 90% (>= 85%)"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Lên đời 18prm mình nhượng lại e 17prm như hình mới 98% Máy mua mới từ đầu vừa hbh Máy dán full ppf Full chức năng Pin 90%",
+      "images": [
+        "https://cdn.chotot.com/13Sbvg15z-Hodr8QfjDmLXaMZq0DEm1QEJsfIEzh_Vg/preset:view/plain/326ca60f0d2781263e96c0cc73572ae9-3004656308516109283.jpg",
+        "https://cdn.chotot.com/yWntSR3En1JFjT0sN6no2RPhIepVnKNvD3glOKhnVcg/preset:view/plain/97339639512551ffa8161dfa4d478363-3004656309055992683.jpg",
+        "https://cdn.chotot.com/Q3ll5-vvKSsVg-MFvqnNb7lg5d1Oe2FtoYl5U_uJmwI/preset:view/plain/184690b70fd27be6378f60c0a2bf4417-3004656308411409375.jpg",
+        "https://cdn.chotot.com/V0OsDUE8FLVL11a4dGGUASKKb4n7qw8kb7R5Xz1noLM/preset:view/plain/cddbcebec2fad5445d127d47d2056a26-3004656309094170629.jpg"
+      ],
+      "image": "https://cdn.chotot.com/13Sbvg15z-Hodr8QfjDmLXaMZq0DEm1QEJsfIEzh_Vg/preset:view/plain/326ca60f0d2781263e96c0cc73572ae9-3004656308516109283.jpg",
+      "chotot_url": "https://www.chotot.com/135015677.htm",
+      "crawled_at": "2026-10-02 11:34:53"
+    },
+    {
+      "id": "135015672",
+      "list_id": 135015672,
+      "title": "Galaxy Z Fold4 512GB zin giá trải nghiệm",
+      "brand": "Samsung",
+      "model": "Galaxy Z Fold4",
+      "price": 4350000,
+      "price_formatted": "4.350.000₫",
+      "seller_name": "Thiên Hòa mobile ",
+      "location": "Phường 6, Phường 6, Quận 8, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Việt Nam",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Galaxy Z Fold4 VN 512GB , màn trong đốm như hình cảm ứng bao mượt . màn ngoài zin sọc như hình cảm ứng bao mượt hiệu năng mạnh mẽ, camera chất lượng. cơ cáp gập thẳng tắp SIM sóng nghe gọi chuẩn . ngoại hình còn đẹp camera trước sau chuẩn pin chuẩn giá rẻ cho ae xe ôm công nghệ lướt web treo game ngon lành sg quận 8 ship cod toàn quốc",
+      "images": [
+        "https://cdn.chotot.com/3twx3NH7PY6D2LI2YiF5I-3UX9iLkCkWvTrc9A97DaU/preset:view/plain/81d5cf25d7fb28389c01125293926255-3004656550138231025.jpg",
+        "https://cdn.chotot.com/EGTI2PmLV5zA7YfG8f-2vL9InQG2zDIgOSOPACZ4kXg/preset:view/plain/33e6eaf727b8bec66a35067191e4bd10-3004656550395545742.jpg",
+        "https://cdn.chotot.com/YBqNFZesy9rreMPMI3O7DznEkvc4gSegnZe08QaPkQs/preset:view/plain/7e21b3ef5d1b4f978fe638b5ce7a69cf-3004656551608760678.jpg",
+        "https://cdn.chotot.com/xTAYB3ftlMWK0RICY4Qe_FYn6HjqewbEQuu_nzSNP20/preset:view/plain/48e6e87e68ee92c63170d0054a231b67-3004656551842145496.jpg",
+        "https://cdn.chotot.com/u3YJQy1KynbacdfIYKKq8aHmsryLqOsoReq8hbwbZno/preset:view/plain/3c8e0f2a2dda76c22636b0cc5a85f1a0-3004656553158195441.jpg",
+        "https://cdn.chotot.com/JE0Tm8_HKtXI4_1HNorqlHhGcm8HRJdlk0ZPlgguUfQ/preset:view/plain/873380c80b2978c36f1da0cc5afe6f1e-3004656553371615237.jpg"
+      ],
+      "image": "https://cdn.chotot.com/3twx3NH7PY6D2LI2YiF5I-3UX9iLkCkWvTrc9A97DaU/preset:view/plain/81d5cf25d7fb28389c01125293926255-3004656550138231025.jpg",
+      "chotot_url": "https://www.chotot.com/135015672.htm",
+      "crawled_at": "2026-10-02 11:34:53"
+    },
+    {
+      "id": "111311642",
+      "list_id": 111311642,
+      "title": "🌹🌹🌹𝐢𝐏 𝟏5 128G 𝐜𝐨́ 𝐠𝐨́𝐩 𝐧𝐨̛̣ 𝐱𝐚̂́𝐮 k giữ iCl",
+      "brand": "Apple",
+      "model": "iPhone 15",
+      "price": 8990000,
+      "price_formatted": "8.990.000₫",
+      "seller_name": "YourPhone 267 Nguyễn Hoàng",
+      "location": "Phường Bình Hiên, Quận Hải Châu, Đà Nẵng",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "7-12 tháng",
+      "lock_status": "Khoá mạng (lock)",
+      "origin": "Mỹ",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Fanpage :YourPhone Điện Thoại Trả Góp tại Đà Nẵng 📌Địa chỉ 267 Nguyễn Hoàng-Hải Châu Đà Nẵng 🕓Làm việc từ 7h sáng tới 23h tối,có ship tận nhà cho khách Có bán trả góp từ tuổi 18-không cần chứng minh thu nhập Nhận thu cũ đổi mới cho khách,mua máy cũ giá cao 💻 iPhone 15 bản 128G lock đã cnc khe sim xài tốt ✅Máy hỗ trợ ghép sim trọn đời máy miễn phí ✅Có bản 128-256G ✅Máy sạc ít dưới 10 lần,pin 100,còn bảo hành apple dài ✅Tiết kiệm rất nhiều so với máy quốc tế Giá bán chỉ từ 8tr990k Bản quốc tế 12tr790k 📌Tặng kèm AirPods pro rep trị giá 450k 📌Bảo hành 1 đổi 1 📌Tặng full sạc cáp -ốp lưng-cường lực(miễn phí dán màn hình trọn đời) 📌 Phiêú mua hàng tổng trị giá 1 triệu cho lần mua tiếp theo 📌Có trích hoa hồng cho khách giới thiệu 📌Phụ kiện bảo hành trọn đời ► 𝐜𝐨́ 𝐠𝐨́𝐩 𝐧𝐨̛̣ 𝐱𝐚̂́𝐮 không giữ icloud (𝗕𝗲̂𝗻 𝗺𝗶̀𝗻𝗵 𝗴𝗼́𝗽 nợ xấu 𝗸𝗼 𝗴𝗶𝘂̛̃ 𝗰𝗰𝗰𝗱,ko icloud,𝗰𝗵𝗼 𝗸𝗵𝗮́𝗰𝗵 𝘅𝗮̀𝗶 full chức năng icloud 𝗳𝗮𝗰𝗲𝗶𝗱,𝗺𝗮̣̂𝘁 𝗸𝗵𝗮̂̉𝘂 𝘁𝗵𝗼𝗮̉𝗶 𝗺𝗮́𝗶-𝗹𝗮̃𝗶 𝘀𝘂𝗮̂́𝘁 𝗯𝗮̆̀𝗻𝗴 𝘃𝗼̛́𝗶 𝗻𝗴𝗮̂𝗻 𝗵𝗮̀𝗻𝗴 𝗵𝗶𝗲̣̂𝗻 𝘁𝗮̣𝗶-𝗴𝗼́𝗽 𝗯𝗮𝗼 𝗻𝗵𝗶𝗲̂𝘂 𝘁𝗵𝗮́𝗻𝗴 𝗰𝘂̃𝗻𝗴 đ𝘂̛𝗼̛̣𝗰) Có bán trả góp,nhận thu cũ đổi mới cho khách hàngCác dịch vụ mở rộng ✅ Hỗ trợ trả góp - Xét duyệt chỉ 10' 💳 Trả góp Thẻ Tín Dụng - CMND - BLX 📌 Xét duyệt NHANH chỉ 10' . 📌 Không chứng minh thu nhập . 📌 Trả trước chỉ từ 300k đến 10% ( với giấy tờ tuỳ thân ) 📌 Trả trước 𝟬đ - Lãi suất 0% ( qua thẻ tín dụng ) 🆘 HỖ TRỢ #THU_MÁY_CŨ_ĐỔI_MÁY_MỚI-không cần bù thêm tiền 📌Nhận thu mua máy trả góp giá cao lên tới 90% giá trị máy 🚗 Ship COD",
+      "images": [
+        "https://cdn.chotot.com/zCuK2cEn2IKjT5oUAqa36XgC_WoY-6DSpoOp3gAuiZQ/preset:view/plain/9bdc26ab2f980731f9658df77e8ac0ff-2874333868067255327.jpg",
+        "https://cdn.chotot.com/nhOchfjJH6KCzZXxPTwoSnPsAKEIBTJqQqcZyNd_fUI/preset:view/plain/a241a955f6fa9c4c2b2ab18b59f1f47c-2874334005590117927.jpg",
+        "https://cdn.chotot.com/xJmPNSEa6qbQO0mzjOghbiojicHlK7nlAas-AbIVfDw/preset:view/plain/cc18ebf7845944fabc8b3d5ad6c6e480-2874334010816149908.jpg",
+        "https://cdn.chotot.com/eBve4Jq58KGk7Vjx1hRzi8P45TdYzR0K9_aqktvN9IU/preset:view/plain/0d7b93f27b4e34a9b6a953592e11c2d4-2874334038213867924.jpg"
+      ],
+      "image": "https://cdn.chotot.com/zCuK2cEn2IKjT5oUAqa36XgC_WoY-6DSpoOp3gAuiZQ/preset:view/plain/9bdc26ab2f980731f9658df77e8ac0ff-2874333868067255327.jpg",
+      "chotot_url": "https://www.chotot.com/111311642.htm",
+      "crawled_at": "2026-10-02 11:34:54"
+    },
+    {
+      "id": "107751046",
+      "list_id": 107751046,
+      "title": "Sony Xperia 5 IV ( 5 Mark 4) Nhật 2 Sim | Trả Góp",
+      "brand": "Sony",
+      "model": "Dòng khác",
+      "price": 5190000,
+      "price_formatted": "5.190.000₫",
+      "seller_name": "Vio Store",
+      "location": "97 Đường Lê Đức Thọ, Phường 7, Quận Gò Vấp, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "7-12 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Màu khác",
+      "grade": "GRADE_C",
+      "grade_label": "Grade C (90% Good)",
+      "grade_short": "Grade C",
+      "grade_percent": "90% Good",
+      "grade_color": "#FF8B00",
+      "grade_bg": "#FFF0B3",
+      "grade_border": "#FFE380",
+      "grade_badge_class": "bg-amber-50 text-amber-800 border-amber-300",
+      "grade_rationale": "Màn hình: Máy đã thay màn hình lô/màn linh kiện • Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Ám ố / Đã sửa",
+          "grade": "GRADE_C",
+          "detail": "Máy đã thay màn hình lô/màn linh kiện"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "☘️ 𝐒𝐇𝐎𝐏 𝐂Ó 𝐁Á𝐍 𝐓𝐑Ả 𝐆Ó𝐏 𝐎𝐍𝐋𝐈𝐍𝐄 ☘️ 🌎Điện thoại : Xperia 5 IV ( 5 Mark 4) Nhật 2 Sim ✏️𝐓𝐇Ô𝐍𝐆 𝐒Ố 𝐊Ỹ 𝐓𝐇𝐔Ậ𝐓 : ✔️ Màn hình: OLED,6,1 inch (21:9) , 1B màu, 120Hz, HDR BT.2020 ✔️ CPU : Snapdragon 8 thế hệ 1 (4 nm) ;GPU: Adreno 730 ✔️ Camera sau: Cụm 3 Camera 12 MP ; Camera trước: 8 MP ✔️ PIN : 5000mAh ☘️ 𝐆𝐢á 𝐬𝐢ê𝐮 𝐡ờ𝐢 : 𝐇ỗ 𝐭𝐫ợ 𝐒𝐡𝐢𝐩 𝐂𝐎𝐃 - 𝐆ó𝐩 𝐓ạ𝐢 𝐧𝐡à - 𝐋ê𝐧 đờ𝐢 𝐦á𝐲 𝐦ớ𝐢 ✔️ Hình thức máy mới 97% : 5.190.000đ ✔️ Hình thức máy mới 98% : 5.590.000 ✔️ Hình thức máy mới 99% : 5.990.000 ------------------ 🔥𝐕𝐢𝐨 𝐒𝐭𝐨𝐫𝐞 cam kết chỉ bán hàng nguyên bản : 👉🏾 Main Zin , Màn zin ,chưa sửa chữa 👉🏾 Không bán hàng sửa main thay màn kém chất lượng ☎️𝐋𝐢ê𝐧 𝐥ạ𝐜 𝐯ớ𝐢 𝐜𝐡ú𝐧𝐠 𝐭ô𝐢 𝐕𝐈𝐎 𝐒𝐓𝐎𝐑𝐄 _ 𝐓𝐏. 𝐇Ồ 𝐂𝐇Í 𝐌𝐈𝐍𝐇 🏠 𝐂𝐍𝟏 : 97 Lê Đức Thọ, Phường 7, Quận Gò Vấp 🏠 𝐂𝐍𝟐 : 55 Nguyễn Thiện Thuật, Phường 2, Quận 3 🏠 𝐂𝐍𝟑 : 1140 Kha Vạn Cân , P.Linh Chiểu , TP Thủ Đức 𝐕𝐈𝐎 𝐒𝐓𝐎𝐑𝐄 _ 𝐁Ì𝐍𝐇 𝐃ƯƠ𝐍𝐆 🏠 𝐂𝐍𝟒 : 217 Thích Quảng Đức , P.Chánh Nghĩa ,TP Thủ Dầu Một ⛔️𝐂𝐡í𝐧𝐡 𝐒á𝐜𝐡 𝐁ả𝐨 𝐇à𝐧𝐡 : 👉🏾 Bao đổi 1 đổi 1 trong 15 ngày sử dụng 👉🏾 Bảo hành 06 tháng PHẦN CỨNG 👉🏾 Hỗ trợ phần mềm trọn đời máy 💡𝐇ỗ 𝐭𝐫ợ 𝐭𝐡𝐚𝐧𝐡 𝐭𝐨á𝐧 👉🏾 Hỗ trợ trả Góp Online Tại nhà trên toàn quốc 👉🏾 Trả góp 0% với Thẻ Tín Dụng 👉🏾 Hỗ trợ trả góp lãi suất thấp, Xét duyệt nhanh , thủ tục đơn giản 👉🏾 Hỗ trợ Quẹt thẻ thanh toán Với mọi Loại thẻ ATM ,Visa, Master... 🎂𝐏𝐡ụ 𝐤𝐢ệ𝐧 : 👉🏾 Tặng Gậy Lấy Sim 👉🏾 Hỗ trợ mua phụ kiện với giá ưu đãi khi mua kèm máy 🚚𝐕ậ𝐧 𝐜𝐡𝐮𝐲ể𝐧 , 𝐠𝐢𝐚𝐨 𝐡à𝐧𝐠 𝐭𝐨à𝐧 𝐪𝐮ố𝐜 , 𝐤𝐢ể𝐦 𝐭𝐫𝐚 𝐡à𝐧𝐠 𝐫ồ𝐢 𝐭𝐡𝐚𝐧𝐡 𝐭𝐨á𝐧",
+      "images": [
+        "https://cdn.chotot.com/plVZDZLXkXY5QtTAh3FUgFNvI5ecATG72xoyIrJ97jw/preset:view/plain/c78923f79d3842e940fdb735a58e7332-2845237099536616568.jpg",
+        "https://cdn.chotot.com/7mIYxC0hgMZdDBCemfkxWSpvBzpdiSfK4oUi-2eDaRI/preset:view/plain/0a0c5c026e0b4add8d4547132fa93d4c-2845237111801089144.jpg",
+        "https://cdn.chotot.com/NEKmFAodCfnhVcBUWQ18J2tg5BDG3ONvmpnJnt0lZzw/preset:view/plain/6ece042e7245a442d8a32208bd50c83a-2845237110631176861.jpg",
+        "https://cdn.chotot.com/kgZxZaO4nY8g3GrmBP3-ThdOKLaVgTIPOrhwYDNb7KU/preset:view/plain/363bacbc958cf46d118c0744a619fd81-2845237122145178739.jpg",
+        "https://cdn.chotot.com/aYt9W5afP66Y7yF5D3zy-lV-SXT9g9W7uNhFMuBrrq4/preset:view/plain/ed606345c8818b3c6e8394a5099dee37-2845237121649926784.jpg",
+        "https://cdn.chotot.com/btet73YP-GqU2IzTzuldLpyc7gboBthkYjforgWUTps/preset:view/plain/2f29275534f72a33602afd7ed628ed3a-2845237121451070400.jpg"
+      ],
+      "image": "https://cdn.chotot.com/plVZDZLXkXY5QtTAh3FUgFNvI5ecATG72xoyIrJ97jw/preset:view/plain/c78923f79d3842e940fdb735a58e7332-2845237099536616568.jpg",
+      "chotot_url": "https://www.chotot.com/107751046.htm",
+      "crawled_at": "2026-10-02 11:34:54"
+    },
+    {
+      "id": "135015647",
+      "list_id": 135015647,
+      "title": "Xiaomi Mi 12S 5G 8/128 Miui13 sạc 67w có ship COD",
+      "brand": "Xiaomi",
+      "model": "12s",
+      "price": 2800000,
+      "price_formatted": "2.800.000₫",
+      "seller_name": "Trần Ngọc Hiếu",
+      "location": "số 76 hẻm 79 ngách 110 ngõ 99 Định Công Hạ, Phường Định Công, Quận Hoàng Mai, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Hết bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Trung Quốc",
+      "color": "Đen",
+      "grade": "GRADE_C",
+      "grade_label": "Grade C (90% Good)",
+      "grade_short": "Grade C",
+      "grade_percent": "90% Good",
+      "grade_color": "#FF8B00",
+      "grade_bg": "#FFF0B3",
+      "grade_border": "#FFE380",
+      "grade_badge_class": "bg-amber-50 text-amber-800 border-amber-300",
+      "grade_rationale": "Màn hình: Màn hình có hiện tượng lưu ảnh (burn-in)",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Ám ố / Đã sửa",
+          "grade": "GRADE_C",
+          "detail": "Màn hình có hiện tượng lưu ảnh (burn-in)"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Xiaomi Mi 12S 5G màu đen bản 8/128 ( vẫn miui 13 ) - lưu ảnh nhẹ thanh trạng thái máy kèm sạc cáp 67w xiaomi giá : 2.800.000 đ máy cam kết màn zin - main zin - mọi chức năng dùng tốt không lỗi gì, bao test 7 ngày, lỗi đổi máy khác Địa chỉ : - Số 76 Hẻm 79 ngách 110 ngõ 99 Phố Định Công Hạ - Định Công - Hoàng mai Hỗ Trợ : ship COD toàn quốc - ship trực tiếp nội thành Hà Nội",
+      "images": [
+        "https://cdn.chotot.com/QLatRXD64k5bwwlpefcu1ybamKqx687q3KEwn50rsyI/preset:view/plain/0fa5e3ab15ca64b6fc7cc132cd5094e0-3004656748436228238.jpg",
+        "https://cdn.chotot.com/cmtyUHMXpkbvdDpoYSEQqWj_IPEXJIjLvjTbHd1e88g/preset:view/plain/9946afce718a7faae6145c128020f650-3004656748599632337.jpg",
+        "https://cdn.chotot.com/oAfzeW7q1yW4YsmOaoX9N6CiAG69PrVPB6F9w5CmuIU/preset:view/plain/b8073451d82e8a909c985efb856fc35a-3004656748204647640.jpg",
+        "https://cdn.chotot.com/ju6m9VdV8qesXNINdbf9dtM1lsruMGWzvFbTYHPylWQ/preset:view/plain/092b721c225cc775ea2a9415645c66d7-3004656748341279078.jpg",
+        "https://cdn.chotot.com/GmYc9pd5BjtdpNx5ZWt8rjQSJjrl9vNiONM3OsrRm1Y/preset:view/plain/6c694d6ac02b11a2d1def8b8904359d6-3004656748432778083.jpg",
+        "https://cdn.chotot.com/BEJDPX567eavEZj4lCJRFG2prd5bOqw7meXr2Ic11Ms/preset:view/plain/ffa5a6e8d644b05413754fb4b62efbf9-3004656748465938857.jpg"
+      ],
+      "image": "https://cdn.chotot.com/QLatRXD64k5bwwlpefcu1ybamKqx687q3KEwn50rsyI/preset:view/plain/0fa5e3ab15ca64b6fc7cc132cd5094e0-3004656748436228238.jpg",
+      "chotot_url": "https://www.chotot.com/135015647.htm",
+      "crawled_at": "2026-10-02 11:34:55"
+    },
+    {
+      "id": "135015646",
+      "list_id": 135015646,
+      "title": "Samsung A52 Đen Hỏng sóng",
+      "brand": "Samsung",
+      "model": "Galaxy A52",
+      "price": 2000000,
+      "price_formatted": "2.000.000₫",
+      "seller_name": "dương ",
+      "location": "174, Phường Phước Long B (Quận 9 cũ), Thành phố Thủ Đức, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (qua sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "sam sung a52 máy bên mỹ mang về mở mạng sử dụng bình thường , vừa đi mưa về bỏ túi bị thấm nước , hôm nay mở lên không có sóng gì cả , máy nguyên bản at&t zin 100% màn hình đẹp pin sử dụng 2 ngày , giờ ra hỏi thợ sửa chữa lại 500k thôi mình để nhà sử dụng wifi bình thường các chức năng , phù hợp với ai sử dụng ,cho trẻ em xem Youtube ,người lớn Zalo , Facebook, tiktok ,good thanh lý giá 2 triệu",
+      "images": [
+        "https://cdn.chotot.com/EcWNU_Ua5gMdKuYk7dkceZ-EojipyRCfieIBqW3R-ho/preset:view/plain/b208000386f4ab5c435b5218813c5366-3004656097929301862.jpg",
+        "https://cdn.chotot.com/NxupoDhJkqB-ID1tjjSlyyyinmhtL6eSr4FTTUaTRtA/preset:view/plain/d79656871f8cb8196105090b8babad84-3004656098096375000.jpg",
+        "https://cdn.chotot.com/4N0vbq6l-8siHKE3tckKXdLb84bYFbxn0DWOU7Ieba8/preset:view/plain/f457ef387febc46afab515a40fc0bbac-3004656099369490297.jpg",
+        "https://cdn.chotot.com/2SSaL239z8lIPIYjy-xCrIY5nbnFzlHuJz4IfH1epSE/preset:view/plain/b01aa2fe8428c50d148e66a30e01c106-3004656099541905945.jpg",
+        "https://cdn.chotot.com/UvsmstxMrOfdXTE6c84_eYHl95y4A-cMqrZCAz39b60/preset:view/plain/8b59f740d755191e63ebe93ab0382ebf-3004656102761085286.jpg"
+      ],
+      "image": "https://cdn.chotot.com/EcWNU_Ua5gMdKuYk7dkceZ-EojipyRCfieIBqW3R-ho/preset:view/plain/b208000386f4ab5c435b5218813c5366-3004656097929301862.jpg",
+      "chotot_url": "https://www.chotot.com/135015646.htm",
+      "crawled_at": "2026-10-02 11:34:55"
+    },
+    {
+      "id": "135015636",
+      "list_id": 135015636,
+      "title": "Apple iPhone 15 Plus 128GB Đen 83%",
+      "brand": "Apple",
+      "model": "iPhone 15 Plus",
+      "price": 12500000,
+      "price_formatted": "12.500.000₫",
+      "seller_name": "thu thuỷ",
+      "location": "Phường 12, Quận Gò Vấp, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "iPhone 15plus LL/A 128G Viền cam trầy Pin 83 Sườn phe phẩy",
+      "images": [
+        "https://cdn.chotot.com/MEp8o_PhCWd3ZAKkyp37PyGSB87IAWeM9WmtN9JorGI/preset:view/plain/c97635b8a495c9fd928a4f95784f54fc-3004656735087081830.jpg",
+        "https://cdn.chotot.com/sq1r1O8sWENEu_uhDPgv_jGomPuv2rGwNlmO2OAJjk8/preset:view/plain/be821f920a0f3678a1065827de49df40-3004656735671870680.jpg",
+        "https://cdn.chotot.com/_sIhvA9F8fZrGdEcmd9T0Kf0MGYjDNXPnsB014x_sdQ/preset:view/plain/317a008108e79eadcee0570b53146bd2-3004656735265917070.jpg",
+        "https://cdn.chotot.com/P2I4wtmVJJYk22gSJfJI2wPbHWlcTaQTC07phGM7SPs/preset:view/plain/0f476745f56ab7fbd164a0ce821f8e30-3004656735781773777.jpg",
+        "https://cdn.chotot.com/nLKaZUOx3SDzHalqjLkZWdOvJqk-F40bmaVJ1IF3g2o/preset:view/plain/bcaa9b98eb1f60a902be385708142f23-3004656735211741609.jpg"
+      ],
+      "image": "https://cdn.chotot.com/MEp8o_PhCWd3ZAKkyp37PyGSB87IAWeM9WmtN9JorGI/preset:view/plain/c97635b8a495c9fd928a4f95784f54fc-3004656735087081830.jpg",
+      "chotot_url": "https://www.chotot.com/135015636.htm",
+      "crawled_at": "2026-10-02 11:34:55"
+    },
+    {
+      "id": "135015635",
+      "list_id": 135015635,
+      "title": "a16, r4/64, full vân, sạc nhanh, vỏ ok",
+      "brand": "Oppo",
+      "model": "A16",
+      "price": 1190000,
+      "price_formatted": "1.190.000₫",
+      "seller_name": "Phước Mobile",
+      "location": "Phường Hiệp Thành, Thành phố Thủ Dầu Một, Bình Dương",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Còn bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Xám",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Oppo A16 Ram 4 Rom 64g Full vân, vỏ viền oke 2 sim, nghe gọi tốt Pin 5000, sạc nhanh Màn pq nhẹ, Giá 1tr190k",
+      "images": [
+        "https://cdn.chotot.com/ivdSyNT15sDbP1sOWeFIjOIYvmz3Jk64fovUOnuc3Mc/preset:view/plain/d4cac3f14ed250910858abe6b636338a-3004656702136105318.jpg",
+        "https://cdn.chotot.com/QvKNmrTim6pZpjjK1x2woRqmL3htXCifYVAP2Mg-J-8/preset:view/plain/ece80bfa063bc9b371685b3335f2675d-3004656702311293353.jpg",
+        "https://cdn.chotot.com/UfFU7W-0GejUCSKaMiHiIPx1alM5T4Gkc2er5rK4Qx4/preset:view/plain/46fc1edaa50bae6f5ab26a57c62c11cf-3004656702327874001.jpg",
+        "https://cdn.chotot.com/Vh1Sor2M3oQhu8pms8OCjPMpWcIb1xNdaUrsDn86Mjg/preset:view/plain/2082fd162c839e5c7067b430a92bfe45-3004656702315071630.jpg",
+        "https://cdn.chotot.com/EqLlIatxKQT1mR1Uu-n_YP6ZIBfJfEKxshgw2SXEeUE/preset:view/plain/4e60fb9b371efb9f59ae3952e0cb19ef-3004656702261093219.jpg"
+      ],
+      "image": "https://cdn.chotot.com/ivdSyNT15sDbP1sOWeFIjOIYvmz3Jk64fovUOnuc3Mc/preset:view/plain/d4cac3f14ed250910858abe6b636338a-3004656702136105318.jpg",
+      "chotot_url": "https://www.chotot.com/135015635.htm",
+      "crawled_at": "2026-10-02 11:34:56"
+    },
+    {
+      "id": "134686839",
+      "list_id": 134686839,
+      "title": "Oppo Reno 7 Pro 5G 256GB Đen 5G",
+      "brand": "Oppo",
+      "model": "Reno7 Pro",
+      "price": 3850000,
+      "price_formatted": "3.850.000₫",
+      "seller_name": "Bèo Mobile Store",
+      "location": "Phường Thạc Gián, Quận Thanh Khê, Đà Nẵng",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Còn bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Trung Quốc",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Oppo Reno 7 Pro 5G 8/256Gb Black Thiết kế viền kim loại vuông vức sang trọng. 2 sim tiện dụng, hỗ trợ mạng 5G. Giá chỉ: 3.850.000 vnđ. Bảo hành 3 tháng (lấy sạc 33w + 150k). 👉 Có nhận thu lại máy cũ, đổi máy lên đời bù tiền. 👉 Bấm vào Logo “Bèo Mobile” bên trên để xem nhiều sản phẩm hiện có bên mình nhé. 👉 Hỗ trợ trả góp, thanh toán hoặc trả góp từ xa qua thẻ tín dụng, ship COD toàn quốc 🏡 Địa chỉ: Bèo Mobile Store - 167 Phan Thanh - Đà Nẵng (Open 8:30 AM- 7:30 PM). 👉 Ngoài ra bên mình còn chuyên thu mua lại điện thoại cũ, laptop cũ, xác điện thoại nát, vỡ màn hình, kính, lỗi chức năng...v..v Giá Cao.",
+      "images": [
+        "https://cdn.chotot.com/wr5HGnXyBT5pvcz7wkyljX3keXrdVPT49T_2p_cpkfc/preset:view/plain/1de8d4eb4b69e87d76c2ff8384927282-3002073684953280215.jpg",
+        "https://cdn.chotot.com/E_KfF-of4FyA5qTmBmDZMc7ddLI0N_WgZN7jbBlnwdE/preset:view/plain/19d24ae838312c6f2d7e92ca95ff0420-3002073684905871255.jpg",
+        "https://cdn.chotot.com/IDuOVWSxd5ll8iMRIxM5utz_-lLB1EsVO6J6k4s9Ias/preset:view/plain/e94f7db9a7d399e712d01be369c231ad-3002073684917974641.jpg",
+        "https://cdn.chotot.com/UtqmBLQ1OtpL_4OITt4i87NKZLAEENX91TNSImGsRDo/preset:view/plain/40ab563d4ea31413d25104c10d3e4dbc-3002073684975674916.jpg"
+      ],
+      "image": "https://cdn.chotot.com/wr5HGnXyBT5pvcz7wkyljX3keXrdVPT49T_2p_cpkfc/preset:view/plain/1de8d4eb4b69e87d76c2ff8384927282-3002073684953280215.jpg",
+      "chotot_url": "https://www.chotot.com/134686839.htm",
+      "crawled_at": "2026-10-02 11:34:56"
+    },
+    {
+      "id": "133964287",
+      "list_id": 133964287,
+      "title": "Apple iPhone 14 Plus 128GB Trắng",
+      "brand": "Apple",
+      "model": "iPhone 14 Pro Max",
+      "price": 6050000,
+      "price_formatted": "6.050.000₫",
+      "seller_name": "Táo Sinh Viên ",
+      "location": "Phường Phú Diễn, Quận Bắc Từ Liêm, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "4-6 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "🍎14pl 128GB hình thức 95% main zin màn jk giá 6050 🍎14pl128GB hình thức 95% main zin màn zin giá 6750 🍎14pl256GB hình thức 95% main zin màn jk giá 7850 🍎14pl256GB hình thức 95% main zin màn zin giá 8750 ✅CAM KẾT BÁN CHUẨN GIÁ ĐÚNG TT ✅MỞ MÁY TEST MAIN THOẢI MÁI ✅ Bao test 1 đổi 1 trong 15 ngày, hỗ trợ bảo hành 12 tháng 🔥🔥🔥𝙏𝙧𝙖̉ 𝙜𝙤́𝙥 𝙗𝙖𝙤 𝙙𝙪𝙮𝙚̣̂𝙩 𝟭𝟬𝟬%. 𝙎𝙞𝙣𝙝 𝙑𝙞𝙚̂𝙣 𝙠𝙤 𝙘𝙖̂̀𝙣 𝙩𝙧𝙖̉ 𝙩𝙧𝙪̛𝙤̛́𝙘 ✅NỢ XẤU 𝙩𝙧𝙖̉ 𝙩𝙧𝙪̛𝙤̛́𝙘 𝟯𝟬-𝟰𝟬% 𝙠𝙝𝙤̂𝙣𝙜 𝙜𝙞𝙪̛̃ 𝙞𝙘𝙡𝙤𝙪𝙙",
+      "images": [
+        "https://cdn.chotot.com/5yA-8mrRg4pS-RgP-VM2ubIIPUXaoNb3cbVnRmh8RHU/preset:view/plain/d25cca3211614ac41ad09288b9fb0196-2996282695564381695.jpg",
+        "https://cdn.chotot.com/9_FcDGYlBr7rX6rqaly9RzBiU9kmUK_32PJMOHCgzZE/preset:view/plain/b9fa26f5f69e2c10db0d40754037b985-2996282695405619577.jpg",
+        "https://cdn.chotot.com/5SQ3cQMdO4mrgyf_id71X8kWkL5pE6OSu8g0RCVXkjs/preset:view/plain/20ead8013295de64ec47b4ef2cdc9988-2996282695687950144.jpg",
+        "https://cdn.chotot.com/QW7atdUaj4iI-VbTEEaCg4w_jaiPBCDRQteksiDAXRU/preset:view/plain/d3852b0a650a1fea13605a583dd453c7-2996282695533070141.jpg"
+      ],
+      "image": "https://cdn.chotot.com/5yA-8mrRg4pS-RgP-VM2ubIIPUXaoNb3cbVnRmh8RHU/preset:view/plain/d25cca3211614ac41ad09288b9fb0196-2996282695564381695.jpg",
+      "chotot_url": "https://www.chotot.com/133964287.htm",
+      "crawled_at": "2026-10-02 11:34:57"
+    },
+    {
+      "id": "134019279",
+      "list_id": 134019279,
+      "title": "Iphone 13 Mini/ Chính hãng/ zin/ pin100/ Giao Lưu",
+      "brand": "Apple",
+      "model": "iPhone 13 Mini",
+      "price": 5950000,
+      "price_formatted": "5.950.000₫",
+      "seller_name": "Tân Phạm",
+      "location": "Phường Bình Hưng Hoà B, Quận Bình Tân, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "1 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Việt Nam",
+      "color": "Xanh lá",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Tên: iphone 13 Mini 128gb Xanh Lá Chính Hãng VN Tình trạng chi tiết: - Ngoại hình 98% sườn nhăm như hình - Màn zin sáng đẹp - Main zin chuẩn bao bung check - Pin new 100% ko báo - Loa to rõ ràng - Icloud sạch, FaceID nhạy - Tất cả chức năng cơ bản Tân test đều hoạt động tốt Máy có sao Tân báo cụ thể hết nha mọi người! Bảo hành trách nhiệm 7 ngày ạ Nhận shipcod mọi miền tổ quốc Nhận quẹt thẻ tín dụng Nhận Giao lưu trao đổi bù trừ hợp lý ạ #tanoldphone #iphone13mini #ip13mini #13mini",
+      "images": [
+        "https://cdn.chotot.com/xNhh-Rn5zJ3IO6m2mzdeFD30j5JtZKp3eHRYXlC2-uA/preset:view/plain/bac703924985c8a758308f1fe509a24e-2996705234228341774.jpg",
+        "https://cdn.chotot.com/tZXAc0FFhEm-EU3C_ws46w_BsjvTakXTzjtVg_YHpPQ/preset:view/plain/723e8e1e2c09d3bf3a7282b990fd5b1c-2996705234152617954.jpg",
+        "https://cdn.chotot.com/X3DRgR6wIBOx55LZZFFWyWIyJIOdRO3EstEFP4CxxLg/preset:view/plain/23a19615ac7932e5f85b305c7ae5a644-2996705235323709361.jpg",
+        "https://cdn.chotot.com/sK2IDHggLCP7t2MarfYdZ2dYcEyNHE34TlqlvvxG3bU/preset:view/plain/616779f37e022ac411f36411aad0ddb5-2996705235377420258.jpg",
+        "https://cdn.chotot.com/DISIj0uYpqgegug5eSJd3tMPUJ_e8dfqZY23byNkLmM/preset:view/plain/0a95169f5c3dfe333a272aed97da5415-2996705236417673186.jpg",
+        "https://cdn.chotot.com/EXG3b3ooTZtx8oxj-uJYw6UCIFtlfJy8ISMlMxShPfY/preset:view/plain/b69b3eb3a620cd44b3e301030dca02a6-2996705236498180017.jpg"
+      ],
+      "image": "https://cdn.chotot.com/xNhh-Rn5zJ3IO6m2mzdeFD30j5JtZKp3eHRYXlC2-uA/preset:view/plain/bac703924985c8a758308f1fe509a24e-2996705234228341774.jpg",
+      "chotot_url": "https://www.chotot.com/134019279.htm",
+      "crawled_at": "2026-10-02 11:34:57"
+    },
+    {
+      "id": "126377836",
+      "list_id": 126377836,
+      "title": "iPhone 16 pro quốc tế đủ màu có góp nợ xấu",
+      "brand": "Apple",
+      "model": "iPhone 16 Pro",
+      "price": 16490000,
+      "price_formatted": "16.490.000₫",
+      "seller_name": "Your Phone",
+      "location": "Đường Nguyễn Hoàng, Phường Bình Hiên, Quận Hải Châu, Đà Nẵng",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "7-12 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Việt Nam",
+      "color": "Xám",
+      "grade": "GRADE_C",
+      "grade_label": "Grade C (90% Good)",
+      "grade_short": "Grade C",
+      "grade_percent": "90% Good",
+      "grade_color": "#FF8B00",
+      "grade_bg": "#FFF0B3",
+      "grade_border": "#FFE380",
+      "grade_badge_class": "bg-amber-50 text-amber-800 border-amber-300",
+      "grade_rationale": "Màn hình: Máy đã qua ép lại kính ngoài • Pin: Pin chai / Đã thay thế",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Ám ố / Đã sửa",
+          "grade": "GRADE_C",
+          "detail": "Máy đã qua ép lại kính ngoài"
+        },
+        "battery": {
+          "status": "Chai pin / Đã thay",
+          "grade": "GRADE_C",
+          "detail": "Pin báo bảo trì hoặc đã thay thế bên ngoài"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "FB:YourPhone Điện Thoại Trả Góp tại Đà Nẵng.📌Đ/c 267 Nguyễn Hoàng-Hải Châu 💳 Có bán trả góp từ 18 tuổi-10 phút lấy máy ngay-quẹt thẻ tín dụng toàn quốc Nhận thu cũ đổi mới cho khách,mua máy cũ giá cao 💻iPhone 16 Pro đủ màu-có bản 128G với 256G ✅Máy nguyên rin dùng tốt, lỗi 1 đổi 1 ,hỗ trợ bảo hành 1 năm ✅Có nhiều máy cho khách lựa chọn ✅Camera cực nét,pin còn 100% sạc ít lần tầm 3-20 lần,hàng còn bảo hành apple dài ✅Ảnh thật chi tiết Giá bán 16tr490k 📌Bảo hành 1 đổi 1 📌Tặng full sạc cáp -ốp lưng-cường lực(miễn phí dán màn hình trọn đời) 📌 Phiêú mua hàng tổng trị giá 1 triệu cho lần mua tiếp theo 📌Có trích hoa h���ng cho khách giới thiệu 📌Phụ kiện bảo hành trọn đời ► 𝐜𝐨́ 𝐠𝐨́𝐩 𝐧𝐨̛̣ 𝐱𝐚̂́𝐮 𝐪𝐮𝐚 𝐢𝐜𝐥𝐨𝐮𝐝(𝐁𝐞̂𝐧 𝐦𝐢̀𝐧𝐡 𝐠𝐨́𝐩 𝐢𝐜𝐥𝐨𝐮𝐝 𝐤𝐨 𝐠𝐢𝐮̛̃ 𝐜𝐜𝐜𝐝,𝐜𝐡𝐨 𝐤𝐡𝐚́𝐜𝐡 𝐱𝐚̀𝐢 𝐟𝐚𝐜𝐞𝐢𝐝,𝐦𝐚̣̂𝐭 𝐤𝐡𝐚̂̉𝐮 𝐭𝐡𝐨𝐚̉𝐢 𝐦𝐚́𝐢-𝐥𝐚̃𝐢 𝐬𝐮𝐚̂́𝐭 𝐛𝐚̆̀𝐧𝐠 𝐯𝐨̛́𝐢 𝐧𝐠𝐚̂𝐧 𝐡𝐚̀𝐧𝐠 𝐡𝐢𝐞̣̂𝐧 𝐭𝐚̣𝐢-𝐠𝐨́𝐩 𝐛𝐚𝐨 𝐧𝐡𝐢𝐞̂𝐮 𝐭𝐡𝐚́𝐧𝐠 𝐜𝐮̃𝐧𝐠 đ𝐮̛𝐨̛̣𝐜) Các dịch vụ mở rộng Thay pin-ép kính-ghép sim-thu mua giá cao ✅ Hỗ trợ trả góp - Xét duyệt chỉ 10' 💳 Trả góp Thẻ Tín Dụng - CMND - BLX 𝐇𝐨̂̃ 𝐭𝐫𝐨̛̣ 𝐠𝐨́𝐩 𝐪𝐮𝐚 𝐢𝐜𝐥𝐨𝐮𝐝 𝐛𝐚𝐨 𝐧𝐨̛̣ 𝐱𝐚̂́𝐮",
+      "images": [
+        "https://cdn.chotot.com/-qKsgq7P2CsoCRJKR-bNuXovoV7va6KmoBF1WiUpMlQ/preset:view/plain/e1b18c39658bb79d18f716bf1157fccb-2991344281185428842.jpg",
+        "https://cdn.chotot.com/MwHMCrKNODEXipq1Dv0-MLM6oIbJk_gAFNDqjhWakXs/preset:view/plain/ebd789e06effea5986b1c3b14cfe3a29-2991344279858682175.jpg",
+        "https://cdn.chotot.com/Q_Xl6mg92Zir_LqVrYPwMqA9OLqY4KKKQI7qzs-cHnU/preset:view/plain/9b42aadae03b9e19672a9a88933c0ac9-2991344282757334932.jpg",
+        "https://cdn.chotot.com/5rZ1XsWRruOHY-wqs2vULZz4jn_eay6ritN_6fGYR_g/preset:view/plain/9ca94b932c159b12b3884c82a22a7083-2991344283417057444.jpg"
+      ],
+      "image": "https://cdn.chotot.com/-qKsgq7P2CsoCRJKR-bNuXovoV7va6KmoBF1WiUpMlQ/preset:view/plain/e1b18c39658bb79d18f716bf1157fccb-2991344281185428842.jpg",
+      "chotot_url": "https://www.chotot.com/126377836.htm",
+      "crawled_at": "2026-10-02 11:34:58"
+    },
+    {
+      "id": "133567513",
+      "list_id": 133567513,
+      "title": "17 Pro 256gb 512Gb P100% 4/27 99%-Góp-Thu Mua",
+      "brand": "Apple",
+      "model": "iPhone 17 Pro",
+      "price": 26800000,
+      "price_formatted": "26.800.000₫",
+      "seller_name": "Hoàng Hiệp Mobile",
+      "location": "Phường Tân Quy, Quận 7, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "7-12 tháng",
+      "lock_status": "Quốc tế",
+      "origin": "Hàn Quốc",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ • Pin: Xuất sắc 100%",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Pin 100% (Cao)",
+          "grade": "GRADE_A",
+          "detail": "Dung lượng pin hoàn hảo 100% (>= 85%)"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "🔥 iPhone 17 Pro 256GB – Pin 100% giá quá thơm! 17 Pro 256gb Trắng Zp/a P98 10/26 98% : 26.800k 17 Pro 256gb Trắng Zp/a P92 10/26 99% : 28.800k 17 Pro 256Gb Ll/a Trắng Act 26/3/27 New - 28.800k 17 Pro 512Gb Cam Ll/a P10***.500k 🤝 THU MUA GIÁ CAO & THU CŨ ĐỔI MỚI - LÊN ĐỜI SIÊU TIẾT KIỆM ▪️ Nhận thu mua điện thoại Cũ/Mới, đa dạng tình trạng. (Inbox trực tiếp cho Shop để nhận báo giá nhanh chóng và chính xác nhất). ▪️ Trợ giá lên đời máy cực tốt. ▪️ Giao hàng tận nơi - Hỗ trợ thu máy tận nhà tiện lợi. ▪️ Lên đời trả góp: KHÔNG cần trả trước. 🎁 COMBO QUÀ TẶNG \"SẴN SÀNG SỬ DỤNG\" (Mua máy là dùng ngay, không phát sinh chi phí mua phụ kiện) 🔸 Tặng bộ sạc 20W chuẩn Store 🔸 Tặng kính cường lực cao cấp. 🔸 Tặng ốp lưng MagSafe ⚙️ CHÍNH SÁCH BẢO HÀNH AN TÂM TUYỆT ĐỐI 🔹 Bao test: Lỗi 1 đổi 1 trong 30 ngày đầu tiên. 🔹 Bảo hành phần cứng: 03 tháng tiêu chuẩn. 🔹 Bảo hành phần mềm: Hỗ trợ miễn phí trọn đời máy. 🏦 THANH TOÁN LINH HOẠT & TRẢ GÓP SIÊU TỐC 💎 Hỗ trợ đa phương thức: Tiền mặt, Chuyển khoản, Quẹt thẻ, Ví MoMo. 💎 Trả góp 0% lãi suất: Áp dụng qua thẻ tín dụng. 💎 Trả góp qua CCCD gắn chip: Thủ tục đơn giản qua các công ty tài chính. 💎 Trả góp qua MDM (nợ xấu) 🚚 GIAO HÀNG TẬN NƠI - VẬN CHUYỂN TOÀN QUỐC 🔘 Tại TP.HCM: Giao hỏa tốc trong 2 giờ. 🔘 Toàn quốc: Hỗ trợ Ship COD (Kiểm tra hàng ưng ý mới thanh toán). 🏪 HOÀNG HIỆP MOBILE 📍 Số 23, Đường số 85, Phường Tân Hưng, TP.HCM ⏰ 09:00 - 20:00 🏠 Fanpage: Hoàng Hiệp Mobil",
+      "images": [
+        "https://cdn.chotot.com/0sHA6smmKAkn0lLybzCwjWBHEJyxPqSxhYevFJvXeSk/preset:view/plain/6ec6b59f19ae14e79a1658e616ffe460-2997838392264120709.jpg",
+        "https://cdn.chotot.com/XW4qndxCp1WLHj0s2kpih2siIRGfzXuC7ooLDrs17c8/preset:view/plain/6fc33c4e8a7a2b0766f32ec0900612ee-2997838392251251799.jpg",
+        "https://cdn.chotot.com/xVsfKgzYBChqVkgwn5icDplf7eHU5_gTboZHFUwS6aI/preset:view/plain/9e61155aed545fa8edba5f2b92eb986a-2997838392271368907.jpg",
+        "https://cdn.chotot.com/BLencPVpptRsW9RJ5BZiz3knvIs8gsRtLaxc3T8VS0g/preset:view/plain/294f328d2135e9c02d5ff00d0074279f-2997838392517541796.jpg",
+        "https://cdn.chotot.com/RroIwUedrI9rStMU-oQ_-YNnfFlZBpPK8bZrHKR54eo/preset:view/plain/942aeec91d2ee3590c798d8386944fb0-2997838392411339043.jpg",
+        "https://cdn.chotot.com/6EJ_wXpO7EVoe5e3ZoHax4QwTDG6FiHmDTAhhUtlN64/preset:view/plain/18aee71ba959754332b4e14163d769f4-2997838392412779664.jpg"
+      ],
+      "image": "https://cdn.chotot.com/0sHA6smmKAkn0lLybzCwjWBHEJyxPqSxhYevFJvXeSk/preset:view/plain/6ec6b59f19ae14e79a1658e616ffe460-2997838392264120709.jpg",
+      "chotot_url": "https://www.chotot.com/133567513.htm",
+      "crawled_at": "2026-10-02 11:34:58"
+    },
+    {
+      "id": "135015622",
+      "list_id": 135015622,
+      "title": "Honor Power 5G 12/256 pin 100% sạc 66w có ship COD",
+      "brand": "Honor",
+      "model": "Power",
+      "price": 5950000,
+      "price_formatted": "5.950.000₫",
+      "seller_name": "Trần Ngọc Hiếu",
+      "location": "số 76 hẻm 79 ngách 110 ngõ 99 Định Công Hạ, Phường Định Công, Quận Hoàng Mai, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Hết bảo hành",
+      "lock_status": "Quốc tế",
+      "origin": "Trung Quốc",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Pin: Xuất sắc 100%",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Pin 100% (Cao)",
+          "grade": "GRADE_A",
+          "detail": "Dung lượng pin hoàn hảo 100% (>= 85%)"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Honor Power 5G màu đen bản 12/256 pin 100% máy kèm sạc cáp 66w Huawei supercharge giá : 5.950.000 đ máy cam kết màn zin - main zin - mọi chức năng dùng tốt không lỗi gì, bao test 7 ngày, lỗi đổi máy khác Địa chỉ : - Số 76 Hẻm 79 ngách 110 ngõ 99 Phố Định Công Hạ - Định Công - Hoàng mai Hỗ Trợ : ship COD toàn quốc - ship trực tiếp nội thành Hà Nội",
+      "images": [
+        "https://cdn.chotot.com/HMiMXOmkJzpXLmSDvp9OxvsJopv92fspLqBPh6HPq8Y/preset:view/plain/ebcb76465cccb3d7acd4e5257402d177-3004656602197402343.jpg",
+        "https://cdn.chotot.com/p7wWP7MiUxxJ5vD6o36dIjp0i6lraQ2EUZQnl4zeK6o/preset:view/plain/7de81d27e8f1fe19dd19e5dfdef5ff0c-3004656602070725483.jpg",
+        "https://cdn.chotot.com/lUNTbX7e7S-bc8n6Pv0kA-ifgEUtGzoWyyNNChRX3mc/preset:view/plain/a44c0c75ec3899b71764a84debd33754-3004656602068979558.jpg",
+        "https://cdn.chotot.com/wjt4wGBArreGMtpnfXWE6N00KA8lfehOgYc77ZDo9lg/preset:view/plain/785e529f81de4302a49382a259e100a6-3004656602634664177.jpg",
+        "https://cdn.chotot.com/WLmNhelVrcNC6fn76K41sJxI0nZmF7KaTM1Jy4yC_6g/preset:view/plain/abcdb44d2e678518feb1b86135f5798f-3004656603099019622.jpg",
+        "https://cdn.chotot.com/72UJ5z9KfjUwxzrefoI6LSA9uttC2L_14u_juDiUMOs/preset:view/plain/dea06b14b904959801ada2333ec37b09-3004656602107044959.jpg"
+      ],
+      "image": "https://cdn.chotot.com/HMiMXOmkJzpXLmSDvp9OxvsJopv92fspLqBPh6HPq8Y/preset:view/plain/ebcb76465cccb3d7acd4e5257402d177-3004656602197402343.jpg",
+      "chotot_url": "https://www.chotot.com/135015622.htm",
+      "crawled_at": "2026-10-02 11:34:59"
+    },
+    {
+      "id": "135015616",
+      "list_id": 135015616,
+      "title": "Apple iPhone 11 Pro Max 64GB Xám Thay màn hình 80%",
+      "brand": "Apple",
+      "model": "iPhone 11 Pro Max",
+      "price": 3700000,
+      "price_formatted": "3.700.000₫",
+      "seller_name": "Phùng Minh Tuấn",
+      "location": "Phường Dĩ An, Thành phố Dĩ An, Bình Dương",
+      "condition_declared": "Đã sử dụng (qua sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Xám",
+      "grade": "GRADE_C",
+      "grade_label": "Grade C (90% Good)",
+      "grade_short": "Grade C",
+      "grade_percent": "90% Good",
+      "grade_color": "#FF8B00",
+      "grade_bg": "#FFF0B3",
+      "grade_border": "#FFE380",
+      "grade_badge_class": "bg-amber-50 text-amber-800 border-amber-300",
+      "grade_rationale": "Màn hình: Máy đã thay màn hình lô/màn linh kiện",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Ám ố / Đã sửa",
+          "grade": "GRADE_C",
+          "detail": "Máy đã thay màn hình lô/màn linh kiện"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "iphone 11 pro max 64gb ( qte nửa mùa, lắp sim là dùng kh cần sim ghép, phần cài đặt chung vẫn hiện sim bị khoá) máy chỉ thay màn oled còn lại zin, pin 80 giá bán 3tr7 ( tặng cường lực máy, cường lực camera, ốp lưng )",
+      "images": [
+        "https://cdn.chotot.com/vEVYYWvvVgZ0xJjKKIFNyGS1irfcCpZ2a9JiS6BOI9g/preset:view/plain/69858ba5f317040c7a5fd124a0f68b48-3004656488695185413.jpg",
+        "https://cdn.chotot.com/YjVxBEfoTpEbic7dA2EqJMpc8gZ0jsbENJPzUhU6f8I/preset:view/plain/d4dec6696f1c86d8e068b5d1bb955e6d-3004656488603139043.jpg",
+        "https://cdn.chotot.com/WchFTHO2B9JagTUICANgpM3LFjAMzvi9yPtqLfgSGD4/preset:view/plain/b7be02ae7c928cdd4b606345da0ecb73-3004656488669110737.jpg",
+        "https://cdn.chotot.com/a2Uw1KycmKW_57H3tO_ApqG9RdWGJ1UjcuhCtxhpQCw/preset:view/plain/0eb5cb07a1600a83c10dd7c2001a61e5-3004656488649303007.jpg",
+        "https://cdn.chotot.com/D8GImAbWi4mlJpWaKkt92q2jdB-kXML2jJmM3MxasRQ/preset:view/plain/8ba0665bd1c00e98f06614563ad57179-3004656488816927195.jpg",
+        "https://cdn.chotot.com/k8mjvUhHpWeyT9IjXCfjgKnWVwOjvx1G8k-3cNACl70/preset:view/plain/0afbb2ce286e2562abbb1fedf3abe536-3004656487429934950.jpg"
+      ],
+      "image": "https://cdn.chotot.com/vEVYYWvvVgZ0xJjKKIFNyGS1irfcCpZ2a9JiS6BOI9g/preset:view/plain/69858ba5f317040c7a5fd124a0f68b48-3004656488695185413.jpg",
+      "chotot_url": "https://www.chotot.com/135015616.htm",
+      "crawled_at": "2026-10-02 11:34:59"
+    },
+    {
+      "id": "135015618",
+      "list_id": 135015618,
+      "title": "Nokia 105 4G Đen",
+      "brand": "Nokia phổ thông",
+      "model": "105",
+      "price": 250000,
+      "price_formatted": "250.000₫",
+      "seller_name": "thanh binh",
+      "location": "Phường 9, Quận 6, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Đen",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Nokia 105 4g còn mới thanh lý Nokia 105 4g còn mới thanh lý",
+      "images": [
+        "https://cdn.chotot.com/N5l2Unurn_RHQ5p4KW-TkTv0kyeCXbQNcvMYI4qoSFI/preset:view/plain/5447c956c87d092501ef1c1ca99dffe2-3004656594054276312.jpg",
+        "https://cdn.chotot.com/30Fy_zeizxtfdEUyRsDKfLUoEuYvm3abCUVHLQVtIFw/preset:view/plain/4fb9991212c6cac4bb909f5b62bd389a-3004656595124390030.jpg",
+        "https://cdn.chotot.com/hTOcOks2kppyHxMx9SAzQDX0UpPKTClpTTqNfjTbFI4/preset:view/plain/9a18998d6725b78d6ffca2a0ff05fde0-3004656595304898985.jpg",
+        "https://cdn.chotot.com/Lg758tJr4Vf0tX_8JCMHnFJfQj0lArOKmme3P6DjzBM/preset:view/plain/56b0a235a6585a9c3e08b46a6fd62dc2-3004656594986656611.jpg"
+      ],
+      "image": "https://cdn.chotot.com/N5l2Unurn_RHQ5p4KW-TkTv0kyeCXbQNcvMYI4qoSFI/preset:view/plain/5447c956c87d092501ef1c1ca99dffe2-3004656594054276312.jpg",
+      "chotot_url": "https://www.chotot.com/135015618.htm",
+      "crawled_at": "2026-10-02 11:34:59"
+    },
+    {
+      "id": "135015612",
+      "list_id": 135015612,
+      "title": "iPhone 17 Pro Max 256GB Trắng",
+      "brand": "Apple",
+      "model": "iPhone 17 Pro Max",
+      "price": 30900000,
+      "price_formatted": "30.900.000₫",
+      "seller_name": "thao",
+      "location": "Phường 25, Quận Bình Thạnh, Tp Hồ Chí Minh",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Đang cập nhật",
+      "color": "Trắng",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Thiết bị nguyên bản, hoạt động bình thường qua sử dụng",
+      "grade_factors": {
+        "body": {
+          "status": "95% Đã sử dụng",
+          "grade": "GRADE_B",
+          "detail": "Ngoại hình thông thường qua thời gian"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "17 promax 256gb vn fullbox BH tgdđ còn hoá đơn,BH 1 đổi 1 trong 1 năm BH chính hãng Mình dg co 2 con 1 con sạc 60L 1 con sạc 18L con nào cũng tại tgdđ",
+      "images": [
+        "https://cdn.chotot.com/JLWKDy2Z7AbS9bKapE-Hwh3m-gUezB-P6_VIa2U1OtU/preset:view/plain/a5c462684263ac4fec2e171947f30f91-3004656410484728233.jpg",
+        "https://cdn.chotot.com/XllExtMm6aU-DhfwDoS1-ccBRrAMqrHBjNPtazpc4ds/preset:view/plain/13edfb4861951a3dc50e92b8b1fd9bc9-3004656410755654097.jpg",
+        "https://cdn.chotot.com/u76Tq0ZHC-3Tfp0tEmppSqL049hp6M_Ch-RtCTwpKVQ/preset:view/plain/a1a94de2db6d96a4a11937c59a5f5c71-3004656410254215310.jpg",
+        "https://cdn.chotot.com/ezF2zICx0D1xEarrVqkBUtUmXCX-mIB4QhAm0COVHww/preset:view/plain/12dc51cada5ddf12499caccae2becb73-3004656410965950469.jpg"
+      ],
+      "image": "https://cdn.chotot.com/JLWKDy2Z7AbS9bKapE-Hwh3m-gUezB-P6_VIa2U1OtU/preset:view/plain/a5c462684263ac4fec2e171947f30f91-3004656410484728233.jpg",
+      "chotot_url": "https://www.chotot.com/135015612.htm",
+      "crawled_at": "2026-10-02 11:35:00"
+    },
+    {
+      "id": "135015611",
+      "list_id": 135015611,
+      "title": "Samsung Note 20 Việt Nam -Ram8/256GB đẹp 96-97%",
+      "brand": "Samsung",
+      "model": "Galaxy Note 20",
+      "price": 3799999,
+      "price_formatted": "3.799.999₫",
+      "seller_name": "ADAYROI ĐIỆN THOẠI RUBY ",
+      "location": "Phường Phúc Lợi, Quận Long Biên, Hà Nội",
+      "condition_declared": "Đã sử dụng (chưa sửa chữa)",
+      "warranty_declared": "Bảo hành hãng",
+      "lock_status": "Quốc tế",
+      "origin": "Việt Nam",
+      "color": "Màu khác",
+      "grade": "GRADE_B",
+      "grade_label": "Grade B (95% Very Good)",
+      "grade_short": "Grade B",
+      "grade_percent": "95% Very Good",
+      "grade_color": "#0065FF",
+      "grade_bg": "#DEEBFF",
+      "grade_border": "#B3D4FF",
+      "grade_badge_class": "bg-blue-50 text-blue-800 border-blue-300",
+      "grade_rationale": "Vỏ máy: 95% - 98% trầy xước dăm nhẹ",
+      "grade_factors": {
+        "body": {
+          "status": "95% - 98% (Xước nhẹ)",
+          "grade": "GRADE_B",
+          "detail": "Vỏ máy có trầy xước dăm nhẹ ở viền hoặc lưng"
+        },
+        "screen": {
+          "status": "Zin đẹp",
+          "grade": "GRADE_A",
+          "detail": "Màn hình hiển thị tốt, cảm ứng mượt"
+        },
+        "battery": {
+          "status": "Tốt",
+          "grade": "GRADE_A",
+          "detail": "Pin hoạt động ổn định"
+        },
+        "hardware": {
+          "status": "Nguyên bản",
+          "grade": "GRADE_A",
+          "detail": "Đầy đủ chức năng, chưa phát hiện lỗi"
+        }
+      },
+      "description": "Điện thoại Ruby chào Quý khách. - Tên máy : Samsung Note 20 Việt Nam! - Ram 8 - Bộ nhớ 256 - 2Sim-Dung lượng pin 4300mAh - Hình thức đẹp - Mên Zin - Màn hình Oled Zin1:1 đẹp mượt. Không ám ố. Đủ vẫn tay. Camera nét => Máy đầy đủ chức năng =>Phụ kiện : Sạc nhanh Lộc : 50-100k => Bảo hành Chức Năng 1 Tháng =>Địa chỉ : Ruby 3, Phúc lợi, Long Biên. Hoặc Ship cod các khu vực, cọc 100k dưới 10km. 200k trên 10km và ship tỉnh cọc 300k Cảm ơn bạn đã ghé Shop !",
+      "images": [
+        "https://cdn.chotot.com/BXOnXAvaqmE9zEvxCJIGBMDzwWQg0vL6kN_kmTsjkcM/preset:view/plain/4de2de976909abc1852936f7052d2918-3004655297422526606.jpg",
+        "https://cdn.chotot.com/OjSxegZvpo01anUD7tGs2cl3mnRIPrY9KigejSEzwB8/preset:view/plain/4672dff84b60d9dd84ec8b7a6079b871-3004656385647010911.jpg",
+        "https://cdn.chotot.com/t1behKDBT-kelG7vPjklGAw9wpynnlrqSV5LzXk1pIY/preset:view/plain/b7421a9ae2c2a15987e715157153b3b7-3004655306701042794.jpg",
+        "https://cdn.chotot.com/EPAgrEImoTxCTpmdxChpQqTv1r9Vgyy4RKz2bFx57A0/preset:view/plain/1cb7d7eb87d9b4c2a4832c31a2d11413-3004655299486643306.jpg",
+        "https://cdn.chotot.com/TFeVA_AYfnpNiS48mQwR1LrGndlqlJYKGPP8d1p3tNw/preset:view/plain/60233d41d80e8eb274602e34b773a9e7-3004655293423544096.jpg"
+      ],
+      "image": "https://cdn.chotot.com/BXOnXAvaqmE9zEvxCJIGBMDzwWQg0vL6kN_kmTsjkcM/preset:view/plain/4de2de976909abc1852936f7052d2918-3004655297422526606.jpg",
+      "chotot_url": "https://www.chotot.com/135015611.htm",
+      "crawled_at": "2026-10-02 11:35:00"
+    }
+  ]
+}

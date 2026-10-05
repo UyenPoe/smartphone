@@ -275,7 +275,7 @@ if ( 'loa' === $current_slug ) {
 
   <!-- ================= BREADCRUMB ================= -->
   <div class="border-b border-[#E5E7EB] bg-white">
-    <div class="max-w-[1240px] mx-auto px-4 py-3 flex items-center gap-2 text-sm text-[#5f5e5e]">
+    <div class="max-w-[1240px] mx-auto px-4 py-3 flex items-center gap-2 text-[12px] sm:text-[13px] md:text-[14px] text-[#5f5e5e]">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:text-[#e60012] transition-colors flex items-center gap-1 font-medium">
         <span class="material-symbols-outlined text-[18px]">home</span> Trang chủ
       </a>
@@ -299,21 +299,21 @@ if ( 'loa' === $current_slug ) {
       <!-- Main Featured Banner -->
       <div class="md:col-span-2 relative rounded-2xl overflow-hidden shadow-sm bg-gradient-to-r from-[#e60012] via-[#b7000c] to-[#b7000c] text-white p-6 sm:p-8 flex flex-col justify-between min-h-[220px]">
         <div class="relative z-10 max-w-[500px]">
-          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-sm text-xs sm:text-sm font-bold text-[#FF9800] mb-2.5">
-            <span class="material-symbols-outlined text-[18px]">local_fire_department</span> <?php echo esc_html( $banner_tag ); ?>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-[6px] bg-white/20 backdrop-blur-sm text-[11px] sm:text-[12px] font-bold text-[#FF9800] mb-2.5">
+            <span class="material-symbols-outlined text-[16px]">local_fire_department</span> <?php echo esc_html( $banner_tag ); ?>
           </span>
-          <h1 class="text-2xl sm:text-4xl font-black tracking-tight leading-tight">
+          <h1 class="text-[26px] sm:text-[30px] md:text-[34px] font-bold tracking-tight leading-tight">
             <?php echo wp_kses_post( $banner_title ); ?>
           </h1>
-          <p class="text-xs sm:text-sm text-[#ffdad5] mt-2.5 line-clamp-2 leading-relaxed">
+          <p class="text-[14px] text-[#ffdad5] mt-2.5 line-clamp-2 leading-relaxed font-normal">
             <?php echo wp_kses_post( $banner_desc ); ?>
           </p>
         </div>
         <div class="relative z-10 mt-5 flex items-center gap-4 flex-wrap">
-          <a href="#accessory-catalog" class="px-6 py-3 rounded-xl bg-[#FF9800] hover:bg-[#e68900] text-white font-black text-xs sm:text-sm transition-all shadow-md inline-flex items-center gap-1.5 cursor-pointer">
+          <a href="#accessory-catalog" class="min-h-[48px] px-6 rounded-[8px] bg-[#FF9800] hover:bg-[#e68900] text-white font-semibold text-[15px] sm:text-[16px] transition-all shadow-md inline-flex items-center gap-1.5 cursor-pointer">
             Khám Phá Ngay <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
           </a>
-          <span class="text-xs sm:text-sm text-[#ffdad5] font-semibold">100% Hàng chính hãng &bull; 1 Đổi 1 12T</span>
+          <span class="text-[13px] sm:text-[14px] text-[#ffdad5] font-medium">100% Hàng chính hãng &bull; 1 Đổi 1 12T</span>
         </div>
         <!-- Decorative graphic elements -->
         <div class="absolute -right-8 -bottom-8 w-60 h-60 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
@@ -328,17 +328,17 @@ if ( 'loa' === $current_slug ) {
       <div class="flex flex-col gap-3">
         <div class="rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-[#b7000c] to-[#e60012] text-white flex items-center justify-between shadow-xs">
           <div>
-            <div class="text-xs font-black uppercase text-[#ffdad5] tracking-wider">Độc Quyền PhoneX</div>
-            <div class="text-base sm:text-lg font-black mt-0.5">Bảo Hành 1 Đổi 1 Trong 12T</div>
-            <div class="text-xs sm:text-sm text-[#ffdad5]/90 mt-1">Lỗi phần cứng đổi ngay sản phẩm mới</div>
+            <div class="text-[11px] sm:text-[12px] font-bold uppercase text-[#ffdad5] tracking-wider">Độc Quyền PhoneX</div>
+            <div class="text-[16px] sm:text-[18px] font-bold mt-0.5">Bảo Hành 1 Đổi 1 Trong 12T</div>
+            <div class="text-[13px] sm:text-[14px] text-[#ffdad5]/90 mt-1 font-normal">Lỗi phần cứng đổi ngay sản phẩm mới</div>
           </div>
           <span class="material-symbols-outlined text-[40px] text-[#ffdad5] shrink-0">verified</span>
         </div>
         <div class="rounded-2xl p-4 sm:p-5 bg-gradient-to-r from-[#222222] to-[#b7000c] text-white flex items-center justify-between shadow-xs">
           <div>
-            <div class="text-xs font-black uppercase text-[#FF9800] tracking-wider">Giao Nhanh Siêu Tốc</div>
-            <div class="text-base sm:text-lg font-black mt-0.5">Giao Hỏa Tốc 1 Giờ</div>
-            <div class="text-xs sm:text-sm text-[#ffdad5]/90 mt-1">Đồng kiểm hàng tận nhà rồi mới thanh toán</div>
+            <div class="text-[11px] sm:text-[12px] font-bold uppercase text-[#FF9800] tracking-wider">Giao Nhanh Siêu Tốc</div>
+            <div class="text-[16px] sm:text-[18px] font-bold mt-0.5">Giao Hỏa Tốc 1 Giờ</div>
+            <div class="text-[13px] sm:text-[14px] text-[#ffdad5]/90 mt-1 font-normal">Đồng kiểm hàng tận nhà rồi mới thanh toán</div>
           </div>
           <span class="material-symbols-outlined text-[40px] text-[#FF9800] shrink-0">local_shipping</span>
         </div>
@@ -348,11 +348,11 @@ if ( 'loa' === $current_slug ) {
     <!-- ================= 2. CATEGORY GROUP SWITCHER (TGDD Style .cate-groupmenu) ================= -->
     <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-2xs border border-[#E5E7EB]" id="accessory-catalog">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-base sm:text-lg font-black text-[#222222] uppercase tracking-tight flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#e60012] text-[22px]">category</span>
+        <h2 class="text-[22px] sm:text-[24px] md:text-[26px] font-bold text-[#222222] uppercase tracking-tight flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#e60012] text-[24px]">category</span>
           Danh Mục Phụ Kiện Nổi Bật
         </h2>
-        <a href="<?php echo esc_url( home_url( '/product-category/phu-kien/' ) ); ?>" class="text-xs sm:text-sm text-[#e60012] font-bold hover:underline flex items-center gap-0.5">
+        <a href="<?php echo esc_url( home_url( '/product-category/phu-kien/' ) ); ?>" class="text-[13px] sm:text-[14px] text-[#e60012] font-semibold hover:underline flex items-center gap-0.5">
           <span>Xem tất cả</span> &rarr;
         </a>
       </div>
@@ -362,19 +362,51 @@ if ( 'loa' === $current_slug ) {
         <?php foreach ( $subcategories as $sc ) : ?>
           <?php
           $is_active = ( $current_slug === $sc['slug'] );
-          $card_link = home_url( '/product-category/' . $sc['slug'] . '/' );
+          if ( in_array( $sc['slug'], array( 'op-lung-flipcover', 'op-lung', 'op-lung-dien-thoai' ), true ) ) {
+              $card_link = home_url( '/op-lung-flipcover/' );
+          } elseif ( in_array( $sc['slug'], array( 'op-lung-may-tinh-bang', 'bao-da-ipad', 'bao-da-tablet' ), true ) ) {
+              $card_link = home_url( '/op-lung-may-tinh-bang/' );
+          } elseif ( in_array( $sc['slug'], array( 'mieng-dan', 'mieng-dan-man-hinh', 'kinh-cuong-luc' ), true ) ) {
+              $card_link = home_url( '/mieng-dan-man-hinh/' );
+          } elseif ( in_array( $sc['slug'], array( 'mieng-dan-camera', 'kinh-camera', 'dan-camera' ), true ) ) {
+              $card_link = home_url( '/mieng-dan-camera/' );
+          } elseif ( in_array( $sc['slug'], array( 'hub-cap-chuyen-doi', 'hub-chuyen-doi' ), true ) ) {
+              $card_link = home_url( '/hub-chuyen-doi/' );
+          } elseif ( in_array( $sc['slug'], array( 'chuot-may-tinh', 'chuot-gaming', 'chuot-bluetooth' ), true ) ) {
+              $card_link = home_url( '/chuot-may-tinh/' );
+          } elseif ( in_array( $sc['slug'], array( 'ban-phim', 'ban-phim-gaming', 'ban-phim-co-day' ), true ) ) {
+              $card_link = home_url( '/ban-phim/' );
+          } elseif ( in_array( $sc['slug'], array( 'router-thiet-bi-mang', 'thiet-bi-mang' ), true ) ) {
+              $card_link = home_url( '/thiet-bi-mang/' );
+          } elseif ( in_array( $sc['slug'], array( 'balo-tui-chong-soc', 'tui-chong-soc' ), true ) ) {
+              $card_link = home_url( '/tui-chong-soc/' );
+          } elseif ( in_array( $sc['slug'], array( 'tui-dung-phu-kien', 'tui-phu-kien' ), true ) ) {
+              $card_link = home_url( '/tui-dung-phu-kien/' );
+          } elseif ( in_array( $sc['slug'], array( 'tui-dung-airpods', 'op-airpods', 'case-airpods' ), true ) ) {
+              $card_link = home_url( '/tui-dung-airpods/' );
+          } elseif ( in_array( $sc['slug'], array( 'quat-mini', 'quat-cam-tay' ), true ) ) {
+              $card_link = home_url( '/quat-mini/' );
+          } elseif ( 'sac-cap' === $sc['slug'] ) {
+              $card_link = home_url( '/sac-cap/' );
+          } elseif ( in_array( $sc['slug'], array( 'sac-du-phong', 'sac-dtdd' ), true ) ) {
+              $card_link = home_url( '/sac-dtdd/' );
+          } elseif ( in_array( $sc['slug'], array( 'loa', 'micro' ), true ) ) {
+              $card_link = home_url( '/' . $sc['slug'] . '/' );
+          } else {
+              $card_link = home_url( '/product-category/' . $sc['slug'] . '/' );
+          }
           $icon_url  = get_template_directory_uri() . '/assets/images/categories/accessories/' . $sc['icon'];
           ?>
           <a href="<?php echo esc_url( $card_link ); ?>" class="group flex flex-col items-center text-center p-2 rounded-2xl transition-all relative <?php echo $is_active ? 'bg-[#ffdad5]/50 border-2 border-[#e60012] shadow-xs' : 'bg-[#f8f9fb] hover:bg-[#ffdad5]/30 border border-[#E5E7EB] hover:border-[#e9bcb6]'; ?>">
             <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-white flex items-center justify-center shadow-2xs p-1.5 transition-transform group-hover:scale-105">
               <img src="<?php echo esc_url( $icon_url ); ?>" alt="<?php echo esc_attr( $sc['name'] ); ?>" class="w-9 h-9 sm:w-10 sm:h-10 object-contain" loading="lazy" />
               <?php if ( ! empty( $sc['badge'] ) ) : ?>
-                <span class="absolute -top-1.5 -right-1 text-[9.5px] font-extrabold bg-[#e60012] text-white px-1.5 py-0.2 rounded-full shadow-xs">
+                <span class="absolute -top-1.5 -right-1 text-[10px] font-bold bg-[#e60012] text-white px-1.5 py-0.2 rounded-[6px] shadow-xs">
                   <?php echo esc_html( $sc['badge'] ); ?>
                 </span>
               <?php endif; ?>
             </div>
-            <span class="mt-2 text-[12px] sm:text-[13px] font-bold <?php echo $is_active ? 'text-[#e60012]' : 'text-[#222222] group-hover:text-[#e60012]'; ?> leading-snug line-clamp-2">
+            <span class="mt-2 text-[12px] sm:text-[13px] font-semibold <?php echo $is_active ? 'text-[#e60012]' : 'text-[#222222] group-hover:text-[#e60012]'; ?> leading-snug line-clamp-2">
               <?php echo esc_html( $sc['name'] ); ?>
             </span>
           </a>
@@ -385,18 +417,18 @@ if ( 'loa' === $current_slug ) {
     <!-- ================= 3. BRAND PILLS FILTER (TGDD Style .top-manu) ================= -->
     <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-2xs border border-[#E5E7EB]">
       <div class="flex items-center justify-between mb-3.5">
-        <h3 class="text-sm sm:text-base font-black text-[#222222] uppercase tracking-tight flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#e60012] text-[20px]">verified_user</span>
+        <h3 class="text-[18px] sm:text-[20px] font-semibold text-[#222222] uppercase tracking-tight flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#e60012] text-[22px]">verified_user</span>
           Thương Hiệu Hàng Đầu
         </h3>
-        <span class="text-xs text-[#5f5e5e] font-medium">Hiện có <?php echo count( $all_brands ); ?> thương hiệu</span>
+        <span class="text-[13px] text-[#5f5e5e] font-medium">Hiện có <?php echo count( $all_brands ); ?> thương hiệu</span>
       </div>
 
       <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="brand-selector-list">
         <!-- Button: Tất cả -->
-        <button type="button" class="brand-btn active shrink-0 px-4 py-2 rounded-xl border border-[#e60012] bg-[#e60012] text-white text-[13px] sm:text-[14px] font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer" data-brand="all">
+        <button type="button" class="brand-btn active shrink-0 min-h-[40px] px-4 py-2 rounded-full border border-[#e60012] bg-[#e60012] text-white text-[13px] sm:text-[14px] font-semibold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer" data-brand="all">
           <span>Tất cả</span>
-          <span class="px-2 py-0.5 rounded-full bg-white/20 text-[11px]"><?php echo count( $products_list ); ?></span>
+          <span class="px-2 py-0.5 rounded-full bg-white/20 text-[11px] sm:text-[12px] font-bold"><?php echo count( $products_list ); ?></span>
         </button>
 
         <?php foreach ( $all_brands as $b ) : ?>
@@ -408,9 +440,9 @@ if ( 'loa' === $current_slug ) {
 			  }
 		  }
 			?>
-          <button type="button" class="brand-btn shrink-0 px-3.5 py-2 rounded-xl border border-[#E5E7EB] hover:border-[#e60012] bg-white hover:bg-[#ffdad5]/30 text-[#222222] hover:text-[#e60012] text-[13px] sm:text-[14px] font-bold transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer" data-brand="<?php echo esc_attr( $b ); ?>">
+          <button type="button" class="brand-btn shrink-0 min-h-[40px] px-3.5 py-2 rounded-full border border-[#E5E7EB] hover:border-[#e60012] bg-white hover:bg-[#ffdad5]/30 text-[#222222] hover:text-[#e60012] text-[13px] sm:text-[14px] font-semibold transition-all shadow-2xs flex items-center gap-1.5 cursor-pointer" data-brand="<?php echo esc_attr( $b ); ?>">
             <span><?php echo esc_html( $b ); ?></span>
-            <span class="px-1.5 py-0.5 rounded-full bg-[#f8f9fb] text-[#5f5e5e] text-[11px]"><?php echo $b_count; ?></span>
+            <span class="px-1.5 py-0.5 rounded-full bg-[#f8f9fb] text-[#5f5e5e] text-[11px] sm:text-[12px] font-medium"><?php echo $b_count; ?></span>
           </button>
         <?php endforeach; ?>
       </div>
@@ -420,12 +452,12 @@ if ( 'loa' === $current_slug ) {
     <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-2xs border border-[#E5E7EB] flex flex-wrap items-center justify-between gap-3">
       <!-- Left Filters -->
       <div class="flex items-center gap-2.5 flex-wrap">
-        <span class="font-bold text-[#222222] text-xs sm:text-sm flex items-center gap-1">
+        <span class="font-semibold text-[#222222] text-[14px] flex items-center gap-1">
           <span class="material-symbols-outlined text-[18px] text-[#e60012]">tune</span> Bộ lọc:
         </span>
 
-        <!-- Filter Mức Giá -->
-        <select id="filter-price" class="px-3 py-1.5 rounded-xl border border-[#E5E7EB] bg-[#f8f9fb] text-xs sm:text-sm font-semibold text-[#222222] focus:border-[#e60012] focus:outline-none cursor-pointer">
+        <!-- Filter Mức Giá (16px text prevents iOS zoom) -->
+        <select id="filter-price" class="h-[44px] px-3.5 rounded-[8px] border border-[#E5E7EB] bg-[#f8f9fb] text-[16px] font-normal text-[#222222] focus:bg-white focus:border-[#e60012] focus:outline-none cursor-pointer">
           <option value="all">Mức giá: Tất cả</option>
           <option value="under-500k">Dưới 500.000₫</option>
           <option value="500k-1m">500.000₫ - 1.000.000₫</option>
@@ -435,7 +467,7 @@ if ( 'loa' === $current_slug ) {
         </select>
 
         <!-- Filter Phân Loại -->
-        <select id="filter-type" class="px-3 py-1.5 rounded-xl border border-[#E5E7EB] bg-[#f8f9fb] text-xs sm:text-sm font-semibold text-[#222222] focus:border-[#e60012] focus:outline-none cursor-pointer">
+        <select id="filter-type" class="h-[44px] px-3.5 rounded-[8px] border border-[#E5E7EB] bg-[#f8f9fb] text-[16px] font-normal text-[#222222] focus:bg-white focus:border-[#e60012] focus:outline-none cursor-pointer">
           <option value="all">Loại sản phẩm: Tất cả</option>
           <option value="Loa Bluetooth">Loa Bluetooth</option>
           <option value="Loa Karaoke">Loa Karaoke kèm Mic</option>
@@ -448,17 +480,17 @@ if ( 'loa' === $current_slug ) {
         </select>
 
         <!-- Reset Button -->
-        <button type="button" id="btn-reset-filters" class="hidden px-3 py-1.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-xs font-bold text-gray-700 items-center gap-1 cursor-pointer transition-colors">
-          <span class="material-symbols-outlined text-[14px]">refresh</span> Xóa bộ lọc
+        <button type="button" id="btn-reset-filters" class="hidden min-h-[40px] px-3.5 py-1.5 rounded-[8px] bg-gray-100 hover:bg-gray-200 text-[13px] font-semibold text-gray-700 items-center gap-1 cursor-pointer transition-colors">
+          <span class="material-symbols-outlined text-[16px]">refresh</span> Xóa bộ lọc
         </button>
       </div>
 
       <!-- Right Sorting & Counter -->
       <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
-        <div class="text-xs sm:text-sm text-[#5f5e5e] font-medium">
-          Tìm thấy <span id="results-count" class="font-bold text-[#e60012]"><?php echo count( $products_list ); ?></span> sản phẩm
+        <div class="text-[13px] sm:text-[14px] text-[#5f5e5e] font-normal">
+          Tìm thấy <span id="results-count" class="font-bold text-[#e60012] text-[14px] sm:text-[15px]"><?php echo count( $products_list ); ?></span> sản phẩm
         </div>
-        <select id="filter-sort" class="px-3 py-1.5 rounded-xl border border-[#E5E7EB] bg-[#f8f9fb] text-xs sm:text-sm font-semibold text-[#222222] focus:border-[#e60012] focus:outline-none cursor-pointer">
+        <select id="filter-sort" class="h-[44px] px-3.5 rounded-[8px] border border-[#E5E7EB] bg-[#f8f9fb] text-[16px] font-normal text-[#222222] focus:bg-white focus:border-[#e60012] focus:outline-none cursor-pointer">
           <option value="default">Sắp xếp: Bán chạy nhất</option>
           <option value="price-asc">Giá: Thấp đến Cao</option>
           <option value="price-desc">Giá: Cao đến Thấp</option>
@@ -470,7 +502,7 @@ if ( 'loa' === $current_slug ) {
     <!-- ================= 5. PRODUCTS GRID ================= -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4" id="accessory-grid">
       <?php foreach ( $products_list as $item ) : ?>
-        <div class="accessory-item bg-white rounded-2xl p-3.5 sm:p-4.5 border border-[#E5E7EB] hover:border-[#e9bcb6] hover:shadow-lg transition-all duration-200 flex flex-col justify-between group relative"
+        <div class="accessory-item bg-white rounded-[12px] p-3.5 sm:p-4.5 border border-[#E5E7EB] hover:border-[#e9bcb6] hover:shadow-lg transition-all duration-200 flex flex-col justify-between group relative"
              data-id="<?php echo esc_attr( $item['id'] ); ?>"
              data-brand="<?php echo esc_attr( $item['brand'] ); ?>"
              data-price="<?php echo esc_attr( $item['price'] ); ?>"
@@ -480,24 +512,24 @@ if ( 'loa' === $current_slug ) {
           <!-- Top Badges -->
           <div class="flex items-center justify-between gap-1 mb-2 relative z-10">
             <?php if ( ! empty( $item['badge'] ) ) : ?>
-              <span class="text-[10px] sm:text-[11px] font-black uppercase px-2 py-0.5 rounded-md bg-[#ffdad5] text-[#b7000c] shadow-2xs">
+              <span class="text-[11px] sm:text-[12px] font-bold uppercase px-2 py-0.5 rounded-[6px] bg-[#ffdad5] text-[#b7000c] shadow-2xs">
                 <?php echo esc_html( $item['badge'] ); ?>
               </span>
             <?php else : ?>
-              <span class="text-[10px] font-semibold text-[#5f5e5e] uppercase">
+              <span class="text-[11px] font-semibold text-[#5f5e5e] uppercase">
                 <?php echo esc_html( $item['brand'] ); ?>
               </span>
             <?php endif; ?>
 
             <?php if ( $item['discount_pct'] > 0 ) : ?>
-              <span class="text-[10px] sm:text-[11px] font-black px-1.5 py-0.5 rounded-md bg-[#e60012] text-white">
+              <span class="text-[11px] sm:text-[12px] font-bold px-1.5 py-0.5 rounded-[6px] bg-[#e60012] text-white">
                 -<?php echo esc_html( $item['discount_pct'] ); ?>%
               </span>
             <?php endif; ?>
           </div>
 
           <!-- Product Image -->
-          <a href="<?php echo esc_url( $item['permalink'] ); ?>" class="block overflow-hidden rounded-xl mb-3 text-center my-auto py-2">
+          <a href="<?php echo esc_url( $item['permalink'] ); ?>" class="block overflow-hidden rounded-[10px] mb-3 text-center my-auto py-2">
             <img src="<?php echo esc_url( $item['image'] ); ?>" 
                  alt="<?php echo esc_attr( $item['name'] ); ?>" 
                  class="w-full h-36 sm:h-44 object-contain mx-auto transform group-hover:scale-105 transition-transform duration-300" 
@@ -506,22 +538,22 @@ if ( 'loa' === $current_slug ) {
 
           <!-- Product Info -->
           <div>
-            <div class="text-[11px] font-semibold text-[#5f5e5e] mb-1">
+            <div class="text-[12px] sm:text-[13px] font-medium text-[#5f5e5e] mb-1">
               <?php echo esc_html( $item['type'] ); ?>
             </div>
-            <h3 class="text-[13px] sm:text-[14.5px] leading-snug font-bold text-[#222222] line-clamp-2 min-h-[38px] group-hover:text-[#e60012] transition-colors" title="<?php echo esc_attr( $item['name'] ); ?>">
+            <h3 class="text-[14px] sm:text-[16px] leading-snug font-semibold text-[#222222] line-clamp-2 min-h-[44px] group-hover:text-[#e60012] transition-colors" title="<?php echo esc_attr( $item['name'] ); ?>">
               <a href="<?php echo esc_url( $item['permalink'] ); ?>">
                 <?php echo esc_html( $item['name'] ); ?>
               </a>
             </h3>
 
-            <!-- Price -->
+            <!-- Price Display (Desktop 20-24px, Tablet 20px, Mobile 18-20px) -->
             <div class="mt-2.5 flex items-baseline gap-2 flex-wrap">
-              <span class="text-base sm:text-lg font-black text-[#e60012]">
+              <span class="text-[18px] sm:text-[20px] md:text-[22px] font-bold text-[#e60012] leading-tight">
                 <?php echo number_format( $item['price'], 0, ',', '.' ); ?>₫
               </span>
               <?php if ( $item['price_old'] > $item['price'] ) : ?>
-                <span class="text-xs text-[#5f5e5e] line-through">
+                <span class="text-[13px] sm:text-[14px] text-[#5f5e5e] line-through font-normal">
                   <?php echo number_format( $item['price_old'], 0, ',', '.' ); ?>₫
                 </span>
               <?php endif; ?>
@@ -529,15 +561,15 @@ if ( 'loa' === $current_slug ) {
 
             <!-- Specs Tag -->
             <?php if ( ! empty( $item['specs'] ) ) : ?>
-              <div class="mt-2 p-1.5 rounded-lg bg-[#f8f9fb] border border-[#E5E7EB] text-[11px] text-[#5f5e5e] line-clamp-1">
+              <div class="mt-2 p-1.5 rounded-[6px] bg-[#f8f9fb] border border-[#E5E7EB] text-[11px] sm:text-[12px] text-[#5f5e5e] line-clamp-1 font-normal">
                 <?php echo esc_html( $item['specs'] ); ?>
               </div>
             <?php endif; ?>
 
             <!-- Rating & Sold count -->
-            <div class="mt-2.5 flex items-center justify-between text-[11px] text-[#5f5e5e]">
-              <div class="flex items-center gap-1 text-[#b7000c] font-bold">
-                <span class="material-symbols-outlined text-[14px] text-amber-500 fill-1">star</span>
+            <div class="mt-2.5 flex items-center justify-between text-[12px] sm:text-[13px] text-[#5f5e5e]">
+              <div class="flex items-center gap-1 text-[#b7000c] font-semibold">
+                <span class="material-symbols-outlined text-[15px] text-amber-500 fill-1">star</span>
                 <span><?php echo esc_html( $item['rating'] ); ?></span>
                 <span class="text-[#5f5e5e] font-normal">(<?php echo esc_html( $item['reviews'] ); ?>)</span>
               </div>
@@ -545,10 +577,14 @@ if ( 'loa' === $current_slug ) {
             </div>
 
             <!-- Action Buttons -->
-            <div class="mt-3 pt-2.5 border-t border-[#E5E7EB] flex items-center gap-1.5">
-              <a href="<?php echo esc_url( $item['permalink'] ); ?>" class="w-full py-2 rounded-xl bg-[#e60012] hover:bg-[#C90010] text-white text-xs font-bold text-center transition-colors shadow-2xs">
-                Mua Ngay
+            <div class="mt-3 pt-2.5 border-t border-[#E5E7EB] flex flex-col gap-1.5">
+              <a href="<?php echo esc_url( home_url( '/lien-he/?product=' . rawurlencode( $item['name'] ) ) ); ?>" class="w-full min-h-[40px] rounded-[8px] bg-[#e60012] hover:bg-[#C90010] text-white text-[13px] sm:text-[14px] font-semibold text-center flex items-center justify-center transition-colors shadow-2xs">
+                Đặt mua ngay
               </a>
+              <button type="button" class="open-specs-modal-btn w-full min-h-[36px] rounded-[8px] border border-[#E5E7EB] bg-[#f8f9fb] hover:bg-[#ffdad5] text-[#222222] hover:text-[#b7000c] text-[12px] sm:text-[13px] font-semibold transition-all flex items-center justify-center gap-1.5 cursor-pointer" data-product="<?php echo esc_attr( wp_json_encode( $item ) ); ?>">
+                <span class="material-symbols-outlined text-[16px] text-[#e60012]">info</span>
+                Xem chi tiết
+              </button>
             </div>
           </div>
 

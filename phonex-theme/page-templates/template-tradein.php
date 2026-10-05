@@ -14,7 +14,7 @@ get_header();
 <div class="max-w-[1320px] mx-auto flex items-center justify-center gap-3">
 <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-pure/20 text-on-primary font-bold text-xs">HOT</span>
 <p class="font-body-sm text-body-sm">
-        Chương trình <strong class="font-bold">PhoneX Cash-Now 2025</strong>: Tặng thêm đến 500.000đ trực tiếp vào giá thu mua khi đăng ký đặt lịch thẩm định online trước 17:00 hôm nay.
+        Chương trình <strong class="font-bold">PhoneX Cash-Now 2026</strong>: Tặng thêm đến 500.000đ trực tiếp vào giá thu mua khi đăng ký đặt lịch thẩm định online trước 17:00 hôm nay.
       </p>
 </div>
 </div>
@@ -447,13 +447,13 @@ get_header();
 </div>
 </div>
 </section>
-<!-- Live Buyback Price Comparison Table 2025 -->
+<!-- Live Buyback Price Comparison Table 2026 -->
 <section class="w-full py-14 bg-surface-pure">
 <div class="max-w-[1320px] mx-auto px-4 lg:px-6">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
 <div>
 <span class="font-label-badge text-label-badge text-primary uppercase tracking-wider">MINH BẠCH TỐI ĐA</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Bảng Giá Thu Mua Tham Khảo Mới Nhất 2025</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Bảng Giá Thu Mua Tham Khảo Mới Nhất 2026</h2>
 <p class="font-body-regular text-body-regular text-tertiary">
             So sánh giá thu PhoneX với giá trung bình thị trường. PhoneX luôn cam kết bảo đảm lợi ích cao nhất cho khách hàng.
           </p>

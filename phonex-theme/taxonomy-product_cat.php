@@ -23,5 +23,10 @@ if ( in_array( $slug, array( 'used', 'may-cu-99', 'dien-thoai-cu' ), true ) ) {
 	return;
 }
 
+if ( in_array( $slug, array( 'sac-dtdd', 'sac-du-phong', 'sac-cap', 'pin-du-phong', 'sac' ), true ) ) {
+	include get_template_directory() . '/page-templates/template-chargers.php';
+	return;
+}
+
 // All accessories, audio, camera, laptop accessories, etc.
 include get_template_directory() . '/page-templates/template-accessories.php';

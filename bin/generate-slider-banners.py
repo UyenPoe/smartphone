@@ -2,16 +2,17 @@
 """
 Generate 2 Campaign Banners (2400 x 600 px) with PhoneX Red brand theme.
 SUPER-SIZED, ULTRA-PROMINENT TYPOGRAPHY & ARTIFACT-FREE 3D RENDERING:
-- Massive titles (115px - 175px) with clean paint-order: stroke fill
-- Rich 3D golden bevel & shadows (no inner text-stroke lines)
-- Crystal-clear giant pricing (98px - 140px)
-- Ultra-legible secondary text (30px - 54px)
-- Well-proportioned right-side ecosystem & showcase to eliminate top clipping
+- Banner 1: THU CŨ ĐỔI MỚI - ĐỊNH GIÁ ONLINE 30S - TRỢ GIÁ ĐẾN 3 TRIỆU
+- Banner 2: KHO MÁY CŨ PHONEX - LIKE NEW 99% - BẢO HÀNH 12 THÁNG 1 ĐỔI 1 - NGUỒN SỈ ĐẠI LÝ
+Preserves original PhoneX Flagship color palette:
+- Red gradients: #380002 -> #6e0009 -> #ba0d1a -> #d91424
+- Gold highlights: #ffd700, #ffde17, #ff9900
+- Pure white containers & badges
 Outputs:
 - assets/images/banners/slider-banner-1-2400x600.png
 - assets/images/banners/slider-banner-2-2400x600.png
-- assets/images/banners/slider-banner-1-2400x480.png (compat copy)
-- assets/images/banners/slider-banner-2-2400x480.png (compat copy)
+- assets/images/banners/slider-banner-1-2400x480.png
+- assets/images/banners/slider-banner-2-2400x480.png
 """
 
 import os
@@ -21,7 +22,7 @@ import tempfile
 CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 # ==========================================
-# BANNER 1: TỰU TRƯỜNG DEAL THƠMMM (2400 x 600 px)
+# BANNER 1: THU CŨ ĐỔI MỚI - ĐỊNH GIÁ ONLINE (2400 x 600 px)
 # ==========================================
 html_banner1 = """<!DOCTYPE html>
 <html lang="vi">
@@ -50,6 +51,7 @@ html_banner1 = """<!DOCTYPE html>
       align-items: center;
       justify-content: space-between;
       overflow: hidden;
+      padding-right: 50px;
     }
 
     /* Ambient lighting & glowing accents */
@@ -84,114 +86,118 @@ html_banner1 = """<!DOCTYPE html>
     .left-panel {
       position: relative;
       z-index: 4;
-      width: 680px;
+      width: 560px;
       height: 600px;
       background: #ffffff;
-      border-top-right-radius: 340px;
-      border-bottom-right-radius: 340px;
+      border-top-right-radius: 280px;
+      border-bottom-right-radius: 280px;
       box-shadow: 25px 0 60px rgba(0, 0, 0, 0.35);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 25px 65px 25px 45px;
+      padding: 25px 45px 25px 30px;
       text-align: center;
+      flex-shrink: 0;
     }
     .panel-line-1 {
-      font-size: 38px;
+      font-size: 30px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
-      letter-spacing: 0px;
+      letter-spacing: 0.5px;
       margin-bottom: 2px;
     }
     .panel-line-2 {
-      font-size: 54px;
+      font-size: 44px;
       font-weight: 950;
       color: #0f172a;
       text-transform: uppercase;
       letter-spacing: -0.5px;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
     .panel-line-3 {
-      font-size: 34px;
+      font-size: 26px;
       font-weight: 900;
       color: #334155;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .panel-divider {
-      width: 280px;
+      width: 240px;
       height: 5px;
       background: #ffd000;
       border-radius: 3px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .panel-line-4 {
-      font-size: 42px;
+      font-size: 32px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       letter-spacing: -0.3px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .panel-line-5 {
-      font-size: 44px;
+      font-size: 36px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       line-height: 1.2;
     }
     .panel-line-6 {
-      font-size: 34px;
+      font-size: 26px;
       font-weight: 950;
       color: #1e293b;
       text-transform: uppercase;
-      margin-top: 4px;
+      margin-top: 6px;
       letter-spacing: 0.3px;
       white-space: nowrap;
     }
 
-    /* 2. CENTER SECTION (BRAND + 3D TITLE + CHARACTER) */
+    /* 2. CENTER SECTION (BRAND + 3D TITLE + TRADE-IN EMBLEM) */
     .center-section {
       position: relative;
       z-index: 4;
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 20px;
       margin-left: 20px;
+      flex-grow: 1;
+      justify-content: center;
     }
     .title-col {
       display: flex;
       flex-direction: column;
       align-items: center;
+      flex-shrink: 0;
     }
     .brand-pill {
       background: #ffffff;
       color: #111827;
-      padding: 10px 38px;
+      padding: 8px 30px;
       border-radius: 9999px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       border: 2px solid rgba(255, 255, 255, 0.85);
     }
     .brand-logo-icon {
-      width: 42px;
-      height: 42px;
+      width: 36px;
+      height: 36px;
       background: #ba0d1a;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 950;
       color: #fff;
     }
     .brand-name {
-      font-size: 36px;
+      font-size: 28px;
       font-weight: 950;
       letter-spacing: -0.5px;
       color: #111827;
@@ -199,78 +205,87 @@ html_banner1 = """<!DOCTYPE html>
     .brand-name span {
       color: #ba0d1a;
     }
+    .brand-tagline {
+      font-size: 22px;
+      font-weight: 800;
+      color: #475569;
+      border-left: 2px solid #cbd5e1;
+      padding-left: 10px;
+    }
 
-    .title-tuu-truong {
-      font-size: 115px;
+    .title-thu-cu {
+      font-size: 80px;
       font-weight: 950;
       color: #ffffff;
       text-transform: uppercase;
-      letter-spacing: -2px;
+      letter-spacing: -1.5px;
       line-height: 1;
+      white-space: nowrap;
       paint-order: stroke fill;
-      -webkit-text-stroke: 8px #ffb700;
+      -webkit-text-stroke: 7px #ffb700;
       text-shadow: 0 4px 0 #b37400, 0 8px 0 #2a0003, 0 14px 28px rgba(0, 0, 0, 0.85);
     }
-    .title-deal-thom {
-      font-size: 155px;
+    .title-tro-gia {
+      font-size: 112px;
       font-weight: 950;
       color: #ffde17;
       text-transform: uppercase;
-      letter-spacing: -3px;
+      letter-spacing: -2.5px;
       line-height: 1;
+      white-space: nowrap;
       paint-order: stroke fill;
-      -webkit-text-stroke: 10px #2a0003;
+      -webkit-text-stroke: 9px #2a0003;
       text-shadow: 0 5px 0 #d97706, 0 9px 0 #78350f, 0 16px 30px rgba(0, 0, 0, 0.9);
       position: relative;
-      margin-top: -6px;
+      margin-top: 4px;
     }
     .crown-icon {
       position: absolute;
-      top: -46px;
-      left: 15px;
-      width: 68px;
-      height: 68px;
+      top: -36px;
+      left: 6px;
+      width: 52px;
+      height: 52px;
       fill: #ffd700;
       filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
     }
 
-    /* Student Illustration */
-    .student-img-box {
-      width: 280px;
-      height: 520px;
+    /* Inspection & Trade-in Emblem Vector Graphic */
+    .tradein-graphic-box {
+      width: 200px;
+      height: 400px;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
+      justify-content: center;
       position: relative;
+      flex-shrink: 0;
     }
-    .student-svg {
+    .tradein-svg {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      filter: drop-shadow(0 14px 28px rgba(0,0,0,0.45));
+      filter: drop-shadow(0 14px 28px rgba(0,0,0,0.5));
     }
 
-    /* 3. RIGHT SECTION (DISCOUNT + DEVICES SHOWCASE + BUY BUTTON) */
+    /* 3. RIGHT SECTION (DISCOUNT + DEVICES SHOWCASE + ACTION BUTTON) */
     .right-section {
       position: relative;
       z-index: 4;
-      width: 740px;
+      width: 580px;
       flex-shrink: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-right: 50px;
     }
     .top-promo-header {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      gap: 14px;
       white-space: nowrap;
       margin-bottom: 8px;
     }
     .promo-subtext {
-      font-size: 38px;
+      font-size: 28px;
       font-weight: 950;
       color: #ffffff;
       line-height: 1.15;
@@ -279,29 +294,29 @@ html_banner1 = """<!DOCTYPE html>
     }
     .promo-subtext span {
       display: block;
-      font-size: 36px;
+      font-size: 26px;
       font-weight: 950;
       color: #ffeb3b;
     }
     .promo-giant-num {
-      font-size: 132px;
+      font-size: 96px;
       font-weight: 950;
       color: #ffd700;
       line-height: 1;
       letter-spacing: -2px;
       white-space: nowrap;
       paint-order: stroke fill;
-      -webkit-text-stroke: 9px #2a0003;
+      -webkit-text-stroke: 8px #2a0003;
       text-shadow: 0 5px 0 #b45309, 0 14px 28px rgba(0, 0, 0, 0.85);
       display: inline-flex;
       align-items: center;
     }
-    .grad-cap {
-      width: 54px;
-      height: 54px;
+    .lightning-speed {
+      width: 42px;
+      height: 42px;
       fill: #ffd700;
       filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
-      margin-left: 10px;
+      margin-left: 6px;
     }
 
     /* Showcase phones */
@@ -309,46 +324,69 @@ html_banner1 = """<!DOCTYPE html>
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      gap: 20px;
+      gap: 16px;
       margin-top: 2px;
       margin-bottom: 16px;
+      position: relative;
     }
     .device-item {
       position: relative;
       filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55));
     }
     .device-phone-1 {
-      width: 135px;
-      height: 175px;
+      width: 115px;
+      height: 155px;
       transform: rotate(-6deg);
     }
     .device-phone-2 {
-      width: 155px;
-      height: 200px;
+      width: 135px;
+      height: 180px;
       z-index: 2;
     }
     .device-phone-3 {
-      width: 135px;
-      height: 175px;
+      width: 115px;
+      height: 155px;
       transform: rotate(6deg);
     }
 
-    /* Mua Ngay Button */
+    /* Quality Stamp Tag */
+    .grade-stamp {
+      position: absolute;
+      top: -15px;
+      right: -20px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      padding: 5px 13px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: 0.5px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+      border: 2px solid #ffffff;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transform: rotate(4deg);
+    }
+
+    /* Định Giá Ngay Button */
     .btn-action-buy {
       background: linear-gradient(180deg, #fff7a0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
       color: #380003;
-      font-size: 38px;
+      font-size: 32px;
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 14px 76px;
+      padding: 12px 52px;
       border-radius: 9999px;
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.9);
       display: inline-flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       cursor: pointer;
       border: 3px solid #fff59d;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -360,13 +398,13 @@ html_banner1 = """<!DOCTYPE html>
 
     <!-- 1. LEFT PANEL -->
     <div class="left-panel">
-      <div class="panel-line-1">100% SMARTPHONE</div>
-      <div class="panel-line-2">CHÍNH HÃNG VN/A</div>
-      <div class="panel-line-3">TẶNG GÓI BẢO HÀNH VIP 1 ĐỔI 1</div>
+      <div class="panel-line-1">HỆ THỐNG THU CŨ ĐỔI MỚI</div>
+      <div class="panel-line-2">ĐỊNH GIÁ ONLINE 30S</div>
+      <div class="panel-line-3">TRỢ GIÁ LÊN ĐỜI ĐẾN 3 TRIỆU</div>
       <div class="panel-divider"></div>
-      <div class="panel-line-4">TRẢ GÓP 0% ĐẾN 12 THÁNG</div>
-      <div class="panel-line-5">GIẢM THÊM ĐẾN 1 TRIỆU</div>
-      <div class="panel-line-6">CHO HỌC SINH - SINH VIÊN</div>
+      <div class="panel-line-4">KIỂM ĐỊNH 30 BƯỚC CÔNG KHAI</div>
+      <div class="panel-line-5">PHÂN GRADE A/B/C/D CHUẨN</div>
+      <div class="panel-line-6">CHUYỂN KHOẢN NGAY 5 PHÚT</div>
     </div>
 
     <!-- 2. CENTER SECTION -->
@@ -375,58 +413,88 @@ html_banner1 = """<!DOCTYPE html>
         <div class="brand-pill">
           <div class="brand-logo-icon">&#x26A1;</div>
           <div class="brand-name">Phone<span>X</span></div>
+          <div class="brand-tagline">Thu Cũ Giá Cao</div>
         </div>
 
-        <div class="title-tuu-truong">TỰU TRƯỜNG</div>
-        <div class="title-deal-thom">
+        <div class="title-thu-cu">THU CŨ ĐỔI MỚI</div>
+        <div class="title-tro-gia">
           <svg class="crown-icon" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5m14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/></svg>
-          DEAL THƠMMM
+          TRỢ GIÁ ĐẾN 3TR
         </div>
       </div>
 
-      <!-- Student Mascot Vector Illustration -->
-      <div class="student-img-box">
-        <svg class="student-svg" viewBox="0 0 200 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="100" cy="55" r="32" fill="#ffd1b3"/>
-          <path d="M68 50 C68 20, 132 20, 132 50 C132 30, 120 15, 100 15 C80 15, 68 30, 68 50 Z" fill="#2d1d13"/>
-          <circle cx="100" cy="16" r="14" fill="#2d1d13"/>
-          <circle cx="90" cy="52" r="3.5" fill="#222"/>
-          <circle cx="110" cy="52" r="3.5" fill="#222"/>
-          <path d="M92 64 Q100 72 108 64" stroke="#e04040" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <circle cx="82" cy="58" r="5" fill="#ff9999" opacity="0.6"/>
-          <circle cx="118" cy="58" r="5" fill="#ff9999" opacity="0.6"/>
-          <rect x="92" y="85" width="16" height="20" fill="#ffd1b3"/>
-          <path d="M60 100 L140 100 L148 190 L52 190 Z" fill="#ff9900"/>
-          <path d="M65 150 L135 150 L138 290 L62 290 Z" fill="#fff8e7"/>
-          <path d="M72 100 L82 150 L94 150 L84 100 Z" fill="#fff8e7"/>
-          <path d="M128 100 L118 150 L106 150 L116 100 Z" fill="#fff8e7"/>
-          <rect x="76" y="170" width="48" height="40" rx="6" fill="#f0ebe0"/>
-          <path d="M52 120 L30 180 L55 200 L70 150 Z" fill="#ffd1b3"/>
-          <path d="M148 120 L170 180 L145 200 L130 150 Z" fill="#ffd1b3"/>
-          <rect x="70" y="140" width="60" height="75" rx="4" fill="#0099ff" transform="rotate(-8 100 170)"/>
-          <rect x="66" y="145" width="64" height="20" rx="3" fill="#ff3366" transform="rotate(-8 100 170)"/>
-          <rect x="68" y="168" width="62" height="45" rx="3" fill="#ffffff" transform="rotate(-8 100 170)"/>
-          <rect x="135" y="140" width="28" height="52" rx="5" fill="#1f2937" stroke="#3b82f6" stroke-width="2"/>
-          <rect x="138" y="145" width="22" height="40" rx="3" fill="#60a5fa"/>
+      <!-- Trade-In & Inspection Vector Emblem -->
+      <div class="tradein-graphic-box">
+        <svg class="tradein-svg" viewBox="0 0 220 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Circular Glow Orbit -->
+          <circle cx="110" cy="160" r="95" stroke="rgba(255, 215, 0, 0.4)" stroke-width="3" stroke-dasharray="6 6"/>
+          <circle cx="110" cy="160" r="88" fill="rgba(186, 13, 26, 0.35)"/>
+          
+          <!-- Old Phone (Left, darker, entering trade-in) -->
+          <g transform="translate(35, 75) rotate(-14)">
+            <rect x="0" y="0" width="65" height="115" rx="12" fill="#1e293b" stroke="#64748b" stroke-width="2.5"/>
+            <rect x="4" y="5" width="57" height="105" rx="9" fill="#0f172a"/>
+            <!-- screen content -->
+            <rect x="15" y="8" width="26" height="5" rx="2.5" fill="#334155"/>
+            <text x="28" y="60" font-size="12" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" text-anchor="middle">MÁY CŨ</text>
+            <circle cx="28" cy="80" r="9" fill="#ba0d1a" opacity="0.8"/>
+            <path d="M24 80 L32 80" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+
+          <!-- Exchange Curved Arrows (Gold) -->
+          <g transform="translate(110, 160)">
+            <circle cx="0" cy="0" r="35" fill="#ffd700" stroke="#fff" stroke-width="3" filter="drop-shadow(0 6px 12px rgba(0,0,0,0.5))"/>
+            <!-- Trade-in Refresh arrows -->
+            <path d="M-12 -5 C-9 -17, 9 -17, 14 -7" stroke="#380003" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+            <polygon points="9,-14 18,-7 18,-18" fill="#380003"/>
+            <path d="M12 5 C9 17, -9 17, -14 7" stroke="#380003" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+            <polygon points="-9,14 -18,7 -18,18" fill="#380003"/>
+          </g>
+
+          <!-- New Flagship Phone (Right, glowing gold/cyan, upgraded) -->
+          <g transform="translate(120, 90) rotate(12)">
+            <rect x="0" y="0" width="70" height="126" rx="14" fill="#09090b" stroke="#ffd700" stroke-width="3"/>
+            <rect x="4" y="5" width="62" height="116" rx="10" fill="url(#newScreenGrad)"/>
+            <rect x="20" y="8" width="30" height="6" rx="3" fill="#000"/>
+            <!-- Checkmark badge on new phone -->
+            <circle cx="35" cy="62" r="14" fill="#10b981"/>
+            <path d="M29 62 L33 66 L42 57" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="35" y="90" font-size="11" fill="#ffd700" font-family="'Plus Jakarta Sans', sans-serif" font-weight="950" text-anchor="middle">LÊN ĐỜI</text>
+          </g>
+
+          <!-- Inspection Guarantee Ribbon -->
+          <g transform="translate(110, 280)">
+            <rect x="-85" y="-16" width="170" height="32" rx="16" fill="#ffffff" stroke="#ffd700" stroke-width="2" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.4))"/>
+            <text x="0" y="5" font-size="14" fill="#ba0d1a" font-family="'Plus Jakarta Sans', sans-serif" font-weight="950" text-anchor="middle" letter-spacing="0.5">30 BƯỚC TEST MINH BẠCH</text>
+          </g>
+
+          <defs>
+            <linearGradient id="newScreenGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0284c7"/>
+              <stop offset="50%" stop-color="#6366f1"/>
+              <stop offset="100%" stop-color="#ec4899"/>
+            </linearGradient>
+          </defs>
         </svg>
       </div>
     </div>
 
-    <!-- 3. RIGHT SECTION: DISCOUNT + SMARTPHONE SHOWCASE + BUY BUTTON -->
+    <!-- 3. RIGHT SECTION: DISCOUNT + SMARTPHONE SHOWCASE + ACTION BUTTON -->
     <div class="right-section">
       <div class="top-promo-header">
         <div class="promo-subtext">
-          Tân Sinh Viên &amp; HSSV
-          <span>GIẢM THÊM ĐẾN</span>
+          Thu Mua Mọi Tình Trạng
+          <span>GIẢI NGÂN CHUYỂN KHOẢN</span>
         </div>
         <div class="promo-giant-num">
-          3 TRIỆU
-          <svg class="grad-cap" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+          5 PHÚT
+          <svg class="lightning-speed" viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
         </div>
       </div>
 
       <!-- Smartphone Showcase Trio -->
       <div class="devices-row">
+        <div class="grade-stamp">&#x2714; GRADE A LIKE NEW</div>
         <!-- Phone 1: Galaxy S24 Ultra -->
         <div class="device-item device-phone-1">
           <svg viewBox="0 0 140 185" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -480,8 +548,8 @@ html_banner1 = """<!DOCTYPE html>
 
       <!-- Action Button -->
       <div class="btn-action-buy">
-        <span>MUA NGAY</span>
-        <svg style="width:32px;height:32px;fill:#380003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <span>ĐỊNH GIÁ NGAY</span>
+        <svg style="width:26px;height:26px;fill:#380003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
       </div>
     </div>
   </div>
@@ -490,7 +558,7 @@ html_banner1 = """<!DOCTYPE html>
 """
 
 # ==========================================
-# BANNER 2: PHÁ CỖ TUNG DEAL (2400 x 600 px)
+# BANNER 2: KHO MÁY CŨ PHONEX - LIKE NEW 99% (2400 x 600 px)
 # ==========================================
 html_banner2 = """<!DOCTYPE html>
 <html lang="vi">
@@ -518,7 +586,7 @@ html_banner2 = """<!DOCTYPE html>
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 45px;
+      padding: 0 50px;
       overflow: hidden;
     }
 
@@ -551,61 +619,64 @@ html_banner2 = """<!DOCTYPE html>
       pointer-events: none;
     }
 
-    /* 1. LEFT TITLE: PHÁ CỖ TUNG DEAL */
+    /* 1. LEFT TITLE: KHO MÁY CŨ - LIKE NEW 99% */
     .left-title-box {
       position: relative;
       z-index: 4;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-left: 20px;
+      margin-left: 10px;
+      flex-shrink: 0;
     }
     .title-pha-co {
-      font-size: 125px;
+      font-size: 102px;
       font-weight: 950;
       color: #ffffff;
       text-transform: uppercase;
       letter-spacing: -2px;
       line-height: 0.95;
+      white-space: nowrap;
       paint-order: stroke fill;
-      -webkit-text-stroke: 8px #ffd700;
+      -webkit-text-stroke: 7px #ffd700;
       text-shadow: 0 5px 0 #b38600, 0 8px 0 #2b0003, 0 14px 26px rgba(0, 0, 0, 0.85);
     }
     .title-tung-deal {
-      font-size: 175px;
+      font-size: 136px;
       font-weight: 950;
       color: #ffde17;
       text-transform: uppercase;
-      letter-spacing: -4px;
+      letter-spacing: -3.5px;
       line-height: 0.95;
+      white-space: nowrap;
       paint-order: stroke fill;
-      -webkit-text-stroke: 10px #2a0003;
+      -webkit-text-stroke: 9px #2a0003;
       text-shadow: 0 5px 0 #d97706, 0 9px 0 #78350f, 0 16px 32px rgba(0, 0, 0, 0.9);
       margin-top: 4px;
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
     .ribbon-dates {
       display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
       background: #ffffff;
-      border: 4px solid #ffd700;
+      border: 3.5px solid #ffd700;
       border-radius: 9999px;
-      padding: 12px 38px;
+      padding: 9px 28px;
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
     }
     .ribbon-icon {
-      font-size: 38px;
+      font-size: 28px;
     }
     .ribbon-text-1 {
-      font-size: 38px;
+      font-size: 28px;
       font-weight: 950;
       color: #ba0d1a;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
     .ribbon-text-2 {
-      font-size: 36px;
+      font-size: 26px;
       font-weight: 900;
       color: #1e293b;
     }
@@ -614,51 +685,56 @@ html_banner2 = """<!DOCTYPE html>
     .center-card {
       position: relative;
       z-index: 4;
-      width: 1040px;
+      width: 900px;
       background: #ffffff;
-      border-radius: 40px;
-      padding: 26px 45px;
+      border-radius: 36px;
+      padding: 20px 34px;
       box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
       display: flex;
       flex-direction: column;
       align-items: center;
       border: 3.5px solid rgba(255, 255, 255, 0.95);
+      flex-shrink: 0;
     }
     .card-top-title {
-      font-size: 40px;
+      font-size: 30px;
       font-weight: 950;
       color: #ba0d1a;
       text-align: center;
       margin-bottom: 2px;
       letter-spacing: -0.3px;
+      white-space: nowrap;
     }
     .card-sub-head {
-      font-size: 46px;
+      font-size: 34px;
       font-weight: 950;
       color: #0f172a;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
     .card-big-price {
-      font-size: 98px;
+      font-size: 84px;
       font-weight: 950;
       color: #ba0d1a;
       line-height: 1;
       letter-spacing: -2px;
-      margin: 4px 0 6px 0;
+      margin: 2px 0 4px 0;
       text-shadow: 0 4px 12px rgba(186, 13, 26, 0.15);
+      white-space: nowrap;
     }
     .card-note {
-      font-size: 30px;
+      font-size: 24px;
       font-weight: 800;
       color: #475569;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
+      white-space: nowrap;
     }
     .card-bottom-divider {
       width: 100%;
       height: 1px;
-      border-top: 3px dashed #cbd5e1;
-      margin-bottom: 14px;
+      border-top: 2.5px dashed #cbd5e1;
+      margin-bottom: 10px;
     }
     .card-bottom-grid {
       display: grid;
@@ -667,29 +743,30 @@ html_banner2 = """<!DOCTYPE html>
       text-align: center;
     }
     .col-left {
-      padding-right: 32px;
-      border-right: 3px dashed #cbd5e1;
+      padding-right: 22px;
+      border-right: 2.5px dashed #cbd5e1;
     }
     .col-right {
-      padding-left: 32px;
+      padding-left: 22px;
     }
     .col-title {
-      font-size: 30px;
+      font-size: 25px;
       font-weight: 900;
       color: #0f172a;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
     .col-highlight {
-      font-size: 44px;
+      font-size: 34px;
       font-weight: 950;
       color: #ba0d1a;
       line-height: 1.2;
     }
     .col-note {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
       color: #475569;
-      margin-top: 4px;
+      margin-top: 2px;
+      line-height: 1.25;
     }
 
     /* 3. RIGHT SECTION (DEVICE ECOSYSTEM & BUY BUTTON) */
@@ -699,12 +776,13 @@ html_banner2 = """<!DOCTYPE html>
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-right: 20px;
+      margin-right: 15px;
+      flex-shrink: 0;
     }
     .ecosystem-group {
       position: relative;
-      width: 420px;
-      height: 270px;
+      width: 380px;
+      height: 240px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -712,11 +790,11 @@ html_banner2 = """<!DOCTYPE html>
     }
     .eco-tablet {
       position: absolute;
-      left: 30px;
+      left: 15px;
       top: 10px;
-      width: 280px;
-      height: 210px;
-      border-radius: 20px;
+      width: 250px;
+      height: 185px;
+      border-radius: 16px;
       background: #0f172a;
       border: 3.5px solid #475569;
       box-shadow: 0 18px 36px rgba(0, 0, 0, 0.55);
@@ -724,11 +802,11 @@ html_banner2 = """<!DOCTYPE html>
     }
     .eco-phone {
       position: absolute;
-      left: 145px;
-      top: 25px;
-      width: 125px;
-      height: 215px;
-      border-radius: 22px;
+      left: 125px;
+      top: 15px;
+      width: 115px;
+      height: 200px;
+      border-radius: 20px;
       background: #09090b;
       border: 3.5px solid #ffd700;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
@@ -738,65 +816,44 @@ html_banner2 = """<!DOCTYPE html>
     .eco-phone-screen {
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #1e1b4b 0%, #ba0d1a 50%, #f59e0b 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #ba0d1a 50%, #f59e0b 100%);
     }
-    .eco-watch {
-      position: absolute;
-      right: 50px;
-      bottom: 20px;
-      width: 68px;
-      height: 86px;
-      border-radius: 20px;
-      background: #18181b;
-      border: 3px solid #71717a;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55);
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .eco-watch-screen {
-      width: 48px;
-      height: 66px;
-      border-radius: 12px;
-      background: #ef4444;
-      opacity: 0.85;
-    }
-    .eco-speaker {
+    .eco-badge-stock {
       position: absolute;
       right: -10px;
-      bottom: 55px;
-      width: 95px;
-      height: 58px;
-      border-radius: 14px;
-      background: #ba0d1a;
-      border: 2.5px solid #ffffff;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+      bottom: 15px;
+      background: #198754;
+      color: #ffffff;
+      padding: 7px 16px;
+      border-radius: 9999px;
+      font-size: 17px;
+      font-weight: 950;
+      letter-spacing: 0.5px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+      border: 2px solid #ffffff;
       z-index: 4;
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 950;
-      letter-spacing: 0.5px;
+      gap: 7px;
+      white-space: nowrap;
     }
 
     .btn-action-buy {
       background: linear-gradient(180deg, #fff7a0 0%, #ffd700 45%, #ff9900 85%, #d97706 100%);
       color: #380003;
-      font-size: 42px;
+      font-size: 32px;
       font-weight: 950;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 16px 82px;
+      padding: 12px 46px;
       border-radius: 9999px;
       box-shadow: 0 14px 35px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.9);
       display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
       cursor: pointer;
       border: 3px solid #fff59d;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -806,36 +863,36 @@ html_banner2 = """<!DOCTYPE html>
     <div class="moon-glow"></div>
     <div class="bg-shine"></div>
 
-    <!-- 1. LEFT TITLE: PHÁ CỖ TUNG DEAL -->
+    <!-- 1. LEFT TITLE: KHO MÁY CŨ - LIKE NEW 99% -->
     <div class="left-title-box">
-      <div class="title-pha-co">PHÁ CỖ</div>
-      <div class="title-tung-deal">TUNG DEAL</div>
+      <div class="title-pha-co">KHO MÁY CŨ</div>
+      <div class="title-tung-deal">LIKE NEW 99%</div>
       <div class="ribbon-dates">
-        <span class="ribbon-icon">&#x1F96E;</span>
-        <span class="ribbon-text-1">GIẢM LINH ĐÌNH</span>
-        <span class="ribbon-text-2">Từ 25/09 - 30/09</span>
+        <span class="ribbon-icon">&#x1F48E;</span>
+        <span class="ribbon-text-1">ZIN NGUYÊN BẢN</span>
+        <span class="ribbon-text-2">Bảo Hành 12 Tháng 1 Đổi 1</span>
       </div>
     </div>
 
     <!-- 2. CENTER WHITE PROMO CARD -->
     <div class="center-card">
-      <div class="card-top-title">ĐIỆN THOẠI &amp; TABLET FLAGSHIP</div>
-      <div class="card-sub-head">GIẢM THÊM</div>
-      <div class="card-big-price">150.000 - 1.5 TRIỆU</div>
-      <div class="card-note">Áp dụng trên giá sau khuyến mãi</div>
+      <div class="card-top-title">TUYỂN CHỌN 313+ MODEL ZIN KENG</div>
+      <div class="card-sub-head">PHÂN GRADE MINH BẠCH - GIÁ TỐT NHẤT</div>
+      <div class="card-big-price">TIẾT KIỆM ĐẾN 50%</div>
+      <div class="card-note">Trải nghiệm trực tiếp tại 128 Showroom toàn quốc</div>
 
       <div class="card-bottom-divider"></div>
 
       <div class="card-bottom-grid">
         <div class="col-left">
-          <div class="col-title">Tất cả iPhone &amp; Galaxy</div>
-          <div class="col-highlight">GIẢM thêm đến 2 Triệu</div>
-          <div class="col-note">Áp dụng kèm khuyến mãi khác</div>
+          <div class="col-title">Dành Cho Khách Lẻ</div>
+          <div class="col-highlight">Bảo Hành 1 Đổi 1</div>
+          <div class="col-note">Tặng sạc nhanh 67W + Cường lực</div>
         </div>
         <div class="col-right">
-          <div class="col-title">Phụ kiện &amp; Smartwatch</div>
-          <div class="col-highlight">GIẢM thêm đến 15%</div>
-          <div class="col-note">Chính hãng 100% (Trừ Apple)</div>
+          <div class="col-title">Nguồn Sỉ Đại Lý</div>
+          <div class="col-highlight">Chiết Khấu Đến 20%</div>
+          <div class="col-note">Bao test 30 ngày • Bảng giá theo ngày</div>
         </div>
       </div>
     </div>
@@ -844,20 +901,22 @@ html_banner2 = """<!DOCTYPE html>
     <div class="right-section">
       <div class="ecosystem-group">
         <div class="eco-tablet">
-          <div style="width:100%;height:100%;background:linear-gradient(45deg,#020617,#1e293b);"></div>
+          <div style="width:100%;height:100%;background:linear-gradient(45deg,#020617,#1e293b);display:flex;align-items:center;justify-content:center;">
+            <svg style="width:50px;height:50px;fill:rgba(255,255,255,0.25);" viewBox="0 0 24 24"><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/></svg>
+          </div>
         </div>
         <div class="eco-phone">
           <div class="eco-phone-screen"></div>
         </div>
-        <div class="eco-watch">
-          <div class="eco-watch-screen"></div>
+        <div class="eco-badge-stock">
+          <svg style="width:20px;height:20px;fill:#fff;" viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          <span>SẴN HÀNG TẠI SHOWROOM</span>
         </div>
-        <div class="eco-speaker">JBL</div>
       </div>
 
       <div class="btn-action-buy">
-        <span>MUA NGAY</span>
-        <svg style="width:32px;height:32px;fill:#380003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <span>XEM KHO MÁY CŨ</span>
+        <svg style="width:26px;height:26px;fill:#380003;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
       </div>
     </div>
   </div>
@@ -890,23 +949,29 @@ if __name__ == "__main__":
     banner2_path = "assets/images/banners/slider-banner-2-2400x600.png"
     wp_banner1 = "phonex-theme/assets/images/banners/slider-banner-1-2400x600.png"
     wp_banner2 = "phonex-theme/assets/images/banners/slider-banner-2-2400x600.png"
+    xampp_banner1 = "/Applications/XAMPP/xamppfiles/htdocs/smartphone/wp-content/themes/phonex-theme/assets/images/banners/slider-banner-1-2400x600.png"
+    xampp_banner2 = "/Applications/XAMPP/xamppfiles/htdocs/smartphone/wp-content/themes/phonex-theme/assets/images/banners/slider-banner-2-2400x600.png"
 
     os.makedirs(os.path.dirname(banner1_path), exist_ok=True)
     os.makedirs(os.path.dirname(wp_banner1), exist_ok=True)
 
-    print("Render Banner 1 (Super-sized)...")
+    print("Render Banner 1: THU CŨ ĐỔI MỚI (Super-sized)...")
     render_html_to_png(html_banner1, banner1_path)
     subprocess.run(["cp", banner1_path, wp_banner1], check=True)
-
     subprocess.run(["cp", banner1_path, "assets/images/banners/slider-banner-1-2400x480.png"], check=True)
     subprocess.run(["cp", banner1_path, "phonex-theme/assets/images/banners/slider-banner-1-2400x480.png"], check=True)
+    if os.path.exists(os.path.dirname(xampp_banner1)):
+        subprocess.run(["cp", banner1_path, xampp_banner1], check=True)
+        subprocess.run(["cp", banner1_path, "/Applications/XAMPP/xamppfiles/htdocs/smartphone/wp-content/themes/phonex-theme/assets/images/banners/slider-banner-1-2400x480.png"], check=True)
 
-    print("Render Banner 2 (Super-sized)...")
+    print("Render Banner 2: KHO MÁY CŨ PHONEX (Super-sized)...")
     render_html_to_png(html_banner2, banner2_path)
     subprocess.run(["cp", banner2_path, wp_banner2], check=True)
-
     subprocess.run(["cp", banner2_path, "assets/images/banners/slider-banner-2-2400x480.png"], check=True)
     subprocess.run(["cp", banner2_path, "phonex-theme/assets/images/banners/slider-banner-2-2400x480.png"], check=True)
+    if os.path.exists(os.path.dirname(xampp_banner2)):
+        subprocess.run(["cp", banner2_path, xampp_banner2], check=True)
+        subprocess.run(["cp", banner2_path, "/Applications/XAMPP/xamppfiles/htdocs/smartphone/wp-content/themes/phonex-theme/assets/images/banners/slider-banner-2-2400x480.png"], check=True)
 
     print(f"Đã lưu Banner 1: {banner1_path} ({os.path.getsize(banner1_path)} bytes)")
     print(f"Đã lưu Banner 2: {banner2_path} ({os.path.getsize(banner2_path)} bytes)")

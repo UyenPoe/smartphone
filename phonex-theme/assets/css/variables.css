@@ -1,21 +1,314 @@
 :root {
-  --primary: #b7000c;
+  /* PhoneX UI/UX Design System v1.0 - Flagship Color System */
+  --primary: #FF001F;
+  --primary-flagship: #FF001F;
+  --primary-deep: #b7000c;
+  --primary-dark: #D9001B;
+  --primary-hover: #D9001B;
+  --primary-light: #FFF0F2;
   --primary-container: #e60012;
-  --primary-hover: #C90010;
   --primary-fixed: #ffdad5;
   --primary-fixed-dim: #ffb4aa;
+  --px-primary-fixed: #FFF0F2;
+  --px-primary-fixed-dim: #ffb4aa;
+  --sale: #e60012;
+  --flash-sale: #E53935;
+  --promo: #FF9800;
+  --hot-deal: #FF9800;
+  --success: #198754;
+  --stock-green: #198754;
+  --text-main: #1F1F1F;
+  --text-sub: #374151;
+  --surface-pure: #FFFFFF;
+  --bg-section: #F6F7F9;
+  --bg-card-sub: #F9FAFB;
+  --border-subtle: #E5E7EB;
+
+  /* Compatibility & Semantic Mappings */
   --outline: #946e69;
   --outline-variant: #e9bcb6;
-  --border-subtle: #E5E7EB;
   --accent: #e60012;
-  --text: #222222;
-  --text-main: #222222;
-  --on-surface: #191c1e;
-  --text-sub: #5f5e5e;
-  --secondary: #5f5e5e;
-  --bg: #f8f9fb;
-  --surface: #f8f9fb;
-  --surface-container-low: #f2f4f6;
-  --surface-pure: #FFFFFF;
+  --text: #1F1F1F;
+  --on-surface: #1F1F1F;
+  --secondary: #374151;
+  --bg: #F6F7F9;
+  --surface: #F6F7F9;
+  --surface-container-low: #F9FAFB;
   --container: 1440px;
+
+  /* PHONEX UI/UX DESIGN SYSTEM - TYPOGRAPHY TOKENS */
+  --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* Typography Scale */
+  --px-font-h1: 34px;
+  --px-lh-h1: 1.25;
+  --px-font-h2: 26px;
+  --px-lh-h2: 1.35;
+  --px-font-h3: 20px;
+  --px-lh-h3: 1.35;
+
+  --px-font-product-title: 16px;
+  --px-lh-product-title: 1.45;
+  --px-font-price-primary: 22px;
+  --px-lh-price-primary: 1.25;
+  --px-font-price-old: 14px;
+
+  --px-font-body: 16px;
+  --px-lh-body: 1.65;
+  --px-font-sub: 14px;
+  --px-lh-sub: 1.45;
+
+  --px-font-breadcrumb: 13px;
+  --px-font-menu: 14px;
+  --px-font-filter: 14px;
+  --px-font-tag: 12px;
+
+  --px-font-btn-primary: 15px;
+  --px-font-btn-standard: 14px;
+  --px-font-btn-small: 13px;
+  --px-font-input: 16px;
+  --px-font-label: 14px;
+  --px-font-badge: 11px;
+  --px-font-caption: 12px;
+
+  /* Spacing System (4px & 8px tokens) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius System */
+  --radius-badge: 6px;
+  --radius-button: 8px;
+  --radius-input: 8px;
+  --radius-card: 12px;
+  --radius-modal: 16px;
+  --radius-pill: 9999px;
+
+  /* Touch Targets */
+  --touch-target-min: 44px;
+}
+
+/* Base Font Enforcement */
+body, input, textarea, select, button {
+  font-family: var(--font-family-sans);
+}
+
+/* PHONEX DESIGN SYSTEM HELPER UTILITIES */
+.px-h1 {
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+@media (min-width: 640px) {
+  .px-h1 { font-size: 30px; }
+}
+@media (min-width: 1024px) {
+  .px-h1 { font-size: 34px; }
+}
+
+.px-h2 {
+  font-size: 22px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+@media (min-width: 640px) {
+  .px-h2 { font-size: 24px; }
+}
+@media (min-width: 1024px) {
+  .px-h2 { font-size: 26px; }
+}
+
+.px-h3 {
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+@media (min-width: 640px) {
+  .px-h3 { font-size: 20px; }
+}
+
+.px-product-title {
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 42px;
+}
+@media (min-width: 640px) {
+  .px-product-title {
+    font-size: 16px;
+    min-height: 46px;
+  }
+}
+
+.px-price-primary {
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--primary-container);
+}
+@media (min-width: 640px) {
+  .px-price-primary { font-size: 20px; }
+}
+@media (min-width: 1024px) {
+  .px-price-primary { font-size: 22px; }
+}
+
+.px-price-old {
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: var(--text-sub);
+}
+@media (min-width: 640px) {
+  .px-price-old { font-size: 14px; }
+}
+
+.px-body-text {
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  max-width: 75ch;
+}
+
+.px-subtext {
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--text-sub);
+}
+
+.px-breadcrumb {
+  font-size: 12px;
+  font-weight: 500;
+}
+@media (min-width: 640px) {
+  .px-breadcrumb { font-size: 13px; }
+}
+@media (min-width: 1024px) {
+  .px-breadcrumb { font-size: 14px; }
+}
+
+.px-btn-primary {
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+@media (min-width: 1024px) {
+  .px-btn-primary {
+    min-height: 50px;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+}
+
+.px-btn-standard {
+  min-height: 44px;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+@media (min-width: 1024px) {
+  .px-btn-standard {
+    min-height: 46px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+}
+
+.px-btn-small {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+@media (min-width: 640px) {
+  .px-btn-small {
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+}
+
+.px-touch-target {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.px-form-input {
+  min-height: 44px;
+  font-size: 16px !important;
+  font-weight: 400;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  padding: 0 14px;
+}
+@media (min-width: 640px) {
+  .px-form-input {
+    min-height: 48px;
+  }
+}
+
+.px-form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.px-badge-tag {
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 2px 8px;
+  display: inline-flex;
+  align-items: center;
+}
+@media (min-width: 640px) {
+  .px-badge-tag { font-size: 12px; }
+}
+
+.px-card-container {
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+}
+@media (min-width: 640px) {
+  .px-card-container {
+    padding: 16px;
+  }
 }
