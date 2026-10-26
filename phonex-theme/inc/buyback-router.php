@@ -329,14 +329,6 @@ function phonex_buyback_route_template( $template ) {
 		}
 	}
 
-	// 11. HƯỚNG DẪN KẾT NỐI WEBSITE & API: /huong-dan-ket-noi-website/
-	if ( preg_match( '#^/(huong-dan-ket-noi-website|huong-dan-ket-noi|ket-noi-website|tich-hop-api|api-docs)/?$#i', $path ) ) {
-		$tpl = get_template_directory() . '/page-templates/template-integration-guide.php';
-		if ( file_exists( $tpl ) ) {
-			return $tpl;
-		}
-	}
-
 	return $template;
 }
 add_filter( 'template_include', 'phonex_buyback_route_template', 98 );
@@ -346,7 +338,7 @@ add_filter( 'template_include', 'phonex_buyback_route_template', 98 );
  */
 function phonex_buyback_prevent_404() {
 	$path = phonex_buyback_get_relative_path();
-	if ( preg_match( '#^/(thu-mua-dien-thoai|dinh-gia-dien-thoai|bang-gia-thu-mua|gia-thu-mua-du-kien|gia-thu-du-kien|bang-gia-du-kien|tra-cuu-yeu-cau|quy-trinh-thu-mua|tieu-chuan-kiem-dinh|huong-dan-ket-noi-website|huong-dan-ket-noi|ket-noi-website|tich-hop-api|api-docs|kho-may-cu|dien-thoai-cu|may-doi-tra|thi-truong-chotot|khao-sat-chotot|chotot)(/.*)?$#i', $path ) ) {
+	if ( preg_match( '#^/(thu-mua-dien-thoai|dinh-gia-dien-thoai|bang-gia-thu-mua|gia-thu-mua-du-kien|gia-thu-du-kien|bang-gia-du-kien|tra-cuu-yeu-cau|quy-trinh-thu-mua|tieu-chuan-kiem-dinh|kho-may-cu|dien-thoai-cu|may-doi-tra|thi-truong-chotot|khao-sat-chotot|chotot)(/.*)?$#i', $path ) ) {
 		global $wp_query;
 		if ( $wp_query ) {
 			$wp_query->is_404 = false;

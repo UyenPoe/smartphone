@@ -231,14 +231,6 @@ function phonex_seo_get_context() {
 		return $context;
 	}
 
-	// 10b. Integration Guide (/huong-dan-ket-noi-website/)
-	if ( preg_match( '#^/(huong-dan-ket-noi-website|huong-dan-ket-noi|ket-noi-website|tich-hop-api|api-docs)/?$#i', $path ) ) {
-		$ctx['type']    = 'integration-guide';
-		$ctx['has_faq'] = true;
-		$context        = $ctx;
-		return $context;
-	}
-
 	// 11. Phones Archive (/dtdd/)
 	if ( preg_match( '#^/(dtdd)/?$#i', $path ) ) {
 		$ctx['type']       = 'dtdd';
@@ -339,9 +331,6 @@ function phonex_seo_get_title() {
 		case 'standards':
 			return 'Tiêu Chuẩn Kiểm Định Điện Thoại Chuẩn Grade A/B/C/D | PhoneX';
 
-		case 'integration-guide':
-			return 'Hướng Dẫn Kết Nối Website & Tích Hợp Báo Giá API | PhoneX';
-
 		case 'dtdd':
 			return 'Điện Thoại Di Động Chính Hãng Giá Rẻ, Giảm Đến 35% | PhoneX';
 
@@ -439,9 +428,6 @@ function phonex_seo_get_description() {
 		case 'standards':
 			return 'Tiêu chuẩn phân loại điện thoại cũ Grade A (như mới 99%), Grade B (98%), Grade C (95%), Grade D rõ ràng, giúp khách hàng nắm rõ giá trị thiết bị.';
 
-		case 'integration-guide':
-			return 'Hướng dẫn nhúng Widget định giá thu mua và kết nối REST API thời gian thực PhoneX dành cho website đối tác, sàn thương mại và đại lý bán sỉ B2B toàn quốc.';
-
 		case 'dtdd':
 			return 'Mua điện thoại di động chính hãng giá rẻ nhất tại PhoneX: iPhone, Samsung, Xiaomi, OPPO, vivo. Trả góp 0%, bảo hành chính hãng, giao hàng nhanh 2h toàn quốc.';
 
@@ -518,9 +504,6 @@ function phonex_seo_get_canonical_url() {
 
 		case 'standards':
 			return home_url( '/tieu-chuan-kiem-dinh/' );
-
-		case 'integration-guide':
-			return home_url( '/huong-dan-ket-noi-website/' );
 
 		case 'dtdd':
 			return home_url( '/dtdd/' );
@@ -1198,7 +1181,6 @@ function phonex_seo_render_sitemap() {
 		'/bang-gia-thu-mua/'       => array( 'priority' => '0.90', 'freq' => 'daily' ),
 		'/quy-trinh-thu-mua/'      => array( 'priority' => '0.85', 'freq' => 'weekly' ),
 		'/tieu-chuan-kiem-dinh/'   => array( 'priority' => '0.85', 'freq' => 'weekly' ),
-		'/huong-dan-ket-noi-website/' => array( 'priority' => '0.85', 'freq' => 'weekly' ),
 		'/tra-cuu-yeu-cau/'        => array( 'priority' => '0.80', 'freq' => 'weekly' ),
 		'/dtdd/'                   => array( 'priority' => '0.90', 'freq' => 'daily' ),
 		'/flash-sale/'             => array( 'priority' => '0.90', 'freq' => 'daily' ),

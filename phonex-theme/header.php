@@ -205,7 +205,7 @@
             <span class="material-symbols-outlined text-[16px] text-gray-500 group-hover:rotate-180 transition-transform">keyboard_arrow_down</span>
           </button>
           <!-- Dropdown Services -->
-          <div id="pxServicesDropdown" class="hidden group-hover:block absolute top-full left-0 z-50 mt-1 w-80 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800 transition-all">
+          <div id="pxServicesDropdown" class="hidden group-hover:block absolute top-full left-0 z-50 mt-1 w-72 bg-white rounded-2xl shadow-xl border border-gray-100 p-2 text-gray-800 transition-all">
             <a href="<?php echo esc_url( home_url( '/quy-trinh-thu-mua/' ) ); ?>" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-xs font-bold text-gray-800 hover:text-[#e60012] transition-colors">
               <span class="material-symbols-outlined text-[19px] text-[#e60012]">sync</span>
               <div>
@@ -218,16 +218,6 @@
               <div>
                 <div>Tiêu chuẩn Grade A / B / C / D</div>
                 <div class="text-[10px] text-gray-500 font-normal">Quy chuẩn thẩm định phần cứng</div>
-              </div>
-            </a>
-            <a href="<?php echo esc_url( home_url( '/huong-dan-ket-noi-website/' ) ); ?>" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-blue-50 text-xs font-bold text-gray-800 hover:text-blue-700 transition-colors">
-              <span class="material-symbols-outlined text-[19px] text-blue-600">integration_instructions</span>
-              <div>
-                <div class="flex items-center gap-1.5">
-                  <span>Hướng dẫn kết nối website</span>
-                  <span class="text-[9px] bg-blue-600 text-white px-1.5 py-0.2 rounded-full font-bold">API &amp; Widget</span>
-                </div>
-                <div class="text-[10px] text-gray-500 font-normal">Tích hợp bảng giá &amp; Widget định giá lên web đối tác</div>
               </div>
             </a>
             <div class="border-t border-gray-100 my-1"></div>
@@ -347,19 +337,6 @@
                 <div>
                   <div class="text-sm font-bold text-gray-900 group-hover:text-[#e60012] transition-colors">Tiêu chuẩn kiểm định (Grade A, B, C, D)</div>
                   <div class="text-xs text-gray-700 font-medium mt-0.5">Barem 30 bước phân loại tình trạng máy chi tiết</div>
-                </div>
-              </a>
-
-              <a href="<?php echo esc_url( home_url( '/huong-dan-ket-noi-website/' ) ); ?>" class="flex items-start gap-3.5 p-3 rounded-2xl hover:bg-blue-50/60 border border-transparent hover:border-blue-100 transition-all group">
-                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                  <span class="material-symbols-outlined text-[22px]">hub</span>
-                </div>
-                <div>
-                  <div class="text-sm font-bold text-gray-900 group-hover:text-blue-700 transition-colors flex items-center gap-1.5">
-                    <span>Hướng dẫn kết nối website &amp; API</span>
-                    <span class="text-[9.5px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full font-bold">Dành cho đối tác</span>
-                  </div>
-                  <div class="text-xs text-gray-700 font-medium mt-0.5">Nhúng Widget định giá &amp; tích hợp API thu mua cho đại lý, website công nghệ</div>
                 </div>
               </a>
             </div>
@@ -826,13 +803,6 @@
             <a href="<?php echo esc_url( home_url( '/tieu-chuan-kiem-dinh/' ) ); ?>" class="p-2.5 rounded-xl bg-gray-50 hover:bg-[#ffdad5] hover:text-[#e60012] border border-gray-100 transition-colors flex items-center gap-2">
               <span class="material-symbols-outlined text-emerald-600 text-[18px]">rule</span>
               <span>Chuẩn Grade A-D</span>
-            </a>
-            <a href="<?php echo esc_url( home_url( '/huong-dan-ket-noi-website/' ) ); ?>" class="p-2.5 rounded-xl bg-blue-50/70 hover:bg-blue-100 text-blue-900 border border-blue-200 transition-colors flex items-center justify-between col-span-2">
-              <span class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-blue-600 text-[18px]">integration_instructions</span>
-                <span class="font-bold">Hướng dẫn kết nối website &amp; API B2B</span>
-              </span>
-              <span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-blue-600 text-white">Đối tác</span>
             </a>
           </div>
 

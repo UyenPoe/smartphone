@@ -38,7 +38,6 @@
           <li><a href="<?php echo esc_url(home_url('/bang-gia-thu-mua/')); ?>" class="hover:text-[#e60012] transition-colors">Bảng giá thu mua mới nhất</a></li>
           <li><a href="<?php echo esc_url(home_url('/quy-trinh-thu-mua/')); ?>" class="hover:text-[#e60012] transition-colors">Quy trình kiểm định 7 bước</a></li>
           <li><a href="<?php echo esc_url(home_url('/tieu-chuan-kiem-dinh/')); ?>" class="hover:text-[#e60012] transition-colors">Tiêu chuẩn Grade A / B / C / D</a></li>
-          <li><a href="<?php echo esc_url(home_url('/huong-dan-ket-noi-website/')); ?>" class="hover:text-[#e60012] transition-colors text-blue-600 font-bold">Hướng dẫn kết nối website &amp; API</a></li>
           <li><a href="<?php echo esc_url(home_url('/tra-cuu-yeu-cau/')); ?>" class="hover:text-[#e60012] transition-colors">Tra cứu tiến độ phiếu thu mua</a></li>
         </ul>
       </div>
