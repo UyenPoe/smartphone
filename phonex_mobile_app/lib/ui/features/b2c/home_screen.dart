@@ -85,7 +85,7 @@ class _B2CHomeScreenState extends State<B2CHomeScreen> {
 
               // 4. TOP BUYBACK MODELS GRID
               Row(
-                mainAxisAlignment: MainAxisAlignment.between,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
                     'Bảng Giá Thu Mua Nổi Bật',
@@ -147,7 +147,7 @@ class _B2CHomeScreenState extends State<B2CHomeScreen> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primary.withOpacity(0.3),
+            color: AppColors.primary.withValues(alpha: 0.3),
             blurRadius: 16,
             offset: const Offset(0, 6),
           ),
@@ -159,7 +159,7 @@ class _B2CHomeScreenState extends State<B2CHomeScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.2),
+              color: Colors.white.withValues(alpha: 0.2),
               borderRadius: BorderRadius.circular(20),
             ),
             child: const Row(
@@ -222,7 +222,7 @@ class _B2CHomeScreenState extends State<B2CHomeScreen> {
       {'title': 'Định giá 30s', 'icon': Icons.calculate, 'color': AppColors.primary, 'tab': 2},
       {'title': 'Bảng giá 300+', 'icon': Icons.table_chart, 'color': Colors.blue, 'tab': 1},
       {'title': 'Kho máy 99%', 'icon': Icons.inventory_2, 'color': Colors.amber[800], 'tab': 3},
-      {'title': 'Trả góp 0%', 'icon': Icons.credit_card, 'color': Colors.emerald, 'tab': 3},
+      {'title': 'Trả góp 0%', 'icon': Icons.credit_card, 'color': const Color(0xFF10B981), 'tab': 3},
     ];
 
     return Row(
@@ -353,7 +353,7 @@ class _B2CHomeScreenState extends State<B2CHomeScreen> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1.5),
                     decoration: BoxDecoration(
-                      color: AppColors.gradeA.withOpacity(0.12),
+                      color: AppColors.gradeA.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: const Text(

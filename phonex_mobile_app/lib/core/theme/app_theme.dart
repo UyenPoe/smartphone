@@ -7,7 +7,6 @@ class AppTheme {
   static ThemeData get lightTheme {
     final base = ThemeData.light();
     return base.copyWith(
-      useMaterial3: true,
       scaffoldBackgroundColor: AppColors.background,
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primary,
@@ -33,7 +32,7 @@ class AppTheme {
           fontWeight: FontWeight.w800,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: Colors.white,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -80,7 +79,6 @@ class AppTheme {
   static ThemeData get b2bTheme {
     final base = ThemeData.light();
     return base.copyWith(
-      useMaterial3: true,
       scaffoldBackgroundColor: const Color(0xFFF1F5F9),
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.b2bPrimary,

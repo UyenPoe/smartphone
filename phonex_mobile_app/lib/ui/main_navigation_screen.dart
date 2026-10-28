@@ -104,7 +104,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     return NavigationBar(
       selectedIndex: _b2bIndex,
       onDestinationSelected: (idx) => setState(() => _b2bIndex = idx),
-      indicatorColor: AppColors.b2bAccent.withOpacity(0.2),
+      indicatorColor: AppColors.b2bAccent.withValues(alpha: 0.2),
       backgroundColor: AppColors.b2bPrimary,
       elevation: 8,
       destinations: const [

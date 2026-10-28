@@ -136,7 +136,7 @@ class _B2CTrackingScreenState extends State<B2CTrackingScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.between,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 t.ticketCode,
@@ -145,7 +145,7 @@ class _B2CTrackingScreenState extends State<B2CTrackingScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                 decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(0.12),
+                  color: Colors.blue.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
@@ -159,7 +159,7 @@ class _B2CTrackingScreenState extends State<B2CTrackingScreen> {
           Text(t.deviceName, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
           const SizedBox(height: 4),
           Row(
-            mainAxisAlignment: MainAxisAlignment.between,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Kết quả thẩm định:', style: TextStyle(fontSize: 11, color: Colors.grey[600])),
               Text(t.grade, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppColors.gradeA)),

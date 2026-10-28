@@ -202,7 +202,7 @@ class _B2CValuationScreenState extends State<B2CValuationScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<PhoneModel>(
-              value: _selectedModel,
+              initialValue: _selectedModel,
               decoration: const InputDecoration(labelText: 'Dòng máy (Model)'),
               items: _availableModels.map((p) {
                 return DropdownMenuItem(value: p, child: Text(p.name));
@@ -352,10 +352,10 @@ class _B2CValuationScreenState extends State<B2CValuationScreen> {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.primary.withOpacity(0.3), width: 1.5),
+            border: Border.all(color: AppColors.primary.withValues(alpha: 0.3), width: 1.5),
             boxShadow: [
               BoxShadow(
-                color: AppColors.primary.withOpacity(0.08),
+                color: AppColors.primary.withValues(alpha: 0.08),
                 blurRadius: 16,
                 offset: const Offset(0, 4),
               ),
@@ -373,7 +373,7 @@ class _B2CValuationScreenState extends State<B2CValuationScreen> {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                 decoration: BoxDecoration(
-                  color: AppColors.gradeA.withOpacity(0.12),
+                  color: AppColors.gradeA.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
@@ -451,7 +451,7 @@ class _B2CValuationScreenState extends State<B2CValuationScreen> {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.green.withOpacity(0.3)),
+        border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [

@@ -47,7 +47,7 @@ class B2BPartnerWalletScreen extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                         decoration: BoxDecoration(
-                          color: AppColors.b2bAccent.withOpacity(0.2),
+                          color: AppColors.b2bAccent.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(

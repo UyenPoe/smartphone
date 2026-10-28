@@ -63,7 +63,7 @@ class _B2CUsedPhonesScreenState extends State<B2CUsedPhonesScreen> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: AppColors.primary.withOpacity(0.3), width: 1.5),
+                      border: Border.all(color: AppColors.primary.withValues(alpha: 0.3), width: 1.5),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +80,7 @@ class _B2CUsedPhonesScreenState extends State<B2CUsedPhonesScreen> {
                         ),
                         const SizedBox(height: 12),
                         DropdownButtonFormField<PhoneModel>(
-                          value: _selectedPhoneForInstallment,
+                          initialValue: _selectedPhoneForInstallment,
                           decoration: const InputDecoration(labelText: 'Chọn máy bạn muốn mua góp'),
                           items: _phones.map((p) => DropdownMenuItem(value: p, child: Text(p.name))).toList(),
                           onChanged: (val) {

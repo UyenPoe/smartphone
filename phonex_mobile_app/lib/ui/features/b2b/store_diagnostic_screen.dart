@@ -69,7 +69,7 @@ class _B2BStoreDiagnosticScreenState extends State<B2BStoreDiagnosticScreen> {
                   const Text('Thiết bị khách mang đến quầy:', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.grey)),
                   const SizedBox(height: 6),
                   DropdownButtonFormField<String>(
-                    value: _selectedModel,
+                    initialValue: _selectedModel,
                     decoration: const InputDecoration(contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8)),
                     items: const [
                       DropdownMenuItem(value: 'iPhone 15 Pro Max 256GB', child: Text('iPhone 15 Pro Max 256GB')),
@@ -185,7 +185,7 @@ class _B2BStoreDiagnosticScreenState extends State<B2BStoreDiagnosticScreen> {
       onChanged: (v) => onChanged(v),
       title: Text(label, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600)),
       dense: true,
-      activeColor: AppColors.b2bAccent,
+      activeThumbColor: AppColors.b2bAccent,
       contentPadding: EdgeInsets.zero,
     );
   }

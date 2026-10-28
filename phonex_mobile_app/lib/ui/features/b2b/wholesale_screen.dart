@@ -63,10 +63,10 @@ class _B2BWholesaleScreenState extends State<B2BWholesaleScreen> {
                         colors: [Color(0xFF0F172A), Color(0xFF1E293B)],
                       ),
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: AppColors.b2bAccent.withOpacity(0.4)),
+                      border: Border.all(color: AppColors.b2bAccent.withValues(alpha: 0.4)),
                     ),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.between,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,7 +96,7 @@ class _B2BWholesaleScreenState extends State<B2BWholesaleScreen> {
                         Container(
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.1),
+                            color: Colors.white.withValues(alpha: 0.1),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: const Icon(Icons.qr_code, color: Colors.white, size: 32),

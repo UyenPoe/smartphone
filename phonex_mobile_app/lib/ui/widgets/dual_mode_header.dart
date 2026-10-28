@@ -25,7 +25,7 @@ class DualModeHeader extends StatelessWidget implements PreferredSizeWidget {
         bottom: 8,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.between,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Left: Brand Logo & Mode Badge
           Row(
@@ -102,10 +102,10 @@ class DualModeHeader extends StatelessWidget implements PreferredSizeWidget {
               duration: const Duration(milliseconds: 300),
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: isB2B ? AppColors.b2bAccent.withOpacity(0.2) : AppColors.primaryContainer,
+                color: isB2B ? AppColors.b2bAccent.withValues(alpha: 0.2) : AppColors.primaryContainer,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: isB2B ? AppColors.b2bAccent : AppColors.primary.withOpacity(0.3),
+                  color: isB2B ? AppColors.b2bAccent : AppColors.primary.withValues(alpha: 0.3),
                   width: 1.2,
                 ),
               ),
