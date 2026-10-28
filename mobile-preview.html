@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhoneX Mobile App - Trình Xem Thử Ứng Dụng Tương Tác (Dual-Mode B2C & B2B)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    /* Hide scrollbars in phone screen */
+    .phone-screen::-webkit-scrollbar { display: none; }
+    .phone-screen { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col items-center justify-start p-4 sm:p-6 lg:p-8">
+
+  <!-- TOP BAR & CONTROLS -->
+  <header class="w-full max-w-6xl mb-6 flex flex-col md:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-4">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-[#e60012] flex items-center justify-center text-white font-black text-xl shadow-lg shadow-red-500/20">
+        <span class="material-symbols-outlined text-[24px]">smartphone</span>
+      </div>
+      <div>
+        <h1 class="text-xl sm:text-2xl font-black text-white flex items-center gap-1.5">
+          Phone<span class="text-[#e60012]">X</span> Mobile Simulator
+          <span class="text-[11px] bg-red-500/20 text-red-400 border border-red-500/30 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Dual-Mode</span>
+        </h1>
+        <p class="text-xs text-slate-400">Xem thử và tương tác trực tiếp với giao diện Mobile App Flutter (B2C &amp; B2B)</p>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="flex items-center gap-2">
+      <button type="button" onclick="toggleAppMode()" id="btnToggleMode" class="px-4 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-bold flex items-center gap-2 transition-all">
+        <span class="material-symbols-outlined text-[18px]">handshake</span>
+        <span id="txtBtnToggle">Chuyển Sang Cổng Đại Lý B2B</span>
+      </button>
+
+      <button type="button" onclick="toggleDeviceFrame()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold flex items-center gap-1.5 border border-slate-700 transition-colors">
+        <span class="material-symbols-outlined text-[18px]">devices</span>
+        <span id="txtDeviceFrame">iPhone 16 Pro</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN SIMULATOR LAYOUT -->
+  <main class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+    <!-- LEFT / DESCRIPTOR & NATIVE GUIDE (5 COLS) -->
+    <div class="lg:col-span-5 space-y-4 text-xs">
+      <!-- App Status Banner -->
+      <div class="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="font-extrabold text-sm text-white">Chế độ đang xem:</span>
+          <span id="badgeActiveMode" class="px-2.5 py-1 rounded-full bg-red-500/20 text-red-400 border border-red-500/30 font-black text-[11px] uppercase">
+            B2C Khách Lẻ
+          </span>
+        </div>
+        <p class="text-slate-300 leading-relaxed text-[12px]">
+          Bạn có thể bấm trực tiếp vào chiếc điện thoại bên cạnh để trải nghiệm định giá máy 30s, lướt bảng giá 300+ dòng máy, kéo thanh tính trả góp 0%, hoặc bấm nút đổi sang <strong>Cổng Đại Lý B2B</strong>.
+        </p>
+      </div>
+
+      <!-- Native Run Guide -->
+      <div class="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-3">
+        <div class="font-bold text-sm text-white flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-emerald-400 text-[18px]">terminal</span>
+          <span>Chạy mã nguồn Native bằng Flutter</span>
+        </div>
+        <p class="text-slate-400 leading-relaxed">
+          Mã nguồn Flutter hoàn chỉnh đã được tạo tại thư mục <code class="text-emerald-400 font-mono">phonex_mobile_app/</code>. Bạn có thể mở bằng Android Studio / VS Code hoặc gõ:
+        </p>
+        <div class="p-3 rounded-xl bg-black/60 font-mono text-[11px] text-emerald-400 space-y-1">
+          <div>$ cd phonex_mobile_app</div>
+          <div>$ flutter pub get</div>
+          <div class="text-yellow-400"># Chạy trực tiếp trên Web / Chrome:</div>
+          <div>$ flutter run -d chrome</div>
+          <div class="text-yellow-400"># Xuất file APK cài vào Android:</div>
+          <div>$ flutter build apk --release</div>
+        </div>
+      </div>
+
+      <!-- Features Checklist -->
+      <div class="p-5 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2.5">
+        <div class="font-bold text-sm text-white flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-blue-400 text-[18px]">checklist</span>
+          <span>Tính năng tương tác có sẵn trong Demo:</span>
+        </div>
+        <ul class="space-y-2 text-slate-300">
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 font-bold">✓</span>
+            <span><strong>Định giá AI 30s:</strong> Chọn model, khảo sát ngoại hình/màn hình, tự tính giá theo barem Grade A/B/C/D.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 font-bold">✓</span>
+            <span><strong>Kho máy cũ &amp; Trả góp:</strong> Kéo slider trả trước (0% - 50%), chọn 3/6/9/12 tháng.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 font-bold">✓</span>
+            <span><strong>Tra cứu tiến độ:</strong> Nhập SĐT để xem lịch sử hồ sơ thẩm định và trạng thái giải ngân.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-400 font-bold">✓</span>
+            <span><strong>Cổng B2B:</strong> Test máy tại quầy cho kỹ thuật viên đối tác, ví hoa hồng CTV và mã QR.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT / PHONE MOCKUP SIMULATOR (7 COLS) -->
+    <div class="lg:col-span-7 flex justify-center">
+      
+      <!-- PHONE HARDWARE FRAME (Titanium Curved Frame) -->
+      <div id="phoneFrame" class="relative w-[385px] h-[800px] bg-black rounded-[52px] p-[11px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.15)] ring-4 ring-slate-800 transition-all select-none">
+        
+        <!-- DYNAMIC ISLAND / CAMERA NOTCH -->
+        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-7 bg-black rounded-full z-50 flex items-center justify-between px-2.5 shadow-md pointer-events-none">
+          <div class="w-3 h-3 rounded-full bg-slate-900 border border-slate-800"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-blue-900/40"></div>
+        </div>
+
+        <!-- INNER SCREEN (iOS Viewport) -->
+        <div id="appContainer" class="phone-screen w-full h-full bg-[#f8f9fb] rounded-[42px] overflow-y-auto overflow-x-hidden flex flex-col relative text-slate-900 text-xs">
+
+          <!-- 1. STATUS BAR -->
+          <div class="h-10 px-6 pt-3 flex items-center justify-between text-[11px] font-bold text-slate-900 sticky top-0 z-40 bg-white/90 backdrop-blur-md">
+            <span>9:41</span>
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[13px]">signal_cellular_4_bar</span>
+              <span class="material-symbols-outlined text-[13px]">wifi</span>
+              <span class="material-symbols-outlined text-[14px]">battery_full</span>
+            </div>
+          </div>
+
+          <!-- 2. DUAL-MODE HEADER -->
+          <div id="appHeader" class="bg-white border-b border-gray-100 px-4 py-2.5 flex items-center justify-between sticky top-10 z-30 transition-colors">
+            <div class="flex items-center gap-2">
+              <div id="headerLogoBox" class="w-8 h-8 rounded-xl bg-[#e60012] flex items-center justify-center text-white shadow-xs">
+                <span class="material-symbols-outlined text-[18px]">smartphone</span>
+              </div>
+              <div class="leading-none">
+                <span class="text-base font-black tracking-tight" id="headerTitle">Phone<span class="text-[#e60012]">X</span></span>
+                <div class="text-[9px] font-bold text-gray-500 mt-0.5" id="headerSubtitle">Thu Mua &amp; Bán Sỉ</div>
+              </div>
+            </div>
+
+            <!-- Mode Switch Button in App -->
+            <button type="button" onclick="toggleAppMode()" id="appModeBadgeBtn" class="px-2.5 py-1 rounded-full bg-red-50 border border-red-200 text-[#b7000c] text-[10px] font-extrabold flex items-center gap-1">
+              <span class="material-symbols-outlined text-[13px]">storefront</span>
+              <span id="headerModeBtnText">Cổng Đại Lý</span>
+            </button>
+          </div>
+
+          <!-- 3. MAIN BODY VIEWS -->
+          <div class="flex-1 pb-20" id="mainScreenContent">
+            <!-- Dynamic Content Injected Here via JavaScript -->
+          </div>
+
+          <!-- 4. BOTTOM NAVIGATION BAR -->
+          <nav id="appBottomNav" class="h-16 bg-white/95 backdrop-blur-md border-t border-gray-200/80 fixed bottom-[11px] w-[363px] rounded-b-[42px] px-2 grid grid-cols-5 items-center z-40 transition-colors">
+            <!-- Navigation Items Injected Dynamically -->
+          </nav>
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- JAVASCRIPT APP SIMULATOR LOGIC -->
+  <script>
+    // State
+    let isB2B = false;
+    let currentB2CIndex = 0; // 0: Home, 1: Price, 2: Valuation, 3: Inventory, 4: Tracking
+    let currentB2BIndex = 0; // 0: Wholesale, 1: Diagnostic, 2: Wallet
+
+    // Valuation Wizard State
+    let valStep = 0;
+    let selectedModel = 'iPhone 15 Pro Max';
+    let selectedCapacity = '256GB';
+    let bodyGrade = 'grade_a';
+    let screenGrade = 'grade_a';
+    let estimatedPrice = 21500000;
+    let subsidy = 1500000;
+    let bookingCode = '';
+
+    // Installment Calculator State
+    let prepayPercent = 20;
+    let tenureMonths = 6;
+    let installmentPrice = 21500000;
+
+    // B2B Diagnostic State
+    let diagScreen = true;
+    let diagTouch = true;
+    let diagFaceId = true;
+    let diagCamera = true;
+    let diagBattery = true;
+    let diagBody = true;
+    let b2bBuyPrice = 21500000;
+    let b2bCommission = 860000;
+    let partnerWallet = 14850000;
+    let completedTickets = 38;
+
+    function formatMoney(num) {
+      return new Intl.NumberFormat('vi-VN').format(Math.round(num)) + 'đ';
+    }
+
+    function toggleAppMode() {
+      isB2B = !isB2B;
+      renderAppHeader();
+      renderBottomNav();
+      renderCurrentScreen();
+
+      // Update Outer Simulator Controls
+      const badge = document.getElementById('badgeActiveMode');
+      const btnTxt = document.getElementById('txtBtnToggle');
+      if (isB2B) {
+        badge.innerText = 'B2B ĐẠI LÝ & SỈ';
+        badge.className = 'px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-black text-[11px] uppercase';
+        btnTxt.innerText = 'Chuyển Về Khách Lẻ B2C';
+      } else {
+        badge.innerText = 'B2C KHÁCH LẺ';
+        badge.className = 'px-2.5 py-1 rounded-full bg-red-500/20 text-red-400 border border-red-500/30 font-black text-[11px] uppercase';
+        btnTxt.innerText = 'Chuyển Sang Cổng Đại Lý B2B';
+      }
+    }
+
+    function renderAppHeader() {
+      const header = document.getElementById('appHeader');
+      const logoBox = document.getElementById('headerLogoBox');
+      const title = document.getElementById('headerTitle');
+      const sub = document.getElementById('headerSubtitle');
+      const btn = document.getElementById('appModeBadgeBtn');
+      const btnTxt = document.getElementById('headerModeBtnText');
+
+      if (isB2B) {
+        header.className = 'bg-[#0f172a] text-white border-b border-slate-800 px-4 py-2.5 flex items-center justify-between sticky top-10 z-30 transition-colors';
+        logoBox.className = 'w-8 h-8 rounded-xl bg-amber-500 flex items-center justify-center text-black shadow-xs';
+        title.innerHTML = 'Phone<span class="text-amber-400">X</span>';
+        sub.innerText = 'CỔNG ĐẠI LÝ & SỈ B2B';
+        sub.className = 'text-[9px] font-bold text-amber-300/80 mt-0.5';
+        btn.className = 'px-2.5 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] font-extrabold flex items-center gap-1';
+        btnTxt.innerText = 'Về Khách Lẻ';
+      } else {
+        header.className = 'bg-white text-slate-900 border-b border-gray-100 px-4 py-2.5 flex items-center justify-between sticky top-10 z-30 transition-colors';
+        logoBox.className = 'w-8 h-8 rounded-xl bg-[#e60012] flex items-center justify-center text-white shadow-xs';
+        title.innerHTML = 'Phone<span class="text-[#e60012]">X</span>';
+        sub.innerText = 'Thu Mua & Bán Sỉ';
+        sub.className = 'text-[9px] font-bold text-gray-500 mt-0.5';
+        btn.className = 'px-2.5 py-1 rounded-full bg-red-50 border border-red-200 text-[#b7000c] text-[10px] font-extrabold flex items-center gap-1';
+        btnTxt.innerText = 'Cổng Đại Lý';
+      }
+    }
+
+    function renderBottomNav() {
+      const nav = document.getElementById('appBottomNav');
+      if (isB2B) {
+        nav.className = 'h-16 bg-[#0f172a]/95 backdrop-blur-md border-t border-slate-800 fixed bottom-[11px] w-[363px] rounded-b-[42px] px-2 grid grid-cols-3 items-center z-40 transition-colors';
+        nav.innerHTML = `
+          <button type="button" onclick="switchB2BTab(0)" class="flex flex-col items-center justify-center gap-0.5 ${currentB2BIndex === 0 ? 'text-amber-400 font-black' : 'text-slate-400 hover:text-white'}">
+            <span class="material-symbols-outlined text-[20px]">storefront</span>
+            <span class="text-[10px]">Kho Sỉ B2B</span>
+          </button>
+          <button type="button" onclick="switchB2BTab(1)" class="flex flex-col items-center justify-center gap-0.5 ${currentB2BIndex === 1 ? 'text-amber-400 font-black' : 'text-slate-400 hover:text-white'}">
+            <span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+            <span class="text-[10px]">Test Tại Quầy</span>
+          </button>
+          <button type="button" onclick="switchB2BTab(2)" class="flex flex-col items-center justify-center gap-0.5 ${currentB2BIndex === 2 ? 'text-amber-400 font-black' : 'text-slate-400 hover:text-white'}">
+            <span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+            <span class="text-[10px]">Ví Hoa Hồng</span>
+          </button>
+        `;
+      } else {
+        nav.className = 'h-16 bg-white/95 backdrop-blur-md border-t border-gray-200/80 fixed bottom-[11px] w-[363px] rounded-b-[42px] px-1 grid grid-cols-5 items-center z-40 transition-colors';
+        nav.innerHTML = `
+          <button type="button" onclick="switchB2CTab(0)" class="flex flex-col items-center justify-center gap-0.5 ${currentB2CIndex === 0 ? 'text-[#e60012] font-black' : 'text-gray-500'}">
+            <span class="material-symbols-outlined text-[20px]">home</span>
+            <span class="text-[9.5px]">Trang chủ</span>
+          </button>
+          <button type="button" onclick="switchB2CTab(1)" class="flex flex-col items-center justify-center gap-0.5 ${currentB2CIndex === 1 ? 'text-[#e60012] font-black' : 'text-gray-500'}">
+            <span class="material-symbols-outlined text-[20px]">table_chart</span>
+            <span class="text-[9.5px]">Bảng giá</span>
+          </button>
+          <button type="button" onclick="switchB2CTab(2)" class="flex flex-col items-center justify-center gap-0.5 ${currentB2CIndex === 2 ? 'text-[#e60012] font-black' : 'text-gray-500'}">
+            <span class="material-symbols-outlined text-[22px] text-[#e60012]">calculate</span>
+            <span class="text-[9.5px] font-bold text-[#e60012]">Định giá 30s</span>
+          </button>
+          <button type="button" onclick="switchB2CTab(3)" class="flex flex-col items-center justify-center gap-0.5 ${currentB2CIndex === 3 ? 'text-[#e60012] font-black' : 'text-gray-500'}">
+            <span class="material-symbols-outlined text-[20px]">inventory_2</span>
+            <span class="text-[9.5px]">Kho máy</span>
+          </button>
+          <button type="button" onclick="switchB2CTab(4)" class="flex flex-col items-center justify-center gap-0.5 ${currentB2CIndex === 4 ? 'text-[#e60012] font-black' : 'text-gray-500'}">
+            <span class="material-symbols-outlined text-[20px]">track_changes</span>
+            <span class="text-[9.5px]">Tra cứu</span>
+          </button>
+        `;
+      }
+    }
+
+    function switchB2CTab(idx) {
+      currentB2CIndex = idx;
+      renderBottomNav();
+      renderCurrentScreen();
+    }
+
+    function switchB2BTab(idx) {
+      currentB2BIndex = idx;
+      renderBottomNav();
+      renderCurrentScreen();
+    }
+
+    function renderCurrentScreen() {
+      const container = document.getElementById('mainScreenContent');
+      if (isB2B) {
+        if (currentB2BIndex === 0) container.innerHTML = renderB2BWholesale();
+        else if (currentB2BIndex === 1) container.innerHTML = renderB2BDiagnostic();
+        else container.innerHTML = renderB2BWallet();
+      } else {
+        if (currentB2CIndex === 0) container.innerHTML = renderB2CHome();
+        else if (currentB2CIndex === 1) container.innerHTML = renderB2CPriceList();
+        else if (currentB2CIndex === 2) container.innerHTML = renderB2CValuation();
+        else if (currentB2CIndex === 3) container.innerHTML = renderB2CInventory();
+        else container.innerHTML = renderB2CTracking();
+      }
+    }
+
+    /* ----------------------------------------------------
+       B2C SCREENS
+    ---------------------------------------------------- */
+    function renderB2CHome() {
+      return `
+        <div class="p-3.5 space-y-3.5">
+          <!-- Hero Banner -->
+          <div class="p-4 rounded-2xl bg-gradient-to-r from-[#e60012] to-[#b7000c] text-white shadow-md space-y-2">
+            <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/20 text-[9px] font-black tracking-wider uppercase">
+              <span class="material-symbols-outlined text-[12px] text-yellow-300">bolt</span>
+              <span>ĐỊNH GIÁ AI 30 GIÂY</span>
+            </div>
+            <div class="text-base font-black leading-tight">Thu Cũ Giá Cao Nhất<br>Trợ Giá Đến 3.000.000đ</div>
+            <button type="button" onclick="switchB2CTab(2)" class="px-3.5 py-2 rounded-xl bg-white text-[#e60012] text-[11px] font-extrabold flex items-center gap-1 shadow-xs hover:bg-gray-50">
+              <span class="material-symbols-outlined text-[14px]">calculate</span>
+              <span>ĐỊNH GIÁ MÁY NGAY &rarr;</span>
+            </button>
+          </div>
+
+          <!-- 4 Quick Actions -->
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="switchB2CTab(2)" class="p-2 rounded-xl bg-white border border-gray-200 text-center flex flex-col items-center">
+              <span class="material-symbols-outlined text-[#e60012] text-[22px]">calculate</span>
+              <span class="text-[10px] font-bold text-gray-800 mt-1">Định giá</span>
+            </button>
+            <button onclick="switchB2CTab(1)" class="p-2 rounded-xl bg-white border border-gray-200 text-center flex flex-col items-center">
+              <span class="material-symbols-outlined text-blue-600 text-[22px]">table_chart</span>
+              <span class="text-[10px] font-bold text-gray-800 mt-1">Bảng giá</span>
+            </button>
+            <button onclick="switchB2CTab(3)" class="p-2 rounded-xl bg-white border border-gray-200 text-center flex flex-col items-center">
+              <span class="material-symbols-outlined text-amber-600 text-[22px]">inventory_2</span>
+              <span class="text-[10px] font-bold text-gray-800 mt-1">Kho 99%</span>
+            </button>
+            <button onclick="switchB2CTab(3)" class="p-2 rounded-xl bg-white border border-gray-200 text-center flex flex-col items-center">
+              <span class="material-symbols-outlined text-emerald-600 text-[22px]">credit_card</span>
+              <span class="text-[10px] font-bold text-gray-800 mt-1">Trả góp</span>
+            </button>
+          </div>
+
+          <!-- Featured Price Box -->
+          <div class="flex items-center justify-between pt-1">
+            <span class="font-extrabold text-[13px] text-gray-900">Bảng Giá Thu Mua Nổi Bật</span>
+            <button onclick="switchB2CTab(1)" class="text-[#e60012] font-bold text-[11px]">Xem 300+ máy &gt;</button>
+          </div>
+
+          <!-- Product Card 1 -->
+          <div class="p-3 bg-white rounded-2xl border border-gray-200 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400">
+                <span class="material-symbols-outlined text-[26px]">smartphone</span>
+              </div>
+              <div>
+                <div class="font-black text-gray-900 text-xs">iPhone 15 Pro Max 256GB</div>
+                <div class="text-[10px] text-emerald-600 font-bold mt-0.5">Grade A (99%) • Trợ giá +2Tr</div>
+                <div class="text-[13px] font-black text-[#e60012] mt-0.5">21.500.000đ</div>
+              </div>
+            </div>
+            <button onclick="switchB2CTab(2)" class="px-2.5 py-1.5 bg-red-50 text-[#e60012] font-bold text-[10px] rounded-lg">Định giá</button>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="p-3 bg-white rounded-2xl border border-gray-200 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400">
+                <span class="material-symbols-outlined text-[26px]">smartphone</span>
+              </div>
+              <div>
+                <div class="font-black text-gray-900 text-xs">Galaxy S24 Ultra 256GB</div>
+                <div class="text-[10px] text-emerald-600 font-bold mt-0.5">Grade A (99%) • Trợ giá +2.5Tr</div>
+                <div class="text-[13px] font-black text-[#e60012] mt-0.5">19.800.000đ</div>
+              </div>
+            </div>
+            <button onclick="switchB2CTab(2)" class="px-2.5 py-1.5 bg-red-50 text-[#e60012] font-bold text-[10px] rounded-lg">Định giá</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderB2CPriceList() {
+      return `
+        <div class="p-3.5 space-y-3">
+          <div class="text-sm font-black text-gray-900">Bảng Giá Thu Mua (300+ Model)</div>
+          <div class="relative">
+            <span class="material-symbols-outlined absolute left-3 top-2.5 text-gray-400 text-[18px]">search</span>
+            <input type="text" placeholder="Tìm kiếm model máy..." class="w-full h-9 pl-9 pr-3 rounded-xl border border-gray-200 text-xs outline-none bg-white">
+          </div>
+          <div class="flex gap-1.5 overflow-x-auto pb-1">
+            <span class="px-3 py-1 rounded-full bg-[#e60012] text-white text-[10.5px] font-bold">Apple</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-700 text-[10.5px] font-bold">Samsung</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-700 text-[10.5px] font-bold">Xiaomi</span>
+            <span class="px-3 py-1 rounded-full bg-white border border-gray-200 text-gray-700 text-[10.5px] font-bold">OPPO</span>
+          </div>
+
+          <!-- Price Row Item -->
+          <div class="p-3 bg-white rounded-2xl border border-gray-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-black text-xs text-gray-900">iPhone 15 Pro Max 256GB</span>
+              <span class="text-[9.5px] bg-red-100 text-[#b7000c] px-1.5 py-0.5 rounded-full font-bold">Trợ giá 2Tr</span>
+            </div>
+            <div class="grid grid-cols-4 gap-1 text-[9.5px]">
+              <div><span class="text-gray-400">Grade A</span><br><b class="text-emerald-600">21.500k</b></div>
+              <div><span class="text-gray-400">Grade B</span><br><b class="text-blue-600">19.800k</b></div>
+              <div><span class="text-gray-400">Grade C</span><br><b class="text-amber-600">17.500k</b></div>
+              <div><span class="text-gray-400">Grade D</span><br><b class="text-red-600">14.200k</b></div>
+            </div>
+          </div>
+
+          <!-- Price Row Item 2 -->
+          <div class="p-3 bg-white rounded-2xl border border-gray-200 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-black text-xs text-gray-900">iPhone 15 Pro 128GB</span>
+              <span class="text-[9.5px] bg-red-100 text-[#b7000c] px-1.5 py-0.5 rounded-full font-bold">Trợ giá 1.5Tr</span>
+            </div>
+            <div class="grid grid-cols-4 gap-1 text-[9.5px]">
+              <div><span class="text-gray-400">Grade A</span><br><b class="text-emerald-600">18.200k</b></div>
+              <div><span class="text-gray-400">Grade B</span><br><b class="text-blue-600">16.800k</b></div>
+              <div><span class="text-gray-400">Grade C</span><br><b class="text-amber-600">14.900k</b></div>
+              <div><span class="text-gray-400">Grade D</span><br><b class="text-red-600">12.000k</b></div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderB2CValuation() {
+      if (bookingCode) {
+        return `
+          <div class="p-4 space-y-4 text-center">
+            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-600">
+              <span class="material-symbols-outlined text-[36px]">check_circle</span>
+            </div>
+            <div class="text-base font-black text-gray-900">Đặt Lịch Thu Mua Thành Công!</div>
+            <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 text-xs">
+              <span class="text-gray-500">Mã phiếu tra cứu:</span><br>
+              <strong class="text-[#e60012] text-sm font-black">${bookingCode}</strong>
+            </div>
+            <p class="text-xs text-gray-600">Kỹ thuật viên PhoneX đã tiếp nhận yêu cầu và sẽ liên hệ chuyển khoản trong 5 phút.</p>
+            <button onclick="bookingCode=''; valStep=0; renderCurrentScreen();" class="w-full py-2.5 rounded-xl bg-[#e60012] text-white font-bold text-xs">Định giá thiết bị khác</button>
+          </div>
+        `;
+      }
+
+      if (valStep === 0) {
+        return `
+          <div class="p-3.5 space-y-3">
+            <div class="text-xs font-black text-gray-900 uppercase">Bước 1: Chọn máy bạn muốn bán</div>
+            <div class="p-3 bg-white rounded-2xl border border-gray-200 space-y-3">
+              <div>
+                <label class="block text-[11px] font-bold text-gray-700 mb-1">Dòng máy (Model)</label>
+                <select id="selValModel" class="w-full h-9 px-2 rounded-xl border border-gray-200 text-xs bg-white font-bold">
+                  <option value="iPhone 15 Pro Max">iPhone 15 Pro Max</option>
+                  <option value="iPhone 15 Pro">iPhone 15 Pro</option>
+                  <option value="iPhone 14 Pro Max">iPhone 14 Pro Max</option>
+                  <option value="Galaxy S24 Ultra">Galaxy S24 Ultra</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-gray-700 mb-1">Dung lượng bộ nhớ</label>
+                <div class="flex gap-2">
+                  <span class="px-3 py-1 rounded-lg bg-[#e60012] text-white text-[11px] font-bold">256GB</span>
+                  <span class="px-3 py-1 rounded-lg bg-gray-100 text-gray-700 text-[11px] font-bold">512GB</span>
+                  <span class="px-3 py-1 rounded-lg bg-gray-100 text-gray-700 text-[11px] font-bold">1TB</span>
+                </div>
+              </div>
+              <button onclick="valStep=1; renderCurrentScreen();" class="w-full py-2.5 rounded-xl bg-[#e60012] text-white font-bold text-xs">TIẾP TỤC: ĐÁNH GIÁ TÌNH TRẠNG &gt;</button>
+            </div>
+          </div>
+        `;
+      } else if (valStep === 1) {
+        return `
+          <div class="p-3.5 space-y-3">
+            <div class="text-xs font-black text-gray-900 uppercase">Bước 2: Khảo sát ngoại hình &amp; màn hình</div>
+            <div class="p-3 bg-white rounded-2xl border border-gray-200 space-y-3 text-xs">
+              <div>
+                <span class="font-bold">1. Ngoại hình vỏ máy:</span>
+                <div class="mt-1 space-y-1">
+                  <label class="flex items-center gap-2 p-2 rounded-lg bg-red-50 border border-red-200 font-bold text-[#b7000c]">
+                    <input type="radio" checked name="body"> Grade A: Đẹp như mới, không trầy
+                  </label>
+                  <label class="flex items-center gap-2 p-2 rounded-lg bg-gray-50 border border-gray-200">
+                    <input type="radio" name="body"> Grade B: Trầy nhẹ không cấn móp
+                  </label>
+                </div>
+              </div>
+              <div>
+                <span class="font-bold">2. Tình trạng màn hình:</span>
+                <div class="mt-1 space-y-1">
+                  <label class="flex items-center gap-2 p-2 rounded-lg bg-red-50 border border-red-200 font-bold text-[#b7000c]">
+                    <input type="radio" checked name="screen"> Màn zin keng 100%, không trầy
+                  </label>
+                  <label class="flex items-center gap-2 p-2 rounded-lg bg-gray-50 border border-gray-200">
+                    <input type="radio" name="screen"> Màn xước nhẹ lông mèo
+                  </label>
+                </div>
+              </div>
+              <button onclick="valStep=2; renderCurrentScreen();" class="w-full py-2.5 rounded-xl bg-[#e60012] text-white font-bold text-xs">XEM BÁO GIÁ NGAY ⚡</button>
+            </div>
+          </div>
+        `;
+      } else {
+        return `
+          <div class="p-3.5 space-y-3">
+            <div class="p-4 bg-white rounded-2xl border border-red-200 shadow-xs text-center space-y-1">
+              <span class="text-gray-400 text-[10px] font-bold">GIÁ THU DỰ KIẾN</span>
+              <div class="text-2xl font-black text-[#e60012]">21.500.000đ</div>
+              <span class="inline-block px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-bold text-[10px]">Grade A (Like New 99%)</span>
+              <div class="pt-2 text-[11px] text-gray-500">Trợ giá thu cũ lên đời: <b class="text-emerald-600">+1.500.000đ</b></div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="p-3 bg-white rounded-2xl border border-gray-200 space-y-2">
+              <div class="font-bold text-xs text-gray-900">Đặt lịch thu mua (Nhận tiền sau 5p)</div>
+              <input type="text" id="custName" placeholder="Họ và tên của bạn" value="Nguyễn Văn A" class="w-full h-8 px-2.5 rounded-lg border border-gray-200 text-xs">
+              <input type="tel" id="custPhone" placeholder="Số điện thoại nhận tiền" value="0901234567" class="w-full h-8 px-2.5 rounded-lg border border-gray-200 text-xs">
+              <button onclick="bookingCode='PX-TM-261028-8819'; renderCurrentScreen();" class="w-full py-2.5 rounded-xl bg-[#e60012] text-white font-bold text-xs">XÁC NHẬN BÁN MÁY &amp; GIỮ GIÁ 72H</button>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function renderB2CInventory() {
+      const monthly = Math.round((installmentPrice * (1 - prepayPercent / 100)) / tenureMonths);
+      return `
+        <div class="p-3.5 space-y-3">
+          <!-- Installment Box -->
+          <div class="p-3.5 bg-white rounded-2xl border border-red-200 space-y-2.5">
+            <div class="flex items-center gap-1.5 font-black text-xs text-gray-900">
+              <span class="material-symbols-outlined text-[#e60012] text-[18px]">credit_card</span>
+              <span>Tính Tiền Trả Góp 0% Lãi Suất</span>
+            </div>
+            <div>
+              <span class="text-[11px] font-bold text-gray-700">Trả trước: ${prepayPercent}% (${formatMoney(installmentPrice * prepayPercent / 100)})</span>
+              <input type="range" min="0" max="50" step="10" value="${prepayPercent}" oninput="prepayPercent=this.value; renderCurrentScreen();" class="w-full accent-[#e60012]">
+            </div>
+            <div>
+              <span class="text-[11px] font-bold text-gray-700">Kỳ hạn vay góp:</span>
+              <div class="flex gap-2 mt-1">
+                <button onclick="tenureMonths=3; renderCurrentScreen();" class="px-2.5 py-1 rounded-lg ${tenureMonths===3?'bg-[#e60012] text-white font-bold':'bg-gray-100 text-gray-700'} text-[10.5px]">3 Tháng</button>
+                <button onclick="tenureMonths=6; renderCurrentScreen();" class="px-2.5 py-1 rounded-lg ${tenureMonths===6?'bg-[#e60012] text-white font-bold':'bg-gray-100 text-gray-700'} text-[10.5px]">6 Tháng</button>
+                <button onclick="tenureMonths=12; renderCurrentScreen();" class="px-2.5 py-1 rounded-lg ${tenureMonths===12?'bg-[#e60012] text-white font-bold':'bg-gray-100 text-gray-700'} text-[10.5px]">12 Tháng</button>
+              </div>
+            </div>
+            <div class="pt-1 flex items-center justify-between border-t border-gray-100">
+              <span class="text-[11px] text-gray-600">Góp mỗi tháng:</span>
+              <span class="text-sm font-black text-[#e60012]">${formatMoney(monthly)}/tháng</span>
+            </div>
+          </div>
+
+          <!-- Preowned List -->
+          <div class="text-xs font-black text-gray-900">Kho Máy Cũ 99% Sẵn Hàng</div>
+          <div class="p-3 bg-white rounded-2xl border border-gray-200 flex items-center justify-between">
+            <div>
+              <div class="font-bold text-xs text-gray-900">iPhone 14 Pro Max 128GB</div>
+              <div class="text-[10px] text-gray-500">Zin 100% • Pin 94% • BH 12 tháng</div>
+              <div class="text-xs font-black text-[#e60012] mt-0.5">17.500.000đ</div>
+            </div>
+            <button onclick="installmentPrice=17500000; renderCurrentScreen();" class="px-2.5 py-1.5 bg-red-50 text-[#e60012] font-bold text-[10px] rounded-lg">Chọn góp</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderB2CTracking() {
+      return `
+        <div class="p-3.5 space-y-3">
+          <div class="text-sm font-black text-gray-900">Tra Cứu Hồ Sơ &amp; Bảo Hành</div>
+          <div class="p-3 bg-white rounded-2xl border border-gray-200 space-y-2">
+            <span class="text-[11px] font-bold text-gray-700">Nhập số điện thoại tra cứu:</span>
+            <div class="flex gap-2">
+              <input type="tel" value="0901234567" class="flex-1 h-8 px-2.5 rounded-lg border border-gray-200 text-xs">
+              <button class="px-3 py-1 bg-[#e60012] text-white font-bold text-xs rounded-lg">Tra cứu</button>
+            </div>
+          </div>
+
+          <!-- Ticket Card -->
+          <div class="p-3.5 bg-white rounded-2xl border border-gray-200 space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="font-black text-xs text-[#e60012]">PX-TM-261028-9921</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[9px] font-black">Hoàn tất</span>
+            </div>
+            <div class="font-bold text-xs text-gray-900">iPhone 15 Pro Max 256GB</div>
+            <div class="text-[11px] text-gray-600">Thẩm định: <b class="text-emerald-600">Grade A (99%)</b></div>
+            <div class="text-[11px] text-gray-600">Giải ngân: <b class="text-[#e60012]">21.500.000đ</b> (Chuyển khoản)</div>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ----------------------------------------------------
+       B2B SCREENS (ĐẠI LÝ & SỈ)
+    ---------------------------------------------------- */
+    function renderB2BWholesale() {
+      return `
+        <div class="p-3.5 space-y-3 text-slate-100">
+          <!-- B2B Partner Tier Banner -->
+          <div class="p-3.5 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 border border-amber-500/40 space-y-1.5 shadow-md">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] text-amber-400 font-extrabold flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">stars</span> ĐẠI LÝ KIM CƯƠNG (TIER 1)
+              </span>
+              <span class="text-[9.5px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-bold">PX-VIP-8899</span>
+            </div>
+            <div class="text-sm font-black text-white">Chiết khấu sỉ trực tiếp 12% - 18%</div>
+            <div class="text-[10px] text-slate-400">Áp dụng đơn từ 3 máy • Hỗ trợ công nợ đối soát 15 ngày</div>
+          </div>
+
+          <div class="text-xs font-black text-slate-900">Bảng Giá Nhập Sỉ Theo Lô (Sẵn Kho)</div>
+
+          <!-- B2B Item 1 -->
+          <div class="p-3 bg-white rounded-2xl border border-slate-200 flex items-center justify-between text-slate-900">
+            <div>
+              <div class="font-black text-xs">iPhone 15 Pro Max 256GB</div>
+              <div class="text-[10px] text-emerald-600 font-bold">Sẵn kho: 24 máy (Grade A 99%)</div>
+              <div class="text-xs text-slate-500 mt-0.5">Giá sỉ: <b class="text-[#e60012] text-sm font-black">18.900.000đ</b></div>
+            </div>
+            <button onclick="alert('Đã thêm 1 lô iPhone 15 Pro Max vào đơn sỉ đại lý!')" class="px-2.5 py-1.5 bg-[#0f172a] text-amber-400 font-bold text-[10px] rounded-lg">Nhập sỉ</button>
+          </div>
+
+          <!-- B2B Item 2 -->
+          <div class="p-3 bg-white rounded-2xl border border-slate-200 flex items-center justify-between text-slate-900">
+            <div>
+              <div class="font-black text-xs">Galaxy S24 Ultra 256GB</div>
+              <div class="text-[10px] text-emerald-600 font-bold">Sẵn kho: 15 máy (Grade A 99%)</div>
+              <div class="text-xs text-slate-500 mt-0.5">Giá sỉ: <b class="text-[#e60012] text-sm font-black">17.200.000đ</b></div>
+            </div>
+            <button onclick="alert('Đã thêm 1 lô Galaxy S24 Ultra vào đơn sỉ đại lý!')" class="px-2.5 py-1.5 bg-[#0f172a] text-amber-400 font-bold text-[10px] rounded-lg">Nhập sỉ</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderB2BDiagnostic() {
+      return `
+        <div class="p-3.5 space-y-3 text-slate-900">
+          <div class="text-xs font-black text-slate-900 uppercase">Thẩm Định Máy Tại Quầy (Dành Cho KTV)</div>
+          <div class="p-3 bg-white rounded-2xl border border-slate-200 space-y-2 text-xs">
+            <span class="font-bold text-gray-700">Dòng máy khách mang đến quầy:</span>
+            <select class="w-full h-8 px-2 rounded-lg border border-gray-200 font-bold">
+              <option>iPhone 15 Pro Max 256GB</option>
+              <option>Galaxy S24 Ultra 256GB</option>
+            </select>
+            <div class="space-y-1.5 pt-1">
+              <label class="flex items-center justify-between text-[11px]">
+                <span>1. Màn hình không ám sọc</span>
+                <input type="checkbox" checked class="accent-amber-500">
+              </label>
+              <label class="flex items-center justify-between text-[11px]">
+                <span>2. Cảm ứng vuốt mượt 100%</span>
+                <input type="checkbox" checked class="accent-amber-500">
+              </label>
+              <label class="flex items-center justify-between text-[11px]">
+                <span>3. Face ID / Vân tay tốt</span>
+                <input type="checkbox" checked class="accent-amber-500">
+              </label>
+              <label class="flex items-center justify-between text-[11px]">
+                <span>4. Pin trên 85% dung lượng</span>
+                <input type="checkbox" checked class="accent-amber-500">
+              </label>
+            </div>
+          </div>
+
+          <!-- Guaranteed Card -->
+          <div class="p-3.5 rounded-2xl bg-[#0f172a] text-white border border-amber-500/40 space-y-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="text-slate-300">PhoneX Cam Kết Thu:</span>
+              <strong class="text-sm font-black">${formatMoney(b2bBuyPrice)}</strong>
+            </div>
+            <div class="flex justify-between items-center text-xs pt-1 border-t border-slate-700">
+              <span class="text-amber-400 font-bold">Hoa hồng Đại lý nhận:</span>
+              <strong class="text-sm font-black text-amber-400">+${formatMoney(b2bCommission)}</strong>
+            </div>
+            <button onclick="partnerWallet += b2bCommission; completedTickets++; alert('🎉 Đã chốt thu máy tại quầy! Hoa hồng +860.000đ đã được cộng vào Ví đối tác.'); renderCurrentScreen();" class="w-full py-2 bg-amber-500 hover:bg-amber-400 text-black font-black text-xs rounded-xl shadow-xs">
+              CHỐT THU MÁY &amp; IN PHIẾU QR
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderB2BWallet() {
+      return `
+        <div class="p-3.5 space-y-3 text-slate-900">
+          <!-- Wallet Card -->
+          <div class="p-4 rounded-2xl bg-[#0f172a] text-white border border-amber-500/40 space-y-2 shadow-md">
+            <div class="flex justify-between items-center text-[11px] text-slate-400">
+              <span>Đại Lý PhoneX Sài Gòn 01</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 font-bold">PX-VIP-8899</span>
+            </div>
+            <div class="text-[10px] text-slate-400">SỐ DƯ HOA HỒNG KHẢ DỤNG</div>
+            <div class="text-2xl font-black text-white">${formatMoney(partnerWallet)}</div>
+            <button onclick="alert('Đã gửi yêu cầu rút ${formatMoney(partnerWallet)} về tài khoản ngân hàng của đại lý. Tiền về trong 2 giờ.');" class="w-full py-2 bg-amber-500 text-black font-black text-xs rounded-xl">
+              RÚT TIỀN VỀ TÀI KHOẢN NGÂN HÀNG
+            </button>
+          </div>
+
+          <!-- Referral QR Box -->
+          <div class="p-3.5 bg-white rounded-2xl border border-slate-200 text-center space-y-2">
+            <span class="font-black text-xs text-slate-900">Mã QR Giới Thiệu Khách Thu Cũ</span>
+            <div class="w-24 h-24 bg-slate-100 rounded-xl mx-auto flex items-center justify-center text-slate-800">
+              <span class="material-symbols-outlined text-[64px]">qr_code_2</span>
+            </div>
+            <div class="text-[10px] text-blue-600 font-bold">https://smartphone.taichinhtaithanh.com/?ref=PX-VIP-8899</div>
+            <div class="text-[10px] text-slate-500">In dán tại quầy để nhận hoa hồng 4% tự động trên mỗi máy khách bán</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function toggleDeviceFrame() {
+      const frame = document.getElementById('phoneFrame');
+      const txt = document.getElementById('txtDeviceFrame');
+      if (frame.classList.contains('rounded-[52px]')) {
+        frame.classList.remove('rounded-[52px]');
+        frame.classList.add('rounded-[36px]');
+        txt.innerText = 'Galaxy S24 Ultra';
+      } else {
+        frame.classList.remove('rounded-[36px]');
+        frame.classList.add('rounded-[52px]');
+        txt.innerText = 'iPhone 16 Pro';
+      }
+    }
+
+    // Initial render
+    renderAppHeader();
+    renderBottomNav();
+    renderCurrentScreen();
+  </script>
+</body>
+</html>
