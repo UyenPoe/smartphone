@@ -9,11 +9,11 @@ class AppModeState extends ChangeNotifier {
   AppMode _currentMode = AppMode.b2cCustomer;
   
   // B2B Partner Details
-  String _partnerCode = 'PX-VIP-8899';
-  String _partnerName = 'Đại Lý PhoneX Sài Gòn 01';
+  final String _partnerCode = 'PX-VIP-8899';
+  final String _partnerName = 'Đại Lý PhoneX Sài Gòn 01';
   double _walletBalance = 14850000; // 14.850.000 VNĐ hoa hồng
   int _completedTickets = 38;
-  bool _isPartnerLoggedIn = true;
+  final bool _isPartnerLoggedIn = true;
 
   AppMode get currentMode => _currentMode;
   bool get isB2B => _currentMode == AppMode.b2bPartner;

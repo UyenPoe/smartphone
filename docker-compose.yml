@@ -1,0 +1,34 @@
+services:
+  # ============================================================================
+  # 1. PhoneX Mobile App (Flutter Web Application)
+  # Truy cập: http://localhost:8085
+  # ============================================================================
+  phonex-app:
+    build:
+      context: ./phonex_mobile_app
+      dockerfile: Dockerfile
+    container_name: phonex-mobile-app
+    restart: unless-stopped
+    ports:
+      - "8085:80"
+    networks:
+      - phonex-network
+
+  # ============================================================================
+  # 2. PhoneX Website & Mobile Simulator (Trình giả lập iPhone & Kho máy PhoneX)
+  # Truy cập: http://localhost:8080
+  # ============================================================================
+  phonex-web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    container_name: phonex-web-simulator
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    networks:
+      - phonex-network
+
+networks:
+  phonex-network:
+    driver: bridge
